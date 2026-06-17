@@ -1,0 +1,63 @@
+---
+interface Props {
+  text: string;
+  buttonText: string;
+  buttonHref: string;
+}
+
+const { text, buttonText, buttonHref } = Astro.props;
+---
+
+<div class="inline-cta">
+  <p class="inline-cta__text">{text}</p>
+  <a href={buttonHref} class="inline-cta__button">{buttonText}</a>
+</div>
+
+<style>
+  .inline-cta {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    background: linear-gradient(135deg, #f0f7ff 0%, #e8f4fd 100%);
+    border-left: 4px solid #1a6fb5;
+    border-radius: 0 8px 8px 0;
+    padding: 1.25rem 1.5rem;
+    margin: 2rem 0;
+  }
+
+  @media (min-width: 640px) {
+    .inline-cta {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+
+  .inline-cta__text {
+    margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: #1e3a5f;
+    flex: 1;
+  }
+
+  .inline-cta__button {
+    display: inline-block;
+    background: #1a6fb5;
+    color: #ffffff;
+    font-size: 0.875rem;
+    font-weight: 600;
+    padding: 0.625rem 1.25rem;
+    border-radius: 6px;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: background 0.2s ease;
+    flex-shrink: 0;
+  }
+
+  .inline-cta__button:hover {
+    background: #155d99;
+    color: #ffffff;
+  }
+</style>

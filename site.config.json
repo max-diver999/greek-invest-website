@@ -1,0 +1,64 @@
+{
+  "siteUrl": "https://greek-invest.com",
+  "siteHost": "greek-invest.com",
+  "market": "en",
+  "locale": "en",
+  "brandName": "Greek Invest",
+  "indexNow": {
+    "key": "a1f2e5d9d16ea55ab5d38a33eb643dd4",
+    "enBingEndpoint": "https://www.bing.com/indexnow",
+    "ruHubEndpoint": "https://api.indexnow.org"
+  },
+  "googleIndexingKeyPath": "scripts/google-indexing-key.json",
+  "yandex": {
+    "enabled": false
+  },
+  "contentCollections": {
+    "guides": {
+      "dir": "guides",
+      "urlPrefix": "/guides/",
+      "minWords": 2000,
+      "faqMin": 5
+    },
+    "news": {
+      "dir": "news",
+      "urlPrefix": "/news/",
+      "minWords": 500,
+      "faqMin": 0
+    },
+    "projects": {
+      "dir": "projects",
+      "urlPrefix": "/projects/",
+      "minWords": 1200,
+      "faqMin": 3
+    },
+    "developers": {
+      "dir": "developers",
+      "urlPrefix": "/developers/",
+      "minWords": 1000,
+      "faqMin": 3
+    },
+    "areas": {
+      "dir": "areas",
+      "urlPrefix": "/areas/",
+      "minWords": 1200,
+      "faqMin": 5
+    }
+  },
+  "smoke": {
+    "collections": [
+      {
+        "hubPath": "/guides/",
+        "contentDir": "guides"
+      }
+    ],
+    "contactPath": "/contact/",
+    "extraHttpChecks": [
+      {
+        "name": "projects hub",
+        "path": "/projects/",
+        "expect": 200
+      }
+    ]
+  }
+}

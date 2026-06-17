@@ -1,0 +1,19 @@
+# Greek Invest
+
+> Independent research on Greece property investment for UK, EU, US, and Middle East buyers.
+
+- Site: https://greek-invest.com
+- Contact: info@greek-invest.com
+- Markets: Athens, Crete, Cyclades, Thessaloniki, Peloponnese
+- Focus: Golden Visa tiers (€250K/€400K/€800K), net rental yields, foreign ownership, due diligence
+- Not a developer, not a listing portal
+
+## Key guides (batch 1 — publishing)
+- /guides/greece-property-investment-guide/
+- /guides/greece-golden-visa-property-guide-2026/
+- /guides/buy-property-greece-foreigner/
+- /guides/cost-of-buying-property-greece/
+- /guides/greece-rental-yield-guide/
+
+## Full corpus
+https://greek-invest.com/llms-full.txt

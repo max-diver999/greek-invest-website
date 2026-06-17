@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "site": "https://invest-spain-property.com",
+  "projectId": "invest-spain-indexing",
+  "dailyQuota": 200,
+  "updatedAt": "2026-06-15T11:02:00Z",
+  "methodology": "Truth = live sitemap vs submitted-urls.json entries[] (invest-spain-property.com only). Explicit URL batches only.",
+  "scripts": {
+    "google": "node scripts/submit-google-explicit.mjs URL...",
+    "indexnow": "node scripts/indexnow-submit.mjs --explicit URL...",
+    "stateFile": "scripts/indexing-queue-state.json",
+    "sitemapList": "scripts/spain-sitemap-urls.txt"
+  },
+  "summary": {
+    "sitemapTotal": 68,
+    "backlogRemaining": 0,
+    "quotaUsedToday": 116,
+    "quotaRemainingToday": 84,
+    "estimatedDaysLeft": 0,
+    "note": "Full sitemap indexed 2026-06-15. Earlier today: 115 calls (55 unique content refresh after Opus pass)."
+  },
+  "batches": [
+    {
+      "id": "2026-06-15-batch-close",
+      "at": "2026-06-15T11:02:00Z",
+      "count": 1,
+      "reason": "terms_gap",
+      "google": "1/1 OK",
+      "indexnow": "68/68 OK (full sitemap)",
+      "archive": "scripts/indexing-batch-2026-06-15-done.json"
+    },
+    {
+      "id": "2026-06-15-content-refresh",
+      "at": "2026-06-15",
+      "count": 115,
+      "uniqueUrls": 55,
+      "reason": "opus_geo_corpus_refresh",
+      "google": "115 API calls",
+      "indexnow": "not sent until batch-close"
+    },
+    {
+      "id": "2026-06-14-initial",
+      "at": "2026-06-14",
+      "count": 12,
+      "reason": "initial_rollout",
+      "google": "12/12 OK"
+    }
+  ],
+  "tomorrow": null
+}

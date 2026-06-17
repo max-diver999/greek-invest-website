@@ -1,0 +1,111 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import LeadForm from '../components/LeadForm.astro';
+import { getCollection } from 'astro:content';
+import { SITE } from '../data/site';
+import { HOMEPAGE_HERO_IMAGE } from '../data/featured';
+import { getCardImageUrl } from '../lib/cardImage';
+
+const [guides, projects, areas] = await Promise.all([
+  getCollection('guides'),
+  getCollection('projects'),
+  getCollection('areas'),
+]);
+
+const publishedGuides = guides.filter((g) => !g.data.noindex);
+const publishedProjects = projects.filter((p) => !p.data.noindex);
+const publishedAreas = areas.filter((a) => !a.data.noindex);
+
+const heroImage = getCardImageUrl(HOMEPAGE_HERO_IMAGE, 'hero');
+---
+<BaseLayout
+  title="Greek Invest — Independent Greece Property Research"
+  description={SITE.description}
+>
+  <section class="border-b border-[var(--color-border-soft)] bg-[var(--color-surface)]">
+    <div class="site-container py-14 md:py-20 grid lg:grid-cols-2 gap-10 lg:gap-14 items-center">
+      <div>
+        <span class="badge-pill mb-5">Independent research</span>
+        <h1 class="text-3xl md:text-[2.35rem] mb-5 leading-tight">
+          Understand Greece property before you buy
+        </h1>
+        <p class="text-base md:text-lg text-[var(--color-muted)] mb-8 max-w-xl">
+          Athens, Crete, and the Cyclades — Golden Visa tiers, foreign ownership rules, transfer costs, net rental yields, and neutral project reviews for international buyers.
+        </p>
+        <div class="flex flex-wrap gap-3 mb-10">
+          <a href="/guides/" class="btn-primary px-6 py-3">Browse guides</a>
+          <a href="/projects/" class="btn-secondary px-6 py-3">Project reviews</a>
+          <a href="/get-shortlist/" class="btn-secondary px-6 py-3">Free shortlist →</a>
+        </div>
+        <div class="grid grid-cols-3 gap-3 max-w-md">
+          <div class="stat-pill">
+            <strong>{publishedGuides.length}</strong>
+            <span>Guides</span>
+          </div>
+          <div class="stat-pill">
+            <strong>{publishedProjects.length}</strong>
+            <span>Projects</span>
+          </div>
+          <div class="stat-pill">
+            <strong>{publishedAreas.length}</strong>
+            <span>Areas</span>
+          </div>
+        </div>
+      </div>
+      <div class="hero-visual min-h-[280px] md:min-h-[380px] relative">
+        <img src={heroImage} alt="Acropolis of Athens at sunset" loading="eager" width="1400" height="560" />
+        <div class="hero-visual__overlay" />
+        <p class="hero-visual__caption">Athens · Acropolis</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="border-b border-[var(--color-border-soft)] bg-[var(--color-brand)] text-white py-8">
+    <div class="site-container grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+      <div>
+        <p class="text-2xl md:text-3xl font-semibold">€250K–800K</p>
+        <p class="text-sm opacity-85 mt-1">Golden Visa property tiers 2026</p>
+      </div>
+      <div>
+        <p class="text-2xl md:text-3xl font-semibold">7–10%</p>
+        <p class="text-sm opacity-85 mt-1">Total acquisition costs (typical)</p>
+      </div>
+      <div>
+        <p class="text-2xl md:text-3xl font-semibold">4.4–5.4%</p>
+        <p class="text-sm opacity-85 mt-1">Gross rental yields (national / Athens)</p>
+      </div>
+      <div>
+        <p class="text-2xl md:text-3xl font-semibold">€100–200K</p>
+        <p class="text-sm opacity-85 mt-1">Foreign buyer sweet spot (RE/MAX 2025)</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-[var(--color-surface)] border-y border-[var(--color-border-soft)]">
+    <div class="site-container max-w-3xl">
+      <h2 class="text-2xl mb-3">Launching now</h2>
+      <p class="text-[var(--color-muted)] mb-6">
+        We are publishing buyer guides, Golden Visa decision trees, area research, and neutral project reviews. First batch covers ownership rules, transfer costs, net yields, and Crete / Athens micro-markets.
+      </p>
+      <ul class="list-disc pl-5 space-y-2 text-[var(--color-muted)]">
+        <li>Greece Golden Visa property guide 2026 (pillar)</li>
+        <li>Greece property investment guide</li>
+        <li>Buy property Greece foreigner</li>
+        <li>Cost of buying property Greece</li>
+        <li>Greece rental yield guide</li>
+        <li>Crete Golden Visa €400K property guide</li>
+      </ul>
+      <p class="mt-6">
+        <a href="/contact/" class="link-arrow">Contact the editorial team →</a>
+      </p>
+    </div>
+  </section>
+
+  <section class="section bg-[var(--color-surface)] border-t border-[var(--color-border-soft)]">
+    <div class="site-container max-w-xl">
+      <h2 class="text-2xl mb-3">Get a shortlist</h2>
+      <p class="text-[var(--color-muted)] mb-8">Tell us budget, Golden Visa tier, and area preference — we match you with vetted Greek partners. No obligation.</p>
+      <LeadForm context="Homepage shortlist" />
+    </div>
+  </section>
+</BaseLayout>

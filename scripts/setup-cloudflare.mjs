@@ -44,7 +44,9 @@ async function listDns() {
 async function upsertDns(type, name, content, extra = {}) {
   const records = await listDns();
   const fullName = name === '@' ? DOMAIN : `${name}.${DOMAIN}`;
-  const existing = records.find((r) => r.type === type && r.name === fullName);
+  const existing = records.find(
+    (r) => r.type === type && r.name === fullName && r.content === content
+  );
   const body = {
     type,
     name,
@@ -54,16 +56,11 @@ async function upsertDns(type, name, content, extra = {}) {
     ...extra,
   };
   if (existing) {
-    if (existing.content === content && existing.proxied === false) {
-      console.log(`  OK exists: ${type} ${fullName}`);
-      return existing;
-    }
-    const data = await cf(`/dns_records/${existing.id}`, { method: 'PATCH', body: JSON.stringify(body) });
-    console.log(`  Updated: ${type} ${fullName}`);
-    return data.result;
+    console.log(`  OK exists: ${type} ${fullName} → ${content}`);
+    return existing;
   }
   const data = await cf('/dns_records', { method: 'POST', body: JSON.stringify(body) });
-  console.log(`  Created: ${type} ${fullName}`);
+  console.log(`  Created: ${type} ${fullName} → ${content}`);
   return data.result;
 }
 

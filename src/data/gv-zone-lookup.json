@@ -1,0 +1,57 @@
+{
+  "tiers": {
+    "800000": {
+      "label": "€800,000 minimum",
+      "summary": "Prime zone under Law 5100/2024: Attica region, Thessaloniki regional unit, Mykonos, Santorini, and certain high-population islands.",
+      "minArea": 120,
+      "singleProperty": true
+    },
+    "400000": {
+      "label": "€400,000 minimum",
+      "summary": "Standard built-residential tier for mainland Greece and regional destinations outside the prime zones.",
+      "minArea": 120,
+      "singleProperty": true
+    },
+    "250000": {
+      "label": "€250,000 minimum",
+      "summary": "Conversion or heritage-restoration route only — not a general location tier.",
+      "minArea": null,
+      "singleProperty": true
+    }
+  },
+  "locations": [
+    { "name": "Athens (municipality)", "region": "Attica", "tier": "800000", "notes": "Entire Attica administrative region is €800K." },
+    { "name": "Piraeus", "region": "Attica", "tier": "800000", "notes": "Attica region — €800K threshold." },
+    { "name": "Glyfada", "region": "Attica", "tier": "800000", "notes": "Athenian Riviera — Attica €800K zone." },
+    { "name": "Vouliagmeni", "region": "Attica", "tier": "800000", "notes": "Athenian Riviera — Attica €800K zone." },
+    { "name": "Varkiza", "region": "Attica", "tier": "800000", "notes": "Attica region — €800K threshold." },
+    { "name": "Marousi", "region": "Attica", "tier": "800000", "notes": "Northern Attica — €800K threshold." },
+    { "name": "Kifisia", "region": "Attica", "tier": "800000", "notes": "Northern Attica — €800K threshold." },
+    { "name": "Elliniko / Athenian Riviera", "region": "Attica", "tier": "800000", "notes": "Attica region including Ellinikon regeneration area." },
+    { "name": "Thessaloniki (city)", "region": "Central Macedonia", "tier": "800000", "notes": "Thessaloniki regional unit — €800K threshold." },
+    { "name": "Thessaloniki suburbs (east/west)", "region": "Central Macedonia", "tier": "800000", "notes": "Thessaloniki regional unit — verify cadastral municipality." },
+    { "name": "Mykonos", "region": "South Aegean", "tier": "800000", "notes": "Named explicitly in Law 5100/2024." },
+    { "name": "Santorini (Thira)", "region": "South Aegean", "tier": "800000", "notes": "Named explicitly in Law 5100/2024." },
+    { "name": "Chania, Crete", "region": "Crete", "tier": "400000", "notes": "Crete is outside Attica prime zones — standard €400K tier." },
+    { "name": "Heraklion, Crete", "region": "Crete", "tier": "400000", "notes": "Crete qualifies at €400K in current program practice." },
+    { "name": "Rethymno, Crete", "region": "Crete", "tier": "400000", "notes": "Crete — €400K tier." },
+    { "name": "Elounda / Lasithi, Crete", "region": "Crete", "tier": "400000", "notes": "Crete — €400K tier; check 120m² rule on premium micro-markets." },
+    { "name": "Rhodes", "region": "South Aegean", "tier": "400000", "notes": "Regional island — €400K tier in standard buyer routing." },
+    { "name": "Corfu", "region": "Ionian Islands", "tier": "400000", "notes": "Ionian Islands — €400K tier." },
+    { "name": "Lefkada", "region": "Ionian Islands", "tier": "400000", "notes": "Regional destination — €400K tier." },
+    { "name": "Kefalonia", "region": "Ionian Islands", "tier": "400000", "notes": "Regional destination — €400K tier." },
+    { "name": "Zakynthos", "region": "Ionian Islands", "tier": "400000", "notes": "Regional destination — €400K tier." },
+    { "name": "Patras", "region": "Western Greece", "tier": "400000", "notes": "Mainland regional city — €400K tier." },
+    { "name": "Kalamata", "region": "Peloponnese", "tier": "400000", "notes": "Peloponnese — €400K tier." },
+    { "name": "Nafplio", "region": "Peloponnese", "tier": "400000", "notes": "Peloponnese — €400K tier." },
+    { "name": "Costa Navarino / Messinia", "region": "Peloponnese", "tier": "400000", "notes": "Peloponnese resort belt — €400K tier." },
+    { "name": "Volos", "region": "Thessaly", "tier": "400000", "notes": "Mainland — outside Thessaloniki regional unit." },
+    { "name": "Larissa", "region": "Thessaly", "tier": "400000", "notes": "Mainland — €400K tier." },
+    { "name": "Ioannina", "region": "Epirus", "tier": "400000", "notes": "Mainland — €400K tier." },
+    { "name": "Paros", "region": "South Aegean", "tier": "400000", "notes": "Verify island population register — may move to €800K if above 3,100 residents." },
+    { "name": "Naxos", "region": "South Aegean", "tier": "400000", "notes": "Verify island population register before offer." },
+    { "name": "Milos", "region": "South Aegean", "tier": "400000", "notes": "Smaller Cycladic island — typically €400K; confirm with lawyer." },
+    { "name": "Commercial-to-residential conversion (anywhere)", "region": "Greece-wide", "tier": "250000", "notes": "€250K conversion route — not a geography shortcut for standard residential." },
+    { "name": "Listed heritage restoration (anywhere)", "region": "Greece-wide", "tier": "250000", "notes": "€250K restoration route — specialist legal and technical path." }
+  ]
+}

@@ -1,0 +1,187 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import LeadForm from '../../../components/LeadForm.astro';
+import GvZoneLookup from '../../../components/GvZoneLookup.astro';
+import FaqBlock from '../../../components/FaqBlock.astro';
+
+const title = 'Greece Golden Visa Zone Checker 2026';
+const description = 'Check whether your target area is €800K or €400K under Law 5100/2024. Indicative zone lookup for Attica, islands, and mainland Greece.';
+
+const faq = [
+  {
+    question: 'How do I know if my property is in the €800,000 or €400,000 Golden Visa zone?',
+    answer: 'Law 5100/2024 sets €800,000 for Attica, the Thessaloniki regional unit, Mykonos, Santorini, and certain high-population islands. All other qualifying built-residential locations typically use €400,000. Always verify the cadastral municipality on the title deed — not the marketing address.',
+  },
+  {
+    question: 'Is Crete €400,000 or €800,000 for the Golden Visa?',
+    answer: 'Crete is treated as a regional €400,000 destination in standard Golden Visa routing. Buyers still need one property of at least 120 m² and must avoid short-term tourist rentals on the qualifying asset.',
+  },
+  {
+    question: 'Does the zone checker replace legal advice?',
+    answer: 'No. This tool gives an indicative classification based on published Law 5100/2024 rules and Circular 1/2026 practice. Your lawyer must confirm municipality boundaries, usable area, and file-ready documentation before you transfer funds.',
+  },
+  {
+    question: 'What is the €250,000 tier in the zone checker?',
+    answer: 'The €250,000 route is not a geography discount. It applies only to commercial-to-residential conversions or listed heritage restorations anywhere in Greece. Standard resale apartments and villas use €400,000 or €800,000 tiers.',
+  },
+  {
+    question: 'Why can two nearby addresses have different Golden Visa thresholds?',
+    answer: 'The threshold follows official administrative boundaries. A property just outside the Attica region may qualify at €400,000 while a neighbouring address inside Attica requires €800,000. This is why deed-level municipality verification matters more than map distance.',
+  },
+  {
+    question: 'Where can I see the full tier rules and size requirements?',
+    answer: 'Read the Greece Golden Visa property tiers 2026 guide for the complete Law 5100/2024 framework, the 120 m² single-property rule, and rental restrictions that apply in every zone.',
+  },
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faq.map((item) => ({
+    '@type': 'Question',
+    name: item.question,
+    acceptedAnswer: { '@type': 'Answer', text: item.answer },
+  })),
+};
+
+const webAppSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebApplication',
+  name: 'Greece Golden Visa Zone Checker',
+  url: 'https://greek-invest.com/tools/greece-golden-visa-zone-lookup/',
+  applicationCategory: 'BusinessApplication',
+  operatingSystem: 'Any',
+  description,
+  offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
+};
+---
+
+<BaseLayout
+  {title}
+  {description}
+  canonical="https://greek-invest.com/tools/greece-golden-visa-zone-lookup/"
+  schemas={[faqSchema, webAppSchema]}
+>
+  <article class="site-container py-12 md:py-16 max-w-3xl prose prose-stone">
+    <header class="mb-8 not-prose">
+      <p class="text-sm font-semibold text-[#1a6fb5] uppercase tracking-wide mb-2">Tool</p>
+      <h1 class="mb-3">{title}</h1>
+      <p class="text-lg text-[var(--color-muted)] leading-relaxed">
+        Pick your target city or island to see the indicative Golden Visa investment threshold under Law 5100/2024.
+        Use this before you shortlist properties — then confirm every deed with a licensed Greek lawyer.
+      </p>
+    </header>
+
+    <GvZoneLookup />
+
+    <p>
+      <strong>Quick answer:</strong> Greece runs two main built-residential Golden Visa thresholds in 2026:
+      <strong>€800,000</strong> in Attica, the Thessaloniki regional unit, Mykonos, and Santorini, and
+      <strong>€400,000</strong> across most mainland and regional island markets including Crete, Rhodes, and the Peloponnese.
+      A separate <strong>€250,000</strong> route exists only for conversion or heritage-restoration projects.
+    </p>
+
+    <h2>Why the Zone Matters Before You Make an Offer</h2>
+    <p>
+      The Golden Visa threshold is not negotiable at the notary. If you sign a €450,000 purchase contract in central Athens assuming the regional €400,000 floor applies, the Migration Ministry will reject the file unless you top up to €800,000 on a qualifying single property of at least 120 m².
+      That is why zone classification belongs at the start of your search — not after the engineer survey.
+    </p>
+    <p>
+      For the full legal framework, see the
+      <a href="/guides/greece-golden-visa-property-tiers-2026/">Golden Visa property tiers guide</a>
+      and the
+      <a href="/guides/greece-golden-visa-circular-2026-explained/">Circular 1/2026 explainer</a>.
+    </p>
+
+    <h2>How Law 5100/2024 Splits Greece Into Tiers</h2>
+    <p>
+      Law 5100/2024 reformed the residency-by-investment program in September 2024. Circular 1/2026, issued on 22 April 2026, set the operational filing rules.
+      Built residential property now falls into one of three investment bands.
+    </p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Tier</th>
+          <th>Minimum</th>
+          <th>Typical geography</th>
+          <th>Built residential rule</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Prime</td>
+          <td>€800,000</td>
+          <td>Attica, Thessaloniki regional unit, Mykonos, Santorini</td>
+          <td>Single property, ≥120 m²</td>
+        </tr>
+        <tr>
+          <td>Regional</td>
+          <td>€400,000</td>
+          <td>Mainland, Crete, Rhodes, Corfu, Peloponnese, most islands</td>
+          <td>Single property, ≥120 m²</td>
+        </tr>
+        <tr>
+          <td>Conversion</td>
+          <td>€250,000</td>
+          <td>Greece-wide (specialist assets only)</td>
+          <td>Converted or restored dwelling</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>Locations That Commonly Trip Up Buyers</h2>
+    <p>
+      Three patterns cause the most Golden Visa zone errors in 2026 files.
+    </p>
+    <ul>
+      <li>
+        <strong>Attica boundary confusion.</strong> Buyers target a suburb that feels regional but sits inside the Attica administrative region.
+        See the <a href="/guides/athens-golden-visa-800000-areas/">Athens €800K areas guide</a> for how the Riviera and port cities map to the higher tier.
+      </li>
+      <li>
+        <strong>Thessaloniki regional unit vs wider Macedonia.</strong> The city and its regional unit require €800,000. Mainland cities such as Volos or Larissa in Thessaly remain €400,000.
+        Read the <a href="/guides/thessaloniki-golden-visa-800000-property/">Thessaloniki Golden Visa guide</a> before you model yields there.
+      </li>
+      <li>
+        <strong>Island population edge cases.</strong> Law 5100/2024 references islands above 3,100 residents as prime-zone candidates.
+        Large regional islands such as Crete and Rhodes are still routed at €400,000 in standard buyer practice, but smaller Cycladic islands near the threshold need lawyer verification.
+      </li>
+    </ul>
+
+    <h2>What the Checker Does Not Cover</h2>
+    <p>
+      Zone classification is only the first gate. A property can sit in a €400,000 municipality and still fail a Golden Visa file if:
+    </p>
+    <ul>
+      <li>Usable area on the engineer certificate is under 120 m² — see the <a href="/guides/greece-golden-visa-120-square-meter-rule/">120 m² rule guide</a></li>
+      <li>The asset is split across two titles instead of one qualifying property</li>
+      <li>Border-zone restrictions apply to a non-EU buyer — see <a href="/guides/border-zones-greece-foreign-buyers/">border zones for foreign buyers</a></li>
+      <li>The seller cannot produce clean cadastre and ENFIA history — see <a href="/guides/due-diligence-greece-property/">due diligence checklist</a></li>
+    </ul>
+
+    <h2>Next Steps After You Check the Zone</h2>
+    <ol>
+      <li>Model total acquisition cost at the correct threshold using the <a href="/guides/cost-of-buying-property-greece/">cost of buying guide</a> (FMA, notary, lawyer, registry typically add 7–10%).</li>
+      <li>Shortlist only properties that meet the 120 m² single-title rule in your target tier.</li>
+      <li>Run engineer and cadastre checks before the preliminary agreement — not after.</li>
+      <li>File through a migration lawyer who has handled post-2024 Law 5100/2024 cases.</li>
+    </ol>
+
+    <p>
+      If you already know you want the regional tier, browse the
+      <a href="/tier-golden-visa-400k/">€400,000 Golden Visa route overview</a>
+      or the
+      <a href="/guides/golden-visa-eligible-projects-directory/">eligible property directory framework</a>
+      for how we evaluate qualifying stock.
+    </p>
+
+    <FaqBlock items={faq} />
+
+    <LeadForm
+      title="Need help matching zone to property?"
+      subtitle="Share budget and target region — we filter for tier, 120 m², and file-ready due diligence."
+      context="GV zone lookup tool"
+    />
+  </article>
+</BaseLayout>

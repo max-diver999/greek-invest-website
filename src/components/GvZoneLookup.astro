@@ -1,0 +1,134 @@
+---
+import zoneData from '../data/gv-zone-lookup.json';
+
+const { tiers, locations } = zoneData;
+---
+
+<div class="gv-zone-lookup" id="gv-zone-lookup">
+  <div class="gv-zone-lookup__controls">
+    <label for="gv-location-select" class="gv-zone-lookup__label">Select a location or market</label>
+    <select id="gv-location-select" class="gv-zone-lookup__select">
+      <option value="">Choose a city, island, or route…</option>
+      {locations.map((loc, i) => (
+        <option value={String(i)}>{loc.name} ({loc.region})</option>
+      ))}
+    </select>
+    <p class="gv-zone-lookup__hint">Indicative only — confirm the cadastral municipality and title deed with a Greek migration lawyer before you sign.</p>
+  </div>
+
+  <div id="gv-zone-result" class="gv-zone-lookup__result gv-zone-lookup__result--empty" hidden>
+    <p class="gv-zone-lookup__tier-label" id="gv-tier-label"></p>
+    <p class="gv-zone-lookup__tier-summary" id="gv-tier-summary"></p>
+    <ul class="gv-zone-lookup__facts" id="gv-tier-facts"></ul>
+    <p class="gv-zone-lookup__notes" id="gv-tier-notes"></p>
+  </div>
+</div>
+
+<script define:vars={{ tiers, locations }}>
+  const select = document.getElementById('gv-location-select');
+  const result = document.getElementById('gv-zone-result');
+  const tierLabel = document.getElementById('gv-tier-label');
+  const tierSummary = document.getElementById('gv-tier-summary');
+  const tierFacts = document.getElementById('gv-tier-facts');
+  const tierNotes = document.getElementById('gv-tier-notes');
+
+  function formatEuro(n) {
+    return new Intl.NumberFormat('en-EU', { style: 'currency', currency: 'EUR', maximumFractionDigits: 0 }).format(n);
+  }
+
+  select?.addEventListener('change', () => {
+    const idx = select.value;
+    if (idx === '') {
+      result.hidden = true;
+      result.classList.add('gv-zone-lookup__result--empty');
+      return;
+    }
+
+    const loc = locations[Number(idx)];
+    const tierKey = loc.tier;
+    const tier = tiers[tierKey];
+
+    tierLabel.textContent = `${loc.name}: ${tier.label}`;
+    tierSummary.textContent = tier.summary;
+
+    const facts = [];
+    facts.push(`Minimum investment: ${formatEuro(Number(tierKey))}`);
+    if (tier.minArea) {
+      facts.push(`Built residential: single property, at least ${tier.minArea} m² usable area`);
+    } else {
+      facts.push('Specialist conversion or restoration asset — not standard off-the-shelf residential');
+    }
+    facts.push('Short-term tourist rentals prohibited on the qualifying Golden Visa property');
+    facts.push(`Region tag: ${loc.region}`);
+
+    tierFacts.innerHTML = facts.map((f) => `<li>${f}</li>`).join('');
+    tierNotes.textContent = loc.notes;
+
+    result.hidden = false;
+    result.classList.remove('gv-zone-lookup__result--empty');
+  });
+</script>
+
+<style>
+  .gv-zone-lookup {
+    background: #f8fafc;
+    border: 1px solid var(--color-border, #e7e5e4);
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin: 2rem 0;
+  }
+
+  .gv-zone-lookup__label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--color-ink, #1c1917);
+  }
+
+  .gv-zone-lookup__select {
+    width: 100%;
+    max-width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    font-size: 1rem;
+    background: #fff;
+  }
+
+  .gv-zone-lookup__hint {
+    margin: 0.75rem 0 0;
+    font-size: 0.875rem;
+    color: var(--color-muted, #57534e);
+  }
+
+  .gv-zone-lookup__result {
+    margin-top: 1.25rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid #e2e8f0;
+  }
+
+  .gv-zone-lookup__tier-label {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin: 0 0 0.5rem;
+    color: #1a6fb5;
+  }
+
+  .gv-zone-lookup__tier-summary {
+    margin: 0 0 1rem;
+    line-height: 1.6;
+  }
+
+  .gv-zone-lookup__facts {
+    margin: 0 0 1rem;
+    padding-left: 1.25rem;
+    line-height: 1.7;
+  }
+
+  .gv-zone-lookup__notes {
+    margin: 0;
+    font-size: 0.9rem;
+    color: var(--color-muted, #57534e);
+    font-style: italic;
+  }
+</style>

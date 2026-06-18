@@ -1,12 +1,12 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-17T22:31:36.628Z",
-  "site": "https://invest-spain-property.com",
-  "note": "Cleaned 2026-06-15: keep only URLs present in live sitemap.",
+  "updatedAt": "2026-06-18T01:37:43.056Z",
   "urls": [
     "https://greek-invest.com",
     "https://greek-invest.com/about",
     "https://greek-invest.com/areas",
+    "https://greek-invest.com/areas/chania-property-investment",
+    "https://greek-invest.com/areas/costa-navarino-property-investment",
     "https://greek-invest.com/areas/district-10-bukit-timah-property",
     "https://greek-invest.com/areas/district-14-geylang-property",
     "https://greek-invest.com/areas/district-15-east-coast-property",
@@ -17,45 +17,138 @@
     "https://greek-invest.com/areas/district-6-city-hall-property",
     "https://greek-invest.com/areas/district-7-beach-road-property",
     "https://greek-invest.com/areas/district-9-orchard-property",
+    "https://greek-invest.com/areas/elounda-property-investment",
+    "https://greek-invest.com/areas/glyfada-property-investment",
+    "https://greek-invest.com/areas/heraklion-property-investment",
+    "https://greek-invest.com/areas/kalamata-property-investment",
+    "https://greek-invest.com/areas/kallithea-property-investment",
+    "https://greek-invest.com/areas/mykonos-property-investment",
+    "https://greek-invest.com/areas/piraeus-property-investment",
+    "https://greek-invest.com/areas/rhodes-property-investment",
+    "https://greek-invest.com/areas/santorini-property-investment",
+    "https://greek-invest.com/areas/voula-property-investment",
     "https://greek-invest.com/compare",
+    "https://greek-invest.com/compare/athens-riviera-vs-athens-center-investment",
+    "https://greek-invest.com/compare/crete-vs-cyclades-property-investment",
     "https://greek-invest.com/compare/east-coast-vs-queenstown-property",
+    "https://greek-invest.com/compare/greece-vs-cape-town-property-investment",
+    "https://greek-invest.com/compare/greece-vs-italy-vs-spain-property-investment",
+    "https://greek-invest.com/compare/greece-vs-portugal-golden-visa-property",
+    "https://greek-invest.com/compare/greece-vs-spain-golden-visa-ended",
     "https://greek-invest.com/compare/jurong-vs-punggol-property-investment",
     "https://greek-invest.com/contact",
     "https://greek-invest.com/developers",
+    "https://greek-invest.com/developers/adonis-group",
     "https://greek-invest.com/developers/capitaland-development",
     "https://greek-invest.com/developers/city-developments-cdl",
+    "https://greek-invest.com/developers/greca-developments",
     "https://greek-invest.com/developers/guocoland",
+    "https://greek-invest.com/developers/secland-development",
+    "https://greek-invest.com/developers/solena-greece",
     "https://greek-invest.com/get-shortlist",
+    "https://greek-invest.com/greece-golden-visa-consultation",
+    "https://greek-invest.com/greece-property-consultation",
     "https://greek-invest.com/guides",
+    "https://greek-invest.com/guides/athens-golden-visa-800000-areas",
+    "https://greek-invest.com/guides/athens-property-investment-guide",
+    "https://greek-invest.com/guides/athens-short-term-rental-moratorium-2026",
+    "https://greek-invest.com/guides/best-regions-invest-greece-property-2026",
+    "https://greek-invest.com/guides/border-zones-greece-foreign-buyers",
+    "https://greek-invest.com/guides/brexit-uk-buyers-greece-property",
+    "https://greek-invest.com/guides/buy-property-greece-foreigner",
     "https://greek-invest.com/guides/buy-property-singapore-foreigner",
+    "https://greek-invest.com/guides/buy-to-let-greece-guide",
+    "https://greek-invest.com/guides/can-foreigners-buy-property-greece",
     "https://greek-invest.com/guides/can-foreigners-buy-property-singapore",
     "https://greek-invest.com/guides/ccr-rcr-ocr-singapore-property-guide",
+    "https://greek-invest.com/guides/cost-of-buying-property-greece",
     "https://greek-invest.com/guides/cost-of-buying-property-singapore",
+    "https://greek-invest.com/guides/crete-golden-visa-400000-property",
+    "https://greek-invest.com/guides/crete-property-investment-guide",
+    "https://greek-invest.com/guides/cyclades-property-investment-guide",
+    "https://greek-invest.com/guides/due-diligence-greece-property",
+    "https://greek-invest.com/guides/ellinikon-athens-property-investment",
+    "https://greek-invest.com/guides/enfia-property-tax-greece",
     "https://greek-invest.com/guides/foreigner-mortgage-singapore",
     "https://greek-invest.com/guides/fta-absd-remission-singapore-property",
+    "https://greek-invest.com/guides/golden-visa-eligible-projects-directory",
+    "https://greek-invest.com/guides/greece-afm-tax-number-property",
+    "https://greek-invest.com/guides/greece-capital-gains-tax-property",
+    "https://greek-invest.com/guides/greece-citizenship-after-golden-visa",
+    "https://greek-invest.com/guides/greece-golden-visa-120-square-meter-rule",
+    "https://greek-invest.com/guides/greece-golden-visa-250000-conversion-route",
+    "https://greek-invest.com/guides/greece-golden-visa-bank-account-afm",
+    "https://greek-invest.com/guides/greece-golden-visa-circular-2026-explained",
+    "https://greek-invest.com/guides/greece-golden-visa-family-members-rules",
+    "https://greek-invest.com/guides/greece-golden-visa-lawyer-cost",
+    "https://greek-invest.com/guides/greece-golden-visa-mistakes-avoid",
+    "https://greek-invest.com/guides/greece-golden-visa-no-short-term-rental",
+    "https://greek-invest.com/guides/greece-golden-visa-property-guide-2026",
+    "https://greek-invest.com/guides/greece-golden-visa-property-tiers-2026",
+    "https://greek-invest.com/guides/greece-golden-visa-renewal-requirements",
+    "https://greek-invest.com/guides/greece-golden-visa-timeline-application-2026",
+    "https://greek-invest.com/guides/greece-new-build-vat-suspension-2026",
+    "https://greek-invest.com/guides/greece-objective-value-property-tax",
+    "https://greek-invest.com/guides/greece-property-cadastre-check",
+    "https://greek-invest.com/guides/greece-property-engineer-certificate",
+    "https://greek-invest.com/guides/greece-property-investment-guide",
+    "https://greek-invest.com/guides/greece-property-market-forecast-2026-2027",
+    "https://greek-invest.com/guides/greece-property-market-transactions-2025",
+    "https://greek-invest.com/guides/greece-property-notary-process",
+    "https://greek-invest.com/guides/greece-property-pink-slip-foreign-buyers",
+    "https://greek-invest.com/guides/greece-property-scams-avoid",
+    "https://greek-invest.com/guides/greece-property-transfer-tax-fma",
+    "https://greek-invest.com/guides/greece-rental-income-tax-non-resident",
+    "https://greek-invest.com/guides/greece-rental-yield-guide",
+    "https://greek-invest.com/guides/greek-property-glossary-foreign-buyers",
     "https://greek-invest.com/guides/gross-vs-net-rental-yield-singapore",
+    "https://greek-invest.com/guides/gross-vs-net-yield-greece",
+    "https://greek-invest.com/guides/halkidiki-property-investment-guide",
     "https://greek-invest.com/guides/hdb-upgrader-private-condo-guide",
+    "https://greek-invest.com/guides/hidden-costs-buying-property-greece",
+    "https://greek-invest.com/guides/highest-rental-yield-areas-greece",
     "https://greek-invest.com/guides/highest-rental-yield-districts-singapore",
+    "https://greek-invest.com/guides/how-to-buy-greece-property-remotely",
+    "https://greek-invest.com/guides/how-to-buy-property-greece-step-by-step",
+    "https://greek-invest.com/guides/is-greece-property-good-investment-2026",
+    "https://greek-invest.com/guides/israeli-buyers-greece-property",
     "https://greek-invest.com/guides/ltv-loan-to-value-singapore-property",
+    "https://greek-invest.com/guides/non-resident-mortgage-greece",
+    "https://greek-invest.com/guides/off-plan-property-greece-guide",
     "https://greek-invest.com/guides/off-plan-vs-resale-condo-singapore",
+    "https://greek-invest.com/guides/off-plan-vs-resale-greece",
+    "https://greek-invest.com/guides/peloponnese-golden-visa-400000-property",
+    "https://greek-invest.com/guides/peloponnese-property-investment-guide",
+    "https://greek-invest.com/guides/power-of-attorney-property-greece",
+    "https://greek-invest.com/guides/resale-property-greece-checklist-foreigner",
     "https://greek-invest.com/guides/seller-stamp-duty-ssd-singapore",
+    "https://greek-invest.com/guides/short-term-rental-greece-rules",
     "https://greek-invest.com/guides/singapore-absd-foreign-buyer-guide",
     "https://greek-invest.com/guides/singapore-new-launch-condo-guide-2026",
     "https://greek-invest.com/guides/singapore-property-cooling-measures-guide",
     "https://greek-invest.com/guides/singapore-property-investment-guide",
     "https://greek-invest.com/guides/singapore-rental-yield-guide",
+    "https://greek-invest.com/guides/snagging-inspection-greece-new-build",
     "https://greek-invest.com/guides/tdsr-mortgage-singapore-explained",
+    "https://greek-invest.com/guides/thessaloniki-golden-visa-800000-property",
+    "https://greek-invest.com/guides/thessaloniki-property-investment-guide",
+    "https://greek-invest.com/guides/turkish-buyers-greece-property",
     "https://greek-invest.com/guides/us-citizen-buying-property-singapore",
+    "https://greek-invest.com/invest-athens-property",
+    "https://greek-invest.com/invest-crete-property",
     "https://greek-invest.com/methodology",
     "https://greek-invest.com/news",
+    "https://greek-invest.com/news/greece-golden-visa-approvals-2025",
     "https://greek-invest.com/privacy-policy",
     "https://greek-invest.com/projects",
     "https://greek-invest.com/projects/amberwood-at-holland",
     "https://greek-invest.com/projects/chuan-grove",
     "https://greek-invest.com/projects/coastal-cabana-ec",
     "https://greek-invest.com/projects/dunearn-house",
+    "https://greek-invest.com/projects/ela-suites-kastella",
     "https://greek-invest.com/projects/hudson-place-residences",
     "https://greek-invest.com/projects/lentor-gardens-residences",
+    "https://greek-invest.com/projects/lotus-voula",
     "https://greek-invest.com/projects/lucerne-grand",
     "https://greek-invest.com/projects/narra-residences",
     "https://greek-invest.com/projects/newport-residences",
@@ -63,1980 +156,448 @@
     "https://greek-invest.com/projects/rivelle-tampines-ec",
     "https://greek-invest.com/projects/river-modern",
     "https://greek-invest.com/projects/tengah-garden-residences",
+    "https://greek-invest.com/projects/the-grandline",
     "https://greek-invest.com/projects/thomson-reserve",
     "https://greek-invest.com/projects/vela-bay",
     "https://greek-invest.com/terms",
-    "https://invest-spain-property.com",
-    "https://invest-spain-property.com/about",
-    "https://invest-spain-property.com/areas",
-    "https://invest-spain-property.com/areas/alicante-city-property-investment",
-    "https://invest-spain-property.com/areas/benalmadena-property-investment",
-    "https://invest-spain-property.com/areas/benidorm-property-investment",
-    "https://invest-spain-property.com/areas/eixample-barcelona-property",
-    "https://invest-spain-property.com/areas/estepona-property-investment",
-    "https://invest-spain-property.com/areas/fuengirola-property-investment",
-    "https://invest-spain-property.com/areas/ibiza-property-investment",
-    "https://invest-spain-property.com/areas/javea-property-investment",
-    "https://invest-spain-property.com/areas/madrid-centro-property-investment",
-    "https://invest-spain-property.com/areas/mallorca-property-investment",
-    "https://invest-spain-property.com/areas/marbella-property-investment",
-    "https://invest-spain-property.com/areas/menorca-property-investment",
-    "https://invest-spain-property.com/areas/mijas-property-investment",
-    "https://invest-spain-property.com/areas/orihuela-costa-property-investment",
-    "https://invest-spain-property.com/areas/palma-de-mallorca-property-investment",
-    "https://invest-spain-property.com/areas/torrevieja-property-investment",
-    "https://invest-spain-property.com/compare",
-    "https://invest-spain-property.com/compare/costa-blanca-vs-costa-del-sol",
-    "https://invest-spain-property.com/compare/madrid-vs-barcelona-property-investment",
-    "https://invest-spain-property.com/compare/mallorca-vs-marbella-investment",
-    "https://invest-spain-property.com/compare/spain-vs-portugal-property-investment",
-    "https://invest-spain-property.com/contact",
-    "https://invest-spain-property.com/developers",
-    "https://invest-spain-property.com/developers/aedas-homes",
-    "https://invest-spain-property.com/developers/azuaga-developer",
-    "https://invest-spain-property.com/developers/gonzalez-jacobson",
-    "https://invest-spain-property.com/developers/metrovacesa",
-    "https://invest-spain-property.com/developers/neinor-homes",
-    "https://invest-spain-property.com/get-shortlist",
-    "https://invest-spain-property.com/guides",
-    "https://invest-spain-property.com/guides/airbnb-investment-spain-guide",
-    "https://invest-spain-property.com/guides/balearic-islands-property-investment-guide",
-    "https://invest-spain-property.com/guides/bank-guarantee-off-plan-spain",
-    "https://invest-spain-property.com/guides/barcelona-property-investment-guide",
-    "https://invest-spain-property.com/guides/brexit-uk-buyers-spain-property",
-    "https://invest-spain-property.com/guides/buy-property-spain-foreigner",
-    "https://invest-spain-property.com/guides/buy-to-let-spain-guide",
-    "https://invest-spain-property.com/guides/can-foreigners-buy-property-spain",
-    "https://invest-spain-property.com/guides/community-fees-spain-explained",
-    "https://invest-spain-property.com/guides/cost-of-buying-property-spain",
-    "https://invest-spain-property.com/guides/costa-blanca-property-investment-guide",
-    "https://invest-spain-property.com/guides/costa-del-sol-property-investment-guide",
-    "https://invest-spain-property.com/guides/developer-delay-risks-spain",
-    "https://invest-spain-property.com/guides/due-diligence-spain-property",
-    "https://invest-spain-property.com/guides/eu-citizens-buying-property-spain",
-    "https://invest-spain-property.com/guides/german-tax-spain-holiday-home",
-    "https://invest-spain-property.com/guides/gross-vs-net-yield-spain",
-    "https://invest-spain-property.com/guides/hidden-costs-buying-property-spain",
-    "https://invest-spain-property.com/guides/highest-rental-yield-areas-spain",
-    "https://invest-spain-property.com/guides/holiday-home-spain-investment",
-    "https://invest-spain-property.com/guides/how-to-buy-property-spain-step-by-step",
-    "https://invest-spain-property.com/guides/how-to-buy-spain-property-remotely",
-    "https://invest-spain-property.com/guides/how-to-calculate-rental-yield-spain",
-    "https://invest-spain-property.com/guides/ibi-property-tax-spain",
-    "https://invest-spain-property.com/guides/long-term-vs-holiday-rental-spain",
-    "https://invest-spain-property.com/guides/madrid-property-investment-guide",
-    "https://invest-spain-property.com/guides/new-build-developments-spain-2026",
-    "https://invest-spain-property.com/guides/nie-number-spain-property",
-    "https://invest-spain-property.com/guides/non-lucrative-visa-spain-property-owners",
-    "https://invest-spain-property.com/guides/non-resident-mortgage-spain",
-    "https://invest-spain-property.com/guides/notary-costs-spain-property-purchase",
-    "https://invest-spain-property.com/guides/off-plan-property-spain-guide",
-    "https://invest-spain-property.com/guides/off-plan-vs-resale-spain",
-    "https://invest-spain-property.com/guides/power-of-attorney-property-spain",
-    "https://invest-spain-property.com/guides/property-management-spain-cost",
-    "https://invest-spain-property.com/guides/retire-spain-property-guide",
-    "https://invest-spain-property.com/guides/scandinavian-buyers-spain-property",
-    "https://invest-spain-property.com/guides/short-term-rental-spain-licence",
-    "https://invest-spain-property.com/guides/snagging-inspection-spain-new-build",
-    "https://invest-spain-property.com/guides/spain-capital-gains-tax-property",
-    "https://invest-spain-property.com/guides/spain-digital-nomad-visa-property",
-    "https://invest-spain-property.com/guides/spain-golden-visa-ended-2025",
-    "https://invest-spain-property.com/guides/spain-non-resident-income-tax-rental",
-    "https://invest-spain-property.com/guides/spain-plusvalia-tax-explained",
-    "https://invest-spain-property.com/guides/spain-property-investment-guide",
-    "https://invest-spain-property.com/guides/spain-property-scams-avoid",
-    "https://invest-spain-property.com/guides/spain-property-transfer-tax-itp-iva",
-    "https://invest-spain-property.com/guides/spain-rental-yield-guide",
-    "https://invest-spain-property.com/guides/spain-residency-without-golden-visa",
-    "https://invest-spain-property.com/guides/tourist-licence-alicante-malaga",
-    "https://invest-spain-property.com/guides/uk-tax-spain-rental-property",
-    "https://invest-spain-property.com/guides/urban-planning-certificate-spain",
-    "https://invest-spain-property.com/guides/valencia-property-investment-guide",
-    "https://invest-spain-property.com/methodology",
-    "https://invest-spain-property.com/news",
-    "https://invest-spain-property.com/news/foreign-buyers-spain-2025-record",
-    "https://invest-spain-property.com/news/spain-property-market-q1-2026",
-    "https://invest-spain-property.com/news/spain-rental-yield-update-2026",
-    "https://invest-spain-property.com/privacy-policy",
-    "https://invest-spain-property.com/projects",
-    "https://invest-spain-property.com/projects/beach-apartments-sea-views-spain-benidorm-costa-blanca-north-tm-tower-by-tm",
-    "https://invest-spain-property.com/projects/insur-scala",
-    "https://invest-spain-property.com/projects/kosmos",
-    "https://invest-spain-property.com/projects/obra-nueva-mijas-balance",
-    "https://invest-spain-property.com/projects/sea-views-apartments-alicante-calpe-beach-la-fossa-azure-icons-by-tm",
-    "https://invest-spain-property.com/projects/the-kove",
-    "https://invest-spain-property.com/terms"
+    "https://greek-invest.com/tier-golden-visa-400k",
+    "https://greek-invest.com/tools/greece-golden-visa-zone-lookup",
+    "https://greek-invest.com/tools/greece-property-cost-calculator",
+    "https://greek-invest.com/tools/greece-rental-yield-calculator"
   ],
+  "syncedAt": "2026-06-17T23:32:05.939Z",
+  "removedWrongDomains": 100,
+  "sitemapCount": 27,
   "entries": [
     {
-      "url": "https://invest-spain-property.com/developers",
+      "url": "https://greek-invest.com/guides/greece-golden-visa-family-members-rules",
       "channel": "google",
-      "at": "2026-06-08T17:39:02.134Z"
+      "at": "2026-06-17T23:47:49.506Z"
     },
     {
-      "url": "https://invest-spain-property.com/news",
+      "url": "https://greek-invest.com/guides/greece-golden-visa-renewal-requirements",
       "channel": "google",
-      "at": "2026-06-08T17:39:02.134Z"
+      "at": "2026-06-17T23:47:49.506Z"
     },
     {
-      "url": "https://invest-spain-property.com",
+      "url": "https://greek-invest.com/guides/greece-golden-visa-mistakes-avoid",
       "channel": "google",
-      "at": "2026-06-14T13:28:46.754Z"
+      "at": "2026-06-17T23:47:49.506Z"
     },
     {
-      "url": "https://invest-spain-property.com/about",
+      "url": "https://greek-invest.com/guides/peloponnese-golden-visa-400000-property",
       "channel": "google",
-      "at": "2026-06-14T13:28:46.754Z"
+      "at": "2026-06-17T23:47:49.506Z"
     },
     {
-      "url": "https://invest-spain-property.com/areas",
+      "url": "https://greek-invest.com/guides/thessaloniki-golden-visa-800000-property",
       "channel": "google",
-      "at": "2026-06-14T13:28:46.754Z"
+      "at": "2026-06-17T23:47:49.506Z"
     },
     {
-      "url": "https://invest-spain-property.com/compare",
+      "url": "https://greek-invest.com/compare/greece-vs-spain-golden-visa-ended",
       "channel": "google",
-      "at": "2026-06-14T13:28:46.754Z"
+      "at": "2026-06-17T23:47:49.506Z"
     },
     {
-      "url": "https://invest-spain-property.com/contact",
+      "url": "https://greek-invest.com/guides/greece-citizenship-after-golden-visa",
       "channel": "google",
-      "at": "2026-06-14T13:28:46.754Z"
+      "at": "2026-06-18T00:00:52.933Z"
     },
     {
-      "url": "https://invest-spain-property.com/developers",
+      "url": "https://greek-invest.com/guides/greece-golden-visa-bank-account-afm",
       "channel": "google",
-      "at": "2026-06-14T13:28:46.754Z"
+      "at": "2026-06-18T00:00:52.933Z"
     },
     {
-      "url": "https://invest-spain-property.com/get-shortlist",
+      "url": "https://greek-invest.com/guides/greece-golden-visa-lawyer-cost",
       "channel": "google",
-      "at": "2026-06-14T13:28:46.754Z"
+      "at": "2026-06-18T00:00:52.933Z"
     },
     {
-      "url": "https://invest-spain-property.com/guides",
+      "url": "https://greek-invest.com/guides/greece-property-market-forecast-2026-2027",
       "channel": "google",
-      "at": "2026-06-14T13:28:46.754Z"
+      "at": "2026-06-18T00:00:52.933Z"
     },
     {
-      "url": "https://invest-spain-property.com/methodology",
+      "url": "https://greek-invest.com/guides/is-greece-property-good-investment-2026",
       "channel": "google",
-      "at": "2026-06-14T13:28:46.754Z"
+      "at": "2026-06-18T00:00:52.933Z"
     },
     {
-      "url": "https://invest-spain-property.com/news",
+      "url": "https://greek-invest.com/guides/greece-property-market-transactions-2025",
       "channel": "google",
-      "at": "2026-06-14T13:28:46.754Z"
+      "at": "2026-06-18T00:00:52.933Z"
     },
     {
-      "url": "https://invest-spain-property.com/privacy-policy",
+      "url": "https://greek-invest.com/guides/how-to-buy-property-greece-step-by-step",
       "channel": "google",
-      "at": "2026-06-14T13:28:46.754Z"
+      "at": "2026-06-18T00:12:33.225Z"
     },
     {
-      "url": "https://invest-spain-property.com/projects",
+      "url": "https://greek-invest.com/guides/due-diligence-greece-property",
       "channel": "google",
-      "at": "2026-06-14T13:28:46.754Z"
+      "at": "2026-06-18T00:12:33.225Z"
     },
     {
-      "url": "https://invest-spain-property.com/projects/the-kove",
+      "url": "https://greek-invest.com/guides/greece-afm-tax-number-property",
       "channel": "google",
-      "at": "2026-06-15T00:02:39.671Z"
+      "at": "2026-06-18T00:12:33.225Z"
     },
     {
-      "url": "https://invest-spain-property.com/projects/kosmos",
+      "url": "https://greek-invest.com/guides/can-foreigners-buy-property-greece",
       "channel": "google",
-      "at": "2026-06-15T00:02:39.671Z"
+      "at": "2026-06-18T00:12:33.225Z"
     },
     {
-      "url": "https://invest-spain-property.com/projects/insur-scala",
+      "url": "https://greek-invest.com/guides/greece-property-cadastre-check",
       "channel": "google",
-      "at": "2026-06-15T00:02:39.671Z"
+      "at": "2026-06-18T00:12:33.225Z"
     },
     {
-      "url": "https://invest-spain-property.com/projects/obra-nueva-mijas-balance",
+      "url": "https://greek-invest.com/guides/how-to-buy-greece-property-remotely",
       "channel": "google",
-      "at": "2026-06-15T00:02:39.671Z"
+      "at": "2026-06-18T00:12:33.225Z"
     },
     {
-      "url": "https://invest-spain-property.com/projects/beach-apartments-sea-views-spain-benidorm-costa-blanca-north-tm-tower-by-tm",
+      "url": "https://greek-invest.com/guides/power-of-attorney-property-greece",
       "channel": "google",
-      "at": "2026-06-15T00:02:39.671Z"
+      "at": "2026-06-18T00:25:13.546Z"
     },
     {
-      "url": "https://invest-spain-property.com/projects/sea-views-apartments-alicante-calpe-beach-la-fossa-azure-icons-by-tm",
+      "url": "https://greek-invest.com/guides/greece-property-pink-slip-foreign-buyers",
       "channel": "google",
-      "at": "2026-06-15T00:02:39.671Z"
+      "at": "2026-06-18T00:25:13.546Z"
     },
     {
-      "url": "https://invest-spain-property.com/areas/benalmadena-property-investment",
+      "url": "https://greek-invest.com/guides/border-zones-greece-foreign-buyers",
       "channel": "google",
-      "at": "2026-06-15T00:05:58.109Z"
+      "at": "2026-06-18T00:25:13.546Z"
     },
     {
-      "url": "https://invest-spain-property.com/areas/estepona-property-investment",
+      "url": "https://greek-invest.com/guides/greece-property-engineer-certificate",
       "channel": "google",
-      "at": "2026-06-15T00:05:58.109Z"
+      "at": "2026-06-18T00:25:13.546Z"
     },
     {
-      "url": "https://invest-spain-property.com/areas/fuengirola-property-investment",
+      "url": "https://greek-invest.com/guides/greece-property-notary-process",
       "channel": "google",
-      "at": "2026-06-15T00:05:58.109Z"
+      "at": "2026-06-18T00:25:13.546Z"
     },
     {
-      "url": "https://invest-spain-property.com/areas/marbella-property-investment",
+      "url": "https://greek-invest.com/guides/greece-property-scams-avoid",
       "channel": "google",
-      "at": "2026-06-15T00:05:58.109Z"
+      "at": "2026-06-18T00:25:13.546Z"
     },
     {
-      "url": "https://invest-spain-property.com/areas/mijas-property-investment",
+      "url": "https://greek-invest.com/guides/non-resident-mortgage-greece",
       "channel": "google",
-      "at": "2026-06-15T00:05:58.109Z"
+      "at": "2026-06-18T00:47:13.696Z"
     },
     {
-      "url": "https://invest-spain-property.com/guides/airbnb-investment-spain-guide",
+      "url": "https://greek-invest.com/guides/off-plan-vs-resale-greece",
       "channel": "google",
-      "at": "2026-06-15T00:05:58.109Z"
+      "at": "2026-06-18T00:47:13.696Z"
     },
     {
-      "url": "https://invest-spain-property.com/guides/bank-guarantee-off-plan-spain",
+      "url": "https://greek-invest.com/guides/resale-property-greece-checklist-foreigner",
       "channel": "google",
-      "at": "2026-06-15T00:05:58.109Z"
+      "at": "2026-06-18T00:47:13.696Z"
     },
     {
-      "url": "https://invest-spain-property.com/guides/brexit-uk-buyers-spain-property",
+      "url": "https://greek-invest.com/guides/snagging-inspection-greece-new-build",
       "channel": "google",
-      "at": "2026-06-15T00:05:58.109Z"
+      "at": "2026-06-18T00:47:13.696Z"
     },
     {
-      "url": "https://invest-spain-property.com/guides/buy-property-spain-foreigner",
+      "url": "https://greek-invest.com/guides/off-plan-property-greece-guide",
       "channel": "google",
-      "at": "2026-06-15T00:05:58.109Z"
+      "at": "2026-06-18T00:47:13.696Z"
     },
     {
-      "url": "https://invest-spain-property.com/guides/can-foreigners-buy-property-spain",
+      "url": "https://greek-invest.com/guides/greece-property-transfer-tax-fma",
       "channel": "google",
-      "at": "2026-06-15T00:05:58.109Z"
+      "at": "2026-06-18T00:47:13.696Z"
     },
     {
-      "url": "https://invest-spain-property.com/guides/community-fees-spain-explained",
+      "url": "https://greek-invest.com/guides/greece-objective-value-property-tax",
       "channel": "google",
-      "at": "2026-06-15T00:05:58.109Z"
+      "at": "2026-06-18T00:47:13.696Z"
     },
     {
-      "url": "https://invest-spain-property.com/guides/cost-of-buying-property-spain",
+      "url": "https://greek-invest.com/guides/enfia-property-tax-greece",
       "channel": "google",
-      "at": "2026-06-15T00:05:58.109Z"
+      "at": "2026-06-18T00:47:13.696Z"
     },
     {
-      "url": "https://invest-spain-property.com/guides/costa-del-sol-property-investment-guide",
+      "url": "https://greek-invest.com/guides/greece-rental-income-tax-non-resident",
       "channel": "google",
-      "at": "2026-06-15T00:05:58.109Z"
+      "at": "2026-06-18T00:47:13.696Z"
     },
     {
-      "url": "https://invest-spain-property.com/guides/developer-delay-risks-spain",
+      "url": "https://greek-invest.com/guides/greece-capital-gains-tax-property",
       "channel": "google",
-      "at": "2026-06-15T00:05:58.109Z"
+      "at": "2026-06-18T00:47:13.696Z"
     },
     {
-      "url": "https://invest-spain-property.com/guides/due-diligence-spain-property",
+      "url": "https://greek-invest.com/guides/hidden-costs-buying-property-greece",
       "channel": "google",
-      "at": "2026-06-15T00:05:58.109Z"
+      "at": "2026-06-18T00:47:13.696Z"
     },
     {
-      "url": "https://invest-spain-property.com/guides/eu-citizens-buying-property-spain",
+      "url": "https://greek-invest.com/guides/greece-new-build-vat-suspension-2026",
       "channel": "google",
-      "at": "2026-06-15T00:05:58.109Z"
+      "at": "2026-06-18T00:47:13.696Z"
     },
     {
-      "url": "https://invest-spain-property.com/guides/german-tax-spain-holiday-home",
+      "url": "https://greek-invest.com/guides/gross-vs-net-yield-greece",
       "channel": "google",
-      "at": "2026-06-15T00:05:58.109Z"
+      "at": "2026-06-18T00:47:13.696Z"
     },
     {
-      "url": "https://invest-spain-property.com/guides/gross-vs-net-yield-spain",
+      "url": "https://greek-invest.com/guides/highest-rental-yield-areas-greece",
       "channel": "google",
-      "at": "2026-06-15T00:05:58.109Z"
+      "at": "2026-06-18T00:47:13.696Z"
     },
     {
-      "url": "https://invest-spain-property.com/guides/hidden-costs-buying-property-spain",
+      "url": "https://greek-invest.com/guides/short-term-rental-greece-rules",
       "channel": "google",
-      "at": "2026-06-15T00:05:58.109Z"
+      "at": "2026-06-18T00:47:13.696Z"
     },
     {
-      "url": "https://invest-spain-property.com/guides/highest-rental-yield-areas-spain",
+      "url": "https://greek-invest.com/guides/athens-short-term-rental-moratorium-2026",
       "channel": "google",
-      "at": "2026-06-15T00:05:58.109Z"
+      "at": "2026-06-18T00:47:13.696Z"
     },
     {
-      "url": "https://invest-spain-property.com/guides/how-to-buy-property-spain-step-by-step",
+      "url": "https://greek-invest.com/guides/buy-to-let-greece-guide",
       "channel": "google",
-      "at": "2026-06-15T00:05:58.109Z"
+      "at": "2026-06-18T00:47:13.696Z"
     },
     {
-      "url": "https://invest-spain-property.com/guides/how-to-buy-spain-property-remotely",
+      "url": "https://greek-invest.com/guides/golden-visa-eligible-projects-directory",
       "channel": "google",
-      "at": "2026-06-15T00:05:58.109Z"
+      "at": "2026-06-18T01:14:00.591Z"
     },
     {
-      "url": "https://invest-spain-property.com/guides/how-to-calculate-rental-yield-spain",
+      "url": "https://greek-invest.com/tools/greece-golden-visa-zone-lookup",
       "channel": "google",
-      "at": "2026-06-15T00:05:58.109Z"
+      "at": "2026-06-18T01:14:00.591Z"
     },
     {
-      "url": "https://invest-spain-property.com/guides/ibi-property-tax-spain",
+      "url": "https://greek-invest.com/tier-golden-visa-400k",
       "channel": "google",
-      "at": "2026-06-15T00:05:58.109Z"
+      "at": "2026-06-18T01:14:00.591Z"
     },
     {
-      "url": "https://invest-spain-property.com/guides/long-term-vs-holiday-rental-spain",
+      "url": "https://greek-invest.com/guides/athens-property-investment-guide",
       "channel": "google",
-      "at": "2026-06-15T00:05:58.109Z"
+      "at": "2026-06-18T01:25:21.832Z"
     },
     {
-      "url": "https://invest-spain-property.com/guides/new-build-developments-spain-2026",
+      "url": "https://greek-invest.com/guides/ellinikon-athens-property-investment",
       "channel": "google",
-      "at": "2026-06-15T00:05:58.109Z"
+      "at": "2026-06-18T01:25:21.832Z"
     },
     {
-      "url": "https://invest-spain-property.com/guides/nie-number-spain-property",
+      "url": "https://greek-invest.com/guides/crete-property-investment-guide",
       "channel": "google",
-      "at": "2026-06-15T00:05:58.109Z"
+      "at": "2026-06-18T01:25:21.832Z"
     },
     {
-      "url": "https://invest-spain-property.com/guides/non-lucrative-visa-spain-property-owners",
+      "url": "https://greek-invest.com/guides/thessaloniki-property-investment-guide",
       "channel": "google",
-      "at": "2026-06-15T00:05:58.109Z"
+      "at": "2026-06-18T01:25:21.832Z"
     },
     {
-      "url": "https://invest-spain-property.com/guides/non-resident-mortgage-spain",
+      "url": "https://greek-invest.com/guides/cyclades-property-investment-guide",
       "channel": "google",
-      "at": "2026-06-15T00:05:58.109Z"
+      "at": "2026-06-18T01:25:21.832Z"
     },
     {
-      "url": "https://invest-spain-property.com/guides/notary-costs-spain-property-purchase",
+      "url": "https://greek-invest.com/guides/peloponnese-property-investment-guide",
       "channel": "google",
-      "at": "2026-06-15T00:05:58.109Z"
+      "at": "2026-06-18T01:25:21.832Z"
     },
     {
-      "url": "https://invest-spain-property.com/guides/off-plan-property-spain-guide",
+      "url": "https://greek-invest.com/guides/halkidiki-property-investment-guide",
       "channel": "google",
-      "at": "2026-06-15T00:05:58.109Z"
+      "at": "2026-06-18T01:25:21.832Z"
     },
     {
-      "url": "https://invest-spain-property.com/guides/off-plan-vs-resale-spain",
+      "url": "https://greek-invest.com/guides/best-regions-invest-greece-property-2026",
       "channel": "google",
-      "at": "2026-06-15T00:05:58.109Z"
+      "at": "2026-06-18T01:25:21.832Z"
     },
     {
-      "url": "https://invest-spain-property.com/guides/power-of-attorney-property-spain",
+      "url": "https://greek-invest.com/areas/glyfada-property-investment",
       "channel": "google",
-      "at": "2026-06-15T00:05:58.109Z"
+      "at": "2026-06-18T01:25:21.832Z"
     },
     {
-      "url": "https://invest-spain-property.com/guides/property-management-spain-cost",
+      "url": "https://greek-invest.com/areas/voula-property-investment",
       "channel": "google",
-      "at": "2026-06-15T00:05:58.109Z"
+      "at": "2026-06-18T01:25:21.832Z"
     },
     {
-      "url": "https://invest-spain-property.com/guides/short-term-rental-spain-licence",
+      "url": "https://greek-invest.com/areas/piraeus-property-investment",
       "channel": "google",
-      "at": "2026-06-15T00:05:58.109Z"
+      "at": "2026-06-18T01:25:21.832Z"
     },
     {
-      "url": "https://invest-spain-property.com/guides/snagging-inspection-spain-new-build",
+      "url": "https://greek-invest.com/areas/kallithea-property-investment",
       "channel": "google",
-      "at": "2026-06-15T00:05:58.109Z"
+      "at": "2026-06-18T01:25:21.832Z"
     },
     {
-      "url": "https://invest-spain-property.com/guides/spain-capital-gains-tax-property",
+      "url": "https://greek-invest.com/areas/chania-property-investment",
       "channel": "google",
-      "at": "2026-06-15T00:05:58.109Z"
+      "at": "2026-06-18T01:25:21.832Z"
     },
     {
-      "url": "https://invest-spain-property.com/guides/spain-digital-nomad-visa-property",
+      "url": "https://greek-invest.com/areas/heraklion-property-investment",
       "channel": "google",
-      "at": "2026-06-15T00:05:58.109Z"
+      "at": "2026-06-18T01:25:21.832Z"
     },
     {
-      "url": "https://invest-spain-property.com/guides/spain-golden-visa-ended-2025",
+      "url": "https://greek-invest.com/areas/elounda-property-investment",
       "channel": "google",
-      "at": "2026-06-15T00:05:58.109Z"
+      "at": "2026-06-18T01:25:21.832Z"
     },
     {
-      "url": "https://invest-spain-property.com/guides/spain-non-resident-income-tax-rental",
+      "url": "https://greek-invest.com/areas/mykonos-property-investment",
       "channel": "google",
-      "at": "2026-06-15T00:05:58.109Z"
+      "at": "2026-06-18T01:25:21.832Z"
     },
     {
-      "url": "https://invest-spain-property.com/guides/spain-plusvalia-tax-explained",
+      "url": "https://greek-invest.com/areas/santorini-property-investment",
       "channel": "google",
-      "at": "2026-06-15T00:05:58.109Z"
+      "at": "2026-06-18T01:25:21.832Z"
     },
     {
-      "url": "https://invest-spain-property.com/guides/spain-property-investment-guide",
+      "url": "https://greek-invest.com/areas/kalamata-property-investment",
       "channel": "google",
-      "at": "2026-06-15T00:05:58.109Z"
+      "at": "2026-06-18T01:25:21.832Z"
     },
     {
-      "url": "https://invest-spain-property.com/guides/spain-property-scams-avoid",
+      "url": "https://greek-invest.com/areas/costa-navarino-property-investment",
       "channel": "google",
-      "at": "2026-06-15T00:05:58.109Z"
+      "at": "2026-06-18T01:25:21.832Z"
     },
     {
-      "url": "https://invest-spain-property.com/guides/spain-property-transfer-tax-itp-iva",
+      "url": "https://greek-invest.com/areas/rhodes-property-investment",
       "channel": "google",
-      "at": "2026-06-15T00:05:58.109Z"
+      "at": "2026-06-18T01:25:21.832Z"
     },
     {
-      "url": "https://invest-spain-property.com/guides/spain-rental-yield-guide",
+      "url": "https://greek-invest.com/compare/crete-vs-cyclades-property-investment",
       "channel": "google",
-      "at": "2026-06-15T00:05:58.109Z"
+      "at": "2026-06-18T01:25:21.832Z"
     },
     {
-      "url": "https://invest-spain-property.com/guides/spain-residency-without-golden-visa",
+      "url": "https://greek-invest.com/compare/athens-riviera-vs-athens-center-investment",
       "channel": "google",
-      "at": "2026-06-15T00:05:58.109Z"
+      "at": "2026-06-18T01:25:21.832Z"
     },
     {
-      "url": "https://invest-spain-property.com/guides/tourist-licence-alicante-malaga",
+      "url": "https://greek-invest.com/invest-athens-property",
       "channel": "google",
-      "at": "2026-06-15T00:05:58.109Z"
+      "at": "2026-06-18T01:25:21.832Z"
     },
     {
-      "url": "https://invest-spain-property.com/guides/uk-tax-spain-rental-property",
+      "url": "https://greek-invest.com/invest-crete-property",
       "channel": "google",
-      "at": "2026-06-15T00:05:58.109Z"
+      "at": "2026-06-18T01:25:21.832Z"
     },
     {
-      "url": "https://invest-spain-property.com/guides/urban-planning-certificate-spain",
+      "url": "https://greek-invest.com/developers/solena-greece",
       "channel": "google",
-      "at": "2026-06-15T00:05:58.109Z"
+      "at": "2026-06-18T01:31:51.874Z"
     },
     {
-      "url": "https://invest-spain-property.com/guides/airbnb-investment-spain-guide",
+      "url": "https://greek-invest.com/developers/adonis-group",
       "channel": "google",
-      "at": "2026-06-15T00:11:38.139Z"
+      "at": "2026-06-18T01:31:51.874Z"
     },
     {
-      "url": "https://invest-spain-property.com/guides/bank-guarantee-off-plan-spain",
+      "url": "https://greek-invest.com/developers/secland-development",
       "channel": "google",
-      "at": "2026-06-15T00:11:38.139Z"
+      "at": "2026-06-18T01:31:51.874Z"
     },
     {
-      "url": "https://invest-spain-property.com/guides/brexit-uk-buyers-spain-property",
+      "url": "https://greek-invest.com/developers/greca-developments",
       "channel": "google",
-      "at": "2026-06-15T00:11:38.139Z"
+      "at": "2026-06-18T01:31:51.874Z"
     },
     {
-      "url": "https://invest-spain-property.com/guides/buy-property-spain-foreigner",
+      "url": "https://greek-invest.com/projects/lotus-voula",
       "channel": "google",
-      "at": "2026-06-15T00:11:38.139Z"
+      "at": "2026-06-18T01:31:51.874Z"
     },
     {
-      "url": "https://invest-spain-property.com/guides/can-foreigners-buy-property-spain",
+      "url": "https://greek-invest.com/projects/ela-suites-kastella",
       "channel": "google",
-      "at": "2026-06-15T00:11:38.139Z"
+      "at": "2026-06-18T01:31:51.874Z"
     },
     {
-      "url": "https://invest-spain-property.com/guides/community-fees-spain-explained",
+      "url": "https://greek-invest.com/projects/the-grandline",
       "channel": "google",
-      "at": "2026-06-15T00:11:38.139Z"
+      "at": "2026-06-18T01:31:51.874Z"
     },
     {
-      "url": "https://invest-spain-property.com/guides/cost-of-buying-property-spain",
+      "url": "https://greek-invest.com/guides/israeli-buyers-greece-property",
       "channel": "google",
-      "at": "2026-06-15T00:11:38.139Z"
+      "at": "2026-06-18T01:31:51.874Z"
     },
     {
-      "url": "https://invest-spain-property.com/guides/costa-del-sol-property-investment-guide",
+      "url": "https://greek-invest.com/guides/turkish-buyers-greece-property",
       "channel": "google",
-      "at": "2026-06-15T00:11:38.139Z"
+      "at": "2026-06-18T01:31:51.874Z"
     },
     {
-      "url": "https://invest-spain-property.com/guides/developer-delay-risks-spain",
+      "url": "https://greek-invest.com/guides/brexit-uk-buyers-greece-property",
       "channel": "google",
-      "at": "2026-06-15T00:11:38.139Z"
+      "at": "2026-06-18T01:31:51.874Z"
     },
     {
-      "url": "https://invest-spain-property.com/guides/due-diligence-spain-property",
+      "url": "https://greek-invest.com/news/greece-golden-visa-approvals-2025",
       "channel": "google",
-      "at": "2026-06-15T00:11:38.139Z"
+      "at": "2026-06-18T01:31:51.874Z"
     },
     {
-      "url": "https://invest-spain-property.com/guides/eu-citizens-buying-property-spain",
+      "url": "https://greek-invest.com/greece-property-consultation",
       "channel": "google",
-      "at": "2026-06-15T00:11:38.139Z"
+      "at": "2026-06-18T01:31:51.874Z"
     },
     {
-      "url": "https://invest-spain-property.com/guides/german-tax-spain-holiday-home",
+      "url": "https://greek-invest.com/guides/greek-property-glossary-foreign-buyers",
       "channel": "google",
-      "at": "2026-06-15T00:11:38.139Z"
+      "at": "2026-06-18T01:37:43.056Z"
     },
     {
-      "url": "https://invest-spain-property.com/guides/gross-vs-net-yield-spain",
+      "url": "https://greek-invest.com/compare/greece-vs-italy-vs-spain-property-investment",
       "channel": "google",
-      "at": "2026-06-15T00:11:38.139Z"
+      "at": "2026-06-18T01:37:43.056Z"
     },
     {
-      "url": "https://invest-spain-property.com/guides/hidden-costs-buying-property-spain",
+      "url": "https://greek-invest.com/compare/greece-vs-cape-town-property-investment",
       "channel": "google",
-      "at": "2026-06-15T00:11:38.139Z"
+      "at": "2026-06-18T01:37:43.056Z"
     },
     {
-      "url": "https://invest-spain-property.com/guides/highest-rental-yield-areas-spain",
+      "url": "https://greek-invest.com/tools/greece-property-cost-calculator",
       "channel": "google",
-      "at": "2026-06-15T00:11:38.139Z"
+      "at": "2026-06-18T01:37:43.056Z"
     },
     {
-      "url": "https://invest-spain-property.com/guides/how-to-buy-property-spain-step-by-step",
+      "url": "https://greek-invest.com/tools/greece-rental-yield-calculator",
       "channel": "google",
-      "at": "2026-06-15T00:11:38.139Z"
+      "at": "2026-06-18T01:37:43.056Z"
     },
     {
-      "url": "https://invest-spain-property.com/guides/how-to-buy-spain-property-remotely",
+      "url": "https://greek-invest.com/greece-golden-visa-consultation",
       "channel": "google",
-      "at": "2026-06-15T00:11:38.139Z"
-    },
-    {
-      "url": "https://invest-spain-property.com/guides/how-to-calculate-rental-yield-spain",
-      "channel": "google",
-      "at": "2026-06-15T00:11:38.139Z"
-    },
-    {
-      "url": "https://invest-spain-property.com/guides/ibi-property-tax-spain",
-      "channel": "google",
-      "at": "2026-06-15T00:11:38.139Z"
-    },
-    {
-      "url": "https://invest-spain-property.com/guides/long-term-vs-holiday-rental-spain",
-      "channel": "google",
-      "at": "2026-06-15T00:11:38.139Z"
-    },
-    {
-      "url": "https://invest-spain-property.com/guides/new-build-developments-spain-2026",
-      "channel": "google",
-      "at": "2026-06-15T00:11:38.139Z"
-    },
-    {
-      "url": "https://invest-spain-property.com/guides/nie-number-spain-property",
-      "channel": "google",
-      "at": "2026-06-15T00:11:38.139Z"
-    },
-    {
-      "url": "https://invest-spain-property.com/guides/non-lucrative-visa-spain-property-owners",
-      "channel": "google",
-      "at": "2026-06-15T00:11:38.139Z"
-    },
-    {
-      "url": "https://invest-spain-property.com/guides/non-resident-mortgage-spain",
-      "channel": "google",
-      "at": "2026-06-15T00:11:38.139Z"
-    },
-    {
-      "url": "https://invest-spain-property.com/guides/notary-costs-spain-property-purchase",
-      "channel": "google",
-      "at": "2026-06-15T00:11:38.139Z"
-    },
-    {
-      "url": "https://invest-spain-property.com/guides/off-plan-property-spain-guide",
-      "channel": "google",
-      "at": "2026-06-15T00:11:38.139Z"
-    },
-    {
-      "url": "https://invest-spain-property.com/guides/off-plan-vs-resale-spain",
-      "channel": "google",
-      "at": "2026-06-15T00:11:38.139Z"
-    },
-    {
-      "url": "https://invest-spain-property.com/guides/power-of-attorney-property-spain",
-      "channel": "google",
-      "at": "2026-06-15T00:11:38.139Z"
-    },
-    {
-      "url": "https://invest-spain-property.com/guides/property-management-spain-cost",
-      "channel": "google",
-      "at": "2026-06-15T00:11:38.139Z"
-    },
-    {
-      "url": "https://invest-spain-property.com/guides/short-term-rental-spain-licence",
-      "channel": "google",
-      "at": "2026-06-15T00:11:38.139Z"
-    },
-    {
-      "url": "https://invest-spain-property.com/guides/snagging-inspection-spain-new-build",
-      "channel": "google",
-      "at": "2026-06-15T00:11:38.139Z"
-    },
-    {
-      "url": "https://invest-spain-property.com/guides/spain-capital-gains-tax-property",
-      "channel": "google",
-      "at": "2026-06-15T00:11:38.139Z"
-    },
-    {
-      "url": "https://invest-spain-property.com/guides/spain-digital-nomad-visa-property",
-      "channel": "google",
-      "at": "2026-06-15T00:11:38.139Z"
-    },
-    {
-      "url": "https://invest-spain-property.com/guides/spain-golden-visa-ended-2025",
-      "channel": "google",
-      "at": "2026-06-15T00:11:38.139Z"
-    },
-    {
-      "url": "https://invest-spain-property.com/guides/spain-non-resident-income-tax-rental",
-      "channel": "google",
-      "at": "2026-06-15T00:11:38.139Z"
-    },
-    {
-      "url": "https://invest-spain-property.com/guides/spain-plusvalia-tax-explained",
-      "channel": "google",
-      "at": "2026-06-15T00:11:38.139Z"
-    },
-    {
-      "url": "https://invest-spain-property.com/guides/spain-property-investment-guide",
-      "channel": "google",
-      "at": "2026-06-15T00:11:38.139Z"
-    },
-    {
-      "url": "https://invest-spain-property.com/guides/spain-property-scams-avoid",
-      "channel": "google",
-      "at": "2026-06-15T00:11:38.139Z"
-    },
-    {
-      "url": "https://invest-spain-property.com/guides/spain-property-transfer-tax-itp-iva",
-      "channel": "google",
-      "at": "2026-06-15T00:11:38.139Z"
-    },
-    {
-      "url": "https://invest-spain-property.com/guides/spain-rental-yield-guide",
-      "channel": "google",
-      "at": "2026-06-15T00:11:38.139Z"
-    },
-    {
-      "url": "https://invest-spain-property.com/guides/spain-residency-without-golden-visa",
-      "channel": "google",
-      "at": "2026-06-15T00:11:38.139Z"
-    },
-    {
-      "url": "https://invest-spain-property.com/guides/tourist-licence-alicante-malaga",
-      "channel": "google",
-      "at": "2026-06-15T00:11:38.139Z"
-    },
-    {
-      "url": "https://invest-spain-property.com/guides/uk-tax-spain-rental-property",
-      "channel": "google",
-      "at": "2026-06-15T00:11:38.139Z"
-    },
-    {
-      "url": "https://invest-spain-property.com/guides/urban-planning-certificate-spain",
-      "channel": "google",
-      "at": "2026-06-15T00:11:38.139Z"
-    },
-    {
-      "url": "https://invest-spain-property.com/areas/benalmadena-property-investment",
-      "channel": "google",
-      "at": "2026-06-15T00:11:38.139Z"
-    },
-    {
-      "url": "https://invest-spain-property.com/areas/estepona-property-investment",
-      "channel": "google",
-      "at": "2026-06-15T00:11:38.139Z"
-    },
-    {
-      "url": "https://invest-spain-property.com/areas/fuengirola-property-investment",
-      "channel": "google",
-      "at": "2026-06-15T00:11:38.139Z"
-    },
-    {
-      "url": "https://invest-spain-property.com/areas/marbella-property-investment",
-      "channel": "google",
-      "at": "2026-06-15T00:11:38.139Z"
-    },
-    {
-      "url": "https://invest-spain-property.com/areas/mijas-property-investment",
-      "channel": "google",
-      "at": "2026-06-15T00:11:38.139Z"
-    },
-    {
-      "url": "https://invest-spain-property.com/projects/beach-apartments-sea-views-spain-benidorm-costa-blanca-north-tm-tower-by-tm",
-      "channel": "google",
-      "at": "2026-06-15T00:11:38.139Z"
-    },
-    {
-      "url": "https://invest-spain-property.com/projects/insur-scala",
-      "channel": "google",
-      "at": "2026-06-15T00:11:38.139Z"
-    },
-    {
-      "url": "https://invest-spain-property.com/projects/kosmos",
-      "channel": "google",
-      "at": "2026-06-15T00:11:38.139Z"
-    },
-    {
-      "url": "https://invest-spain-property.com/projects/obra-nueva-mijas-balance",
-      "channel": "google",
-      "at": "2026-06-15T00:11:38.139Z"
-    },
-    {
-      "url": "https://invest-spain-property.com/projects/sea-views-apartments-alicante-calpe-beach-la-fossa-azure-icons-by-tm",
-      "channel": "google",
-      "at": "2026-06-15T00:11:38.139Z"
-    },
-    {
-      "url": "https://invest-spain-property.com/projects/the-kove",
-      "channel": "google",
-      "at": "2026-06-15T00:11:38.139Z"
-    },
-    {
-      "url": "https://invest-spain-property.com/guides/spain-property-investment-guide",
-      "channel": "google",
-      "at": "2026-06-15T00:15:58.228Z"
-    },
-    {
-      "url": "https://invest-spain-property.com/guides/off-plan-property-spain-guide",
-      "channel": "google",
-      "at": "2026-06-15T00:15:58.228Z"
-    },
-    {
-      "url": "https://invest-spain-property.com/guides/due-diligence-spain-property",
-      "channel": "google",
-      "at": "2026-06-15T00:15:58.228Z"
-    },
-    {
-      "url": "https://invest-spain-property.com/guides/spain-rental-yield-guide",
-      "channel": "google",
-      "at": "2026-06-15T00:15:58.228Z"
-    },
-    {
-      "url": "https://invest-spain-property.com/guides/costa-del-sol-property-investment-guide",
-      "channel": "google",
-      "at": "2026-06-15T00:15:58.228Z"
-    },
-    {
-      "url": "https://invest-spain-property.com/terms",
-      "channel": "google",
-      "at": "2026-06-15T11:01:37.750Z"
-    },
-    {
-      "url": "https://invest-spain-property.com/areas/benalmadena-property-investment",
-      "channel": "google",
-      "at": "2026-06-15T11:03:37.599Z"
-    },
-    {
-      "url": "https://invest-spain-property.com/areas/estepona-property-investment",
-      "channel": "google",
-      "at": "2026-06-15T11:03:37.599Z"
-    },
-    {
-      "url": "https://invest-spain-property.com/areas/fuengirola-property-investment",
-      "channel": "google",
-      "at": "2026-06-15T11:03:37.599Z"
-    },
-    {
-      "url": "https://invest-spain-property.com/areas/marbella-property-investment",
-      "channel": "google",
-      "at": "2026-06-15T11:03:37.599Z"
-    },
-    {
-      "url": "https://invest-spain-property.com/areas/mijas-property-investment",
-      "channel": "google",
-      "at": "2026-06-15T11:03:37.599Z"
-    },
-    {
-      "url": "https://invest-spain-property.com/guides/airbnb-investment-spain-guide",
-      "channel": "google",
-      "at": "2026-06-15T11:03:37.599Z"
-    },
-    {
-      "url": "https://invest-spain-property.com/guides/bank-guarantee-off-plan-spain",
-      "channel": "google",
-      "at": "2026-06-15T11:03:37.599Z"
-    },
-    {
-      "url": "https://invest-spain-property.com/guides/brexit-uk-buyers-spain-property",
-      "channel": "google",
-      "at": "2026-06-15T11:03:37.599Z"
-    },
-    {
-      "url": "https://invest-spain-property.com/guides/buy-property-spain-foreigner",
-      "channel": "google",
-      "at": "2026-06-15T11:03:37.599Z"
-    },
-    {
-      "url": "https://invest-spain-property.com/guides/can-foreigners-buy-property-spain",
-      "channel": "google",
-      "at": "2026-06-15T11:03:37.599Z"
-    },
-    {
-      "url": "https://invest-spain-property.com/guides/community-fees-spain-explained",
-      "channel": "google",
-      "at": "2026-06-15T11:03:37.599Z"
-    },
-    {
-      "url": "https://invest-spain-property.com/guides/cost-of-buying-property-spain",
-      "channel": "google",
-      "at": "2026-06-15T11:03:37.599Z"
-    },
-    {
-      "url": "https://invest-spain-property.com/guides/costa-del-sol-property-investment-guide",
-      "channel": "google",
-      "at": "2026-06-15T11:03:37.599Z"
-    },
-    {
-      "url": "https://invest-spain-property.com/guides/developer-delay-risks-spain",
-      "channel": "google",
-      "at": "2026-06-15T11:03:37.599Z"
-    },
-    {
-      "url": "https://invest-spain-property.com/guides/due-diligence-spain-property",
-      "channel": "google",
-      "at": "2026-06-15T11:03:37.599Z"
-    },
-    {
-      "url": "https://invest-spain-property.com/guides/eu-citizens-buying-property-spain",
-      "channel": "google",
-      "at": "2026-06-15T11:03:37.599Z"
-    },
-    {
-      "url": "https://invest-spain-property.com/guides/german-tax-spain-holiday-home",
-      "channel": "google",
-      "at": "2026-06-15T11:03:37.599Z"
-    },
-    {
-      "url": "https://invest-spain-property.com/guides/gross-vs-net-yield-spain",
-      "channel": "google",
-      "at": "2026-06-15T11:03:37.599Z"
-    },
-    {
-      "url": "https://invest-spain-property.com/guides/hidden-costs-buying-property-spain",
-      "channel": "google",
-      "at": "2026-06-15T11:03:37.599Z"
-    },
-    {
-      "url": "https://invest-spain-property.com/guides/highest-rental-yield-areas-spain",
-      "channel": "google",
-      "at": "2026-06-15T11:03:37.599Z"
-    },
-    {
-      "url": "https://invest-spain-property.com/guides/how-to-buy-property-spain-step-by-step",
-      "channel": "google",
-      "at": "2026-06-15T11:03:37.599Z"
-    },
-    {
-      "url": "https://invest-spain-property.com/guides/how-to-buy-spain-property-remotely",
-      "channel": "google",
-      "at": "2026-06-15T11:03:37.599Z"
-    },
-    {
-      "url": "https://invest-spain-property.com/guides/how-to-calculate-rental-yield-spain",
-      "channel": "google",
-      "at": "2026-06-15T11:03:37.599Z"
-    },
-    {
-      "url": "https://invest-spain-property.com/guides/ibi-property-tax-spain",
-      "channel": "google",
-      "at": "2026-06-15T11:03:37.599Z"
-    },
-    {
-      "url": "https://invest-spain-property.com/guides/long-term-vs-holiday-rental-spain",
-      "channel": "google",
-      "at": "2026-06-15T11:03:37.599Z"
-    },
-    {
-      "url": "https://invest-spain-property.com/guides/new-build-developments-spain-2026",
-      "channel": "google",
-      "at": "2026-06-15T11:03:37.599Z"
-    },
-    {
-      "url": "https://invest-spain-property.com/guides/nie-number-spain-property",
-      "channel": "google",
-      "at": "2026-06-15T11:03:37.599Z"
-    },
-    {
-      "url": "https://invest-spain-property.com/guides/non-lucrative-visa-spain-property-owners",
-      "channel": "google",
-      "at": "2026-06-15T11:03:37.599Z"
-    },
-    {
-      "url": "https://invest-spain-property.com/guides/non-resident-mortgage-spain",
-      "channel": "google",
-      "at": "2026-06-15T11:03:37.599Z"
-    },
-    {
-      "url": "https://invest-spain-property.com/guides/notary-costs-spain-property-purchase",
-      "channel": "google",
-      "at": "2026-06-15T11:03:37.599Z"
-    },
-    {
-      "url": "https://invest-spain-property.com/guides/off-plan-property-spain-guide",
-      "channel": "google",
-      "at": "2026-06-15T11:03:37.599Z"
-    },
-    {
-      "url": "https://invest-spain-property.com/guides/off-plan-vs-resale-spain",
-      "channel": "google",
-      "at": "2026-06-15T11:03:37.599Z"
-    },
-    {
-      "url": "https://invest-spain-property.com/guides/power-of-attorney-property-spain",
-      "channel": "google",
-      "at": "2026-06-15T11:03:37.599Z"
-    },
-    {
-      "url": "https://invest-spain-property.com/guides/property-management-spain-cost",
-      "channel": "google",
-      "at": "2026-06-15T11:03:37.599Z"
-    },
-    {
-      "url": "https://invest-spain-property.com/guides/short-term-rental-spain-licence",
-      "channel": "google",
-      "at": "2026-06-15T11:03:37.599Z"
-    },
-    {
-      "url": "https://invest-spain-property.com/guides/snagging-inspection-spain-new-build",
-      "channel": "google",
-      "at": "2026-06-15T11:03:37.599Z"
-    },
-    {
-      "url": "https://invest-spain-property.com/guides/spain-capital-gains-tax-property",
-      "channel": "google",
-      "at": "2026-06-15T11:03:37.599Z"
-    },
-    {
-      "url": "https://invest-spain-property.com/guides/spain-digital-nomad-visa-property",
-      "channel": "google",
-      "at": "2026-06-15T11:03:37.599Z"
-    },
-    {
-      "url": "https://invest-spain-property.com/guides/spain-golden-visa-ended-2025",
-      "channel": "google",
-      "at": "2026-06-15T11:03:37.599Z"
-    },
-    {
-      "url": "https://invest-spain-property.com/guides/spain-non-resident-income-tax-rental",
-      "channel": "google",
-      "at": "2026-06-15T11:03:37.599Z"
-    },
-    {
-      "url": "https://invest-spain-property.com/guides/spain-plusvalia-tax-explained",
-      "channel": "google",
-      "at": "2026-06-15T11:03:37.599Z"
-    },
-    {
-      "url": "https://invest-spain-property.com/guides/spain-property-investment-guide",
-      "channel": "google",
-      "at": "2026-06-15T11:03:37.599Z"
-    },
-    {
-      "url": "https://invest-spain-property.com/guides/spain-property-scams-avoid",
-      "channel": "google",
-      "at": "2026-06-15T11:03:37.599Z"
-    },
-    {
-      "url": "https://invest-spain-property.com/guides/spain-property-transfer-tax-itp-iva",
-      "channel": "google",
-      "at": "2026-06-15T11:03:37.599Z"
-    },
-    {
-      "url": "https://invest-spain-property.com/guides/spain-rental-yield-guide",
-      "channel": "google",
-      "at": "2026-06-15T11:03:37.599Z"
-    },
-    {
-      "url": "https://invest-spain-property.com/guides/spain-residency-without-golden-visa",
-      "channel": "google",
-      "at": "2026-06-15T11:03:37.599Z"
-    },
-    {
-      "url": "https://invest-spain-property.com/guides/tourist-licence-alicante-malaga",
-      "channel": "google",
-      "at": "2026-06-15T11:03:37.599Z"
-    },
-    {
-      "url": "https://invest-spain-property.com/guides/uk-tax-spain-rental-property",
-      "channel": "google",
-      "at": "2026-06-15T11:03:37.599Z"
-    },
-    {
-      "url": "https://invest-spain-property.com/guides/urban-planning-certificate-spain",
-      "channel": "google",
-      "at": "2026-06-15T11:03:37.599Z"
-    },
-    {
-      "url": "https://invest-spain-property.com/projects/beach-apartments-sea-views-spain-benidorm-costa-blanca-north-tm-tower-by-tm",
-      "channel": "google",
-      "at": "2026-06-15T11:03:37.599Z"
-    },
-    {
-      "url": "https://invest-spain-property.com/projects/insur-scala",
-      "channel": "google",
-      "at": "2026-06-15T11:03:37.599Z"
-    },
-    {
-      "url": "https://invest-spain-property.com/projects/kosmos",
-      "channel": "google",
-      "at": "2026-06-15T11:03:37.599Z"
-    },
-    {
-      "url": "https://invest-spain-property.com/projects/obra-nueva-mijas-balance",
-      "channel": "google",
-      "at": "2026-06-15T11:03:37.599Z"
-    },
-    {
-      "url": "https://invest-spain-property.com/projects/sea-views-apartments-alicante-calpe-beach-la-fossa-azure-icons-by-tm",
-      "channel": "google",
-      "at": "2026-06-15T11:03:37.599Z"
-    },
-    {
-      "url": "https://invest-spain-property.com/projects/the-kove",
-      "channel": "google",
-      "at": "2026-06-15T11:03:37.599Z"
-    },
-    {
-      "url": "https://invest-spain-property.com/guides/balearic-islands-property-investment-guide",
-      "channel": "google",
-      "at": "2026-06-15T23:32:53.578Z"
-    },
-    {
-      "url": "https://invest-spain-property.com/areas/mallorca-property-investment",
-      "channel": "google",
-      "at": "2026-06-15T23:32:53.578Z"
-    },
-    {
-      "url": "https://invest-spain-property.com/areas/ibiza-property-investment",
-      "channel": "google",
-      "at": "2026-06-15T23:32:53.578Z"
-    },
-    {
-      "url": "https://invest-spain-property.com/areas/menorca-property-investment",
-      "channel": "google",
-      "at": "2026-06-15T23:32:53.578Z"
-    },
-    {
-      "url": "https://invest-spain-property.com/areas/palma-de-mallorca-property-investment",
-      "channel": "google",
-      "at": "2026-06-15T23:32:53.578Z"
-    },
-    {
-      "url": "https://invest-spain-property.com/compare/mallorca-vs-marbella-investment",
-      "channel": "google",
-      "at": "2026-06-15T23:32:53.578Z"
-    },
-    {
-      "url": "https://invest-spain-property.com/guides/madrid-property-investment-guide",
-      "channel": "google",
-      "at": "2026-06-15T23:32:53.578Z"
-    },
-    {
-      "url": "https://invest-spain-property.com/compare/costa-blanca-vs-costa-del-sol",
-      "channel": "google",
-      "at": "2026-06-15T23:53:24.832Z"
-    },
-    {
-      "url": "https://invest-spain-property.com/areas/benidorm-property-investment",
-      "channel": "google",
-      "at": "2026-06-15T23:53:24.832Z"
-    },
-    {
-      "url": "https://invest-spain-property.com/guides/costa-blanca-property-investment-guide",
-      "channel": "google",
-      "at": "2026-06-16T00:01:42.523Z"
-    },
-    {
-      "url": "https://invest-spain-property.com/areas/alicante-city-property-investment",
-      "channel": "google",
-      "at": "2026-06-16T00:01:42.523Z"
-    },
-    {
-      "url": "https://invest-spain-property.com/areas/benidorm-property-investment",
-      "channel": "google",
-      "at": "2026-06-16T00:01:42.523Z"
-    },
-    {
-      "url": "https://invest-spain-property.com/areas/torrevieja-property-investment",
-      "channel": "google",
-      "at": "2026-06-16T00:01:42.523Z"
-    },
-    {
-      "url": "https://invest-spain-property.com/areas/orihuela-costa-property-investment",
-      "channel": "google",
-      "at": "2026-06-16T00:01:42.523Z"
-    },
-    {
-      "url": "https://invest-spain-property.com/areas/javea-property-investment",
-      "channel": "google",
-      "at": "2026-06-16T00:01:42.523Z"
-    },
-    {
-      "url": "https://invest-spain-property.com/compare/costa-blanca-vs-costa-del-sol",
-      "channel": "google",
-      "at": "2026-06-16T00:01:42.523Z"
-    },
-    {
-      "url": "https://invest-spain-property.com/guides/barcelona-property-investment-guide",
-      "channel": "google",
-      "at": "2026-06-16T00:20:24.164Z"
-    },
-    {
-      "url": "https://invest-spain-property.com/guides/valencia-property-investment-guide",
-      "channel": "google",
-      "at": "2026-06-16T00:20:24.164Z"
-    },
-    {
-      "url": "https://invest-spain-property.com/areas/eixample-barcelona-property",
-      "channel": "google",
-      "at": "2026-06-16T00:20:24.164Z"
-    },
-    {
-      "url": "https://invest-spain-property.com/areas/madrid-centro-property-investment",
-      "channel": "google",
-      "at": "2026-06-16T00:20:24.164Z"
-    },
-    {
-      "url": "https://invest-spain-property.com/compare/madrid-vs-barcelona-property-investment",
-      "channel": "google",
-      "at": "2026-06-16T00:20:24.164Z"
-    },
-    {
-      "url": "https://invest-spain-property.com/compare/spain-vs-portugal-property-investment",
-      "channel": "google",
-      "at": "2026-06-16T00:20:24.164Z"
-    },
-    {
-      "url": "https://invest-spain-property.com/guides/buy-to-let-spain-guide",
-      "channel": "google",
-      "at": "2026-06-16T00:30:46.066Z"
-    },
-    {
-      "url": "https://invest-spain-property.com/guides/retire-spain-property-guide",
-      "channel": "google",
-      "at": "2026-06-16T00:30:46.066Z"
-    },
-    {
-      "url": "https://invest-spain-property.com/guides/holiday-home-spain-investment",
-      "channel": "google",
-      "at": "2026-06-16T00:30:46.066Z"
-    },
-    {
-      "url": "https://invest-spain-property.com/guides/scandinavian-buyers-spain-property",
-      "channel": "google",
-      "at": "2026-06-16T00:30:46.066Z"
-    },
-    {
-      "url": "https://invest-spain-property.com/news/spain-property-market-q1-2026",
-      "channel": "google",
-      "at": "2026-06-16T00:30:46.066Z"
-    },
-    {
-      "url": "https://invest-spain-property.com/news/foreign-buyers-spain-2025-record",
-      "channel": "google",
-      "at": "2026-06-16T00:30:46.066Z"
-    },
-    {
-      "url": "https://invest-spain-property.com/news/spain-rental-yield-update-2026",
-      "channel": "google",
-      "at": "2026-06-16T00:30:46.066Z"
-    },
-    {
-      "url": "https://invest-spain-property.com/developers/aedas-homes",
-      "channel": "google",
-      "at": "2026-06-16T00:37:28.687Z"
-    },
-    {
-      "url": "https://invest-spain-property.com/developers/neinor-homes",
-      "channel": "google",
-      "at": "2026-06-16T00:41:54.539Z"
-    },
-    {
-      "url": "https://invest-spain-property.com/developers/metrovacesa",
-      "channel": "google",
-      "at": "2026-06-16T00:41:54.539Z"
-    },
-    {
-      "url": "https://invest-spain-property.com/developers/azuaga-developer",
-      "channel": "google",
-      "at": "2026-06-16T00:41:54.539Z"
-    },
-    {
-      "url": "https://invest-spain-property.com/developers/gonzalez-jacobson",
-      "channel": "google",
-      "at": "2026-06-16T00:41:54.539Z"
-    },
-    {
-      "url": "https://invest-spain-property.com/guides/buy-to-let-spain-guide",
-      "channel": "google",
-      "at": "2026-06-16T00:52:17.709Z"
-    },
-    {
-      "url": "https://invest-spain-property.com/guides/retire-spain-property-guide",
-      "channel": "google",
-      "at": "2026-06-16T00:52:17.709Z"
-    },
-    {
-      "url": "https://invest-spain-property.com/guides/holiday-home-spain-investment",
-      "channel": "google",
-      "at": "2026-06-16T00:52:17.709Z"
-    },
-    {
-      "url": "https://invest-spain-property.com/guides/scandinavian-buyers-spain-property",
-      "channel": "google",
-      "at": "2026-06-16T00:52:17.709Z"
-    },
-    {
-      "url": "https://invest-spain-property.com/news/spain-property-market-q1-2026",
-      "channel": "google",
-      "at": "2026-06-16T00:52:17.709Z"
-    },
-    {
-      "url": "https://invest-spain-property.com/developers/aedas-homes",
-      "channel": "google",
-      "at": "2026-06-16T00:52:17.709Z"
-    },
-    {
-      "url": "https://invest-spain-property.com/developers/metrovacesa",
-      "channel": "google",
-      "at": "2026-06-16T00:52:17.709Z"
-    },
-    {
-      "url": "https://invest-spain-property.com/developers/azuaga-developer",
-      "channel": "google",
-      "at": "2026-06-16T00:52:17.709Z"
-    },
-    {
-      "url": "https://invest-spain-property.com/areas/benidorm-property-investment",
-      "channel": "google",
-      "at": "2026-06-16T00:52:17.709Z"
-    },
-    {
-      "url": "https://greek-invest.com",
-      "channel": "google",
-      "at": "2026-06-16T23:53:00.413Z"
-    },
-    {
-      "url": "https://greek-invest.com/guides/singapore-property-investment-guide",
-      "channel": "google",
-      "at": "2026-06-16T23:53:00.413Z"
-    },
-    {
-      "url": "https://greek-invest.com",
-      "channel": "google",
-      "at": "2026-06-17T00:06:41.413Z"
-    },
-    {
-      "url": "https://greek-invest.com/about",
-      "channel": "google",
-      "at": "2026-06-17T00:06:41.413Z"
-    },
-    {
-      "url": "https://greek-invest.com/areas",
-      "channel": "google",
-      "at": "2026-06-17T00:06:41.413Z"
-    },
-    {
-      "url": "https://greek-invest.com/compare",
-      "channel": "google",
-      "at": "2026-06-17T00:06:41.413Z"
-    },
-    {
-      "url": "https://greek-invest.com/contact",
-      "channel": "google",
-      "at": "2026-06-17T00:06:41.413Z"
-    },
-    {
-      "url": "https://greek-invest.com/developers",
-      "channel": "google",
-      "at": "2026-06-17T00:06:41.413Z"
-    },
-    {
-      "url": "https://greek-invest.com/developers/capitaland-development",
-      "channel": "google",
-      "at": "2026-06-17T00:06:41.413Z"
-    },
-    {
-      "url": "https://greek-invest.com/developers/city-developments-cdl",
-      "channel": "google",
-      "at": "2026-06-17T00:06:41.413Z"
-    },
-    {
-      "url": "https://greek-invest.com/developers/guocoland",
-      "channel": "google",
-      "at": "2026-06-17T00:06:41.413Z"
-    },
-    {
-      "url": "https://greek-invest.com/get-shortlist",
-      "channel": "google",
-      "at": "2026-06-17T00:06:41.413Z"
-    },
-    {
-      "url": "https://greek-invest.com/guides",
-      "channel": "google",
-      "at": "2026-06-17T00:06:41.413Z"
-    },
-    {
-      "url": "https://greek-invest.com/guides/buy-property-singapore-foreigner",
-      "channel": "google",
-      "at": "2026-06-17T00:06:41.413Z"
-    },
-    {
-      "url": "https://greek-invest.com/guides/can-foreigners-buy-property-singapore",
-      "channel": "google",
-      "at": "2026-06-17T00:06:41.413Z"
-    },
-    {
-      "url": "https://greek-invest.com/guides/cost-of-buying-property-singapore",
-      "channel": "google",
-      "at": "2026-06-17T00:06:41.413Z"
-    },
-    {
-      "url": "https://greek-invest.com/guides/singapore-absd-foreign-buyer-guide",
-      "channel": "google",
-      "at": "2026-06-17T00:06:41.413Z"
-    },
-    {
-      "url": "https://greek-invest.com/guides/singapore-new-launch-condo-guide-2026",
-      "channel": "google",
-      "at": "2026-06-17T00:06:41.413Z"
-    },
-    {
-      "url": "https://greek-invest.com/guides/singapore-property-investment-guide",
-      "channel": "google",
-      "at": "2026-06-17T00:06:41.413Z"
-    },
-    {
-      "url": "https://greek-invest.com/guides/singapore-rental-yield-guide",
-      "channel": "google",
-      "at": "2026-06-17T00:06:41.413Z"
-    },
-    {
-      "url": "https://greek-invest.com/methodology",
-      "channel": "google",
-      "at": "2026-06-17T00:06:41.413Z"
-    },
-    {
-      "url": "https://greek-invest.com/news",
-      "channel": "google",
-      "at": "2026-06-17T00:06:41.413Z"
-    },
-    {
-      "url": "https://greek-invest.com/privacy-policy",
-      "channel": "google",
-      "at": "2026-06-17T00:06:41.413Z"
-    },
-    {
-      "url": "https://greek-invest.com/projects",
-      "channel": "google",
-      "at": "2026-06-17T00:06:41.413Z"
-    },
-    {
-      "url": "https://greek-invest.com/projects/amberwood-at-holland",
-      "channel": "google",
-      "at": "2026-06-17T00:06:41.413Z"
-    },
-    {
-      "url": "https://greek-invest.com/projects/chuan-grove",
-      "channel": "google",
-      "at": "2026-06-17T00:06:41.413Z"
-    },
-    {
-      "url": "https://greek-invest.com/projects/coastal-cabana-ec",
-      "channel": "google",
-      "at": "2026-06-17T00:06:41.413Z"
-    },
-    {
-      "url": "https://greek-invest.com/projects/dunearn-house",
-      "channel": "google",
-      "at": "2026-06-17T00:06:41.413Z"
-    },
-    {
-      "url": "https://greek-invest.com/projects/hudson-place-residences",
-      "channel": "google",
-      "at": "2026-06-17T00:06:41.413Z"
-    },
-    {
-      "url": "https://greek-invest.com/projects/lentor-gardens-residences",
-      "channel": "google",
-      "at": "2026-06-17T00:06:41.413Z"
-    },
-    {
-      "url": "https://greek-invest.com/projects/lucerne-grand",
-      "channel": "google",
-      "at": "2026-06-17T00:06:41.413Z"
-    },
-    {
-      "url": "https://greek-invest.com/projects/narra-residences",
-      "channel": "google",
-      "at": "2026-06-17T00:06:41.413Z"
-    },
-    {
-      "url": "https://greek-invest.com/projects/newport-residences",
-      "channel": "google",
-      "at": "2026-06-17T00:06:41.413Z"
-    },
-    {
-      "url": "https://greek-invest.com/projects/pinery-residences",
-      "channel": "google",
-      "at": "2026-06-17T00:06:41.413Z"
-    },
-    {
-      "url": "https://greek-invest.com/projects/rivelle-tampines-ec",
-      "channel": "google",
-      "at": "2026-06-17T00:06:41.413Z"
-    },
-    {
-      "url": "https://greek-invest.com/projects/river-modern",
-      "channel": "google",
-      "at": "2026-06-17T00:06:41.413Z"
-    },
-    {
-      "url": "https://greek-invest.com/projects/tengah-garden-residences",
-      "channel": "google",
-      "at": "2026-06-17T00:06:41.413Z"
-    },
-    {
-      "url": "https://greek-invest.com/projects/thomson-reserve",
-      "channel": "google",
-      "at": "2026-06-17T00:06:41.413Z"
-    },
-    {
-      "url": "https://greek-invest.com/projects/vela-bay",
-      "channel": "google",
-      "at": "2026-06-17T00:06:41.413Z"
-    },
-    {
-      "url": "https://greek-invest.com/terms",
-      "channel": "google",
-      "at": "2026-06-17T00:06:41.413Z"
-    },
-    {
-      "url": "https://greek-invest.com/guides/singapore-property-investment-guide",
-      "channel": "google",
-      "at": "2026-06-17T11:06:13.612Z"
-    },
-    {
-      "url": "https://greek-invest.com/guides/buy-property-singapore-foreigner",
-      "channel": "google",
-      "at": "2026-06-17T11:06:13.612Z"
-    },
-    {
-      "url": "https://greek-invest.com/guides/can-foreigners-buy-property-singapore",
-      "channel": "google",
-      "at": "2026-06-17T11:06:13.612Z"
-    },
-    {
-      "url": "https://greek-invest.com/guides/singapore-absd-foreign-buyer-guide",
-      "channel": "google",
-      "at": "2026-06-17T11:06:13.612Z"
-    },
-    {
-      "url": "https://greek-invest.com/guides/cost-of-buying-property-singapore",
-      "channel": "google",
-      "at": "2026-06-17T11:06:13.612Z"
-    },
-    {
-      "url": "https://greek-invest.com/guides/singapore-rental-yield-guide",
-      "channel": "google",
-      "at": "2026-06-17T11:06:13.612Z"
-    },
-    {
-      "url": "https://greek-invest.com/guides/singapore-new-launch-condo-guide-2026",
-      "channel": "google",
-      "at": "2026-06-17T11:06:13.612Z"
-    },
-    {
-      "url": "https://greek-invest.com/guides/singapore-property-investment-guide",
-      "channel": "google",
-      "at": "2026-06-17T11:09:52.098Z"
-    },
-    {
-      "url": "https://greek-invest.com/guides/buy-property-singapore-foreigner",
-      "channel": "google",
-      "at": "2026-06-17T11:09:52.098Z"
-    },
-    {
-      "url": "https://greek-invest.com/guides/can-foreigners-buy-property-singapore",
-      "channel": "google",
-      "at": "2026-06-17T11:09:52.098Z"
-    },
-    {
-      "url": "https://greek-invest.com/guides/singapore-absd-foreign-buyer-guide",
-      "channel": "google",
-      "at": "2026-06-17T11:09:52.098Z"
-    },
-    {
-      "url": "https://greek-invest.com/guides/cost-of-buying-property-singapore",
-      "channel": "google",
-      "at": "2026-06-17T11:09:52.098Z"
-    },
-    {
-      "url": "https://greek-invest.com/guides/singapore-rental-yield-guide",
-      "channel": "google",
-      "at": "2026-06-17T11:09:52.098Z"
-    },
-    {
-      "url": "https://greek-invest.com/guides/singapore-new-launch-condo-guide-2026",
-      "channel": "google",
-      "at": "2026-06-17T11:09:52.098Z"
-    },
-    {
-      "url": "https://greek-invest.com/guides/fta-absd-remission-singapore-property",
-      "channel": "google",
-      "at": "2026-06-17T11:18:11.038Z"
-    },
-    {
-      "url": "https://greek-invest.com/guides/us-citizen-buying-property-singapore",
-      "channel": "google",
-      "at": "2026-06-17T11:18:11.038Z"
-    },
-    {
-      "url": "https://greek-invest.com/guides/foreigner-mortgage-singapore",
-      "channel": "google",
-      "at": "2026-06-17T11:18:11.038Z"
-    },
-    {
-      "url": "https://greek-invest.com/guides/seller-stamp-duty-ssd-singapore",
-      "channel": "google",
-      "at": "2026-06-17T11:18:11.038Z"
-    },
-    {
-      "url": "https://greek-invest.com/guides/singapore-property-cooling-measures-guide",
-      "channel": "google",
-      "at": "2026-06-17T11:18:11.038Z"
-    },
-    {
-      "url": "https://greek-invest.com/guides/ccr-rcr-ocr-singapore-property-guide",
-      "channel": "google",
-      "at": "2026-06-17T11:18:11.038Z"
-    },
-    {
-      "url": "https://greek-invest.com/guides/gross-vs-net-rental-yield-singapore",
-      "channel": "google",
-      "at": "2026-06-17T11:18:11.038Z"
-    },
-    {
-      "url": "https://greek-invest.com/guides/fta-absd-remission-singapore-property",
-      "channel": "google",
-      "at": "2026-06-17T11:26:16.484Z"
-    },
-    {
-      "url": "https://greek-invest.com/guides/us-citizen-buying-property-singapore",
-      "channel": "google",
-      "at": "2026-06-17T11:26:16.484Z"
-    },
-    {
-      "url": "https://greek-invest.com/guides/gross-vs-net-rental-yield-singapore",
-      "channel": "google",
-      "at": "2026-06-17T11:26:16.484Z"
-    },
-    {
-      "url": "https://greek-invest.com/guides/ccr-rcr-ocr-singapore-property-guide",
-      "channel": "google",
-      "at": "2026-06-17T11:26:16.484Z"
-    },
-    {
-      "url": "https://greek-invest.com",
-      "channel": "google",
-      "at": "2026-06-17T11:52:32.701Z"
-    },
-    {
-      "url": "https://greek-invest.com/about",
-      "channel": "google",
-      "at": "2026-06-17T11:52:32.701Z"
-    },
-    {
-      "url": "https://greek-invest.com/areas",
-      "channel": "google",
-      "at": "2026-06-17T11:52:32.701Z"
-    },
-    {
-      "url": "https://greek-invest.com/compare",
-      "channel": "google",
-      "at": "2026-06-17T11:52:32.701Z"
-    },
-    {
-      "url": "https://greek-invest.com/contact",
-      "channel": "google",
-      "at": "2026-06-17T11:52:32.701Z"
-    },
-    {
-      "url": "https://greek-invest.com/developers",
-      "channel": "google",
-      "at": "2026-06-17T11:52:32.701Z"
-    },
-    {
-      "url": "https://greek-invest.com/developers/capitaland-development",
-      "channel": "google",
-      "at": "2026-06-17T11:52:32.701Z"
-    },
-    {
-      "url": "https://greek-invest.com/developers/city-developments-cdl",
-      "channel": "google",
-      "at": "2026-06-17T11:52:32.701Z"
-    },
-    {
-      "url": "https://greek-invest.com/developers/guocoland",
-      "channel": "google",
-      "at": "2026-06-17T11:52:32.701Z"
-    },
-    {
-      "url": "https://greek-invest.com/get-shortlist",
-      "channel": "google",
-      "at": "2026-06-17T11:52:32.701Z"
-    },
-    {
-      "url": "https://greek-invest.com/guides",
-      "channel": "google",
-      "at": "2026-06-17T11:52:32.701Z"
-    },
-    {
-      "url": "https://greek-invest.com/guides/buy-property-singapore-foreigner",
-      "channel": "google",
-      "at": "2026-06-17T11:52:32.701Z"
-    },
-    {
-      "url": "https://greek-invest.com/guides/can-foreigners-buy-property-singapore",
-      "channel": "google",
-      "at": "2026-06-17T11:52:32.701Z"
-    },
-    {
-      "url": "https://greek-invest.com/guides/ccr-rcr-ocr-singapore-property-guide",
-      "channel": "google",
-      "at": "2026-06-17T11:52:32.701Z"
-    },
-    {
-      "url": "https://greek-invest.com/guides/cost-of-buying-property-singapore",
-      "channel": "google",
-      "at": "2026-06-17T11:52:32.701Z"
-    },
-    {
-      "url": "https://greek-invest.com/guides/foreigner-mortgage-singapore",
-      "channel": "google",
-      "at": "2026-06-17T11:52:32.701Z"
-    },
-    {
-      "url": "https://greek-invest.com/guides/fta-absd-remission-singapore-property",
-      "channel": "google",
-      "at": "2026-06-17T11:52:32.701Z"
-    },
-    {
-      "url": "https://greek-invest.com/guides/gross-vs-net-rental-yield-singapore",
-      "channel": "google",
-      "at": "2026-06-17T11:52:32.701Z"
-    },
-    {
-      "url": "https://greek-invest.com/guides/seller-stamp-duty-ssd-singapore",
-      "channel": "google",
-      "at": "2026-06-17T11:52:32.701Z"
-    },
-    {
-      "url": "https://greek-invest.com/guides/singapore-absd-foreign-buyer-guide",
-      "channel": "google",
-      "at": "2026-06-17T11:52:32.701Z"
-    },
-    {
-      "url": "https://greek-invest.com/guides/singapore-new-launch-condo-guide-2026",
-      "channel": "google",
-      "at": "2026-06-17T11:52:32.701Z"
-    },
-    {
-      "url": "https://greek-invest.com/guides/singapore-property-cooling-measures-guide",
-      "channel": "google",
-      "at": "2026-06-17T11:52:32.701Z"
-    },
-    {
-      "url": "https://greek-invest.com/guides/singapore-property-investment-guide",
-      "channel": "google",
-      "at": "2026-06-17T11:52:32.701Z"
-    },
-    {
-      "url": "https://greek-invest.com/guides/singapore-rental-yield-guide",
-      "channel": "google",
-      "at": "2026-06-17T11:52:32.701Z"
-    },
-    {
-      "url": "https://greek-invest.com/guides/us-citizen-buying-property-singapore",
-      "channel": "google",
-      "at": "2026-06-17T11:52:32.701Z"
-    },
-    {
-      "url": "https://greek-invest.com/methodology",
-      "channel": "google",
-      "at": "2026-06-17T11:52:32.701Z"
-    },
-    {
-      "url": "https://greek-invest.com/news",
-      "channel": "google",
-      "at": "2026-06-17T11:52:32.701Z"
-    },
-    {
-      "url": "https://greek-invest.com/privacy-policy",
-      "channel": "google",
-      "at": "2026-06-17T11:52:32.701Z"
-    },
-    {
-      "url": "https://greek-invest.com/projects",
-      "channel": "google",
-      "at": "2026-06-17T11:52:32.701Z"
-    },
-    {
-      "url": "https://greek-invest.com/projects/amberwood-at-holland",
-      "channel": "google",
-      "at": "2026-06-17T11:52:32.701Z"
-    },
-    {
-      "url": "https://greek-invest.com/projects/chuan-grove",
-      "channel": "google",
-      "at": "2026-06-17T11:52:32.701Z"
-    },
-    {
-      "url": "https://greek-invest.com/projects/coastal-cabana-ec",
-      "channel": "google",
-      "at": "2026-06-17T11:52:32.701Z"
-    },
-    {
-      "url": "https://greek-invest.com/projects/dunearn-house",
-      "channel": "google",
-      "at": "2026-06-17T11:52:32.701Z"
-    },
-    {
-      "url": "https://greek-invest.com/projects/hudson-place-residences",
-      "channel": "google",
-      "at": "2026-06-17T11:52:32.701Z"
-    },
-    {
-      "url": "https://greek-invest.com/projects/lentor-gardens-residences",
-      "channel": "google",
-      "at": "2026-06-17T11:52:32.701Z"
-    },
-    {
-      "url": "https://greek-invest.com/projects/lucerne-grand",
-      "channel": "google",
-      "at": "2026-06-17T11:52:32.701Z"
-    },
-    {
-      "url": "https://greek-invest.com/projects/narra-residences",
-      "channel": "google",
-      "at": "2026-06-17T11:52:32.701Z"
-    },
-    {
-      "url": "https://greek-invest.com/projects/newport-residences",
-      "channel": "google",
-      "at": "2026-06-17T11:52:32.701Z"
-    },
-    {
-      "url": "https://greek-invest.com/projects/pinery-residences",
-      "channel": "google",
-      "at": "2026-06-17T11:52:32.701Z"
-    },
-    {
-      "url": "https://greek-invest.com/projects/rivelle-tampines-ec",
-      "channel": "google",
-      "at": "2026-06-17T11:52:32.701Z"
-    },
-    {
-      "url": "https://greek-invest.com/projects/river-modern",
-      "channel": "google",
-      "at": "2026-06-17T11:52:32.701Z"
-    },
-    {
-      "url": "https://greek-invest.com/projects/tengah-garden-residences",
-      "channel": "google",
-      "at": "2026-06-17T11:52:32.701Z"
-    },
-    {
-      "url": "https://greek-invest.com/projects/thomson-reserve",
-      "channel": "google",
-      "at": "2026-06-17T11:52:32.701Z"
-    },
-    {
-      "url": "https://greek-invest.com/projects/vela-bay",
-      "channel": "google",
-      "at": "2026-06-17T11:52:32.701Z"
-    },
-    {
-      "url": "https://greek-invest.com/terms",
-      "channel": "google",
-      "at": "2026-06-17T11:52:32.701Z"
-    },
-    {
-      "url": "https://greek-invest.com/guides/highest-rental-yield-districts-singapore",
-      "channel": "google",
-      "at": "2026-06-17T12:05:08.508Z"
-    },
-    {
-      "url": "https://greek-invest.com/guides/off-plan-vs-resale-condo-singapore",
-      "channel": "google",
-      "at": "2026-06-17T12:05:08.508Z"
-    },
-    {
-      "url": "https://greek-invest.com/guides/tdsr-mortgage-singapore-explained",
-      "channel": "google",
-      "at": "2026-06-17T12:05:08.508Z"
-    },
-    {
-      "url": "https://greek-invest.com/areas/district-9-orchard-property",
-      "channel": "google",
-      "at": "2026-06-17T12:05:08.508Z"
-    },
-    {
-      "url": "https://greek-invest.com/areas/district-15-east-coast-property",
-      "channel": "google",
-      "at": "2026-06-17T12:05:08.508Z"
-    },
-    {
-      "url": "https://greek-invest.com/areas/district-22-jurong-property",
-      "channel": "google",
-      "at": "2026-06-17T12:05:08.508Z"
-    },
-    {
-      "url": "https://greek-invest.com/areas/district-3-queenstown-property",
-      "channel": "google",
-      "at": "2026-06-17T12:05:08.508Z"
-    },
-    {
-      "url": "https://greek-invest.com/compare/east-coast-vs-queenstown-property",
-      "channel": "google",
-      "at": "2026-06-17T12:05:08.508Z"
-    },
-    {
-      "url": "https://greek-invest.com/guides/highest-rental-yield-districts-singapore",
-      "channel": "google",
-      "at": "2026-06-17T12:09:48.893Z"
-    },
-    {
-      "url": "https://greek-invest.com/guides/off-plan-vs-resale-condo-singapore",
-      "channel": "google",
-      "at": "2026-06-17T12:09:48.893Z"
-    },
-    {
-      "url": "https://greek-invest.com/guides/tdsr-mortgage-singapore-explained",
-      "channel": "google",
-      "at": "2026-06-17T12:09:48.893Z"
-    },
-    {
-      "url": "https://greek-invest.com/areas/district-9-orchard-property",
-      "channel": "google",
-      "at": "2026-06-17T12:09:48.893Z"
-    },
-    {
-      "url": "https://greek-invest.com/areas/district-15-east-coast-property",
-      "channel": "google",
-      "at": "2026-06-17T12:09:48.893Z"
-    },
-    {
-      "url": "https://greek-invest.com/areas/district-22-jurong-property",
-      "channel": "google",
-      "at": "2026-06-17T12:09:48.893Z"
-    },
-    {
-      "url": "https://greek-invest.com/areas/district-3-queenstown-property",
-      "channel": "google",
-      "at": "2026-06-17T12:09:48.893Z"
-    },
-    {
-      "url": "https://greek-invest.com/compare/east-coast-vs-queenstown-property",
-      "channel": "google",
-      "at": "2026-06-17T12:09:48.893Z"
-    },
-    {
-      "url": "https://greek-invest.com/guides/highest-rental-yield-districts-singapore",
-      "channel": "google",
-      "at": "2026-06-17T12:10:50.551Z"
-    },
-    {
-      "url": "https://greek-invest.com/guides/off-plan-vs-resale-condo-singapore",
-      "channel": "google",
-      "at": "2026-06-17T12:10:50.551Z"
-    },
-    {
-      "url": "https://greek-invest.com/guides/tdsr-mortgage-singapore-explained",
-      "channel": "google",
-      "at": "2026-06-17T12:10:50.551Z"
-    },
-    {
-      "url": "https://greek-invest.com/areas/district-9-orchard-property",
-      "channel": "google",
-      "at": "2026-06-17T12:10:50.551Z"
-    },
-    {
-      "url": "https://greek-invest.com/areas/district-15-east-coast-property",
-      "channel": "google",
-      "at": "2026-06-17T12:10:50.551Z"
-    },
-    {
-      "url": "https://greek-invest.com/areas/district-22-jurong-property",
-      "channel": "google",
-      "at": "2026-06-17T12:10:50.551Z"
-    },
-    {
-      "url": "https://greek-invest.com/areas/district-3-queenstown-property",
-      "channel": "google",
-      "at": "2026-06-17T12:10:50.551Z"
-    },
-    {
-      "url": "https://greek-invest.com/compare/east-coast-vs-queenstown-property",
-      "channel": "google",
-      "at": "2026-06-17T12:10:50.551Z"
-    },
-    {
-      "url": "https://greek-invest.com/guides/hdb-upgrader-private-condo-guide",
-      "channel": "google",
-      "at": "2026-06-17T12:20:10.810Z"
-    },
-    {
-      "url": "https://greek-invest.com/guides/ltv-loan-to-value-singapore-property",
-      "channel": "google",
-      "at": "2026-06-17T12:20:10.810Z"
-    },
-    {
-      "url": "https://greek-invest.com/areas/district-10-bukit-timah-property",
-      "channel": "google",
-      "at": "2026-06-17T12:20:10.810Z"
-    },
-    {
-      "url": "https://greek-invest.com/areas/district-14-geylang-property",
-      "channel": "google",
-      "at": "2026-06-17T12:20:10.810Z"
-    },
-    {
-      "url": "https://greek-invest.com/areas/district-18-tampines-property",
-      "channel": "google",
-      "at": "2026-06-17T12:20:10.810Z"
-    },
-    {
-      "url": "https://greek-invest.com/areas/district-19-punggol-sengkang-property",
-      "channel": "google",
-      "at": "2026-06-17T12:20:10.810Z"
-    },
-    {
-      "url": "https://greek-invest.com/compare/jurong-vs-punggol-property-investment",
-      "channel": "google",
-      "at": "2026-06-17T12:20:10.810Z"
-    },
-    {
-      "url": "https://greek-invest.com/areas/district-6-city-hall-property",
-      "channel": "google",
-      "at": "2026-06-17T20:57:08.293Z"
-    },
-    {
-      "url": "https://greek-invest.com/areas/district-7-beach-road-property",
-      "channel": "google",
-      "at": "2026-06-17T20:57:08.293Z"
-    },
-    {
-      "url": "https://greek-invest.com",
-      "channel": "google",
-      "at": "2026-06-17T22:31:36.628Z"
-    },
-    {
-      "url": "https://greek-invest.com/guides",
-      "channel": "google",
-      "at": "2026-06-17T22:31:36.628Z"
-    },
-    {
-      "url": "https://greek-invest.com/contact",
-      "channel": "google",
-      "at": "2026-06-17T22:31:36.628Z"
+      "at": "2026-06-18T01:37:43.056Z"
     }
   ]
 }

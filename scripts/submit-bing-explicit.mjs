@@ -2,7 +2,7 @@
 /** Bing IndexNow — explicit URLs only (greek-invest.com). Never api.indexnow.org. */
 import { readFileSync } from 'node:fs';
 
-const KEY = 'a7c3e91f2b584d6e8f0a1c3d5e7f9b2a';
+const KEY = 'a1f2e5d9d16ea55ab5d38a33eb643dd4';
 const HOST = 'greek-invest.com';
 const BASE = `https://${HOST}`;
 

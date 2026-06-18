@@ -1,0 +1,131 @@
+---
+/** Indicative Greece acquisition cost calculator — not tax advice. */
+---
+
+<div class="gr-calc" id="gr-cost-calc">
+  <div class="gr-calc__grid">
+    <label class="gr-calc__field">
+      <span>Purchase price (€)</span>
+      <input type="number" id="cost-price" min="50000" step="1000" value="400000" />
+    </label>
+    <label class="gr-calc__field">
+      <span>Objective value (€) — leave blank to match price</span>
+      <input type="number" id="cost-objective" min="0" step="1000" placeholder="e.g. 280000" />
+    </label>
+    <label class="gr-calc__field gr-calc__field--check">
+      <input type="checkbox" id="cost-agent" checked />
+      <span>Include buyer agent fee (2.25%)</span>
+    </label>
+  </div>
+
+  <div class="gr-calc__result" id="cost-result" aria-live="polite"></div>
+</div>
+
+<script>
+  function eur(n) {
+    return new Intl.NumberFormat('en-EU', { style: 'currency', currency: 'EUR', maximumFractionDigits: 0 }).format(n);
+  }
+
+  function recalc() {
+    const price = Number(document.getElementById('cost-price')?.value) || 0;
+    const objRaw = document.getElementById('cost-objective')?.value;
+    const objective = objRaw ? Number(objRaw) : price;
+    const withAgent = document.getElementById('cost-agent')?.checked;
+    const taxBase = Math.max(price, objective);
+
+    const fma = taxBase * 0.0309;
+    const notary = taxBase * 0.01;
+    const lawyer = price * 0.0125;
+    const registry = taxBase * 0.0055;
+    const agent = withAgent ? price * 0.0225 : 0;
+    const engineer = 500;
+    const extras = fma + notary + lawyer + registry + agent + engineer;
+    const total = price + extras;
+    const pct = price > 0 ? ((extras / price) * 100).toFixed(1) : '0';
+
+    const el = document.getElementById('cost-result');
+    if (!el) return;
+
+    el.innerHTML = `
+      <p class="gr-calc__headline">Indicative all-in: <strong>${eur(total)}</strong> (${pct}% above price)</p>
+      <ul class="gr-calc__lines">
+        <li>FMA transfer tax (3.09% on ${eur(taxBase)}): ${eur(fma)}</li>
+        <li>Notary (~1.0% on objective value): ${eur(notary)}</li>
+        <li>Lawyer (~1.25% on price): ${eur(lawyer)}</li>
+        <li>Land registry (~0.55% on objective value): ${eur(registry)}</li>
+        <li>Buyer agent (2.25%): ${withAgent ? eur(agent) : '— excluded'}</li>
+        <li>Engineer survey (flat): ${eur(engineer)}</li>
+      </ul>
+      <p class="gr-calc__note">Planning range only. New-build VAT rules, ENFIA arrears, and border-zone permits can change the stack. See the <a href="/guides/cost-of-buying-property-greece/">full cost guide</a>.</p>
+    `;
+  }
+
+  ['cost-price', 'cost-objective', 'cost-agent'].forEach((id) => {
+    document.getElementById(id)?.addEventListener('input', recalc);
+    document.getElementById(id)?.addEventListener('change', recalc);
+  });
+  recalc();
+</script>
+
+<style>
+  .gr-calc {
+    background: #f8fafc;
+    border: 1px solid var(--color-border, #e7e5e4);
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin: 2rem 0;
+  }
+  .gr-calc__grid {
+    display: grid;
+    gap: 1rem;
+  }
+  @media (min-width: 640px) {
+    .gr-calc__grid {
+      grid-template-columns: 1fr 1fr;
+    }
+    .gr-calc__field--check {
+      grid-column: 1 / -1;
+    }
+  }
+  .gr-calc__field span {
+    display: block;
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-bottom: 0.35rem;
+  }
+  .gr-calc__field input[type='number'] {
+    width: 100%;
+    padding: 0.65rem 0.85rem;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    font-size: 1rem;
+  }
+  .gr-calc__field--check {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .gr-calc__field--check span {
+    margin: 0;
+    font-weight: 500;
+  }
+  .gr-calc__result {
+    margin-top: 1.25rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid #e2e8f0;
+  }
+  .gr-calc__headline {
+    font-size: 1.15rem;
+    margin: 0 0 0.75rem;
+  }
+  .gr-calc__lines {
+    margin: 0 0 1rem;
+    padding-left: 1.2rem;
+    line-height: 1.7;
+  }
+  .gr-calc__note {
+    margin: 0;
+    font-size: 0.875rem;
+    color: var(--color-muted, #57534e);
+  }
+</style>

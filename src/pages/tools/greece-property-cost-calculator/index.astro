@@ -1,0 +1,134 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import LeadForm from '../../../components/LeadForm.astro';
+import GreecePropertyCostCalc from '../../../components/GreecePropertyCostCalc.astro';
+import FaqBlock from '../../../components/FaqBlock.astro';
+
+const title = 'Greece Property Cost Calculator 2026 — All-In Fees';
+const description = 'Estimate total cost of buying property in Greece: FMA 3.09%, notary, lawyer, registry and agent on your price and objective value. Planning tool only.';
+
+const faq = [
+  {
+    question: 'How much extra should I budget when buying property in Greece?',
+    answer: 'Plan for 7–10% above the purchase price on a typical resale transaction. FMA transfer tax at 3.09% is the largest line item, calculated on the higher of sale price or objective value. Notary, lawyer, land registry, agent commission, and engineer survey fill out the rest.',
+  },
+  {
+    question: 'Does this calculator include ENFIA annual tax?',
+    answer: 'No. This tool models one-off acquisition costs only. ENFIA is an annual ownership tax billed separately — typically hundreds to low thousands of euros per year depending on zone and square metres.',
+  },
+  {
+    question: 'What is objective value in the calculator?',
+    answer: 'Objective value is the government-assessed property value used as the tax base for FMA, notary, and registry fees when it exceeds your agreed purchase price. If you leave the field blank, the calculator assumes objective value equals your purchase price.',
+  },
+  {
+    question: 'Do new-build properties use the same 3.09% FMA rate in 2026?',
+    answer: 'During the residential new-build VAT suspension through 31 December 2026, many first-sale new builds also clear at 3.09% FMA rather than 24% VAT. Confirm the building permit date and seller status with your lawyer before relying on this calculator.',
+  },
+  {
+    question: 'Where can I see worked examples at €400K and €800K?',
+    answer: 'The cost of buying property in Greece guide includes full fee stacks at €250K, €400K, and €800K with line-by-line explanations for Golden Visa tier planning.',
+  },
+  {
+    question: 'Is the calculator output legally binding?',
+    answer: 'No. Rates are indicative midpoints from typical 2026 practice. Your notary quote, lawyer engagement letter, and AADE tax assessment are the binding figures.',
+  },
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faq.map((item) => ({
+    '@type': 'Question',
+    name: item.question,
+    acceptedAnswer: { '@type': 'Answer', text: item.answer },
+  })),
+};
+
+const webAppSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebApplication',
+  name: 'Greece Property Cost Calculator',
+  url: 'https://greek-invest.com/tools/greece-property-cost-calculator/',
+  applicationCategory: 'FinanceApplication',
+  operatingSystem: 'Any',
+  description,
+  offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
+};
+---
+
+<BaseLayout
+  {title}
+  {description}
+  canonical="https://greek-invest.com/tools/greece-property-cost-calculator/"
+  schemas={[faqSchema, webAppSchema]}
+>
+  <article class="site-container py-12 md:py-16 max-w-3xl prose prose-stone">
+    <header class="mb-8 not-prose">
+      <p class="text-sm font-semibold text-[#1a6fb5] uppercase tracking-wide mb-2">Tool</p>
+      <h1 class="mb-3">{title}</h1>
+      <p class="text-lg text-[var(--color-muted)] leading-relaxed">
+        Enter your purchase price and optional objective value to see an indicative acquisition stack —
+        FMA, notary, lawyer, registry, agent, and engineer survey.
+      </p>
+    </header>
+
+    <GreecePropertyCostCalc />
+
+    <p>
+      <strong>Quick answer:</strong> Total buying costs in Greece typically run <strong>7–10% above the purchase price</strong>.
+      FMA transfer tax is <strong>3.09%</strong> on the higher of price or objective value. On a €400,000 purchase with €280,000 objective value,
+      all-in costs often land near <strong>€425,000–€435,000</strong> before annual ENFIA.
+    </p>
+
+    <h2>What the Calculator Includes</h2>
+    <p>
+      The widget applies mid-range rates from the 2026 fee stack documented in our
+      <a href="/guides/cost-of-buying-property-greece/">cost of buying property in Greece guide</a>:
+    </p>
+
+    <table>
+      <thead>
+        <tr><th>Fee</th><th>Default rate in tool</th><th>Base</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>FMA transfer tax</td><td>3.09%</td><td>Higher of price or objective value</td></tr>
+        <tr><td>Notary</td><td>1.0%</td><td>Objective value</td></tr>
+        <tr><td>Lawyer</td><td>1.25%</td><td>Purchase price</td></tr>
+        <tr><td>Land registry</td><td>0.55%</td><td>Objective value</td></tr>
+        <tr><td>Buyer agent</td><td>2.25% (optional)</td><td>Purchase price</td></tr>
+        <tr><td>Engineer survey</td><td>€500 flat</td><td>Per property</td></tr>
+      </tbody>
+    </table>
+
+    <h2>Golden Visa Tier Examples</h2>
+    <p>
+      Golden Visa thresholds are set on <strong>market price</strong>, but FMA often uses a lower objective value in regional zones.
+      That is why a €400,000 qualifying purchase in Crete can show lower transfer tax than the headline investment figure suggests.
+      See the <a href="/guides/greece-golden-visa-property-tiers-2026/">Golden Visa tiers guide</a> and
+      <a href="/tools/greece-golden-visa-zone-lookup/">zone checker</a> before you model Attica at €800,000.
+    </p>
+
+    <h2>What the Calculator Excludes</h2>
+    <ul>
+      <li>Annual ENFIA — see <a href="/guides/enfia-property-tax-greece/">ENFIA guide</a></li>
+      <li>Renovation, furnishing, or conversion costs</li>
+      <li>Migration lawyer fees for the residency file (separate from property lawyer)</li>
+      <li>Pink slip / FX transfer bank charges for non-residents</li>
+      <li>VAT at 24% on qualifying new builds if the 2026 suspension does not apply to your deed</li>
+    </ul>
+
+    <p>
+      For hidden one-off surprises — ENFIA arrears, agent VAT, apostille costs — read
+      <a href="/guides/hidden-costs-buying-property-greece/">hidden costs when buying in Greece</a>.
+      Transfer tax mechanics sit in the <a href="/guides/greece-property-transfer-tax-fma/">FMA guide</a>.
+    </p>
+
+    <FaqBlock items={faq} />
+
+    <LeadForm
+      title="Want a cost-checked shortlist?"
+      subtitle="We model tier, 120 m², and all-in fees before you tour properties"
+      context="Property cost calculator tool"
+    />
+  </article>
+</BaseLayout>

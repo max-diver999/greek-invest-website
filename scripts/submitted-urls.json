@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-19T00:33:08.817Z",
+  "updatedAt": "2026-06-19T11:08:27.191Z",
   "urls": [
     "https://greek-invest.com",
     "https://greek-invest.com/about",
@@ -125,5 +125,572 @@
     "https://greek-invest.com/areas/district-15-east-coast-property",
     "https://greek-invest.com/areas/district-18-tampines-property",
     "https://greek-invest.com/areas/district-19-punggol-sengkang-property"
+  ],
+  "entries": [
+    {
+      "url": "https://greek-invest.com",
+      "channel": "google",
+      "at": "2026-06-19T11:08:27.191Z"
+    },
+    {
+      "url": "https://greek-invest.com/about",
+      "channel": "google",
+      "at": "2026-06-19T11:08:27.191Z"
+    },
+    {
+      "url": "https://greek-invest.com/areas",
+      "channel": "google",
+      "at": "2026-06-19T11:08:27.191Z"
+    },
+    {
+      "url": "https://greek-invest.com/areas/chania-property-investment",
+      "channel": "google",
+      "at": "2026-06-19T11:08:27.191Z"
+    },
+    {
+      "url": "https://greek-invest.com/areas/costa-navarino-property-investment",
+      "channel": "google",
+      "at": "2026-06-19T11:08:27.191Z"
+    },
+    {
+      "url": "https://greek-invest.com/areas/elounda-property-investment",
+      "channel": "google",
+      "at": "2026-06-19T11:08:27.191Z"
+    },
+    {
+      "url": "https://greek-invest.com/areas/glyfada-property-investment",
+      "channel": "google",
+      "at": "2026-06-19T11:08:27.191Z"
+    },
+    {
+      "url": "https://greek-invest.com/areas/heraklion-property-investment",
+      "channel": "google",
+      "at": "2026-06-19T11:08:27.191Z"
+    },
+    {
+      "url": "https://greek-invest.com/areas/kalamata-property-investment",
+      "channel": "google",
+      "at": "2026-06-19T11:08:27.191Z"
+    },
+    {
+      "url": "https://greek-invest.com/areas/kallithea-property-investment",
+      "channel": "google",
+      "at": "2026-06-19T11:08:27.191Z"
+    },
+    {
+      "url": "https://greek-invest.com/areas/mykonos-property-investment",
+      "channel": "google",
+      "at": "2026-06-19T11:08:27.191Z"
+    },
+    {
+      "url": "https://greek-invest.com/areas/piraeus-property-investment",
+      "channel": "google",
+      "at": "2026-06-19T11:08:27.191Z"
+    },
+    {
+      "url": "https://greek-invest.com/areas/rhodes-property-investment",
+      "channel": "google",
+      "at": "2026-06-19T11:08:27.191Z"
+    },
+    {
+      "url": "https://greek-invest.com/areas/santorini-property-investment",
+      "channel": "google",
+      "at": "2026-06-19T11:08:27.191Z"
+    },
+    {
+      "url": "https://greek-invest.com/areas/voula-property-investment",
+      "channel": "google",
+      "at": "2026-06-19T11:08:27.191Z"
+    },
+    {
+      "url": "https://greek-invest.com/compare",
+      "channel": "google",
+      "at": "2026-06-19T11:08:27.191Z"
+    },
+    {
+      "url": "https://greek-invest.com/compare/athens-riviera-vs-athens-center-investment",
+      "channel": "google",
+      "at": "2026-06-19T11:08:27.191Z"
+    },
+    {
+      "url": "https://greek-invest.com/compare/crete-vs-cyclades-property-investment",
+      "channel": "google",
+      "at": "2026-06-19T11:08:27.191Z"
+    },
+    {
+      "url": "https://greek-invest.com/compare/greece-vs-cape-town-property-investment",
+      "channel": "google",
+      "at": "2026-06-19T11:08:27.191Z"
+    },
+    {
+      "url": "https://greek-invest.com/compare/greece-vs-italy-vs-spain-property-investment",
+      "channel": "google",
+      "at": "2026-06-19T11:08:27.191Z"
+    },
+    {
+      "url": "https://greek-invest.com/compare/greece-vs-portugal-golden-visa-property",
+      "channel": "google",
+      "at": "2026-06-19T11:08:27.191Z"
+    },
+    {
+      "url": "https://greek-invest.com/compare/greece-vs-spain-golden-visa-ended",
+      "channel": "google",
+      "at": "2026-06-19T11:08:27.191Z"
+    },
+    {
+      "url": "https://greek-invest.com/contact",
+      "channel": "google",
+      "at": "2026-06-19T11:08:27.191Z"
+    },
+    {
+      "url": "https://greek-invest.com/developers",
+      "channel": "google",
+      "at": "2026-06-19T11:08:27.191Z"
+    },
+    {
+      "url": "https://greek-invest.com/developers/adonis-group",
+      "channel": "google",
+      "at": "2026-06-19T11:08:27.191Z"
+    },
+    {
+      "url": "https://greek-invest.com/developers/greca-developments",
+      "channel": "google",
+      "at": "2026-06-19T11:08:27.191Z"
+    },
+    {
+      "url": "https://greek-invest.com/developers/secland-development",
+      "channel": "google",
+      "at": "2026-06-19T11:08:27.191Z"
+    },
+    {
+      "url": "https://greek-invest.com/developers/solena-greece",
+      "channel": "google",
+      "at": "2026-06-19T11:08:27.191Z"
+    },
+    {
+      "url": "https://greek-invest.com/get-shortlist",
+      "channel": "google",
+      "at": "2026-06-19T11:08:27.191Z"
+    },
+    {
+      "url": "https://greek-invest.com/greece-golden-visa-consultation",
+      "channel": "google",
+      "at": "2026-06-19T11:08:27.191Z"
+    },
+    {
+      "url": "https://greek-invest.com/greece-property-consultation",
+      "channel": "google",
+      "at": "2026-06-19T11:08:27.191Z"
+    },
+    {
+      "url": "https://greek-invest.com/guides",
+      "channel": "google",
+      "at": "2026-06-19T11:08:27.191Z"
+    },
+    {
+      "url": "https://greek-invest.com/guides/athens-golden-visa-800000-areas",
+      "channel": "google",
+      "at": "2026-06-19T11:08:27.191Z"
+    },
+    {
+      "url": "https://greek-invest.com/guides/athens-property-investment-guide",
+      "channel": "google",
+      "at": "2026-06-19T11:08:27.191Z"
+    },
+    {
+      "url": "https://greek-invest.com/guides/athens-short-term-rental-moratorium-2026",
+      "channel": "google",
+      "at": "2026-06-19T11:08:27.191Z"
+    },
+    {
+      "url": "https://greek-invest.com/guides/best-regions-invest-greece-property-2026",
+      "channel": "google",
+      "at": "2026-06-19T11:08:27.191Z"
+    },
+    {
+      "url": "https://greek-invest.com/guides/border-zones-greece-foreign-buyers",
+      "channel": "google",
+      "at": "2026-06-19T11:08:27.191Z"
+    },
+    {
+      "url": "https://greek-invest.com/guides/brexit-uk-buyers-greece-property",
+      "channel": "google",
+      "at": "2026-06-19T11:08:27.191Z"
+    },
+    {
+      "url": "https://greek-invest.com/guides/buy-property-greece-foreigner",
+      "channel": "google",
+      "at": "2026-06-19T11:08:27.191Z"
+    },
+    {
+      "url": "https://greek-invest.com/guides/buy-to-let-greece-guide",
+      "channel": "google",
+      "at": "2026-06-19T11:08:27.191Z"
+    },
+    {
+      "url": "https://greek-invest.com/guides/can-foreigners-buy-property-greece",
+      "channel": "google",
+      "at": "2026-06-19T11:08:27.191Z"
+    },
+    {
+      "url": "https://greek-invest.com/guides/cost-of-buying-property-greece",
+      "channel": "google",
+      "at": "2026-06-19T11:08:27.191Z"
+    },
+    {
+      "url": "https://greek-invest.com/guides/crete-golden-visa-400000-property",
+      "channel": "google",
+      "at": "2026-06-19T11:08:27.191Z"
+    },
+    {
+      "url": "https://greek-invest.com/guides/crete-property-investment-guide",
+      "channel": "google",
+      "at": "2026-06-19T11:08:27.191Z"
+    },
+    {
+      "url": "https://greek-invest.com/guides/cyclades-property-investment-guide",
+      "channel": "google",
+      "at": "2026-06-19T11:08:27.191Z"
+    },
+    {
+      "url": "https://greek-invest.com/guides/due-diligence-greece-property",
+      "channel": "google",
+      "at": "2026-06-19T11:08:27.191Z"
+    },
+    {
+      "url": "https://greek-invest.com/guides/ellinikon-athens-property-investment",
+      "channel": "google",
+      "at": "2026-06-19T11:08:27.191Z"
+    },
+    {
+      "url": "https://greek-invest.com/guides/enfia-property-tax-greece",
+      "channel": "google",
+      "at": "2026-06-19T11:08:27.191Z"
+    },
+    {
+      "url": "https://greek-invest.com/guides/golden-visa-eligible-projects-directory",
+      "channel": "google",
+      "at": "2026-06-19T11:08:27.191Z"
+    },
+    {
+      "url": "https://greek-invest.com/guides/greece-afm-tax-number-property",
+      "channel": "google",
+      "at": "2026-06-19T11:08:27.191Z"
+    },
+    {
+      "url": "https://greek-invest.com/guides/greece-capital-gains-tax-property",
+      "channel": "google",
+      "at": "2026-06-19T11:08:27.191Z"
+    },
+    {
+      "url": "https://greek-invest.com/guides/greece-citizenship-after-golden-visa",
+      "channel": "google",
+      "at": "2026-06-19T11:08:27.191Z"
+    },
+    {
+      "url": "https://greek-invest.com/guides/greece-golden-visa-120-square-meter-rule",
+      "channel": "google",
+      "at": "2026-06-19T11:08:27.191Z"
+    },
+    {
+      "url": "https://greek-invest.com/guides/greece-golden-visa-250000-conversion-route",
+      "channel": "google",
+      "at": "2026-06-19T11:08:27.191Z"
+    },
+    {
+      "url": "https://greek-invest.com/guides/greece-golden-visa-bank-account-afm",
+      "channel": "google",
+      "at": "2026-06-19T11:08:27.191Z"
+    },
+    {
+      "url": "https://greek-invest.com/guides/greece-golden-visa-circular-2026-explained",
+      "channel": "google",
+      "at": "2026-06-19T11:08:27.191Z"
+    },
+    {
+      "url": "https://greek-invest.com/guides/greece-golden-visa-family-members-rules",
+      "channel": "google",
+      "at": "2026-06-19T11:08:27.191Z"
+    },
+    {
+      "url": "https://greek-invest.com/guides/greece-golden-visa-lawyer-cost",
+      "channel": "google",
+      "at": "2026-06-19T11:08:27.191Z"
+    },
+    {
+      "url": "https://greek-invest.com/guides/greece-golden-visa-mistakes-avoid",
+      "channel": "google",
+      "at": "2026-06-19T11:08:27.191Z"
+    },
+    {
+      "url": "https://greek-invest.com/guides/greece-golden-visa-no-short-term-rental",
+      "channel": "google",
+      "at": "2026-06-19T11:08:27.191Z"
+    },
+    {
+      "url": "https://greek-invest.com/guides/greece-golden-visa-property-guide-2026",
+      "channel": "google",
+      "at": "2026-06-19T11:08:27.191Z"
+    },
+    {
+      "url": "https://greek-invest.com/guides/greece-golden-visa-property-tiers-2026",
+      "channel": "google",
+      "at": "2026-06-19T11:08:27.191Z"
+    },
+    {
+      "url": "https://greek-invest.com/guides/greece-golden-visa-renewal-requirements",
+      "channel": "google",
+      "at": "2026-06-19T11:08:27.191Z"
+    },
+    {
+      "url": "https://greek-invest.com/guides/greece-golden-visa-timeline-application-2026",
+      "channel": "google",
+      "at": "2026-06-19T11:08:27.191Z"
+    },
+    {
+      "url": "https://greek-invest.com/guides/greece-new-build-vat-suspension-2026",
+      "channel": "google",
+      "at": "2026-06-19T11:08:27.191Z"
+    },
+    {
+      "url": "https://greek-invest.com/guides/greece-objective-value-property-tax",
+      "channel": "google",
+      "at": "2026-06-19T11:08:27.191Z"
+    },
+    {
+      "url": "https://greek-invest.com/guides/greece-property-cadastre-check",
+      "channel": "google",
+      "at": "2026-06-19T11:08:27.191Z"
+    },
+    {
+      "url": "https://greek-invest.com/guides/greece-property-engineer-certificate",
+      "channel": "google",
+      "at": "2026-06-19T11:08:27.191Z"
+    },
+    {
+      "url": "https://greek-invest.com/guides/greece-property-investment-guide",
+      "channel": "google",
+      "at": "2026-06-19T11:08:27.191Z"
+    },
+    {
+      "url": "https://greek-invest.com/guides/greece-property-market-forecast-2026-2027",
+      "channel": "google",
+      "at": "2026-06-19T11:08:27.191Z"
+    },
+    {
+      "url": "https://greek-invest.com/guides/greece-property-market-transactions-2025",
+      "channel": "google",
+      "at": "2026-06-19T11:08:27.191Z"
+    },
+    {
+      "url": "https://greek-invest.com/guides/greece-property-notary-process",
+      "channel": "google",
+      "at": "2026-06-19T11:08:27.191Z"
+    },
+    {
+      "url": "https://greek-invest.com/guides/greece-property-pink-slip-foreign-buyers",
+      "channel": "google",
+      "at": "2026-06-19T11:08:27.191Z"
+    },
+    {
+      "url": "https://greek-invest.com/guides/greece-property-scams-avoid",
+      "channel": "google",
+      "at": "2026-06-19T11:08:27.191Z"
+    },
+    {
+      "url": "https://greek-invest.com/guides/greece-property-transfer-tax-fma",
+      "channel": "google",
+      "at": "2026-06-19T11:08:27.191Z"
+    },
+    {
+      "url": "https://greek-invest.com/guides/greece-rental-income-tax-non-resident",
+      "channel": "google",
+      "at": "2026-06-19T11:08:27.191Z"
+    },
+    {
+      "url": "https://greek-invest.com/guides/greece-rental-yield-guide",
+      "channel": "google",
+      "at": "2026-06-19T11:08:27.191Z"
+    },
+    {
+      "url": "https://greek-invest.com/guides/greek-property-glossary-foreign-buyers",
+      "channel": "google",
+      "at": "2026-06-19T11:08:27.191Z"
+    },
+    {
+      "url": "https://greek-invest.com/guides/gross-vs-net-yield-greece",
+      "channel": "google",
+      "at": "2026-06-19T11:08:27.191Z"
+    },
+    {
+      "url": "https://greek-invest.com/guides/halkidiki-property-investment-guide",
+      "channel": "google",
+      "at": "2026-06-19T11:08:27.191Z"
+    },
+    {
+      "url": "https://greek-invest.com/guides/hidden-costs-buying-property-greece",
+      "channel": "google",
+      "at": "2026-06-19T11:08:27.191Z"
+    },
+    {
+      "url": "https://greek-invest.com/guides/highest-rental-yield-areas-greece",
+      "channel": "google",
+      "at": "2026-06-19T11:08:27.191Z"
+    },
+    {
+      "url": "https://greek-invest.com/guides/how-to-buy-greece-property-remotely",
+      "channel": "google",
+      "at": "2026-06-19T11:08:27.191Z"
+    },
+    {
+      "url": "https://greek-invest.com/guides/how-to-buy-property-greece-step-by-step",
+      "channel": "google",
+      "at": "2026-06-19T11:08:27.191Z"
+    },
+    {
+      "url": "https://greek-invest.com/guides/is-greece-property-good-investment-2026",
+      "channel": "google",
+      "at": "2026-06-19T11:08:27.191Z"
+    },
+    {
+      "url": "https://greek-invest.com/guides/israeli-buyers-greece-property",
+      "channel": "google",
+      "at": "2026-06-19T11:08:27.191Z"
+    },
+    {
+      "url": "https://greek-invest.com/guides/non-resident-mortgage-greece",
+      "channel": "google",
+      "at": "2026-06-19T11:08:27.191Z"
+    },
+    {
+      "url": "https://greek-invest.com/guides/off-plan-property-greece-guide",
+      "channel": "google",
+      "at": "2026-06-19T11:08:27.191Z"
+    },
+    {
+      "url": "https://greek-invest.com/guides/off-plan-vs-resale-greece",
+      "channel": "google",
+      "at": "2026-06-19T11:08:27.191Z"
+    },
+    {
+      "url": "https://greek-invest.com/guides/peloponnese-golden-visa-400000-property",
+      "channel": "google",
+      "at": "2026-06-19T11:08:27.191Z"
+    },
+    {
+      "url": "https://greek-invest.com/guides/peloponnese-property-investment-guide",
+      "channel": "google",
+      "at": "2026-06-19T11:08:27.191Z"
+    },
+    {
+      "url": "https://greek-invest.com/guides/power-of-attorney-property-greece",
+      "channel": "google",
+      "at": "2026-06-19T11:08:27.191Z"
+    },
+    {
+      "url": "https://greek-invest.com/guides/resale-property-greece-checklist-foreigner",
+      "channel": "google",
+      "at": "2026-06-19T11:08:27.191Z"
+    },
+    {
+      "url": "https://greek-invest.com/guides/short-term-rental-greece-rules",
+      "channel": "google",
+      "at": "2026-06-19T11:08:27.191Z"
+    },
+    {
+      "url": "https://greek-invest.com/guides/snagging-inspection-greece-new-build",
+      "channel": "google",
+      "at": "2026-06-19T11:08:27.191Z"
+    },
+    {
+      "url": "https://greek-invest.com/guides/thessaloniki-golden-visa-800000-property",
+      "channel": "google",
+      "at": "2026-06-19T11:08:27.191Z"
+    },
+    {
+      "url": "https://greek-invest.com/guides/thessaloniki-property-investment-guide",
+      "channel": "google",
+      "at": "2026-06-19T11:08:27.191Z"
+    },
+    {
+      "url": "https://greek-invest.com/guides/turkish-buyers-greece-property",
+      "channel": "google",
+      "at": "2026-06-19T11:08:27.191Z"
+    },
+    {
+      "url": "https://greek-invest.com/invest-athens-property",
+      "channel": "google",
+      "at": "2026-06-19T11:08:27.191Z"
+    },
+    {
+      "url": "https://greek-invest.com/invest-crete-property",
+      "channel": "google",
+      "at": "2026-06-19T11:08:27.191Z"
+    },
+    {
+      "url": "https://greek-invest.com/methodology",
+      "channel": "google",
+      "at": "2026-06-19T11:08:27.191Z"
+    },
+    {
+      "url": "https://greek-invest.com/news",
+      "channel": "google",
+      "at": "2026-06-19T11:08:27.191Z"
+    },
+    {
+      "url": "https://greek-invest.com/news/greece-golden-visa-approvals-2025",
+      "channel": "google",
+      "at": "2026-06-19T11:08:27.191Z"
+    },
+    {
+      "url": "https://greek-invest.com/privacy-policy",
+      "channel": "google",
+      "at": "2026-06-19T11:08:27.191Z"
+    },
+    {
+      "url": "https://greek-invest.com/projects",
+      "channel": "google",
+      "at": "2026-06-19T11:08:27.191Z"
+    },
+    {
+      "url": "https://greek-invest.com/projects/ela-suites-kastella",
+      "channel": "google",
+      "at": "2026-06-19T11:08:27.191Z"
+    },
+    {
+      "url": "https://greek-invest.com/projects/lotus-voula",
+      "channel": "google",
+      "at": "2026-06-19T11:08:27.191Z"
+    },
+    {
+      "url": "https://greek-invest.com/projects/the-grandline",
+      "channel": "google",
+      "at": "2026-06-19T11:08:27.191Z"
+    },
+    {
+      "url": "https://greek-invest.com/terms",
+      "channel": "google",
+      "at": "2026-06-19T11:08:27.191Z"
+    },
+    {
+      "url": "https://greek-invest.com/tier-golden-visa-400k",
+      "channel": "google",
+      "at": "2026-06-19T11:08:27.191Z"
+    },
+    {
+      "url": "https://greek-invest.com/tools/greece-golden-visa-zone-lookup",
+      "channel": "google",
+      "at": "2026-06-19T11:08:27.191Z"
+    },
+    {
+      "url": "https://greek-invest.com/tools/greece-property-cost-calculator",
+      "channel": "google",
+      "at": "2026-06-19T11:08:27.191Z"
+    },
+    {
+      "url": "https://greek-invest.com/tools/greece-rental-yield-calculator",
+      "channel": "google",
+      "at": "2026-06-19T11:08:27.191Z"
+    }
   ]
 }

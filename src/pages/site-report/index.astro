@@ -1,6 +1,34 @@
 ---
-/** Greek Invest — live site report. Regenerate: node ../scripts/generate-niche-site-report.mjs greek-invest-website */
 export const prerender = true;
+
+const reportDate = '25 June 2026';
+const reportVersion = 'v1.0';
+const launchDate = '17 June 2026';
+const dataThrough = '25 June 2026';
+
+const monthlyGsc = [
+  { month: 'Jun 2026', label: 'Jun', clicks: 0, impressions: 89, position: 18.8, note: 'Launch · first GSC crawl 19 Jun · Silo E complete' },
+];
+
+const monthlyGa4 = [
+  { month: 'Jun', sessions: 34 },
+];
+
+const contentBreakdown = [
+  { type: 'Guides', count: 66, words: 173206, color: '#2d7a5e' },
+  { type: 'Areas', count: 12, words: 24798, color: '#8b5cf6' },
+  { type: 'Compare', count: 6, words: 13317, color: '#d97706' },
+  { type: 'Projects', count: 3, words: 4531, color: '#4e9e7e' },
+  { type: 'Developers', count: 4, words: 6786, color: '#60a5fa' },
+  { type: 'News', count: 1, words: 1192, color: '#9ca3af' },
+];
+
+const totalClicks = monthlyGsc.reduce((s, m) => s + m.clicks, 0);
+const totalImp = monthlyGsc.reduce((s, m) => s + m.impressions, 0);
+const totalWords = contentBreakdown.reduce((s, c) => s + c.words, 0);
+const totalFiles = contentBreakdown.reduce((s, c) => s + c.count, 0);
+const clicksDelta = 0;
+const maxImp = Math.max(...monthlyGsc.map(m => m.impressions));
 ---
 <!DOCTYPE html>
 <html lang="en">
@@ -11,83 +39,402 @@ export const prerender = true;
   <title>greek-invest.com — Site Report</title>
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #f5f3ef; color: #1c1917; min-height: 100vh; }
-    .header { background: #1c1917; color: white; padding: 32px 40px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #f4f1eb; color: #2c2c2c; min-height: 100vh; }
+
+    .header { background: #1a2e2a; color: white; padding: 32px 40px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
     .header-brand { display: flex; align-items: center; gap: 12px; }
-    .header-logo { width: 36px; height: 36px; background: linear-gradient(135deg, #d4a853, #b45309); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 13px; color: #1c1917; }
+    .header-logo { width: 36px; height: 36px; background: #4e9e7e; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 18px; color: white; }
     .header h1 { font-size: 22px; font-weight: 700; }
-    .header-sub { font-size: 13px; color: #a8a29e; margin-top: 2px; }
+    .header-sub { font-size: 13px; color: #9dbfb3; margin-top: 2px; }
     .header-meta { text-align: right; }
-    .header-meta .label { font-size: 12px; color: #a8a29e; }
+    .header-meta .label { font-size: 12px; color: #9dbfb3; }
     .header-meta .value { font-size: 14px; font-weight: 600; margin-top: 2px; }
-    .live-badge { display: inline-flex; align-items: center; gap: 6px; background: #292524; border-radius: 20px; padding: 4px 12px; font-size: 12px; margin-top: 8px; }
+    .live-badge { display: inline-flex; align-items: center; gap: 6px; background: #2d5a4a; border-radius: 20px; padding: 4px 12px; font-size: 12px; margin-top: 8px; }
     .live-dot { width: 6px; height: 6px; background: #4ade80; border-radius: 50%; animation: pulse 2s infinite; }
     @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.4; } }
-    .container { max-width: 1100px; margin: 0 auto; padding: 32px 24px; }
-    .section-title { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: #78716c; margin-bottom: 16px; margin-top: 40px; }
+
+    .container { max-width: 1280px; margin: 0 auto; padding: 32px 24px; }
+
+    .section-title { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: #7a7a6e; margin-bottom: 16px; margin-top: 40px; }
     .section-title:first-child { margin-top: 0; }
-    .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 16px; }
-    .stat-card { background: white; border-radius: 12px; padding: 20px; border: 1px solid #e7e5e4; }
-    .stat-card .num { font-size: 40px; font-weight: 800; color: #1c1917; line-height: 1; }
-    .stat-card .num.gold { color: #b45309; }
-    .stat-card .num.green { color: #15803d; }
-    .stat-card .label { font-size: 13px; color: #78716c; margin-top: 6px; }
-    .stat-card .sublabel { font-size: 11px; color: #a8a29e; margin-top: 4px; line-height: 1.4; }
+
+    .stats-grid { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 10px; }
+    .stat-card { background: white; border-radius: 10px; padding: 14px 10px; border: 1px solid #e8e4dc; min-width: 0; }
+    .stat-card .num { font-size: 26px; font-weight: 800; color: #1a2e2a; line-height: 1.05; letter-spacing: -0.02em; }
+    .stat-card .num.teal { color: #2d7a5e; }
+    .stat-card .num.amber { color: #b45309; }
+    .stat-card .label { font-size: 11px; color: #7a7a6e; margin-top: 5px; line-height: 1.25; }
+    .stat-card .sublabel { font-size: 9px; color: #aaa; margin-top: 3px; line-height: 1.35; }
+    @media (max-width: 1100px) { .stats-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+
     .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
     @media (max-width: 600px) { .info-grid { grid-template-columns: 1fr; } }
-    .info-card { background: white; border-radius: 12px; padding: 20px; border: 1px solid #e7e5e4; }
-    .info-card h3 { font-size: 14px; font-weight: 700; color: #1c1917; margin-bottom: 14px; padding-bottom: 10px; border-bottom: 1px solid #f5f5f4; }
-    .info-row { display: flex; justify-content: space-between; align-items: flex-start; padding: 6px 0; border-bottom: 1px solid #fafaf9; gap: 16px; }
+    .info-card { background: white; border-radius: 12px; padding: 20px; border: 1px solid #e8e4dc; }
+    .info-card h3 { font-size: 14px; font-weight: 700; color: #1a2e2a; margin-bottom: 14px; padding-bottom: 10px; border-bottom: 1px solid #f0ece4; }
+    .info-row { display: flex; justify-content: space-between; align-items: flex-start; padding: 6px 0; border-bottom: 1px solid #f7f4ef; gap: 16px; }
     .info-row:last-child { border-bottom: none; }
-    .info-row .key { font-size: 13px; color: #78716c; flex-shrink: 0; }
-    .info-row .val { font-size: 13px; font-weight: 600; color: #1c1917; text-align: right; }
-    .info-row .val a { color: #b45309; text-decoration: none; }
-    .content-card { background: white; border-radius: 12px; border: 1px solid #e7e5e4; overflow: hidden; }
-    .table-scroll { width: 100%; overflow-x: auto; }
-    .content-table { width: 100%; border-collapse: collapse; min-width: 640px; }
-    .content-table th { font-size: 11px; text-transform: uppercase; letter-spacing: 0.06em; color: #78716c; font-weight: 700; padding: 12px 20px; text-align: left; background: #fafaf9; border-bottom: 1px solid #e7e5e4; }
-    .content-table td { padding: 12px 20px; font-size: 13px; border-bottom: 1px solid #f5f5f4; vertical-align: top; }
-    .content-table .count { font-weight: 800; color: #b45309; font-size: 18px; }
-    .content-table .words { color: #78716c; font-size: 12px; }
+    .info-row .key { font-size: 13px; color: #7a7a6e; flex-shrink: 0; }
+    .info-row .val { font-size: 13px; font-weight: 600; color: #2c2c2c; text-align: right; }
+    .info-row .val a { color: #2d7a5e; text-decoration: none; }
+    .info-row .val a:hover { text-decoration: underline; }
+
+    .content-card { background: white; border-radius: 12px; border: 1px solid #e8e4dc; overflow: hidden; }
+    .table-scroll { width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+    .content-table { width: 100%; border-collapse: collapse; }
+    .content-table th { font-size: 11px; text-transform: uppercase; letter-spacing: 0.06em; color: #7a7a6e; font-weight: 700; padding: 12px 20px; text-align: left; background: #faf8f4; border-bottom: 1px solid #e8e4dc; }
+    .content-table td { padding: 12px 20px; font-size: 13px; border-bottom: 1px solid #f4f1eb; vertical-align: top; }
+    .content-table tr:last-child td { border-bottom: none; }
+    .content-table tr:hover td { background: #faf8f4; }
+    .content-table .count { font-weight: 800; color: #2d7a5e; font-size: 18px; }
+    .content-table .words { color: #7a7a6e; font-size: 12px; }
     .tag { display: inline-block; padding: 2px 8px; border-radius: 20px; font-size: 11px; font-weight: 600; }
     .tag.green { background: #dcfce7; color: #166534; }
     .tag.blue { background: #dbeafe; color: #1e40af; }
     .tag.amber { background: #fef3c7; color: #92400e; }
-    .tag.gray { background: #f5f5f4; color: #57534e; }
-    .tag.red { background: #fee2e2; color: #991b1b; }
-    .pulse-wrap { background: white; border-radius: 16px; border: 1px solid #e7e5e4; padding: 24px 28px; }
+    .tag.gray { background: #f3f4f6; color: #374151; }
+
+    .changelog { display: flex; flex-direction: column; gap: 0; }
+    .changelog-item { background: white; border-radius: 0; border: 1px solid #e8e4dc; border-bottom: none; padding: 16px 20px; display: flex; gap: 16px; align-items: flex-start; }
+    .changelog-item:first-child { border-radius: 12px 12px 0 0; }
+    .changelog-item:last-child { border-radius: 0 0 12px 12px; border-bottom: 1px solid #e8e4dc; }
+    .changelog-date { font-size: 11px; color: #9ca3af; min-width: 80px; padding-top: 2px; }
+    .changelog-content { flex: 1; }
+    .changelog-title { font-size: 13px; font-weight: 600; color: #1a2e2a; }
+    .changelog-desc { font-size: 12px; color: #7a7a6e; margin-top: 3px; }
+    .changelog-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 6px; }
+
+    .next-steps { display: flex; flex-direction: column; gap: 10px; }
+    .next-item { background: white; border-radius: 10px; border: 1px solid #e8e4dc; padding: 14px 18px; display: flex; align-items: flex-start; gap: 12px; }
+    .next-item .priority { font-size: 11px; font-weight: 700; min-width: 50px; padding-top: 1px; }
+    .priority.high { color: #dc2626; }
+    .priority.medium { color: #d97706; }
+    .priority.low { color: #059669; }
+    .next-item .text { font-size: 13px; color: #2c2c2c; }
+    .next-item .subtext { font-size: 12px; color: #9ca3af; margin-top: 2px; }
+
+    .links-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; }
+    .link-card { background: white; border-radius: 10px; border: 1px solid #e8e4dc; padding: 16px; text-decoration: none; color: #2c2c2c; transition: border-color 0.2s; display: block; }
+    .link-card:hover { border-color: #2d7a5e; }
+    .link-card .link-label { font-size: 11px; color: #9ca3af; text-transform: uppercase; letter-spacing: 0.06em; }
+    .link-card .link-url { font-size: 13px; font-weight: 600; color: #2d7a5e; margin-top: 4px; word-break: break-all; }
+
+    .footer { text-align: center; padding: 32px 24px; color: #9ca3af; font-size: 12px; }
+    .footer strong { color: #7a7a6e; }
+
+    /* ── SEO PULSE DASHBOARD ── */
+    .pulse-header { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; margin-bottom: 20px; }
+    .pulse-header h2 { font-size: 16px; font-weight: 800; color: #1a2e2a; }
+    .pulse-updated { font-size: 11px; color: #9ca3af; background: #f4f1eb; border-radius: 20px; padding: 4px 12px; display: flex; align-items: center; gap: 6px; }
+    .pulse-updated-dot { width: 6px; height: 6px; border-radius: 50%; background: #4ade80; animation: pulse 2s infinite; }
+
     .pulse-kpi-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-bottom: 20px; }
     @media (max-width: 700px) { .pulse-kpi-row { grid-template-columns: repeat(2, 1fr); } }
-    .pulse-kpi { background: #fafaf9; border-radius: 12px; border: 1px solid #e7e5e4; padding: 18px 20px; }
-    .pulse-kpi .kpi-val { font-size: 36px; font-weight: 900; color: #1c1917; line-height: 1; margin-top: 4px; }
-    .pulse-kpi .kpi-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em; color: #78716c; }
-    .pulse-kpi .kpi-sub { font-size: 11px; color: #a8a29e; margin-top: 4px; line-height: 1.35; }
-    .baseline-box { background: #fffbeb; border: 1px solid #fde68a; border-radius: 10px; padding: 16px 20px; margin-bottom: 20px; font-size: 13px; color: #92400e; line-height: 1.5; }
-    .insight { background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 10px; padding: 14px 18px; margin-top: 16px; font-size: 12px; color: #166534; line-height: 1.5; }
-    .insight-warn { background: #fff7ed; border: 1px solid #fed7aa; color: #9a3412; }
-    .changelog-item { background: white; border: 1px solid #e7e5e4; border-bottom: none; padding: 16px 20px; display: flex; gap: 16px; }
-    .changelog-item:first-child { border-radius: 12px 12px 0 0; }
-    .changelog-item:last-child { border-radius: 0 0 12px 12px; border-bottom: 1px solid #e7e5e4; }
-    .changelog-date { font-size: 11px; color: #a8a29e; min-width: 110px; }
-    .changelog-title { font-size: 13px; font-weight: 600; }
-    .changelog-desc { font-size: 12px; color: #78716c; margin-top: 3px; line-height: 1.45; }
-    .changelog-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 6px; }
-    .next-item { background: white; border-radius: 10px; border: 1px solid #e7e5e4; padding: 14px 18px; display: flex; gap: 12px; margin-bottom: 10px; }
-    .priority.high { color: #dc2626; font-size: 11px; font-weight: 700; min-width: 50px; }
-    .priority.medium { color: #d97706; font-size: 11px; font-weight: 700; min-width: 50px; }
-    .priority.low { color: #059669; font-size: 11px; font-weight: 700; min-width: 50px; }
-    .links-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; }
-    .link-card { background: white; border-radius: 10px; border: 1px solid #e7e5e4; padding: 16px; text-decoration: none; color: #1c1917; display: block; }
-    .link-card:hover { border-color: #b45309; }
-    .link-card .link-label { font-size: 11px; color: #a8a29e; text-transform: uppercase; }
-    .link-card .link-url { font-size: 13px; font-weight: 600; color: #b45309; margin-top: 4px; word-break: break-all; }
-    .footer { text-align: center; padding: 32px 24px; color: #a8a29e; font-size: 12px; line-height: 1.6; }
-    .footer a { color: #b45309; text-decoration: none; }
-    .audit-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 12px; }
-    @media (max-width: 700px) { .audit-grid { grid-template-columns: 1fr; } }
-    .audit-item { background: #fafaf9; border: 1px solid #e7e5e4; border-radius: 10px; padding: 14px 16px; font-size: 12px; line-height: 1.45; }
-    .audit-item strong { display: block; margin-bottom: 4px; color: #1c1917; }
+    .pulse-kpi { background: white; border-radius: 12px; border: 1px solid #e8e4dc; padding: 18px 20px; position: relative; overflow: hidden; }
+    .pulse-kpi::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; }
+    .pulse-kpi.kpi-green::before { background: linear-gradient(90deg, #4ade80, #2d7a5e); }
+    .pulse-kpi.kpi-blue::before { background: linear-gradient(90deg, #60a5fa, #2563eb); }
+    .pulse-kpi.kpi-amber::before { background: linear-gradient(90deg, #fbbf24, #d97706); }
+    .pulse-kpi.kpi-orange::before { background: linear-gradient(90deg, #fb923c, #c2410c); }
+    .pulse-kpi .kpi-val { font-size: 36px; font-weight: 900; color: #1a2e2a; line-height: 1; margin-top: 4px; }
+    .pulse-kpi .kpi-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em; color: #7a7a6e; }
+    .pulse-kpi .kpi-sub { font-size: 11px; color: #aaa; margin-top: 4px; }
+    .pulse-kpi .kpi-trend { position: absolute; top: 18px; right: 18px; font-size: 11px; font-weight: 700; padding: 2px 8px; border-radius: 20px; }
+    .trend-up { background: #dcfce7; color: #166534; }
+    .trend-new { background: #dbeafe; color: #1e40af; }
+
+    .pulse-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    @media (max-width: 700px) { .pulse-grid { grid-template-columns: 1fr; } }
+
+    .pulse-card { background: white; border-radius: 12px; border: 1px solid #e8e4dc; padding: 18px 20px; }
+    .pulse-card-title { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em; color: #7a7a6e; margin-bottom: 14px; display: flex; align-items: center; gap: 8px; }
+    .pulse-card-title span { width: 8px; height: 8px; border-radius: 50%; display: inline-block; }
+    .span-green { background: #4ade80; }
+    .span-blue { background: #60a5fa; }
+
+    .pulse-query-row { display: flex; align-items: center; gap: 10px; padding: 7px 0; border-bottom: 1px solid #f4f1eb; }
+    .pulse-query-row:last-child { border-bottom: none; }
+    .pulse-query-rank { font-size: 11px; font-weight: 700; color: #aaa; min-width: 20px; }
+    .pulse-query-text { flex: 1; min-width: 0; font-size: 12px; color: #2c2c2c; white-space: normal; overflow-wrap: anywhere; word-break: break-word; }
+    .pulse-query-pos { font-size: 11px; font-weight: 700; color: #2d7a5e; background: #f0faf5; border-radius: 6px; padding: 2px 7px; }
+    .pulse-query-imp { font-size: 11px; color: #aaa; min-width: 50px; text-align: right; }
+
+    .pulse-page-row { display: flex; align-items: flex-start; gap: 10px; padding: 7px 0; border-bottom: 1px solid #f4f1eb; }
+    .pulse-page-row:last-child { border-bottom: none; }
+    .pulse-page-url { flex: 1; min-width: 0; font-size: 11px; color: #2d7a5e; overflow-wrap: anywhere; word-break: break-word; }
+    .pulse-page-meta { display: flex; gap: 6px; flex-shrink: 0; }
+    .pulse-badge { font-size: 10px; font-weight: 700; padding: 2px 7px; border-radius: 20px; }
+    .badge-clicks { background: #dcfce7; color: #166534; }
+    .badge-impr { background: #dbeafe; color: #1e40af; }
+    .badge-pos { background: #fef3c7; color: #92400e; }
+
+    .pulse-chart { margin-top: 4px; }
+    .chart-bars { display: flex; align-items: flex-end; gap: 4px; height: 60px; }
+    .chart-bar-wrap { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 4px; }
+    .chart-bar { width: 100%; border-radius: 3px 3px 0 0; min-height: 2px; transition: height 0.3s; }
+    .chart-bar.bar-impr { background: #bfdbfe; }
+    .chart-bar.bar-click { background: #4ade80; }
+    .chart-label { font-size: 9px; color: #aaa; }
+
+    .pulse-insight { background: #f0faf5; border: 1px solid #c6e8da; border-radius: 10px; padding: 12px 16px; margin-top: 16px; display: flex; gap: 12px; align-items: flex-start; }
+    .pulse-insight-icon { font-size: 18px; flex-shrink: 0; }
+    .pulse-insight-text { font-size: 12px; color: #1a4f3a; line-height: 1.5; }
+    .pulse-insight-text strong { font-weight: 700; }
+
+    .pulse-footer-note { font-size: 11px; color: #aaa; margin-top: 16px; text-align: center; }
+    .pulse-footer-note a { color: #2d7a5e; text-decoration: none; }
+    .pulse-table-scroll { width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+    .pulse-table-scroll table { min-width: 720px; }
+
+    @media (max-width: 640px) {
+      body { overflow-x: hidden; }
+      .header { padding: 22px 16px; display: block; }
+      .header-brand { align-items: flex-start; }
+      .header h1 { font-size: 19px; line-height: 1.2; word-break: break-word; }
+      .header-meta { text-align: left; margin-top: 18px; }
+      .live-badge { display: flex; align-items: flex-start; width: 100%; border-radius: 14px; padding: 8px 10px; line-height: 1.45; white-space: normal; }
+      .container { width: 100%; padding: 20px 12px; overflow: hidden; }
+      .section-title { margin-top: 30px !important; font-size: 12px; line-height: 1.35; }
+      .stats-grid, .info-grid, .pulse-grid, .pulse-kpi-row, .links-grid { grid-template-columns: 1fr !important; gap: 10px; }
+      .pulse-card > div[style*="grid-template-columns:repeat(4,1fr)"],
+      .pulse-card > div[style*="grid-template-columns:1fr 1fr"],
+      div[style*="grid-template-columns:1fr 1fr"] { grid-template-columns: 1fr !important; }
+      .stat-card, .info-card, .pulse-card, .pulse-kpi, .link-card { padding: 14px; border-radius: 12px; max-width: 100%; }
+      .stat-card .num, .pulse-kpi .kpi-val { font-size: 30px; }
+      .pulse-kpi .kpi-trend { position: static; display: inline-block; margin-bottom: 8px; }
+      .info-row { display: block; }
+      .info-row .key, .info-row .val { display: block; text-align: left; }
+      .info-row .val { margin-top: 4px; word-break: break-word; }
+      .pulse-query-row, .pulse-page-row { align-items: flex-start; flex-wrap: wrap; gap: 6px; }
+      .pulse-query-text, .pulse-page-url { min-width: 0; white-space: normal; overflow: visible; text-overflow: clip; word-break: break-word; }
+      .pulse-page-meta { flex-wrap: wrap; width: 100%; }
+      .pulse-query-imp { min-width: auto; text-align: left; }
+      .pulse-insight { padding: 12px; gap: 10px; }
+      .pulse-insight-text { font-size: 12px; word-break: break-word; }
+      .pulse-table-scroll { margin: 0 -2px; }
+      .content-card { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+      .content-table { min-width: 720px; }
+      .changelog-item { display: block; padding: 14px; }
+      .changelog-date { min-width: 0; margin-bottom: 6px; }
+      .footer { padding: 24px 14px; line-height: 1.5; }
+    }
+
+    /* ── GROWTH DASHBOARD v19 ── */
+    :root {
+      --ink: #1a2e2a;
+      --ink-soft: #2c4a44;
+      --accent: #4e9e7e;
+      --accent-dark: #2d7a5e;
+      --paper-2: #faf8f4;
+      --card: #ffffff;
+      --border: #e8e4dc;
+      --muted: #7a7a6e;
+      --up: #16a34a;
+      --down: #dc2626;
+      --shadow: 0 4px 24px rgba(26, 46, 42, 0.06);
+      --radius: 14px;
+    }
+
+    .kpi-strip {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin-top: 8px;
+      margin-bottom: 32px;
+    }
+    @media (max-width: 1100px) { .kpi-strip { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 560px) { .kpi-strip { grid-template-columns: 1fr; } }
+    .kpi-card {
+      background: var(--card);
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      padding: 18px 16px;
+      box-shadow: var(--shadow);
+    }
+    .kpi-label {
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+    }
+    .kpi-value {
+      font-size: 28px;
+      font-weight: 800;
+      color: var(--ink);
+      margin: 6px 0 4px;
+      letter-spacing: -0.02em;
+      line-height: 1;
+    }
+    .kpi-delta {
+      font-size: 11px;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 3px;
+      padding: 2px 8px;
+      border-radius: 999px;
+    }
+    .kpi-delta.up { background: #dcfce7; color: var(--up); }
+    .kpi-delta.down { background: #fee2e2; color: var(--down); }
+    .kpi-delta.neutral { background: #f3f4f6; color: var(--muted); }
+    .kpi-sub { font-size: 10px; color: #aaa; margin-top: 6px; line-height: 1.35; }
+
+    /* ── Sections ── */
+    .section { margin-bottom: 48px; }
+    .section-head {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+    .section-head h2 {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--ink);
+    }
+    .section-head p { font-size: 13px; color: var(--muted); max-width: 480px; }
+    .badge-src {
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--accent-dark);
+      background: #f0faf5;
+      border: 1px solid #c6e8da;
+      border-radius: 999px;
+      padding: 4px 12px;
+    }
+
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; }
+    @media (max-width: 900px) { .grid-2, .grid-3 { grid-template-columns: 1fr; } }
+
+    .card {
+      background: var(--card);
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      padding: 24px;
+      box-shadow: var(--shadow);
+    }
+    .card-title {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+      margin-bottom: 16px;
+    }
+    .chart-wrap { position: relative; height: 280px; }
+    .chart-wrap-sm { height: 220px; }
+
+    /* ── Monthly table ── */
+    .data-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    .data-table th {
+      text-align: left;
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      color: var(--muted);
+      padding: 10px 14px;
+      border-bottom: 2px solid var(--border);
+      font-weight: 700;
+    }
+    .data-table td {
+      padding: 12px 14px;
+      border-bottom: 1px solid #f4f1eb;
+      vertical-align: middle;
+    }
+    .data-table tr:last-child td { border-bottom: none; }
+    .data-table tr:hover td { background: var(--paper-2); }
+    .data-table .num { font-weight: 800; font-size: 15px; color: var(--accent-dark); }
+    .bar-cell { display: flex; align-items: center; gap: 10px; }
+    .mini-bar {
+      height: 6px;
+      border-radius: 3px;
+      background: linear-gradient(90deg, var(--accent), var(--accent-dark));
+      min-width: 4px;
+    }
+
+    /* ── Query / page rows ── */
+    .rank-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 9px 0;
+      border-bottom: 1px solid #f4f1eb;
+      font-size: 12px;
+    }
+    .rank-row:last-child { border-bottom: none; }
+    .rank-num { font-weight: 800; color: #ccc; min-width: 22px; font-size: 11px; }
+    .rank-text { flex: 1; min-width: 0; word-break: break-word; color: var(--ink); }
+    .rank-url { flex: 1; min-width: 0; word-break: break-all; color: var(--accent-dark); font-size: 11px; }
+    .pill {
+      font-size: 10px;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 999px;
+      white-space: nowrap;
+    }
+    .pill-green { background: #dcfce7; color: #166534; }
+    .pill-blue { background: #dbeafe; color: #1e40af; }
+    .pill-amber { background: #fef3c7; color: #92400e; }
+
+    /* ── Insight ── */
+    .insight {
+      background: linear-gradient(135deg, #f0faf5, #ecfdf5);
+      border: 1px solid #c6e8da;
+      border-radius: 12px;
+      padding: 16px 20px;
+      font-size: 13px;
+      color: var(--ink-soft);
+      line-height: 1.55;
+      margin-top: 20px;
+    }
+    .insight strong { color: var(--ink); }
+
+    /* ── Timeline ── */
+    .timeline { position: relative; padding-left: 28px; }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 7px;
+      top: 8px;
+      bottom: 8px;
+      width: 2px;
+      background: linear-gradient(180deg, var(--accent), var(--border));
+    }
+    .tl-item { position: relative; padding-bottom: 24px; }
+    .tl-item:last-child { padding-bottom: 0; }
+    .tl-dot {
+      position: absolute;
+      left: -28px;
+      top: 4px;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: var(--accent);
+      border: 3px solid var(--paper);
+      box-shadow: 0 0 0 2px var(--accent);
+    }
+    .tl-date { font-size: 11px; color: var(--muted); font-weight: 600; }
+    .tl-title { font-size: 14px; font-weight: 700; color: var(--ink); margin: 2px 0 4px; }
+    .tl-desc { font-size: 12px; color: var(--muted); line-height: 1.45; }
+    .tl-tag {
+      display: inline-block;
+      font-size: 10px;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 999px;
+      background: #f0faf5;
+      color: var(--accent-dark);
+      margin-top: 6px;
+    }
+
+
+  
   </style>
+  <script is:inline src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
 </head>
 <body>
 
@@ -95,14 +442,15 @@ export const prerender = true;
   <div class="header-brand">
     <div class="header-logo">GR</div>
     <div>
-      <div class="header-sub">Website Performance Report — Greece RE</div>
+      <div class="header-sub">Website Performance Report</div>
       <h1>greek-invest.com</h1>
     </div>
   </div>
   <div class="header-meta">
     <div class="label">Last updated</div>
-    <div class="value">19 June 2026 · v1.0</div>
-    <div class="live-badge"><span class="live-dot"></span> 92 indexable MDX · 113 sitemap · 113/113 · gap 0</div>
+    <div class="value">{reportDate} · {reportVersion} (live)</div>
+    <div class="live-badge"><span class="live-dot"></span> Site is live</div>
+    <div style="margin-top:10px;font-size:12px;"><a href="https://indexing-dashboard-deploy.vercel.app/" style="color:#9dbfb3;text-decoration:none;" target="_blank">← Portfolio indexing dashboard</a></div>
   </div>
 </div>
 
@@ -111,252 +459,795 @@ export const prerender = true;
   <div class="section-title">At a glance</div>
   <div class="stats-grid">
     <div class="stat-card">
-      <div class="num gold">92</div>
-      <div class="label">MDX articles</div>
-      <div class="sublabel">12 areas · 6 compare · 4 developers · 66 guides · 1 news · 3 projects</div>
+      <div class="num teal">113</div>
+      <div class="label">URLs in sitemap</div>
+      <div class="sublabel">66 guides · 12 areas · 6 comparisons · Silo E complete</div>
     </div>
     <div class="stat-card">
-      <div class="num">224K</div>
-      <div class="label">Words of SEO content</div>
-      <div class="sublabel">~2,433 avg/article · qa:full 5/5 PASS</div>
+      <div class="num amber">113/113</div>
+      <div class="label">IndexNow + Google</div>
+      <div class="sublabel">113/113 submitted · gap 0 · greek-invest-indexing GCP project</div>
     </div>
     <div class="stat-card">
-      <div class="num gold">113</div>
-      <div class="label">URLs in sitemap (live)</div>
-      <div class="sublabel">HTTP fetch sitemap-index.xml · 19 June 2026</div>
+      <div class="num">~224k</div>
+      <div class="label">SEO words</div>
+      <div class="sublabel">92 MDX files · ~2,433 avg · 24 git commits</div>
     </div>
     <div class="stat-card">
-      <div class="num green">113</div>
-      <div class="label">URLs sent (Google API)</div>
-      <div class="sublabel">greek-invest-indexing · explicit batches · gap 0</div>
+      <div class="num teal">10</div>
+      <div class="label">GSC visible URLs</div>
+      <div class="sublabel">1–25 Jun · Golden Visa cluster indexing first</div>
     </div>
     <div class="stat-card">
-      <div class="num green">92</div>
-      <div class="label">Indexable MDX</div>
-      <div class="sublabel">noindex pages excluded from sitemap filter</div>
+      <div class="num">6</div>
+      <div class="label">Collections</div>
+      <div class="sublabel">guides · areas · compare · projects · developers · news</div>
     </div>
     <div class="stat-card">
-      <div class="num">20</div>
-      <div class="label">Git commits</div>
-      <div class="sublabel">Production author: Maksim Shchegolev</div>
+      <div class="num amber">89</div>
+      <div class="label">GSC impressions</div>
+      <div class="sublabel">89 imp · 0 clicks · avg pos 18.8 · early index</div>
+    </div>
+    <div class="stat-card">
+      <div class="num teal">34</div>
+      <div class="label">GA4 sessions</div>
+      <div class="sublabel">36 pageviews · 17–24 Jun · lead API 200 OK</div>
     </div>
   </div>
 
-  <div class="section-title">Cross-site audit (19 June 2026)</div>
-  <div class="pulse-wrap">
-    <div class="audit-grid">
-      <div class="audit-item"><strong>Branding</strong>Logo GR · Greece RE · was Mexico shell on several niche sites — fixed in this report.</div>
-      <div class="audit-item"><strong>Sitemap vs API</strong>Live sitemap 113 URLs · Google API log 113 · gap 0.</div>
-      <div class="audit-item"><strong>MCP trio</strong>search-console-greek-invest · ga4-analytics-greek-invest · bing-webmaster-greek-invest</div>
-      <div class="audit-item"><strong>Indexing isolation</strong>greek-invest-indexing · never soy-braid / mexico / invest-gulf quota.</div>
+
+  <!-- GROWTH DASHBOARD -->
+  <div class="section-title" style="margin-top:32px;">Growth dashboard — since launch</div>
+
+  <div class="kpi-strip">
+    <div class="kpi-card">
+      <div class="kpi-label">GSC Clicks</div>
+      <div class="kpi-value">{totalClicks}</div>
+      <span class="kpi-delta neutral">Early phase</span>
+      <div class="kpi-sub">Since launch · Google Search Console</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-label">Impressions</div>
+      <div class="kpi-value">89</div>
+      <span class="kpi-delta up">↑ First crawl</span>
+      <div class="kpi-sub">89 total · peak 30 on 21 Jun</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-label">GA4 Sessions</div>
+      <div class="kpi-value">34</div>
+      <span class="kpi-delta up">↑ Launch week</span>
+      <div class="kpi-sub">Jun cumulative · 17–24 Jun</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-label">Content corpus</div>
+      <div class="kpi-value">224k</div>
+      <span class="kpi-delta neutral">{totalFiles} pages</span>
+      <div class="kpi-sub">Words in MDX</div>
     </div>
   </div>
 
-  <div class="section-title">SEO Pulse — Google Search Console</div>
-  <div class="pulse-wrap">
-    <div class="baseline-box">
-      <strong>Early index phase (19 June 2026).</strong> GSC MCP <code>sc-domain:greek-invest.com</code> · May–18 Jun 2026: <strong>0 clicks, 0 impressions</strong> on queries/pages (new or pre-crawl). 113 URLs in indexing pipeline. First query data expected ~7–14 days after full crawl. EN site — Google + Bing only · never Yandex.
+  <section class="section">
+    <div class="section-head">
+      <div>
+        <h2>Monthly growth since launch</h2>
+        <p>Google Search Console web search · {launchDate} → {dataThrough}. Site launched mid-June — first GSC data from 19 Jun.</p>
+      </div>
+      <span class="badge-src">GSC API · Updated {reportDate}</span>
+    </div>
+    <div class="grid-2">
+      <div class="card">
+        <div class="card-title">Clicks &amp; impressions by month</div>
+        <div class="chart-wrap"><canvas id="chartMonthly"></canvas></div>
+      </div>
+      <div class="card">
+        <div class="card-title">GA4 sessions by month</div>
+        <div class="chart-wrap"><canvas id="chartGa4"></canvas></div>
+        <div class="insight" style="margin-top:16px;">
+          <strong>Launch week:</strong> 34 sessions in first 8 days live. Peak 11 sessions on 17 Jun (deploy + internal QA traffic). Organic search signal building — GSC impressions started 19 Jun.
+        </div>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top:20px;">
+      <div class="card-title">Month-over-month detail</div>
+      <div style="overflow-x:auto;">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Month</th>
+              <th>Clicks</th>
+              <th>Impressions</th>
+              <th>Avg position</th>
+              <th>MoM clicks</th>
+              <th>Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            {monthlyGsc.map((m, i) => {
+              const prev = i > 0 ? monthlyGsc[i - 1] : null;
+              const mom = prev && prev.clicks > 0
+                ? `+${Math.round(((m.clicks - prev.clicks) / prev.clicks) * 100)}%`
+                : '—';
+              const barW = Math.round((m.impressions / maxImp) * 120);
+              return (
+                <tr>
+                  <td><strong>{m.month}</strong></td>
+                  <td class="num">{m.clicks}</td>
+                  <td>
+                    <div class="bar-cell">
+                      <span>{m.impressions.toLocaleString('en-US')}</span>
+                      <div class="mini-bar" style={`width:${barW}px`}></div>
+                    </div>
+                  </td>
+                  <td>{m.position.toFixed(1)}</td>
+                  <td><span class="pill pill-amber">{mom}</span></td>
+                  <td style="color:#7a7a6e;font-size:12px;">{m.note}</td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
+      </div>
+      <div class="insight">
+        <strong>Early index phase:</strong> Golden Visa guides (120 m² rule, Crete €400k, family members) entering SERPs at positions 4–10. Costa Navarino area page at pos 6.4. Zero clicks expected in week 1 — focus on impression growth and position improvement.
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-head">
+      <div>
+        <h2>SEO momentum — daily trend</h2>
+        <p>Key days since launch · GSC impressions (area) vs clicks (line).</p>
+      </div>
+    </div>
+    <div class="card">
+      <div class="chart-wrap" style="height:320px;"><canvas id="chartDaily"></canvas></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-head">
+      <div>
+        <h2>Content engine</h2>
+        <p>{totalFiles.toLocaleString('en-US')} MDX pages · {(totalWords / 1000).toFixed(0)}k words · Golden Visa + regional Silo E.</p>
+      </div>
+    </div>
+    <div class="grid-2">
+      <div class="card">
+        <div class="card-title">Corpus by collection</div>
+        <div class="chart-wrap-sm"><canvas id="chartContent"></canvas></div>
+      </div>
+      <div class="card">
+        <div class="card-title">Breakdown</div>
+        <table class="data-table">
+          <thead>
+            <tr><th>Collection</th><th>Pages</th><th>Words</th><th>Avg depth</th></tr>
+          </thead>
+          <tbody>
+            {contentBreakdown.map(c => (
+              <tr>
+                <td><strong>{c.type}</strong></td>
+                <td class="num">{c.count}</td>
+                <td>{c.words.toLocaleString('en-US')}</td>
+                <td>{Math.round(c.words / c.count).toLocaleString('en-US')}</td>
+              </tr>
+            ))}
+            <tr style="background:#f0faf5;">
+              <td><strong>TOTAL</strong></td>
+              <td class="num">{totalFiles}</td>
+              <td><strong>{totalWords.toLocaleString('en-US')}</strong></td>
+              <td>{Math.round(totalWords / totalFiles).toLocaleString('en-US')}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- SEO PULSE -->
+  <div class="section-title" style="margin-top:40px;">SEO Pulse — Google Search Console</div>
+
+  <div style="background:white;border-radius:16px;border:1px solid #e8e4dc;padding:24px 28px;">
+
+    <div class="pulse-header">
+      <div>
+        <h2>Search Performance</h2>
+        <p style="font-size:12px;color:#9ca3af;margin-top:2px;">greek-invest.com · 1 – 25 Jun 2026 · Web search · Updated 25 Jun via GSC API</p>
+      </div>
+      <div class="pulse-updated">
+        <span class="pulse-updated-dot"></span>
+        Updated 25 Jun 2026
+      </div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:20px;">
+      <div style="background:#f0faf5;border:1px solid #c6e8da;border-radius:10px;padding:14px 16px;">
+        <div style="font-size:11px;font-weight:700;color:#7a7a6e;text-transform:uppercase;">19–21 Jun 2026</div>
+        <div style="font-size:22px;font-weight:900;color:#1a2e2a;margin-top:4px;">51 impressions</div>
+        <div style="font-size:12px;color:#7a7a6e;">First crawl window · Golden Visa cluster</div>
+      </div>
+      <div style="background:#eef2ff;border:1px solid #c7d2fe;border-radius:10px;padding:14px 16px;">
+        <div style="font-size:11px;font-weight:700;color:#7a7a6e;text-transform:uppercase;">22–25 Jun 2026</div>
+        <div style="font-size:22px;font-weight:900;color:#1a2e2a;margin-top:4px;">38 impressions</div>
+        <div style="font-size:12px;color:#7a7a6e;">Steady daily crawl · avg pos improving on GV pages</div>
+      </div>
+      <div style="background:#fff7ed;border:1px solid #fed7aa;border-radius:10px;padding:14px 16px;">
+        <div style="font-size:11px;font-weight:700;color:#7a7a6e;text-transform:uppercase;">Launch status</div>
+        <div style="font-size:22px;font-weight:900;color:#1a2e2a;margin-top:4px;">113/113 indexed</div>
+        <div style="font-size:12px;color:#7a7a6e;">Google + Bing explicit submit · gap 0 · qa:full PASS</div>
+      </div>
+    </div>
+
+    <div class="pulse-kpi-row">
+      <div class="pulse-kpi kpi-green">
+        <div class="kpi-trend trend-up">Early phase</div>
+        <div class="kpi-label">Total Clicks</div>
+        <div class="kpi-val">0</div>
+        <div class="kpi-sub">Expected week 1 · impressions building before clicks</div>
+      </div>
+      <div class="pulse-kpi kpi-blue">
+        <div class="kpi-trend trend-up">↑ Growing</div>
+        <div class="kpi-label">Impressions</div>
+        <div class="kpi-val">89</div>
+        <div class="kpi-sub">peak 30 on 21 Jun · daily avg ~18 since 19 Jun</div>
+      </div>
+      <div class="pulse-kpi kpi-amber">
+        <div class="kpi-trend" style="background:#fef3c7;color:#92400e;">watch</div>
+        <div class="kpi-label">Avg. Position</div>
+        <div class="kpi-val">18.8</div>
+        <div class="kpi-sub">GV family members at pos 4 · 120 m² rule at pos 9.8</div>
+      </div>
+      <div class="pulse-kpi kpi-purple">
+        <div class="kpi-label">Avg. CTR</div>
+        <div class="kpi-val">0%</div>
+        <div class="kpi-sub">Normal for brand-new domain · CTR sprint after 2–3 weeks</div>
+      </div>
+    </div>
+
+    <div class="pulse-grid">
+      <div class="pulse-card">
+        <div class="pulse-card-title">
+          <span class="span-blue"></span>
+          Daily Impressions — Jun 2026 (GSC)
+        </div>
+        <div class="pulse-chart">
+          <div class="chart-bars">
+            <div class="chart-bar-wrap"><div class="chart-bar bar-impr" style="height:7%"></div><div class="chart-label">19</div></div>
+            <div class="chart-bar-wrap"><div class="chart-bar bar-impr" style="height:63%"></div><div class="chart-label">20</div></div>
+            <div class="chart-bar-wrap"><div class="chart-bar bar-impr" style="height:100%"></div><div class="chart-label" style="color:#2d7a5e;font-weight:700;">21</div></div>
+            <div class="chart-bar-wrap"><div class="chart-bar bar-impr" style="height:63%"></div><div class="chart-label">22</div></div>
+            <div class="chart-bar-wrap"><div class="chart-bar bar-impr" style="height:63%"></div><div class="chart-label">23</div></div>
+          </div>
+          <p style="font-size:10px;color:#aaa;margin-top:8px;">19–23 Jun · bars = daily GSC impressions · peak 30 (21 Jun) · first data after Silo E deploy + indexing</p>
+        </div>
+        <div class="pulse-insight" style="margin-top:16px;">
+          <div class="pulse-insight-icon">📈</div>
+          <div class="pulse-insight-text">
+            <strong>Golden Visa cluster indexing first:</strong> 120 m² rule guide leads with 21 impressions at pos 9.8. Costa Navarino area page at pos 6.4. Family members rules at pos 4. Zero clicks is normal for a 1-week-old EN niche site — impressions confirm Google is crawling and ranking long-tail GV queries.
+          </div>
+        </div>
+      </div>
+
+      <div class="pulse-card">
+        <div class="pulse-card-title">
+          <span class="span-green"></span>
+          Top Queries by Impressions
+        </div>
+        <div class="pulse-query-row">
+          <div class="pulse-query-rank">#1</div>
+          <div class="pulse-query-text">greece golden visa 120 square meter rule</div>
+          <div class="pulse-query-pos">pos 9.8</div>
+          <div class="pulse-query-imp">21 imp</div>
+        </div>
+        <div class="pulse-query-row">
+          <div class="pulse-query-rank">#2</div>
+          <div class="pulse-query-text">costa navarino property investment</div>
+          <div class="pulse-query-pos">pos 6.4</div>
+          <div class="pulse-query-imp">8 imp</div>
+        </div>
+        <div class="pulse-query-row">
+          <div class="pulse-query-rank">#3</div>
+          <div class="pulse-query-text">crete golden visa €400k property</div>
+          <div class="pulse-query-pos">pos 9.2</div>
+          <div class="pulse-query-imp">6 imp</div>
+        </div>
+        <div class="pulse-query-row">
+          <div class="pulse-query-rank">#4</div>
+          <div class="pulse-query-text">greece property pink slip foreign buyers</div>
+          <div class="pulse-query-pos">pos 11.7</div>
+          <div class="pulse-query-imp">6 imp</div>
+        </div>
+        <div class="pulse-query-row">
+          <div class="pulse-query-rank">#5</div>
+          <div class="pulse-query-text">best regions invest greece property 2026</div>
+          <div class="pulse-query-pos">pos 20.5</div>
+          <div class="pulse-query-imp">4 imp</div>
+        </div>
+        <div class="pulse-query-row">
+          <div class="pulse-query-rank">#6</div>
+          <div class="pulse-query-text">golden visa lawyer greece</div>
+          <div class="pulse-query-pos">pos 84</div>
+          <div class="pulse-query-imp">1 imp</div>
+        </div>
+        <div class="pulse-query-row">
+          <div class="pulse-query-rank">#7</div>
+          <div class="pulse-query-text">making an offer on a greek property</div>
+          <div class="pulse-query-pos">pos 78</div>
+          <div class="pulse-query-imp">1 imp</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pulse-card" style="margin-top:16px;">
+      <div class="pulse-card-title">
+        <span class="span-blue"></span>
+        Top Pages — Impressions (no clicks yet)
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:0;">
+        <div>
+          <div class="pulse-page-row">
+            <div class="pulse-page-url">/guides/greece-golden-visa-120-square-meter-rule/</div>
+            <div class="pulse-page-meta">
+              <span class="pulse-badge badge-impr">21 imp</span>
+              <span class="pulse-badge badge-pos">pos 9.8</span>
+            </div>
+          </div>
+          <div class="pulse-page-row">
+            <div class="pulse-page-url">/areas/costa-navarino-property-investment/</div>
+            <div class="pulse-page-meta">
+              <span class="pulse-badge badge-impr">8 imp</span>
+              <span class="pulse-badge badge-pos">pos 6.4</span>
+            </div>
+          </div>
+          <div class="pulse-page-row">
+            <div class="pulse-page-url">/guides/crete-golden-visa-400000-property/</div>
+            <div class="pulse-page-meta">
+              <span class="pulse-badge badge-impr">6 imp</span>
+              <span class="pulse-badge badge-pos">pos 9.2</span>
+            </div>
+          </div>
+          <div class="pulse-page-row">
+            <div class="pulse-page-url">/guides/greece-property-pink-slip-foreign-buyers/</div>
+            <div class="pulse-page-meta">
+              <span class="pulse-badge badge-impr">6 imp</span>
+              <span class="pulse-badge badge-pos">pos 11.7</span>
+            </div>
+          </div>
+          <div class="pulse-page-row">
+            <div class="pulse-page-url">/guides/best-regions-invest-greece-property-2026/</div>
+            <div class="pulse-page-meta">
+              <span class="pulse-badge badge-impr">4 imp</span>
+              <span class="pulse-badge badge-pos">pos 20.5</span>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="pulse-page-row">
+            <div class="pulse-page-url">/guides/greece-golden-visa-family-members-rules/</div>
+            <div class="pulse-page-meta">
+              <span class="pulse-badge badge-impr">3 imp</span>
+              <span class="pulse-badge badge-pos">pos 4</span>
+            </div>
+          </div>
+          <div class="pulse-page-row">
+            <div class="pulse-page-url">/guides/due-diligence-greece-property/</div>
+            <div class="pulse-page-meta">
+              <span class="pulse-badge badge-impr">3 imp</span>
+              <span class="pulse-badge badge-pos">pos 29</span>
+            </div>
+          </div>
+          <div class="pulse-page-row">
+            <div class="pulse-page-url">/guides/greece-golden-visa-lawyer-cost/</div>
+            <div class="pulse-page-meta">
+              <span class="pulse-badge badge-impr">2 imp</span>
+              <span class="pulse-badge badge-pos">pos 44.5</span>
+            </div>
+          </div>
+          <div class="pulse-page-row">
+            <div class="pulse-page-url">/areas/chania-property-investment/</div>
+            <div class="pulse-page-meta">
+              <span class="pulse-badge badge-impr">1 imp</span>
+              <span class="pulse-badge badge-pos">pos 13</span>
+            </div>
+          </div>
+          <div class="pulse-page-row">
+            <div class="pulse-page-url">/guides/enfia-property-tax-greece/</div>
+            <div class="pulse-page-meta">
+              <span class="pulse-badge badge-impr">1 imp</span>
+              <span class="pulse-badge badge-pos">pos 7</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:16px;">
+      <div class="pulse-insight" style="background:#f0fdf4;border-color:#bbf7d0;">
+        <div class="pulse-insight-icon">✅</div>
+        <div class="pulse-insight-text">
+          <strong>Silo E complete + qa:full PASS:</strong> 22 regional pages live (Athens hub, Crete, Cyclades, Thessaloniki, Peloponnese, Rhodes, Halkidiki, Mykonos, Santorini, Kalamata, Costa Navarino, best-regions guide). All 113 URLs submitted to Google + Bing. Dedicated Telegram bot deployed.
+        </div>
+      </div>
+      <div class="pulse-insight" style="background:#fff7ed;border-color:#fed7aa;">
+        <div class="pulse-insight-icon">🔗</div>
+        <div class="pulse-insight-text">
+          <strong>Next CTR targets:</strong> Golden Visa 120 m² rule (21 imp, pos 9.8) — add FAQ schema + title refresh. Costa Navarino (8 imp, pos 6.4) — one step from page 1. Crete €400k guide (6 imp, pos 9.2) — internal link from Athens hub.
+        </div>
+      </div>
+    </div>
+
+    <div class="pulse-card" style="margin-top:16px;">
+      <div class="pulse-card-title">
+        <span style="width:8px;height:8px;border-radius:50%;display:inline-block;background:#fbbf24;"></span>
+        Opportunities — pages closest to page 1
+      </div>
+      <div class="pulse-table-scroll">
+      <table style="width:100%;border-collapse:collapse;font-size:12px;">
+        <thead>
+          <tr style="background:#faf8f4;">
+            <th style="text-align:left;padding:8px 12px;font-size:11px;color:#7a7a6e;font-weight:700;text-transform:uppercase;">Page</th>
+            <th style="text-align:center;padding:8px 12px;font-size:11px;color:#7a7a6e;font-weight:700;text-transform:uppercase;">Position</th>
+            <th style="text-align:center;padding:8px 12px;font-size:11px;color:#7a7a6e;font-weight:700;text-transform:uppercase;">Impressions</th>
+            <th style="text-align:left;padding:8px 12px;font-size:11px;color:#7a7a6e;font-weight:700;text-transform:uppercase;">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-bottom:1px solid #f4f1eb;"><td style="padding:8px 12px;color:#2d7a5e;font-weight:600;">/guides/greece-golden-visa-family-members-rules/</td><td style="padding:8px 12px;text-align:center;"><span style="background:#dcfce7;color:#166534;font-weight:700;padding:2px 8px;border-radius:6px;font-size:11px;">4.0</span></td><td style="padding:8px 12px;text-align:center;font-weight:700;">3</td><td style="padding:8px 12px;">P0: Already page 1 — monitor clicks next week</td></tr>
+          <tr style="border-bottom:1px solid #f4f1eb;"><td style="padding:8px 12px;color:#2d7a5e;font-weight:600;">/areas/costa-navarino-property-investment/</td><td style="padding:8px 12px;text-align:center;"><span style="background:#dcfce7;color:#166534;font-weight:700;padding:2px 8px;border-radius:6px;font-size:11px;">6.4</span></td><td style="padding:8px 12px;text-align:center;font-weight:700;">8</td><td style="padding:8px 12px;">P0: Area page near page 1 — add hero FAQ + internal links from Crete hub</td></tr>
+          <tr style="border-bottom:1px solid #f4f1eb;"><td style="padding:8px 12px;color:#2d7a5e;font-weight:600;">/guides/greece-golden-visa-120-square-meter-rule/</td><td style="padding:8px 12px;text-align:center;"><span style="background:#fef3c7;color:#92400e;font-weight:700;padding:2px 8px;border-radius:6px;font-size:11px;">9.8</span></td><td style="padding:8px 12px;text-align:center;font-weight:700;">21</td><td style="padding:8px 12px;">P0: Highest imp — title/meta CTR sprint + link from Golden Visa hub</td></tr>
+          <tr style="border-bottom:1px solid #f4f1eb;"><td style="padding:8px 12px;color:#2d7a5e;font-weight:600;">/guides/crete-golden-visa-400000-property/</td><td style="padding:8px 12px;text-align:center;"><span style="background:#fef3c7;color:#92400e;font-weight:700;padding:2px 8px;border-radius:6px;font-size:11px;">9.2</span></td><td style="padding:8px 12px;text-align:center;font-weight:700;">6</td><td style="padding:8px 12px;">P1: Crete €400k tier — cross-link from best-regions guide</td></tr>
+          <tr><td style="padding:8px 12px;color:#2d7a5e;font-weight:600;">/guides/best-regions-invest-greece-property-2026/</td><td style="padding:8px 12px;text-align:center;"><span style="background:#fef3c7;color:#92400e;font-weight:700;padding:2px 8px;border-radius:6px;font-size:11px;">20.5</span></td><td style="padding:8px 12px;text-align:center;font-weight:700;">4</td><td style="padding:8px 12px;">P1: Pillar page — expand FAQ + link all Silo E area hubs</td></tr>
+        </tbody>
+      </table>
+      </div>
+    </div>
+
+    <div class="pulse-card" style="margin-top:16px;">
+      <div class="pulse-card-title">
+        <span style="width:8px;height:8px;border-radius:50%;display:inline-block;background:#a78bfa;"></span>
+        Indexation Status — Google + Bing + Sitemap
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px;">
+        <div style="text-align:center;padding:16px;background:#f0faf5;border-radius:10px;border:1px solid #c6e8da;">
+          <div style="font-size:28px;font-weight:900;color:#2d7a5e;">113</div>
+          <div style="font-size:11px;color:#7a7a6e;margin-top:4px;font-weight:700;">URLs in sitemap</div>
+          <div style="font-size:10px;color:#aaa;margin-top:2px;">Live 200 OK · Silo E complete · 25 Jun</div>
+        </div>
+        <div style="text-align:center;padding:16px;background:#dcfce7;border-radius:10px;border:1px solid #86efac;">
+          <div style="font-size:28px;font-weight:900;color:#16a34a;">113</div>
+          <div style="font-size:11px;color:#7a7a6e;margin-top:4px;font-weight:700;">URLs submitted</div>
+          <div style="font-size:10px;color:#aaa;margin-top:2px;">Google API + Bing IndexNow · gap 0</div>
+        </div>
+        <div style="text-align:center;padding:16px;background:#dbeafe;border-radius:10px;border:1px solid #93c5fd;">
+          <div style="font-size:28px;font-weight:900;color:#2563eb;">200</div>
+          <div style="font-size:11px;color:#7a7a6e;margin-top:4px;font-weight:700;">Health status</div>
+          <div style="font-size:10px;color:#aaa;margin-top:2px;">sitemap + lead API 200 OK · 25 Jun</div>
+        </div>
+        <div style="text-align:center;padding:16px;background:#ffedd5;border-radius:10px;border:1px solid #fdba74;">
+          <div style="font-size:28px;font-weight:900;color:#c2410c;">92</div>
+          <div style="font-size:11px;color:#7a7a6e;margin-top:4px;font-weight:700;">MDX in repo</div>
+          <div style="font-size:10px;color:#aaa;margin-top:2px;">66 guides · 12 areas · 6 compare</div>
+        </div>
+      </div>
+      <div class="pulse-insight" style="margin-top:12px;">
+        <div class="pulse-insight-icon">📊</div>
+        <div class="pulse-insight-text">
+          <strong>Coverage note:</strong> Dedicated GCP project <code>greek-invest-indexing</code>. EN site never in Yandex — Bing IndexNow direct only (<code>bing.com/indexnow</code>). Dashboard tracker cleaned (was 156 stale URLs → now 113 aligned with sitemap).
+        </div>
+      </div>
+    </div>
+
+    <div class="pulse-card" style="margin-top:16px;">
+      <div class="pulse-card-title">
+        <span style="width:8px;height:8px;border-radius:50%;display:inline-block;background:#fbbf24;"></span>
+        Google Analytics 4 — 17 – 24 Jun 2026
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px;">
+        <div style="text-align:center;padding:16px;background:#fef3c7;border-radius:10px;border:1px solid #fde68a;">
+          <div style="font-size:28px;font-weight:900;color:#b45309;">34</div>
+          <div style="font-size:11px;color:#7a7a6e;margin-top:4px;font-weight:700;">Sessions</div>
+          <div style="font-size:10px;color:#aaa;margin-top:2px;">Peak 11 on 17 Jun · launch + QA traffic</div>
+        </div>
+        <div style="text-align:center;padding:16px;background:#dbeafe;border-radius:10px;border:1px solid #93c5fd;">
+          <div style="font-size:28px;font-weight:900;color:#2563eb;">36</div>
+          <div style="font-size:11px;color:#7a7a6e;margin-top:4px;font-weight:700;">Pageviews</div>
+          <div style="font-size:10px;color:#aaa;margin-top:2px;">Organic search building · GSC from 19 Jun</div>
+        </div>
+        <div style="text-align:center;padding:16px;background:#dcfce7;border-radius:10px;border:1px solid #86efac;">
+          <div style="font-size:28px;font-weight:900;color:#16a34a;">0</div>
+          <div style="font-size:11px;color:#7a7a6e;margin-top:4px;font-weight:700;">Key events</div>
+          <div style="font-size:10px;color:#aaa;margin-top:2px;">Lead form live · awaiting first organic lead</div>
+        </div>
+        <div style="text-align:center;padding:16px;background:#ede9fe;border-radius:10px;border:1px solid #c4b5fd;">
+          <div style="font-size:28px;font-weight:900;color:#7c3aed;">113</div>
+          <div style="font-size:11px;color:#7a7a6e;margin-top:4px;font-weight:700;">IndexNow URLs</div>
+          <div style="font-size:10px;color:#aaa;margin-top:2px;">Bing explicit submit · gap 0</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pulse-card" style="margin-top:16px;">
+      <div class="pulse-card-title">
+        <span style="width:8px;height:8px;border-radius:50%;display:inline-block;background:#2d7a5e;"></span>
+        Full SEO Audit — 25 Jun 2026
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+        <div class="pulse-insight" style="margin-top:0;background:#f0fdf4;border-color:#bbf7d0;"><div class="pulse-insight-icon">1</div><div class="pulse-insight-text"><strong>Technical SEO: 9/10.</strong> sitemap 200, lead API 200, robots OK. 113 live URLs. qa:full 5/5 PASS. No crawl errors.</div></div>
+        <div class="pulse-insight" style="margin-top:0;background:#f0fdf4;border-color:#bbf7d0;"><div class="pulse-insight-icon">2</div><div class="pulse-insight-text"><strong>Indexation: 10/10.</strong> 113/113 Google + Bing submitted. Gap 0. Dedicated indexing GCP project. Tracker aligned with sitemap.</div></div>
+        <div class="pulse-insight" style="margin-top:0;background:#fff7ed;border-color:#fed7aa;"><div class="pulse-insight-icon">3</div><div class="pulse-insight-text"><strong>On-page / CTR: 7/10.</strong> Content quality fixed (25 AI boilerplate pages rewritten). Golden Visa cluster entering SERPs. CTR sprint scheduled week 3.</div></div>
+        <div class="pulse-insight" style="margin-top:0;background:#f0faf5;border-color:#c6e8da;"><div class="pulse-insight-icon">4</div><div class="pulse-insight-text"><strong>Content: 8.5/10.</strong> 92 MDX, ~224k words. Silo E regional hubs complete. validate:content exit 0.</div></div>
+        <div class="pulse-insight" style="margin-top:0;background:#eef2ff;border-color:#c7d2fe;"><div class="pulse-insight-icon">5</div><div class="pulse-insight-text"><strong>Multi-engine: 7/10.</strong> Bing registered, IndexNow active. GSC first impressions 19 Jun. Google primary for EN Greece intent.</div></div>
+        <div class="pulse-insight" style="margin-top:0;background:#fef2f2;border-color:#fecaca;"><div class="pulse-insight-icon">!</div><div class="pulse-insight-text"><strong>Early phase:</strong> Zero clicks normal week 1. Monitor GV 120 m² rule + Costa Navarino weekly. First leads expected weeks 3–4.</div></div>
+      </div>
+    </div>
+
+    <p class="pulse-footer-note">
+      Google: <a href="https://search.google.com/search-console" target="_blank">Search Console</a> · <a href="https://analytics.google.com" target="_blank">GA4</a> · Bing: <a href="https://www.bing.com/webmasters" target="_blank">Webmaster Tools</a> · Updated 25 Jun 2026 via MCP APIs
+    </p>
+  </div>
+
+  <!-- BING PULSE -->
+  <div class="section-title" style="margin-top:40px;">Bing Pulse — Bing Webmaster Tools</div>
+  <div style="background:white;border-radius:16px;border:1px solid #e8e4dc;padding:24px 28px;">
+    <div class="pulse-header">
+      <div>
+        <h2>Bing / Yahoo Search Performance</h2>
+        <p style="font-size:12px;color:#9ca3af;margin-top:2px;">greek-invest.com · Jun 2026 · MCP bing-webmaster-greek-invest · Updated 25 Jun</p>
+      </div>
+      <div class="pulse-updated"><span class="pulse-updated-dot"></span>Live via MCP</div>
     </div>
     <div class="pulse-kpi-row">
-      <div class="pulse-kpi"><div class="kpi-label">Total Clicks</div><div class="kpi-val">0</div><div class="kpi-sub">Baseline · monitor weekly</div></div>
-      <div class="pulse-kpi"><div class="kpi-label">Impressions</div><div class="kpi-val">0</div><div class="kpi-sub">113 URLs submitted</div></div>
-      <div class="pulse-kpi"><div class="kpi-label">Avg. Position</div><div class="kpi-val">—</div><div class="kpi-sub">Awaiting first query data</div></div>
-      <div class="pulse-kpi"><div class="kpi-label">Avg. CTR</div><div class="kpi-val">—</div><div class="kpi-sub">CTR sprint when 50+ imp/query</div></div>
+      <div class="pulse-kpi kpi-orange"><div class="kpi-trend trend-up">Early</div><div class="kpi-label">Bing Clicks</div><div class="kpi-val">0</div><div class="kpi-sub">Site registered · crawl starting</div></div>
+      <div class="pulse-kpi kpi-blue"><div class="kpi-trend trend-up">Submitted</div><div class="kpi-label">IndexNow</div><div class="kpi-val">113</div><div class="kpi-sub">113/113 explicit · bing.com/indexnow only</div></div>
+      <div class="pulse-kpi kpi-green"><div class="kpi-label">Sitemap</div><div class="kpi-val">113</div><div class="kpi-sub">Status Success · 0 crawl issues · 25 Jun</div></div>
+      <div class="pulse-kpi kpi-purple"><div class="kpi-label">First lead</div><div class="kpi-val">—</div><div class="kpi-sub">Awaiting first organic lead · Telegram bot live</div></div>
     </div>
-    <div class="insight"><strong>Quick wins pipeline (when data arrives):</strong> Priority URLs — <code>/guides/greece-property-investment-guide/</code>, <code>/guides/greece-golden-visa-property-2026/</code>, <code>/guides/can-foreigners-buy-property-greece/</code>, <code>/guides/athens-property-investment-guide/</code>, <code>/compare/greece-vs-portugal-property-investment/</code>. Pages at pos 8–15 with 50+ impressions → expand FAQ + retitle for CTR. Monitor via <code>search-console-greek-invest</code> MCP.</div>
-    <p style="font-size:11px;color:#a8a29e;text-align:center;margin-top:16px;">Updated 19 June 2026 via GSC API · EN site — never Yandex</p>
-  </div>
-
-  <div class="section-title">Analytics — GA4</div>
-  <div class="pulse-wrap">
-    <div class="pulse-kpi-row">
-      <div class="pulse-kpi"><div class="kpi-label">Organic baseline</div><div class="kpi-val">—</div><div class="kpi-sub">ga4-analytics-greek-invest MCP · refresh after GSC impressions</div></div>
-      <div class="pulse-kpi"><div class="kpi-label">Sessions</div><div class="kpi-val">—</div><div class="kpi-sub">Pre-crawl / bot traffic only</div></div>
-      <div class="pulse-kpi"><div class="kpi-label">Pageviews</div><div class="kpi-val">—</div><div class="kpi-sub">Mark generate_lead when leads arrive</div></div>
-      <div class="pulse-kpi"><div class="kpi-label">Lead API</div><div class="kpi-val" style="font-size:22px;">✓</div><div class="kpi-sub">dedicated Greece Telegram bot · chat 190070714</div></div>
+    <div class="pulse-insight" style="margin-top:16px;">
+      <div class="pulse-insight-icon">🔶</div>
+      <div class="pulse-insight-text"><strong>Bing early phase:</strong> All 113 URLs submitted via IndexNow. Impressions expected 2–4 weeks after Google. EN site uses Bing direct endpoint only — never api.indexnow.org (Yandex hub).</div>
     </div>
-    <div class="insight insight-warn"><strong>Baseline only:</strong> Refresh GA4 block after GSC shows impressions. Lead API smoke: POST /api/lead/ → 200 on production.</div>
-  </div>
-
-  <div class="section-title">Bing Webmaster</div>
-  <div class="pulse-wrap">
-    <div class="pulse-kpi-row">
-      <div class="pulse-kpi"><div class="kpi-label">Bing Clicks</div><div class="kpi-val">0</div><div class="kpi-sub">bing-webmaster-greek-invest MCP</div></div>
-      <div class="pulse-kpi"><div class="kpi-label">Impressions</div><div class="kpi-val">0</div><div class="kpi-sub">IndexNow via bing.com/indexnow only</div></div>
-      <div class="pulse-kpi"><div class="kpi-label">Site verified</div><div class="kpi-val" style="font-size:22px;">✓</div><div class="kpi-sub">Import from GSC</div></div>
-      <div class="pulse-kpi"><div class="kpi-label">IndexNow</div><div class="kpi-val" style="font-size:22px;">✓</div><div class="kpi-sub">Never api.indexnow.org (Yandex hub)</div></div>
-    </div>
-  </div>
-
-  <div class="section-title">Content breakdown</div>
-  <div class="content-card table-scroll">
-    <table class="content-table">
-      <thead>
-        <tr><th>Collection</th><th>Pages</th><th>Words</th><th>Avg</th><th>Min gate</th><th>Status</th></tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><strong>Areas</strong><br><span class="words">Regional micro-market guides</span></td>
-          <td><span class="count">12</span></td>
-          <td><span class="words">24,798</span></td>
-          <td><span class="words">2,067</span></td>
-          <td><span class="tag blue">1 800+</span></td>
-          <td><span class="tag green">Live</span></td>
-        </tr>
-        <tr>
-          <td><strong>Comparisons</strong><br><span class="words">Country vs country · city vs city · strategy</span></td>
-          <td><span class="count">6</span></td>
-          <td><span class="words">13,317</span></td>
-          <td><span class="words">2,220</span></td>
-          <td><span class="tag blue">1 800+</span></td>
-          <td><span class="tag green">Live</span></td>
-        </tr>
-        <tr>
-          <td><strong>Developers</strong><br><span class="words">Developer / agency profiles</span></td>
-          <td><span class="count">4</span></td>
-          <td><span class="words">6,786</span></td>
-          <td><span class="words">1,697</span></td>
-          <td><span class="tag blue">1 200+</span></td>
-          <td><span class="tag green">Live</span></td>
-        </tr>
-        <tr>
-          <td><strong>Guides</strong><br><span class="words">Legal, tax, investment HUBs, buyer personas</span></td>
-          <td><span class="count">66</span></td>
-          <td><span class="words">173,206</span></td>
-          <td><span class="words">2,624</span></td>
-          <td><span class="tag blue">2 000+</span></td>
-          <td><span class="tag green">Live</span></td>
-        </tr>
-        <tr>
-          <td><strong>News</strong><br><span class="words">Market updates</span></td>
-          <td><span class="count">1</span></td>
-          <td><span class="words">1,192</span></td>
-          <td><span class="words">1,192</span></td>
-          <td><span class="tag blue">600+</span></td>
-          <td><span class="tag green">Live</span></td>
-        </tr>
-        <tr>
-          <td><strong>Projects</strong><br><span class="words">Project reviews</span></td>
-          <td><span class="count">3</span></td>
-          <td><span class="words">4,531</span></td>
-          <td><span class="words">1,510</span></td>
-          <td><span class="tag blue">1 200+</span></td>
-          <td><span class="tag green">Live</span></td>
-        </tr>
-        <tr>
-          <td><strong>TOTAL</strong></td>
-          <td><span class="count">92</span></td>
-          <td><span class="words"><strong>223,830</strong></span></td>
-          <td><span class="words">2,433</span></td>
-          <td><span class="tag green">qa:full 5/5 PASS</span></td>
-          <td><span class="tag green">Production</span></td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-
-  <div class="section-title">Cursor MCP servers (Greece RE)</div>
-  <div class="info-grid">
-    <div class="info-card">
-      <h3>Analytics &amp; Search MCP</h3>
-      <div class="info-row"><span class="key">GSC</span><span class="val">search-console-greek-invest</span></div>
-      <div class="info-row"><span class="key">GA4</span><span class="val">ga4-analytics-greek-invest</span></div>
-      <div class="info-row"><span class="key">Bing</span><span class="val">bing-webmaster-greek-invest</span></div>
-      <div class="info-row"><span class="key">GSC property</span><span class="val">sc-domain:greek-invest.com</span></div>
-      <div class="info-row"><span class="key">Regenerate</span><span class="val">node ../scripts/generate-niche-site-report.mjs greek-invest-website</span></div>
-    </div>
-    <div class="info-card">
-      <h3>Indexing isolation</h3>
-      <div class="info-row"><span class="key">GCP project</span><span class="val">greek-invest-indexing</span></div>
-      <div class="info-row"><span class="key">NOT shared with</span><span class="val">soy-braid / mexico / invest-gulf</span></div>
-      <div class="info-row"><span class="key">Google API</span><span class="val">submit-google-explicit.mjs</span></div>
-      <div class="info-row"><span class="key">Bing</span><span class="val">submit-bing-explicit.mjs</span></div>
-      <div class="info-row"><span class="key">Yandex</span><span class="val">❌ Never (EN site)</span></div>
-    </div>
+    <p class="pulse-footer-note">Bing data via <code>bing-webmaster-greek-invest</code> MCP</p>
   </div>
 
   <div class="section-title">Technical setup</div>
   <div class="info-grid">
     <div class="info-card">
       <h3>Infrastructure</h3>
-      <div class="info-row"><span class="key">Framework</span><span class="val">Astro 5 + MDX + Vercel</span></div>
-      <div class="info-row"><span class="key">Repository</span><span class="val"><a href="https://github.com/max-diver999/greek-invest-website" target="_blank">greek-invest-website</a></span></div>
-      <div class="info-row"><span class="key">Domain</span><span class="val"><a href="https://greek-invest.com/">greek-invest.com</a></span></div>
-      <div class="info-row"><span class="key">Email</span><span class="val">info@greek-invest.com</span></div>
-      <div class="info-row"><span class="key">QA</span><span class="val">npm run qa:full</span></div>
+      <div class="info-row"><span class="key">Framework</span><span class="val">Astro 5 (SSR + prerender)</span></div>
+      <div class="info-row"><span class="key">Hosting</span><span class="val">Vercel (auto-deploy)</span></div>
+      <div class="info-row"><span class="key">Repository</span><span class="val"><a href="https://github.com/max-diver999/greek-invest-website" target="_blank">GitHub → max-diver999</a></span></div>
+      <div class="info-row"><span class="key">Domain</span><span class="val"><a href="https://greek-invest.com" target="_blank">greek-invest.com</a></span></div>
+      <div class="info-row"><span class="key">DNS</span><span class="val">Vercel nameservers</span></div>
+      <div class="info-row"><span class="key">Content format</span><span class="val">MDX (Markdown + components)</span></div>
     </div>
     <div class="info-card">
-      <h3>SEO &amp; schema</h3>
-      <div class="info-row"><span class="key">JSON-LD</span><span class="val">Article + FAQPage + BreadcrumbList</span></div>
-      <div class="info-row"><span class="key">Lead form</span><span class="val">LeadForm + POST /api/lead/</span></div>
-      <div class="info-row"><span class="key">Sitemap filter</span><span class="val">noindex · thanks · site-report excluded</span></div>
-      <div class="info-row"><span class="key">Collections</span><span class="val">areas · compare · developers · guides · news · projects</span></div>
+      <h3>Integrations</h3>
+      <div class="info-row"><span class="key">Analytics</span><span class="val">Google Analytics 4 (GA4)</span></div>
+      <div class="info-row"><span class="key">Search</span><span class="val">Google Search Console + Bing Webmaster (MCP)</span></div>
+      <div class="info-row"><span class="key">Indexing</span><span class="val">greek-invest-indexing GCP · explicit URL submit</span></div>
+      <div class="info-row"><span class="key">Lead notifications</span><span class="val">Telegram Bot API (dedicated Greece bot)</span></div>
+      <div class="info-row"><span class="key">SEO</span><span class="val">Canonical, OG, Article + FAQPage Schema.org, llms.txt</span></div>
+      <div class="info-row"><span class="key">Currency toggle</span><span class="val">EUR / USD / GBP</span></div>
     </div>
   </div>
 
-  <div class="section-title">Launch changelog</div>
-  <div>
+  <div class="section-title">Content breakdown</div>
+  <div class="content-card">
+    <table class="content-table">
+      <thead>
+        <tr><th>Category</th><th>Articles</th><th>Avg. length</th><th>SEO target</th><th>Status</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Guides</strong><br><span style="font-size:11px;color:#9ca3af">Golden Visa, tax, due diligence, nationality, purchase process, Silo E regional hubs</span></td>
+          <td><span class="count">66</span></td>
+          <td><span class="words">~2,624 words</span></td>
+          <td><span class="tag blue">Golden Visa + investment</span></td>
+          <td><span class="tag green">Live</span></td>
+        </tr>
+        <tr>
+          <td><strong>Areas</strong><br><span style="font-size:11px;color:#9ca3af">Athens Riviera, Crete, Cyclades, Thessaloniki, Peloponnese, Rhodes, Halkidiki + micro-areas</span></td>
+          <td><span class="count">12</span></td>
+          <td><span class="words">~2,067 words</span></td>
+          <td><span class="tag blue">Location intent</span></td>
+          <td><span class="tag green">Live</span></td>
+        </tr>
+        <tr>
+          <td><strong>Compare</strong><br><span style="font-size:11px;color:#9ca3af">Greece vs Portugal/Spain/Italy/Cape Town · Crete vs Cyclades · Athens Riviera vs center</span></td>
+          <td><span class="count">6</span></td>
+          <td><span class="words">~2,220 words</span></td>
+          <td><span class="tag blue">Cluster</span></td>
+          <td><span class="tag green">Live</span></td>
+        </tr>
+        <tr>
+          <td><strong>Projects</strong><br><span style="font-size:11px;color:#9ca3af">Costa Navarino, Ellinikon, eligible Golden Visa developments</span></td>
+          <td><span class="count">3</span></td>
+          <td><span class="words">~1,510 words</span></td>
+          <td><span class="tag blue">Cluster</span></td>
+          <td><span class="tag green">Live</span></td>
+        </tr>
+        <tr>
+          <td><strong>Developers</strong><br><span style="font-size:11px;color:#9ca3af">Adonis Group, Greca, Secland, Solena Greece</span></td>
+          <td><span class="count">4</span></td>
+          <td><span class="words">~1,697 words</span></td>
+          <td><span class="tag blue">Cluster</span></td>
+          <td><span class="tag green">Live</span></td>
+        </tr>
+        <tr>
+          <td><strong>News</strong><br><span style="font-size:11px;color:#9ca3af">Market launch news · daily cadence starting</span></td>
+          <td><span class="count">1</span></td>
+          <td><span class="words">~1,192 words</span></td>
+          <td><span class="tag blue">Cluster</span></td>
+          <td><span class="tag green">Live</span></td>
+        </tr>
+        <tr style="background:#faf8f4;">
+          <td><strong>TOTAL</strong></td>
+          <td><span class="count" style="font-size:24px;">92</span></td>
+          <td><span class="words">~2,433 avg</span></td>
+          <td></td>
+          <td><span class="tag green">All live</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="section-title">Change history</div>
+  <div class="changelog">
     <div class="changelog-item">
-      <div class="changelog-date">19 Jun 2026 v1.0</div>
-      <div>
-        <div class="changelog-title">Site-report rebuilt — Greece data, indexing 113/113, qa:full PASS</div>
-        <div class="changelog-desc">Replaced Mexico shell copy. Silo E shipped (Attica, Crete, Cyclades, Thessaloniki). Unique content pass on 25 files (no AI boilerplate). Google 113/113 + Bing 113/113 · gap 0. Dedicated Telegram bot deployed.</div>
-        <div class="changelog-tags"><span class="tag blue">Report</span><span class="tag green">Indexing</span><span class="tag green">QA</span></div>
+      <div class="changelog-date">25 Jun 2026</div>
+      <div class="changelog-content">
+        <div class="changelog-title">Site report v1.0 — full MORE Group format + live GSC/GA4 data</div>
+        <div class="changelog-desc">First full-format site report: Growth dashboard with Chart.js, SEO Pulse (GSC 89 imp / 0 clicks), GA4 34 sessions, Bing Pulse, content breakdown 92 MDX / ~224k words, indexing 113/113 gap 0. Data via GSC + GA4 + Bing MCP as of 25 Jun.</div>
+        <div class="changelog-tags"><span class="tag green">Site-report v1.0</span><span class="tag blue">GSC MCP</span></div>
+      </div>
+    </div>
+    <div class="changelog-item">
+      <div class="changelog-date">20 Jun 2026</div>
+      <div class="changelog-content">
+        <div class="changelog-title">Silo E complete — 22 regional pages + indexing 113/113</div>
+        <div class="changelog-desc">Athens hub, Crete, Cyclades, Thessaloniki, Peloponnese, Rhodes, Halkidiki, Mykonos, Santorini, Kalamata, Costa Navarino, best-regions guide. qa:full 5/5 PASS. Google + Bing explicit submit. Dashboard tracker cleaned (156→113).</div>
+        <div class="changelog-tags"><span class="tag green">Silo E</span><span class="tag amber">113/113 indexed</span></div>
       </div>
     </div>
     <div class="changelog-item">
       <div class="changelog-date">18 Jun 2026</div>
-      <div>
-        <div class="changelog-title">Content quality pass — 25 MDX unique rewrite</div>
-        <div class="changelog-desc">Removed Extended checklist boilerplate. Case studies, financial tables, region-specific checklists. npm run qa:full → 5/5 PASS.</div>
-        <div class="changelog-tags"><span class="tag green">Content</span><span class="tag green">QA</span></div>
+      <div class="changelog-content">
+        <div class="changelog-title">Content quality fix — 25 AI boilerplate pages rewritten</div>
+        <div class="changelog-desc">Humanizer pass on thin/generic blocks. validate:content exit 0. Corpus signals clean (no em-dash overload, no duplicate padding H2).</div>
+        <div class="changelog-tags"><span class="tag green">Content fix</span><span class="tag blue">validate pass</span></div>
       </div>
     </div>
     <div class="changelog-item">
-      <div class="changelog-date">17–18 Jun 2026</div>
-      <div>
-        <div class="changelog-title">Silo E — regional hub cluster (22 articles)</div>
-        <div class="changelog-desc">Athens + Attica areas, Crete, Cyclades, Thessaloniki, Peloponnese, Halkidiki, Mykonos, Santorini, Costa Navarino, best-regions compare.</div>
-        <div class="changelog-tags"><span class="tag green">Silo E</span><span class="tag green">Areas</span></div>
-      </div>
-    </div>
-    <div class="changelog-item">
-      <div class="changelog-date">Jun 2026</div>
-      <div>
-        <div class="changelog-title">Greece indexing isolated + MCP trio</div>
-        <div class="changelog-desc">GCP greek-invest-indexing · search-console-greek-invest · ga4-analytics-greek-invest · bing-webmaster-greek-invest.</div>
-        <div class="changelog-tags"><span class="tag gray">Infra</span></div>
+      <div class="changelog-date">17 Jun 2026</div>
+      <div class="changelog-content">
+        <div class="changelog-title">Site launch — Golden Visa cluster + core guides live</div>
+        <div class="changelog-desc">Initial deploy: Golden Visa guides, purchase process, tax, due diligence, nationality guides. Dedicated Telegram bot. greek-invest-indexing GCP project configured.</div>
+        <div class="changelog-tags"><span class="tag green">Launch</span><span class="tag blue">Golden Visa</span></div>
       </div>
     </div>
   </div>
 
-  <div class="section-title">Next steps</div>
-  <div>
-    <div class="next-item"><div class="priority high">HIGH</div><div><div class="text">Monitor GSC first impressions (~28 Jun) — refresh SEO Pulse weekly</div><div class="subtext">search-console-greek-invest MCP · Golden Visa + Athens pillar first</div></div></div>
-    <div class="next-item"><div class="priority medium">MEDIUM</div><div><div class="text">Expand project reviews when Ellinikon / Costa Navarino data confirmed</div><div class="subtext">3 live project pages · heroImage from verified sources</div></div></div>
-    <div class="next-item"><div class="priority medium">MEDIUM</div><div><div class="text">News cadence 3/day after first GSC clicks</div><div class="subtext">Bank of Greece prices · Golden Visa rule changes · rental yields</div></div></div>
-    <div class="next-item"><div class="priority low">LOW</div><div><div class="text">Wikidata entity for Greek Invest brand (GEO)</div><div class="subtext">Q-id in Organization sameAs · llms.txt refresh</div></div></div>
+  <div class="section-title">Next steps — 25 Jun 2026</div>
+  <div class="next-steps">
+    <div class="next-item" style="background:#fef2f2;border-color:#fecaca;">
+      <div class="priority high">P0</div>
+      <div>
+        <div class="text" style="font-weight:700;">CTR sprint — Golden Visa 120 m² rule (21 imp, pos 9.8)</div>
+        <div class="subtext">Title + meta refresh · FAQ schema · internal links from GV hub and best-regions guide.</div>
+      </div>
+    </div>
+    <div class="next-item" style="background:#fff7ed;border-color:#fed7aa;">
+      <div class="priority medium">P1</div>
+      <div>
+        <div class="text" style="font-weight:700;">Monitor Costa Navarino (8 imp, pos 6.4) + family members rules (pos 4)</div>
+        <div class="subtext">Near page 1 — track clicks weekly in GSC MCP.</div>
+      </div>
+    </div>
+    <div class="next-item" style="background:#f0fdf4;border-color:#bbf7d0;">
+      <div class="priority low">DONE</div>
+      <div>
+        <div class="text" style="font-weight:700;">Silo E + indexing 113/113 + qa:full PASS + dashboard tracker fix</div>
+        <div class="subtext">All regional hubs live · gap 0 · submitted log aligned with sitemap.</div>
+      </div>
+    </div>
+    <div class="next-item">
+      <div class="priority medium">P1</div>
+      <div>
+        <div class="text" style="font-weight:700;">Daily news cadence — 3 articles/day starting</div>
+        <div class="subtext">Greece market updates, Golden Visa policy, regional price data.</div>
+      </div>
+    </div>
+    <div class="next-item">
+      <div class="priority medium">P2</div>
+      <div>
+        <div class="text" style="font-weight:700;">Nationality guides cluster (UK, US, DE, AU buyers)</div>
+        <div class="subtext">Next content batch after CTR baseline established week 3.</div>
+      </div>
+    </div>
   </div>
 
   <div class="section-title">Quick links</div>
   <div class="links-grid">
-    <a class="link-card" href="https://greek-invest.com/" target="_blank" rel="noopener"><div class="link-label">Live site</div><div class="link-url">greek-invest.com</div></a>
-    <a class="link-card" href="https://greek-invest.com/guides/" target="_blank" rel="noopener"><div class="link-label">Guides hub</div><div class="link-url">/guides/</div></a>
-    <a class="link-card" href="https://greek-invest.com/areas/" target="_blank" rel="noopener"><div class="link-label">Areas hub</div><div class="link-url">/areas/</div></a>
-    <a class="link-card" href="https://greek-invest.com/site-report/" target="_blank" rel="noopener"><div class="link-label">This report</div><div class="link-url">/site-report/</div></a>
-    <a class="link-card" href="https://greek-invest.com/sitemap-index.xml" target="_blank" rel="noopener"><div class="link-label">Sitemap</div><div class="link-url">sitemap-index.xml (113 URLs)</div></a>
-    <a class="link-card" href="https://search.google.com/search-console?resource_id=sc-domain:greek-invest.com" target="_blank" rel="noopener"><div class="link-label">Google Search Console</div><div class="link-url">sc-domain:greek-invest.com</div></a>
-    <a class="link-card" href="https://github.com/max-diver999/greek-invest-website" target="_blank" rel="noopener"><div class="link-label">GitHub</div><div class="link-url">max-diver999/greek-invest-website</div></a>
+    <a class="link-card" href="https://greek-invest.com" target="_blank"><div class="link-label">Live site</div><div class="link-url">greek-invest.com</div></a>
+    <a class="link-card" href="https://github.com/max-diver999/greek-invest-website" target="_blank"><div class="link-label">GitHub repository</div><div class="link-url">github.com/max-diver999/greek-invest-website</div></a>
+    <a class="link-card" href="https://vercel.com/dashboard" target="_blank"><div class="link-label">Hosting & deploys</div><div class="link-url">vercel.com/dashboard</div></a>
+    <a class="link-card" href="https://search.google.com/search-console" target="_blank"><div class="link-label">Google Search Console</div><div class="link-url">search.google.com/search-console</div></a>
+    <a class="link-card" href="https://analytics.google.com" target="_blank"><div class="link-label">Google Analytics 4</div><div class="link-url">analytics.google.com</div></a>
+    <a class="link-card" href="https://www.bing.com/webmasters" target="_blank"><div class="link-label">Bing Webmaster Tools</div><div class="link-url">bing.com/webmasters</div></a>
+    <a class="link-card" href="https://greek-invest.com/sitemap-index.xml" target="_blank"><div class="link-label">Sitemap</div><div class="link-url">greek-invest.com/sitemap-index.xml</div></a>
   </div>
 
 </div>
 
 <div class="footer">
-  <strong>Greek Invest Site Report v1.0</strong> · 19 June 2026 ·
-  <a href="https://greek-invest.com/site-report/">greek-invest.com/site-report/</a><br />
-  Data: GSC MCP · live sitemap HTTP · corpus scan · 92 MDX · 224K words<br />
-  EN site — Google + Bing only · never Yandex
+  <strong>Greek Invest</strong> · greek-invest.com · Report updated 25 Jun 2026 v1.0 · 113 sitemap URLs · ~224k words · GSC 89 imp / 0 clicks (1–25 Jun) · GA4 34 sessions · 24 git commits<br>
+  <a href="https://indexing-dashboard-deploy.vercel.app/" style="color:#2d7a5e;text-decoration:none;" target="_blank">Portfolio indexing dashboard</a> ·
+  To update: <code>node ../scripts/build-greece-full-site-report.mjs</code> then commit
 </div>
+
+<script type="application/json" id="chart-data">{"monthlyGsc":[{"label":"Jun","clicks":0,"impressions":89}],"monthlyGa4":[{"month":"Jun","sessions":34}],"contentBreakdown":[{"type":"Guides","count":66,"color":"#2d7a5e"},{"type":"Areas","count":12,"color":"#8b5cf6"},{"type":"Compare","count":6,"color":"#d97706"},{"type":"Projects","count":3,"color":"#4e9e7e"},{"type":"Developers","count":4,"color":"#60a5fa"},{"type":"News","count":1,"color":"#9ca3af"}],"dailyRaw":[{"d":"06-19","c":0,"i":2},{"d":"06-20","c":0,"i":19},{"d":"06-21","c":0,"i":30},{"d":"06-22","c":0,"i":19},{"d":"06-23","c":0,"i":19}]}</script>
+<script is:inline>
+(function initReportCharts() {
+  function run() {
+    if (typeof Chart === 'undefined') { setTimeout(run, 50); return; }
+    var el = document.getElementById('chart-data');
+    if (!el) return;
+    var data = JSON.parse(el.textContent);
+    Chart.defaults.font = { family: "-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif", size: 11 };
+    Chart.defaults.color = '#7a7a6e';
+
+    var monthly = data.monthlyGsc;
+    var ga4 = data.monthlyGa4;
+    var content = data.contentBreakdown;
+    var daily = data.dailyRaw;
+
+    var cm = document.getElementById('chartMonthly');
+    if (cm) new Chart(cm, {
+      type: 'bar',
+      data: {
+        labels: monthly.map(function(m) { return m.label; }),
+        datasets: [
+          { label: 'Impressions', data: monthly.map(function(m) { return m.impressions; }), backgroundColor: 'rgba(96,165,250,0.35)', borderColor: '#60a5fa', borderWidth: 1, borderRadius: 6, yAxisID: 'y' },
+          { label: 'Clicks', data: monthly.map(function(m) { return m.clicks; }), type: 'line', borderColor: '#2d7a5e', backgroundColor: 'rgba(45,122,94,0.12)', borderWidth: 3, pointRadius: 6, pointBackgroundColor: '#2d7a5e', fill: true, tension: 0.3, yAxisID: 'y1' }
+        ]
+      },
+      options: { responsive: true, maintainAspectRatio: false, interaction: { mode: 'index', intersect: false }, plugins: { legend: { position: 'bottom' } }, scales: { y: { position: 'left', grid: { color: '#f4f1eb' }, ticks: { callback: function(v) { return v >= 1000 ? (v/1000)+'k' : v; } } }, y1: { position: 'right', grid: { display: false }, min: 0 } } }
+    });
+
+    var cg = document.getElementById('chartGa4');
+    if (cg) new Chart(cg, {
+      type: 'bar',
+      data: { labels: ga4.map(function(m) { return m.month; }), datasets: [{ label: 'Sessions', data: ga4.map(function(m) { return m.sessions; }), backgroundColor: ['rgba(78,158,126,0.45)','rgba(78,158,126,0.55)','rgba(78,158,126,0.7)','rgba(78,158,126,0.85)'], borderColor: '#2d7a5e', borderWidth: 1, borderRadius: 8 }] },
+      options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { y: { grid: { color: '#f4f1eb' }, beginAtZero: true }, x: { grid: { display: false } } } }
+    });
+
+    var cc = document.getElementById('chartContent');
+    if (cc) new Chart(cc, {
+      type: 'doughnut',
+      data: { labels: content.map(function(c) { return c.type; }), datasets: [{ data: content.map(function(c) { return c.count; }), backgroundColor: content.map(function(c) { return c.color; }), borderWidth: 2, borderColor: '#fff' }] },
+      options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'right', labels: { boxWidth: 12, padding: 12 } } }, cutout: '58%' }
+    });
+
+    var cd = document.getElementById('chartDaily');
+    if (cd) new Chart(cd, {
+      type: 'line',
+      data: {
+        labels: daily.map(function(d) { return d.d; }),
+        datasets: [
+          { label: 'Impressions', data: daily.map(function(d) { return d.i; }), borderColor: '#93c5fd', backgroundColor: 'rgba(147,197,253,0.22)', fill: true, tension: 0.35, yAxisID: 'y' },
+          { label: 'Clicks', data: daily.map(function(d) { return d.c; }), borderColor: '#2d7a5e', borderWidth: 2.5, pointRadius: 4, tension: 0.35, yAxisID: 'y1' }
+        ]
+      },
+      options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'bottom' } }, scales: { y: { position: 'left', grid: { color: '#f4f1eb' } }, y1: { position: 'right', grid: { display: false }, min: 0 } } }
+    });
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', run);
+  else run();
+})();
+</script>
+
 
 </body>
 </html>

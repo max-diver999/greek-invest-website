@@ -38,22 +38,23 @@ const {
         <label class="block text-xs font-medium mb-1" for="lf-market">Target region</label>
         <select id="lf-market" name="market">
           <option value="">— Select —</option>
-          <option value="ccr">CCR (Orchard, River Valley, Bukit Timah)</option>
-          <option value="rcr">RCR (Queenstown, Bishan, East Coast fringe)</option>
-          <option value="ocr">OCR (Jurong, Punggol, Tampines, Tengah)</option>
-          <option value="new-launch">2026 new launch (any region)</option>
+          <option value="athens">Athens & Attica (€800K GV tier)</option>
+          <option value="crete">Crete (€400K GV tier)</option>
+          <option value="islands">Cyclades / islands (Paros, Tinos, Rhodes…)</option>
+          <option value="thessaloniki">Thessaloniki & North</option>
+          <option value="peloponnese">Peloponnese / Costa Navarino</option>
           <option value="not-sure">Not sure yet</option>
         </select>
       </div>
       <div>
-        <label class="block text-xs font-medium mb-1" for="lf-budget">Budget (SGD, all-in)</label>
+        <label class="block text-xs font-medium mb-1" for="lf-budget">Budget (EUR, all-in)</label>
         <select id="lf-budget" name="budget">
           <option value="">— Select —</option>
-          <option value="under-1.5m">Under S$1.5M</option>
-          <option value="1.5-2.5m">S$1.5M – S$2.5M</option>
-          <option value="2.5-4m">S$2.5M – S$4M</option>
-          <option value="4-6m">S$4M – S$6M</option>
-          <option value="6m+">S$6M+</option>
+          <option value="under-250k">Under €250K</option>
+          <option value="250-400k">€250K – €400K</option>
+          <option value="400-800k">€400K – €800K (Golden Visa tiers)</option>
+          <option value="800k-1.5m">€800K – €1.5M</option>
+          <option value="1.5m+">€1.5M+</option>
         </select>
       </div>
     </div>
@@ -61,16 +62,16 @@ const {
       <label class="block text-xs font-medium mb-1" for="lf-goal">Your goal</label>
       <select id="lf-goal" name="goal">
         <option value="">— Select —</option>
+        <option value="golden-visa">Golden Visa residency</option>
         <option value="investment">Rental yield / investment</option>
         <option value="own-stay">Own stay / relocation</option>
-        <option value="off-plan">New launch / off-plan</option>
-        <option value="fta-absd">US or Swiss FTA — transfer duty planning</option>
+        <option value="holiday-home">Holiday home</option>
         <option value="explore">Just researching</option>
       </select>
     </div>
     <div>
       <label class="block text-xs font-medium mb-1" for="lf-message">Message (optional)</label>
-      <textarea id="lf-message" name="message" rows="3" placeholder="E.g. 2BR OCR near MRT, EP holder, budget S$2.2M all-in including transfer duty…"></textarea>
+      <textarea id="lf-message" name="message" rows="3" placeholder="E.g. Crete apartment for the €400K Golden Visa tier, 120m²+, family of three…"></textarea>
     </div>
     <div class="lead-form-consent">
       <input type="checkbox" id="lf-consent" name="consent" required class="lead-form-consent__check" />

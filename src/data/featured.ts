@@ -8,4 +8,4 @@ export const FEATURED_GUIDE_SLUGS = [] as const;
 export const FEATURED_AREA_SLUGS = [] as const;
 
 export const HOMEPAGE_HERO_IMAGE =
-  'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Acropolis_of_Athens_01361.JPG/1280px-Acropolis_of_Athens_01361.JPG';
+  'https://res.cloudinary.com/dlrrtf6bq/image/upload/w_1200,q_85,f_webp/more-group/greece/wikimedia-hero/acropolis-of-athens-01361-7fec93a1';

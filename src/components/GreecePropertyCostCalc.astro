@@ -1,5 +1,5 @@
 ---
-/** Indicative Greece acquisition cost calculator — not tax advice. */
+/** Indicative Greece acquisition cost calculator, not tax advice. */
 ---
 
 <div class="gr-calc" id="gr-cost-calc">
@@ -9,7 +9,7 @@
       <input type="number" id="cost-price" min="50000" step="1000" value="400000" />
     </label>
     <label class="gr-calc__field">
-      <span>Objective value (€) — leave blank to match price</span>
+      <span>Objective value (€), leave blank to match price</span>
       <input type="number" id="cost-objective" min="0" step="1000" placeholder="e.g. 280000" />
     </label>
     <label class="gr-calc__field gr-calc__field--check">
@@ -53,7 +53,7 @@
         <li>Notary (~1.0% on objective value): ${eur(notary)}</li>
         <li>Lawyer (~1.25% on price): ${eur(lawyer)}</li>
         <li>Land registry (~0.55% on objective value): ${eur(registry)}</li>
-        <li>Buyer agent (2.25%): ${withAgent ? eur(agent) : '— excluded'}</li>
+        <li>Buyer agent (2.25%): ${withAgent ? eur(agent) : ',  excluded'}</li>
         <li>Engineer survey (flat): ${eur(engineer)}</li>
       </ul>
       <p class="gr-calc__note">Planning range only. New-build VAT rules, ENFIA arrears, and border-zone permits can change the stack. See the <a href="/guides/cost-of-buying-property-greece/">full cost guide</a>.</p>

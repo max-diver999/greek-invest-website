@@ -4,17 +4,17 @@ import LeadForm from '../../../components/LeadForm.astro';
 import GreecePropertyCostCalc from '../../../components/GreecePropertyCostCalc.astro';
 import FaqBlock from '../../../components/FaqBlock.astro';
 
-const title = 'Greece Property Cost Calculator 2026 — All-In Fees';
+const title = 'Greece Property Cost Calculator 2026, All-In Fees';
 const description = 'Estimate total cost of buying property in Greece: FMA 3.09%, notary, lawyer, registry and agent on your price and objective value. Planning tool only.';
 
 const faq = [
   {
     question: 'How much extra should I budget when buying property in Greece?',
-    answer: 'Plan for 7–10% above the purchase price on a typical resale transaction. FMA transfer tax at 3.09% is the largest line item, calculated on the higher of sale price or objective value. Notary, lawyer, land registry, agent commission, and engineer survey fill out the rest.',
+    answer: 'Plan for 7 to 10% above the purchase price on a typical resale transaction. FMA transfer tax at 3.09% is the largest line item, calculated on the higher of sale price or objective value. Notary, lawyer, land registry, agent commission, and engineer survey fill out the rest.',
   },
   {
     question: 'Does this calculator include ENFIA annual tax?',
-    answer: 'No. This tool models one-off acquisition costs only. ENFIA is an annual ownership tax billed separately — typically hundreds to low thousands of euros per year depending on zone and square metres.',
+    answer: 'No. This tool models one-off acquisition costs only. ENFIA is an annual ownership tax billed separately, typically hundreds to low thousands of euros per year depending on zone and square metres.',
   },
   {
     question: 'What is objective value in the calculator?',
@@ -67,7 +67,7 @@ const webAppSchema = {
       <p class="text-sm font-semibold text-[#1a6fb5] uppercase tracking-wide mb-2">Tool</p>
       <h1 class="mb-3">{title}</h1>
       <p class="text-lg text-[var(--color-muted)] leading-relaxed">
-        Enter your purchase price and optional objective value to see an indicative acquisition stack —
+        Enter your purchase price and optional objective value to see an indicative acquisition stack , 
         FMA, notary, lawyer, registry, agent, and engineer survey.
       </p>
     </header>
@@ -75,9 +75,9 @@ const webAppSchema = {
     <GreecePropertyCostCalc />
 
     <p>
-      <strong>Quick answer:</strong> Total buying costs in Greece typically run <strong>7–10% above the purchase price</strong>.
+      <strong>Quick answer:</strong> Total buying costs in Greece typically run <strong>7 to 10% above the purchase price</strong>.
       FMA transfer tax is <strong>3.09%</strong> on the higher of price or objective value. On a €400,000 purchase with €280,000 objective value,
-      all-in costs often land near <strong>€425,000–€435,000</strong> before annual ENFIA.
+      all-in costs often land near <strong>€425,000 to €435,000</strong> before annual ENFIA.
     </p>
 
     <h2>What the Calculator Includes</h2>
@@ -110,7 +110,7 @@ const webAppSchema = {
 
     <h2>What the Calculator Excludes</h2>
     <ul>
-      <li>Annual ENFIA — see <a href="/guides/enfia-property-tax-greece/">ENFIA guide</a></li>
+      <li>Annual ENFIA; see <a href="/guides/enfia-property-tax-greece/">ENFIA guide</a></li>
       <li>Renovation, furnishing, or conversion costs</li>
       <li>Migration lawyer fees for the residency file (separate from property lawyer)</li>
       <li>Pink slip / FX transfer bank charges for non-residents</li>
@@ -118,7 +118,7 @@ const webAppSchema = {
     </ul>
 
     <p>
-      For hidden one-off surprises — ENFIA arrears, agent VAT, apostille costs — read
+      For hidden one-off surprises, ENFIA arrears, agent VAT, apostille costs, read
       <a href="/guides/hidden-costs-buying-property-greece/">hidden costs when buying in Greece</a>.
       Transfer tax mechanics sit in the <a href="/guides/greece-property-transfer-tax-fma/">FMA guide</a>.
     </p>

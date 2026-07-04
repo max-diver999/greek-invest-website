@@ -9,7 +9,7 @@ interface Props {
 
 const {
   title = 'Get your Greece property shortlist',
-  subtitle = 'Share your budget and target region — we respond within one business day.',
+  subtitle = 'Share your budget and target region, we respond within one business day.',
   context = '',
 } = Astro.props;
 ---
@@ -37,7 +37,7 @@ const {
       <div>
         <label class="block text-xs font-medium mb-1" for="lf-market">Target region</label>
         <select id="lf-market" name="market">
-          <option value="">— Select —</option>
+          <option value="">,  Select , </option>
           <option value="athens">Athens & Attica (€800K GV tier)</option>
           <option value="crete">Crete (€400K GV tier)</option>
           <option value="islands">Cyclades / islands (Paros, Tinos, Rhodes…)</option>
@@ -49,11 +49,11 @@ const {
       <div>
         <label class="block text-xs font-medium mb-1" for="lf-budget">Budget (EUR, all-in)</label>
         <select id="lf-budget" name="budget">
-          <option value="">— Select —</option>
+          <option value="">,  Select , </option>
           <option value="under-250k">Under €250K</option>
-          <option value="250-400k">€250K – €400K</option>
-          <option value="400-800k">€400K – €800K (Golden Visa tiers)</option>
-          <option value="800k-1.5m">€800K – €1.5M</option>
+          <option value="250-400k">€250K  to  €400K</option>
+          <option value="400-800k">€400K  to  €800K (Golden Visa tiers)</option>
+          <option value="800k-1.5m">€800K  to  €1.5M</option>
           <option value="1.5m+">€1.5M+</option>
         </select>
       </div>
@@ -61,7 +61,7 @@ const {
     <div>
       <label class="block text-xs font-medium mb-1" for="lf-goal">Your goal</label>
       <select id="lf-goal" name="goal">
-        <option value="">— Select —</option>
+        <option value="">,  Select , </option>
         <option value="golden-visa">Golden Visa residency</option>
         <option value="investment">Rental yield / investment</option>
         <option value="own-stay">Own stay / relocation</option>
@@ -78,7 +78,7 @@ const {
       <label class="lead-form-consent__label" for="lf-consent">I agree to be contacted about my enquiry. See our <a href="/privacy-policy/">Privacy Policy</a>.</label>
     </div>
     <button type="submit" class="btn-primary w-full py-3">Request shortlist →</button>
-    <p id="lf-success" class="hidden text-green-700 text-sm font-medium text-center">Thank you — redirecting…</p>
+    <p id="lf-success" class="hidden text-green-700 text-sm font-medium text-center">Thank you, redirecting…</p>
     <p id="lf-error" class="hidden text-red-600 text-sm text-center">Something went wrong. Email {SITE.email} directly.</p>
   </form>
 </section>

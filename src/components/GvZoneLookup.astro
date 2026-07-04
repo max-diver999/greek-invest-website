@@ -13,7 +13,7 @@ const { tiers, locations } = zoneData;
         <option value={String(i)}>{loc.name} ({loc.region})</option>
       ))}
     </select>
-    <p class="gv-zone-lookup__hint">Indicative only — confirm the cadastral municipality and title deed with a Greek migration lawyer before you sign.</p>
+    <p class="gv-zone-lookup__hint">Indicative only, confirm the cadastral municipality and title deed with a Greek migration lawyer before you sign.</p>
   </div>
 
   <div id="gv-zone-result" class="gv-zone-lookup__result gv-zone-lookup__result--empty" hidden>
@@ -56,7 +56,7 @@ const { tiers, locations } = zoneData;
     if (tier.minArea) {
       facts.push(`Built residential: single property, at least ${tier.minArea} m² usable area`);
     } else {
-      facts.push('Specialist conversion or restoration asset — not standard off-the-shelf residential');
+      facts.push('Specialist conversion or restoration asset, not standard off-the-shelf residential');
     }
     facts.push('Short-term tourist rentals prohibited on the qualifying Golden Visa property');
     facts.push(`Region tag: ${loc.region}`);

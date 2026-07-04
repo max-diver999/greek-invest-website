@@ -42,7 +42,8 @@ const orgSchema = {
     availableLanguage: ['English'],
   },
   sameAs: [
-    SITE.url,
+    ...SITE.sameAs,
+    ...(SITE.wikidataId ? [`https://www.wikidata.org/entity/${SITE.wikidataId}`] : []),
   ],
 };
 

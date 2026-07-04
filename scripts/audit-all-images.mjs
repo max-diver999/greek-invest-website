@@ -39,17 +39,32 @@ for (const file of walk(SRC)) {
 
 const urls = [...map.keys()];
 const bad = [];
+const BATCH = 8;
+const RETRIES = 3;
 
-await Promise.all(
-  urls.map(async (url) => {
+async function checkImageUrl(url) {
+  const headers = { 'User-Agent': 'MORE-Group-image-audit/1.0' };
+  for (let attempt = 1; attempt <= RETRIES; attempt++) {
     try {
-      const r = await fetch(url, { method: 'HEAD', redirect: 'follow' });
-      if (r.status !== 200) bad.push({ url, status: r.status, files: [...map.get(url)] });
-    } catch {
-      bad.push({ url, status: 'ERR', files: [...map.get(url)] });
+      let r = await fetch(url, { method: 'HEAD', redirect: 'follow', headers, signal: AbortSignal.timeout(20000) });
+      if (r.status === 405 || r.status === 403) {
+        r = await fetch(url, { method: 'GET', redirect: 'follow', headers, signal: AbortSignal.timeout(20000) });
+      }
+      if (r.status === 200) return null;
+      if (attempt === RETRIES) return { url, status: r.status, files: [...map.get(url)] };
+    } catch (err) {
+      if (attempt === RETRIES) return { url, status: 'ERR', files: [...map.get(url)], detail: String(err.cause || err.message || err) };
     }
-  }),
-);
+    await new Promise((r) => setTimeout(r, 500 * attempt));
+  }
+  return null;
+}
+
+for (let i = 0; i < urls.length; i += BATCH) {
+  const chunk = urls.slice(i, i + BATCH);
+  const results = await Promise.all(chunk.map((url) => checkImageUrl(url)));
+  for (const row of results) if (row) bad.push(row);
+}
 
 console.log('=== IMAGE URL AUDIT ===');
 console.log(`URLs checked: ${urls.length}`);

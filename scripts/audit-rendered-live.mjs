@@ -15,7 +15,7 @@ const ROOT = path.join(path.dirname(fileURLToPath(import.meta.url)), '..');
 const useLocal = process.argv.includes('--local');
 const failOnIssues = process.argv.includes('--fail');
 const collectionFilter = process.argv.find((a) => a.startsWith('--collection='))?.split('=')[1];
-const CONCURRENCY = 24;
+const CONCURRENCY = 8;
 
 function readSiteUrl() {
   if (process.env.SITE_URL) return process.env.SITE_URL.replace(/\/$/, '');
@@ -140,12 +140,23 @@ function listSlugs(collection) {
 }
 
 async function fetchHtml(url) {
-  const res = await fetch(url, {
+  const opts = {
     headers: { 'User-Agent': 'MORE-Group-rendered-audit/1.0', Accept: 'text/html' },
     redirect: 'follow',
-  });
-  if (!res.ok) throw new Error(`HTTP ${res.status}`);
-  return res.text();
+    signal: AbortSignal.timeout(25000),
+  };
+  let lastErr;
+  for (let attempt = 1; attempt <= 3; attempt++) {
+    try {
+      const res = await fetch(url, opts);
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      return res.text();
+    } catch (err) {
+      lastErr = err;
+      if (attempt < 3) await new Promise((r) => setTimeout(r, 600 * attempt));
+    }
+  }
+  throw lastErr;
 }
 
 function readLocalHtml(collection, slug) {

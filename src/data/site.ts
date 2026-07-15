@@ -5,6 +5,9 @@ export const SITE = {
   description:
     'Independent guides to Greece property, Athens, Crete, Golden Visa tiers, foreign ownership, transfer costs, rental yields, and new development reviews. Advisory only; transactions via licensed Greek partners.',
   email: 'info@greek-invest.com',
+  phone: '+66 65 119 5327',
+  whatsapp: 'https://wa.me/66651195327',
+  whatsappDisplay: '+66 65 119 5327',
   editorial: 'Greek Invest Editorial',
   /** MORE Group parent entity — https://www.wikidata.org/wiki/Q139638761 */
   wikidataId: 'Q139638761' as string | null,

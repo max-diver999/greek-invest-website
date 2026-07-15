@@ -11,7 +11,17 @@ import { SITE } from '../../data/site';
     <h1 class="mb-4">Contact</h1>
     <p class="text-[var(--color-muted)] mb-8">
       Editorial questions: <a href={`mailto:${SITE.email}`}>{SITE.email}</a>.
-      For property shortlists, use the form below, we usually reply within one business day.
+      For property shortlists, use the form below or{' '}
+      <a
+        href={`${SITE.whatsapp}?text=Hi%2C%20I%20need%20help%20with%20a%20property%20enquiry%20from%20Greek%20Invest.`}
+        target="_blank"
+        rel="noopener noreferrer"
+        data-wa-placement="footer_contact"
+        data-cta="whatsapp_contact_page"
+      >
+        WhatsApp {SITE.whatsappDisplay}
+      </a>.
+      We usually reply within one business day.
     </p>
     <LeadForm context="Contact page" />
   </section>

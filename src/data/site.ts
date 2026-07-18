@@ -9,7 +9,10 @@ export const SITE = {
   whatsapp: 'https://wa.me/66651195327',
   whatsappDisplay: '+66 65 119 5327',
   editorial: 'Greek Invest Editorial',
-  /** MORE Group parent entity — https://www.wikidata.org/wiki/Q139638761 */
-  wikidataId: 'Q139638761' as string | null,
-  sameAs: ['https://greek-invest.com', 'https://moregroup.estate'],
+  /** Wikidata entity — https://www.wikidata.org/wiki/Q140604600 */
+  wikidataId: 'Q140604600' as string | null,
+  sameAs: [
+    'https://greek-invest.com/about/',
+    'https://moregroup.estate/about/',
+  ],
 };

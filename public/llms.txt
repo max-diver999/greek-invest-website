@@ -4,6 +4,7 @@
 
 - Site: https://greek-invest.com
 - Contact: info@greek-invest.com
+- Wikidata: https://www.wikidata.org/wiki/Q140604600
 - Markets: Athens, Crete, Cyclades, Thessaloniki, Peloponnese
 - Focus: Golden Visa tiers (€250K/€400K/€800K), net rental yields, foreign ownership, due diligence
 - Not a developer, not a listing portal

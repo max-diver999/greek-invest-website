@@ -1,16 +1,56 @@
 ---
+import { SITE } from '../data/site';
+
 interface Props {
   text: string;
-  buttonText: string;
-  buttonHref: string;
+  buttonText?: string;
+  buttonHref?: string;
+  /** Legacy prop names still used by part of the corpus. */
+  ctaText?: string;
+  ctaLink?: string;
+  ctaId?: string;
+  whatsapp?: boolean;
+  whatsappMessage?: string;
 }
 
-const { text, buttonText, buttonHref } = Astro.props;
+const {
+  text,
+  buttonText,
+  buttonHref,
+  ctaText,
+  ctaLink,
+  ctaId,
+  whatsapp = false,
+  whatsappMessage = 'Hi, I have a Greece property question from Greek Invest.',
+} = Astro.props;
+
+const label = buttonText || ctaText || 'Talk to an adviser';
+const href = buttonHref || ctaLink || '#lead-form';
+
+const primaryCtaId =
+  ctaId ||
+  `inline_${label.toLowerCase().replace(/[^a-z0-9]+/g, '_').replace(/^_|_$/g, '')}`;
+
+const waHref = `${SITE.whatsapp}?text=${encodeURIComponent(whatsappMessage)}`;
 ---
 
 <div class="inline-cta">
   <p class="inline-cta__text">{text}</p>
-  <a href={buttonHref} class="inline-cta__button">{buttonText}</a>
+  <div class="inline-cta__actions">
+    <a href={href} class="inline-cta__button" data-cta={primaryCtaId}>{label}</a>
+    {whatsapp && (
+      <a
+        href={waHref}
+        class="inline-cta__whatsapp"
+        target="_blank"
+        rel="noopener noreferrer"
+        data-wa-placement="guide_commercial"
+        data-cta={`${primaryCtaId}_whatsapp`}
+      >
+        Ask on WhatsApp
+      </a>
+    )}
+  </div>
 </div>
 
 <style>
@@ -42,6 +82,14 @@ const { text, buttonText, buttonHref } = Astro.props;
     flex: 1;
   }
 
+  .inline-cta__actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.75rem;
+    flex-shrink: 0;
+  }
+
   .inline-cta__button {
     display: inline-block;
     background: #1a6fb5;
@@ -60,4 +108,54 @@ const { text, buttonText, buttonHref } = Astro.props;
     background: #155d99;
     color: #ffffff;
   }
+
+  .inline-cta__whatsapp {
+    display: inline-block;
+    border: 1px solid #128c7e;
+    color: #0f6f63;
+    background: #ffffff;
+    font-size: 0.875rem;
+    font-weight: 600;
+    padding: 0.5625rem 1rem;
+    border-radius: 6px;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: background 0.2s ease, color 0.2s ease;
+    flex-shrink: 0;
+  }
+
+  .inline-cta__whatsapp:hover {
+    background: #128c7e;
+    color: #ffffff;
+  }
 </style>
+
+<script>
+  import { rememberLastCta } from '../lib/lead-attribution';
+
+  document.addEventListener(
+    'click',
+    (event) => {
+      const target = event.target instanceof Element ? event.target : null;
+      const link = target?.closest<HTMLAnchorElement>('a[data-cta]:not([data-wa-placement])');
+      if (!link) return;
+
+      rememberLastCta(link);
+
+      try {
+        // @ts-ignore
+        if (typeof window.investGulfTrack === 'function') {
+          // @ts-ignore
+          window.investGulfTrack('click_cta', {
+            cta_id: link.dataset.cta || '',
+            cta_href: link.getAttribute('href') || '',
+            cta_text: (link.textContent || '').replace(/\s+/g, ' ').trim().slice(0, 120),
+          });
+        }
+      } catch {
+        // Analytics must never block navigation.
+      }
+    },
+    { capture: true },
+  );
+</script>

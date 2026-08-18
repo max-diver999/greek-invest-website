@@ -1,19 +1,21 @@
 ---
 export const prerender = true;
 
-const reportDate = '27 July 2026';
-const reportVersion = 'v1.1';
+const reportDate = '18 August 2026';
+const reportVersion = 'v1.2';
 const launchDate = '17 June 2026';
-const dataThrough = '24 July 2026';
+const dataThrough = '15 August 2026';
 
 const monthlyGsc = [
   { month: 'Jun 2026', label: 'Jun', clicks: 4, impressions: 840, position: 9.6, note: 'Launch · first GSC 19 Jun · impression spike 27 to 28 Jun' },
-  { month: 'Jul 2026', label: 'Jul', clicks: 18, impressions: 2629, position: 11.0, note: 'Peak week 29 Jun to 5 Jul · CTR 0.63% cumulative · pos drift on lawyer queries' },
+  { month: 'Jul 2026', label: 'Jul', clicks: 22, impressions: 2974, position: 11.9, note: 'Peak week 30 Jun to 6 Jul (1,286 imp) · lawyer/solicitor cluster page 2–3' },
+  { month: 'Aug 2026', label: 'Aug', clicks: 6, impressions: 996, position: 16.3, note: 'Partial month to 15 Aug · post CTR/CRO sprint · lower daily imp vs Jul peak' },
 ];
 
 const monthlyGa4 = [
   { month: 'Jun', sessions: 53 },
-  { month: 'Jul', sessions: 155 },
+  { month: 'Jul', sessions: 205 },
+  { month: 'Aug', sessions: 229 },
 ];
 
 const contentBreakdown = [
@@ -473,12 +475,12 @@ const maxImp = Math.max(...monthlyGsc.map(m => m.impressions));
     <div class="stat-card">
       <div class="num">~567k</div>
       <div class="label">SEO words</div>
-      <div class="sublabel">129 MDX files · ~4,397 avg · 52 git commits</div>
+      <div class="sublabel">129 MDX files · ~4,397 avg · 58 git commits</div>
     </div>
     <div class="stat-card">
-      <div class="num teal">15+</div>
+      <div class="num teal">25+</div>
       <div class="label">GSC ranking URLs</div>
-      <div class="sublabel">17 Jun to 24 Jul · ENFIA + Golden Visa cluster lead impressions</div>
+      <div class="sublabel">17 Jun to 15 Aug · ENFIA 770 imp · Crete €400K 8 clicks</div>
     </div>
     <div class="stat-card">
       <div class="num">6</div>
@@ -486,14 +488,14 @@ const maxImp = Math.max(...monthlyGsc.map(m => m.impressions));
       <div class="sublabel">guides · areas · compare · projects · developers · news</div>
     </div>
     <div class="stat-card">
-      <div class="num amber">3469</div>
+      <div class="num amber">4810</div>
       <div class="label">GSC impressions</div>
-      <div class="sublabel">3469 imp · 22 clicks · avg pos 10.6 · CTR 0.63%</div>
+      <div class="sublabel">4810 imp · 32 clicks · avg pos 12.4 · CTR 0.67%</div>
     </div>
     <div class="stat-card">
-      <div class="num teal">208</div>
+      <div class="num teal">487</div>
       <div class="label">GA4 sessions</div>
-      <div class="sublabel">223 pageviews · 17 Jun to 26 Jul · Telegram-only leads (no CRM email)</div>
+      <div class="sublabel">530 pageviews · 17 Jun to 15 Aug · Telegram-only leads</div>
     </div>
   </div>
 
@@ -505,20 +507,20 @@ const maxImp = Math.max(...monthlyGsc.map(m => m.impressions));
     <div class="kpi-card">
       <div class="kpi-label">GSC Clicks</div>
       <div class="kpi-value">{totalClicks}</div>
-      <span class="kpi-delta up">↑ 22 total</span>
-      <div class="kpi-sub">17 Jun to 24 Jul · Google Search Console</div>
+      <span class="kpi-delta up">↑ 32 total</span>
+      <div class="kpi-sub">17 Jun to 15 Aug · Google Search Console</div>
     </div>
     <div class="kpi-card">
       <div class="kpi-label">Impressions</div>
-      <div class="kpi-value">3469</div>
+      <div class="kpi-value">4810</div>
       <span class="kpi-delta up">↑ Peak 270/d</span>
-      <div class="kpi-sub">3469 total · peak 270 imp on 5 Jul</div>
+      <div class="kpi-sub">4810 total · peak 270 imp on 5 Jul · Aug avg ~66/d</div>
     </div>
     <div class="kpi-card">
       <div class="kpi-label">GA4 Sessions</div>
-      <div class="kpi-value">208</div>
-      <span class="kpi-delta up">↑ Jul 155</span>
-      <div class="kpi-sub">208 since launch · Jun 53 · Jul 155 (to 26 Jul)</div>
+      <div class="kpi-value">487</div>
+      <span class="kpi-delta up">↑ Aug 229</span>
+      <div class="kpi-sub">487 since launch · Jun 53 · Jul 205 · Aug 229 (to 15 Aug)</div>
     </div>
     <div class="kpi-card">
       <div class="kpi-label">Content corpus</div>
@@ -545,7 +547,7 @@ const maxImp = Math.max(...monthlyGsc.map(m => m.impressions));
         <div class="card-title">GA4 sessions by month</div>
         <div class="chart-wrap"><canvas id="chartGa4"></canvas></div>
         <div class="insight" style="margin-top:16px;">
-          <strong>Traffic mix:</strong> 208 GA4 sessions since launch (Jun 53, Jul 155). GSC: 22 clicks on 3,469 impressions (0.63% CTR). Peak impression week 30 Jun to 6 Jul (1,221 imp). Bing joined mid-Jul (5 clicks, 1,178 imp to 24 Jul).
+          <strong>Traffic mix:</strong> 487 GA4 sessions since launch (Jun 53, Jul 205, Aug 229 to 15 Aug). GSC: 32 clicks on 4,810 impressions (0.67% CTR). Peak GSC week 30 Jun to 6 Jul (1,286 imp). Bing overtook Google clicks in Aug (37 vs 32 cumulative to 15 Aug).
         </div>
       </div>
     </div>
@@ -591,7 +593,7 @@ const maxImp = Math.max(...monthlyGsc.map(m => m.impressions));
         </table>
       </div>
       <div class="insight">
-        <strong>Index maturity:</strong> Clicks started week of 23 Jun. Jul volume driven by ENFIA tax guide (653 imp) and Golden Visa 120 m² rule (230 imp). Lawyer/solicitor queries rank page 2 to 3 with high impressions but low CTR: title/meta refresh is the lever.
+        <strong>Index maturity:</strong> Clicks grew from 4 (Jun) to 22 (Jul) to 6 partial (Aug to 15 Aug). ENFIA tax guide leads impressions (770 imp, 3 clk). Crete €400K guide is top click URL (8 clk, 8% CTR). Post CTR/CRO sprint (27 Jul): monitor ENFIA and 120 m² rule weekly.
       </div>
     </div>
 
@@ -612,22 +614,22 @@ const maxImp = Math.max(...monthlyGsc.map(m => m.impressions));
             </tr>
           </thead>
           <tbody>
-            <tr><td><strong>2 to 8 Jun</strong></td><td class="num">0</td><td>0</td><td>0%</td><td>n/a</td><td>0</td><td>0</td><td>0</td></tr>
-            <tr><td><strong>9 to 15 Jun</strong></td><td class="num">0</td><td>0</td><td>0%</td><td>n/a</td><td>0</td><td>0</td><td>0</td></tr>
-            <tr><td><strong>16 to 22 Jun</strong></td><td class="num">0</td><td>51</td><td>0%</td><td>18.5</td><td>25</td><td>0</td><td>0</td></tr>
-            <tr><td><strong>23 to 29 Jun</strong></td><td class="num">1</td><td>517</td><td>0.19%</td><td>9.9</td><td>17</td><td>0</td><td>0</td></tr>
-            <tr><td><strong>30 Jun to 6 Jul</strong></td><td class="num">10</td><td>1,221</td><td>0.82%</td><td>8.3</td><td>36</td><td>0</td><td>1</td></tr>
-            <tr><td><strong>7 to 13 Jul</strong></td><td class="num">5</td><td>1,068</td><td>0.47%</td><td>9.9</td><td>55</td><td>0</td><td>41</td></tr>
-            <tr><td><strong>14 to 20 Jul</strong></td><td class="num">4</td><td>367</td><td>1.09%</td><td>15.5</td><td>33</td><td>4</td><td>736</td></tr>
-            <tr><td><strong>21 to 27 Jul</strong></td><td class="num">2</td><td>245</td><td>0.82%</td><td>18.5</td><td>42</td><td>1</td><td>441</td></tr>
+            <tr><td><strong>23 to 29 Jun</strong></td><td class="num">1</td><td>614</td><td>0.16%</td><td>9.0</td><td>12</td><td>0</td><td>0</td></tr>
+            <tr><td><strong>30 Jun to 6 Jul</strong></td><td class="num">11</td><td>1,286</td><td>0.86%</td><td>8.3</td><td>39</td><td>0</td><td>0</td></tr>
+            <tr><td><strong>7 to 13 Jul</strong></td><td class="num">5</td><td>974</td><td>0.51%</td><td>10.4</td><td>62</td><td>0</td><td>0</td></tr>
+            <tr><td><strong>14 to 20 Jul</strong></td><td class="num">3</td><td>316</td><td>0.95%</td><td>17.0</td><td>27</td><td>4</td><td>736</td></tr>
+            <tr><td><strong>21 to 27 Jul</strong></td><td class="num">4</td><td>360</td><td>1.11%</td><td>18.0</td><td>44</td><td>4</td><td>748</td></tr>
+            <tr><td><strong>28 Jul to 3 Aug</strong></td><td class="num">2</td><td>345</td><td>0.58%</td><td>19.2</td><td>67</td><td>7</td><td>1,306</td></tr>
+            <tr><td><strong>4 to 10 Aug</strong></td><td class="num">5</td><td>483</td><td>1.04%</td><td>14.4</td><td>106</td><td>16</td><td>1,392</td></tr>
+            <tr><td><strong>11 to 17 Aug</strong></td><td class="num">1</td><td>362</td><td>0.28%</td><td>18.0</td><td>99</td><td>6</td><td>1,081</td></tr>
           </tbody>
         </table>
       </div>
       <div class="insight" style="margin-top:16px;">
-        <strong>AEO snapshot (27 Jul):</strong> validate:content 129/129 PASS · avg 5,235 words/article · Quick answer + FAQ blocks on commercial corpus. Weekly AEO score history is not logged in GA4; gate has been green since corpus fix (18 Jun).
+        <strong>AEO snapshot (18 Aug):</strong> validate:content 129/129 PASS · avg 5,235 words/article · Quick answer + FAQ blocks on commercial corpus. CTR/CRO sprint live: tracked InlineCta + GA4 click_cta events on ENFIA, 120 m², Crete, eligible directory.
       </div>
       <div class="insight" style="margin-top:12px;">
-        <strong>GEO snapshot (27 Jul):</strong> citability audit avg 92/100 (grade A) on 124 commercial pages (min 90). Rubric: answer 94 · self-containment 83 · structure 98 · stats 100 · uniqueness 78. GEO 90+ push completed mid-Jul (qa:full 7/7 PASS).
+        <strong>GEO snapshot (18 Aug):</strong> citability audit avg 92/100 (grade A) on 124 commercial pages (min 90). Rubric: answer 94 · self-containment 83 · structure 98 · stats 100 · uniqueness 78. 0 files below 90 gate.
       </div>
     </div>
   </section>
@@ -692,7 +694,7 @@ const maxImp = Math.max(...monthlyGsc.map(m => m.impressions));
     <div class="pulse-header">
       <div>
         <h2>Search Performance</h2>
-        <p style="font-size:12px;color:#9ca3af;margin-top:2px;">greek-invest.com · 17 Jun to 24 Jul 2026 · Web search · Updated {reportDate} via GSC API</p>
+        <p style="font-size:12px;color:#9ca3af;margin-top:2px;">greek-invest.com · 17 Jun to 15 Aug 2026 · Web search · Updated {reportDate} via GSC API</p>
       </div>
       <div class="pulse-updated">
         <span class="pulse-updated-dot"></span>
@@ -703,44 +705,44 @@ const maxImp = Math.max(...monthlyGsc.map(m => m.impressions));
     <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:20px;">
       <div style="background:#f0faf5;border:1px solid #c6e8da;border-radius:10px;padding:14px 16px;">
         <div style="font-size:11px;font-weight:700;color:#7a7a6e;text-transform:uppercase;">Top page (clicks)</div>
-        <div style="font-size:22px;font-weight:900;color:#1a2e2a;margin-top:4px;">5 clicks</div>
-        <div style="font-size:12px;color:#7a7a6e;">Golden Visa eligible projects directory</div>
+        <div style="font-size:22px;font-weight:900;color:#1a2e2a;margin-top:4px;">8 clicks</div>
+        <div style="font-size:12px;color:#7a7a6e;">Crete Golden Visa €400K guide · 8% CTR</div>
       </div>
       <div style="background:#eef2ff;border:1px solid #c7d2fe;border-radius:10px;padding:14px 16px;">
         <div style="font-size:11px;font-weight:700;color:#7a7a6e;text-transform:uppercase;">Top page (impressions)</div>
-        <div style="font-size:22px;font-weight:900;color:#1a2e2a;margin-top:4px;">653 imp</div>
-        <div style="font-size:12px;color:#7a7a6e;">ENFIA property tax guide · pos 6.2</div>
+        <div style="font-size:22px;font-weight:900;color:#1a2e2a;margin-top:4px;">770 imp</div>
+        <div style="font-size:12px;color:#7a7a6e;">ENFIA property tax guide · pos 6.6 · 0.39% CTR</div>
       </div>
       <div style="background:#fff7ed;border:1px solid #fed7aa;border-radius:10px;padding:14px 16px;">
         <div style="font-size:11px;font-weight:700;color:#7a7a6e;text-transform:uppercase;">Corpus QA</div>
-        <div style="font-size:22px;font-weight:900;color:#1a2e2a;margin-top:4px;">qa:full 7/7</div>
-        <div style="font-size:12px;color:#7a7a6e;">GEO citability 92 avg · 150 URLs in sitemap</div>
+        <div style="font-size:22px;font-weight:900;color:#1a2e2a;margin-top:4px;">129/129</div>
+        <div style="font-size:12px;color:#7a7a6e;">validate:content PASS · GEO 92 avg · 150 URLs in sitemap</div>
       </div>
     </div>
 
     <div class="pulse-kpi-row">
       <div class="pulse-kpi kpi-green">
-        <div class="kpi-trend trend-up">↑ 22</div>
+        <div class="kpi-trend trend-up">↑ 32</div>
         <div class="kpi-label">Total Clicks</div>
-        <div class="kpi-val">22</div>
-        <div class="kpi-sub">17 Jun to 24 Jul · first click 26 Jun</div>
+        <div class="kpi-val">32</div>
+        <div class="kpi-sub">17 Jun to 15 Aug · first click 26 Jun</div>
       </div>
       <div class="pulse-kpi kpi-blue">
         <div class="kpi-trend trend-up">↑ Growing</div>
         <div class="kpi-label">Impressions</div>
-        <div class="kpi-val">3469</div>
-        <div class="kpi-sub">peak 270 on 5 Jul · daily avg ~96 since 19 Jun</div>
+        <div class="kpi-val">4810</div>
+        <div class="kpi-sub">peak 270 on 5 Jul · Aug daily avg ~66</div>
       </div>
       <div class="pulse-kpi kpi-amber">
         <div class="kpi-trend" style="background:#fef3c7;color:#92400e;">watch</div>
         <div class="kpi-label">Avg. Position</div>
-        <div class="kpi-val">10.6</div>
-        <div class="kpi-sub">ENFIA pos 6.2 · GV 120 m² rule pos 6.8 · lawyer queries 65+</div>
+        <div class="kpi-val">12.4</div>
+        <div class="kpi-sub">ENFIA pos 6.6 · Crete €400K pos 7.3 · lawyer queries 60+</div>
       </div>
       <div class="pulse-kpi kpi-purple">
         <div class="kpi-label">Avg. CTR</div>
-        <div class="kpi-val">0.63%</div>
-        <div class="kpi-sub">Best week 14 to 20 Jul (1.09% CTR) · ENFIA CTR sprint priority</div>
+        <div class="kpi-val">0.67%</div>
+        <div class="kpi-sub">Best URL Crete €400K (8% CTR) · ENFIA CTR sprint monitoring</div>
       </div>
     </div>
 
@@ -748,31 +750,32 @@ const maxImp = Math.max(...monthlyGsc.map(m => m.impressions));
       <div class="pulse-card">
         <div class="pulse-card-title">
           <span class="span-blue"></span>
-          Daily Impressions — Jun 2026 (GSC)
+          Daily Impressions — Aug 2026 (GSC)
         </div>
         <div class="pulse-chart">
           <div class="chart-bars">
-            <div class="chart-bar-wrap"><div class="chart-bar bar-impr" style="height:92%"></div><div class="chart-label">11</div></div>
-            <div class="chart-bar-wrap"><div class="chart-bar bar-impr" style="height:100%"></div><div class="chart-label" style="color:#2d7a5e;font-weight:700;">12</div></div>
-            <div class="chart-bar-wrap"><div class="chart-bar bar-impr" style="height:55%"></div><div class="chart-label">13</div></div>
-            <div class="chart-bar-wrap"><div class="chart-bar bar-impr" style="height:42%"></div><div class="chart-label">14</div></div>
-            <div class="chart-bar-wrap"><div class="chart-bar bar-impr" style="height:37%"></div><div class="chart-label">15</div></div>
-            <div class="chart-bar-wrap"><div class="chart-bar bar-impr" style="height:29%"></div><div class="chart-label">16</div></div>
-            <div class="chart-bar-wrap"><div class="chart-bar bar-impr" style="height:22%"></div><div class="chart-label">17</div></div>
-            <div class="chart-bar-wrap"><div class="chart-bar bar-impr" style="height:24%"></div><div class="chart-label">18</div></div>
-            <div class="chart-bar-wrap"><div class="chart-bar bar-impr" style="height:24%"></div><div class="chart-label">19</div></div>
-            <div class="chart-bar-wrap"><div class="chart-bar bar-impr" style="height:23%"></div><div class="chart-label">20</div></div>
-            <div class="chart-bar-wrap"><div class="chart-bar bar-impr" style="height:36%"></div><div class="chart-label">21</div></div>
-            <div class="chart-bar-wrap"><div class="chart-bar bar-impr" style="height:35%"></div><div class="chart-label">22</div></div>
-            <div class="chart-bar-wrap"><div class="chart-bar bar-impr" style="height:33%"></div><div class="chart-label">23</div></div>
-            <div class="chart-bar-wrap"><div class="chart-bar bar-impr" style="height:29%"></div><div class="chart-label">24</div></div>
+            <div class="chart-bar-wrap"><div class="chart-bar bar-impr" style="height:23%"></div><div class="chart-label">01</div></div>
+            <div class="chart-bar-wrap"><div class="chart-bar bar-impr" style="height:30%"></div><div class="chart-label">02</div></div>
+            <div class="chart-bar-wrap"><div class="chart-bar bar-impr" style="height:29%"></div><div class="chart-label">03</div></div>
+            <div class="chart-bar-wrap"><div class="chart-bar bar-impr" style="height:27%"></div><div class="chart-label">04</div></div>
+            <div class="chart-bar-wrap"><div class="chart-bar bar-impr" style="height:38%"></div><div class="chart-label">05</div></div>
+            <div class="chart-bar-wrap"><div class="chart-bar bar-impr" style="height:35%"></div><div class="chart-label">06</div></div>
+            <div class="chart-bar-wrap"><div class="chart-bar bar-impr" style="height:34%"></div><div class="chart-label">07</div></div>
+            <div class="chart-bar-wrap"><div class="chart-bar bar-impr" style="height:36%"></div><div class="chart-label">08</div></div>
+            <div class="chart-bar-wrap"><div class="chart-bar bar-impr" style="height:45%"></div><div class="chart-label">09</div></div>
+            <div class="chart-bar-wrap"><div class="chart-bar bar-impr" style="height:47%"></div><div class="chart-label">10</div></div>
+            <div class="chart-bar-wrap"><div class="chart-bar bar-impr" style="height:37%"></div><div class="chart-label">11</div></div>
+            <div class="chart-bar-wrap"><div class="chart-bar bar-impr" style="height:47%"></div><div class="chart-label">12</div></div>
+            <div class="chart-bar-wrap"><div class="chart-bar bar-impr" style="height:39%"></div><div class="chart-label">13</div></div>
+            <div class="chart-bar-wrap"><div class="chart-bar bar-impr" style="height:36%"></div><div class="chart-label">14</div></div>
+            <div class="chart-bar-wrap"><div class="chart-bar bar-impr" style="height:39%"></div><div class="chart-label" style="color:#2d7a5e;font-weight:700;">15</div></div>
           </div>
-          <p style="font-size:10px;color:#aaa;margin-top:8px;">19–23 Jun · bars = daily GSC impressions · peak 30 (21 Jun) · first data after Silo E deploy + indexing</p>
+          <p style="font-size:10px;color:#aaa;margin-top:8px;">1–15 Aug · bars = daily GSC impressions · Jul peak 270 (5 Jul) · post CTR/CRO sprint</p>
         </div>
         <div class="pulse-insight" style="margin-top:16px;">
           <div class="pulse-insight-icon">📈</div>
           <div class="pulse-insight-text">
-            <strong>Golden Visa cluster indexing first:</strong> 120 m² rule guide leads with 21 impressions at pos 9.8. Costa Navarino area page at pos 6.4. Family members rules at pos 4. Zero clicks is normal for a 1-week-old EN niche site — impressions confirm Google is crawling and ranking long-tail GV queries.
+            <strong>Two-engine traction:</strong> Google clicks +45% vs Jul report (32 vs 22). Bing now 37 clicks / 5,351 imp. GA4 sessions doubled vs prior report (487 vs 208). Crete €400K and eligible directory convert best on Google CTR.
           </div>
         </div>
       </div>
@@ -785,50 +788,50 @@ const maxImp = Math.max(...monthlyGsc.map(m => m.impressions));
         <div class="pulse-query-row">
           <div class="pulse-query-rank">#1</div>
           <div class="pulse-query-text">legal due diligence buying property greece</div>
-          <div class="pulse-query-pos">pos 53.3</div>
-          <div class="pulse-query-imp">37 imp</div>
+          <div class="pulse-query-pos">pos 53.6</div>
+          <div class="pulse-query-imp">71 imp</div>
         </div>
         <div class="pulse-query-row">
           <div class="pulse-query-rank">#2</div>
-          <div class="pulse-query-text">greece golden visa cost solicitor</div>
-          <div class="pulse-query-pos">pos 65</div>
-          <div class="pulse-query-imp">26 imp</div>
+          <div class="pulse-query-text">athens rental yield 2026 investment return data</div>
+          <div class="pulse-query-pos">pos 5.8</div>
+          <div class="pulse-query-imp">68 imp</div>
         </div>
         <div class="pulse-query-row">
           <div class="pulse-query-rank">#3</div>
-          <div class="pulse-query-text">greece golden visa processing time lawyer</div>
-          <div class="pulse-query-pos">pos 65.7</div>
-          <div class="pulse-query-imp">26 imp</div>
+          <div class="pulse-query-text">mykonos micro-market analysis for real estate investors</div>
+          <div class="pulse-query-pos">pos 52.3</div>
+          <div class="pulse-query-imp">48 imp</div>
         </div>
         <div class="pulse-query-row">
           <div class="pulse-query-rank">#4</div>
-          <div class="pulse-query-text">greece golden visa solicitor</div>
-          <div class="pulse-query-pos">pos 64.9</div>
-          <div class="pulse-query-imp">25 imp</div>
+          <div class="pulse-query-text">greece golden visa cost solicitor</div>
+          <div class="pulse-query-pos">pos 61.0</div>
+          <div class="pulse-query-imp">47 imp</div>
         </div>
         <div class="pulse-query-row">
           <div class="pulse-query-rank">#5</div>
-          <div class="pulse-query-text">mykonos micro-market analysis for real estate investors</div>
-          <div class="pulse-query-pos">pos 53.5</div>
-          <div class="pulse-query-imp">24 imp</div>
+          <div class="pulse-query-text">greece golden visa processing time lawyer</div>
+          <div class="pulse-query-pos">pos 62.6</div>
+          <div class="pulse-query-imp">45 imp</div>
         </div>
         <div class="pulse-query-row">
           <div class="pulse-query-rank">#6</div>
-          <div class="pulse-query-text">athens rental yield 2026 investment return data</div>
-          <div class="pulse-query-pos">pos 7.1</div>
-          <div class="pulse-query-imp">19 imp</div>
+          <div class="pulse-query-text">greece golden visa solicitor</div>
+          <div class="pulse-query-pos">pos 71.0</div>
+          <div class="pulse-query-imp">45 imp</div>
         </div>
         <div class="pulse-query-row">
           <div class="pulse-query-rank">#7</div>
           <div class="pulse-query-text">greece investor visa solicitor</div>
-          <div class="pulse-query-pos">pos 64.4</div>
-          <div class="pulse-query-imp">19 imp</div>
+          <div class="pulse-query-pos">pos 67.7</div>
+          <div class="pulse-query-imp">31 imp</div>
         </div>
         <div class="pulse-query-row">
           <div class="pulse-query-rank">#8</div>
           <div class="pulse-query-text">making an offer on a greek property</div>
-          <div class="pulse-query-pos">pos 61.6</div>
-          <div class="pulse-query-imp">11 imp</div>
+          <div class="pulse-query-pos">pos 64.1</div>
+          <div class="pulse-query-imp">15 imp</div>
         </div>
       </div>
     </div>
@@ -836,90 +839,90 @@ const maxImp = Math.max(...monthlyGsc.map(m => m.impressions));
     <div class="pulse-card" style="margin-top:16px;">
       <div class="pulse-card-title">
         <span class="span-blue"></span>
-        Top Pages — Impressions (no clicks yet)
+        Top Pages — clicks &amp; impressions (GSC)
       </div>
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:0;">
         <div>
           <div class="pulse-page-row">
+            <div class="pulse-page-url">/guides/crete-golden-visa-400000-property/</div>
+            <div class="pulse-page-meta">
+              <span class="pulse-badge badge-clicks">8 clk</span>
+              <span class="pulse-badge badge-impr">100 imp</span>
+              <span class="pulse-badge badge-pos">pos 7.3</span>
+            </div>
+          </div>
+          <div class="pulse-page-row">
+            <div class="pulse-page-url">/guides/golden-visa-eligible-projects-directory/</div>
+            <div class="pulse-page-meta">
+              <span class="pulse-badge badge-clicks">6 clk</span>
+              <span class="pulse-badge badge-impr">45 imp</span>
+              <span class="pulse-badge badge-pos">pos 8.6</span>
+            </div>
+          </div>
+          <div class="pulse-page-row">
+            <div class="pulse-page-url">/areas/costa-navarino-property-investment/</div>
+            <div class="pulse-page-meta">
+              <span class="pulse-badge badge-clicks">3 clk</span>
+              <span class="pulse-badge badge-impr">173 imp</span>
+              <span class="pulse-badge badge-pos">pos 6.1</span>
+            </div>
+          </div>
+          <div class="pulse-page-row">
             <div class="pulse-page-url">/guides/enfia-property-tax-greece/</div>
             <div class="pulse-page-meta">
-              <span class="pulse-badge badge-clicks">2 clk</span>
-              <span class="pulse-badge badge-impr">653 imp</span>
-              <span class="pulse-badge badge-pos">pos 6.2</span>
+              <span class="pulse-badge badge-clicks">3 clk</span>
+              <span class="pulse-badge badge-impr">770 imp</span>
+              <span class="pulse-badge badge-pos">pos 6.6</span>
             </div>
           </div>
           <div class="pulse-page-row">
             <div class="pulse-page-url">/guides/greece-golden-visa-120-square-meter-rule/</div>
             <div class="pulse-page-meta">
               <span class="pulse-badge badge-clicks">2 clk</span>
-              <span class="pulse-badge badge-impr">230 imp</span>
-              <span class="pulse-badge badge-pos">pos 6.8</span>
-            </div>
-          </div>
-          <div class="pulse-page-row">
-            <div class="pulse-page-url">/guides/greece-golden-visa-lawyer-cost/</div>
-            <div class="pulse-page-meta">
-              <span class="pulse-badge badge-clicks">1 clk</span>
-              <span class="pulse-badge badge-impr">176 imp</span>
-              <span class="pulse-badge badge-pos">pos 47.9</span>
-            </div>
-          </div>
-          <div class="pulse-page-row">
-            <div class="pulse-page-url">/guides/golden-visa-eligible-projects-directory/</div>
-            <div class="pulse-page-meta">
-              <span class="pulse-badge badge-clicks">5 clk</span>
-              <span class="pulse-badge badge-impr">31 imp</span>
-              <span class="pulse-badge badge-pos">pos 7.9</span>
-            </div>
-          </div>
-          <div class="pulse-page-row">
-            <div class="pulse-page-url">/guides/crete-golden-visa-400000-property/</div>
-            <div class="pulse-page-meta">
-              <span class="pulse-badge badge-clicks">4 clk</span>
-              <span class="pulse-badge badge-impr">67 imp</span>
-              <span class="pulse-badge badge-pos">pos 7.8</span>
+              <span class="pulse-badge badge-impr">248 imp</span>
+              <span class="pulse-badge badge-pos">pos 7.5</span>
             </div>
           </div>
         </div>
         <div>
           <div class="pulse-page-row">
-            <div class="pulse-page-url">/areas/costa-navarino-property-investment/</div>
+            <div class="pulse-page-url">/guides/greece-golden-visa-lawyer-cost/</div>
             <div class="pulse-page-meta">
               <span class="pulse-badge badge-clicks">1 clk</span>
-              <span class="pulse-badge badge-impr">105 imp</span>
-              <span class="pulse-badge badge-pos">pos 6.2</span>
+              <span class="pulse-badge badge-impr">288 imp</span>
+              <span class="pulse-badge badge-pos">pos 50.6</span>
             </div>
           </div>
           <div class="pulse-page-row">
-            <div class="pulse-page-url">/guides/greece-property-market-transactions-2025/</div>
+            <div class="pulse-page-url">/guides/due-diligence-greece-property/</div>
             <div class="pulse-page-meta">
-              <span class="pulse-badge badge-clicks">1 clk</span>
-              <span class="pulse-badge badge-impr">67 imp</span>
-              <span class="pulse-badge badge-pos">pos 4.8</span>
+              <span class="pulse-badge badge-clicks">0 clk</span>
+              <span class="pulse-badge badge-impr">255 imp</span>
+              <span class="pulse-badge badge-pos">pos 22.3</span>
             </div>
           </div>
           <div class="pulse-page-row">
             <div class="pulse-page-url">/guides/power-of-attorney-property-greece/</div>
             <div class="pulse-page-meta">
               <span class="pulse-badge badge-clicks">1 clk</span>
-              <span class="pulse-badge badge-impr">79 imp</span>
-              <span class="pulse-badge badge-pos">pos 5.7</span>
+              <span class="pulse-badge badge-impr">106 imp</span>
+              <span class="pulse-badge badge-pos">pos 5.9</span>
             </div>
           </div>
           <div class="pulse-page-row">
-            <div class="pulse-page-url">/guides/border-zones-greece-foreign-buyers/</div>
+            <div class="pulse-page-url">/guides/greece-property-market-transactions-2025/</div>
             <div class="pulse-page-meta">
               <span class="pulse-badge badge-clicks">1 clk</span>
-              <span class="pulse-badge badge-impr">41 imp</span>
-              <span class="pulse-badge badge-pos">pos 5.2</span>
+              <span class="pulse-badge badge-impr">79 imp</span>
+              <span class="pulse-badge badge-pos">pos 4.8</span>
             </div>
           </div>
           <div class="pulse-page-row">
             <div class="pulse-page-url">/areas/elounda-property-investment/</div>
             <div class="pulse-page-meta">
               <span class="pulse-badge badge-clicks">1 clk</span>
-              <span class="pulse-badge badge-impr">16 imp</span>
-              <span class="pulse-badge badge-pos">pos 4.9</span>
+              <span class="pulse-badge badge-impr">30 imp</span>
+              <span class="pulse-badge badge-pos">pos 6.3</span>
             </div>
           </div>
         </div>
@@ -930,13 +933,13 @@ const maxImp = Math.max(...monthlyGsc.map(m => m.impressions));
       <div class="pulse-insight" style="background:#f0fdf4;border-color:#bbf7d0;">
         <div class="pulse-insight-icon">✅</div>
         <div class="pulse-insight-text">
-          <strong>Silo E complete + qa:full PASS:</strong> 22 regional pages live (Athens hub, Crete, Cyclades, Thessaloniki, Peloponnese, Rhodes, Halkidiki, Mykonos, Santorini, Kalamata, Costa Navarino, best-regions guide). All 113 URLs submitted to Google + Bing. Dedicated Telegram bot deployed.
+          <strong>CTR/CRO sprint deployed:</strong> Title/meta + internal links on ENFIA, 120 m², Crete €400K. InlineCta + GA4 click_cta tracking on click-bearing pages. Greece LeadForm copy fixed site-wide. Monitor conversion lift over next 2–3 weeks.
         </div>
       </div>
       <div class="pulse-insight" style="background:#fff7ed;border-color:#fed7aa;">
         <div class="pulse-insight-icon">🔗</div>
         <div class="pulse-insight-text">
-          <strong>Next CTR targets:</strong> Golden Visa 120 m² rule (21 imp, pos 9.8) — add FAQ schema + title refresh. Costa Navarino (8 imp, pos 6.4) — one step from page 1. Crete €400k guide (6 imp, pos 9.2) — internal link from Athens hub.
+          <strong>Next CTR targets:</strong> ENFIA (770 imp, 0.39% CTR) if no lift after sprint. Due diligence guide (255 imp, pos 22.3, 0 clk). Lawyer-cost page (288 imp, pos 50.6) needs separate cluster strategy.
         </div>
       </div>
     </div>
@@ -957,11 +960,11 @@ const maxImp = Math.max(...monthlyGsc.map(m => m.impressions));
           </tr>
         </thead>
         <tbody>
-          <tr style="border-bottom:1px solid #f4f1eb;"><td style="padding:8px 12px;color:#2d7a5e;font-weight:600;">/guides/greece-golden-visa-family-members-rules/</td><td style="padding:8px 12px;text-align:center;"><span style="background:#dcfce7;color:#166534;font-weight:700;padding:2px 8px;border-radius:6px;font-size:11px;">4.0</span></td><td style="padding:8px 12px;text-align:center;font-weight:700;">3</td><td style="padding:8px 12px;">P0: Already page 1 — monitor clicks next week</td></tr>
-          <tr style="border-bottom:1px solid #f4f1eb;"><td style="padding:8px 12px;color:#2d7a5e;font-weight:600;">/areas/costa-navarino-property-investment/</td><td style="padding:8px 12px;text-align:center;"><span style="background:#dcfce7;color:#166534;font-weight:700;padding:2px 8px;border-radius:6px;font-size:11px;">6.4</span></td><td style="padding:8px 12px;text-align:center;font-weight:700;">8</td><td style="padding:8px 12px;">P0: Area page near page 1 — add hero FAQ + internal links from Crete hub</td></tr>
-          <tr style="border-bottom:1px solid #f4f1eb;"><td style="padding:8px 12px;color:#2d7a5e;font-weight:600;">/guides/greece-golden-visa-120-square-meter-rule/</td><td style="padding:8px 12px;text-align:center;"><span style="background:#fef3c7;color:#92400e;font-weight:700;padding:2px 8px;border-radius:6px;font-size:11px;">9.8</span></td><td style="padding:8px 12px;text-align:center;font-weight:700;">21</td><td style="padding:8px 12px;">P0: Highest imp — title/meta CTR sprint + link from Golden Visa hub</td></tr>
-          <tr style="border-bottom:1px solid #f4f1eb;"><td style="padding:8px 12px;color:#2d7a5e;font-weight:600;">/guides/crete-golden-visa-400000-property/</td><td style="padding:8px 12px;text-align:center;"><span style="background:#fef3c7;color:#92400e;font-weight:700;padding:2px 8px;border-radius:6px;font-size:11px;">9.2</span></td><td style="padding:8px 12px;text-align:center;font-weight:700;">6</td><td style="padding:8px 12px;">P1: Crete €400k tier — cross-link from best-regions guide</td></tr>
-          <tr><td style="padding:8px 12px;color:#2d7a5e;font-weight:600;">/guides/best-regions-invest-greece-property-2026/</td><td style="padding:8px 12px;text-align:center;"><span style="background:#fef3c7;color:#92400e;font-weight:700;padding:2px 8px;border-radius:6px;font-size:11px;">20.5</span></td><td style="padding:8px 12px;text-align:center;font-weight:700;">4</td><td style="padding:8px 12px;">P1: Pillar page — expand FAQ + link all Silo E area hubs</td></tr>
+          <tr style="border-bottom:1px solid #f4f1eb;"><td style="padding:8px 12px;color:#2d7a5e;font-weight:600;">/guides/greece-property-market-transactions-2025/</td><td style="padding:8px 12px;text-align:center;"><span style="background:#dcfce7;color:#166534;font-weight:700;padding:2px 8px;border-radius:6px;font-size:11px;">4.8</span></td><td style="padding:8px 12px;text-align:center;font-weight:700;">79</td><td style="padding:8px 12px;">P0: Page 1 · add FAQ + link from investment guide</td></tr>
+          <tr style="border-bottom:1px solid #f4f1eb;"><td style="padding:8px 12px;color:#2d7a5e;font-weight:600;">/areas/costa-navarino-property-investment/</td><td style="padding:8px 12px;text-align:center;"><span style="background:#dcfce7;color:#166534;font-weight:700;padding:2px 8px;border-radius:6px;font-size:11px;">6.1</span></td><td style="padding:8px 12px;text-align:center;font-weight:700;">173</td><td style="padding:8px 12px;">P0: Strong imp + 3 clk · hero FAQ + Crete hub links</td></tr>
+          <tr style="border-bottom:1px solid #f4f1eb;"><td style="padding:8px 12px;color:#2d7a5e;font-weight:600;">/guides/enfia-property-tax-greece/</td><td style="padding:8px 12px;text-align:center;"><span style="background:#dcfce7;color:#166534;font-weight:700;padding:2px 8px;border-radius:6px;font-size:11px;">6.6</span></td><td style="padding:8px 12px;text-align:center;font-weight:700;">770</td><td style="padding:8px 12px;">P0: Highest imp · monitor post-sprint CTR weekly</td></tr>
+          <tr style="border-bottom:1px solid #f4f1eb;"><td style="padding:8px 12px;color:#2d7a5e;font-weight:600;">/guides/crete-golden-visa-400000-property/</td><td style="padding:8px 12px;text-align:center;"><span style="background:#dcfce7;color:#166534;font-weight:700;padding:2px 8px;border-radius:6px;font-size:11px;">7.3</span></td><td style="padding:8px 12px;text-align:center;font-weight:700;">100</td><td style="padding:8px 12px;">P1: Top clicks (8) · replicate CTA pattern on similar BOFU pages</td></tr>
+          <tr><td style="padding:8px 12px;color:#2d7a5e;font-weight:600;">/guides/due-diligence-greece-property/</td><td style="padding:8px 12px;text-align:center;"><span style="background:#fef3c7;color:#92400e;font-weight:700;padding:2px 8px;border-radius:6px;font-size:11px;">22.3</span></td><td style="padding:8px 12px;text-align:center;font-weight:700;">255</td><td style="padding:8px 12px;">P1: High imp zero clk · title refresh + links from buy-property hub</td></tr>
         </tbody>
       </table>
       </div>
@@ -1005,26 +1008,26 @@ const maxImp = Math.max(...monthlyGsc.map(m => m.impressions));
     <div class="pulse-card" style="margin-top:16px;">
       <div class="pulse-card-title">
         <span style="width:8px;height:8px;border-radius:50%;display:inline-block;background:#fbbf24;"></span>
-        Google Analytics 4 — 17 – 24 Jun 2026
+        Google Analytics 4 — 17 Jun to 15 Aug 2026
       </div>
       <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px;">
         <div style="text-align:center;padding:16px;background:#fef3c7;border-radius:10px;border:1px solid #fde68a;">
-          <div style="font-size:28px;font-weight:900;color:#b45309;">208</div>
+          <div style="font-size:28px;font-weight:900;color:#b45309;">487</div>
           <div style="font-size:11px;color:#7a7a6e;margin-top:4px;font-weight:700;">Sessions</div>
-          <div style="font-size:10px;color:#aaa;margin-top:2px;">Peak 11 on 17 Jun · launch + QA traffic</div>
+          <div style="font-size:10px;color:#aaa;margin-top:2px;">Peak week 4–10 Aug (106 sessions)</div>
         </div>
         <div style="text-align:center;padding:16px;background:#dbeafe;border-radius:10px;border:1px solid #93c5fd;">
-          <div style="font-size:28px;font-weight:900;color:#2563eb;">223</div>
+          <div style="font-size:28px;font-weight:900;color:#2563eb;">530</div>
           <div style="font-size:11px;color:#7a7a6e;margin-top:4px;font-weight:700;">Pageviews</div>
-          <div style="font-size:10px;color:#aaa;margin-top:2px;">Organic search building · GSC from 19 Jun</div>
+          <div style="font-size:10px;color:#aaa;margin-top:2px;">457 users · organic + direct mix</div>
         </div>
         <div style="text-align:center;padding:16px;background:#dcfce7;border-radius:10px;border:1px solid #86efac;">
-          <div style="font-size:28px;font-weight:900;color:#16a34a;">0</div>
+          <div style="font-size:28px;font-weight:900;color:#16a34a;">—</div>
           <div style="font-size:11px;color:#7a7a6e;margin-top:4px;font-weight:700;">Key events</div>
-          <div style="font-size:10px;color:#aaa;margin-top:2px;">Lead form live · awaiting first organic lead</div>
+          <div style="font-size:10px;color:#aaa;margin-top:2px;">click_cta tracking live post sprint · check lead form</div>
         </div>
         <div style="text-align:center;padding:16px;background:#ede9fe;border-radius:10px;border:1px solid #c4b5fd;">
-          <div style="font-size:28px;font-weight:900;color:#7c3aed;">113</div>
+          <div style="font-size:28px;font-weight:900;color:#7c3aed;">150</div>
           <div style="font-size:11px;color:#7a7a6e;margin-top:4px;font-weight:700;">IndexNow URLs</div>
           <div style="font-size:10px;color:#aaa;margin-top:2px;">Bing explicit submit · gap 0</div>
         </div>
@@ -1034,15 +1037,15 @@ const maxImp = Math.max(...monthlyGsc.map(m => m.impressions));
     <div class="pulse-card" style="margin-top:16px;">
       <div class="pulse-card-title">
         <span style="width:8px;height:8px;border-radius:50%;display:inline-block;background:#2d7a5e;"></span>
-        Full SEO Audit — 25 Jun 2026
+        Full SEO Audit — 18 Aug 2026
       </div>
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
-        <div class="pulse-insight" style="margin-top:0;background:#f0fdf4;border-color:#bbf7d0;"><div class="pulse-insight-icon">1</div><div class="pulse-insight-text"><strong>Technical SEO: 9/10.</strong> sitemap 200, lead API 200, robots OK. 150 live URLs. qa:full 5/5 PASS. No crawl errors.</div></div>
-        <div class="pulse-insight" style="margin-top:0;background:#f0fdf4;border-color:#bbf7d0;"><div class="pulse-insight-icon">2</div><div class="pulse-insight-text"><strong>Indexation: 10/10.</strong> 113/113 Google + Bing submitted. Gap 0. Dedicated indexing GCP project. Tracker aligned with sitemap.</div></div>
-        <div class="pulse-insight" style="margin-top:0;background:#fff7ed;border-color:#fed7aa;"><div class="pulse-insight-icon">3</div><div class="pulse-insight-text"><strong>On-page / CTR: 7/10.</strong> Content quality fixed (25 AI boilerplate pages rewritten). Golden Visa cluster entering SERPs. CTR sprint scheduled week 3.</div></div>
-        <div class="pulse-insight" style="margin-top:0;background:#f0faf5;border-color:#c6e8da;"><div class="pulse-insight-icon">4</div><div class="pulse-insight-text"><strong>Content: 8.5/10.</strong> 129 MDX, ~567k words. Silo E regional hubs complete. validate:content exit 0.</div></div>
-        <div class="pulse-insight" style="margin-top:0;background:#eef2ff;border-color:#c7d2fe;"><div class="pulse-insight-icon">5</div><div class="pulse-insight-text"><strong>Multi-engine: 7/10.</strong> Bing registered, IndexNow active. GSC first impressions 19 Jun. Google primary for EN Greece intent.</div></div>
-        <div class="pulse-insight" style="margin-top:0;background:#fef2f2;border-color:#fecaca;"><div class="pulse-insight-icon">!</div><div class="pulse-insight-text"><strong>Early phase:</strong> Zero clicks normal week 1. Monitor GV 120 m² rule + Costa Navarino weekly. First leads expected weeks 3–4.</div></div>
+        <div class="pulse-insight" style="margin-top:0;background:#f0fdf4;border-color:#bbf7d0;"><div class="pulse-insight-icon">1</div><div class="pulse-insight-text"><strong>Technical SEO: 9/10.</strong> sitemap 200, lead API 200, www→apex fixed. 150 live URLs. validate:content 129/129 PASS.</div></div>
+        <div class="pulse-insight" style="margin-top:0;background:#f0fdf4;border-color:#bbf7d0;"><div class="pulse-insight-icon">2</div><div class="pulse-insight-text"><strong>Indexation: 10/10.</strong> 150/150 Google + Bing submitted. Gap 0. Dedicated indexing GCP project.</div></div>
+        <div class="pulse-insight" style="margin-top:0;background:#fff7ed;border-color:#fed7aa;"><div class="pulse-insight-icon">3</div><div class="pulse-insight-text"><strong>On-page / CTR: 8/10.</strong> CTR/CRO sprint deployed. Crete €400K at 8% CTR. ENFIA still main impression leak (770 imp).</div></div>
+        <div class="pulse-insight" style="margin-top:0;background:#f0faf5;border-color:#c6e8da;"><div class="pulse-insight-icon">4</div><div class="pulse-insight-text"><strong>Content: 8.5/10.</strong> 129 MDX, ~567k words. Silo E complete. GEO citability 92 avg.</div></div>
+        <div class="pulse-insight" style="margin-top:0;background:#eef2ff;border-color:#c7d2fe;"><div class="pulse-insight-icon">5</div><div class="pulse-insight-text"><strong>Multi-engine: 8/10.</strong> Bing 37 clicks / 5,351 imp. Google 32 clicks / 4,810 imp. Dual-engine traction at 8 weeks.</div></div>
+        <div class="pulse-insight" style="margin-top:0;background:#fef2f2;border-color:#fecaca;"><div class="pulse-insight-icon">!</div><div class="pulse-insight-text"><strong>Conversion phase:</strong> GA4 487 sessions but leads still sparse. Monitor click_cta + form submissions weekly. Target: first consistent organic leads weeks 9–12.</div></div>
       </div>
     </div>
 
@@ -1057,19 +1060,37 @@ const maxImp = Math.max(...monthlyGsc.map(m => m.impressions));
     <div class="pulse-header">
       <div>
         <h2>Bing / Yahoo Search Performance</h2>
-        <p style="font-size:12px;color:#9ca3af;margin-top:2px;">greek-invest.com · Jun 2026 · MCP bing-webmaster-greek-invest · Updated 25 Jun</p>
+        <p style="font-size:12px;color:#9ca3af;margin-top:2px;">greek-invest.com · 17 Jun to 15 Aug 2026 · MCP bing-webmaster-greek-invest · Updated {reportDate}</p>
       </div>
       <div class="pulse-updated"><span class="pulse-updated-dot"></span>Live via MCP</div>
     </div>
     <div class="pulse-kpi-row">
-      <div class="pulse-kpi kpi-orange"><div class="kpi-trend trend-up">↑ 5</div><div class="kpi-label">Bing Clicks</div><div class="kpi-val">5</div><div class="kpi-sub">17 Jun to 24 Jul · ramp from 15 Jul</div></div>
+      <div class="pulse-kpi kpi-orange"><div class="kpi-trend trend-up">↑ 37</div><div class="kpi-label">Bing Clicks</div><div class="kpi-val">37</div><div class="kpi-sub">17 Jun to 15 Aug · peak week 4–10 Aug (16 clk)</div></div>
       <div class="pulse-kpi kpi-blue"><div class="kpi-trend trend-up">Submitted</div><div class="kpi-label">IndexNow</div><div class="kpi-val">150</div><div class="kpi-sub">150 URLs · bing.com/indexnow only</div></div>
-      <div class="pulse-kpi kpi-green"><div class="kpi-label">Bing impressions</div><div class="kpi-val">1178</div><div class="kpi-sub">Peak day 18 Jul (135 imp) · MCP 27 Jul</div></div>
-      <div class="pulse-kpi kpi-purple"><div class="kpi-label">First lead</div><div class="kpi-val">—</div><div class="kpi-sub">Awaiting first organic lead · Telegram bot live</div></div>
+      <div class="pulse-kpi kpi-green"><div class="kpi-label">Bing impressions</div><div class="kpi-val">5351</div><div class="kpi-sub">Peak day 13 Aug (442 imp) · MCP {reportDate}</div></div>
+      <div class="pulse-kpi kpi-purple"><div class="kpi-label">Top Bing page</div><div class="kpi-val">GV pillar</div><div class="kpi-sub">4 clk · 932 imp · greece-golden-visa-property-guide-2026</div></div>
+    </div>
+    <div class="pulse-grid" style="margin-top:16px;">
+      <div class="pulse-card">
+        <div class="pulse-card-title"><span class="span-green"></span>Top Bing pages (clicks)</div>
+        <div class="pulse-page-row"><div class="pulse-page-url">/guides/greece-golden-visa-property-guide-2026/</div><div class="pulse-page-meta"><span class="pulse-badge badge-clicks">4 clk</span><span class="pulse-badge badge-impr">932 imp</span></div></div>
+        <div class="pulse-page-row"><div class="pulse-page-url">/guides/power-of-attorney-property-greece/</div><div class="pulse-page-meta"><span class="pulse-badge badge-clicks">4 clk</span><span class="pulse-badge badge-impr">18 imp</span></div></div>
+        <div class="pulse-page-row"><div class="pulse-page-url">/guides/greece-capital-gains-tax-property/</div><div class="pulse-page-meta"><span class="pulse-badge badge-clicks">3 clk</span><span class="pulse-badge badge-impr">62 imp</span></div></div>
+        <div class="pulse-page-row"><div class="pulse-page-url">/guides/greece-property-scams-avoid/</div><div class="pulse-page-meta"><span class="pulse-badge badge-clicks">2 clk</span><span class="pulse-badge badge-impr">8 imp</span></div></div>
+        <div class="pulse-page-row"><div class="pulse-page-url">/guides/greece-citizenship-after-golden-visa/</div><div class="pulse-page-meta"><span class="pulse-badge badge-clicks">1 clk</span><span class="pulse-badge badge-impr">252 imp</span></div></div>
+      </div>
+      <div class="pulse-card">
+        <div class="pulse-card-title"><span class="span-blue"></span>Top Bing queries (clicks)</div>
+        <div class="pulse-query-row"><div class="pulse-query-rank">#1</div><div class="pulse-query-text">how to buy property in greece</div><div class="pulse-query-imp">3 imp · 1 clk</div></div>
+        <div class="pulse-query-row"><div class="pulse-query-rank">#2</div><div class="pulse-query-text">greece property scams</div><div class="pulse-query-imp">3 imp · 1 clk</div></div>
+        <div class="pulse-query-row"><div class="pulse-query-rank">#3</div><div class="pulse-query-text">400k euro residencey in crete isnthis.ok.or is it 800k</div><div class="pulse-query-imp">1 imp · 1 clk</div></div>
+        <div class="pulse-query-row"><div class="pulse-query-rank">#4</div><div class="pulse-query-text">is cretes golden visa 4 hundred thousand euros</div><div class="pulse-query-imp">1 imp · 1 clk</div></div>
+        <div class="pulse-query-row"><div class="pulse-query-rank">#5</div><div class="pulse-query-text">greece law 5100/2024 golden visa thresholds</div><div class="pulse-query-imp">3376 imp · 0 clk</div></div>
+      </div>
     </div>
     <div class="pulse-insight" style="margin-top:16px;">
       <div class="pulse-insight-icon">🔶</div>
-      <div class="pulse-insight-text"><strong>Bing early phase:</strong> All 150 URLs submitted via IndexNow. Impressions expected 2–4 weeks after Google. EN site uses Bing direct endpoint only — never api.indexnow.org (Yandex hub).</div>
+      <div class="pulse-insight-text"><strong>Bing momentum:</strong> 37 clicks vs Google 32 (same window). Peak week 4–10 Aug: 16 Bing clicks / 1,392 imp. GV pillar + POA + capital gains tax pages drive clicks. High-impression zero-click query on Law 5100/2024 thresholds (3,376 imp) is a Bing-specific CTR opportunity.</div>
     </div>
     <p class="pulse-footer-note">Bing data via <code>bing-webmaster-greek-invest</code> MCP</p>
   </div>
@@ -1161,6 +1182,14 @@ const maxImp = Math.max(...monthlyGsc.map(m => m.impressions));
     <div class="changelog-item">
       <div class="changelog-date">18 Aug 2026</div>
       <div class="changelog-content">
+        <div class="changelog-title">Site report v1.2 — full MCP refresh (GSC + GA4 + Bing to 15 Aug)</div>
+        <div class="changelog-desc">GSC 32 clicks / 4,810 imp (0.67% CTR). GA4 487 sessions / 530 pageviews. Bing 37 clicks / 5,351 imp. Weekly SEO table through 11–17 Aug. Top click URL: Crete €400K (8 clk). ENFIA 770 imp. GEO 92 avg unchanged.</div>
+        <div class="changelog-tags"><span class="tag green">Site-report v1.2</span><span class="tag blue">GSC MCP</span><span class="tag amber">Bing MCP</span></div>
+      </div>
+    </div>
+    <div class="changelog-item">
+      <div class="changelog-date">18 Aug 2026</div>
+      <div class="changelog-content">
         <div class="changelog-title">CTR/CRO sprint (27 Jul plan): titles on ENFIA + 120 m² + Crete, internal links, tracked CTAs</div>
         <div class="changelog-desc">Title/meta refresh on ENFIA, 120 m² rule, Crete €400K. Contextual links to eligible directory, cost calculator, Crete and Chania. Two CTAs per click-bearing page: top CTA to the on-page form, mid CTA to shortlist or consultation. InlineCta now fires a GA4 click_cta event and stores CTA attribution for the lead, plus a WhatsApp option on ENFIA, Crete and the eligible directory. Indexing not submitted.</div>
         <div class="changelog-tags"><span class="tag green">CTR</span><span class="tag blue">CRO</span><span class="tag amber">CTA tracking</span></div>
@@ -1216,41 +1245,41 @@ const maxImp = Math.max(...monthlyGsc.map(m => m.impressions));
     </div>
   </div>
 
-  <div class="section-title">Next steps · 27 Jul 2026</div>
+  <div class="section-title">Next steps · 18 Aug 2026</div>
   <div class="next-steps">
     <div class="next-item" style="background:#fef2f2;border-color:#fecaca;">
       <div class="priority high">P0</div>
       <div>
-        <div class="text" style="font-weight:700;">CTR sprint · ENFIA guide (653 imp, 0.31% CTR, pos 6.2)</div>
-        <div class="subtext">Title/meta + FAQ rich results · highest impression URL with room to 3x clicks.</div>
+        <div class="text" style="font-weight:700;">Monitor CTR/CRO sprint — 2–3 week window (deployed 27 Jul)</div>
+        <div class="subtext">Compare ENFIA (770 imp), 120 m² rule, Crete €400K vs baseline. Check GA4 click_cta events + form submissions.</div>
       </div>
     </div>
     <div class="next-item" style="background:#fff7ed;border-color:#fed7aa;">
       <div class="priority medium">P1</div>
       <div>
-        <div class="text" style="font-weight:700;">Golden Visa 120 m² rule (230 imp, 2 clicks) + Crete €400k (67 imp, 4 clicks)</div>
-        <div class="subtext">Internal links from ENFIA + eligible projects directory · monitor weekly GSC.</div>
+        <div class="text" style="font-weight:700;">Due diligence guide (255 imp, 0 clk, pos 22.3) + ENFIA if CTR flat</div>
+        <div class="subtext">Second CTR wave if sprint does not lift ENFIA above 1% CTR by early Sep.</div>
       </div>
     </div>
     <div class="next-item" style="background:#f0fdf4;border-color:#bbf7d0;">
       <div class="priority low">DONE</div>
       <div>
-        <div class="text" style="font-weight:700;">Silo E + indexing 113/113 + qa:full PASS + dashboard tracker fix</div>
-        <div class="subtext">All regional hubs live · gap 0 · submitted log aligned with sitemap.</div>
+        <div class="text" style="font-weight:700;">CTR/CRO sprint + Greece LeadForm fix + www redirect</div>
+        <div class="subtext">Titles, links, tracked CTAs on ENFIA / 120 m² / Crete / eligible directory. Live on prod.</div>
       </div>
     </div>
     <div class="next-item">
       <div class="priority medium">P1</div>
       <div>
-        <div class="text" style="font-weight:700;">Daily news cadence — 3 articles/day starting</div>
-        <div class="subtext">Greece market updates, Golden Visa policy, regional price data.</div>
+        <div class="text" style="font-weight:700;">Bing Law 5100/2024 query cluster (3,376 imp, 0 clk on Bing)</div>
+        <div class="subtext">Ensure tier map + Circular 2026 pages capture Bing impressions. GV pillar already 932 imp.</div>
       </div>
     </div>
     <div class="next-item">
       <div class="priority medium">P2</div>
       <div>
-        <div class="text" style="font-weight:700;">Nationality guides cluster (UK, US, DE, AU buyers)</div>
-        <div class="subtext">Next content batch after CTR baseline established week 3.</div>
+        <div class="text" style="font-weight:700;">Lawyer/solicitor GSC cluster (pos 60+, zero clicks)</div>
+        <div class="subtext">Separate content strategy — do not cannibalize property-economics pages.</div>
       </div>
     </div>
   </div>
@@ -1269,12 +1298,12 @@ const maxImp = Math.max(...monthlyGsc.map(m => m.impressions));
 </div>
 
 <div class="footer">
-  <strong>Greek Invest</strong> · greek-invest.com · Report updated 27 Jul 2026 v1.1 · 150 sitemap URLs · ~567k words · GSC 3469 imp / 22 clicks (17 Jun to 24 Jul) · GA4 208 sessions · Bing 5 clicks<br>
+  <strong>Greek Invest</strong> · greek-invest.com · Report updated 18 Aug 2026 v1.2 · 150 sitemap URLs · ~567k words · GSC 4810 imp / 32 clicks (17 Jun to 15 Aug) · GA4 487 sessions · Bing 37 clicks<br>
   <a href="https://indexing-dashboard-deploy.vercel.app/" style="color:#2d7a5e;text-decoration:none;" target="_blank">Portfolio indexing dashboard</a> ·
-  To update: <code>node ../scripts/build-greece-full-site-report.mjs</code> then commit
+  Data: GSC + GA4 + Bing MCP · GSC lag 3 days (through 15 Aug)
 </div>
 
-<script type="application/json" id="chart-data">{"monthlyGsc":[{"label":"Jun","clicks":4,"impressions":840},{"label":"Jul","clicks":18,"impressions":2629}],"monthlyGa4":[{"month":"Jun","sessions":53},{"month":"Jul","sessions":155}],"contentBreakdown":[{"type":"Guides","count":90,"color":"#2d7a5e"},{"type":"Areas","count":12,"color":"#8b5cf6"},{"type":"Compare","count":12,"color":"#d97706"},{"type":"Projects","count":10,"color":"#4e9e7e"},{"type":"Developers","count":4,"color":"#60a5fa"},{"type":"News","count":1,"color":"#9ca3af"}],"dailyRaw":[{"d":"07-11","c":0,"i":145},{"d":"07-12","c":2,"i":157},{"d":"07-13","c":1,"i":87},{"d":"07-14","c":0,"i":66},{"d":"07-15","c":1,"i":58},{"d":"07-16","c":2,"i":45},{"d":"07-17","c":0,"i":35},{"d":"07-18","c":0,"i":38},{"d":"07-19","c":0,"i":38},{"d":"07-20","c":0,"i":36},{"d":"07-21","c":0,"i":56},{"d":"07-22","c":1,"i":55},{"d":"07-23","c":0,"i":52},{"d":"07-24","c":1,"i":46}]}</script>
+<script type="application/json" id="chart-data">{"monthlyGsc":[{"label":"Jun","clicks":4,"impressions":840},{"label":"Jul","clicks":22,"impressions":2974},{"label":"Aug","clicks":6,"impressions":996}],"monthlyGa4":[{"month":"Jun","sessions":53},{"month":"Jul","sessions":205},{"month":"Aug","sessions":229}],"contentBreakdown":[{"type":"Guides","count":90,"color":"#2d7a5e"},{"type":"Areas","count":12,"color":"#8b5cf6"},{"type":"Compare","count":12,"color":"#d97706"},{"type":"Projects","count":10,"color":"#4e9e7e"},{"type":"Developers","count":4,"color":"#60a5fa"},{"type":"News","count":1,"color":"#9ca3af"}],"dailyRaw":[{"d":"07-28","c":1,"i":45},{"d":"07-29","c":0,"i":56},{"d":"07-30","c":1,"i":59},{"d":"07-31","c":0,"i":34},{"d":"08-01","c":0,"i":42},{"d":"08-02","c":0,"i":55},{"d":"08-03","c":0,"i":54},{"d":"08-04","c":1,"i":49},{"d":"08-05","c":1,"i":70},{"d":"08-06","c":0,"i":64},{"d":"08-07","c":1,"i":63},{"d":"08-08","c":2,"i":67},{"d":"08-09","c":0,"i":83},{"d":"08-10","c":0,"i":87},{"d":"08-11","c":1,"i":67},{"d":"08-12","c":0,"i":86},{"d":"08-13","c":0,"i":72},{"d":"08-14","c":0,"i":66},{"d":"08-15","c":0,"i":71}]}</script>
 <script is:inline>
 (function initReportCharts() {
   function run() {

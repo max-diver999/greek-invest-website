@@ -13,8 +13,9 @@
  */
 import { readdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
+import { fileURLToPath } from 'node:url';
 
-const ROOT = new URL('..', import.meta.url).pathname;
+const ROOT = fileURLToPath(new URL('..', import.meta.url));
 const CONTENT = join(ROOT, 'src/content');
 const PUBLIC = join(ROOT, 'public');
 const CHECK = process.argv.includes('--check');

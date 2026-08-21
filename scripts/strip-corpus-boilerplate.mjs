@@ -54,6 +54,12 @@ const CONTAINS_TAILS = [
   // transfer tax as an absolute euro figure. 26 occurrences across 23 files.
   'Buyers typically require engineer certification of',
   'MORE Group underwrites this step on live 2026 files before reservation wires.',
+  // Second layer, surfaced by the new corpus duplicate-block detector.
+  'Engineer certificate confirms 120m² usable area before any reservation deposit.',
+  '- Tier check: €800,000 Attica prime vs €400,000 regional under Law 5100/2024',
+  '**Cash lifestyle buyer:** Accept lower nominal yield for walkability, schools, and flight access.',
+  '**Yield-focused investor:** Model net yield after ENFIA, flat 15% rental tax (or progressive scale if elected)',
+  '- Red flag: seller refuses engineer certificate, cadastre extract, or ENFIA clearance before reservation.',
 ];
 
 /** Headings removed together with the templated section they introduce. */
@@ -153,7 +159,51 @@ for (const file of files.slice(0, LIMIT === Infinity ? files.length : LIMIT)) {
     kept.push(block.split('\n').map(repairHeading).join('\n'));
   }
 
+  // Intra-page deduplication: a substantial block appearing twice on the same
+  // page is always a generator artifact. Keep the first, drop later copies.
+  {
+    const seenBlocks = new Set();
+    const deduped = [];
+    for (const block of kept) {
+      const key = norm(block).replace(/\s+/g, ' ');
+      if (key.split(' ').length >= 25 && !key.startsWith('#') && !key.startsWith('|')) {
+        if (seenBlocks.has(key)) {
+          dropped++;
+          continue;
+        }
+        seenBlocks.add(key);
+      }
+      deduped.push(block);
+    }
+    kept.length = 0;
+    kept.push(...deduped);
+  }
+
   let next = kept.join('\n\n').replace(/\n{3,}/g, '\n\n').trim() + '\n';
+
+  // Deduplication can leave a heading whose entire section was a repeat of an
+  // earlier one (the generator emitted "## Who we are (citable snapshot)" twice
+  // with identical bodies). Prune headings that now have nothing under them.
+  {
+    const lvl = (l) => (l.match(/^(#{2,6})\s/) || [, ''])[1].length;
+    let lines = next.split('\n');
+    let changedPrune = true;
+    while (changedPrune) {
+      changedPrune = false;
+      for (let i = 0; i < lines.length; i += 1) {
+        if (!/^#{2,3}\s/.test(lines[i])) continue;
+        let j = i + 1;
+        while (j < lines.length && lines[j].trim() === '') j += 1;
+        if (j >= lines.length || (lvl(lines[j]) > 0 && lvl(lines[j]) <= lvl(lines[i]))) {
+          lines.splice(i, j - i);
+          dropped += 1;
+          changedPrune = true;
+          break;
+        }
+      }
+    }
+    next = lines.join('\n').replace(/\n{3,}/g, '\n\n').trim() + '\n';
+  }
 
   // Guard: no H2/H3 may be left with nothing under it.
   const orphanHeadings = [];

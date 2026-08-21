@@ -46,7 +46,104 @@ function discoverCollections() {
 
 /** @type {{ id: string, test: (html: string) => string | null, severity: 'P0' | 'P1' }[]} */
 const CHECKS = [
+  // --- Added after the 2026-08-21 audit. Each of these was true across the whole
+  // --- corpus while this script reported "0 errors, 0 pages with issues".
   {
+    id: 'duplicate-jsonld-type',
+    severity: 'P0',
+    test: (html) => {
+      const dupes = [];
+      for (const type of ['FAQPage', 'Article', 'BreadcrumbList', 'CollectionPage', 'WebSite']) {
+        const n = (html.match(new RegExp(`"@type":\\s*"${type}"`, 'g')) || []).length;
+        if (n > 1) dupes.push(`${type} x${n}`);
+      }
+      // 132 pages shipped 2+ FAQPage blocks, 7 with conflicting question sets.
+      return dupes.length ? `duplicate JSON-LD types: ${dupes.join(', ')}` : null;
+    },
+  },
+  {
+    id: 'empty-image-alt',
+    severity: 'P0',
+    test: (html) => {
+      const imgs = html.match(/<img\b[^>]*>/g) || [];
+      const bad = imgs.filter((t) => {
+        // The brand mark sits inside an aria-labelled link next to visible text,
+        // so alt="" is the correct decorative choice there, not a defect.
+        if (/src="\/(favicon|apple-touch-icon|logo)[^"]*"/.test(t)) return false;
+        return !/\salt\s*=/.test(t) || /\salt\s*=\s*(""|'')/.test(t);
+      });
+      // Every hero shipped alt="" — 129 pages with an unlabelled lead image.
+      return bad.length ? `${bad.length} content image(s) with missing or empty alt` : null;
+    },
+  },
+  {
+    id: 'title-over-serp-budget',
+    severity: 'P1',
+    test: (html) => {
+      const m = html.match(/<title>([\s\S]*?)<\/title>/);
+      if (!m) return 'no <title>';
+      const t = m[1].replace(/&amp;/g, '&').trim();
+      // 126 of 152 titles were 63-79 chars and truncated in the SERP.
+      if (t.length > 60) return `title ${t.length} chars, truncates in SERP: "${t.slice(0, 50)}…"`;
+      if (/::/.test(t)) return `title contains "::": "${t}"`;
+      const segs = t.split('|').map((x) => x.trim());
+      if (new Set(segs).size !== segs.length) return `title repeats a segment: "${t}"`;
+      return null;
+    },
+  },
+  {
+    id: 'meta-description-budget',
+    severity: 'P1',
+    test: (html) => {
+      const m = html.match(/<meta name="description" content="([\s\S]*?)"/);
+      if (!m) return null;
+      const d = m[1];
+      return d.length > 160 ? `meta description ${d.length} chars (max 160)` : null;
+    },
+  },
+  {
+    id: 'broken-select-placeholder',
+    severity: 'P0',
+    // The dash normaliser rewrote LeadForm's "— Select —" into ",  Select , "
+    // and shipped it on 140 pages.
+    test: (html) => (/,\s\sSelect\s,/.test(html) ? 'lead form select placeholder is corrupted' : null),
+  },
+  {
+    id: 'undefined-css-var',
+    severity: 'P0',
+    // --color-brand was never defined, so the homepage stats band rendered
+    // white-on-white.
+    test: (html) => (/var\(--color-brand\)/.test(html) ? 'references undefined CSS var --color-brand' : null),
+  },
+  {
+    id: 'heading-splice-boilerplate',
+    severity: 'P0',
+    // 859 sentences spliced the preceding H2 into a fixed Golden Visa tail.
+    test: (html) =>
+      /requires €400,000 regional or €800,000 prime investment under Law 5100\/2024|requires verified thresholds under Law 5100\/2024/.test(html)
+        ? 'generated heading-splice boilerplate present'
+        : null,
+  },
+  {
+    id: 'euro-denominated-area',
+    severity: 'P0',
+    // "engineer certification of €250,000 usable residential area" — area stated
+    // as a euro amount. Factually wrong on YMYL pages.
+    test: (html) =>
+      /certification of €[\d,]+ usable residential area/.test(html)
+        ? 'usable area stated as a euro amount'
+        : null,
+  },
+  {
+    id: 'templated-insider-tip',
+    severity: 'P1',
+    test: (html) =>
+      /Insider tip: MORE Group (sequences|underwriting)/.test(html)
+        ? 'templated "Insider tip: MORE Group…" boilerplate'
+        : null,
+  },
+  {
+
     id: 'lead-form-top',
     severity: 'P0',
     test: (html) =>

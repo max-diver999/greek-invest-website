@@ -186,7 +186,68 @@ export function scoreStatisticalDensity(sectionPlain) {
   ]);
 }
 
+/**
+ * Corpus-wide 5-gram index, injected by the audit driver before scoring.
+ * Maps a shingle to the number of files containing it.
+ * @type {Map<string, number>|null}
+ */
+let CORPUS_SHINGLES = null;
+let CORPUS_FILES = 0;
+
+export function setCorpusShingleIndex(index, fileCount) {
+  CORPUS_SHINGLES = index;
+  CORPUS_FILES = fileCount;
+}
+
+export function shinglesOf(text, n = 5) {
+  const w = text.toLowerCase().replace(/[^a-z0-9%€\s]/g, ' ').split(/\s+/).filter(Boolean);
+  const out = new Set();
+  for (let i = 0; i + n <= w.length; i += 1) out.add(w.slice(i, i + n).join(' '));
+  return out;
+}
+
+/**
+ * Uniqueness = how much of this section's wording is NOT duplicated elsewhere
+ * in the corpus.
+ *
+ * This previously returned +45 for merely containing the strings "MORE Group",
+ * "insider tip" or "underwriting snapshot". Because those came from templated
+ * blocks repeated up to 1,219 times, the metric rewarded duplication: the more
+ * identical filler a page carried, the higher it scored for "uniqueness". The
+ * corpus scored 78/100 on this axis while ~19% of it was verbatim boilerplate.
+ *
+ * It now measures the real thing — the share of the section's 5-gram shingles
+ * that appear in no more than two other files — and falls back to the old
+ * signal-based heuristic only when no corpus index has been supplied.
+ */
+/** True when most of a passage's wording does not repeat across the corpus. */
+export function isDistinctive(text, threshold = 0.6) {
+  if (!CORPUS_SHINGLES || CORPUS_FILES <= 1) return true;
+  const sh = shinglesOf(text);
+  if (sh.size === 0) return true;
+  let distinctive = 0;
+  for (const g of sh) if ((CORPUS_SHINGLES.get(g) || 1) <= 3) distinctive += 1;
+  return distinctive / sh.size >= threshold;
+}
+
 export function scoreUniqueness(sectionPlain, bodyPlain) {
+  if (CORPUS_SHINGLES && CORPUS_FILES > 1) {
+    const sh = shinglesOf(sectionPlain);
+    if (sh.size === 0) return 50;
+    let distinctive = 0;
+    for (const g of sh) {
+      if ((CORPUS_SHINGLES.get(g) || 1) <= 3) distinctive += 1;
+    }
+    const ratio = distinctive / sh.size;
+    let score = Math.round(ratio * 100);
+    // Genuine first-party framing still earns a small credit, capped so it can
+    // never outweigh actual distinctiveness.
+    if (/\b(case study|methodology|checklist|red flag|buyer scenario)\b/i.test(sectionPlain)) {
+      score = Math.min(100, score + 5);
+    }
+    return Math.max(0, Math.min(100, score));
+  }
+
   let score = 25;
   if (UNIQUE_RE.test(sectionPlain)) score += 45;
   if (/\b(case study|methodology|checklist|red flag|buyer scenario)\b/i.test(sectionPlain)) score += 15;
@@ -256,7 +317,23 @@ export function scorePage(body, { collection } = {}) {
   );
 
   if (commercial && !/<TldrBlock/.test(body)) issues.push('missing-tldr');
-  if (commercial && !/insider tip/i.test(body)) issues.push('missing-insider-tip');
+
+  // First-party insight used to be checked by `!/insider tip/i.test(body)`, which
+  // any page satisfied by pasting the words. The corpus met it 1,003 times with
+  // four identical sentences, so the check actively rewarded duplication.
+  // What matters is whether an insight block is DISTINCTIVE, so that is what is
+  // flagged now; absence is not an error, because a templated tip is worse than none.
+  if (commercial) {
+    const insightParas = splitParagraphs(body)
+      .map((p) => stripMdx(p))
+      .filter((p) => /\b(insider tip|our (analysis|data|underwriting)|we (surveyed|analyzed|tracked))\b/i.test(p));
+    for (const para of insightParas) {
+      if (!isDistinctive(para)) {
+        issues.push('duplicate-insight-block');
+        break;
+      }
+    }
+  }
   if (/## Independent verification notes/.test(body)) issues.push('generic-verification-padding');
 
   for (const block of blocks.slice(0, 6)) {

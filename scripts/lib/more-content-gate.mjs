@@ -172,7 +172,10 @@ export function runStructuralChecks(opts) {
     if (!/(pros|cons|плюс|минус|advantages|disadvantages)/i.test(body)) {
       errors.push(`${prefix} missing pros/cons section (PLEADA)`);
     }
-    if (!/(риск|риски|red flag|checklist|чеклист|what to check|insider tip)/i.test(body)) {
+    // A section headed "Risks..." satisfies the intent as squarely as one headed
+    // "Red flags"; the old pattern matched neither, so a page could carry a real
+    // risks section and still fail here.
+    if (!/(риск|риски|\brisks?\b|red flag|checklist|чеклист|what to check|insider tip)/i.test(body)) {
       errors.push(`${prefix} missing risks/red flags/insider tip block`);
     }
     if (!/(сценари|scenario|for investors|для инвестор|who this is for|buyer profile|decision framework)/i.test(body)) {

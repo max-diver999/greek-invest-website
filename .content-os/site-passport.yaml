@@ -1,0 +1,79 @@
+content_os_version: "2.5.0-pilot"
+site_id: greek-invest-website
+domain: greek-invest.com
+github: max-diver999/greek-invest-website
+program: greek-invest
+
+pilot_goal: "Qualified Golden Visa + Greece property leads — full audit, corpus polish, hub UX, future topics"
+pilot_mode: full_audit_then_code_and_corpus
+pilot_started: "2026-08-21"
+
+reference_site: invest-spain-website
+reference_playbook: more-group-content-os/reference-sites/invest-spain-website/playbook.md
+note: "EN invest-site pattern — areas, guides, compare, projects, consultation funnels"
+
+full_audit:
+  mode: corpus_plus_rendered_plus_code
+  skill: more-group-content-os/policies/corpus-cleanup-mode.md
+  audit_report_output: .content-os/reports/AUDIT-REPORT-{date}.md
+  code_audit_output: .content-os/reports/CODE-AUDIT-{date}.md
+  roadmap_content: .content-os/batches/corpus-cleanup-roadmap-{date}.md
+  roadmap_code: .content-os/batches/code-improvements-roadmap-{date}.md
+  roadmap_topics: .content-os/batches/content-roadmap-{date}.md
+  batch_size_default: 25
+  section_priority:
+    - guides
+    - areas
+    - compare
+    - projects
+    - developers
+  geo_baseline:
+    commercial_avg: 92
+    commercial_below_min: 0
+    grade: A
+    rubric_weak: unique  # 78 vs answer 94 — room to improve
+    command: npm run geo:audit
+  forbid:
+    - mass regex delete across corpus
+    - Astro/layout changes without code roadmap ok
+    - new slugs until Maxim ok on audit roadmaps
+
+topic_discovery:
+  mode: after_audit_ok
+  proposal_output: .content-os/batches/topics-proposal.json
+  batch_size_default: 5
+
+analytics:
+  snapshot: more-group-content-os/analytics-snapshots/greek-invest-website/2026-08-21.json
+  gsc_property: "sc-domain:greek-invest.com"
+  gsc_mcp: user-search-console-greek-invest
+  ga4_mcp: user-ga4-analytics-greek-invest
+  bing_mcp: user-bing-webmaster-greek-invest
+  refresh: manual_via_cursor
+
+content:
+  mdx_count_approx: 129
+  collections:
+    guides: src/content/guides
+    compare: src/content/compare
+    areas: src/content/areas
+    projects: src/content/projects
+    developers: src/content/developers
+    news: src/content/news
+  serp_briefs: content-engine/serp-briefs/greek-invest-website
+  site_data: src/data/site.ts
+  live_report: src/pages/site-report/
+
+indexing:
+  policy: more-group-content-os/policies/cursor-rules/greek-invest-indexing-isolation.mdc
+  gcp_project: greek-invest-indexing
+  key_preflight: scripts/google-indexing-key.json
+  cursor_only_after: Maxim says отправляй or выложи with indexing
+
+lead_funnels:
+  - /greece-golden-visa-consultation/
+  - /greece-property-consultation/
+  - /get-shortlist/
+  - /tools/greece-rental-yield-calculator/
+
+branch_prefix: cc/greece-

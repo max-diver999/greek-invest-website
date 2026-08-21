@@ -36,6 +36,9 @@ const STAT_PATTERNS = [
   /\b\d+(?:\.\d+)?\s*sqm\b/gi,
   /\b\d+(?:\.\d+)?\s*sq\.?\s*m(?:²|2)?(?!\w)/gi,
   /\b\d+(?:\.\d+)?\s*m[²2](?!\w)/gi,
+  // "120 square metres" spelled out - the corpus's most common unit, and the
+  // one shape the pattern list did not cover.
+  /\b\d[\d,]*(?:\.\d+)?\s+square\s+met(?:re|er)s?\b/gi,
   /\b\d[\d,]*(?:\.\d+)?\s*(?:USD|EUR|GBP|THB|AED|MXN|ZAR|SAR|SGD|CHF)\b/gi,
   /\b(?:USD|EUR|GBP|THB|AED|MXN|ZAR|SAR|SGD|CHF)\s+[\d,]+(?:\.\d+)?/gi,
   /\bR\s?[\d,]+(?:\.\d+)?(?:\s*(?:million|m\b|k\b|bn\b))?/gi,

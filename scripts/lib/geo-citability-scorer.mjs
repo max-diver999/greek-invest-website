@@ -11,8 +11,16 @@ export const RUBRIC_WEIGHTS = {
   unique: 0.1,
 };
 
-export const CITABILITY_BLOCK_MIN = 130;
-export const CITABILITY_BLOCK_MAX = 170;
+// A "citability block" is a passage an answer engine can lift whole: it stands
+// on its own, carries a number, and does not open with a pronoun pointing at
+// something above it. The band was 130-170 words, which measured paragraph
+// length rather than citability - a well-formed 200-word passage is no less
+// liftable than a 165-word one, and a 120-word one is no less liftable than a
+// 130-word one. Widened to a range that still discriminates: under 110-300,
+// 40 of 129 files have none; under 90-400 only 4 do, at which point the
+// measure stops saying anything.
+export const CITABILITY_BLOCK_MIN = 110;
+export const CITABILITY_BLOCK_MAX = 300;
 export const ANSWER_FIRST_MIN = 40;
 export const ANSWER_FIRST_MAX = 60;
 export const THIN_H2_OPEN = 35;

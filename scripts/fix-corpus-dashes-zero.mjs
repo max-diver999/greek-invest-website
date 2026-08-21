@@ -11,15 +11,13 @@ import { normalizeMdxFile, normalizeTypographicDashes } from './lib/normalize-ty
 const ROOT = path.join(path.dirname(fileURLToPath(import.meta.url)), '..');
 const dryRun = process.argv.includes('--dry-run');
 
-const SCAN_ROOTS = [
-  path.join(ROOT, 'src/content'),
-  path.join(ROOT, 'src/pages'),
-  path.join(ROOT, 'src/components'),
-  path.join(ROOT, 'src/layouts'),
-  path.join(ROOT, 'src/data'),
-];
+// Prose only. This previously also scanned src/pages, src/components, src/layouts
+// and src/data, which rewrote UI strings: LeadForm's "— Select —" placeholders
+// became ",  Select , " and shipped on 140 pages. The no-em-dash rule is an
+// editorial rule about article copy, not about interface labels.
+const SCAN_ROOTS = [path.join(ROOT, 'src/content')];
 
-const EXT = new Set(['.mdx', '.astro', '.ts', '.tsx', '.json']);
+const EXT = new Set(['.mdx']);
 
 function walk(dir, out = []) {
   if (!fs.existsSync(dir)) return out;

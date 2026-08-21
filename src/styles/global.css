@@ -14,26 +14,35 @@
   --font-sans: 'DM Sans', system-ui, sans-serif;
 }
 
-html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+/* Element defaults belong in @layer base.
+ *
+ * Tailwind v4 emits its utilities inside cascade layers. Unlayered CSS beats
+ * *any* layered rule regardless of specificity, so while these lived outside a
+ * layer, `class="text-white"` could never override the heading colour — the H1
+ * on both consultation pages rendered dark-on-dark and was invisible. Keeping
+ * them in `base` restores the normal "utility wins" behaviour. */
+@layer base {
+  html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
 
-body {
-  background: var(--color-page);
-  color: var(--color-muted);
-  font-family: var(--font-sans);
-  line-height: 1.65;
-  font-size: 1rem;
+  body {
+    background: var(--color-page);
+    color: var(--color-muted);
+    font-family: var(--font-sans);
+    line-height: 1.65;
+    font-size: 1rem;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-sans);
+    color: var(--color-ink);
+    line-height: 1.25;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+  }
+
+  a { color: var(--color-teal); text-decoration: none; }
+  a:hover { color: var(--color-teal-dark); }
 }
-
-h1, h2, h3, h4 {
-  font-family: var(--font-sans);
-  color: var(--color-ink);
-  line-height: 1.25;
-  font-weight: 600;
-  letter-spacing: -0.02em;
-}
-
-a { color: var(--color-teal); text-decoration: none; }
-a:hover { color: var(--color-teal-dark); }
 
 .btn-primary {
   display: inline-flex;
@@ -328,7 +337,7 @@ main {
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--color-brand);
+  color: var(--color-teal);
 }
 
 .hero-project-card__title {
@@ -349,7 +358,7 @@ main {
 
 .hero-project-card__cta {
   flex-shrink: 0;
-  background: var(--color-brand);
+  background: var(--color-teal);
   color: #fff !important;
   font-size: 0.75rem;
   font-weight: 700;

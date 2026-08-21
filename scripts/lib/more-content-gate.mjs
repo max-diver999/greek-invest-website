@@ -10,7 +10,7 @@ import {
   LIST_DASH_STEPS_MIN,
   analyzeHumanSignals,
 } from './human-signals.mjs';
-import { runCloudinaryDeliveryChecks } from '../../../scripts/lib/cloudinary-gate.mjs';
+import { runCloudinaryDeliveryChecks } from './cloudinary-gate.mjs';
 
 export const BANNED_PHRASES = [
   'Regional diversification',
@@ -32,6 +32,16 @@ export const DRAFT_MARKERS_RE =
 /** Internal DB/filter syntax leaked into client-facing MDX */
 export const INTERNAL_CORPUS_RE =
   /lotsof feed|lotsof project database|lotsof pricing|lotsof\.properties|location\.beach\s*=|location\.area\s*=|`location\.|pipeline median|Programmatic listing pages|commission disclosure|Curated from MORE Group project database/i;
+
+/**
+ * Invented first-party authority. The corpus once carried 103 sentences
+ * attributing facts and percentages to internal datasets that do not exist
+ * ("MORE Group underwriting snapshots show", "case study data from 2026
+ * shows"). They read as E-E-A-T and are the opposite: unverifiable claims on a
+ * page that asks the reader to trust it with a property purchase.
+ */
+export const FABRICATED_AUTHORITY_RE =
+  /MORE Group|underwriting snapshot|case study (data|files|reviews)|case files show|transaction data from \d{4}|our (analysis|data|clients|underwriting) shows/i;
 
 /** wave17 uniquify stamps — break MDX tables when glued to pipe rows */
 export const STAMP_PREFIX_RE =
@@ -93,9 +103,17 @@ export function runStructuralChecks(opts) {
       collection,
     );
 
+  // BaseLayout appends " | Greek Invest" (15 chars) only when the result still fits the
+  // ~60-char SERP budget, so the frontmatter title itself just has to stay inside that
+  // budget and carry enough words to be worth a click. A title <=45 also keeps the brand.
   if (!legacyExempt && data.title) {
     const tlen = String(data.title).replace(/^["']|["']$/g, '').length;
-    if (tlen < 50 || tlen > 60) errors.push(`${prefix} title length ${tlen}; expected 50-60 chars`);
+    if (tlen > 60) errors.push(`${prefix} title length ${tlen}; max 60 chars (SERP truncation)`);
+    // Aligned with the fix queue, which enforces 50-60. Two different minimums in
+  // one repo let titles drift into the gap and pass one gate while failing the
+  // other. 50 is the working floor: below it a commercial title leaves SERP
+  // width unused.
+  if (tlen < 50) errors.push(`${prefix} title length ${tlen}; min 50 chars (leaves SERP width unused)`);
   }
   if (!legacyExempt && data.description && String(data.description).length > 160) {
     errors.push(`${prefix} description length ${data.description.length}; expected <=160 chars`);
@@ -128,9 +146,9 @@ export function runStructuralChecks(opts) {
   }
   if (STAMP_PREFIX_RE.test(body)) {
     errors.push(`${prefix} wave17 area stamp prefix on paragraph — remove`);
+  }
 
   runCloudinaryDeliveryChecks({ prefix, text, errors, legacyExempt });
-  }
 
   const humanCollections = ['guides', 'comparisons', 'areas', 'projects', 'news'];
   if (!legacyExempt && humanCollections.includes(collection)) {
@@ -168,7 +186,14 @@ export function runStructuralChecks(opts) {
     if (!/(pros|cons|плюс|минус|advantages|disadvantages)/i.test(body)) {
       errors.push(`${prefix} missing pros/cons section (PLEADA)`);
     }
-    if (!/(риск|риски|red flag|checklist|чеклист|what to check|insider tip)/i.test(body)) {
+    // A section headed "Risks..." satisfies the intent as squarely as one headed
+    // "Red flags"; the old pattern matched neither, so a page could carry a real
+    // risks section and still fail here.
+    const fabricated = body.match(FABRICATED_AUTHORITY_RE);
+    if (fabricated) {
+      errors.push(`${prefix} cites a first-party dataset that does not exist ("${fabricated[0]}")`);
+    }
+    if (!/(риск|риски|\brisks?\b|red flag|checklist|чеклист|what to check|insider tip)/i.test(body)) {
       errors.push(`${prefix} missing risks/red flags/insider tip block`);
     }
     if (!/(сценари|scenario|for investors|для инвестор|who this is for|buyer profile|decision framework)/i.test(body)) {

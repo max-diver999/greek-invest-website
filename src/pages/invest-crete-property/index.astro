@@ -2,74 +2,389 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import LeadForm from '../../components/LeadForm.astro';
 import InlineCta from '../../components/InlineCta.astro';
+import { SITE } from '../../data/site';
 
-const title = 'Invest in Crete Property 2026, €400K Golden Visa';
-const description = 'Invest in Crete property from €400,000 Golden Visa tier. Chania, Heraklion, Elounda markets, 120m² rule, yields, and vetted shortlist.';
+/**
+ * Rebuilt from a 312-word stub with zero inbound links into a standalone
+ * landing page. The audit recommended a 301 to the Crete guide; Maxim's call
+ * was that the page had no links precisely because it was thin, so it earns
+ * its place with depth instead.
+ */
+const title = 'Invest in Crete Property 2026: €400K Golden Visa';
+const description =
+  'Crete sits in the €400,000 Golden Visa tier. Chania, Heraklion and Elounda pricing, what €400K buys at 120 m², real net yields and the pre-deposit checks.';
+const url = `${SITE.url}/invest-crete-property/`;
+
+const markets = [
+  { name: 'Chania', price: '€2,200 to €2,400', profile: 'Old town scarcity, university and hospital corridor, year-round population', href: '/areas/chania-property-investment/' },
+  { name: 'Heraklion', price: '€1,800 to €2,200', profile: 'Administrative capital, port and university demand, deepest long-let market', href: '/areas/heraklion-property-investment/' },
+  { name: 'Rethymno', price: '€1,900 to €2,300', profile: 'Between the two cities, Venetian old town, lighter tourism dependence than the north coast resorts', href: '/guides/crete-property-investment-guide/' },
+  { name: 'Elounda / Agios Nikolaos', price: '€4,000 to €8,000', profile: 'Luxury enclave, thin long-let demand, buyer pool is international rather than local', href: '/areas/elounda-property-investment/' },
+];
+
+const whatItBuys = [
+  { budget: '€400,000', chania: '165 to 180 m² apartment or townhouse', heraklion: '180 to 220 m² apartment', note: 'Clears 120 m² with 45 to 100 m² of margin' },
+  { budget: '€450,000', chania: '185 to 205 m² or a small villa inland', heraklion: '205 to 250 m²', note: 'All-in inside €450K only if price stays near €400K' },
+  { budget: '€600,000', chania: 'Villa with land, 10 to 20 minutes from the old town', heraklion: 'Sea-view apartment or suburban villa', note: 'Above the threshold; buying for the property, not the tier' },
+];
+
+const faq = [
+  {
+    question: 'Does Crete qualify for the Greece Golden Visa at €400,000?',
+    answer:
+      'Yes. Crete sits outside the €800,000 prime zones, which cover Attica, the Thessaloniki Regional Unit, Mykonos, Santorini and islands with more than 3,100 residents. A single Cretan property of at least 120 m² certified main usable area on one title deed qualifies at €400,000 under Law 5100/2024.',
+  },
+  {
+    question: 'What is the total cost of a €400,000 Crete purchase?',
+    answer:
+      'Budget €428,000 to €440,000 all-in. On top of the price you pay 3.09% transfer tax on the higher of price or objective value, notary at 0.8% to 1.2%, your own lawyer at 1% to 1.5%, land registry at 0.475% to 0.65%, agent commission at 2% to 2.5%, and an engineer survey at €300 to €800. Government Golden Visa fees are separate at €2,000 per main applicant.',
+  },
+  {
+    question: 'What rental yield does Crete produce?',
+    answer:
+      'Long-term gross yields run about 5% to 6% in Chania and Heraklion, where year-round population supports twelve-month leases. Net lands roughly 1.5 to 2.5 points lower once ENFIA, the 15% starting rental tax band, management and vacancy are modelled. Short-term holiday letting produces higher headline figures but is prohibited on a Golden Visa property.',
+  },
+  {
+    question: 'Can I rent my Crete Golden Visa property to tourists?',
+    answer:
+      'No. Law 5100/2024 bans short-term tourist letting on the qualifying property for the life of the permit. Long-term leases of twelve months or more are permitted, and personal use is unrestricted. If holiday-let income matters, hold a second, non-qualifying property for it.',
+  },
+  {
+    question: 'Is Crete better than the Cyclades for a Golden Visa?',
+    answer:
+      'For most residency buyers, yes. Crete is uniformly €400,000 while the Cyclades split, with Mykonos and Santorini at €800,000. Crete also has a 26-week season, an international airport with year-round flights, and genuine year-round tenant demand in Chania and Heraklion, which is what a long-let-only asset needs.',
+  },
+  {
+    question: 'What should I check before depositing on a Crete property?',
+    answer:
+      'Three things kill Cretan purchases: unauthorised construction in village and rural stock, incomplete cadastre registration with unresolved inherited shares, and forest registry overlap on plots adjoining woodland. All three are visible to a lawyer and an engineer before the deposit, and all three take months to resolve afterwards.',
+  },
+];
+
+const schemas = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: 'Crete property investment and Golden Visa shortlisting',
+    serviceType: 'Property research and shortlisting',
+    description,
+    url,
+    provider: { '@type': 'Organization', name: SITE.name, url: SITE.url, email: SITE.email },
+    areaServed: { '@type': 'Place', name: 'Crete, Greece' },
+    offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: SITE.url },
+      { '@type': 'ListItem', position: 2, name: 'Invest in Crete', item: url },
+    ],
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faq.map((f) => ({
+      '@type': 'Question',
+      name: f.question,
+      acceptedAnswer: { '@type': 'Answer', text: f.answer },
+    })),
+  },
+];
 ---
-
-<BaseLayout
-  {title}
-  {description}
-  canonical="https://greek-invest.com/invest-crete-property/"
->
-  <section class="bg-[#0f2744] text-white">
-    <div class="site-container py-14 md:py-18 max-w-3xl">
-      <p class="text-sm font-semibold uppercase tracking-wider text-[#93c5fd] mb-3">Crete · Regional Golden Visa</p>
-      <h1 class="text-3xl md:text-4xl font-bold leading-tight mb-4 text-white">Invest in Crete property at the €400,000 tier</h1>
-      <p class="text-lg text-[#cbd5e1] leading-relaxed mb-6">
-        Crete sits outside Greece's €800,000 prime zones. One qualifying property from €400,000 with at least 120 m²,
-        island-wide asking prices near €2,105/m², and long-term rental yields of 5 to 6% in Chania and Heraklion.
+<BaseLayout {title} {description} canonical={url} {schemas}>
+  <section class="bg-[var(--color-ink)] text-white">
+    <div class="site-container py-14 md:py-20 max-w-3xl">
+      <nav class="text-sm text-white/60 mb-5" aria-label="Breadcrumb">
+        <a href="/" class="text-white/70 no-underline hover:underline">Home</a>
+        <span aria-hidden="true">›</span> <span>Invest in Crete</span>
+      </nav>
+      <p class="text-sm font-semibold uppercase tracking-wider text-[var(--color-teal-light)] mb-3">
+        Crete · Regional Golden Visa tier
       </p>
-      <a href="/get-shortlist/" class="btn-primary">Get Crete shortlist</a>
+      <h1 class="text-3xl md:text-4xl font-bold leading-tight mb-4 text-white">
+        Invest in Crete property at the €400,000 tier
+      </h1>
+      <p class="text-lg text-white/80 leading-relaxed mb-6">
+        <strong class="text-white">Quick answer:</strong> Crete sits outside every €800,000 prime zone, so one
+        property of at least 120 m² certified usable area qualifies for the Golden Visa at €400,000. Island-wide
+        asking prices average near €2,105 per square metre, which means the threshold buys 165 to 220 m² in the
+        two main cities rather than the bare minimum. Long lets run 5% to 6% gross in Chania and Heraklion.
+        Budget €428,000 to €440,000 all-in.
+      </p>
+      <div class="flex flex-wrap gap-3">
+        <a href="#lead-form" class="btn-primary px-6 py-3">Get a Crete shortlist</a>
+        <a href="/tools/greece-golden-visa-zone-lookup/" class="btn-secondary px-6 py-3">Check the zone</a>
+      </div>
     </div>
   </section>
 
-  <section class="site-container py-12 max-w-3xl text-[var(--color-muted)] leading-relaxed">
-    <h2 class="text-[var(--color-ink)] mb-4">Where buyers focus on Crete</h2>
-    <table class="w-full text-sm mb-8">
-      <thead>
-        <tr class="border-b border-[var(--color-border)] text-left">
-          <th class="py-2 pr-4">Market</th>
-          <th class="py-2 pr-4">Indicative €/m²</th>
-          <th class="py-2">Guide</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr class="border-b border-[var(--color-border)]">
-          <td class="py-3 pr-4">Chania</td>
-          <td class="py-3 pr-4">€2,200 to 2,400</td>
-          <td class="py-3"><a href="/areas/chania-property-investment/">Chania guide</a></td>
-        </tr>
-        <tr class="border-b border-[var(--color-border)]">
-          <td class="py-3 pr-4">Heraklion</td>
-          <td class="py-3 pr-4">€1,800 to 2,200</td>
-          <td class="py-3"><a href="/areas/heraklion-property-investment/">Heraklion guide</a></td>
-        </tr>
-        <tr>
-          <td class="py-3 pr-4">Elounda</td>
-          <td class="py-3 pr-4">€4,000 to 8,000</td>
-          <td class="py-3"><a href="/areas/elounda-property-investment/">Elounda guide</a></td>
-        </tr>
-      </tbody>
-    </table>
+  <section class="site-container py-12 md:py-16 max-w-3xl text-[var(--color-muted)] leading-relaxed">
+    <h2 class="text-[var(--color-ink)] text-2xl mb-3">Why Crete works at €400,000 when Attica does not</h2>
+    <p class="mb-4">
+      The tier map under Law 5100/2024 draws a hard line. Attica, the entire Thessaloniki Regional Unit, Mykonos,
+      Santorini and islands with more than 3,100 permanent residents require €800,000. Everywhere else, including
+      the whole of Crete, requires €400,000. That single fact does more to shape a Greek property budget than any
+      market analysis, because it halves the qualifying capital while the 120 m² area rule stays identical.
+    </p>
+    <p class="mb-4">
+      The consequence is counterintuitive. In Attica, a residency buyer usually struggles to find a property that
+      clears both €800,000 and 120 m² of certified usable area without buying more floor space than the rental
+      market pays proportionally for. In Crete the constraint reverses: at €400,000 and roughly €2,105 per square
+      metre island-wide, the area test is comfortably met and the question becomes which micro-market has tenants
+      in February rather than only in August.
+    </p>
+    <p class="mb-8">
+      That matters because the qualifying property can only be let long-term. Short-term tourist letting is
+      prohibited on the Golden Visa asset for the life of the permit, so a holiday-rental yield model does not
+      apply to it. Crete is unusual among Greek islands in having two cities with year-round employment, a
+      university, hospitals and a working port, which is precisely what a twelve-month lease needs.
+    </p>
+
+    <h2 class="text-[var(--color-ink)] text-2xl mb-3">Where buyers focus on Crete</h2>
+    <p class="mb-5">
+      Four markets absorb most foreign demand, and they behave very differently. The first three are places
+      people live; the fourth is a place people visit.
+    </p>
+    <div class="surface-card overflow-x-auto mb-4">
+      <table class="w-full text-sm">
+        <thead>
+          <tr class="text-left">
+            <th scope="col" class="p-3">Market</th>
+            <th scope="col" class="p-3">Indicative €/m²</th>
+            <th scope="col" class="p-3">Profile</th>
+          </tr>
+        </thead>
+        <tbody>
+          {markets.map((m) => (
+            <tr>
+              <td class="p-3 whitespace-nowrap"><a href={m.href}>{m.name}</a></td>
+              <td class="p-3 whitespace-nowrap">{m.price}</td>
+              <td class="p-3">{m.profile}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+    <p class="text-xs mb-8">
+      Indicative asking ranges for quality stock as of August 2026, against a Crete island-wide average near
+      €2,105/m². Verify against the objective value for the specific parcel, since transfer tax is charged on the
+      higher of price or objective value.
+    </p>
 
     <InlineCta
-      text="Compare Crete with Cyclades island pricing before you choose an island strategy."
-      buttonText="Crete vs Cyclades compare"
+      text="Not sure whether Crete or the Cyclades fits your budget and season tolerance?"
+      buttonText="Compare Crete vs Cyclades"
       buttonHref="/compare/crete-vs-cyclades-property-investment/"
     />
 
-    <p class="mb-10">
-      Deep dives: <a href="/guides/crete-property-investment-guide/">Crete investment hub</a> ·
-      <a href="/guides/crete-golden-visa-400000-property/">€400K Golden Visa guide</a> ·
-      <a href="/tier-golden-visa-400k/">€400K tier overview</a> ·
-      <a href="/guides/greece-golden-visa-no-short-term-rental/">GV rental rules</a>
+    <h2 class="text-[var(--color-ink)] text-2xl mb-3 mt-12">What €400,000 actually buys</h2>
+    <p class="mb-5">
+      The threshold is a floor for the investment, not a description of the property. At Cretan pricing it
+      generally delivers real margin over the 120 m² rule, which removes the area risk that dominates Attica
+      purchases.
+    </p>
+    <div class="surface-card overflow-x-auto mb-4">
+      <table class="w-full text-sm">
+        <thead>
+          <tr class="text-left">
+            <th scope="col" class="p-3">Budget</th>
+            <th scope="col" class="p-3">Chania</th>
+            <th scope="col" class="p-3">Heraklion</th>
+            <th scope="col" class="p-3">Note</th>
+          </tr>
+        </thead>
+        <tbody>
+          {whatItBuys.map((r) => (
+            <tr>
+              <td class="p-3 font-semibold text-[var(--color-ink)] whitespace-nowrap">{r.budget}</td>
+              <td class="p-3">{r.chania}</td>
+              <td class="p-3">{r.heraklion}</td>
+              <td class="p-3">{r.note}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+    <p class="mb-8">
+      One warning about the margin: it is measured on <strong>certified</strong> usable area, not on the figure in
+      the listing. Cretan stock frequently includes large terraces, covered verandas and basement storage in the
+      marketing number, none of which count. The engineer certificate settles it, and it costs €300 to €800.
+      Read the <a href="/guides/greece-golden-visa-120-square-meter-rule/">120 m² rule guide</a> before you
+      shortlist.
+    </p>
+
+    <h2 class="text-[var(--color-ink)] text-2xl mb-3">The real cost of a €400,000 Crete purchase</h2>
+    <p class="mb-5">
+      Plan on €428,000 to €440,000 of capital before furnishing. The acquisition stack runs 7% to 10% and every
+      line is knowable in advance.
+    </p>
+    <div class="surface-card overflow-x-auto mb-4">
+      <table class="w-full text-sm">
+        <thead>
+          <tr class="text-left">
+            <th scope="col" class="p-3">Cost</th>
+            <th scope="col" class="p-3">Rate</th>
+            <th scope="col" class="p-3">On €400,000</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td class="p-3">Transfer tax (FMA)</td><td class="p-3">3.09%</td><td class="p-3">€12,360</td></tr>
+          <tr><td class="p-3">Notary</td><td class="p-3">0.8% to 1.2%</td><td class="p-3">€3,200 to €4,800</td></tr>
+          <tr><td class="p-3">Your lawyer</td><td class="p-3">1% to 1.5%</td><td class="p-3">€4,000 to €6,000</td></tr>
+          <tr><td class="p-3">Land registry</td><td class="p-3">0.475% to 0.65%</td><td class="p-3">€1,900 to €2,600</td></tr>
+          <tr><td class="p-3">Agent commission</td><td class="p-3">2% to 2.5%</td><td class="p-3">€8,000 to €10,000</td></tr>
+          <tr><td class="p-3">Engineer survey</td><td class="p-3">Fixed</td><td class="p-3">€300 to €800</td></tr>
+          <tr><td class="p-3">Golden Visa government fee</td><td class="p-3">Per main applicant</td><td class="p-3">€2,000</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="mb-8">
+      Transfer tax is charged on the higher of the agreed price or the objective value, and it is paid
+      <strong>before</strong> the deed is signed rather than at completion. Full detail in the
+      <a href="/guides/cost-of-buying-property-greece/">cost of buying guide</a>, or run your own figures in the
+      <a href="/tools/greece-property-cost-calculator/">purchase cost calculator</a>.
+    </p>
+
+    <h2 class="text-[var(--color-ink)] text-2xl mb-3">Yields you can actually underwrite</h2>
+    <p class="mb-4">
+      Chania and Heraklion long lets run roughly 5% to 6% gross. That is the number to plan on, because it is the
+      only letting mode available on a qualifying property. Net yield sits 1.5 to 2.5 points lower once you apply
+      Greek rental income tax, which starts at 15% from the first euro with no allowance and rises to 35% above
+      €12,000, plus ENFIA, management at 8% to 12%, and a realistic vacancy allowance.
+    </p>
+    <p class="mb-8">
+      Holiday-let figures of 8% to 11% quoted for Cretan property are real, and they apply to non-qualifying stock
+      with a short-term rental licence. Buyers who want both residency and holiday income need two properties. Run
+      your own numbers in the <a href="/tools/greece-rental-yield-calculator/">rental yield calculator</a> and read
+      the <a href="/guides/gross-vs-net-yield-greece/">gross vs net yield guide</a> before accepting any projection.
+    </p>
+
+    <h2 class="text-[var(--color-ink)] text-2xl mb-3">Crete-specific checks before you deposit</h2>
+    <p class="mb-4">
+      The island's risks are not the same as Athens'. Three come up repeatedly and each is discoverable in days
+      but takes months to resolve.
+    </p>
+    <ul class="list-disc pl-5 space-y-2 mb-8">
+      <li>
+        <strong>Unauthorised construction in village and rural stock.</strong> Extensions, converted basements and
+        added floors built without permit are common in exactly the properties foreign buyers like. Some are
+        legalisable under Law 4495/2017 with a fine; some carry a demolition order. Only the engineer survey
+        distinguishes them, and unregularised space cannot count toward the 120 m².
+      </li>
+      <li>
+        <strong>Inherited ownership chains.</strong> Greek succession law leaves rural property with multiple heirs
+        holding unequal shares, some abroad and some untraceable. Every one of them has to consent to the sale. A
+        twenty-year title search surfaces this before the deposit.
+      </li>
+      <li>
+        <strong>Forest registry overlap.</strong> Plots adjoining woodland can be partly classified as forest,
+        which freezes the transaction until the Forestry Commission rules — a process that runs 18 to 36 months.
+      </li>
+    </ul>
+    <p class="mb-8">
+      The full sequence is in the <a href="/guides/due-diligence-greece-property/">due diligence checklist</a> and
+      the <a href="/guides/greece-property-cadastre-check/">cadastre check guide</a>.
+    </p>
+
+    <h2 class="text-[var(--color-ink)] text-2xl mb-3">How long the whole thing takes</h2>
+    <p class="mb-8">
+      Budget 12 to 18 months from offer to residence permit. Due diligence runs four to eight weeks, purchase
+      through preliminary agreement, AFM, Greek bank account and notarial deed a further four to twelve weeks, and
+      the permit phase eight to fourteen months after the deed. Files that run past eighteen months almost always
+      have one of three causes: a title defect, a cadastre mismatch, or incomplete bank traceability under
+      Circular 1/2026. See the
+      <a href="/guides/greece-golden-visa-timeline-application-2026/">timeline guide</a> for the month-by-month map.
+    </p>
+
+    <h2 class="text-[var(--color-ink)] text-2xl mb-3">Buyer scenarios: who Crete actually suits</h2>
+    <p class="mb-4">
+      Three profiles account for most Cretan purchases, and the right micro-market differs sharply between them.
+    </p>
+    <p class="mb-4">
+      <strong>The residency-first buyer with a fixed €400,000.</strong> Heraklion or Chania, apartment rather than
+      villa, inside the city rather than on the coast road. You are buying tenant depth, not a view: a
+      twelve-month lease to a hospital, university or port household is what carries the asset for five years,
+      and it is available year-round in both cities. Expect 180 to 220 m² in Heraklion and 165 to 180 m² in
+      Chania, both comfortably clear of the area rule.
+    </p>
+    <p class="mb-4">
+      <strong>The lifestyle buyer who also wants the permit.</strong> Chania old town or the Apokoronas villages
+      inland, where €400,000 to €600,000 buys a house with land within twenty minutes of the harbour. Accept a
+      lower and less reliable long-let yield, because the tenant pool outside the cities is thin in winter. This
+      only works if you are honest that the return is use, not rent.
+    </p>
+    <p class="mb-8">
+      <strong>The yield-focused buyer who does not need residency.</strong> Ignore the €400,000 threshold
+      entirely. A €180,000 to €250,000 Heraklion apartment, let long-term and outside the Golden Visa perimeter,
+      produces a better percentage return than anything bought to clear a threshold, and it can hold a short-term
+      rental licence if you want the seasonal premium. The threshold is a residency price, not an investment one.
+    </p>
+
+    <h2 class="text-[var(--color-ink)] text-2xl mb-3">Crete against the other €400,000 options</h2>
+    <p class="mb-4">
+      Crete is not the only regional market at the threshold, and it is not automatically the best one. The
+      <a href="/guides/peloponnese-golden-visa-400000-property/">Peloponnese</a> offers stronger square-metre
+      value, with asking prices of €1,400 to €2,800 across Patra, Kalamata and Nafplio putting 150 to 228 m²
+      within reach, and it is reachable by road from Athens.
+      <a href="/guides/rhodes-golden-visa-400000-property-guide/">Rhodes</a> and
+      <a href="/guides/halkidiki-property-investment-guide/">Halkidiki</a> both sit at €400,000 with their own
+      seasonal profiles.
+    </p>
+    <p class="mb-8">
+      What Crete has that the others do not is scale. It is large enough to have two real cities, an
+      international airport with year-round rather than seasonal flights, a university and hospital system, and a
+      resale market with genuine local as well as foreign demand. For an asset that must be let for twelve months
+      at a time and eventually sold, that combination matters more than a slightly better entry price.
+    </p>
+
+    <h2 class="text-[var(--color-ink)] text-2xl mb-3">Thinking about the exit before the entry</h2>
+    <p class="mb-4">
+      Greek capital gains tax on property is suspended through the end of 2026, so a sale inside that window
+      currently attracts no Greek CGT. Treat that as a policy choice that has been renewed repeatedly rather than
+      a permanent feature, and model the exit both ways. Read the
+      <a href="/guides/greece-capital-gains-tax-property/">capital gains guide</a> for the mechanics if the
+      suspension lapses, and note that your home country may tax the gain regardless of what Greece does.
+    </p>
+    <p class="mb-8">
+      Selling the qualifying property ends the residence permit unless it is replaced with another qualifying
+      investment, which is covered in
+      <a href="/guides/can-you-sell-property-after-golden-visa-greece/">selling after a Golden Visa</a>. On
+      liquidity, Chania and Heraklion clear faster than the luxury enclaves: Elounda at €4,000 to €8,000 per
+      square metre has a narrow international buyer pool and resale can take considerably longer than the
+      city markets.
+    </p>
+
+    <h2 class="text-[var(--color-ink)] text-2xl mb-6">Crete Golden Visa questions</h2>
+    <div class="grid gap-5 mb-12">
+      {faq.map((f) => (
+        <div class="surface-card p-5">
+          <h3 class="text-[var(--color-ink)] text-base mb-2">{f.question}</h3>
+          <p class="text-sm m-0">{f.answer}</p>
+        </div>
+      ))}
+    </div>
+
+    <p class="mb-12">
+      Go deeper:
+      <a href="/guides/crete-golden-visa-400000-property/">Crete €400K Golden Visa guide</a> ·
+      <a href="/guides/crete-property-investment-guide/">Crete property investment guide</a> ·
+      <a href="/areas/chania-property-investment/">Chania</a> ·
+      <a href="/areas/heraklion-property-investment/">Heraklion</a> ·
+      <a href="/areas/elounda-property-investment/">Elounda</a> ·
+      <a href="/golden-visa/">Golden Visa hub</a>
     </p>
 
     <LeadForm
-      title="Request Crete property shortlist"
-      subtitle="Chania · Heraklion · Elounda · GV 120m² screening"
-      context="Invest Crete commercial page"
+      title="Get a Crete property shortlist"
+      subtitle="Budget, target town and whether residency is the goal. We reply within one business day with options screened for the 120 m² and single-deed tests."
+      context="Invest in Crete landing page"
     />
+
+    <p class="text-xs text-[var(--color-muted)] mt-8">
+      Independent research, not legal, tax or investment advice. Prices are indicative asking ranges as of August
+      2026 and vary by micro-location and condition. Golden Visa thresholds, taxes and transfer rules change:
+      verify with licensed Greek counsel before you transact.
+    </p>
   </section>
 </BaseLayout>

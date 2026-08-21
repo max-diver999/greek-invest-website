@@ -12,6 +12,7 @@ interface Props {
   author?: string;
   readingTime?: number;
   heroImage?: string;
+  heroAlt?: string;
   faq?: { question: string; answer: string }[];
   canonical?: string;
   noindex?: boolean;
@@ -27,6 +28,7 @@ const {
   author = SITE.editorial,
   readingTime = 8,
   heroImage,
+  heroAlt,
   faq = [],
   canonical,
   noindex = false,
@@ -48,12 +50,21 @@ const articleSchema = {
   description,
   datePublished: pubDate.toISOString(),
   dateModified: (updatedDate || pubDate).toISOString(),
-  author: { '@type': 'Organization', name: author },
+  author: {
+    '@type': 'Person',
+    name: author,
+    jobTitle: SITE.authorRole,
+    url: `${SITE.url}/about/`,
+    worksFor: { '@type': 'Organization', name: SITE.name, url: SITE.url },
+  },
   publisher: {
     '@type': 'Organization',
     name: SITE.name,
-    logo: { '@type': 'ImageObject', url: `${SITE.url}/favicon.svg` },
+    url: SITE.url,
+    logo: { '@type': 'ImageObject', url: `${SITE.url}/favicon-192.png`, width: 192, height: 192 },
   },
+  isAccessibleForFree: true,
+  inLanguage: 'en',
   mainEntityOfPage: pageUrl,
   ...(heroImage ? { image: heroImage } : {}),
 };
@@ -92,7 +103,10 @@ const breadcrumbSchema = {
   ],
 };
 
-const schemas = [articleSchema, breadcrumbSchema, ...(faqSchema ? [faqSchema] : [])];
+// Single FAQPage owner. The inline <FaqBlock> in MDX emits its own FAQPage, so the
+// layout must not emit a second one — 132 pages previously shipped duplicates and
+// 7 shipped conflicting question sets.
+const schemas = [articleSchema, breadcrumbSchema, ...(faqSchema && !hasInlineFaqBlock ? [faqSchema] : [])];
 ---
 <BaseLayout
   title={title}
@@ -109,12 +123,12 @@ const schemas = [articleSchema, breadcrumbSchema, ...(faqSchema ? [faqSchema] : 
       <h1 class="mb-4 text-3xl md:text-4xl">{title}</h1>
       <p class="text-lg text-[var(--color-muted)] mb-4">{description}</p>
       <p class="text-sm text-[var(--color-muted)]">
-        By {author} · Updated {dateStr} · {readingTime} min read
+        By <a href="/about/" class="text-[var(--color-muted)] underline decoration-dotted underline-offset-2">{author}</a>, {SITE.authorRole} · Updated {dateStr} · {readingTime} min read
       </p>
     </header>
 
     {heroImage && (
-      <img src={heroImage} alt="" class="w-full max-h-[420px] object-cover rounded-2xl mb-10 border border-[var(--color-border)]" loading="eager" />
+      <img src={heroImage} alt={heroAlt || `${title} — Greek Invest research illustration`} class="w-full max-h-[420px] object-cover rounded-2xl mb-10 border border-[var(--color-border)]" width="1200" height="420" loading="eager" fetchpriority="high" />
     )}
 
     <div class="prose mx-auto">
@@ -135,9 +149,28 @@ const schemas = [articleSchema, breadcrumbSchema, ...(faqSchema ? [faqSchema] : 
       />
     </div>
 
-    <aside class="max-w-3xl mx-auto mt-10 surface-card p-5 text-sm text-[var(--color-muted)]">
-      <strong>Disclaimer:</strong> Greek Invest is an independent editorial resource. We are not a developer, law firm, or licensed Greek broker.
-      Enquiries may be referred to licensed Greek lawyers and partner agents. Golden Visa thresholds, taxes, and transfer rules change; verify with your lawyer and AADE before any transaction.
+    <!--
+      Author and standards note. This previously sat in 107 MDX files as a
+      "Who we are (citable snapshot)" section, templated with only the topic
+      phrase swapped, which is duplication dressed as page-specific content.
+      It belongs once, in the layout, attached to the byline.
+    -->
+    <aside class="max-w-3xl mx-auto mt-12 surface-card p-6 text-sm text-[var(--color-muted)]">
+      <h2 class="text-base text-[var(--color-ink)] mb-2">About this research</h2>
+      <p class="mb-3">
+        Written by <a href="/about/">{author}</a>, {SITE.authorRole}. Every page on this site is
+        checked against the same four tests before publication: the correct Law 5100/2024 tier for
+        the cadastral parcel, 120 m² of main usable area on the engineer certificate rather than the
+        floor plan, a single title deed, and traceable transfer of funds under Circular 1/2026.
+        Figures carry the date they were verified.
+      </p>
+      <p class="m-0">
+        <strong>Disclaimer:</strong> Greek Invest is an independent editorial resource. We are not a
+        developer, a law firm, or a licensed Greek broker, and we are not paid by developers for
+        placement. Enquiries may be referred to licensed Greek lawyers and partner agents. Golden
+        Visa thresholds, taxes and transfer rules change: verify with your lawyer and AADE before
+        any transaction. See our <a href="/methodology/">methodology</a>.
+      </p>
     </aside>
   </article>
 </BaseLayout>

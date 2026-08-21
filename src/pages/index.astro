@@ -3,7 +3,13 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import LeadForm from '../components/LeadForm.astro';
 import { getCollection } from 'astro:content';
 import { SITE } from '../data/site';
-import { HOMEPAGE_HERO_IMAGE } from '../data/featured';
+import ContentCard from '../components/ContentCard.astro';
+import {
+  HOMEPAGE_HERO_IMAGE,
+  FEATURED_GUIDE_SLUGS,
+  FEATURED_AREA_SLUGS,
+  FEATURED_PROJECT_SLUGS,
+} from '../data/featured';
 import { getCardImageUrl } from '../lib/cardImage';
 
 const [guides, projects, areas] = await Promise.all([
@@ -17,10 +23,62 @@ const publishedProjects = projects.filter((p) => !p.data.noindex);
 const publishedAreas = areas.filter((a) => !a.data.noindex);
 
 const heroImage = getCardImageUrl(HOMEPAGE_HERO_IMAGE, 'hero');
+
+const pick = (list: readonly string[], from: { id: string }[]) =>
+  list.map((slug) => from.find((e) => e.id === slug)).filter(Boolean) as typeof from;
+
+const featuredGuides = pick(FEATURED_GUIDE_SLUGS, publishedGuides);
+const featuredAreas = pick(FEATURED_AREA_SLUGS, publishedAreas);
+const featuredProjects = pick(FEATURED_PROJECT_SLUGS, publishedProjects);
+
+const faq = [
+  {
+    question: 'Can a foreigner buy property in Greece?',
+    answer:
+      'Yes. There is no general restriction on foreign ownership of Greek property, for EU and non-EU buyers alike. You need a Greek AFM tax number and, in practice, a Greek bank account. The one exception is designated border zones and some islands, where non-EU buyers need Ministry of Defence clearance before the deed.',
+  },
+  {
+    question: 'What does the Greece Golden Visa cost in 2026?',
+    answer:
+      '€800,000 of property in Attica, Thessaloniki, Mykonos, Santorini and larger islands, €400,000 in the rest of Greece, or €250,000 for heritage restoration and conversion. Add 7% to 10% in acquisition costs: 3.09% transfer tax, notary, lawyer, land registry, agent and engineer.',
+  },
+  {
+    question: 'What rental yield can I expect in Greece?',
+    answer:
+      'Gross yields run about 4.4% to 5.4% nationally, with Athens apartments at the higher end and prime Athens Riviera stock lower. Net yield lands 1.5 to 2.5 points below that once ENFIA, the 15% starting rental tax band, 20% to 25% management and 4 to 6 weeks of vacancy are modelled.',
+  },
+  {
+    question: 'Is Greek Invest an estate agent?',
+    answer:
+      'No. Greek Invest is an independent editorial resource. We are not a developer, a law firm, or a licensed Greek broker. Enquiries may be referred to licensed Greek lawyers and partner agents, and we say so on every page.',
+  },
+];
+
+const schemas = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: SITE.name,
+    url: SITE.url,
+    description: SITE.description,
+    inLanguage: 'en',
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faq.map((f) => ({
+      '@type': 'Question',
+      name: f.question,
+      acceptedAnswer: { '@type': 'Answer', text: f.answer },
+    })),
+  },
+];
 ---
 <BaseLayout
-  title="Greek Invest, Independent Greece Property Research"
-  description={SITE.description}
+  title="Greece Property Investment & Golden Visa Research"
+  description="Independent Greece property research: 2026 Golden Visa tiers, foreign ownership rules, real acquisition costs, net yields and neutral project reviews."
+  canonical={`${SITE.url}/`}
+  {schemas}
 >
   <section class="border-b border-[var(--color-border-soft)] bg-[var(--color-surface)]">
     <div class="site-container py-14 md:py-20 grid lg:grid-cols-2 gap-10 lg:gap-14 items-center">
@@ -60,7 +118,7 @@ const heroImage = getCardImageUrl(HOMEPAGE_HERO_IMAGE, 'hero');
     </div>
   </section>
 
-  <section class="border-b border-[var(--color-border-soft)] bg-[var(--color-brand)] text-white py-8">
+  <section class="border-b border-[var(--color-border-soft)] bg-[var(--color-teal)] text-white py-8">
     <div class="site-container grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
       <div>
         <p class="text-2xl md:text-3xl font-semibold">€250K to 800K</p>
@@ -81,22 +139,105 @@ const heroImage = getCardImageUrl(HOMEPAGE_HERO_IMAGE, 'hero');
     </div>
   </section>
 
+  <!-- Golden Visa entry point: the site's commercial core, previously absent from the homepage. -->
+  <section class="section bg-[var(--color-surface)] border-y border-[var(--color-border-soft)]">
+    <div class="site-container">
+      <div class="max-w-3xl mb-8">
+        <h2 class="text-2xl mb-3">Start with the Golden Visa rules</h2>
+        <p class="text-[var(--color-muted)]">
+          One property, one title deed, at least <strong>120 m² of main usable area</strong>. €800,000 in Attica
+          and the larger islands, €400,000 in the rest of Greece. Short-term letting of that property is banned
+          for the life of the permit. Everything else follows from those four facts.
+        </p>
+      </div>
+      <div class="flex flex-wrap gap-3">
+        <a href="/golden-visa/" class="btn-primary px-6 py-3">Golden Visa hub</a>
+        <a href="/tools/greece-golden-visa-zone-lookup/" class="btn-secondary px-6 py-3">Check a zone</a>
+        <a href="/greece-golden-visa-consultation/" class="btn-secondary px-6 py-3">Book a consultation</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="site-container">
+      <div class="flex flex-wrap items-end justify-between gap-4 mb-8">
+        <h2 class="text-2xl">Start here</h2>
+        <a href="/guides/" class="link-arrow text-sm">All {publishedGuides.length} guides →</a>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        {featuredGuides.map((g) => (
+          <ContentCard
+            href={`/guides/${g.id}/`}
+            title={g.data.title}
+            description={g.data.description}
+            image={g.data.heroImage}
+            imageAlt={g.data.heroAlt}
+            meta={`${g.data.readingTime ?? 8} min read`}
+          />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-[var(--color-surface)] border-y border-[var(--color-border-soft)]">
+    <div class="site-container">
+      <div class="flex flex-wrap items-end justify-between gap-4 mb-8">
+        <h2 class="text-2xl">Where buyers are looking</h2>
+        <a href="/areas/" class="link-arrow text-sm">All {publishedAreas.length} areas →</a>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        {featuredAreas.map((a) => (
+          <ContentCard
+            href={`/areas/${a.id}/`}
+            title={a.data.title}
+            description={a.data.description}
+            image={a.data.heroImage}
+            imageAlt={a.data.heroAlt}
+            meta={`${a.data.readingTime ?? 8} min read`}
+          />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="site-container">
+      <div class="flex flex-wrap items-end justify-between gap-4 mb-2">
+        <h2 class="text-2xl">Project reviews, not brochures</h2>
+        <a href="/projects/" class="link-arrow text-sm">All {publishedProjects.length} projects →</a>
+      </div>
+      <p class="text-[var(--color-muted)] mb-8 max-w-2xl">
+        We check the deed, the permit and the 120 m² arithmetic before we comment on the finish.
+      </p>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        {featuredProjects.map((pr) => (
+          <ContentCard
+            href={`/projects/${pr.id}/`}
+            title={pr.data.title}
+            description={pr.data.description}
+            image={pr.data.heroImage}
+            imageAlt={pr.data.heroAlt}
+            meta={`${pr.data.readingTime ?? 8} min read`}
+          />
+        ))}
+      </div>
+    </div>
+  </section>
+
   <section class="section bg-[var(--color-surface)] border-y border-[var(--color-border-soft)]">
     <div class="site-container max-w-3xl">
-      <h2 class="text-2xl mb-3">Launching now</h2>
-      <p class="text-[var(--color-muted)] mb-6">
-        We are publishing buyer guides, Golden Visa decision trees, area research, and neutral project reviews. First batch covers ownership rules, transfer costs, net yields, and Crete / Athens micro-markets.
-      </p>
-      <ul class="list-disc pl-5 space-y-2 text-[var(--color-muted)]">
-        <li>Greece Golden Visa property guide 2026 (pillar)</li>
-        <li>Greece property investment guide</li>
-        <li>Buy property Greece foreigner</li>
-        <li>Cost of buying property Greece</li>
-        <li>Greece rental yield guide</li>
-        <li>Crete Golden Visa €400K property guide</li>
-      </ul>
-      <p class="mt-6">
-        <a href="/contact/" class="link-arrow">Contact the editorial team →</a>
+      <h2 class="text-2xl mb-6">Greece property, answered</h2>
+      <div class="grid gap-5">
+        {faq.map((f) => (
+          <div class="surface-card p-5">
+            <h3 class="text-base text-[var(--color-ink)] mb-2">{f.question}</h3>
+            <p class="text-sm text-[var(--color-muted)]">{f.answer}</p>
+          </div>
+        ))}
+      </div>
+      <p class="mt-8 text-sm text-[var(--color-muted)]">
+        More detail in the <a href="/guides/">guides</a>, the <a href="/golden-visa/">Golden Visa hub</a>,
+        and the <a href="/tools/">calculators</a>.
       </p>
     </div>
   </section>

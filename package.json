@@ -20,7 +20,7 @@
     "corpus:cleanup": "node scripts/corpus-cleanup.mjs",
     "corpus:excellence": "node scripts/spain-corpus-excellence.mjs",
     "prepush:gate": "node scripts/pre-push-gate.mjs",
-    "setup:hooks": "git config core.hooksPath .githooks && chmod +x .githooks/pre-push && echo 'Git hooks → .githooks (pre-push runs validate:content + build on MDX changes)'",
+    "setup:hooks": "git config core.hooksPath .githooks && chmod +x .githooks/pre-push && echo 'Git hooks \u2192 .githooks (pre-push runs validate:content + build on MDX changes)'",
     "fix:queue": "node scripts/fix-batch-queue.mjs",
     "fix:card": "node scripts/fix-content-card.mjs",
     "refresh:protected": "node scripts/refresh-protected-slugs.mjs",
@@ -29,15 +29,9 @@
     "fix:leadforms": "node scripts/fix-inline-leadforms.mjs",
     "sync:content-gate": "node scripts/sync-content-gate.mjs",
     "validate:strict": "node scripts/qa-audit.mjs",
-    "images:upload": "python3 scripts/upload-mexico-cloudinary.py --collection projects",
-    "images:upload:guides": "python3 scripts/upload-mexico-cloudinary.py --collection guides",
-    "images:upload:areas": "python3 scripts/upload-mexico-cloudinary.py --collection areas",
-    "images:upload:editorial": "python3 scripts/upload-mexico-cloudinary.py --collection editorial",
-    "images:upload:content": "python3 scripts/upload-mexico-cloudinary.py --collection all",
-    "images:upload:dry": "python3 scripts/upload-mexico-cloudinary.py --collection all --dry-run",
-    "images:rollout": "node scripts/rollout-mexico-cloudinary.mjs",
-    "images:rollout:content": "node scripts/rollout-mexico-cloudinary-content.mjs",
-    "audit:images": "node scripts/audit-all-images.mjs --fail"
+    "audit:images": "node scripts/audit-all-images.mjs --fail",
+    "gen:llms": "node scripts/generate-llms-txt.mjs",
+    "prebuild": "node scripts/generate-llms-txt.mjs"
   },
   "dependencies": {
     "google-auth-library": "^10.6.2",

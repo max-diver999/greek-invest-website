@@ -26,6 +26,12 @@
       "minWords": 500,
       "faqMin": 0
     },
+    "compare": {
+      "dir": "compare",
+      "urlPrefix": "/compare/",
+      "minWords": 1800,
+      "faqMin": 5
+    },
     "projects": {
       "dir": "projects",
       "urlPrefix": "/projects/",
@@ -57,6 +63,26 @@
       {
         "name": "projects hub",
         "path": "/projects/",
+        "expect": 200
+      },
+      {
+        "name": "areas hub",
+        "path": "/areas/",
+        "expect": 200
+      },
+      {
+        "name": "compare hub",
+        "path": "/compare/",
+        "expect": 200
+      },
+      {
+        "name": "tools hub",
+        "path": "/tools/",
+        "expect": 200
+      },
+      {
+        "name": "golden visa hub",
+        "path": "/golden-visa/",
         "expect": 200
       }
     ]

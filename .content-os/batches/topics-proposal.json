@@ -1,0 +1,892 @@
+{
+  "$schema_version": "1.0",
+  "site_id": "greek-invest-website",
+  "domain": "greek-invest.com",
+  "program": "greek-invest",
+  "generated": "2026-08-21",
+  "generated_by": "claude-phase-0-audit",
+  "status": "proposal_awaiting_approval",
+  "branch": "claude/greece-audit-phase-zero-km4045",
+  "blocking_prerequisite": "Corpus cleanup Waves 0-3 must complete before Tier 1 publishing. Publishing onto a corpus that is 19% verbatim boilerplate amplifies scaled-content risk.",
+  "batch_size_default": 5,
+  "corpus_baseline": {
+    "mdx_total": 129,
+    "geo_commercial_avg": 92,
+    "geo_grade": "A",
+    "rubric_unique": 78,
+    "boilerplate_share_pct": 19,
+    "broken_h2_sentences": 859,
+    "duplicate_faqpage_pages": 132
+  },
+  "verified_gaps": [
+    {
+      "topic": "Law 5246/2025 (2026 tax reform)",
+      "corpus_mentions": 0
+    },
+    {
+      "topic": "Non-dom regimes Art. 5A/5B/5C",
+      "corpus_mentions": 1
+    },
+    {
+      "topic": "Golden Visa non-property routes",
+      "corpus_mentions": 9
+    },
+    {
+      "topic": "Antiparochi",
+      "corpus_mentions": 0
+    },
+    {
+      "topic": "Forest maps / dasikoi chartes",
+      "corpus_mentions": 13
+    },
+    {
+      "topic": "Property auctions / e-auctions",
+      "corpus_mentions": 0
+    },
+    {
+      "topic": "Ktimatologio deadlines",
+      "corpus_mentions": 0
+    },
+    {
+      "topic": "Digital nomad / FIP visa",
+      "corpus_mentions": 7
+    }
+  ],
+  "competitors": [
+    "globalcitizensolutions.com",
+    "astons.com",
+    "astonsgreece.com",
+    "getgoldenvisa.com",
+    "globalresidenceindex.com",
+    "immigrantinvest.com",
+    "imidaily.com",
+    "globalpropertyguide.com",
+    "tranio.com",
+    "investropa.com",
+    "varnavas.gr",
+    "avglaw.gr",
+    "wfw.com",
+    "buygreece.us",
+    "corpenza.com"
+  ],
+  "differentiation_thesis": [
+    "Operational depth: how the file actually moves (engineer certificate, cadastre, bank traceability sequencing), not just what the rule says.",
+    "Join Golden Visa to the non-dom tax regime to exit tax in one decision - no competitor does this.",
+    "Greek-specific legal traps (antiparochi, forest maps, 4495 legalisation, e-auctions) that foreign-owned competitors do not cover.",
+    "Maintained datasets with stated update cadence and Dataset schema."
+  ],
+  "production_standard": [
+    "Zero shared boilerplate blocks",
+    "Direct answer <=40 words after H1, key figure first",
+    "Title <=60 chars incl. suffix; no '::'; no repeated tokens",
+    "Meta description 140-155 chars leading with the number",
+    "5+ FAQs in frontmatter only; never a second inline FaqBlock schema",
+    "Named credentialed author for tax/legal topics",
+    "Every figure dated and sourced",
+    ">=5 contextual internal links out, >=3 planned inbound",
+    "One intent-matched InlineCta mid-article",
+    "Unique hero image with real heroAlt",
+    "relatedSlugs populated",
+    "<20% 5-gram containment vs every existing page"
+  ],
+  "tier_counts": {
+    "1": 16,
+    "2": 23,
+    "3": 11
+  },
+  "total": 50,
+  "topics": [
+    {
+      "n": 1,
+      "slug": "greece-non-dom-tax-regime-5a-guide",
+      "collection": "guides",
+      "working_title": "Greece Non-Dom Tax: €100K Flat Rate Explained",
+      "primary_keyword": "greece non dom tax regime",
+      "tier": 1,
+      "cluster": "A. Tax & wealth structuring",
+      "search_intent": "commercial-investigation",
+      "rationale": "Zero coverage in corpus (1 mention). HNW lead magnet; competitors cover it, site does not.",
+      "internal_links_planned": [
+        "greece-golden-visa-property-guide-2026",
+        "greece-rental-income-tax-non-resident",
+        "greece-capital-gains-tax-property"
+      ],
+      "url": "/guides/greece-non-dom-tax-regime-5a-guide/"
+    },
+    {
+      "n": 2,
+      "slug": "greece-7-percent-pension-tax-retirees",
+      "collection": "guides",
+      "working_title": "Greece 7% Pension Tax for Foreign Retirees",
+      "primary_keyword": "greece 7 percent tax pensioners",
+      "tier": 1,
+      "cluster": "A. Tax & wealth structuring",
+      "search_intent": "commercial-investigation",
+      "rationale": "Article 5B regime absent from corpus. Strong retiree buyer segment.",
+      "internal_links_planned": [
+        "greece-non-dom-tax-regime-5a-guide",
+        "greece-property-investment-guide"
+      ],
+      "url": "/guides/greece-7-percent-pension-tax-retirees/"
+    },
+    {
+      "n": 3,
+      "slug": "greece-golden-visa-plus-non-dom-strategy",
+      "collection": "guides",
+      "working_title": "Golden Visa + Non-Dom: The Combined Play",
+      "primary_keyword": "greece golden visa tax residency",
+      "tier": 1,
+      "cluster": "A. Tax & wealth structuring",
+      "search_intent": "commercial",
+      "rationale": "Nobody joins visa route to tax regime in one decision. Highest-value lead on the site.",
+      "internal_links_planned": [
+        "greece-non-dom-tax-regime-5a-guide",
+        "greece-golden-visa-property-tiers-2026",
+        "greece-citizenship-after-golden-visa"
+      ],
+      "url": "/guides/greece-golden-visa-plus-non-dom-strategy/"
+    },
+    {
+      "n": 4,
+      "slug": "greece-tax-changes-2026-law-5246",
+      "collection": "guides",
+      "working_title": "Greece Tax Changes 2026: What Law 5246/2025 Did",
+      "primary_keyword": "greece tax changes 2026",
+      "tier": 1,
+      "cluster": "A. Tax & wealth structuring",
+      "search_intent": "informational",
+      "rationale": "Law 5246/2025 has 0 mentions corpus-wide despite being in force since 1 Jan 2026.",
+      "internal_links_planned": [
+        "enfia-property-tax-greece",
+        "greece-rental-income-tax-non-resident"
+      ],
+      "url": "/guides/greece-tax-changes-2026-law-5246/"
+    },
+    {
+      "n": 5,
+      "slug": "greece-tax-residency-183-day-rule",
+      "collection": "guides",
+      "working_title": "Greek Tax Residency: The 183-Day Test",
+      "primary_keyword": "greece tax residency rules",
+      "tier": 2,
+      "cluster": "A. Tax & wealth structuring",
+      "search_intent": "informational",
+      "rationale": "Prerequisite concept for the non-dom cluster.",
+      "internal_links_planned": [
+        "greece-non-dom-tax-regime-5a-guide",
+        "how-long-can-you-stay-greece-golden-visa"
+      ],
+      "url": "/guides/greece-tax-residency-183-day-rule/"
+    },
+    {
+      "n": 6,
+      "slug": "greece-property-company-ownership-ike",
+      "collection": "guides",
+      "working_title": "Buy Greek Property Through a Company: IKE vs Personal",
+      "primary_keyword": "greece property company ownership",
+      "tier": 2,
+      "cluster": "A. Tax & wealth structuring",
+      "search_intent": "commercial-investigation",
+      "rationale": "IKE mentioned 132x but no dedicated decision page.",
+      "internal_links_planned": [
+        "greece-property-transfer-tax-fma",
+        "greece-inheritance-tax-foreign-property-owners"
+      ],
+      "url": "/guides/greece-property-company-ownership-ike/"
+    },
+    {
+      "n": 7,
+      "slug": "greece-offshore-company-property-15-percent-tax",
+      "collection": "guides",
+      "working_title": "The 15% Special Tax on Offshore-Owned Greek Property",
+      "primary_keyword": "greece offshore property tax",
+      "tier": 2,
+      "cluster": "A. Tax & wealth structuring",
+      "search_intent": "informational",
+      "rationale": "Major trap for corporate buyers; no coverage.",
+      "internal_links_planned": [
+        "greece-property-company-ownership-ike",
+        "greece-objective-value-property-tax"
+      ],
+      "url": "/guides/greece-offshore-company-property-15-percent-tax/"
+    },
+    {
+      "n": 8,
+      "slug": "greece-double-tax-treaty-property-income",
+      "collection": "guides",
+      "working_title": "Greece Double Tax Treaties: Where Your Rent Is Taxed",
+      "primary_keyword": "greece double taxation treaty",
+      "tier": 2,
+      "cluster": "A. Tax & wealth structuring",
+      "search_intent": "informational",
+      "rationale": "Also supplies the country-unique spine the 10 nationality pages need.",
+      "internal_links_planned": [
+        "greece-rental-income-tax-non-resident",
+        "greece-golden-visa-us-citizens"
+      ],
+      "url": "/guides/greece-double-tax-treaty-property-income/"
+    },
+    {
+      "n": 9,
+      "slug": "greece-article-5c-relocating-professionals",
+      "collection": "guides",
+      "working_title": "Greece Article 5C: 50% Income Exemption for Movers",
+      "primary_keyword": "greece 5c tax incentive",
+      "tier": 3,
+      "cluster": "A. Tax & wealth structuring",
+      "search_intent": "informational",
+      "rationale": "Completes the 5A/5B/5C set.",
+      "internal_links_planned": [
+        "greece-non-dom-tax-regime-5a-guide"
+      ],
+      "url": "/guides/greece-article-5c-relocating-professionals/"
+    },
+    {
+      "n": 10,
+      "slug": "greece-golden-visa-without-property",
+      "collection": "guides",
+      "working_title": "Greece Golden Visa Without Buying Property",
+      "primary_keyword": "golden visa greece without property",
+      "tier": 1,
+      "cluster": "B. Non-property GV routes",
+      "search_intent": "commercial-investigation",
+      "rationale": "Site is property-only. Captures the query then routes back to property tiers.",
+      "internal_links_planned": [
+        "greece-golden-visa-property-tiers-2026",
+        "greece-golden-visa-350k-fund-route"
+      ],
+      "url": "/guides/greece-golden-visa-without-property/"
+    },
+    {
+      "n": 11,
+      "slug": "greece-golden-visa-350k-fund-route",
+      "collection": "guides",
+      "working_title": "The €350K Fund Route to a Greek Golden Visa",
+      "primary_keyword": "greece golden visa fund investment",
+      "tier": 1,
+      "cluster": "B. Non-property GV routes",
+      "search_intent": "commercial",
+      "rationale": "Lowest-cost GV entry; zero coverage; competitors rank for it.",
+      "internal_links_planned": [
+        "greece-golden-visa-without-property",
+        "golden-visa-property-vs-fund-route"
+      ],
+      "url": "/guides/greece-golden-visa-350k-fund-route/"
+    },
+    {
+      "n": 12,
+      "slug": "greece-golden-visa-500k-bonds-deposit",
+      "collection": "guides",
+      "working_title": "€500K Bonds & Deposits: The Passive Golden Visa",
+      "primary_keyword": "greece golden visa bonds",
+      "tier": 2,
+      "cluster": "B. Non-property GV routes",
+      "search_intent": "commercial-investigation",
+      "rationale": "Passive-investor segment untouched.",
+      "internal_links_planned": [
+        "greece-golden-visa-without-property"
+      ],
+      "url": "/guides/greece-golden-visa-500k-bonds-deposit/"
+    },
+    {
+      "n": 13,
+      "slug": "greece-golden-visa-250k-heritage-restoration",
+      "collection": "guides",
+      "working_title": "The €250K Heritage Restoration Route in Practice",
+      "primary_keyword": "greece golden visa 250000 restoration",
+      "tier": 1,
+      "cluster": "B. Non-property GV routes",
+      "search_intent": "commercial",
+      "rationale": "Only route exempt from the 120 m2 rule. Referenced but never explained end-to-end.",
+      "internal_links_planned": [
+        "greece-golden-visa-120-square-meter-rule",
+        "greece-golden-visa-250000-conversion-route"
+      ],
+      "url": "/guides/greece-golden-visa-250k-heritage-restoration/"
+    },
+    {
+      "n": 14,
+      "slug": "greece-digital-nomad-visa-vs-golden-visa",
+      "collection": "guides",
+      "working_title": "Digital Nomad Visa vs Golden Visa Greece",
+      "primary_keyword": "greece digital nomad visa vs golden visa",
+      "tier": 2,
+      "cluster": "B. Non-property GV routes",
+      "search_intent": "commercial-investigation",
+      "rationale": "7 passing mentions, no page. High-volume comparison query.",
+      "internal_links_planned": [
+        "greece-golden-visa-property-guide-2026",
+        "greece-fip-visa-financially-independent"
+      ],
+      "url": "/guides/greece-digital-nomad-visa-vs-golden-visa/"
+    },
+    {
+      "n": 15,
+      "slug": "greece-fip-visa-financially-independent",
+      "collection": "guides",
+      "working_title": "Greece FIP Visa: Residency Without Investment",
+      "primary_keyword": "greece financially independent person visa",
+      "tier": 3,
+      "cluster": "B. Non-property GV routes",
+      "search_intent": "informational",
+      "rationale": "Zero coverage; feeds the GV comparison.",
+      "internal_links_planned": [
+        "greece-digital-nomad-visa-vs-golden-visa"
+      ],
+      "url": "/guides/greece-fip-visa-financially-independent/"
+    },
+    {
+      "n": 16,
+      "slug": "greece-technical-due-diligence-report-villa",
+      "collection": "guides",
+      "working_title": "What's In a Greek Villa Technical Due Diligence Report",
+      "primary_keyword": "technical due diligence greek villa",
+      "tier": 1,
+      "cluster": "C. Legal due diligence",
+      "search_intent": "commercial-investigation",
+      "rationale": "GSC shows this exact query unserved. Site ranks nearby but has no extractable answer.",
+      "internal_links_planned": [
+        "due-diligence-greece-property",
+        "greece-property-engineer-certificate",
+        "snagging-inspection-greece-new-build"
+      ],
+      "url": "/guides/greece-technical-due-diligence-report-villa/"
+    },
+    {
+      "n": 17,
+      "slug": "greece-forest-maps-dasikoi-chartes-property",
+      "collection": "guides",
+      "working_title": "Forest Maps (Δασικοί Χάρτες): The Silent Deal-Killer",
+      "primary_keyword": "greece forest map property",
+      "tier": 1,
+      "cluster": "C. Legal due diligence",
+      "search_intent": "informational",
+      "rationale": "13 passing mentions, no page. No English competitor covers it.",
+      "internal_links_planned": [
+        "greece-property-cadastre-check",
+        "due-diligence-greece-property"
+      ],
+      "url": "/guides/greece-forest-maps-dasikoi-chartes-property/"
+    },
+    {
+      "n": 18,
+      "slug": "greece-antiparochi-land-for-flats-explained",
+      "collection": "guides",
+      "working_title": "Antiparochi Explained: Land-for-Flats Deals",
+      "primary_keyword": "antiparochi greece",
+      "tier": 2,
+      "cluster": "C. Legal due diligence",
+      "search_intent": "informational",
+      "rationale": "Zero corpus mentions. Uniquely Greek; zero competitor coverage.",
+      "internal_links_planned": [
+        "off-plan-property-greece-guide",
+        "greece-property-notary-process"
+      ],
+      "url": "/guides/greece-antiparochi-land-for-flats-explained/"
+    },
+    {
+      "n": 19,
+      "slug": "greece-unauthorised-construction-legalisation-4495",
+      "collection": "guides",
+      "working_title": "Illegal Building Legalisation Under Law 4495/2017",
+      "primary_keyword": "greece illegal construction legalisation",
+      "tier": 2,
+      "cluster": "C. Legal due diligence",
+      "search_intent": "informational",
+      "rationale": "Common blocker on resale; no dedicated page.",
+      "internal_links_planned": [
+        "resale-property-greece-checklist-foreigner",
+        "greece-property-engineer-certificate"
+      ],
+      "url": "/guides/greece-unauthorised-construction-legalisation-4495/"
+    },
+    {
+      "n": 20,
+      "slug": "greece-ktimatologio-registration-deadlines",
+      "collection": "guides",
+      "working_title": "Ktimatologio: Registration Deadlines & Penalties",
+      "primary_keyword": "ktimatologio deadline foreigners",
+      "tier": 2,
+      "cluster": "C. Legal due diligence",
+      "search_intent": "informational",
+      "rationale": "Zero coverage of deadlines/penalties.",
+      "internal_links_planned": [
+        "greece-property-cadastre-check"
+      ],
+      "url": "/guides/greece-ktimatologio-registration-deadlines/"
+    },
+    {
+      "n": 21,
+      "slug": "greece-electronic-building-identity-explained",
+      "collection": "guides",
+      "working_title": "The Electronic Building Identity (ΗΤΑ) Explained",
+      "primary_keyword": "electronic building identity greece",
+      "tier": 2,
+      "cluster": "C. Legal due diligence",
+      "search_intent": "informational",
+      "rationale": "Cited across the corpus as a GV gate but never explained on its own page.",
+      "internal_links_planned": [
+        "greece-property-engineer-certificate",
+        "greece-golden-visa-120-square-meter-rule"
+      ],
+      "url": "/guides/greece-electronic-building-identity-explained/"
+    },
+    {
+      "n": 22,
+      "slug": "greece-archaeological-zone-property-restrictions",
+      "collection": "guides",
+      "working_title": "Buying Inside a Greek Archaeological Zone",
+      "primary_keyword": "greece archaeological zone property",
+      "tier": 3,
+      "cluster": "C. Legal due diligence",
+      "search_intent": "informational",
+      "rationale": "Affects Athens centre and island buyers; no coverage.",
+      "internal_links_planned": [
+        "due-diligence-greece-property"
+      ],
+      "url": "/guides/greece-archaeological-zone-property-restrictions/"
+    },
+    {
+      "n": 23,
+      "slug": "greece-beach-setback-aigialos-rules",
+      "collection": "guides",
+      "working_title": "Aigialos: The Beach Setback Rule for Coastal Buyers",
+      "primary_keyword": "greece beach property setback",
+      "tier": 3,
+      "cluster": "C. Legal due diligence",
+      "search_intent": "informational",
+      "rationale": "Directly relevant to the coastal/island buyer segment.",
+      "internal_links_planned": [
+        "areas/elounda-property-investment",
+        "costa-navarino-property-investment"
+      ],
+      "url": "/guides/greece-beach-setback-aigialos-rules/"
+    },
+    {
+      "n": 24,
+      "slug": "greece-property-escrow-account-guide",
+      "collection": "guides",
+      "working_title": "Escrow for Greek Property: How to Hold the Deposit",
+      "primary_keyword": "greece property escrow",
+      "tier": 1,
+      "cluster": "D. Buying mechanics",
+      "search_intent": "commercial-investigation",
+      "rationale": "100 passing mentions, no page. Directly addresses deposit-fraud fear.",
+      "internal_links_planned": [
+        "greece-property-scams-avoid",
+        "greece-property-notary-process"
+      ],
+      "url": "/guides/greece-property-escrow-account-guide/"
+    },
+    {
+      "n": 25,
+      "slug": "greece-property-currency-transfer-fx",
+      "collection": "guides",
+      "working_title": "Moving Money to Greece: FX, Fees & Circular 1/2026",
+      "primary_keyword": "transfer money to greece property",
+      "tier": 1,
+      "cluster": "D. Buying mechanics",
+      "search_intent": "commercial",
+      "rationale": "Joins FX cost to the Circular 1/2026 traceability rule. No competitor does both.",
+      "internal_links_planned": [
+        "golden-visa-greece-bank-transfer-proof-funds",
+        "greece-golden-visa-bank-account-afm"
+      ],
+      "url": "/guides/greece-property-currency-transfer-fx/"
+    },
+    {
+      "n": 26,
+      "slug": "greece-property-auctions-eauction-foreigners",
+      "collection": "guides",
+      "working_title": "Greek e-Auctions: Buying Distressed Property",
+      "primary_keyword": "greece property auction foreigners",
+      "tier": 2,
+      "cluster": "D. Buying mechanics",
+      "search_intent": "commercial-investigation",
+      "rationale": "Zero corpus coverage; real distressed-buyer demand.",
+      "internal_links_planned": [
+        "resale-property-greece-checklist-foreigner",
+        "due-diligence-greece-property"
+      ],
+      "url": "/guides/greece-property-auctions-eauction-foreigners/"
+    },
+    {
+      "n": 27,
+      "slug": "greece-bank-repossessed-property",
+      "collection": "guides",
+      "working_title": "Bank-Repossessed Greek Property: Real Discounts?",
+      "primary_keyword": "greece repossessed property",
+      "tier": 3,
+      "cluster": "D. Buying mechanics",
+      "search_intent": "commercial-investigation",
+      "rationale": "Pairs with e-auctions.",
+      "internal_links_planned": [
+        "greece-property-auctions-eauction-foreigners"
+      ],
+      "url": "/guides/greece-bank-repossessed-property/"
+    },
+    {
+      "n": 28,
+      "slug": "greece-renovation-cost-per-sqm-2026",
+      "collection": "guides",
+      "working_title": "Greek Renovation Costs per m² in 2026",
+      "primary_keyword": "renovation cost greece per sqm",
+      "tier": 2,
+      "cluster": "D. Buying mechanics",
+      "search_intent": "commercial-investigation",
+      "rationale": "Required to model the 250K restoration route and resale upgrades.",
+      "internal_links_planned": [
+        "greece-golden-visa-250k-heritage-restoration",
+        "off-plan-vs-resale-greece"
+      ],
+      "url": "/guides/greece-renovation-cost-per-sqm-2026/"
+    },
+    {
+      "n": 29,
+      "slug": "greece-building-a-villa-plot-to-keys",
+      "collection": "guides",
+      "working_title": "Building a Villa in Greece: Plot to Keys",
+      "primary_keyword": "build house greece foreigner",
+      "tier": 2,
+      "cluster": "D. Buying mechanics",
+      "search_intent": "commercial-investigation",
+      "rationale": "No land/self-build coverage anywhere in the corpus.",
+      "internal_links_planned": [
+        "greece-property-engineer-certificate",
+        "greece-new-build-vat-suspension-2026"
+      ],
+      "url": "/guides/greece-building-a-villa-plot-to-keys/"
+    },
+    {
+      "n": 30,
+      "slug": "vouliagmeni-property-investment",
+      "collection": "areas",
+      "working_title": "Vouliagmeni Property: Athens' Most Expensive Postcode",
+      "primary_keyword": "vouliagmeni property",
+      "tier": 1,
+      "cluster": "E. Area expansion",
+      "search_intent": "commercial",
+      "rationale": "Highest EUR/m2 in Attica (4,500-9,000). Prime 800K tier. Missing from areas.",
+      "internal_links_planned": [
+        "athens-golden-visa-800000-areas",
+        "voula-property-investment"
+      ],
+      "url": "/areas/vouliagmeni-property-investment/"
+    },
+    {
+      "n": 31,
+      "slug": "kifissia-property-investment",
+      "collection": "areas",
+      "working_title": "Kifissia Property Investment: Northern Athens Prime",
+      "primary_keyword": "kifissia property investment",
+      "tier": 2,
+      "cluster": "E. Area expansion",
+      "search_intent": "commercial",
+      "rationale": "Prime northern Athens; only southern suburbs covered today.",
+      "internal_links_planned": [
+        "athens-suburbs-golden-visa-800000-guide"
+      ],
+      "url": "/areas/kifissia-property-investment/"
+    },
+    {
+      "n": 32,
+      "slug": "rethymno-property-investment",
+      "collection": "areas",
+      "working_title": "Rethymno Property: Crete's €400K Middle Ground",
+      "primary_keyword": "rethymno property investment",
+      "tier": 2,
+      "cluster": "E. Area expansion",
+      "search_intent": "commercial",
+      "rationale": "Completes Crete alongside Chania, Heraklion, Elounda.",
+      "internal_links_planned": [
+        "crete-golden-visa-400000-property",
+        "chania-property-investment"
+      ],
+      "url": "/areas/rethymno-property-investment/"
+    },
+    {
+      "n": 33,
+      "slug": "agios-nikolaos-property-investment",
+      "collection": "areas",
+      "working_title": "Agios Nikolaos & Mirabello Bay Property",
+      "primary_keyword": "agios nikolaos property",
+      "tier": 3,
+      "cluster": "E. Area expansion",
+      "search_intent": "commercial",
+      "rationale": "Adjacent to Elounda; completes east Crete.",
+      "internal_links_planned": [
+        "elounda-property-investment"
+      ],
+      "url": "/areas/agios-nikolaos-property-investment/"
+    },
+    {
+      "n": 34,
+      "slug": "naxos-property-investment",
+      "collection": "areas",
+      "working_title": "Naxos Property: The €400K Cycladic Alternative",
+      "primary_keyword": "naxos property investment",
+      "tier": 2,
+      "cluster": "E. Area expansion",
+      "search_intent": "commercial",
+      "rationale": "Cyclades island under the 3,100-resident 400K threshold; Mykonos/Santorini are 800K.",
+      "internal_links_planned": [
+        "cyclades-property-investment-guide",
+        "paros-antiparos-property-investment"
+      ],
+      "url": "/areas/naxos-property-investment/"
+    },
+    {
+      "n": 35,
+      "slug": "corfu-property-investment",
+      "collection": "areas",
+      "working_title": "Corfu Property Investment & Golden Visa",
+      "primary_keyword": "corfu property investment",
+      "tier": 2,
+      "cluster": "E. Area expansion",
+      "search_intent": "commercial",
+      "rationale": "MIGRATION of guides/corfu-property-investment-golden-visa into areas/. 301 required.",
+      "internal_links_planned": [
+        "greece-golden-visa-property-tiers-2026"
+      ],
+      "url": "/areas/corfu-property-investment/"
+    },
+    {
+      "n": 36,
+      "slug": "porto-heli-property-investment",
+      "collection": "areas",
+      "working_title": "Porto Heli: The Argolid's Prime Coastal Market",
+      "primary_keyword": "porto heli property",
+      "tier": 3,
+      "cluster": "E. Area expansion",
+      "search_intent": "commercial",
+      "rationale": "Peloponnese luxury pocket; complements Costa Navarino and Nafplio.",
+      "internal_links_planned": [
+        "costa-navarino-property-investment",
+        "peloponnese-golden-visa-400000-property"
+      ],
+      "url": "/areas/porto-heli-property-investment/"
+    },
+    {
+      "n": 37,
+      "slug": "thessaloniki-center-property-investment",
+      "collection": "areas",
+      "working_title": "Thessaloniki Centre Property: Yields & Zones",
+      "primary_keyword": "thessaloniki property investment",
+      "tier": 3,
+      "cluster": "E. Area expansion",
+      "search_intent": "commercial",
+      "rationale": "Only guide-level Thessaloniki coverage exists; no area page.",
+      "internal_links_planned": [
+        "thessaloniki-golden-visa-800000-property"
+      ],
+      "url": "/areas/thessaloniki-center-property-investment/"
+    },
+    {
+      "n": 38,
+      "slug": "greece-vs-turkey-citizenship-property",
+      "collection": "compare",
+      "working_title": "Greece Golden Visa vs Turkish Citizenship",
+      "primary_keyword": "greece vs turkey citizenship investment",
+      "tier": 1,
+      "cluster": "F. Comparison",
+      "search_intent": "commercial-investigation",
+      "rationale": "Turkey is the main competing programme; only a Turkish-buyers guide exists.",
+      "internal_links_planned": [
+        "turkish-buyers-greece-property",
+        "greece-citizenship-after-golden-visa"
+      ],
+      "url": "/compare/greece-vs-turkey-citizenship-property/"
+    },
+    {
+      "n": 39,
+      "slug": "greece-golden-visa-vs-uae-golden-visa",
+      "collection": "compare",
+      "working_title": "Greece vs UAE Golden Visa for Property Buyers",
+      "primary_keyword": "greece vs uae golden visa",
+      "tier": 2,
+      "cluster": "F. Comparison",
+      "search_intent": "commercial-investigation",
+      "rationale": "Existing Dubai compare is property-residency; this is programme vs programme.",
+      "internal_links_planned": [
+        "golden-visa-greece-vs-dubai-property-residency",
+        "greece-golden-visa-uae-buyers"
+      ],
+      "url": "/compare/greece-golden-visa-vs-uae-golden-visa/"
+    },
+    {
+      "n": 40,
+      "slug": "greece-vs-montenegro-property-residency",
+      "collection": "compare",
+      "working_title": "Greece vs Montenegro Property Residency",
+      "primary_keyword": "greece vs montenegro property",
+      "tier": 3,
+      "cluster": "F. Comparison",
+      "search_intent": "commercial-investigation",
+      "rationale": "Completes the Balkan comparison set alongside Croatia.",
+      "internal_links_planned": [
+        "greece-vs-croatia-property-residency"
+      ],
+      "url": "/compare/greece-vs-montenegro-property-residency/"
+    },
+    {
+      "n": 41,
+      "slug": "athens-riviera-vs-crete-golden-visa",
+      "collection": "compare",
+      "working_title": "Athens Riviera vs Crete: €800K or €400K?",
+      "primary_keyword": "athens vs crete property investment",
+      "tier": 1,
+      "cluster": "F. Comparison",
+      "search_intent": "commercial",
+      "rationale": "The single most common real buyer decision. No page covers it head-on.",
+      "internal_links_planned": [
+        "crete-golden-visa-400000-property",
+        "athens-golden-visa-800000-areas"
+      ],
+      "url": "/compare/athens-riviera-vs-crete-golden-visa/"
+    },
+    {
+      "n": 42,
+      "slug": "greece-new-build-vs-renovation-project",
+      "collection": "compare",
+      "working_title": "New Build vs Renovation Project in Greece",
+      "primary_keyword": "new build vs renovation greece",
+      "tier": 2,
+      "cluster": "F. Comparison",
+      "search_intent": "commercial-investigation",
+      "rationale": "off-plan-vs-resale exists; renovation is the untouched third option.",
+      "internal_links_planned": [
+        "off-plan-vs-resale-greece",
+        "greece-renovation-cost-per-sqm-2026"
+      ],
+      "url": "/compare/greece-new-build-vs-renovation-project/"
+    },
+    {
+      "n": 43,
+      "slug": "golden-visa-property-vs-fund-route",
+      "collection": "compare",
+      "working_title": "Property vs Fund: Which Golden Visa Route Wins",
+      "primary_keyword": "greece golden visa property or fund",
+      "tier": 2,
+      "cluster": "F. Comparison",
+      "search_intent": "commercial",
+      "rationale": "Bottom-funnel decision page for cluster B.",
+      "internal_links_planned": [
+        "greece-golden-visa-350k-fund-route",
+        "greece-golden-visa-property-tiers-2026"
+      ],
+      "url": "/compare/golden-visa-property-vs-fund-route/"
+    },
+    {
+      "n": 44,
+      "slug": "greece-golden-visa-statistics-2026",
+      "collection": "guides",
+      "working_title": "Greece Golden Visa Statistics 2026: Full Data",
+      "primary_keyword": "greece golden visa statistics",
+      "tier": 1,
+      "cluster": "G. Data assets",
+      "search_intent": "informational",
+      "rationale": "Citation magnet. Extends the single existing news post into a maintained dataset.",
+      "internal_links_planned": [
+        "news/greece-golden-visa-approvals-2025",
+        "greece-golden-visa-property-tiers-2026"
+      ],
+      "url": "/guides/greece-golden-visa-statistics-2026/"
+    },
+    {
+      "n": 45,
+      "slug": "greece-property-price-index-by-region-2026",
+      "collection": "guides",
+      "working_title": "Greek Property Prices by Region: €/m² Index 2026",
+      "primary_keyword": "greece property price per square meter",
+      "tier": 1,
+      "cluster": "G. Data assets",
+      "search_intent": "informational",
+      "rationale": "Highest-volume head term in the vertical. Competitors own it with weak data.",
+      "internal_links_planned": [
+        "greece-property-market-forecast-2026-2027",
+        "best-regions-invest-greece-property-2026"
+      ],
+      "url": "/guides/greece-property-price-index-by-region-2026/"
+    },
+    {
+      "n": 46,
+      "slug": "greece-rental-yield-index-by-city-2026",
+      "collection": "guides",
+      "working_title": "Greek Rental Yield Index by City 2026",
+      "primary_keyword": "greece rental yield by city",
+      "tier": 2,
+      "cluster": "G. Data assets",
+      "search_intent": "informational",
+      "rationale": "Turns the yield cluster into a maintained dataset; feeds the calculator.",
+      "internal_links_planned": [
+        "greece-rental-yield-guide",
+        "highest-rental-yield-areas-greece"
+      ],
+      "url": "/guides/greece-rental-yield-index-by-city-2026/"
+    },
+    {
+      "n": 47,
+      "slug": "greece-golden-visa-rule-change-timeline",
+      "collection": "guides",
+      "working_title": "Every Greek Golden Visa Rule Change, 2013–2026",
+      "primary_keyword": "greece golden visa changes history",
+      "tier": 2,
+      "cluster": "G. Data assets",
+      "search_intent": "informational",
+      "rationale": "Authority asset; answers 'has the threshold changed' queries permanently.",
+      "internal_links_planned": [
+        "greece-golden-visa-circular-2026-explained",
+        "greece-golden-visa-property-tiers-2026"
+      ],
+      "url": "/guides/greece-golden-visa-rule-change-timeline/"
+    },
+    {
+      "n": 48,
+      "slug": "greece-international-schools-athens-guide",
+      "collection": "guides",
+      "working_title": "International Schools in Athens for Relocating Families",
+      "primary_keyword": "international schools athens",
+      "tier": 2,
+      "cluster": "H. Relocation",
+      "search_intent": "informational",
+      "rationale": "Family-buyer intent; drives 800K Athens tier enquiries.",
+      "internal_links_planned": [
+        "athens-suburbs-golden-visa-800000-guide",
+        "greece-golden-visa-family-members-rules"
+      ],
+      "url": "/guides/greece-international-schools-athens-guide/"
+    },
+    {
+      "n": 49,
+      "slug": "greece-healthcare-for-residence-permit-holders",
+      "collection": "guides",
+      "working_title": "Healthcare in Greece on a Residence Permit",
+      "primary_keyword": "greece healthcare golden visa",
+      "tier": 3,
+      "cluster": "H. Relocation",
+      "search_intent": "informational",
+      "rationale": "Mandatory insurance is a GV requirement; no page explains the system.",
+      "internal_links_planned": [
+        "greece-golden-visa-renewal-requirements",
+        "greece-property-insurance-foreign-buyers"
+      ],
+      "url": "/guides/greece-healthcare-for-residence-permit-holders/"
+    },
+    {
+      "n": 50,
+      "slug": "greece-cost-of-living-investor-relocation-2026",
+      "collection": "guides",
+      "working_title": "Cost of Living in Greece for Relocating Investors",
+      "primary_keyword": "cost of living greece 2026",
+      "tier": 3,
+      "cluster": "H. Relocation",
+      "search_intent": "informational",
+      "rationale": "Top-funnel volume; bridges to the non-dom cluster.",
+      "internal_links_planned": [
+        "greece-7-percent-pension-tax-retirees",
+        "greece-non-dom-tax-regime-5a-guide"
+      ],
+      "url": "/guides/greece-cost-of-living-investor-relocation-2026/"
+    }
+  ]
+}

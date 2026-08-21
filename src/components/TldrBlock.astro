@@ -1,13 +1,30 @@
 ---
 interface Props {
-  text: string;
+  text?: string;
 }
 
-const { text } = Astro.props;
+// One page passes the TLDR as children rather than via text; the slot below
+// carries that case, and text may therefore be absent.
+const { text = '' } = Astro.props;
+
+// TLDR texts are authored as plain string props, so an inline markdown link
+// ([label](/path/)) would otherwise reach the page as literal brackets.
+// Only site-internal links are converted; anything else stays literal text.
+type Part = { text: string } | { label: string; href: string };
+const parts: Part[] = [];
+const linkRe = /\[([^\]]+)\]\((\/[^)\s]+)\)/g;
+let last = 0;
+let m: RegExpExecArray | null;
+while ((m = linkRe.exec(text)) !== null) {
+  if (m.index > last) parts.push({ text: text.slice(last, m.index) });
+  parts.push({ label: m[1], href: m[2] });
+  last = m.index + m[0].length;
+}
+if (last < text.length) parts.push({ text: text.slice(last) });
 ---
 <aside class="tldr-block" itemprop="abstract">
   <div class="tldr-label">Key Takeaway</div>
-  <p>{text}</p>
+  {text ? <p>{parts.map((p) => ('href' in p ? <a href={p.href}>{p.label}</a> : p.text))}</p> : <slot />}
 </aside>
 
 <style>

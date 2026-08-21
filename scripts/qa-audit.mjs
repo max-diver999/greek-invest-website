@@ -1,4 +1,4 @@
-// QA audit for mexico-invest content — hard gate before publish
+// QA audit for greek-invest content — hard gate before publish
 // Usage:
 //   node scripts/qa-audit.mjs
 //   node scripts/qa-audit.mjs --changed
@@ -7,7 +7,10 @@
 import { execSync } from 'node:child_process';
 import { readdirSync, readFileSync, existsSync } from 'node:fs';
 import { join, relative } from 'node:path';
-import { runExtendedChecks } from './lib/more-content-gate.mjs';
+import { runExtendedChecks, runStructuralChecks } from './lib/more-content-gate.mjs';
+
+/** runExtendedChecks and runStructuralChecks overlap on a few rules; report each once. */
+const dedupe = (arr) => [...new Set(arr)];
 
 const ROOT = decodeURIComponent(new URL('../src/content/', import.meta.url).pathname);
 const COLLECTIONS = ['guides', 'compare', 'areas', 'projects', 'developers', 'news'];
@@ -136,7 +139,7 @@ function auditFile(c, slug) {
   if (desc && desc.length < 120) prob.push(`descLen:${desc.length}<120`);
 
   const title = (fm.title || '').replace(/^["']|["']$/g, '');
-  if (title && (title.length < 45 || title.length > 65)) prob.push(`titleLen:${title.length}`);
+  if (title && (title.length < 40 || title.length > 60)) prob.push(`titleLen:${title.length}`);
 
   const minFaq = c === 'news' ? 3 : 5;
   if (!fm.__hasFaq) prob.push('no-faq-block');
@@ -185,7 +188,20 @@ function auditFile(c, slug) {
     legacyExempt: c === 'news',
     errors: extErr,
   });
-  for (const e of extErr) prob.push(e.replace(`[${c}/${slug}]: `, '').replace(`[${c}/${slug}] `, ''));
+  // runStructuralChecks was exported but never called by any script, so its
+  // Cloudinary, FaqBlock, draft-marker and internal-syntax checks never ran.
+  runStructuralChecks({
+    prefix: `[${c}/${slug}]`,
+    data: fm,
+    body,
+    raw: fmRaw,
+    text: raw,
+    collection: c,
+    cfg: { minWords: minW, label: c },
+    legacyExempt: c === 'news',
+    errors: extErr,
+  });
+  for (const e of dedupe(extErr)) prob.push(e.replace(`[${c}/${slug}]: `, '').replace(`[${c}/${slug}] `, ''));
 
   const isRegulatory = /visa|golden visa|investor visa|dld|residency/i.test(
     `${fm.title} ${(fm.tags || '').toString()} ${slug}`,
@@ -245,7 +261,63 @@ for (const { coll, slug } of filesToAudit) {
   auditFile(coll, slug);
 }
 
-console.log('=== MEXICO-INVEST QA AUDIT ===');
+/**
+ * Corpus-wide duplicate-block detection.
+ *
+ * Nothing in the harness looked across files, so a single 4-bullet block could
+ * repeat 1,219 times across 114 files, and an identical table 639 times, while
+ * every per-file check passed and geo:audit reported grade A. Blocks of 25+
+ * words are now counted corpus-wide; repeating one more than three times, or
+ * more than once inside a single page, is an error.
+ */
+function auditCorpusDuplication() {
+  const counts = new Map();   // block -> total occurrences
+  const inFiles = new Map();  // block -> Set of files
+  const intraPage = [];       // [file, block, n] where a block repeats within one page
+
+  for (const c of COLLECTIONS) {
+    for (const slug of slugsByCollection[c] || []) {
+      const raw = readFileSync(join(ROOT, c, slug + '.mdx'), 'utf8');
+      const { body } = parseFrontmatter(raw);
+      if (!body) continue;
+      const seen = new Map();
+      for (const block of body.split(/\n{2,}/)) {
+        const t = block.trim().replace(/\s+/g, ' ');
+        if (t.split(' ').length < 25) continue;
+        if (t.startsWith('import ') || t.startsWith('<')) continue;
+        counts.set(t, (counts.get(t) || 0) + 1);
+        if (!inFiles.has(t)) inFiles.set(t, new Set());
+        inFiles.get(t).add(`${c}/${slug}`);
+        seen.set(t, (seen.get(t) || 0) + 1);
+      }
+      for (const [t, n] of seen) if (n > 1) intraPage.push([`${c}/${slug}`, t, n]);
+    }
+  }
+
+  // A factual cross-reference shared by a handful of sibling pages is normal
+  // editorial practice; the failure mode this catches is systematic templating.
+  // The blocks that broke this corpus ran to 1,219 occurrences across 114 files,
+  // so a 6-file ceiling still leaves an enormous margin.
+  const MAX_FILES = 6;
+  const problems = [];
+  const advisories = [];
+  for (const [t, n] of counts) {
+    const f = inFiles.get(t).size;
+    const line = `repeated ${n}x across ${f} file(s): "${t.slice(0, 70)}…"`;
+    if (f > MAX_FILES || n > MAX_FILES * 2) problems.push(line);
+    else if (n > 3) advisories.push(line);
+  }
+  // A substantial block repeating inside a single page is always an artifact.
+  for (const [file, t, n] of intraPage) {
+    problems.push(`${file}: block repeats ${n}x within the same page: "${t.slice(0, 60)}…"`);
+  }
+  return { problems, advisories };
+}
+
+const { problems: duplicationProblems, advisories: duplicationAdvisories } =
+  !changedOnly && !singleFile ? auditCorpusDuplication() : { problems: [], advisories: [] };
+
+console.log('=== GREEK INVEST QA AUDIT ===');
 console.log(`Scope: ${changedOnly ? 'changed only' : singleFile ? singleFile : 'full corpus'}`);
 console.log(`Files audited: ${stats.total}`);
 if (stats.total) console.log(`Avg words: ${Math.round(stats.wordSum / stats.total)}`);
@@ -267,10 +339,22 @@ if (Object.keys(counts).length) {
   for (const i of issues) console.log(i);
 }
 
+if (duplicationProblems.length) {
+  console.log('');
+  console.log(`=== CORPUS DUPLICATION — ERRORS (${duplicationProblems.length}) ===`);
+  for (const d of duplicationProblems.slice(0, 40)) console.log(`  ${d}`);
+  if (duplicationProblems.length > 40) console.log(`  … +${duplicationProblems.length - 40} more`);
+}
+if (duplicationAdvisories.length) {
+  console.log('');
+  console.log(`=== CORPUS DUPLICATION — advisory, 4 to 6 files (${duplicationAdvisories.length}) ===`);
+  for (const d of duplicationAdvisories) console.log(`  ${d}`);
+}
+
 const failCount = reportRows.filter((r) => r.prob.length).length;
 console.log(`\nArticles with issues: ${failCount}/${stats.total}`);
 
-if (failCount > 0) {
+if (failCount > 0 || duplicationProblems.length > 0) {
   console.error('\n❌ validate:content FAILED');
   process.exit(1);
 }

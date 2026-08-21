@@ -2,17 +2,51 @@
 export const prerender = true;
 import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import { SITE } from '../../data/site';
 import ContentCard from '../../components/ContentCard.astro';
 
 const comparisons = (await getCollection('compare'))
   .filter((c) => !c.data.noindex)
   .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+const hubUrl = `${SITE.url}/compare/`;
+const schemas = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    name: 'Market comparisons',
+    url: hubUrl,
+    isPartOf: { '@type': 'WebSite', name: SITE.name, url: SITE.url },
+    mainEntity: {
+      '@type': 'ItemList',
+      numberOfItems: comparisons.length,
+      itemListElement: comparisons.map((e, i) => ({
+        '@type': 'ListItem',
+        position: i + 1,
+        url: `${SITE.url}/compare/${e.id}/`,
+        name: e.data.title,
+      })),
+    },
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: SITE.url },
+      { '@type': 'ListItem', position: 2, name: 'Compare', item: hubUrl },
+    ],
+  },
+];
 ---
 <BaseLayout
+  canonical={hubUrl}
+  {schemas}
   title="Greece Property Market Comparisons"
   description="Side-by-side comparisons of Greece vs Portugal, Spain, Italy, and other markets for property and Golden Visa investors."
 >
   <section class="site-container py-14 md:py-20">
+    <nav class="text-sm text-[var(--color-muted)] mb-6" aria-label="Breadcrumb">
+      <a href="/" class="no-underline hover:underline">Home</a> <span aria-hidden="true">›</span> <span>Compare</span>
+    </nav>
     <header class="max-w-2xl mb-12">
       <h1 class="text-3xl">Market comparisons</h1>
       <p class="text-lg text-[var(--color-muted)] mt-3">

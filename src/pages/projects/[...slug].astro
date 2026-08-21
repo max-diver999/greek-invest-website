@@ -15,6 +15,7 @@ export async function getStaticPaths() {
 
 const { entry } = Astro.props;
 const { Content } = await render(entry);
+const hasInlineFaqBlock = entry.body?.includes('<FaqBlock') ?? false;
 
 const {
   title,
@@ -24,6 +25,7 @@ const {
   author,
   readingTime,
   heroImage,
+  heroAlt,
   faq,
   noindex,
 } = entry.data;
@@ -36,9 +38,10 @@ const {
   {author}
   readingTime={readingTime ?? 8}
   {heroImage}
+  {heroAlt}
   {faq}
   {noindex}
-  hasInlineFaqBlock={false}
+  {hasInlineFaqBlock}
   contextLabel={title}
   canonical={`${SITE.url}/projects/${entry.id}/`}
 >

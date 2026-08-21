@@ -1,25 +1,92 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import LeadForm from '../../components/LeadForm.astro';
+import { SITE } from '../../data/site';
 
+/**
+ * This page had zero inbound links from the corpus while the Golden Visa
+ * consultation page had 113, so the two were not competing — this one simply
+ * had no path in. It now owns the non-Golden-Visa intent: yield, buy-to-let,
+ * lifestyle and relocation buyers.
+ */
 const title = 'Greece Property Investment Consultation, Free Shortlist';
 const description = 'Book a Greece property consultation: Golden Visa tiers, region fit, and vetted off-plan or resale options. Independent research, no developer pressure.';
+const url = `${SITE.url}/greece-property-consultation/`;
+
+const faq = [
+  {
+    question: 'Do I need a Golden Visa to buy property in Greece?',
+    answer:
+      'No. Foreign buyers can purchase Greek property at any price without applying for a residence permit. The Golden Visa is an optional benefit that attaches above €250,000, €400,000 or €800,000 depending on the route and location. Plenty of our enquiries are pure yield or lifestyle purchases well below any tier.',
+  },
+  {
+    question: 'What is a realistic net rental yield in Greece?',
+    answer:
+      'Gross yields run roughly 4.4% to 5.4% nationally, with Athens apartments at the higher end. Net lands 1.5 to 2.5 points lower once you model ENFIA, the 15% starting rental income tax band, 20% to 25% management and 4 to 6 weeks of vacancy. Our rental yield calculator runs the same arithmetic.',
+  },
+  {
+    question: 'Should I buy resale or off-plan in Greece?',
+    answer:
+      'Resale accounts for the large majority of foreign purchases and carries less delivery risk, but more legalisation and condition risk. Off-plan offers new-build quality and VAT-suspension treatment, at the cost of developer and completion risk that a bank guarantee only partly covers. The right answer depends on your timeline, not on a general rule.',
+  },
+  {
+    question: 'What does the consultation actually give me?',
+    answer:
+      'A call to align budget, region and goal, then three to five properties screened against your criteria, with the cost stack modelled and the legal sequence set out. If nothing on the market fits your criteria, we say so rather than sending a shortlist anyway.',
+  },
+];
+
+const schemas = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: 'Greece property investment consultation',
+    serviceType: 'Property investment research and shortlisting',
+    description,
+    url,
+    provider: { '@type': 'Organization', name: SITE.name, url: SITE.url, email: SITE.email },
+    areaServed: { '@type': 'Country', name: 'Greece' },
+    offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR', description: 'Consultation and shortlist, no obligation' },
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: SITE.url },
+      { '@type': 'ListItem', position: 2, name: 'Property consultation', item: url },
+    ],
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faq.map((f) => ({
+      '@type': 'Question',
+      name: f.question,
+      acceptedAnswer: { '@type': 'Answer', text: f.answer },
+    })),
+  },
+];
 ---
 
 <BaseLayout
   {title}
   {description}
-  canonical="https://greek-invest.com/greece-property-consultation/"
+  canonical={url}
+  {schemas}
 >
-  <section class="bg-[#0f2744] text-white">
+  <section class="bg-[var(--color-ink)] text-white">
     <div class="site-container py-14 md:py-20 max-w-3xl">
-      <p class="text-sm font-semibold uppercase tracking-wider text-[#93c5fd] mb-3">Consultation</p>
+      <nav class="text-sm text-white/60 mb-5" aria-label="Breadcrumb">
+        <a href="/" class="text-white/70 no-underline hover:underline">Home</a>
+        <span aria-hidden="true">›</span> <span>Property consultation</span>
+      </nav>
+      <p class="text-sm font-semibold uppercase tracking-wider text-[var(--color-teal-light)] mb-3">Consultation</p>
       <h1 class="text-3xl md:text-4xl font-bold leading-tight mb-4 text-white">Greece property investment consultation</h1>
-      <p class="text-lg text-[#cbd5e1] leading-relaxed mb-8">
+      <p class="text-lg text-white/80 leading-relaxed mb-8">
         One conversation to align budget, Golden Visa tier, and target region, then a curated shortlist screened for
         120 m², zone classification, and file-ready due diligence. Independent research, not a developer sales desk.
       </p>
-      <ul class="space-y-2 text-[#e2e8f0] mb-0 list-disc pl-5">
+      <ul class="space-y-2 text-white/80 mb-0 list-disc pl-5">
         <li>€400K regional vs €800K Attica routing</li>
         <li>Resale (78% of foreign buyers) vs off-plan trade-offs</li>
         <li>Lawyer, engineer, and AFM sequence before you deposit</li>
@@ -62,6 +129,25 @@ const description = 'Book a Greece property consultation: Golden Visa tiers, reg
       <a href="/tools/greece-golden-visa-zone-lookup/">Zone checker</a> ·
       <a href="/guides/golden-visa-eligible-projects-directory/">Eligible property framework</a> ·
       <a href="/guides/cost-of-buying-property-greece/">Buying costs</a>
+    </p>
+
+    <h2 class="text-xl font-bold mb-6 text-[var(--color-ink)]">Questions before you book</h2>
+    <div class="grid gap-5 mb-10">
+      {faq.map((f) => (
+        <div class="surface-card p-5">
+          <h3 class="text-[var(--color-ink)] text-base mb-2">{f.question}</h3>
+          <p class="text-sm text-[var(--color-muted)] m-0">{f.answer}</p>
+        </div>
+      ))}
+    </div>
+
+    <p class="text-sm text-[var(--color-muted)] mb-8">
+      Buying for yield rather than residency? Start with the
+      <a href="/guides/greece-rental-yield-guide/">rental yield guide</a>,
+      the <a href="/tools/greece-rental-yield-calculator/">yield calculator</a>, and
+      <a href="/guides/highest-rental-yield-areas-greece/">highest-yield areas</a>.
+      Chasing a residence permit instead? The
+      <a href="/greece-golden-visa-consultation/">Golden Visa consultation</a> is the right desk.
     </p>
 
     <LeadForm

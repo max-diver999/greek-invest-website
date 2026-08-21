@@ -14,6 +14,8 @@ import { execSync } from 'node:child_process';
 import {
   parseMdxBody,
   scorePage,
+  setCorpusShingleIndex,
+  shinglesOf,
   scoreToGrade,
   RUBRIC_WEIGHTS,
 } from './lib/geo-citability-scorer.mjs';
@@ -94,6 +96,18 @@ function auditSiteLevel() {
     }
   }
   return siteGaps;
+}
+
+// Build the corpus-wide 5-gram index first so uniqueness can be measured
+// against the rest of the corpus rather than guessed from brand keywords.
+{
+  const index = new Map();
+  const paths = listMdx();
+  for (const path of paths) {
+    const body = parseMdxBody(readFileSync(path, 'utf8'));
+    for (const g of shinglesOf(body)) index.set(g, (index.get(g) || 0) + 1);
+  }
+  setCorpusShingleIndex(index, paths.length);
 }
 
 const results = [];

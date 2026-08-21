@@ -33,6 +33,7 @@ const MIN_WORDS = JSON.parse(readFileSync(join(ROOT, 'site.config.json'), 'utf8'
 /** Whole paragraphs removed when they match exactly (after whitespace collapse). */
 const EXACT_PARAGRAPHS = [
   'Greek Invest verification snapshot:',
+  '**Greek Invest verification snapshot:**',
   '- €800,000 prime vs €400,000 regional tiers under Law 5100/2024\n- 120m² certified usable area on engineer certificate\n- 3.09% transfer tax plus 8% to 12% Attica closing stack\n- Golden Visa assets: twelve-month leases only; no Airbnb for permit life',
   'Insider tip: MORE Group sequences engineer, cadastre, and bank files before reservation deposits on 2026 Golden Visa purchases.',
   'Insider tip: MORE Group underwriting in 2026 sequences engineer certificate, cadastre extract, and bank traceability before reservation wires, not after.',
@@ -60,6 +61,9 @@ const CONTAINS_TAILS = [
   '**Cash lifestyle buyer:** Accept lower nominal yield for walkability, schools, and flight access.',
   '**Yield-focused investor:** Model net yield after ENFIA, flat 15% rental tax (or progressive scale if elected)',
   '- Red flag: seller refuses engineer certificate, cadastre extract, or ENFIA clearance before reservation.',
+  // Trailing filler that just names the slug: "Apply this decision framework to
+  // enfia property tax greece before you sign a preliminary agreement."
+  'Apply this decision framework to',
 ];
 
 /** Headings removed together with the templated section they introduce. */

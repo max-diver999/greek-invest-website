@@ -1,4 +1,4 @@
-// QA audit for mexico-invest content — hard gate before publish
+// QA audit for greek-invest content — hard gate before publish
 // Usage:
 //   node scripts/qa-audit.mjs
 //   node scripts/qa-audit.mjs --changed
@@ -7,7 +7,10 @@
 import { execSync } from 'node:child_process';
 import { readdirSync, readFileSync, existsSync } from 'node:fs';
 import { join, relative } from 'node:path';
-import { runExtendedChecks } from './lib/more-content-gate.mjs';
+import { runExtendedChecks, runStructuralChecks } from './lib/more-content-gate.mjs';
+
+/** runExtendedChecks and runStructuralChecks overlap on a few rules; report each once. */
+const dedupe = (arr) => [...new Set(arr)];
 
 const ROOT = decodeURIComponent(new URL('../src/content/', import.meta.url).pathname);
 const COLLECTIONS = ['guides', 'compare', 'areas', 'projects', 'developers', 'news'];
@@ -185,7 +188,20 @@ function auditFile(c, slug) {
     legacyExempt: c === 'news',
     errors: extErr,
   });
-  for (const e of extErr) prob.push(e.replace(`[${c}/${slug}]: `, '').replace(`[${c}/${slug}] `, ''));
+  // runStructuralChecks was exported but never called by any script, so its
+  // Cloudinary, FaqBlock, draft-marker and internal-syntax checks never ran.
+  runStructuralChecks({
+    prefix: `[${c}/${slug}]`,
+    data: fm,
+    body,
+    raw: fmRaw,
+    text: raw,
+    collection: c,
+    cfg: { minWords: minW, label: c },
+    legacyExempt: c === 'news',
+    errors: extErr,
+  });
+  for (const e of dedupe(extErr)) prob.push(e.replace(`[${c}/${slug}]: `, '').replace(`[${c}/${slug}] `, ''));
 
   const isRegulatory = /visa|golden visa|investor visa|dld|residency/i.test(
     `${fm.title} ${(fm.tags || '').toString()} ${slug}`,
@@ -245,7 +261,7 @@ for (const { coll, slug } of filesToAudit) {
   auditFile(coll, slug);
 }
 
-console.log('=== MEXICO-INVEST QA AUDIT ===');
+console.log('=== GREEK INVEST QA AUDIT ===');
 console.log(`Scope: ${changedOnly ? 'changed only' : singleFile ? singleFile : 'full corpus'}`);
 console.log(`Files audited: ${stats.total}`);
 if (stats.total) console.log(`Avg words: ${Math.round(stats.wordSum / stats.total)}`);

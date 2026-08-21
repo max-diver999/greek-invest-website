@@ -1,0 +1,138 @@
+---
+export const prerender = true;
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { SITE } from '../../data/site';
+
+const tools = [
+  {
+    href: '/tools/greece-rental-yield-calculator/',
+    name: 'Greece rental yield calculator',
+    blurb:
+      'Model gross and net yield on a Greek property after ENFIA, the 15% rental income tax band, management and vacancy. Answers the question a gross-yield brochure never does.',
+    inputs: 'Purchase price · monthly rent · ENFIA · management · vacancy',
+  },
+  {
+    href: '/tools/greece-property-cost-calculator/',
+    name: 'Greece purchase cost calculator',
+    blurb:
+      'Total acquisition cost on top of the price: 3.09% FMA transfer tax, notary, lawyer, land registry, agent commission and engineer survey.',
+    inputs: 'Purchase price · objective value · new build or resale',
+  },
+  {
+    href: '/tools/greece-golden-visa-zone-lookup/',
+    name: 'Golden Visa zone lookup',
+    blurb:
+      'Check whether a location sits in the €800,000 prime tier or the €400,000 regional tier under Law 5100/2024, before you shortlist a property.',
+    inputs: 'Region or municipality',
+  },
+];
+
+const faq = [
+  {
+    question: 'Are these Greece property calculators free?',
+    answer:
+      'Yes. All three run in your browser, need no sign-up, and send nothing to our servers. They exist so you can sanity-check a broker’s numbers before you talk to anyone.',
+  },
+  {
+    question: 'What rental yield is realistic in Greece in 2026?',
+    answer:
+      'Gross yields typically run 4.4% to 5.4% nationally, with Athens apartments at the higher end and prime Riviera stock lower. Net yield after ENFIA, the 15% starting rental tax band, 20% to 25% management and 4 to 6 weeks vacancy usually lands 1.5 to 2.5 points below gross.',
+  },
+  {
+    question: 'How much are total purchase costs on a Greek property?',
+    answer:
+      'Budget 7% to 10% on top of the agreed price: 3.09% FMA transfer tax on the higher of price or objective value, notary 0.8% to 1.2%, lawyer 1% to 1.5%, land registry 0.475% to 0.65%, agent 2% to 2.5%, and an engineer survey of €300 to €800.',
+  },
+  {
+    question: 'Does the zone lookup decide my Golden Visa tier?',
+    answer:
+      'It gives the tier that applies to a location under Law 5100/2024, but the binding test is the cadastral parcel, not the postal address. Confirm with your lawyer and the engineer certificate before you wire a reservation.',
+  },
+];
+
+const schemas = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    name: 'Greece property investment calculators',
+    description: 'Free calculators for Greek property: rental yield, total purchase cost, and Golden Visa tier by zone.',
+    url: `${SITE.url}/tools/`,
+    hasPart: tools.map((t) => ({
+      '@type': 'WebApplication',
+      name: t.name,
+      url: `${SITE.url}${t.href}`,
+      applicationCategory: 'FinanceApplication',
+      operatingSystem: 'Any',
+      offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
+    })),
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: SITE.url },
+      { '@type': 'ListItem', position: 2, name: 'Tools', item: `${SITE.url}/tools/` },
+    ],
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faq.map((f) => ({
+      '@type': 'Question',
+      name: f.question,
+      acceptedAnswer: { '@type': 'Answer', text: f.answer },
+    })),
+  },
+];
+---
+<BaseLayout
+  title="Greece Property Calculators: Yield, Costs, GV Zone"
+  description="Three free tools for Greek property buyers: net rental yield after tax and costs, total purchase cost including 3.09% FMA, and Golden Visa tier by zone."
+  canonical={`${SITE.url}/tools/`}
+  {schemas}
+>
+  <section class="site-container py-14 md:py-20">
+    <nav class="text-sm text-[var(--color-muted)] mb-6" aria-label="Breadcrumb">
+      <a href="/" class="no-underline hover:underline">Home</a> <span aria-hidden="true">›</span> <span>Tools</span>
+    </nav>
+
+    <header class="max-w-2xl mb-10">
+      <span class="badge-pill mb-4">Free · No sign-up</span>
+      <h1 class="text-3xl">Greece property calculators</h1>
+      <p class="text-lg text-[var(--color-muted)] mt-3">
+        Run the numbers before the call. Each tool uses the same 2026 figures as our guides:
+        3.09% transfer tax, ENFIA bands of €2 to €16.20/m², and the €400,000 / €800,000 Golden Visa tiers
+        under Law 5100/2024.
+      </p>
+    </header>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-16">
+      {tools.map((t) => (
+        <a href={t.href} class="surface-card p-6 no-underline block hover:shadow-lg transition-shadow">
+          <h2 class="text-lg text-[var(--color-ink)] mb-2">{t.name}</h2>
+          <p class="text-sm text-[var(--color-muted)] mb-4">{t.blurb}</p>
+          <p class="text-xs text-[var(--color-muted)] mb-4"><strong>Inputs:</strong> {t.inputs}</p>
+          <span class="link-arrow text-sm">Open calculator →</span>
+        </a>
+      ))}
+    </div>
+
+    <section class="max-w-3xl">
+      <h2 class="text-2xl mb-6">Questions about these tools</h2>
+      <div class="grid gap-5">
+        {faq.map((f) => (
+          <div class="surface-card p-5">
+            <h3 class="text-base text-[var(--color-ink)] mb-2">{f.question}</h3>
+            <p class="text-sm text-[var(--color-muted)]">{f.answer}</p>
+          </div>
+        ))}
+      </div>
+
+      <p class="mt-10 text-sm text-[var(--color-muted)]">
+        Want the numbers checked against a real shortlist?
+        <a href="/greece-property-consultation/">Book a property consultation</a> or
+        <a href="/get-shortlist/">request a free shortlist</a>.
+      </p>
+    </section>
+  </section>
+</BaseLayout>

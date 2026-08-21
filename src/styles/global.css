@@ -328,7 +328,7 @@ main {
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--color-brand);
+  color: var(--color-teal);
 }
 
 .hero-project-card__title {
@@ -349,7 +349,7 @@ main {
 
 .hero-project-card__cta {
   flex-shrink: 0;
-  background: var(--color-brand);
+  background: var(--color-teal);
   color: #fff !important;
   font-size: 0.75rem;
   font-weight: 700;

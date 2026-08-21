@@ -1,26 +1,176 @@
 ---
 import { SITE } from '../data/site';
 
+/**
+ * Navigation leads with Golden Visa: it is the site's commercial core and
+ * previously had no nav entry at all. Tools were unreachable too — no page
+ * linked the rental-yield calculator.
+ */
 const nav = [
+  { label: 'Golden Visa', href: '/golden-visa/' },
   { label: 'Guides', href: '/guides/' },
-  { label: 'Projects', href: '/projects/' },
   { label: 'Areas', href: '/areas/' },
+  { label: 'Projects', href: '/projects/' },
   { label: 'Compare', href: '/compare/' },
+  { label: 'Tools', href: '/tools/' },
   { label: 'About', href: '/about/' },
-  { label: 'Contact', href: '/contact/' },
 ];
+
+const path = Astro.url.pathname;
+const isActive = (href: string) => (href === '/' ? path === '/' : path.startsWith(href));
 ---
-<header class="sticky top-0 z-50 border-b border-[var(--color-border)] bg-[rgba(255,255,255,0.9)] backdrop-blur-md">
-  <div class="site-container flex items-center justify-between gap-4 py-4">
-    <a href="/" class="flex items-center gap-2 no-underline">
-      <img src="/favicon.svg?v=3" alt="Greek Invest" width="32" height="32" class="rounded-lg" />
-      <span class="text-lg font-semibold text-[var(--color-ink)]">{SITE.name}</span>
+<header class="site-header">
+  <div class="site-container site-header__bar">
+    <a href="/" class="site-header__brand" aria-label={`${SITE.name} home`}>
+      <img src="/favicon.svg?v=3" alt="" width="32" height="32" class="rounded-lg" />
+      <span>{SITE.name}</span>
     </a>
-    <nav class="hidden md:flex items-center gap-6 text-sm font-medium">
+
+    <nav class="site-header__nav" aria-label="Primary">
       {nav.map((item) => (
-        <a href={item.href} class="text-[var(--color-muted)] hover:text-[var(--color-ink)] no-underline">{item.label}</a>
+        <a href={item.href} aria-current={isActive(item.href) ? 'page' : undefined}>{item.label}</a>
       ))}
     </nav>
-    <a href="/get-shortlist/" class="btn-primary text-sm px-4 py-2 shrink-0">Free shortlist</a>
+
+    <a href="/get-shortlist/" class="btn-primary site-header__cta">Free shortlist</a>
+
+    <!--
+      Mobile navigation. Previously the nav was `hidden md:flex` with no
+      alternative, so below the md breakpoint the entire site was unreachable
+      except the logo and the CTA. <details> keeps this working without JS.
+    -->
+    <details class="site-header__menu">
+      <summary aria-label="Open navigation">
+        <span class="site-header__burger" aria-hidden="true"><i></i><i></i><i></i></span>
+      </summary>
+      <nav class="site-header__drawer" aria-label="Mobile">
+        {nav.map((item) => (
+          <a href={item.href} aria-current={isActive(item.href) ? 'page' : undefined}>{item.label}</a>
+        ))}
+        <a href="/developers/">Developers</a>
+        <a href="/news/">News</a>
+        <a href="/contact/">Contact</a>
+        <a href="/get-shortlist/" class="site-header__drawer-cta">Free shortlist →</a>
+      </nav>
+    </details>
   </div>
 </header>
+
+<style>
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    border-bottom: 1px solid var(--color-border);
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(12px);
+  }
+  .site-header__bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding-block: 1rem;
+  }
+  .site-header__brand {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--color-ink);
+    flex-shrink: 0;
+  }
+  .site-header__nav {
+    display: none;
+    align-items: center;
+    gap: 1.25rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+  }
+  .site-header__nav a {
+    color: var(--color-muted);
+    text-decoration: none;
+    white-space: nowrap;
+  }
+  .site-header__nav a:hover,
+  .site-header__drawer a:hover { color: var(--color-ink); }
+  .site-header__nav a[aria-current='page'] {
+    color: var(--color-ink);
+    font-weight: 600;
+  }
+  .site-header__cta { display: none; font-size: 0.875rem; padding: 0.5rem 1rem; flex-shrink: 0; }
+
+  /* --- mobile disclosure --- */
+  .site-header__menu { position: relative; }
+  .site-header__menu > summary {
+    list-style: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    margin: -0.5rem;
+    border-radius: 0.5rem;
+    /* 44px tap target */
+    min-width: 44px;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .site-header__menu > summary::-webkit-details-marker { display: none; }
+  .site-header__menu > summary:focus-visible { outline: 2px solid var(--color-teal); outline-offset: 2px; }
+  .site-header__burger { display: grid; gap: 5px; width: 22px; }
+  .site-header__burger i { display: block; height: 2px; background: var(--color-ink); border-radius: 2px; }
+  .site-header__menu[open] > summary .site-header__burger i:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .site-header__menu[open] > summary .site-header__burger i:nth-child(2) { opacity: 0; }
+  .site-header__menu[open] > summary .site-header__burger i:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+  .site-header__burger i { transition: transform 0.18s ease, opacity 0.18s ease; }
+
+  .site-header__drawer {
+    position: absolute;
+    right: 0;
+    top: calc(100% + 0.75rem);
+    min-width: 15rem;
+    display: grid;
+    gap: 0.25rem;
+    padding: 0.75rem;
+    background: #fff;
+    border: 1px solid var(--color-border);
+    border-radius: 0.85rem;
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.12);
+  }
+  .site-header__drawer a {
+    padding: 0.6rem 0.7rem;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    color: var(--color-muted);
+    font-size: 0.95rem;
+  }
+  .site-header__drawer a[aria-current='page'] { color: var(--color-ink); font-weight: 600; }
+  .site-header__drawer-cta {
+    margin-top: 0.35rem;
+    background: var(--color-teal);
+    color: #fff !important;
+    font-weight: 600;
+    text-align: center;
+  }
+
+  @media (min-width: 900px) {
+    .site-header__nav { display: flex; }
+    .site-header__cta { display: inline-flex; }
+    .site-header__menu { display: none; }
+  }
+</style>
+
+<script>
+  // Close the drawer on outside click and on Escape.
+  const menu = document.querySelector('.site-header__menu');
+  if (menu instanceof HTMLDetailsElement) {
+    document.addEventListener('click', (e) => {
+      if (menu.open && !menu.contains(e.target as Node)) menu.open = false;
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && menu.open) menu.open = false;
+    });
+  }
+</script>

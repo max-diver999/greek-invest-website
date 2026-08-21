@@ -1,12 +1,71 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import LeadForm from '../../components/LeadForm.astro';
+import { SITE } from '../../data/site';
+
+const url = `${SITE.url}/get-shortlist/`;
+const description =
+  'Share your budget and target region: Crete, Athens Riviera, Peloponnese or the Cyclades. A free independent shortlist screened for the 120 m² and tier rules, within one business day.';
+
+const faq = [
+  {
+    question: 'What do I get, and how fast?',
+    answer:
+      'Three to five properties matched to your budget, region and goal, each screened against the 120 m² main usable area test and the correct Golden Visa tier for its cadastral zone. Normally within one business day.',
+  },
+  {
+    question: 'Is the shortlist really free?',
+    answer:
+      'Yes, and there is no obligation. We are not paid by developers for placement. If nothing on the market genuinely fits your criteria, we say so instead of padding a list.',
+  },
+  {
+    question: 'What happens to my details?',
+    answer:
+      'They are used to prepare your shortlist and to contact you about it. Enquiries may be referred to licensed Greek lawyers and partner agents where you ask us to. We do not sell contact data. See the Privacy Policy for the full detail.',
+  },
+];
+
+const schemas = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: 'Greece property shortlist',
+    serviceType: 'Property shortlisting for foreign buyers',
+    description,
+    url,
+    provider: { '@type': 'Organization', name: SITE.name, url: SITE.url, email: SITE.email },
+    areaServed: { '@type': 'Country', name: 'Greece' },
+    offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: SITE.url },
+      { '@type': 'ListItem', position: 2, name: 'Free shortlist', item: url },
+    ],
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faq.map((f) => ({
+      '@type': 'Question',
+      name: f.question,
+      acceptedAnswer: { '@type': 'Answer', text: f.answer },
+    })),
+  },
+];
 ---
 <BaseLayout
-  title="Get Your Greece Property Shortlist | Greek Invest"
-  description="Share your budget and target region (Crete, Athens Riviera, Peloponnese). Free independent Golden Visa shortlist within one business day."
+  title="Get Your Free Greece Property Shortlist"
+  {description}
+  canonical={url}
+  {schemas}
 >
   <section class="site-container py-12 md:py-16 max-w-2xl">
+    <nav class="text-sm text-[var(--color-muted)] mb-6" aria-label="Breadcrumb">
+      <a href="/" class="no-underline hover:underline">Home</a> <span aria-hidden="true">›</span> <span>Free shortlist</span>
+    </nav>
     <header class="mb-8">
       <h1 class="mb-3">Get your Greece property shortlist</h1>
       <p class="text-lg text-[var(--color-muted)]">
@@ -18,6 +77,22 @@ import LeadForm from '../../components/LeadForm.astro';
       subtitle="Independent advisory · Crete €400K · Athens €800K · Peloponnese · Cyclades"
       context="Get shortlist page"
     />
+    <h2 class="text-xl font-bold mt-12 mb-6 text-[var(--color-ink)]">Before you send it</h2>
+    <div class="grid gap-5 mb-8">
+      {faq.map((f) => (
+        <div class="surface-card p-5">
+          <h3 class="text-[var(--color-ink)] text-base mb-2">{f.question}</h3>
+          <p class="text-sm text-[var(--color-muted)] m-0">{f.answer}</p>
+        </div>
+      ))}
+    </div>
+
+    <p class="text-sm text-[var(--color-muted)] mb-8">
+      Not ready for a shortlist? Read the <a href="/golden-visa/">Golden Visa hub</a>,
+      run the <a href="/tools/greece-property-cost-calculator/">cost calculator</a>, or browse
+      <a href="/areas/">area guides</a> first.
+    </p>
+
     <p class="text-xs text-[var(--color-muted)] mt-6">
       By submitting you agree to our <a href="/privacy-policy/">Privacy Policy</a>.
       Not financial or legal advice.

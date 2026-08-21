@@ -2,18 +2,52 @@
 export const prerender = true;
 import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import { SITE } from '../../data/site';
 import ContentCard from '../../components/ContentCard.astro';
 import { formatAreaLabel } from '../../lib/cardImage';
 
 const areas = (await getCollection('areas'))
   .filter((a) => !a.data.noindex)
   .sort((a, b) => a.data.title.localeCompare(b.data.title));
+const hubUrl = `${SITE.url}/areas/`;
+const schemas = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    name: 'Area guides',
+    url: hubUrl,
+    isPartOf: { '@type': 'WebSite', name: SITE.name, url: SITE.url },
+    mainEntity: {
+      '@type': 'ItemList',
+      numberOfItems: areas.length,
+      itemListElement: areas.map((e, i) => ({
+        '@type': 'ListItem',
+        position: i + 1,
+        url: `${SITE.url}/areas/${e.id}/`,
+        name: e.data.title,
+      })),
+    },
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: SITE.url },
+      { '@type': 'ListItem', position: 2, name: 'Areas', item: hubUrl },
+    ],
+  },
+];
 ---
 <BaseLayout
+  canonical={hubUrl}
+  {schemas}
   title="Greek Investment Areas"
-  description="Area guides for Athens Riviera, Crete, Cyclades, and Peloponnese — yields, Golden Visa tiers, buyer profile, and micro-market risks."
+  description="Area guides for Athens Riviera, Crete, Cyclades, and Peloponnese: yields, Golden Visa tiers, buyer profile, and micro-market risks."
 >
   <section class="site-container py-14 md:py-20">
+    <nav class="text-sm text-[var(--color-muted)] mb-6" aria-label="Breadcrumb">
+      <a href="/" class="no-underline hover:underline">Home</a> <span aria-hidden="true">›</span> <span>Areas</span>
+    </nav>
     <header class="max-w-2xl mb-12">
       <h1 class="text-3xl">Investment areas</h1>
       <p class="text-lg text-[var(--color-muted)] mt-3">

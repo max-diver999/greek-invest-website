@@ -1,78 +1,229 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import LeadForm from '../../components/LeadForm.astro';
+import { SITE } from '../../data/site';
 
+/**
+ * This page receives 113 internal links and still sat around position 78 with
+ * zero clicks. The links were never the problem: 382 words and Organization-only
+ * schema were. Depth, a real process, honest pricing and Service/FAQ/Breadcrumb
+ * schema added.
+ */
 const title = 'Greece Golden Visa Consultant: Property Route 2026';
-const description = 'Independent Greece Golden Visa consultant service: 400K vs 800K tiers, 120m2 rule, lawyer-ready checklist, and vetted property shortlist. Free consultation.';
----
+const description =
+  'Independent Greece Golden Visa consultancy: €400K vs €800K tier routing, the 120 m² test, lawyer-ready file checklist and a vetted shortlist. No developer commission.';
+const url = `${SITE.url}/greece-golden-visa-consultation/`;
 
-<BaseLayout
-  {title}
-  {description}
-  canonical="https://greek-invest.com/greece-golden-visa-consultation/"
->
-  <section class="bg-[#0f2744] text-white">
+const steps = [
+  {
+    n: '1',
+    name: 'Tier and zone',
+    deliverable:
+      'We confirm whether your target sits in the €800,000 prime tier or the €400,000 regional tier, checked against the cadastral parcel rather than the postal address. Addresses lie at municipal boundaries; parcels do not.',
+    link: { href: '/tools/greece-golden-visa-zone-lookup/', label: 'Zone lookup' },
+  },
+  {
+    n: '2',
+    name: 'Property fit',
+    deliverable:
+      'The 120 m² test on main usable area, single-title verification, and whether the unit is realistically deliverable. Balconies, parking and storage do not count, and a brochure that quotes gross area is not evidence.',
+    link: { href: '/guides/greece-golden-visa-120-square-meter-rule/', label: '120 m² rule' },
+  },
+  {
+    n: '3',
+    name: 'Cost stack',
+    deliverable:
+      'All-in modelling: 3.09% transfer tax on the higher of price or objective value, notary, lawyer, land registry, agent, engineer, then annual ENFIA and rental tax so you see the holding cost, not just the entry cost.',
+    link: { href: '/tools/greece-property-cost-calculator/', label: 'Cost calculator' },
+  },
+  {
+    n: '4',
+    name: 'File path',
+    deliverable:
+      'AFM, Greek bank account, Circular 1/2026 fund traceability, and a clean handoff to a migration lawyer. We sequence the engineer certificate, cadastre extract and bank file in parallel with the reservation, not after it.',
+    link: { href: '/guides/greece-golden-visa-timeline-application-2026/', label: 'Timeline' },
+  },
+];
+
+const faq = [
+  {
+    question: 'What does a Greece Golden Visa consultation cost?',
+    answer:
+      'The initial consultation is free and carries no obligation. We are not paid by developers for placement, so the shortlist reflects what fits your tier and area test rather than who is paying commission. Third-party costs (Greek lawyer, notary, engineer, translations) are quoted separately and paid directly to those professionals.',
+  },
+  {
+    question: 'Are you a law firm or a licensed Greek broker?',
+    answer:
+      'No. Greek Invest is an independent editorial and research desk. We are not a developer, a law firm, or a licensed Greek broker, and we do not hold client funds. Enquiries are referred to licensed Greek lawyers and partner agents who handle the regulated parts of the transaction.',
+  },
+  {
+    question: 'Which tier will apply to me?',
+    answer:
+      '€800,000 if the property sits in Attica, Thessaloniki, Mykonos, Santorini or an island with more than 3,100 residents. €400,000 in the rest of Greece, which includes most of the Peloponnese, most of Crete, inland mainland regions and northern Greece outside the Thessaloniki metro. The €250,000 route applies only to heritage restoration and commercial-to-residential conversion.',
+  },
+  {
+    question: 'How long does the whole process take in 2026?',
+    answer:
+      'Budget 12 to 18 months end to end: roughly 60 to 90 days for the purchase phase and 8 to 14 months for the permit. Files that run past 18 months almost always have one of three causes: a title defect, a cadastre mismatch, or incomplete bank traceability under Circular 1/2026.',
+  },
+  {
+    question: 'Can I let the property on Airbnb once I have the permit?',
+    answer:
+      'Not the qualifying property. Law 5100/2024 bans short-term tourist letting on the asset that supports the permit, for the life of that permit. Long-term leases of twelve months or more are allowed. If short-term yield is central to your plan, the qualifying asset is the wrong place to pursue it.',
+  },
+  {
+    question: 'Do I need to visit Greece to complete the purchase?',
+    answer:
+      'No. The purchase can be completed remotely through a power of attorney granted to your Greek lawyer, apostilled in your home country. Biometrics for the residence permit itself do require an appearance, though the timing is flexible and can follow the deed.',
+  },
+];
+
+const schemas = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: 'Greece Golden Visa property consultation',
+    serviceType: 'Golden Visa property research and shortlisting',
+    description,
+    url,
+    provider: { '@type': 'Organization', name: SITE.name, url: SITE.url, email: SITE.email },
+    areaServed: { '@type': 'Country', name: 'Greece' },
+    audience: { '@type': 'Audience', audienceType: 'Non-EU and EU property investors' },
+    offers: {
+      '@type': 'Offer',
+      price: '0',
+      priceCurrency: 'EUR',
+      description: 'Initial consultation and property shortlist, no obligation',
+    },
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: SITE.url },
+      { '@type': 'ListItem', position: 2, name: 'Golden Visa', item: `${SITE.url}/golden-visa/` },
+      { '@type': 'ListItem', position: 3, name: 'Consultation', item: url },
+    ],
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faq.map((f) => ({
+      '@type': 'Question',
+      name: f.question,
+      acceptedAnswer: { '@type': 'Answer', text: f.answer },
+    })),
+  },
+];
+---
+<BaseLayout {title} {description} canonical={url} {schemas}>
+  <section class="bg-[var(--color-ink)] text-white">
     <div class="site-container py-14 md:py-20 max-w-3xl">
-      <p class="text-sm font-semibold uppercase tracking-wider text-[#93c5fd] mb-3">Golden Visa consultant · Property route</p>
-      <h1 class="text-3xl md:text-4xl font-bold leading-tight mb-4 text-white">Greece Golden Visa consultant</h1>
-      <p class="text-lg text-[#cbd5e1] leading-relaxed mb-6">
-        Greece is the only major EU market still offering a direct property-backed Golden Visa in 2026.
-        As an independent Golden Visa consultant, we help you match tier, location, and file-ready stock before you instruct lawyers or transfer funds. No developer commission, no property sales pressure.
+      <nav class="text-sm text-white/60 mb-5" aria-label="Breadcrumb">
+        <a href="/" class="text-white/70 no-underline hover:underline">Home</a>
+        <span aria-hidden="true">›</span>
+        <a href="/golden-visa/" class="text-white/70 no-underline hover:underline">Golden Visa</a>
+        <span aria-hidden="true">›</span> <span>Consultation</span>
+      </nav>
+      <p class="text-sm font-semibold uppercase tracking-wider text-[var(--color-teal-light)] mb-3">
+        Independent · No developer commission
       </p>
-      <ul class="space-y-2 text-[#e2e8f0] list-disc pl-5 mb-8">
-        <li>€800K Attica / Thessaloniki / Mykonos / Santorini vs €400K regional routing</li>
-        <li>120 m² single-property rule and no-STR compliance on the qualifying asset</li>
-        <li>8,879 approvals in 2025, backlog-aware timeline planning</li>
+      <h1 class="text-3xl md:text-4xl font-bold leading-tight mb-4 text-white">Greece Golden Visa consultant</h1>
+      <p class="text-lg text-white/80 leading-relaxed mb-6">
+        Greece is the last major EU market still offering a direct property-backed residence permit in 2026.
+        We match tier, location and file-ready stock <strong class="text-white">before</strong> you instruct
+        lawyers or move funds, so the engineer certificate, cadastre extract and bank trail are already in
+        order when the reservation goes in.
+      </p>
+      <ul class="space-y-2 text-white/80 list-disc pl-5 mb-8">
+        <li>€800K Attica, Thessaloniki, Mykonos and Santorini vs €400K regional routing</li>
+        <li>120 m² main usable area on a single title deed, verified against the engineer certificate</li>
+        <li>Circular 1/2026 fund traceability, sequenced before the deposit rather than after</li>
+        <li>8,879 approvals in 2025, timeline planning that assumes the real backlog</li>
       </ul>
-      <a href="/get-shortlist/" class="btn-primary">Book Golden Visa shortlist</a>
+      <a href="#lead-form" class="btn-primary px-6 py-3">Request a consultation</a>
     </div>
   </section>
 
-  <section class="site-container py-12 max-w-3xl text-[var(--color-muted)] leading-relaxed">
-    <h2 class="text-[var(--color-ink)] text-xl font-bold mb-4">What we cover</h2>
-    <table class="w-full text-sm mb-10">
-      <thead>
-        <tr class="border-b border-[var(--color-border)] text-left">
-          <th class="py-2 pr-4">Step</th>
-          <th class="py-2">Deliverable</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr class="border-b border-[var(--color-border)]">
-          <td class="py-3 pr-4 font-medium text-[var(--color-ink)]">1. Tier & zone</td>
-          <td class="py-3">Confirm €400K vs €800K using address-level routing, <a href="/tools/greece-golden-visa-zone-lookup/">zone checker</a></td>
-        </tr>
-        <tr class="border-b border-[var(--color-border)]">
-          <td class="py-3 pr-4 font-medium text-[var(--color-ink)]">2. Property fit</td>
-          <td class="py-3">120 m² engineer check, single title, resale vs off-plan trade-offs</td>
-        </tr>
-        <tr class="border-b border-[var(--color-border)]">
-          <td class="py-3 pr-4 font-medium text-[var(--color-ink)]">3. Cost stack</td>
-          <td class="py-3">All-in model via <a href="/tools/greece-property-cost-calculator/">cost calculator</a> + lawyer fees</td>
-        </tr>
-        <tr>
-          <td class="py-3 pr-4 font-medium text-[var(--color-ink)]">4. File path</td>
-          <td class="py-3">AFM, bank account, migration lawyer handoff, <a href="/guides/greece-golden-visa-timeline-application-2026/">timeline guide</a></td>
-        </tr>
-      </tbody>
-    </table>
+  <section class="site-container py-12 md:py-16 max-w-3xl text-[var(--color-muted)] leading-relaxed">
+    <h2 class="text-[var(--color-ink)] text-2xl font-bold mb-3">What the consultation covers</h2>
+    <p class="mb-8">
+      Four checkpoints, in this order. Most failed files we see went wrong at step one or step four, and
+      almost always because the money moved before the paperwork was ready.
+    </p>
 
-    <p class="mb-10">
-      Start here:
-      <a href="/guides/greece-golden-visa-property-guide-2026/">Golden Visa property guide</a> ·
+    <ol class="grid gap-4 mb-12 list-none pl-0">
+      {steps.map((s) => (
+        <li class="surface-card p-5">
+          <div class="flex items-baseline gap-3 mb-2">
+            <span class="text-[var(--color-teal)] font-bold">{s.n}</span>
+            <h3 class="text-[var(--color-ink)] text-lg m-0">{s.name}</h3>
+          </div>
+          <p class="text-sm mb-3">{s.deliverable}</p>
+          <a href={s.link.href} class="link-arrow text-sm">{s.link.label} →</a>
+        </li>
+      ))}
+    </ol>
+
+    <h2 class="text-[var(--color-ink)] text-2xl font-bold mb-3">What it costs, and how we are paid</h2>
+    <p class="mb-4">
+      The consultation and shortlist are free. We are not paid by developers for placement, which is the
+      only reason an independent shortlist is worth anything. Everything else is paid directly to the
+      licensed professional doing the work:
+    </p>
+    <div class="surface-card overflow-x-auto mb-4">
+      <table class="w-full text-sm">
+        <thead>
+          <tr class="text-left">
+            <th scope="col" class="p-3">Cost</th>
+            <th scope="col" class="p-3">Typical 2026 range</th>
+            <th scope="col" class="p-3">Paid to</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td class="p-3">Property lawyer</td><td class="p-3">1% to 1.5% of price</td><td class="p-3">Greek law firm</td></tr>
+          <tr><td class="p-3">Golden Visa immigration file</td><td class="p-3">€1,500 to €4,000</td><td class="p-3">Migration lawyer</td></tr>
+          <tr><td class="p-3">Notary</td><td class="p-3">0.8% to 1.2%</td><td class="p-3">Greek notary</td></tr>
+          <tr><td class="p-3">Engineer certificate and survey</td><td class="p-3">€300 to €800</td><td class="p-3">Licensed engineer</td></tr>
+          <tr><td class="p-3">Transfer tax (FMA)</td><td class="p-3">3.09%</td><td class="p-3">Greek state</td></tr>
+          <tr><td class="p-3">Government application fee</td><td class="p-3">€2,000 per main applicant</td><td class="p-3">Ministry of Migration</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="text-xs mb-12">
+      Ranges as of August 2026. Full breakdown in the
+      <a href="/guides/cost-of-buying-property-greece/">cost of buying guide</a> and the
+      <a href="/guides/greece-golden-visa-lawyer-cost/">lawyer cost guide</a>.
+    </p>
+
+    <h2 class="text-[var(--color-ink)] text-2xl font-bold mb-6">Common questions</h2>
+    <div class="grid gap-5 mb-12">
+      {faq.map((f) => (
+        <div class="surface-card p-5">
+          <h3 class="text-[var(--color-ink)] text-base mb-2">{f.question}</h3>
+          <p class="text-sm m-0">{f.answer}</p>
+        </div>
+      ))}
+    </div>
+
+    <p class="mb-12">
+      Read first:
+      <a href="/golden-visa/">Golden Visa hub</a> ·
+      <a href="/guides/greece-golden-visa-property-tiers-2026/">tier map</a> ·
       <a href="/guides/golden-visa-eligible-projects-directory/">eligible property framework</a> ·
-      <a href="/tier-golden-visa-400k/">€400K regional route</a> ·
-      <a href="/guides/greece-golden-visa-property-tiers-2026/">tier map</a>
+      <a href="/guides/greece-golden-visa-mistakes-avoid/">mistakes to avoid</a>
     </p>
 
     <LeadForm
-      title="Request Golden Visa consultation"
-      subtitle="Tier · 120m² · zone · vetted properties · no developer pressure"
+      title="Request a Golden Visa consultation"
+      subtitle="Tier, 120 m² test, zone and a vetted shortlist. One business day, no developer pressure."
       context="Golden Visa consultation page"
     />
 
     <p class="text-xs text-[var(--color-muted)] mt-8">
-      This Golden Visa residency consultation covers property tier and zone only; it is independent research, not immigration or tax advice. Greece granted 8,879 new Golden Visa approvals in 2025. Verify all rules with licensed Greek migration and property counsel.
+      Independent research on the property tier and zone only, not immigration, legal or tax advice.
+      Greece granted 8,879 new Golden Visa approvals in 2025. Thresholds, taxes and transfer rules change:
+      verify with licensed Greek migration and property counsel before you transact.
     </p>
   </section>
 </BaseLayout>

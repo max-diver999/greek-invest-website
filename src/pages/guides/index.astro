@@ -2,6 +2,7 @@
 export const prerender = true;
 import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import { SITE } from '../../data/site';
 import ContentCard from '../../components/ContentCard.astro';
 import { FEATURED_GUIDE_SLUGS } from '../../data/featured';
 
@@ -10,12 +11,45 @@ const guides = (await getCollection('guides'))
   .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 
 const priority = FEATURED_GUIDE_SLUGS.map((slug) => guides.find((g) => g.id === slug)).filter(Boolean);
+const hubUrl = `${SITE.url}/guides/`;
+const schemas = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    name: 'Investment guides',
+    url: hubUrl,
+    isPartOf: { '@type': 'WebSite', name: SITE.name, url: SITE.url },
+    mainEntity: {
+      '@type': 'ItemList',
+      numberOfItems: guides.length,
+      itemListElement: guides.map((e, i) => ({
+        '@type': 'ListItem',
+        position: i + 1,
+        url: `${SITE.url}/guides/${e.id}/`,
+        name: e.data.title,
+      })),
+    },
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: SITE.url },
+      { '@type': 'ListItem', position: 2, name: 'Guides', item: hubUrl },
+    ],
+  },
+];
 ---
 <BaseLayout
+  canonical={hubUrl}
+  {schemas}
   title="Greece Property Investment Guides"
   description="Independent guides on Greece property investment, Golden Visa tiers, foreign ownership, net yields, ENFIA, and due diligence."
 >
   <section class="site-container py-14 md:py-20">
+    <nav class="text-sm text-[var(--color-muted)] mb-6" aria-label="Breadcrumb">
+      <a href="/" class="no-underline hover:underline">Home</a> <span aria-hidden="true">›</span> <span>Guides</span>
+    </nav>
     <header class="max-w-2xl mb-12">
       <h1 class="text-3xl">Investment guides</h1>
       <p class="text-lg text-[var(--color-muted)] mt-3">

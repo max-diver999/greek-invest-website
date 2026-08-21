@@ -3,7 +3,7 @@ export const SITE = {
   tagline: 'Independent Greece property research for foreign buyers',
   url: 'https://greek-invest.com',
   description:
-    'Independent guides to Greece property, Athens, Crete, Golden Visa tiers, foreign ownership, transfer costs, rental yields, and new development reviews. Advisory only; transactions via licensed Greek partners.',
+    'Independent Greece property research: Golden Visa tiers, foreign ownership rules, transfer costs, net rental yields, and neutral new-development reviews.',
   email: 'info@greek-invest.com',
   phone: '+66 65 119 5327',
   whatsapp: 'https://wa.me/66651195327',

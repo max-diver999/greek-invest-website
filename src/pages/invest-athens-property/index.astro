@@ -2,53 +2,369 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import LeadForm from '../../components/LeadForm.astro';
 import InlineCta from '../../components/InlineCta.astro';
+import { SITE } from '../../data/site';
 
-const title = 'Invest in Athens Property 2026, Golden Visa & Yields';
-const description = 'Invest in Athens property from €800K Golden Visa stock or LTR yield districts. Riviera, center, and north Athens, vetted shortlist support.';
+/**
+ * Rebuilt from a 365-word stub with zero inbound links. Athens is the hardest
+ * Golden Visa market to buy in correctly, because the €800,000 threshold and
+ * the 120 m² area rule pull in opposite directions on urban stock. That tension
+ * is what this page is about.
+ */
+const title = 'Invest in Athens Property 2026: €800K Golden Visa';
+const description =
+  'Athens sits in the €800,000 Golden Visa tier. Riviera vs centre pricing, why the 120 m² rule is harder here than anywhere else, real long-let yields, the Airbnb moratorium, and total cost.';
+const url = `${SITE.url}/invest-athens-property/`;
+
+const submarkets = [
+  { name: 'Kypseli and transitional centre', price: '€2,000 to €2,800', yield: '6.0 to 7.5%', note: 'Highest long-let yield in Attica; older stock, underfunded building reserves', href: '/compare/athens-riviera-vs-athens-center-investment/' },
+  { name: 'Central Athens average', price: '€3,400+', yield: '5.0 to 6.0%', note: 'Deep tenant pool; short-term rental moratorium zones', href: '/guides/athens-property-investment-guide/' },
+  { name: 'Kallithea', price: '€2,400 to €3,200', yield: '5.5 to 6.5%', note: 'Metro and tram, coastal-adjacent, commuter households', href: '/areas/kallithea-property-investment/' },
+  { name: 'Piraeus and Kastella', price: '€2,600 to €4,000', yield: '5.0 to 6.5%', note: 'Port employment year-round, metro line 3, sea-view scarcity on the hill', href: '/areas/piraeus-property-investment/' },
+  { name: 'Glyfada', price: '€3,500 to €5,500+', yield: '4.5 to 5.5%', note: 'Marina coast, Ellinikon halo, international schools', href: '/areas/glyfada-property-investment/' },
+  { name: 'Voula and Vouliagmeni', price: '€4,000 to €8,000+', yield: '4.0 to 5.0%', note: 'Seafront premium, family demand, thinnest percentage yield', href: '/areas/voula-property-investment/' },
+];
+
+const faq = [
+  {
+    question: 'What is the Golden Visa threshold for Athens?',
+    answer:
+      '€800,000. The whole of Attica, including Athens, Piraeus and the southern Riviera, sits in the prime tier under Law 5100/2024. There is no regional discount anywhere in the Attica basin, however far a suburb is from the centre.',
+  },
+  {
+    question: 'Why is the 120 m² rule harder in Athens than elsewhere?',
+    answer:
+      'Because Athenian apartments are compact and marketed with balconies. Only enclosed permitted living space counts toward the 120 m² of main usable area, so a listing quoting 140 m² of built area can certify at 108 m². In regional markets €400,000 buys enough floor space that the test is rarely binding; in Attica at €800,000 it frequently is.',
+  },
+  {
+    question: 'What rental yield does Athens produce?',
+    answer:
+      'Long-let gross yields run about 6.0% to 7.5% in transitional central districts such as Kypseli, 5.0% to 6.0% across the centre generally, and 4.0% to 5.5% on the Riviera. Net lands 1.5 to 2.5 points lower after Greek rental tax from the first euro, ENFIA, management and vacancy.',
+  },
+  {
+    question: 'Can I run Airbnb in an Athens apartment?',
+    answer:
+      'Not on a Golden Visa property, ever, and not on new registrations in central Athens districts under the moratorium running through the end of 2026. Long-term leases of twelve months or more are permitted on the qualifying asset. Short-term letting remains possible on non-qualifying stock outside the moratorium zones with a registry licence.',
+  },
+  {
+    question: 'Is the Athens Riviera or the centre the better investment?',
+    answer:
+      'They answer different questions. The centre wins clearly on percentage yield, with transitional districts at 6.0% to 7.5% gross against 4.5% to 5.5% on the Riviera. The Riviera wins on resale liquidity to international buyers and on capital-appreciation exposure to the Ellinikon development. If you are underwriting rent, buy the centre; if you are underwriting the exit, buy the coast.',
+  },
+  {
+    question: 'What does an €800,000 Athens purchase cost in total?',
+    answer:
+      'Budget €856,000 to €880,000 all-in. Transfer tax at 3.09% is about €24,720, with notary, lawyer, land registry, agent commission and the engineer survey taking the acquisition stack to 7% to 10%. The Golden Visa government fee of €2,000 per main applicant is separate.',
+  },
+];
+
+const schemas = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: 'Athens property investment and Golden Visa shortlisting',
+    serviceType: 'Property research and shortlisting',
+    description,
+    url,
+    provider: { '@type': 'Organization', name: SITE.name, url: SITE.url, email: SITE.email },
+    areaServed: { '@type': 'Place', name: 'Athens, Attica, Greece' },
+    offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: SITE.url },
+      { '@type': 'ListItem', position: 2, name: 'Invest in Athens', item: url },
+    ],
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faq.map((f) => ({
+      '@type': 'Question',
+      name: f.question,
+      acceptedAnswer: { '@type': 'Answer', text: f.answer },
+    })),
+  },
+];
 ---
-
-<BaseLayout
-  {title}
-  {description}
-  canonical="https://greek-invest.com/invest-athens-property/"
->
-  <section class="bg-[#0f2744] text-white">
-    <div class="site-container py-14 md:py-18 max-w-3xl">
-      <p class="text-sm font-semibold uppercase tracking-wider text-[#93c5fd] mb-3">Athens · Attica</p>
-      <h1 class="text-3xl md:text-4xl font-bold leading-tight mb-4 text-white">Invest in Athens property in 2026</h1>
-      <p class="text-lg text-[#cbd5e1] leading-relaxed mb-6">
-        Greece's largest market: €626M in Athens municipality sales in 2025, €800,000 Golden Visa threshold across Attica,
-        and city-wide gross yields near 5.43% with working-class districts reaching 6 to 7.5% on long-term leases.
+<BaseLayout {title} {description} canonical={url} {schemas}>
+  <section class="bg-[var(--color-ink)] text-white">
+    <div class="site-container py-14 md:py-20 max-w-3xl">
+      <nav class="text-sm text-white/60 mb-5" aria-label="Breadcrumb">
+        <a href="/" class="text-white/70 no-underline hover:underline">Home</a>
+        <span aria-hidden="true">›</span> <span>Invest in Athens</span>
+      </nav>
+      <p class="text-sm font-semibold uppercase tracking-wider text-[var(--color-teal-light)] mb-3">
+        Athens &amp; Attica · Prime Golden Visa tier
       </p>
-      <a href="/get-shortlist/" class="btn-primary">Get Athens shortlist</a>
+      <h1 class="text-3xl md:text-4xl font-bold leading-tight mb-4 text-white">
+        Invest in Athens property at the €800,000 tier
+      </h1>
+      <p class="text-lg text-white/80 leading-relaxed mb-6">
+        <strong class="text-white">Quick answer:</strong> the whole of Attica sits at €800,000, with no regional
+        discount anywhere in the basin. The binding constraint is not the money but the area rule: Athenian
+        apartments are compact and marketed with balconies that do not count toward the 120 m² of certified
+        usable space. Long lets run 6.0% to 7.5% gross in the transitional centre and 4.0% to 5.5% on the
+        Riviera. Budget €856,000 to €880,000 all-in.
+      </p>
+      <div class="flex flex-wrap gap-3">
+        <a href="#lead-form" class="btn-primary px-6 py-3">Get an Athens shortlist</a>
+        <a href="/tools/greece-golden-visa-zone-lookup/" class="btn-secondary px-6 py-3">Check the zone</a>
+      </div>
     </div>
   </section>
 
-  <section class="site-container py-12 max-w-3xl text-[var(--color-muted)] leading-relaxed">
-    <h2 class="text-[var(--color-ink)] mb-4">Three Athens investment profiles</h2>
-    <ul class="space-y-4 mb-8">
-      <li><strong class="text-[var(--color-ink)]">Athenian Riviera (Glyfada, Voula, Ellinikon)</strong>, capital preservation, marina lifestyle, tram and regeneration pipeline. See the <a href="/guides/athens-property-investment-guide/">Athens investment guide</a> and <a href="/areas/glyfada-property-investment/">Glyfada area guide</a>.</li>
-      <li><strong class="text-[var(--color-ink)]">Central Athens</strong>, tourism adjacency but STR moratorium in saturated districts; Golden Visa assets still require LTR-only income. Read the <a href="/compare/athens-riviera-vs-athens-center-investment/">Riviera vs center comparison</a>.</li>
-      <li><strong class="text-[var(--color-ink)]">Northern working-class belt</strong>, highest indicative LTR yields (Kipseli, Patisia) with lower €/m² than the Riviera. Covered in the <a href="/guides/highest-rental-yield-areas-greece/">yield by area guide</a>.</li>
-    </ul>
+  <section class="site-container py-12 md:py-16 max-w-3xl text-[var(--color-muted)] leading-relaxed">
+    <h2 class="text-[var(--color-ink)] text-2xl mb-3">The Athens problem: two rules pulling in opposite directions</h2>
+    <p class="mb-4">
+      Every Attica address requires €800,000 under Law 5100/2024, and every qualifying property requires at least
+      120 m² of certified main usable area on a single title deed. In most of Greece those two rules point the
+      same way: €400,000 at regional prices buys far more than 120 m². In Athens they conflict.
+    </p>
+    <p class="mb-4">
+      The reason is stock. Athenian apartments were built compact, and they are marketed on built area that
+      includes the open balconies the city is designed around. Only enclosed, permitted living space counts:
+      bedrooms, living rooms, kitchen, bathrooms and internal hallways. Terraces, parking, storage rooms
+      (apothekes), non-habitable basements and common areas never do. A listing quoting 140 m² can certify at
+      108 m², and at that point the property fails regardless of price.
+    </p>
+    <p class="mb-8">
+      The practical consequence is that Golden Visa buyers in Athens end up purchasing considerably more floor
+      area than an ordinary buyer at the same address would, in order to satisfy both tests at once. That extra
+      space does not command proportionally more rent, so yield falls as the unit grows. Understanding that
+      trade-off before you shortlist is the single most useful thing on this page. The mechanics are in the
+      <a href="/guides/greece-golden-visa-120-square-meter-rule/">120 m² rule guide</a>.
+    </p>
+
+    <h2 class="text-[var(--color-ink)] text-2xl mb-3">Athens submarkets, priced and yielded</h2>
+    <p class="mb-5">
+      The spread across Attica is roughly fourfold, and yield moves inversely to price almost perfectly.
+    </p>
+    <div class="surface-card overflow-x-auto mb-4">
+      <table class="w-full text-sm">
+        <thead>
+          <tr class="text-left">
+            <th scope="col" class="p-3">Submarket</th>
+            <th scope="col" class="p-3">€/m²</th>
+            <th scope="col" class="p-3">Gross LTR</th>
+            <th scope="col" class="p-3">Character</th>
+          </tr>
+        </thead>
+        <tbody>
+          {submarkets.map((m) => (
+            <tr>
+              <td class="p-3 whitespace-nowrap"><a href={m.href}>{m.name}</a></td>
+              <td class="p-3 whitespace-nowrap">{m.price}</td>
+              <td class="p-3 whitespace-nowrap">{m.yield}</td>
+              <td class="p-3">{m.note}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+    <p class="text-xs mb-8">
+      Indicative asking ranges and long-let gross yield bands as of August 2026. Athens city-wide average gross
+      yield is 5.43% against a national 4.40% (Global Property Guide). Yields are gross, before tax, ENFIA,
+      management and vacancy.
+    </p>
 
     <InlineCta
-      text="Every Attica purchase for Golden Visa needs €800,000 on one property of at least 120 m², confirm your zone before you offer."
-      buttonText="Golden Visa zone checker"
-      buttonHref="/tools/greece-golden-visa-zone-lookup/"
+      text="Weighing the coast against the centre on the same €800,000?"
+      buttonText="Riviera vs centre, compared"
+      buttonHref="/compare/athens-riviera-vs-athens-center-investment/"
     />
 
-    <p class="mb-10">
-      Full due diligence stack: <a href="/guides/athens-golden-visa-800000-areas/">€800K areas</a> ·
-      <a href="/guides/ellinikon-athens-property-investment/">Ellinikon regeneration</a> ·
-      <a href="/guides/due-diligence-greece-property/">property due diligence</a> ·
-      <a href="/guides/cost-of-buying-property-greece/">buying costs</a>
+    <h2 class="text-[var(--color-ink)] text-2xl mb-3 mt-12">The short-term rental position, which catches most buyers</h2>
+    <p class="mb-4">
+      Two separate restrictions apply in Athens and they are often confused. The first is national: Law 5100/2024
+      prohibits short-term tourist letting on the Golden Visa qualifying property for the life of the permit.
+      That is absolute, applies everywhere in Greece, and puts permit renewal at risk if breached.
+    </p>
+    <p class="mb-8">
+      The second is local: a moratorium on new short-term rental registrations across central Athens districts,
+      running through the end of 2026. This one applies to any property, qualifying or not, in the affected
+      zones. A central apartment bought on short-term rental projections may simply not be licensable. Detail in
+      the <a href="/guides/athens-short-term-rental-moratorium-2026/">Athens moratorium guide</a> and the
+      <a href="/guides/greece-golden-visa-no-short-term-rental/">Golden Visa STR ban guide</a>.
+    </p>
+
+    <h2 class="text-[var(--color-ink)] text-2xl mb-3">What €800,000 costs in total</h2>
+    <div class="surface-card overflow-x-auto mb-4">
+      <table class="w-full text-sm">
+        <thead>
+          <tr class="text-left">
+            <th scope="col" class="p-3">Cost</th>
+            <th scope="col" class="p-3">Rate</th>
+            <th scope="col" class="p-3">On €800,000</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td class="p-3">Transfer tax (FMA)</td><td class="p-3">3.09%</td><td class="p-3">€24,720</td></tr>
+          <tr><td class="p-3">Notary</td><td class="p-3">0.8% to 1.2%</td><td class="p-3">€6,400 to €9,600</td></tr>
+          <tr><td class="p-3">Your lawyer</td><td class="p-3">1% to 1.5%</td><td class="p-3">€8,000 to €12,000</td></tr>
+          <tr><td class="p-3">Land registry</td><td class="p-3">0.475% to 0.65%</td><td class="p-3">€3,800 to €5,200</td></tr>
+          <tr><td class="p-3">Agent commission</td><td class="p-3">2% to 2.5%</td><td class="p-3">€16,000 to €20,000</td></tr>
+          <tr><td class="p-3">Engineer survey</td><td class="p-3">Fixed</td><td class="p-3">€300 to €800</td></tr>
+          <tr><td class="p-3">Golden Visa government fee</td><td class="p-3">Per main applicant</td><td class="p-3">€2,000</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="mb-8">
+      Transfer tax is charged on the higher of agreed price or objective value and is paid before the deed, not
+      at completion. If the property is a new-build first sale, check whether the VAT suspension applies, because
+      the alternative is 24% rather than 3.09%. See the
+      <a href="/guides/greece-new-build-vat-suspension-2026/">VAT suspension guide</a>, the
+      <a href="/guides/cost-of-buying-property-greece/">cost of buying guide</a>, or run the numbers in the
+      <a href="/tools/greece-property-cost-calculator/">cost calculator</a>.
+    </p>
+
+    <h2 class="text-[var(--color-ink)] text-2xl mb-3">Buyer scenarios: who Athens actually suits</h2>
+    <p class="mb-4">
+      <strong>The residency buyer who wants a usable European base.</strong> Glyfada, Voula or Vouliagmeni.
+      International schools, a thirty-minute airport connection, marina infrastructure and a foreign resale
+      market. Accept 4.0% to 5.5% gross and treat the asset as residency plus capital appreciation, with the
+      Ellinikon development as the growth thesis rather than the rent.
+    </p>
+    <p class="mb-4">
+      <strong>The buyer optimising percentage return inside Attica.</strong> Kypseli or the transitional centre,
+      where 6.0% to 7.5% gross is genuinely available. The premium is compensation for pre-1980 stock,
+      underfunded building reserves and capital expenditure you have not yet made. Read two years of building
+      accounts before offering, and commission the engineer survey early because permit histories here are long.
+    </p>
+    <p class="mb-8">
+      <strong>The buyer who does not need the permit.</strong> Ignore €800,000 entirely. A €250,000 to €350,000
+      Athens apartment produces a better percentage return than anything bought to clear a threshold, and outside
+      the Golden Visa perimeter it can hold a short-term rental licence where the moratorium allows. The tier is
+      a residency price, not an investment one.
+    </p>
+
+    <h2 class="text-[var(--color-ink)] text-2xl mb-3">Athens-specific checks before you deposit</h2>
+    <ul class="list-disc pl-5 space-y-2 mb-8">
+      <li>
+        <strong>Certified usable area, not the listing figure.</strong> The single most common failure in Attica.
+        Commission the engineer certificate before the reservation, and read the number for enclosed permitted
+        space only.
+      </li>
+      <li>
+        <strong>Pre-1983 permit histories.</strong> Much of the central and inner-suburban stock predates the
+        modern planning framework and carries decades of amendments, some unpermitted. Regularisation under Law
+        4495/2017 may be possible, with a fine that transfers with the property.
+      </li>
+      <li>
+        <strong>Municipal boundaries, not marketing addresses.</strong> Glyfada, Voula and Vouliagmeni run
+        together on the ground and are separate municipalities. The tier follows the cadastral parcel.
+      </li>
+      <li>
+        <strong>Building reserve and common charges.</strong> Athenian apartment blocks are governed collectively,
+        and an underfunded reserve becomes your liability on completion. Ask for the last two years of accounts.
+      </li>
+    </ul>
+    <p class="mb-8">
+      Full sequence in the <a href="/guides/due-diligence-greece-property/">due diligence checklist</a> and the
+      <a href="/guides/greece-property-engineer-certificate/">engineer certificate guide</a>.
+    </p>
+
+    <h2 class="text-[var(--color-ink)] text-2xl mb-3">Timeline and exit</h2>
+    <p class="mb-4">
+      Budget 12 to 18 months from offer to residence permit: four to eight weeks of due diligence, four to twelve
+      weeks to the deed, then eight to fourteen months for the permit itself, which starts at the deed rather
+      than at the offer. The <a href="/guides/greece-golden-visa-timeline-application-2026/">timeline guide</a>
+      maps it month by month.
+    </p>
+    <p class="mb-8">
+      On the exit, Athens has the deepest resale market in Greece and the widest international buyer pool, which
+      is the strongest argument for paying the Attica premium in the first place. Greek capital gains tax is
+      suspended through the end of 2026, though that is a renewable policy rather than a permanent feature, and
+      your home country may tax the gain regardless. Selling the qualifying property ends the permit unless it is
+      replaced: see <a href="/guides/can-you-sell-property-after-golden-visa-greece/">selling after a Golden Visa</a>.
+    </p>
+
+    <h2 class="text-[var(--color-ink)] text-2xl mb-3">Athens against the €400,000 alternatives</h2>
+    <p class="mb-4">
+      The honest comparison for a residency buyer is not Glyfada against Kypseli. It is Attica at €800,000
+      against regional Greece at €400,000, because that is a €400,000 difference in capital for the same permit.
+      <a href="/guides/crete-golden-visa-400000-property/">Crete</a> at €2,105 per square metre island-wide,
+      the <a href="/guides/peloponnese-golden-visa-400000-property/">Peloponnese</a> at €1,400 to €2,800, and
+      <a href="/guides/rhodes-golden-visa-400000-property-guide/">Rhodes</a> all deliver the same five-year
+      renewable permit with the same family inclusion and the same zero-stay position.
+    </p>
+    <p class="mb-4">
+      What the extra €400,000 buys in Attica is liquidity and utility rather than a better visa. Athens has the
+      deepest resale market in Greece, the widest international buyer pool, year-round flights to most European
+      capitals, international schools, and hospitals a relocating family would actually use. If the property is
+      a genuine base you intend to occupy, or an asset you expect to sell to a foreign buyer, that premium is
+      defensible.
+    </p>
+    <p class="mb-8">
+      If the property is purely a residency vehicle you will let out and rarely visit, it is much harder to
+      justify. The regional tier delivers the identical legal outcome for half the capital, and the difference
+      can be deployed into a second, non-qualifying property that is free to hold a short-term rental licence.
+      That two-asset structure is what most yield-focused buyers end up at once the arithmetic is laid out.
+    </p>
+
+    <h2 class="text-[var(--color-ink)] text-2xl mb-3">Financing an Athens purchase</h2>
+    <p class="mb-4">
+      Assume cash. Greek banks lend to non-residents rarely and conservatively: where a systemic bank does
+      approve, expect around 40% deposit and roughly twelve weeks from application to release of funds, plus
+      mortgage registration at 1.2% of the loan and mandatory life and property cover adding about €600 a year.
+      Most foreign buyers in Greece do not finance locally at all, and sellers price cash certainty accordingly.
+    </p>
+    <p class="mb-8">
+      For a Golden Visa purchase the question does not arise, because it cannot. All three tiers require the
+      investment funds to be transferred from abroad and evidenced through the banking system, and a Greek
+      mortgage fails that test by definition since the capital was never imported. Applicants who use local debt
+      to reach €800,000 find the file rejected on source of funds rather than on the property. Detail in the
+      <a href="/guides/non-resident-mortgage-greece/">non-resident mortgage guide</a> and the
+      <a href="/guides/golden-visa-greece-bank-transfer-proof-funds/">proof of funds guide</a>.
+    </p>
+
+    <h2 class="text-[var(--color-ink)] text-2xl mb-3">What holding an Athens property actually costs each year</h2>
+    <p class="mb-4">
+      Entry cost is the number buyers model; holding cost is the one that erodes the return. On an €800,000
+      Attica apartment, expect ENFIA in the region of €1,600 to €3,000 a year depending on zone, floor and age,
+      since the main component runs €2.00 to €16.20 per square metre and Attica sits in the upper bands. Add the
+      wealth supplement of 0.55% to 1.15% once total portfolio objective value passes roughly €500,000, which an
+      €800,000 property will normally trigger on its own.
+    </p>
+    <p class="mb-8">
+      Then rental income tax at 15% from the first euro, 35% above €12,000 and 45% above €35,000, charged on
+      gross rent rather than profit, with most operating costs non-deductible under the standard regime. Add
+      building common charges, management at 8% to 12% of rent, insurance at €200 to €600, and an accountant for
+      the annual return. This is why a 5% gross yield in Athens becomes something closer to 2.5% to 3.0% net.
+      Model it in the <a href="/tools/greece-rental-yield-calculator/">yield calculator</a> before you offer.
+    </p>
+
+    <h2 class="text-[var(--color-ink)] text-2xl mb-6">Athens Golden Visa questions</h2>
+    <div class="grid gap-5 mb-12">
+      {faq.map((f) => (
+        <div class="surface-card p-5">
+          <h3 class="text-[var(--color-ink)] text-base mb-2">{f.question}</h3>
+          <p class="text-sm m-0">{f.answer}</p>
+        </div>
+      ))}
+    </div>
+
+    <p class="mb-12">
+      Go deeper:
+      <a href="/guides/athens-golden-visa-800000-areas/">which Athens areas qualify</a> ·
+      <a href="/guides/athens-suburbs-golden-visa-800000-guide/">Athens suburbs guide</a> ·
+      <a href="/guides/athens-property-investment-guide/">Athens property investment guide</a> ·
+      <a href="/guides/ellinikon-athens-property-investment/">The Ellinikon</a> ·
+      <a href="/areas/glyfada-property-investment/">Glyfada</a> ·
+      <a href="/golden-visa/">Golden Visa hub</a>
     </p>
 
     <LeadForm
-      title="Request Athens property shortlist"
-      subtitle="Riviera · center · north Athens · GV-ready screening"
-      context="Invest Athens commercial page"
+      title="Get an Athens property shortlist"
+      subtitle="Budget, target submarket and whether residency is the goal. We reply within one business day with options screened against the 120 m² and single-deed tests."
+      context="Invest in Athens landing page"
     />
+
+    <p class="text-xs text-[var(--color-muted)] mt-8">
+      Independent research, not legal, tax or investment advice. Prices are indicative asking ranges as of August
+      2026 and vary sharply by micro-location, floor and condition. Golden Visa thresholds, taxes and transfer
+      rules change: verify with licensed Greek counsel before you transact.
+    </p>
   </section>
 </BaseLayout>

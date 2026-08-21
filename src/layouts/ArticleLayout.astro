@@ -12,6 +12,7 @@ interface Props {
   author?: string;
   readingTime?: number;
   heroImage?: string;
+  heroAlt?: string;
   faq?: { question: string; answer: string }[];
   canonical?: string;
   noindex?: boolean;
@@ -27,6 +28,7 @@ const {
   author = SITE.editorial,
   readingTime = 8,
   heroImage,
+  heroAlt,
   faq = [],
   canonical,
   noindex = false,
@@ -48,12 +50,19 @@ const articleSchema = {
   description,
   datePublished: pubDate.toISOString(),
   dateModified: (updatedDate || pubDate).toISOString(),
-  author: { '@type': 'Organization', name: author },
+  author: {
+    '@type': 'Organization',
+    name: author,
+    url: `${SITE.url}/about/`,
+  },
   publisher: {
     '@type': 'Organization',
     name: SITE.name,
-    logo: { '@type': 'ImageObject', url: `${SITE.url}/favicon.svg` },
+    url: SITE.url,
+    logo: { '@type': 'ImageObject', url: `${SITE.url}/favicon-192.png`, width: 192, height: 192 },
   },
+  isAccessibleForFree: true,
+  inLanguage: 'en',
   mainEntityOfPage: pageUrl,
   ...(heroImage ? { image: heroImage } : {}),
 };
@@ -92,7 +101,10 @@ const breadcrumbSchema = {
   ],
 };
 
-const schemas = [articleSchema, breadcrumbSchema, ...(faqSchema ? [faqSchema] : [])];
+// Single FAQPage owner. The inline <FaqBlock> in MDX emits its own FAQPage, so the
+// layout must not emit a second one — 132 pages previously shipped duplicates and
+// 7 shipped conflicting question sets.
+const schemas = [articleSchema, breadcrumbSchema, ...(faqSchema && !hasInlineFaqBlock ? [faqSchema] : [])];
 ---
 <BaseLayout
   title={title}
@@ -114,7 +126,7 @@ const schemas = [articleSchema, breadcrumbSchema, ...(faqSchema ? [faqSchema] : 
     </header>
 
     {heroImage && (
-      <img src={heroImage} alt="" class="w-full max-h-[420px] object-cover rounded-2xl mb-10 border border-[var(--color-border)]" loading="eager" />
+      <img src={heroImage} alt={heroAlt || `${title} — Greek Invest research illustration`} class="w-full max-h-[420px] object-cover rounded-2xl mb-10 border border-[var(--color-border)]" width="1200" height="420" loading="eager" fetchpriority="high" />
     )}
 
     <div class="prose mx-auto">

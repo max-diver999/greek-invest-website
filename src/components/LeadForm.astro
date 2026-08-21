@@ -42,7 +42,7 @@ const waHref = `${SITE.whatsapp}?text=${waText}`;
       <div>
         <label class="block text-xs font-medium mb-1" for="lf-market">Target region</label>
         <select id="lf-market" name="market">
-          <option value="">,  Select , </option>
+          <option value="" disabled selected>Select…</option>
           <option value="athens">Athens & Attica (€800K GV tier)</option>
           <option value="crete">Crete (€400K GV tier)</option>
           <option value="islands">Cyclades / islands (Paros, Tinos, Rhodes…)</option>
@@ -54,11 +54,11 @@ const waHref = `${SITE.whatsapp}?text=${waText}`;
       <div>
         <label class="block text-xs font-medium mb-1" for="lf-budget">Budget (EUR, all-in)</label>
         <select id="lf-budget" name="budget">
-          <option value="">,  Select , </option>
+          <option value="" disabled selected>Select…</option>
           <option value="under-250k">Under €250K</option>
-          <option value="250-400k">€250K  to  €400K</option>
-          <option value="400-800k">€400K  to  €800K (Golden Visa tiers)</option>
-          <option value="800k-1.5m">€800K  to  €1.5M</option>
+          <option value="250-400k">€250K–€400K</option>
+          <option value="400-800k">€400K–€800K (Golden Visa tiers)</option>
+          <option value="800k-1.5m">€800K–€1.5M</option>
           <option value="1.5m+">€1.5M+</option>
         </select>
       </div>
@@ -66,7 +66,7 @@ const waHref = `${SITE.whatsapp}?text=${waText}`;
     <div>
       <label class="block text-xs font-medium mb-1" for="lf-goal">Your goal</label>
       <select id="lf-goal" name="goal">
-        <option value="">,  Select , </option>
+        <option value="" disabled selected>Select…</option>
         <option value="golden-visa">Golden Visa residency</option>
         <option value="investment">Rental yield / investment</option>
         <option value="own-stay">Own stay / relocation</option>

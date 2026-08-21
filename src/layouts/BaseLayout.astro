@@ -26,7 +26,19 @@ const {
   schemas = [],
 } = Astro.props;
 
-const fullTitle = title.includes('Greek Invest') ? title : `${title} | Greek Invest`;
+/**
+ * Google truncates the SERP title around 60 characters. The brand suffix costs 15,
+ * which previously pushed 126 of 152 pages past the limit and cut the payoff out of
+ * the snippet. Append the suffix only when the whole title still fits; otherwise the
+ * page's own words win, since the brand is already shown on the result's URL line.
+ */
+const TITLE_BUDGET = 60;
+const SUFFIX = ' | Greek Invest';
+const fullTitle = title.includes('Greek Invest')
+  ? title
+  : title.length + SUFFIX.length <= TITLE_BUDGET
+    ? `${title}${SUFFIX}`
+    : title;
 
 const orgSchema = {
   '@context': 'https://schema.org',

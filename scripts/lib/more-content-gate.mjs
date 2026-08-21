@@ -93,9 +93,13 @@ export function runStructuralChecks(opts) {
       collection,
     );
 
+  // BaseLayout appends " | Greek Invest" (15 chars) only when the result still fits the
+  // ~60-char SERP budget, so the frontmatter title itself just has to stay inside that
+  // budget and carry enough words to be worth a click. A title <=45 also keeps the brand.
   if (!legacyExempt && data.title) {
     const tlen = String(data.title).replace(/^["']|["']$/g, '').length;
-    if (tlen < 50 || tlen > 60) errors.push(`${prefix} title length ${tlen}; expected 50-60 chars`);
+    if (tlen > 60) errors.push(`${prefix} title length ${tlen}; max 60 chars (SERP truncation)`);
+    if (tlen < 40) errors.push(`${prefix} title length ${tlen}; min 40 chars (too thin to earn a click)`);
   }
   if (!legacyExempt && data.description && String(data.description).length > 160) {
     errors.push(`${prefix} description length ${data.description.length}; expected <=160 chars`);

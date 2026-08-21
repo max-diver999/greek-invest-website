@@ -139,7 +139,7 @@ function auditFile(c, slug) {
   if (desc && desc.length < 120) prob.push(`descLen:${desc.length}<120`);
 
   const title = (fm.title || '').replace(/^["']|["']$/g, '');
-  if (title && (title.length < 45 || title.length > 65)) prob.push(`titleLen:${title.length}`);
+  if (title && (title.length < 40 || title.length > 60)) prob.push(`titleLen:${title.length}`);
 
   const minFaq = c === 'news' ? 3 : 5;
   if (!fm.__hasFaq) prob.push('no-faq-block');

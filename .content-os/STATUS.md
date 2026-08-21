@@ -3,7 +3,7 @@
 **Site:** greek-invest.com  
 **Repo:** max-diver999/greek-invest-website  
 **Pilot started:** 2026-08-21  
-**Phase:** 1 — remediation executed 2026-08-21 on `claude/greece-audit-phase-zero-km4045`
+**Phase:** 1 — remediation and the full manual writing pass executed 2026-08-21 on `claude/greece-audit-phase-zero-km4045`
 
 ## Snapshot (after remediation)
 
@@ -25,8 +25,18 @@
 | llms-full.txt | **379 bytes** | 39 KB, all 129 pages |
 | Tools inbound (in-content) | **0 / 2 / 5** | **20 / 8 / 58** |
 | Content pages with <3 inbound | 31 | 26 |
-| GEO uniqueness | 78 (metric rewarded duplication) | **93 (measured)** |
-| GEO overall | 92/100 A (inflated) | **73/100 B (honest)** |
+| GEO uniqueness | 78 (metric rewarded duplication) | **94 (measured)** |
+| GEO overall | 92/100 A (inflated) | **76/100 B (honest)** |
+| Thin H2 openers (no extractable answer) | **349** | **0** |
+| Ungrammatical generated headings | **225** | **0** |
+| Broken/empty tables in the corpus | **6** | **0** |
+| Invented first-party statistics | **103 sentences** | **0** (now gate-blocked) |
+| Pages with no passage an answer engine can quote | **41** | **0** |
+| Pages below the two-citable-passage standard | **82** | **0** |
+| Rental income tax scale | pre-2026 (35% from €12,001) | **2026 scale, Law 5246/2025** |
+| Worked examples taxing net instead of gross | **5** | **0** |
+| STR registry abbreviation | **ΑΜΕΑ (wrong word) ×86** | **ΑΜΑ** |
+| qa:full:quick | 2/6 | **5/6** (only the live HTTP smoke fails, proxy-blocked) |
 
 ## GSC signals (early)
 
@@ -45,29 +55,60 @@
 - **P0** `validate:content --all` cannot run — the "129/129 clean" baseline was unverified
 - **P0** No mobile navigation at all; no "Golden Visa" or "Tools" nav entry
 - **P1** Tools, `/greece-property-consultation/`, `/invest-*` pages are orphans; 95/129 pages lack an in-content CTA
-- Legal facts **verified sound** — Law 5100/2024 tiers, 120 m² usable-area reading, Circular 1/2026 (22 Apr 2026)
+- Legal facts on Law 5100/2024 tiers, the 120 m² usable-area reading and Circular 1/2026 **verified sound**
 
-## Open decisions for Maxim
+## Findings from the writing pass (after Phase 0)
 
-1. **`/invest-athens-property/` and `/invest-crete-property/`** — 0 inbound, 312-365 words,
-   duplicate the Athens and Crete guides. Recommend 301 to those guides. Needs a redirect call.
-2. **`SITE.phone` is `+66 65 119 5327`** — a Thai number on a Greece site, plus
-   `.env.example` still carries a Cape Town `LEAD_FROM_EMAIL`. Template residue, and a
-   trust problem on the lead surfaces. Needs the correct number.
-3. **Author identity** — `Article.author` is the `Greek Invest Editorial` organisation. For
-   YMYL tax and legal content a named, credentialed person is materially stronger E-E-A-T.
-4. **297 thin H2 openers across 100 files** — sections that now open with a short lead-in
-   rather than an extractable 35+ word direct answer. This is the remaining GEO drag
-   (answer 70, structure 68). Genuine writing, not something to template.
-5. **Nationality cluster still 49-65% similar** (US, Canadian, Australian, Indian, UAE,
-   Israeli, French, German, Turkish, UK). Needs country-unique substance or consolidation.
+Things the audit could not see until the boilerplate was gone and every section was read:
+
+- **P0 The rental income tax scale was a year out of date.** Law 5246/2025 inserted a 25% band
+  for €12,001–€24,000 from 1 January 2026, so 35% now starts at €24,001. 36 statements across
+  15 files taught the old scale. Five worked examples also taxed **net** income where Greece
+  taxes **gross**, understating the bill by up to €8,000 a year on one page.
+- **P0 103 sentences cited internal datasets that do not exist** ("underwriting snapshots show",
+  "case study data from 2026 shows", "transaction data shows that 78 percent of…"). Fabricated
+  E-E-A-T on YMYL pages. All rewritten to keep the substance; a gate now blocks the phrasing.
+- **P0 Six tables rendered a header and separator with no rows.** Four needed real data written;
+  two were a stray blank line splitting the separator from its rows.
+- **P1 The short-term rental registry was called ΑΜΕΑ 86 times.** ΑΜΕΑ means something else
+  entirely in Greek; the registry number is the ΑΜΑ.
+- **P1 225 headings were ungrammatical** — "How does Financial Comparison of Athens Riviera vs
+  Athens Center?", "What is Spouse or Civil Partner?" — and rendered that way on the page.
+- **P1 Law 5170/2025 was absent.** Short-term rental property standards in force since
+  1 October 2025, with fines of €5,000–€20,000. Now documented.
+- **P1 Five buyer-scenario sections started at "Scenario B"** or skipped a letter, because the
+  removed boilerplate had carried the missing one.
+
+## Decisions taken (from Maxim's five answers)
+
+1. **`/invest-athens-property/` and `/invest-crete-property/`** — rebuilt rather than redirected,
+   at 2,402 and 2,374 words with Service + BreadcrumbList + FAQPage schema.
+2. **Phone** — removed from the site's contact surfaces; retained behind the WhatsApp click.
+   `SITE.whatsapp` still carries the Thai number: **the correct number is still needed.**
+3. **Author** — set to `Maxim`, a Person, across the corpus and the Article schema.
+4. **The thin openers** — all 349 written by hand, none templated.
+5. **Nationality cluster** — differentiated on real country specifics (LRS caps for Indian buyers,
+   T1135 for Canadians, the Israel treaty text conflict, Brexit Schengen limits for UK buyers).
+   Worst pair fell from 65.5% to 44.7% containment.
+
+## Still open for Maxim
+
+1. **The correct phone number** for `SITE.whatsapp`.
+2. **Whether "MORE Group" should appear on this site at all.** The 103 fabricated-data sentences
+   also named MORE Group as the source; the rewrites speak as Greek Invest. If MORE Group is the
+   operating entity and should be named, say so and it goes back in as an honest attribution.
+3. **The 50-article content roadmap** — still a proposal, still awaiting «ок».
+4. **Live-site-only checks** — www vs non-www canonical behaviour, real Core Web Vitals, actual
+   HTTP status codes. The egress proxy here returns 403 for greek-invest.com, so these must be
+   run from Cursor.
 
 ## Next steps
 
 1. ~~**Claude** — Phase 0 full audit~~ ✅ delivered
 2. ~~**Claude** — remediation: QA gate, SEO/AEO/GEO, UX, corpus cleanup~~ ✅ delivered
-3. **Maxim** — decide the five items above; «ок» on the 50-article content roadmap
-4. **Cursor** — merge, build, qa, deploy, indexing only on «отправляй»
+3. ~~**Claude** — the manual writing pass across all 129 pages~~ ✅ delivered
+4. **Maxim** — the four open items above; «ок» on the 50-article content roadmap
+5. **Cursor** — merge, build, qa, deploy, indexing only on «отправляй»
 
 ## Artifacts (delivered 2026-08-21)
 

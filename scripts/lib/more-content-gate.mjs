@@ -33,6 +33,16 @@ export const DRAFT_MARKERS_RE =
 export const INTERNAL_CORPUS_RE =
   /lotsof feed|lotsof project database|lotsof pricing|lotsof\.properties|location\.beach\s*=|location\.area\s*=|`location\.|pipeline median|Programmatic listing pages|commission disclosure|Curated from MORE Group project database/i;
 
+/**
+ * Invented first-party authority. The corpus once carried 103 sentences
+ * attributing facts and percentages to internal datasets that do not exist
+ * ("MORE Group underwriting snapshots show", "case study data from 2026
+ * shows"). They read as E-E-A-T and are the opposite: unverifiable claims on a
+ * page that asks the reader to trust it with a property purchase.
+ */
+export const FABRICATED_AUTHORITY_RE =
+  /MORE Group|underwriting snapshot|case study (data|files|reviews)|case files show|transaction data from \d{4}|our (analysis|data|clients|underwriting) shows/i;
+
 /** wave17 uniquify stamps — break MDX tables when glued to pipe rows */
 export const STAMP_PREFIX_RE =
   /^(Studio Condos|1-Bedroom Condos|2-Bedroom Condos|3 Bedroom Apartments|Villas) [^\n]+ Phuket — /m;
@@ -175,6 +185,10 @@ export function runStructuralChecks(opts) {
     // A section headed "Risks..." satisfies the intent as squarely as one headed
     // "Red flags"; the old pattern matched neither, so a page could carry a real
     // risks section and still fail here.
+    const fabricated = body.match(FABRICATED_AUTHORITY_RE);
+    if (fabricated) {
+      errors.push(`${prefix} cites a first-party dataset that does not exist ("${fabricated[0]}")`);
+    }
     if (!/(риск|риски|\brisks?\b|red flag|checklist|чеклист|what to check|insider tip)/i.test(body)) {
       errors.push(`${prefix} missing risks/red flags/insider tip block`);
     }

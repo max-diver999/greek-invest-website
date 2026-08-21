@@ -5,10 +5,11 @@ export const SITE = {
   description:
     'Independent Greece property research: Golden Visa tiers, foreign ownership rules, transfer costs, net rental yields, and neutral new-development reviews.',
   email: 'info@greek-invest.com',
-  phone: '+66 65 119 5327',
+  /** Click-through only. The number is deliberately not displayed on the site. */
   whatsapp: 'https://wa.me/66651195327',
-  whatsappDisplay: '+66 65 119 5327',
-  editorial: 'Greek Invest Editorial',
+  /** Named byline. A person carries more E-E-A-T than a masthead on YMYL tax and legal content. */
+  editorial: 'Maxim',
+  authorRole: 'Founder, Greek Invest',
   /** Wikidata entity — https://www.wikidata.org/wiki/Q140604600 */
   wikidataId: 'Q140604600' as string | null,
   sameAs: [

@@ -51,9 +51,11 @@ const articleSchema = {
   datePublished: pubDate.toISOString(),
   dateModified: (updatedDate || pubDate).toISOString(),
   author: {
-    '@type': 'Organization',
+    '@type': 'Person',
     name: author,
+    jobTitle: SITE.authorRole,
     url: `${SITE.url}/about/`,
+    worksFor: { '@type': 'Organization', name: SITE.name, url: SITE.url },
   },
   publisher: {
     '@type': 'Organization',
@@ -121,7 +123,7 @@ const schemas = [articleSchema, breadcrumbSchema, ...(faqSchema && !hasInlineFaq
       <h1 class="mb-4 text-3xl md:text-4xl">{title}</h1>
       <p class="text-lg text-[var(--color-muted)] mb-4">{description}</p>
       <p class="text-sm text-[var(--color-muted)]">
-        By {author} · Updated {dateStr} · {readingTime} min read
+        By <a href="/about/" class="text-[var(--color-muted)] underline decoration-dotted underline-offset-2">{author}</a>, {SITE.authorRole} · Updated {dateStr} · {readingTime} min read
       </p>
     </header>
 

@@ -109,7 +109,11 @@ export function runStructuralChecks(opts) {
   if (!legacyExempt && data.title) {
     const tlen = String(data.title).replace(/^["']|["']$/g, '').length;
     if (tlen > 60) errors.push(`${prefix} title length ${tlen}; max 60 chars (SERP truncation)`);
-    if (tlen < 40) errors.push(`${prefix} title length ${tlen}; min 40 chars (too thin to earn a click)`);
+    // Aligned with the fix queue, which enforces 50-60. Two different minimums in
+  // one repo let titles drift into the gap and pass one gate while failing the
+  // other. 50 is the working floor: below it a commercial title leaves SERP
+  // width unused.
+  if (tlen < 50) errors.push(`${prefix} title length ${tlen}; min 50 chars (leaves SERP width unused)`);
   }
   if (!legacyExempt && data.description && String(data.description).length > 160) {
     errors.push(`${prefix} description length ${data.description.length}; expected <=160 chars`);

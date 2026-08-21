@@ -29,7 +29,9 @@
     "fix:leadforms": "node scripts/fix-inline-leadforms.mjs",
     "sync:content-gate": "node scripts/sync-content-gate.mjs",
     "validate:strict": "node scripts/qa-audit.mjs",
-    "audit:images": "node scripts/audit-all-images.mjs --fail"
+    "audit:images": "node scripts/audit-all-images.mjs --fail",
+    "gen:llms": "node scripts/generate-llms-txt.mjs",
+    "prebuild": "node scripts/generate-llms-txt.mjs"
   },
   "dependencies": {
     "google-auth-library": "^10.6.2",

@@ -1,12 +1,12 @@
 # Greek Invest — full page index
 
-134 research pages on Greece property investment and the Golden Visa, for foreign buyers.
+139 research pages on Greece property investment and the Golden Visa, for foreign buyers.
 Generated from the live corpus. Site: https://greek-invest.com
 
 Every figure on this site carries a date and a source. Golden Visa thresholds, taxes and
 transfer rules change; readers are told to verify with licensed Greek counsel before transacting.
 
-## Guides (94)
+## Guides (99)
 
 ### Athens Golden Visa €800K: Which Areas Qualify in 2026
 URL: https://greek-invest.com/guides/athens-golden-visa-800000-areas/
@@ -143,6 +143,11 @@ URL: https://greek-invest.com/guides/golden-visa-property-due-diligence-checklis
 Updated: 2026-08-21
 Step-by-step due diligence checklist for Greece Golden Visa property: title chain, 120m² rule, ENFIA clearance, border zone, and Circular 1/2026 bank tracing.
 
+### Greece 7% Pension Tax: The Flat Regime for Retirees
+URL: https://greek-invest.com/guides/greece-7-percent-pension-tax-retirees/
+Updated: 2026-08-22
+Greece taxes relocating foreign pensioners at a flat 7% on all foreign income for 15 years under Article 5B: conditions, deadlines, worked numbers, pitfalls.
+
 ### Greece AFM Tax Number for Property Buyers: 2026 Guide
 URL: https://greek-invest.com/guides/greece-afm-tax-number-property/
 Updated: 2026-08-21
@@ -167,6 +172,16 @@ Balconies and parking do not count. How engineers certify main usable area for �
 URL: https://greek-invest.com/guides/greece-golden-visa-250000-conversion-route/
 Updated: 2026-08-21
 Greece Golden Visa at €250K via commercial-to-residential conversion or heritage restoration: Law 5100/2024 rules, habitation standards, and the no-STR rule.
+
+### The €250K Heritage Golden Visa Route in Practice 2026
+URL: https://greek-invest.com/guides/greece-golden-visa-250k-heritage-restoration/
+Updated: 2026-08-22
+Greece's €250,000 Golden Visa survives for conversions and listed-building restorations finished before filing: eligible stock, budgets, timeline, pitfalls.
+
+### The €350K Fund Route to a Greek Golden Visa in 2026
+URL: https://greek-invest.com/guides/greece-golden-visa-350k-fund-route/
+Updated: 2026-08-22
+€350,000 in a Greek-asset fund is the cheapest Golden Visa: eligible funds, the 4-week timeline, fees, renewal mechanics and the diligence that matters.
 
 ### Australian Buyers Greece Golden Visa Property 2026
 URL: https://greek-invest.com/guides/greece-golden-visa-australian-buyers/
@@ -263,6 +278,11 @@ URL: https://greek-invest.com/guides/greece-golden-visa-us-citizens/
 Updated: 2026-08-21
 US Golden Visa Greece: €400K Crete vs €800K Athens, Schengen 90/180 fix, FATCA, EB-5 alternative. Purchase roadmap for American buyers in 2026.
 
+### Greece Golden Visa Without Buying Property: 5 Routes
+URL: https://greek-invest.com/guides/greece-golden-visa-without-property/
+Updated: 2026-08-22
+Greece grants the same Golden Visa for €350,000 in funds, €500,000 in bonds or deposits, or €800,000 in shares: every non-property route and trade-off.
+
 ### Greek Inheritance Tax for Foreign Property Owners 2026
 URL: https://greek-invest.com/guides/greece-inheritance-tax-foreign-property-owners/
 Updated: 2026-08-21
@@ -322,6 +342,11 @@ Greek property notary role, 0.8 to 1.2% fees, deed signing steps, required docum
 URL: https://greek-invest.com/guides/greece-property-pink-slip-foreign-buyers/
 Updated: 2026-08-21
 What the Greek pink slip is, why banks require it, the wire transfer sequence, Circular 1/2026 traceability rules, documents, and typical bank delays.
+
+### Greek Property Prices by Region: The €/m² Index 2026
+URL: https://greek-invest.com/guides/greece-property-price-index-by-region-2026/
+Updated: 2026-08-22
+Greek home prices rose 7.8% in 2025 and 5.7% in Q1 2026: Bank of Greece indices plus asking €/m² for 16 markets, from €1,600 Kalamata to €8,500 Mykonos.
 
 ### Greece Property Scams: How to Protect Yourself in 2026
 URL: https://greek-invest.com/guides/greece-property-scams-avoid/

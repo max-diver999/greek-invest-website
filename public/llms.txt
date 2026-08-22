@@ -37,13 +37,13 @@
 
 ## Sections
 
-- Guides (94): https://greek-invest.com/guides/
+- Guides (99): https://greek-invest.com/guides/
 - Area guides (12): https://greek-invest.com/areas/
 - Market comparisons (13): https://greek-invest.com/compare/
 - Project reviews (10): https://greek-invest.com/projects/
 - Developer profiles (4): https://greek-invest.com/developers/
 - News (1): https://greek-invest.com/news/
 
-## Full corpus (134 pages, with summaries)
+## Full corpus (139 pages, with summaries)
 
 https://greek-invest.com/llms-full.txt

@@ -115,10 +115,27 @@ all gates green. Corpus now 134 pages.
 | 41 | compare/athens-riviera-vs-crete-golden-visa | 90 | ~1,950 |
 | 44 | guides/greece-golden-visa-statistics-2026 | 92 | ~2,050 |
 
-Next: Wave 2 (Tier 1 cont.): #2 pension-7%, #10 GV-without-property,
-#11 €350K fund route, #13 €250K heritage in practice, #45 price index.
-Hero note: one new unique hero uploaded (Zappeion); four re-used 1x-pool
-images pending replacement from Cursor, where Wikimedia is reachable.
+Wave 2 delivered same day: 5 more Tier-1 articles, GEO 91 to 92,
+all gates green. Corpus now 139 pages.
+
+| # | Slug | GEO | Words |
+|---|---|---|---|
+| 2 | guides/greece-7-percent-pension-tax-retirees | 91 | ~2,070 |
+| 10 | guides/greece-golden-visa-without-property | 91 | ~2,000 |
+| 11 | guides/greece-golden-visa-350k-fund-route | 92 | ~2,000 |
+| 13 | guides/greece-golden-visa-250k-heritage-restoration | 91 | ~2,020 |
+| 45 | guides/greece-property-price-index-by-region-2026 | 91 | ~2,000 |
+
+Cross-corpus 5-gram containment of every new article: under 5%.
+Two maintained dataset pages now live (GV statistics, price index),
+both stating a quarterly update cadence.
+
+Next: Wave 3 (Tier 1 final): #16 technical due diligence report,
+#17 forest maps, #24 escrow, #25 currency/FX transfer, #30 Vouliagmeni,
+#38 Greece vs Turkey citizenship.
+Hero note: one new unique hero uploaded (Zappeion); nine articles now
+re-use 1x-pool images pending replacement from Cursor, where Wikimedia
+is reachable.
 
 ## Next steps
 

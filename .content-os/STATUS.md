@@ -102,6 +102,41 @@ Things the audit could not see until the boilerplate was gone and every section 
    HTTP status codes. The egress proxy here returns 403 for greek-invest.com, so these must be
    run from Cursor.
 
+## Content roadmap execution (approved by Maxim 2026-08-22)
+
+Wave 1 of Tier 1 delivered: 5 articles, hand-written, GEO 90 to 93 each,
+all gates green. Corpus now 134 pages.
+
+| # | Slug | GEO | Words |
+|---|---|---|---|
+| 4 | guides/greece-tax-changes-2026-law-5246 | 93 | ~2,500 |
+| 1 | guides/greece-non-dom-tax-regime-5a-guide | 91 | ~2,150 |
+| 3 | guides/greece-golden-visa-plus-non-dom-strategy | 91 | ~2,100 |
+| 41 | compare/athens-riviera-vs-crete-golden-visa | 90 | ~1,950 |
+| 44 | guides/greece-golden-visa-statistics-2026 | 92 | ~2,050 |
+
+Wave 2 delivered same day: 5 more Tier-1 articles, GEO 91 to 92,
+all gates green. Corpus now 139 pages.
+
+| # | Slug | GEO | Words |
+|---|---|---|---|
+| 2 | guides/greece-7-percent-pension-tax-retirees | 91 | ~2,070 |
+| 10 | guides/greece-golden-visa-without-property | 91 | ~2,000 |
+| 11 | guides/greece-golden-visa-350k-fund-route | 92 | ~2,000 |
+| 13 | guides/greece-golden-visa-250k-heritage-restoration | 91 | ~2,020 |
+| 45 | guides/greece-property-price-index-by-region-2026 | 91 | ~2,000 |
+
+Cross-corpus 5-gram containment of every new article: under 5%.
+Two maintained dataset pages now live (GV statistics, price index),
+both stating a quarterly update cadence.
+
+Next: Wave 3 (Tier 1 final): #16 technical due diligence report,
+#17 forest maps, #24 escrow, #25 currency/FX transfer, #30 Vouliagmeni,
+#38 Greece vs Turkey citizenship.
+Hero note: one new unique hero uploaded (Zappeion); nine articles now
+re-use 1x-pool images pending replacement from Cursor, where Wikimedia
+is reachable.
+
 ## Next steps
 
 1. ~~**Claude** — Phase 0 full audit~~ ✅ delivered

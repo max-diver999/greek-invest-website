@@ -66,6 +66,15 @@ const steps = [
     cmd: 'node',
     args: ['scripts/qa-audit.mjs'],
   },
+  ...(existsSync(join(ROOT, 'scripts/check-jurisdiction.mjs'))
+    ? [
+        {
+          name: 'Jurisdiction (no un-localised template text)',
+          cmd: 'node',
+          args: ['scripts/check-jurisdiction.mjs'],
+        },
+      ]
+    : []),
   ...(existsSync(join(ROOT, 'scripts/audit-all-images.mjs'))
     ? [
         {

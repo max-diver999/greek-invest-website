@@ -1,33 +1,98 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { SITE } from '../../data/site';
+
+/**
+ * Every article byline links here. Before this page carried an author section it
+ * answered nothing a reader following that byline actually wanted to know, which
+ * is the weakest possible signal on YMYL tax and residence content.
+ */
+const personSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: SITE.editorial,
+  jobTitle: SITE.authorRole,
+  url: `${SITE.url}/about/`,
+  email: SITE.email,
+  knowsAbout: [
+    'Greek Golden Visa',
+    'Greek property law',
+    'Greek property taxation',
+    'Athens real estate',
+    'Residence by investment',
+  ],
+  worksFor: { '@type': 'Organization', name: SITE.name, url: SITE.url },
+};
 ---
 <BaseLayout
   title="About Greek Invest"
-  description="Greek Invest is an independent editorial resource on Greece property investment, not a developer or listing portal."
+  description="Who writes Greek Invest, how the research desk works, what we cover, and the limits of what an editorial site can tell you about Greek property."
+  schemas={[personSchema]}
 >
   <section class="site-container py-12 md:py-16 max-w-3xl">
     <h1 class="mb-6">About {SITE.name}</h1>
     <div class="prose">
       <p>
-        {SITE.name} publishes research-first guides for foreign buyers evaluating Athens, Crete, the Cyclades, and mainland Greece.
-        We are <strong>not</strong> a developer, not a property portal, and not a substitute for licensed legal or tax advice.
+        {SITE.name} publishes research-first guides for foreign buyers evaluating Athens, the Athens
+        Riviera, Crete, the Cyclades and mainland Greece. We are <strong>not</strong> a developer, not
+        a listing portal, and not a substitute for licensed legal or tax advice. Nothing here is
+        inventory we are paid to move.
       </p>
-      <h2>What we do</h2>
+
+      <h2>Who writes this site</h2>
+      <p>
+        Articles carry a named byline: {SITE.editorial}, {SITE.authorRole}. That is deliberate. Greek
+        residence and tax rules move fast enough that unsigned content ages badly and nobody is
+        accountable for it. If a figure on this site is wrong, there is a person to write to, and the
+        address is <a href={`mailto:${SITE.email}`}>{SITE.email}</a>.
+      </p>
+      <p>
+        The desk is editorial, not advisory. We read the primary Greek sources, check the numbers, and
+        write them up in English for buyers who do not read the Government Gazette. The regulated work
+        that follows — title searches, the engineer's certificate, the notarial deed, the Ministry
+        file — is done by licensed Greek lawyers, notaries and civil engineers, not by us.
+      </p>
+
+      <h2>What we cover</h2>
       <ul>
-        <li>Explain Golden Visa tiers, transfer taxes, foreign ownership rules, and cadastral due diligence in plain English</li>
-        <li>Compare markets and product types (Athens vs islands, off-plan vs resale, LTR vs holiday let)</li>
-        <li>Connect serious enquiries to <strong>licensed Greek partners</strong> when you request a shortlist</li>
+        <li>Golden Visa tiers under Law 5100/2024, the 120 m² main-usable-area rule, and where a parcel actually falls</li>
+        <li>Transfer taxes, ENFIA, the 2026 rental income scale, and the Article 5A and 5B special tax regimes</li>
+        <li>Market comparisons: Athens against the islands, off-plan against resale, long lets against short-term rental</li>
+        <li>Neutral reviews of individual developments, written from public developer material and independent checks</li>
+        <li>Two maintained datasets: Golden Visa issuance statistics and a regional price index</li>
       </ul>
+
+      <h2>How a page gets published</h2>
+      <p>
+        Every guide is written against primary sources, dated, and put through four checks before it
+        goes live: the correct Law 5100/2024 tier for the cadastral parcel, the 120 m² of κύρια χρήση
+        on the engineer's certificate, a single title deed, and a traceable transfer of funds under
+        Circular 1/2026. The <a href="/methodology/">methodology page</a> sets out each one in full,
+        along with the sources we prioritise and how figures are dated.
+      </p>
+
       <h2>What we don't do</h2>
       <ul>
-        <li>Push specific developer inventory or take undisclosed referral fees without disclosure</li>
+        <li>Push specific developer inventory, or take a referral fee without disclosing it</li>
         <li>Guarantee yields, capital appreciation, or visa outcomes</li>
         <li>Provide personalised financial, legal, or tax advice</li>
+        <li>Publish a figure we cannot trace to a source we can name</li>
       </ul>
+
+      <h2>How we make money</h2>
       <p>
-        Questions? Email <a href={`mailto:${SITE.email}`}>{SITE.email}</a> or read our
-        <a href="/methodology/">methodology</a>.
+        When you ask for a shortlist or a consultation, your enquiry may be passed to licensed Greek
+        lawyers and partner agents who can do the regulated work. That referral is how the site is
+        funded, and it does not buy anyone editorial placement. The
+        <a href="/privacy-policy/">privacy policy</a> sets out exactly what is shared and when.
+      </p>
+
+      <h2>Corrections</h2>
+      <p>
+        Greek thresholds and tax bands change, sometimes twice in a year. If you find a figure that has
+        moved, or one that was wrong to begin with, email <a href={`mailto:${SITE.email}`}>{SITE.email}</a>
+        and we will correct the page and update its date. Or start with the
+        <a href="/contact/">contact page</a>.
       </p>
     </div>
   </section>

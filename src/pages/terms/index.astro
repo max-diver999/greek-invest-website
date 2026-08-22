@@ -1,34 +1,101 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { SITE } from '../../data/site';
-const updated = 'June 4, 2026';
+const updated = 'August 22, 2026';
 ---
 <BaseLayout
   title="Terms of Use"
-  description="Terms of use for Greek Invest, editorial disclaimer and limitation of liability."
+  description="Terms of use for Greek Invest: editorial disclaimer, referral terms, intellectual property, limitation of liability and governing law."
 >
   <section class="site-container py-12 md:py-16 max-w-3xl">
     <h1 class="mb-2">Terms of Use</h1>
     <p class="text-sm text-[var(--color-muted)] mb-8">Last updated: {updated}</p>
     <div class="prose text-sm">
-      <p>By using {SITE.url} you agree to these terms.</p>
+      <p>By using {SITE.url} you agree to these terms. If you do not agree with them, please do not use the site.</p>
+
       <h2>Editorial content</h2>
       <p>
-        All guides are for general information only. They are not financial, legal, tax, or investment advice.
-        Property values, yields, and visa rules change. Verify independently before any transaction.
+        Everything published here is general information about Greek property, taxation and residence rules.
+        It is not financial, legal, tax or investment advice, and it is not tailored to your circumstances.
+        Property values, rental yields, tax bands and Golden Visa rules change, sometimes more than once a
+        year. Verify every figure with a licensed Greek lawyer, an accountant and AADE before you rely on it
+        for a transaction.
       </p>
-      <h2>No agency relationship</h2>
+
+      <h2>Accuracy and updates</h2>
       <p>
-        {SITE.name} is not your broker or fiduciary unless a separate written agreement says otherwise.
-        Partner brokers operate under their own licenses and terms.
+        We check each page against primary Greek sources before publication and date the material figures, as
+        described on our <a href="/methodology/">methodology page</a>. We do not warrant that the site is free
+        of errors or that every page reflects the law as it stands today. Where a page carries an
+        <em>Updated</em> date, that date is when the facts behind it were last verified, not a guarantee that
+        nothing has changed since.
       </p>
+
+      <h2>No agency or advisory relationship</h2>
+      <p>
+        {SITE.name} is not your broker, agent, adviser or fiduciary unless a separate written agreement says
+        otherwise. We are not a developer, a law firm or a licensed Greek real-estate broker. Reading this
+        site, submitting a form or exchanging emails with us does not create any of those relationships.
+      </p>
+
+      <h2>Referrals and partners</h2>
+      <p>
+        When you request a shortlist or a consultation, we may introduce you to licensed Greek lawyers,
+        notaries, engineers or partner agents. Those firms operate under their own licences, contracts, fees
+        and professional liability. We may receive a referral fee. We do not accept payment for editorial
+        placement, and an introduction is not a recommendation that you engage anyone or buy anything. Any
+        contract you sign is between you and that firm; check their credentials yourself.
+      </p>
+
+      <h2>Third-party content and links</h2>
+      <p>
+        Project pages are written from public developer material, official sources and independent checks.
+        Prices, plans and availability quoted by a developer or a portal are theirs, not ours, and change
+        without notice. External links are provided for reference and we do not control or endorse the
+        content behind them.
+      </p>
+
+      <h2>Intellectual property</h2>
+      <p>
+        The text, research, datasets and layout of this site belong to {SITE.name}. You may quote short
+        extracts with a clear attribution and a link to the page you took them from, including in AI-generated
+        answers. Republishing whole pages, or reproducing our datasets as your own, requires written
+        permission. Third-party images remain the property of their rights holders and are used under their
+        respective licences.
+      </p>
+
+      <h2>Acceptable use</h2>
+      <p>
+        Do not use the site to submit false enquiry details, to scrape it in a way that degrades service for
+        other readers, or to attempt to gain access to systems or data that are not public.
+      </p>
+
       <h2>Limitation of liability</h2>
       <p>
-        To the fullest extent permitted by law, we are not liable for decisions you make based on site content
-        or partner introductions.
+        To the fullest extent permitted by law, {SITE.name} is not liable for any loss arising from decisions
+        you make on the basis of site content, partner introductions, or any interruption of the site. Nothing
+        in these terms excludes liability that cannot lawfully be excluded, including liability for fraud.
       </p>
+
+      <h2>Changes to these terms</h2>
+      <p>
+        We may update these terms as the site changes. The date at the top shows the current version, and
+        continued use after a change means you accept it.
+      </p>
+
+      <h2>Governing law</h2>
+      <p>
+        These terms are governed by Greek law and, where it applies to you as a consumer in the European
+        Union, by the mandatory consumer-protection rules of your country of residence, which these terms do
+        not override.
+      </p>
+
       <h2>Contact</h2>
-      <p><a href={`mailto:${SITE.email}`}>{SITE.email}</a></p>
+      <p>
+        Questions about these terms, or a correction to a page:
+        <a href={`mailto:${SITE.email}`}>{SITE.email}</a>. See also our
+        <a href="/privacy-policy/">privacy policy</a>.
+      </p>
     </div>
   </section>
 </BaseLayout>

@@ -79,6 +79,28 @@ Things the audit could not see until the boilerplate was gone and every section 
 - **P1 Five buyer-scenario sections started at "Scenario B"** or skipped a letter, because the
   removed boilerplate had carried the missing one.
 
+## Findings after the content waves (2026-08-22)
+
+- **P0 `/methodology/` and `/privacy-policy/` were still the UAE template.** "DLD, AMPI, ICA visa
+  rules", "Official UAE government and emirate-level portals", "AMPI-licensed partner". Both are
+  linked from all 139 article pages and from the footer. Root cause: the earlier template-residue
+  scan searched for the known-bad words already found (Phuket, Mexico, THB, Cape Town) instead of
+  verifying that a page was about Greece — "UAE", "DLD", "AMPI", "ICA" were never on the list, and
+  every structural gate checks markup, not subject matter. Both pages rewritten for Greece.
+- **New permanent gate: `scripts/check-jurisdiction.mjs`,** wired into `qa:full`. Inverted logic —
+  a foreign-jurisdiction term is an error by default rather than something to remember to look for.
+  Tier 1 (foreign regulators: AMPI, DLD, RERA, Deeds Office, Chanote, Fideicomiso) fails anywhere
+  outside comparative pages; Tier 2 (country names and currencies) fails inside site chrome and on
+  legal pages, where they can only mean un-localised template.
+- **P1 The `ArticleLayout` "About this research" aside repeated the byline on the same page** and
+  restated the four publication checks on all 139 pages. Repeated template boilerplate is not a
+  Google duplicate-content penalty — template regions are discounted — but the byline duplication
+  was a genuine same-page defect and the methodology belongs once, on `/methodology/`. Trimmed to
+  a disclaimer plus a link.
+- **P1 The four trust pages were thin for YMYL.** `/about/` 173 words, `/terms/` 154, `/contact/`
+  83 — and `/about/` is the target of every article byline while saying nothing about who writes
+  the site. Expanded to 464 / 602 / 425 rendered words, with a Person schema on `/about/`.
+
 ## Decisions taken (from Maxim's five answers)
 
 1. **`/invest-athens-property/` and `/invest-crete-property/`** — rebuilt rather than redirected,

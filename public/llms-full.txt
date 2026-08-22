@@ -1,12 +1,12 @@
 # Greek Invest — full page index
 
-129 research pages on Greece property investment and the Golden Visa, for foreign buyers.
+134 research pages on Greece property investment and the Golden Visa, for foreign buyers.
 Generated from the live corpus. Site: https://greek-invest.com
 
 Every figure on this site carries a date and a source. Golden Visa thresholds, taxes and
 transfer rules change; readers are told to verify with licensed Greek counsel before transacting.
 
-## Guides (90)
+## Guides (94)
 
 ### Athens Golden Visa €800K: Which Areas Qualify in 2026
 URL: https://greek-invest.com/guides/athens-golden-visa-800000-areas/
@@ -223,6 +223,11 @@ URL: https://greek-invest.com/guides/greece-golden-visa-no-short-term-rental/
 Updated: 2026-08-21
 Law 5100/2024 bans Airbnb on Greece Golden Visa properties. What rentals are allowed, LTR rules, and Athens STR moratorium.
 
+### Golden Visa Plus Non-Dom: Greece's Combined Play 2026
+URL: https://greek-invest.com/guides/greece-golden-visa-plus-non-dom-strategy/
+Updated: 2026-08-22
+One Greek property can carry both the Golden Visa and the €100K non-dom flat tax: the €800K deed strategy, sequencing, 183-day pivot and family maths.
+
 ### Greece Golden Visa Property 2026: Complete Investor Guide
 URL: https://greek-invest.com/guides/greece-golden-visa-property-guide-2026/
 Updated: 2026-08-21
@@ -237,6 +242,11 @@ Law 5100/2024 created three Greece Golden Visa tiers. Compare €800K prime zone
 URL: https://greek-invest.com/guides/greece-golden-visa-renewal-requirements/
 Updated: 2026-08-21
 Greece Golden Visa renewal every 5 years: property must stay held, insurance, criminal record, STR compliance, family members. Circular 1/2026 rules.
+
+### Greece Golden Visa Statistics 2026: The Full Dataset
+URL: https://greek-invest.com/guides/greece-golden-visa-statistics-2026/
+Updated: 2026-08-22
+27,786 active permits, 8,879 approvals in 2025, China 47% of holders, Turkey +158%: every Greece Golden Visa statistic with dates and sources, updated 2026.
 
 ### Greece Golden Visa Processing Time 2026: Full Timeline
 URL: https://greek-invest.com/guides/greece-golden-visa-timeline-application-2026/
@@ -262,6 +272,11 @@ Greek inheritance tax for foreign property owners: succession planning, relation
 URL: https://greek-invest.com/guides/greece-new-build-vat-suspension-2026/
 Updated: 2026-08-21
 Greece new build VAT 24% suspended until end-2026. Buyers pay 3.09% transfer tax instead, saving up to €105K on a €500K property. Rules and risks.
+
+### Greece Non-Dom Tax Regime: The €100K Flat Rate (5A)
+URL: https://greek-invest.com/guides/greece-non-dom-tax-regime-5a-guide/
+Updated: 2026-08-22
+Greece's Article 5A non-dom regime: €100,000 flat tax on all foreign income for 15 years, €500,000 investment test, €20,000 per family member. Full guide.
 
 ### Greece Objective Value Property Tax: How It Works in 2026
 URL: https://greek-invest.com/guides/greece-objective-value-property-tax/
@@ -327,6 +342,11 @@ Progressive 15 to 45% Greek rental income tax for non-residents: brackets, filin
 URL: https://greek-invest.com/guides/greece-rental-yield-guide/
 Updated: 2026-08-21
 Athens 5 to 7.5% gross, Crete STR 8 to 11%: what is left after tax, management and vacancy. Net yield tables by city and the traps gross figures hide.
+
+### Greece Tax Changes 2026: Law 5246/2025 Buyer's Guide
+URL: https://greek-invest.com/guides/greece-tax-changes-2026-law-5246/
+Updated: 2026-08-22
+Law 5246/2025 cut Greek income tax from 1 January 2026: new 9% to 44% brackets, a 25% rental band, family rates, ENFIA relief. What it means for buyers.
 
 ### Greek Property Glossary for Foreign Buyers (2026 A to Z)
 URL: https://greek-invest.com/guides/greek-property-glossary-foreign-buyers/
@@ -520,12 +540,17 @@ URL: https://greek-invest.com/areas/voula-property-investment/
 Updated: 2026-08-21
 Voula property investment 2026: ultra-premium Riviera, €800K GV zone, Astir beach access. Prices, limited supply, LTR yields, risks and scenarios.
 
-## Market comparisons (12)
+## Market comparisons (13)
 
 ### Athens Riviera vs Athens Center Property Guide 2026
 URL: https://greek-invest.com/compare/athens-riviera-vs-athens-center-investment/
 Updated: 2026-08-21
 Athens Riviera vs center 2026: Glyfada/Voula vs Kipseli/center at €800K GV tier, yield, STR moratorium, Ellinikon, and buyer fit compared.
+
+### Athens Riviera vs Crete Golden Visa: €800K or €400K?
+URL: https://greek-invest.com/compare/athens-riviera-vs-crete-golden-visa/
+Updated: 2026-08-22
+€800,000 on the Athens Riviera buys 135 m² and liquidity; €400,000 on Crete buys 190 m² and yield. Full comparison: prices, net income, exit, family costs.
 
 ### Athens vs Thessaloniki Golden Visa Investment Compared 2026
 URL: https://greek-invest.com/compare/athens-vs-thessaloniki-golden-visa-investment/

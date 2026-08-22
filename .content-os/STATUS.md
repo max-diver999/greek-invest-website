@@ -102,6 +102,24 @@ Things the audit could not see until the boilerplate was gone and every section 
    HTTP status codes. The egress proxy here returns 403 for greek-invest.com, so these must be
    run from Cursor.
 
+## Content roadmap execution (approved by Maxim 2026-08-22)
+
+Wave 1 of Tier 1 delivered: 5 articles, hand-written, GEO 90 to 93 each,
+all gates green. Corpus now 134 pages.
+
+| # | Slug | GEO | Words |
+|---|---|---|---|
+| 4 | guides/greece-tax-changes-2026-law-5246 | 93 | ~2,500 |
+| 1 | guides/greece-non-dom-tax-regime-5a-guide | 91 | ~2,150 |
+| 3 | guides/greece-golden-visa-plus-non-dom-strategy | 91 | ~2,100 |
+| 41 | compare/athens-riviera-vs-crete-golden-visa | 90 | ~1,950 |
+| 44 | guides/greece-golden-visa-statistics-2026 | 92 | ~2,050 |
+
+Next: Wave 2 (Tier 1 cont.): #2 pension-7%, #10 GV-without-property,
+#11 €350K fund route, #13 €250K heritage in practice, #45 price index.
+Hero note: one new unique hero uploaded (Zappeion); four re-used 1x-pool
+images pending replacement from Cursor, where Wikimedia is reachable.
+
 ## Next steps
 
 1. ~~**Claude** — Phase 0 full audit~~ ✅ delivered

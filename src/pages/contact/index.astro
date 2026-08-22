@@ -5,12 +5,12 @@ import { SITE } from '../../data/site';
 ---
 <BaseLayout
   title="Contact Greek Invest"
-  description={`Contact Greek Invest at ${SITE.email} or request a free Greece property shortlist.`}
+  description={`Contact Greek Invest at ${SITE.email}: property shortlists, editorial corrections, and what to include so we can answer in one reply.`}
 >
   <section class="site-container py-12 md:py-16 max-w-2xl">
     <h1 class="mb-4">Contact</h1>
-    <p class="text-[var(--color-muted)] mb-8">
-      Editorial questions: <a href={`mailto:${SITE.email}`}>{SITE.email}</a>.
+    <p class="text-[var(--color-muted)] mb-6">
+      Editorial questions and corrections: <a href={`mailto:${SITE.email}`}>{SITE.email}</a>.
       For property shortlists, use the form below or{' '}
       <a
         href={`${SITE.whatsapp}?text=Hi%2C%20I%20need%20help%20with%20a%20property%20enquiry%20from%20Greek%20Invest.`}
@@ -21,8 +21,47 @@ import { SITE } from '../../data/site';
       >
         message us on WhatsApp
       </a>.
-      We usually reply within one business day.
+      We usually reply within one business day, Monday to Friday, Athens time (EET/EEST).
     </p>
+
+    <div class="prose text-sm mb-10">
+      <h2>What to include</h2>
+      <p>
+        The more of this you give us, the more useful the first reply is. Most enquiries can be answered
+        in one message if we know:
+      </p>
+      <ul>
+        <li>Your budget in euros, and whether it is cash or part-financed</li>
+        <li>Whether the goal is a Golden Visa, rental income, a home to use, or a mix</li>
+        <li>Region or regions you are weighing up — Athens, the Riviera, Crete, the Cyclades, the Peloponnese</li>
+        <li>Your nationality and current tax residence, because both change the tax and permit path</li>
+        <li>Roughly when you want to complete</li>
+      </ul>
+
+      <h2>What we can and cannot answer</h2>
+      <p>
+        We can explain how a rule works, which Golden Visa tier a location falls into, what a purchase
+        actually costs once taxes and fees are counted, and which questions to put to a lawyer. We cannot
+        give personalised legal or tax advice, run a title search, or confirm that a specific property
+        qualifies — that is regulated work, and we will point you to licensed Greek professionals who do
+        it. See <a href="/about/">about</a> and the <a href="/methodology/">methodology page</a>.
+      </p>
+
+      <h2>Found a mistake?</h2>
+      <p>
+        Greek thresholds and tax bands move, sometimes twice in a year. If a figure on any page looks
+        wrong or out of date, email us the page and the number. We correct the page and update its date,
+        and we are glad to be told.
+      </p>
+
+      <h2>Enquiry data</h2>
+      <p>
+        What you send is used to answer your enquiry, and shared with licensed Greek lawyers or partner
+        agents only where the enquiry needs regulated work. We do not sell data or add you to marketing
+        lists. Full detail in the <a href="/privacy-policy/">privacy policy</a>.
+      </p>
+    </div>
+
     <LeadForm context="Contact page" />
   </section>
 </BaseLayout>

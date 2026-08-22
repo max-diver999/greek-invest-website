@@ -150,27 +150,15 @@ const schemas = [articleSchema, breadcrumbSchema, ...(faqSchema && !hasInlineFaq
     </div>
 
     <!--
-      Author and standards note. This previously sat in 107 MDX files as a
-      "Who we are (citable snapshot)" section, templated with only the topic
-      phrase swapped, which is duplication dressed as page-specific content.
-      It belongs once, in the layout, attached to the byline.
+      Disclaimer only. An earlier version of this block also repeated the byline
+      and restated the four publication checks on all 139 pages: the byline is
+      already above, and the checks belong once, on /methodology/.
     -->
-    <aside class="max-w-3xl mx-auto mt-12 surface-card p-6 text-sm text-[var(--color-muted)]">
-      <h2 class="text-base text-[var(--color-ink)] mb-2">About this research</h2>
-      <p class="mb-3">
-        Written by <a href="/about/">{author}</a>, {SITE.authorRole}. Every page on this site is
-        checked against the same four tests before publication: the correct Law 5100/2024 tier for
-        the cadastral parcel, 120 m² of main usable area on the engineer certificate rather than the
-        floor plan, a single title deed, and traceable transfer of funds under Circular 1/2026.
-        Figures carry the date they were verified.
-      </p>
-      <p class="m-0">
-        <strong>Disclaimer:</strong> Greek Invest is an independent editorial resource. We are not a
-        developer, a law firm, or a licensed Greek broker, and we are not paid by developers for
-        placement. Enquiries may be referred to licensed Greek lawyers and partner agents. Golden
-        Visa thresholds, taxes and transfer rules change: verify with your lawyer and AADE before
-        any transaction. See our <a href="/methodology/">methodology</a>.
-      </p>
+    <aside class="max-w-3xl mx-auto mt-12 surface-card p-5 text-sm text-[var(--color-muted)]">
+      <strong>Disclaimer:</strong> Greek Invest is an independent editorial resource, not a developer,
+      law firm or licensed Greek broker, and is not paid by developers for placement. Golden Visa
+      thresholds, taxes and transfer rules change: verify with your lawyer and AADE before any
+      transaction. <a href="/methodology/">How we research</a>.
     </aside>
   </article>
 </BaseLayout>

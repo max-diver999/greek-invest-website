@@ -58,8 +58,14 @@ const schemas = [
       <p class="text-sm text-[var(--color-muted)] mt-2">{guides.length} guides with photos and net-yield focus.</p>
     </header>
 
+    <div class="guide-search mb-10">
+      <label for="guide-search">Find a guide</label>
+      <input id="guide-search" type="search" placeholder={`Search ${guides.length} guides`} autocomplete="off" />
+      <p id="guide-search-count" aria-live="polite">{guides.length} guides</p>
+    </div>
+
     {priority.length > 0 && (
-      <section class="mb-14">
+      <section class="mb-14" id="guide-priority">
         <h2 class="text-xl mb-5">Start here</h2>
         <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {priority.map((guide) => (
@@ -78,15 +84,51 @@ const schemas = [
 
     <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
       {guides.map((guide) => (
-        <ContentCard
-          href={`/guides/${guide.id}/`}
-          title={guide.data.title}
-          description={guide.data.description}
-          image={guide.data.heroImage}
-          badges={guide.data.tags?.slice(0, 2) ?? []}
-          meta={`${guide.data.readingTime ?? 8} min read`}
-        />
+        <div class="guide-search-item" data-search={`${guide.data.title} ${guide.data.description} ${(guide.data.tags ?? []).join(' ')}`.toLowerCase()}>
+          <ContentCard
+            href={`/guides/${guide.id}/`}
+            title={guide.data.title}
+            description={guide.data.description}
+            image={guide.data.heroImage}
+            badges={guide.data.tags?.slice(0, 2) ?? []}
+            meta={`${guide.data.readingTime ?? 8} min read`}
+          />
+        </div>
       ))}
     </div>
+    <p id="guide-search-empty" class="guide-search__empty" hidden>No guides match that search.</p>
   </section>
 </BaseLayout>
+
+<style>
+  .guide-search { max-width: 36rem; padding: 1rem; border: 1px solid var(--color-border); border-radius: 14px; background: var(--color-surface); }
+  .guide-search label { display: block; margin-bottom: .45rem; color: var(--color-ink); font-size: .85rem; font-weight: 600; }
+  .guide-search input { width: 100%; }
+  .guide-search p { margin: .45rem 0 0; color: var(--color-muted); font-size: .8rem; }
+  .guide-search-item { min-width: 0; }
+  .guide-search-item > :global(*) { height: 100%; }
+  .guide-search__empty { padding: 2rem 0; color: var(--color-muted); text-align: center; }
+</style>
+
+<script>
+  (function () {
+    var input = document.getElementById('guide-search');
+    var count = document.getElementById('guide-search-count');
+    var empty = document.getElementById('guide-search-empty');
+    var priority = document.getElementById('guide-priority');
+    var items = Array.prototype.slice.call(document.querySelectorAll('.guide-search-item'));
+    if (!input || !count || !empty) return;
+    input.addEventListener('input', function () {
+      var query = input.value.trim().toLowerCase();
+      var visible = 0;
+      items.forEach(function (item) {
+        var show = !query || (item.dataset.search || '').includes(query);
+        item.hidden = !show;
+        if (show) visible += 1;
+      });
+      if (priority) priority.hidden = Boolean(query);
+      count.textContent = visible + (visible === 1 ? ' guide' : ' guides');
+      empty.hidden = visible !== 0;
+    });
+  })();
+</script>

@@ -1,5 +1,6 @@
 ---
 import { SITE } from '../data/site';
+import CurrencyToggle from './CurrencyToggle.astro';
 
 /**
  * Navigation leads with Golden Visa: it is the site's commercial core and
@@ -32,6 +33,7 @@ const isActive = (href: string) => (href === '/' ? path === '/' : path.startsWit
       ))}
     </nav>
 
+    <CurrencyToggle variant="header" />
     <a href="/get-shortlist/" class="btn-primary site-header__cta">Free shortlist</a>
 
     <!--
@@ -44,13 +46,14 @@ const isActive = (href: string) => (href === '/' ? path === '/' : path.startsWit
         <span class="site-header__burger" aria-hidden="true"><i></i><i></i><i></i></span>
       </summary>
       <nav class="site-header__drawer" aria-label="Mobile">
+        <a href="/get-shortlist/" class="site-header__drawer-cta">Get a free shortlist</a>
+        <CurrencyToggle variant="drawer" />
         {nav.map((item) => (
           <a href={item.href} aria-current={isActive(item.href) ? 'page' : undefined}>{item.label}</a>
         ))}
         <a href="/developers/">Developers</a>
         <a href="/news/">News</a>
         <a href="/contact/">Contact</a>
-        <a href="/get-shortlist/" class="site-header__drawer-cta">Free shortlist →</a>
       </nav>
     </details>
   </div>
@@ -103,7 +106,7 @@ const isActive = (href: string) => (href === '/' ? path === '/' : path.startsWit
   .site-header__cta { display: none; font-size: 0.875rem; padding: 0.5rem 1rem; flex-shrink: 0; }
 
   /* --- mobile disclosure --- */
-  .site-header__menu { position: relative; }
+  .site-header__menu { position: static; }
   .site-header__menu > summary {
     list-style: none;
     cursor: pointer;
@@ -127,17 +130,16 @@ const isActive = (href: string) => (href === '/' ? path === '/' : path.startsWit
   .site-header__burger i { transition: transform 0.18s ease, opacity 0.18s ease; }
 
   .site-header__drawer {
-    position: absolute;
-    right: 0;
-    top: calc(100% + 0.75rem);
-    min-width: 15rem;
+    position: fixed;
+    inset: 73px 0 0;
+    z-index: 60;
     display: grid;
     gap: 0.25rem;
-    padding: 0.75rem;
-    background: #fff;
-    border: 1px solid var(--color-border);
-    border-radius: 0.85rem;
-    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.12);
+    align-content: start;
+    padding: 1.25rem clamp(1.25rem, 5vw, 2rem) 2rem;
+    background: var(--color-surface);
+    overflow-y: auto;
+    overscroll-behavior: contain;
   }
   .site-header__drawer a {
     padding: 0.6rem 0.7rem;
@@ -166,11 +168,20 @@ const isActive = (href: string) => (href === '/' ? path === '/' : path.startsWit
   // Close the drawer on outside click and on Escape.
   const menu = document.querySelector('.site-header__menu');
   if (menu instanceof HTMLDetailsElement) {
+    menu.addEventListener('toggle', () => {
+      document.body.style.overflow = menu.open ? 'hidden' : '';
+    });
+    menu.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => {
+      menu.open = false;
+    }));
     document.addEventListener('click', (e) => {
       if (menu.open && !menu.contains(e.target as Node)) menu.open = false;
     });
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape' && menu.open) menu.open = false;
+    });
+    window.addEventListener('resize', () => {
+      if (window.innerWidth >= 900) menu.open = false;
     });
   }
 </script>

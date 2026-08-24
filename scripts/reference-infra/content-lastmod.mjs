@@ -47,13 +47,17 @@ export function resolveInsideRoot(root, relativePath, label = 'path') {
   return resolved
 }
 
-async function walkMdx(directory) {
+export function isMarkdownContentFile(filename) {
+  return /\.mdx?$/i.test(filename)
+}
+
+async function walkMarkdown(directory) {
   const files = []
   const entries = await readdir(directory, { withFileTypes: true })
   for (const entry of entries) {
     const absolute = path.join(directory, entry.name)
-    if (entry.isDirectory()) files.push(...(await walkMdx(absolute)))
-    else if (entry.isFile() && entry.name.toLowerCase().endsWith('.mdx')) {
+    if (entry.isDirectory()) files.push(...(await walkMarkdown(absolute)))
+    else if (entry.isFile() && isMarkdownContentFile(entry.name)) {
       files.push(absolute)
     }
   }
@@ -90,7 +94,7 @@ export async function collectContentLastmod(config, options = {}) {
     )
     let files
     try {
-      files = await walkMdx(collectionRoot)
+      files = await walkMarkdown(collectionRoot)
     } catch (error) {
       if (error?.code === 'ENOENT') continue
       throw error
@@ -101,7 +105,7 @@ export async function collectContentLastmod(config, options = {}) {
       const frontmatter = parseFrontmatter(source)
       const relative = path.relative(collectionRoot, file)
       const fallbackSlug = relative
-        .replace(/\.mdx$/i, '')
+        .replace(/\.mdx?$/i, '')
         .split(path.sep)
         .map(cleanUrlPart)
         .filter(Boolean)

@@ -5,6 +5,7 @@ import { readdir, readFile, writeFile } from 'node:fs/promises'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 import {
+  isMarkdownContentFile,
   normalizeDate,
   parseFrontmatter,
   resolveInsideRoot,
@@ -13,12 +14,12 @@ import {
 const execFile = promisify(execFileCallback)
 const DATE_ONLY_FIELD = /^\s*(?:updatedDate|updated|lastmod):\s*/i
 
-async function walkMdx(directory) {
+async function walkMarkdown(directory) {
   const result = []
   for (const entry of await readdir(directory, { withFileTypes: true })) {
     const absolute = path.join(directory, entry.name)
-    if (entry.isDirectory()) result.push(...(await walkMdx(absolute)))
-    else if (entry.isFile() && entry.name.toLowerCase().endsWith('.mdx')) {
+    if (entry.isDirectory()) result.push(...(await walkMarkdown(absolute)))
+    else if (entry.isFile() && isMarkdownContentFile(entry.name)) {
       result.push(absolute)
     }
   }
@@ -179,7 +180,7 @@ export async function restoreDates(config, options = {}) {
     )
     let files
     try {
-      files = await walkMdx(directory)
+      files = await walkMarkdown(directory)
     } catch (error) {
       if (error?.code === 'ENOENT') {
         unresolved.push({ file: collection.dir, reason: 'collection missing' })

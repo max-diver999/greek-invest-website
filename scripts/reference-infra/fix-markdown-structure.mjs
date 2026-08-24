@@ -2,7 +2,10 @@
 import { readdir, readFile, writeFile } from 'node:fs/promises'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
-import { resolveInsideRoot } from './content-lastmod.mjs'
+import {
+  isMarkdownContentFile,
+  resolveInsideRoot,
+} from './content-lastmod.mjs'
 
 function escapeRegExp(value) {
   return value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
@@ -105,12 +108,12 @@ export function fixMarkdownStructure(source, options = {}) {
     .join(linksFixed.includes('\r\n') ? '\r\n' : '\n')
 }
 
-async function walkMdx(directory) {
+async function walkMarkdown(directory) {
   const result = []
   for (const entry of await readdir(directory, { withFileTypes: true })) {
     const absolute = path.join(directory, entry.name)
-    if (entry.isDirectory()) result.push(...(await walkMdx(absolute)))
-    else if (entry.isFile() && entry.name.toLowerCase().endsWith('.mdx')) {
+    if (entry.isDirectory()) result.push(...(await walkMarkdown(absolute)))
+    else if (entry.isFile() && isMarkdownContentFile(entry.name)) {
       result.push(absolute)
     }
   }
@@ -135,7 +138,7 @@ export async function fixConfiguredCollections(config, options = {}) {
     )
     let files
     try {
-      files = await walkMdx(directory)
+      files = await walkMarkdown(directory)
     } catch (error) {
       if (error?.code === 'ENOENT') continue
       throw error

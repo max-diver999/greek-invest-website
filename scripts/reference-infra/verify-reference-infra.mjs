@@ -2,8 +2,14 @@
 import { readdir, readFile } from 'node:fs/promises'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
-import { generateRobots, SEARCH_AND_USER_FETCH_CRAWLERS, TRAINING_CRAWLERS } from './generate-robots.mjs'
 import {
+  generateRobots,
+  normalizeContentSignal,
+  normalizeCrawlerArray,
+  resolveCrawlerGroups,
+} from './generate-robots.mjs'
+import {
+  isMarkdownContentFile,
   normalizeDate,
   parseFrontmatter,
   resolveInsideRoot,
@@ -11,12 +17,12 @@ import {
 
 const DATE_KEYS = ['updatedDate', 'updated', 'lastmod', 'pubDate', 'date']
 
-async function walkMdx(directory) {
+async function walkMarkdown(directory) {
   const result = []
   for (const entry of await readdir(directory, { withFileTypes: true })) {
     const absolute = path.join(directory, entry.name)
-    if (entry.isDirectory()) result.push(...(await walkMdx(absolute)))
-    else if (entry.isFile() && entry.name.toLowerCase().endsWith('.mdx')) {
+    if (entry.isDirectory()) result.push(...(await walkMarkdown(absolute)))
+    else if (entry.isFile() && isMarkdownContentFile(entry.name)) {
       result.push(absolute)
     }
   }
@@ -127,6 +133,30 @@ export function validateConfig(config, options = {}) {
       errors.push(`robots.${key} must be boolean`)
     }
   }
+  let crawlerArraysValid = true
+  for (const key of [
+    'additionalSearchCrawlers',
+    'additionalTrainingCrawlers',
+  ]) {
+    try {
+      normalizeCrawlerArray(config.robots?.[key], `robots.${key}`)
+    } catch (error) {
+      crawlerArraysValid = false
+      errors.push(error.message)
+    }
+  }
+  if (crawlerArraysValid) {
+    try {
+      resolveCrawlerGroups(config)
+    } catch (error) {
+      errors.push(error.message)
+    }
+  }
+  try {
+    normalizeContentSignal(config.robots?.contentSignal)
+  } catch (error) {
+    errors.push(error.message)
+  }
   if (typeof config.llms?.enabled !== 'boolean') {
     errors.push('llms.enabled must be boolean')
   }
@@ -163,20 +193,28 @@ export function findNumericLinkCorruption(source) {
 
 export function verifyRobotsExpectations(config, robotsText) {
   const errors = []
+  const crawlerGroups = resolveCrawlerGroups(config)
   const searchDirective =
     config.robots.allowSearchCrawlers === false ? 'Disallow: /' : 'Allow: /'
   const trainingDirective =
     config.robots.allowTrainingCrawlers === true ? 'Allow: /' : 'Disallow: /'
 
-  for (const agent of SEARCH_AND_USER_FETCH_CRAWLERS) {
+  for (const agent of crawlerGroups.search) {
     if (!robotsText.includes(`User-agent: ${agent}\n${searchDirective}`)) {
       errors.push(`robots missing search policy for ${agent}`)
     }
   }
-  for (const agent of TRAINING_CRAWLERS) {
+  for (const agent of crawlerGroups.training) {
     if (!robotsText.includes(`User-agent: ${agent}\n${trainingDirective}`)) {
       errors.push(`robots missing training policy for ${agent}`)
     }
+  }
+  const contentSignal = normalizeContentSignal(config.robots?.contentSignal)
+  if (
+    contentSignal &&
+    !robotsText.split(/\r?\n/).includes(`Content-Signal: ${contentSignal}`)
+  ) {
+    errors.push('robots missing raw Content-Signal declaration')
   }
   return errors
 }
@@ -203,7 +241,7 @@ export async function verifyReferenceInfra(config, options = {}) {
     }
     let collectionFiles
     try {
-      collectionFiles = await walkMdx(directory)
+      collectionFiles = await walkMarkdown(directory)
     } catch (error) {
       if (error?.code === 'ENOENT') {
         errors.push(`collection directory not found: ${collection.dir}`)

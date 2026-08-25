@@ -3,6 +3,7 @@ import BaseLayout from './BaseLayout.astro';
 import LeadForm from '../components/LeadForm.astro';
 import FaqBlock from '../components/FaqBlock.astro';
 import { SITE } from '../data/site';
+import { responsiveCloudinary } from '../lib/cloudinary';
 
 interface Props {
   title: string;
@@ -42,6 +43,7 @@ const dateStr = (updatedDate || pubDate).toLocaleDateString('en-US', {
   day: 'numeric',
 });
 const pageUrl = canonical || Astro.url.href;
+const responsiveHero = heroImage ? responsiveCloudinary(heroImage) : null;
 
 const articleSchema = {
   '@context': 'https://schema.org',
@@ -128,7 +130,17 @@ const schemas = [articleSchema, breadcrumbSchema, ...(faqSchema && !hasInlineFaq
     </header>
 
     {heroImage && (
-      <img src={heroImage} alt={heroAlt || `${title} — Greek Invest research illustration`} class="w-full max-h-[420px] object-cover rounded-2xl mb-10 border border-[var(--color-border)]" width="1200" height="420" loading="eager" fetchpriority="high" />
+      <img
+        src={responsiveHero?.src || heroImage}
+        srcset={responsiveHero?.srcset}
+        sizes={responsiveHero?.sizes}
+        alt={heroAlt || `${title} — Greek Invest research illustration`}
+        class="w-full max-h-[420px] object-cover rounded-2xl mb-10 border border-[var(--color-border)]"
+        width={responsiveHero?.width || 1200}
+        height={responsiveHero?.height || 675}
+        loading="eager"
+        fetchpriority="high"
+      />
     )}
 
     <div class="prose mx-auto">

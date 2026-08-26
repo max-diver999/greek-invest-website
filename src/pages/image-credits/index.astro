@@ -1,0 +1,77 @@
+---
+export const prerender = true;
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { SITE } from '../../data/site';
+import credits from '../../data/image-credits.json';
+
+/**
+ * Фотографии сайта взяты с Wikimedia Commons под свободными лицензиями.
+ * CC BY и CC BY-SA требуют называть автора и лицензию — эта страница и есть
+ * то место, где это выполняется, а манифест `src/data/image-credits.json`
+ * хранит для каждого кадра его исходный файл и правовой статус.
+ */
+type Credit = {
+  file: string;
+  page: string;
+  license: string;
+  author: string;
+  credit: string;
+  url: string;
+};
+
+const entries = Object.entries(credits as Record<string, Credit>)
+  .map(([id, meta]) => ({ id, ...meta }))
+  .sort((a, b) => a.file.localeCompare(b.file));
+
+const clean = (s: string) => (s || '').replace(/\s+/g, ' ').trim();
+---
+<BaseLayout
+  title="Image credits"
+  description="Photographers, source files and licences for the photography used across Greek Invest."
+  canonical={`${SITE.url}/image-credits/`}
+>
+  <div class="gr-band">
+    <div class="site-container py-11 md:py-14">
+      <nav class="text-sm text-[var(--color-frame-muted)] mb-6" aria-label="Breadcrumb">
+        <a href="/" class="no-underline hover:underline">Home</a> <span aria-hidden="true">›</span> <span>Image credits</span>
+      </nav>
+      <header class="max-w-3xl">
+        <span class="gr-band__badge mb-5 inline-block">Attribution</span>
+        <h1 class="mb-4">Image credits</h1>
+        <p class="text-lg text-[var(--color-frame-muted)]">
+          Photography on this site comes from Wikimedia Commons under free licences. Each entry below names the
+          source file, the photographer as credited on Commons, and the licence the photograph is published under.
+        </p>
+      </header>
+    </div>
+  </div>
+
+  <section class="site-container py-12 md:py-16">
+    <p class="text-sm text-[var(--color-muted)] mb-8 max-w-3xl">
+      {entries.length} photographs. Renders and photographs of individual developments are supplied by the
+      developers named on each project page and remain their property. To request removal or a correction of any
+      credit, write to <a href={`mailto:${SITE.email}`}>{SITE.email}</a>.
+    </p>
+
+    <div class="table-scroll">
+      <table class="w-full text-sm">
+        <thead>
+          <tr>
+            <th>Photograph</th>
+            <th>Author</th>
+            <th>Licence</th>
+          </tr>
+        </thead>
+        <tbody>
+          {entries.map((e) => (
+            <tr>
+              <td><a href={e.page} rel="nofollow noopener" target="_blank">{e.file.replace(/^File:/, '')}</a></td>
+              <td>{clean(e.author) || clean(e.credit) || '—'}</td>
+              <td>{e.license}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </section>
+</BaseLayout>

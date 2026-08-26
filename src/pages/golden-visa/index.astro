@@ -164,21 +164,25 @@ const schemas = [
   canonical={`${SITE.url}/golden-visa/`}
   {schemas}
 >
-  <section class="site-container py-12 md:py-16">
-    <nav class="text-sm text-[var(--color-muted)] mb-6" aria-label="Breadcrumb">
+  <div class="gr-band">
+    <div class="site-container py-11 md:py-14">
+      <nav class="text-sm text-[var(--color-frame-muted)] mb-6" aria-label="Breadcrumb">
       <a href="/" class="no-underline hover:underline">Home</a> <span aria-hidden="true">›</span> <span>Golden Visa</span>
     </nav>
-
-    <header class="max-w-3xl mb-10">
-      <span class="badge-pill mb-4">Independent research</span>
-      <h1 class="text-3xl md:text-4xl mb-4">Greece Golden Visa, without the brochure</h1>
-      <p class="text-lg text-[var(--color-muted)]">
+      <header class="max-w-3xl mb-10">
+      <span class="gr-band__badge mb-4">Independent research</span>
+      <h1 class="mb-4">Greece Golden Visa, without the brochure</h1>
+      <p class="text-lg text-[var(--color-frame-muted)]">
         <strong>Quick answer:</strong> the Greek Golden Visa needs one property, on one title deed, of at least
         120 m² main usable area, at €800,000 in Attica and the big islands or €400,000 in the rest of Greece.
         Short-term letting of that property is banned for the life of the permit. Budget 12 to 18 months, plus
         7% to 10% in acquisition costs on top of the price. Only the €250,000 heritage route escapes the 120 m² rule.
       </p>
     </header>
+    </div>
+  </div>
+
+  <section class="site-container py-12 md:py-16">
 
     <div class="surface-card overflow-x-auto mb-4">
       <table class="w-full text-sm">
@@ -216,7 +220,7 @@ const schemas = [
       <section class="mb-16" id={s.id}>
         <h2 class="text-2xl mb-2">{s.heading}</h2>
         <p class="text-[var(--color-muted)] mb-6 max-w-2xl">{s.intro}</p>
-        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-7 gap-y-10">
           {s.items.map((g) => (
             <ContentCard
               href={`/guides/${g.id}/`}

@@ -6,6 +6,7 @@ import vercel from '@astrojs/vercel';
 import referenceInfraConfig from './reference-infra.config.json' with { type: 'json' };
 import { collectContentLastmod } from './scripts/reference-infra/content-lastmod.mjs';
 import { rehypeResponsiveCloudinary } from './scripts/rehype-responsive-cloudinary.mjs';
+import { rehypeTableScroll } from './scripts/lib/rehype-table-scroll.mjs';
 
 const CONTENT_LASTMOD = new Map(
   (await collectContentLastmod(referenceInfraConfig, { root: process.cwd() })).map(
@@ -61,7 +62,7 @@ export default defineConfig({
       },
     }),
     mdx({
-      rehypePlugins: [rehypeResponsiveCloudinary],
+      rehypePlugins: [rehypeResponsiveCloudinary, rehypeTableScroll],
     }),
   ],
 });

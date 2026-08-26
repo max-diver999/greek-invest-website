@@ -1,17 +1,43 @@
 @import "tailwindcss";
 
+/* Тема «Эгейская ночь и мрамор».
+ *
+ * Имена переменных не меняются — меняются значения, поэтому вся существующая
+ * вёрстка подхватывает тему без правок. Металл здесь не золото (оно уже у
+ * Пхукета и Гульфа), а мрамор: холодный светлый камень на чернильной раме.
+ */
 @theme {
-  --color-page: #f7f8f6;
+  /* Рама: чернильная синь Эгейского моря в сумерках */
+  --color-frame: #0e2a33;
+  --color-frame-soft: #143a46;
+  --color-frame-line: rgba(232, 226, 212, 0.18);
+  --color-frame-text: #f0f4f2;
+  --color-frame-muted: #9fb7bb;
+
+  /* Мрамор — светлая деталь темы */
+  --color-marble: #e8e2d4;
+  --color-marble-deep: #c8bda6;
+
+  /* Шафран заката — искра на ценах и мета-строках */
+  --color-saffron: #d9903f;
+
+  /* Бумага: тёплый известняк вместо холодного серого */
+  --color-page: #f8f5ee;
   --color-surface: #ffffff;
-  --color-surface-muted: #f4f5f3;
-  --color-ink: #1f2421;
-  --color-muted: #5d645f;
-  --color-teal: #2c6b62;
-  --color-teal-dark: #235851;
-  --color-teal-light: #e6f0ed;
-  --color-border: #e6e6e3;
-  --color-border-soft: #eeeeec;
-  --font-sans: 'DM Sans', system-ui, sans-serif;
+  --color-surface-muted: #f1ece0;
+  --color-ink: #15242b;
+  --color-muted: #59696f;
+
+  /* Действие: эгейская лазурь (имя toke прежнее, значение новое) */
+  --color-teal: #1d6f86;
+  --color-teal-dark: #145467;
+  --color-teal-light: #e2eef1;
+
+  --color-border: #e3ddd0;
+  --color-border-soft: #efe9dd;
+
+  --font-sans: 'Manrope', system-ui, sans-serif;
+  --font-serif: 'Marcellus', 'Cormorant Garamond', Georgia, serif;
 }
 
 /* Element defaults belong in @layer base.
@@ -28,17 +54,24 @@
     background: var(--color-page);
     color: var(--color-muted);
     font-family: var(--font-sans);
-    line-height: 1.65;
+    line-height: 1.7;
     font-size: 1rem;
+    /* Marcellus рисует цифры в тексте старостильными — на ценах это читается
+       как опечатка, поэтому маюскульные включены глобально. */
+    font-variant-numeric: lining-nums tabular-nums;
   }
 
   h1, h2, h3, h4 {
-    font-family: var(--font-sans);
+    font-family: var(--font-serif);
     color: var(--color-ink);
-    line-height: 1.25;
-    font-weight: 600;
-    letter-spacing: -0.02em;
+    line-height: 1.15;
+    font-weight: 400;
+    letter-spacing: -0.005em;
   }
+
+  h1 { font-size: clamp(2.3rem, 5.4vw, 3.6rem); }
+  h2 { font-size: clamp(1.6rem, 2.6vw, 2.1rem); }
+  h3 { font-size: clamp(1.2rem, 1.8vw, 1.4rem); }
 
   a { color: var(--color-teal); text-decoration: none; }
   a:hover { color: var(--color-teal-dark); }
@@ -48,19 +81,19 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background: var(--color-teal);
-  color: #fff !important;
+  background: var(--color-frame);
+  color: var(--color-marble) !important;
+  font-size: 0.78rem;
   font-weight: 600;
-  border-radius: 999px;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  border-radius: 2px;
   border: none;
   cursor: pointer;
-  box-shadow: 0 1px 2px rgba(31, 36, 33, 0.08);
-  transition: background 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+  transition: background 0.2s ease, color 0.2s ease;
 }
 .btn-primary:hover {
-  background: var(--color-teal-dark);
-  transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(44, 107, 98, 0.18);
+  background: var(--color-frame-soft);
   color: #fff !important;
 }
 
@@ -68,28 +101,34 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background: var(--color-surface);
+  background: transparent;
   color: var(--color-ink) !important;
+  font-size: 0.78rem;
   font-weight: 600;
-  border-radius: 999px;
-  border: 1px solid var(--color-border);
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  border-radius: 2px;
+  border: 1px solid var(--color-marble-deep);
   cursor: pointer;
   transition: background 0.2s, border-color 0.2s;
 }
 .btn-secondary:hover {
   background: var(--color-surface-muted);
-  border-color: #d6d3d1;
+  border-color: var(--color-frame);
   color: var(--color-ink) !important;
 }
 
 .badge-pill {
   display: inline-block;
-  font-size: 0.75rem;
+  font-size: 0.68rem;
   font-weight: 600;
-  color: var(--color-teal);
-  background: var(--color-teal-light);
-  padding: 0.25rem 0.65rem;
-  border-radius: 999px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-saffron);
+  background: transparent;
+  border: 1px solid var(--color-border);
+  padding: 0.3rem 0.7rem;
+  border-radius: 2px;
 }
 
 .card-icon {
@@ -155,24 +194,40 @@ textarea:focus {
 }
 
 .prose { max-width: 72ch; }
-.prose h2 { margin-top: 2.5rem; margin-bottom: 1rem; font-size: 1.35rem; }
-.prose h3 { margin-top: 1.75rem; margin-bottom: 0.75rem; font-size: 1.1rem; }
+.prose h2 { margin-top: 2.75rem; margin-bottom: 1rem; font-size: clamp(1.5rem, 2.4vw, 1.9rem); }
+.prose h3 { margin-top: 2rem; margin-bottom: 0.75rem; font-size: 1.25rem; }
 .prose p { margin-bottom: 1.1rem; }
 .prose ul, .prose ol { margin: 1rem 0 1.25rem 1.25rem; }
-.prose li { margin-bottom: 0.4rem; }
-.prose table {
-  display: block;
-  width: max-content;
-  min-width: 100%;
-  max-width: 100%;
+.prose li { margin-bottom: 0.45rem; }
+/* Tailwind preflight снимает маркеры со всех списков, а плагина типографики в
+   проекте нет: без этого перечисления в тексте читаются как рыхлые строки. */
+.prose ul:not([class]) { list-style: disc outside; }
+.prose ol:not([class]) { list-style: decimal outside; }
+.prose ul:not([class]) ul { list-style: circle outside; }
+.prose li::marker { color: var(--color-saffron); }
+/* Прокрутку держит обёртка .table-scroll (rehype-плагин), а таблица остаётся
+   настоящей таблицей — иначе колонки схлопываются по содержимому. */
+.prose .table-scroll {
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
+  margin: 1.5rem 0;
+}
+.prose table {
+  width: 100%;
   border-collapse: collapse;
   margin: 1.5rem 0;
   font-size: 0.92rem;
 }
+.prose .table-scroll > table { margin: 0; }
 .prose th, .prose td { border: 1px solid var(--color-border); padding: 0.55rem 0.75rem; text-align: left; }
-.prose th { background: var(--color-surface-muted); font-weight: 600; color: var(--color-ink); }
+.prose th {
+  background: var(--color-surface-muted);
+  font-weight: 600;
+  color: var(--color-ink);
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
 @media (max-width: 768px) {
   .prose th,
   .prose td { min-width: 8.5rem; }
@@ -418,4 +473,195 @@ main {
   font-size: 0.875rem;
   font-weight: 600;
   color: var(--color-teal);
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   Тема «Эгейская ночь и мрамор»: герой, витрина, плашка статьи
+   ───────────────────────────────────────────────────────────────────────── */
+
+.gr-hero {
+  background: var(--color-frame);
+  color: var(--color-frame-text);
+  border-bottom: 1px solid var(--color-frame-line);
+}
+.gr-hero__grid {
+  display: grid;
+  gap: 2.5rem;
+  align-items: stretch;
+}
+.gr-hero__copy { padding-block: 3.5rem 4rem; align-self: center; }
+@media (min-width: 1024px) {
+  .gr-hero__grid { grid-template-columns: 0.95fr 1.05fr; gap: 3.5rem; min-height: 80svh; }
+  .gr-hero__copy { padding-block: 5rem 5.5rem; }
+}
+.gr-hero__eyebrow {
+  display: inline-block;
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-marble-deep);
+  margin-bottom: 1.5rem;
+}
+.gr-hero__title {
+  font-family: var(--font-serif);
+  font-size: clamp(2.4rem, 5.2vw, 3.7rem);
+  line-height: 1.08;
+  color: var(--color-frame-text);
+  margin-bottom: 1.4rem;
+}
+.gr-hero__title-accent { color: var(--color-marble-deep); font-style: italic; }
+.gr-hero__lede {
+  color: var(--color-frame-muted);
+  font-size: 1.02rem;
+  line-height: 1.75;
+  max-width: 34rem;
+  margin-bottom: 1.8rem;
+}
+.gr-hero__chips { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-bottom: 2rem; }
+.gr-hero__chip {
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-marble);
+  border: 1px solid var(--color-frame-line);
+  padding: 0.45rem 0.85rem;
+  border-radius: 2px;
+}
+.gr-hero__actions { display: flex; flex-wrap: wrap; align-items: center; gap: 1.5rem; }
+.gr-hero__cta {
+  display: inline-flex;
+  align-items: center;
+  background: var(--color-marble);
+  color: var(--color-frame) !important;
+  font-size: 0.76rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 0.95rem 1.8rem;
+  border-radius: 2px;
+  transition: background 0.2s ease;
+}
+.gr-hero__cta:hover { background: #fff; color: var(--color-frame) !important; }
+.gr-hero__link {
+  color: var(--color-frame-muted) !important;
+  font-size: 0.85rem;
+  border-bottom: 1px solid var(--color-frame-line);
+  padding-bottom: 2px;
+}
+.gr-hero__link:hover { color: var(--color-marble) !important; border-color: var(--color-marble-deep); }
+
+/* Аспект задан на самой картинке — иначе оверлей и подпись занимают больше
+   места, чем кадр, и снизу остаётся пустая полоса. */
+.gr-hero__figure {
+  position: relative;
+  margin: 0;
+  border-radius: 16px 0 0 16px;
+  overflow: hidden;
+  box-shadow: 0 30px 80px rgba(4, 16, 20, 0.55);
+}
+.gr-hero__figure img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+@media (min-width: 1024px) {
+  .gr-hero__figure {
+    /* вырывается из контейнера к правому краю окна: контейнер 68rem,
+       поля clamp(1.5rem, 4vw, 3.5rem) */
+    margin-right: calc(-1 * (max(0px, (100vw - 68rem) / 2) + clamp(1.5rem, 4vw, 3.5rem)));
+    height: 100%;
+    min-height: 80svh;
+  }
+  .gr-hero__figure img { aspect-ratio: auto; height: 100%; min-height: 80svh; }
+}
+.gr-hero__figure figcaption {
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  padding: 2.5rem 1.25rem 1rem;
+  background: linear-gradient(180deg, transparent, rgba(6, 20, 26, 0.85));
+  color: var(--color-marble);
+  font-size: 0.7rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+/* Полоса ключевых цифр под героем */
+.gr-figures {
+  background: var(--color-frame-soft);
+  color: var(--color-frame-text);
+  border-bottom: 1px solid var(--color-frame-line);
+}
+.gr-figures strong {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  color: var(--color-marble);
+}
+
+/* Галерейная карточка витрины */
+.gr-card {
+  display: flex;
+  flex-direction: column;
+  background: transparent;
+  border: none;
+  height: 100%;
+}
+.gr-card__media {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  background: var(--color-surface-muted);
+  box-shadow: 0 0 0 1px rgba(21, 36, 43, 0.08);
+}
+.gr-card__media img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+.gr-card:hover .gr-card__media img { transform: scale(1.03); }
+.gr-card__body { padding: 1rem 0.1rem 0; }
+.gr-card__meta {
+  font-size: 0.66rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-saffron);
+  margin-bottom: 0.5rem;
+}
+.gr-card__title {
+  font-family: var(--font-serif);
+  font-size: 1.35rem;
+  line-height: 1.25;
+  color: var(--color-ink);
+  margin-bottom: 0.5rem;
+}
+.gr-card:hover .gr-card__title { color: var(--color-teal); }
+.gr-card__excerpt {
+  font-size: 0.9rem;
+  line-height: 1.65;
+  color: var(--color-muted);
+}
+.gr-card__rule {
+  margin-top: 0.9rem;
+  border-top: 1px solid var(--color-border);
+}
+
+/* Плашка заголовка статьи */
+.gr-band {
+  background: var(--color-frame);
+  color: var(--color-frame-text);
+  border-bottom: 1px solid var(--color-frame-line);
+}
+.gr-band h1 { color: var(--color-frame-text); }
+.gr-band a { color: var(--color-marble-deep); }
+.gr-band__badge {
+  display: inline-block;
+  font-size: 0.66rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-marble-deep);
+  border: 1px solid var(--color-frame-line);
+  padding: 0.35rem 0.75rem;
+  border-radius: 2px;
 }

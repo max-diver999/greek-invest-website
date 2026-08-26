@@ -23,8 +23,6 @@ const articleSchema = z.object({
 const projectSchema = articleSchema.extend({
   category: z.string().default('projects'),
   heroImage: z.string(),
-  priceFromSGD: z.number().optional(),
-  priceToSGD: z.number().optional(),
   district: z.string().optional(),
   region: z.enum(['CCR', 'RCR', 'OCR']).optional(),
   area: z.string().optional(),

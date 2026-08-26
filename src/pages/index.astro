@@ -80,60 +80,55 @@ const schemas = [
   canonical={`${SITE.url}/`}
   {schemas}
 >
-  <section class="border-b border-[var(--color-border-soft)] bg-[var(--color-surface)]">
-    <div class="site-container py-14 md:py-20 grid lg:grid-cols-2 gap-10 lg:gap-14 items-center">
-      <div>
-        <span class="badge-pill mb-5">Independent research</span>
-        <h1 class="text-3xl md:text-[2.35rem] mb-5 leading-tight">
-          Understand Greece property before you buy
+  <!-- Первый экран: тёмная рама, крупное фото, светлая витрина начинается ниже.
+       Прежний вариант был белым блоком с мелкой карточкой, у которой оверлей
+       растягивался на весь контейнер, а фото — нет: снизу оставалась серая
+       полоса. Здесь у фото задан аспект, поэтому кадр заполняет карточку. -->
+  <section class="gr-hero">
+    <div class="site-container gr-hero__grid">
+      <div class="gr-hero__copy">
+        <span class="gr-hero__eyebrow">Independent research · Greece</span>
+        <h1 class="gr-hero__title">
+          Understand Greek property<br />
+          <span class="gr-hero__title-accent">before you buy.</span>
         </h1>
-        <p class="text-base md:text-lg text-[var(--color-muted)] mb-8 max-w-xl">
-          Athens, Crete, and the Cyclades, Golden Visa tiers, foreign ownership rules, transfer costs, net rental yields, and neutral project reviews for international buyers.
+        <p class="gr-hero__lede">
+          Athens, Crete and the Cyclades — Golden Visa tiers, foreign ownership rules,
+          the transfer costs nobody quotes upfront, net rental yields and neutral project reviews.
         </p>
-        <div class="flex flex-wrap gap-3 mb-10">
-          <a href="/guides/" class="btn-primary px-6 py-3">Browse guides</a>
-          <a href="/projects/" class="btn-secondary px-6 py-3">Project reviews</a>
-          <a href="/get-shortlist/" class="btn-secondary px-6 py-3">Free shortlist →</a>
+        <div class="gr-hero__chips">
+          <span class="gr-hero__chip">Golden Visa from &euro;250K</span>
+          <span class="gr-hero__chip">{publishedGuides.length} researched guides</span>
         </div>
-        <div class="grid grid-cols-3 gap-3 max-w-md">
-          <div class="stat-pill">
-            <strong>{publishedGuides.length}</strong>
-            <span>Guides</span>
-          </div>
-          <div class="stat-pill">
-            <strong>{publishedProjects.length}</strong>
-            <span>Projects</span>
-          </div>
-          <div class="stat-pill">
-            <strong>{publishedAreas.length}</strong>
-            <span>Areas</span>
-          </div>
+        <div class="gr-hero__actions">
+          <a href="/get-shortlist/" class="gr-hero__cta">Request a shortlist</a>
+          <a href="/methodology/" class="gr-hero__link">How we verify &rarr;</a>
         </div>
       </div>
-      <div class="hero-visual min-h-[280px] md:min-h-[380px] relative">
-        <img src={heroImage} alt="Acropolis of Athens at sunset" loading="eager" width="1400" height="560" />
-        <div class="hero-visual__overlay" />
-        <p class="hero-visual__caption">Athens · Acropolis</p>
-      </div>
+
+      <figure class="gr-hero__figure">
+        <img src={heroImage} alt="Cycladic villa with a sea-facing pool on Antiparos" loading="eager" fetchpriority="high" width="1800" height="1200" />
+        <figcaption>ELA Antiparos &middot; Cyclades</figcaption>
+      </figure>
     </div>
   </section>
 
-  <section class="border-b border-[var(--color-border-soft)] bg-[var(--color-teal)] text-white py-8">
+  <section class="gr-figures py-9">
     <div class="site-container grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
       <div>
-        <p class="text-2xl md:text-3xl font-semibold">€250K to 800K</p>
+        <p class="text-2xl md:text-3xl"><strong>€250K to 800K</strong></p>
         <p class="text-sm opacity-85 mt-1">Golden Visa property tiers 2026</p>
       </div>
       <div>
-        <p class="text-2xl md:text-3xl font-semibold">7 to 10%</p>
+        <p class="text-2xl md:text-3xl"><strong>7 to 10%</strong></p>
         <p class="text-sm opacity-85 mt-1">Total acquisition costs (typical)</p>
       </div>
       <div>
-        <p class="text-2xl md:text-3xl font-semibold">4.4 to 5.4%</p>
+        <p class="text-2xl md:text-3xl"><strong>4.4 to 5.4%</strong></p>
         <p class="text-sm opacity-85 mt-1">Gross rental yields (national / Athens)</p>
       </div>
       <div>
-        <p class="text-2xl md:text-3xl font-semibold">€100 to 200K</p>
+        <p class="text-2xl md:text-3xl"><strong>€100 to 200K</strong></p>
         <p class="text-sm opacity-85 mt-1">Foreign buyer sweet spot (RE/MAX 2025)</p>
       </div>
     </div>
@@ -164,7 +159,7 @@ const schemas = [
         <h2 class="text-2xl">Start here</h2>
         <a href="/guides/" class="link-arrow text-sm">All {publishedGuides.length} guides →</a>
       </div>
-      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-7 gap-y-10">
         {featuredGuides.map((g) => (
           <ContentCard
             href={`/guides/${g.id}/`}
@@ -185,7 +180,7 @@ const schemas = [
         <h2 class="text-2xl">Where buyers are looking</h2>
         <a href="/areas/" class="link-arrow text-sm">All {publishedAreas.length} areas →</a>
       </div>
-      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-7 gap-y-10">
         {featuredAreas.map((a) => (
           <ContentCard
             href={`/areas/${a.id}/`}
@@ -209,7 +204,7 @@ const schemas = [
       <p class="text-[var(--color-muted)] mb-8 max-w-2xl">
         We check the deed, the permit and the 120 m² arithmetic before we comment on the finish.
       </p>
-      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-7 gap-y-10">
         {featuredProjects.map((pr) => (
           <ContentCard
             href={`/projects/${pr.id}/`}

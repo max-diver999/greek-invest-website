@@ -43,17 +43,22 @@ const schemas = [
   title="Greece Property Market Comparisons"
   description="Side-by-side comparisons of Greece vs Portugal, Spain, Italy, and other markets for property and Golden Visa investors."
 >
-  <section class="site-container py-14 md:py-20">
-    <nav class="text-sm text-[var(--color-muted)] mb-6" aria-label="Breadcrumb">
+  <div class="gr-band">
+    <div class="site-container py-11 md:py-14">
+      <nav class="text-sm text-[var(--color-frame-muted)] mb-6" aria-label="Breadcrumb">
       <a href="/" class="no-underline hover:underline">Home</a> <span aria-hidden="true">›</span> <span>Compare</span>
     </nav>
-    <header class="max-w-2xl mb-12">
-      <h1 class="text-3xl">Market comparisons</h1>
-      <p class="text-lg text-[var(--color-muted)] mt-3">
+      <header class="max-w-2xl mb-12">
+      <h1>Market comparisons</h1>
+      <p class="text-lg text-[var(--color-frame-muted)] mt-3">
         When two markets look similar on a brochure, these breakdowns show fees, yields, and buyer fit.
       </p>
     </header>
-    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+    </div>
+  </div>
+
+  <section class="site-container py-14 md:py-20">
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-7 gap-y-10">
       {comparisons.map((item) => (
         <ContentCard
           href={`/compare/${item.id}/`}

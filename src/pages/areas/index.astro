@@ -44,17 +44,22 @@ const schemas = [
   title="Greek Investment Areas"
   description="Area guides for Athens Riviera, Crete, Cyclades, and Peloponnese: yields, Golden Visa tiers, buyer profile, and micro-market risks."
 >
-  <section class="site-container py-14 md:py-20">
-    <nav class="text-sm text-[var(--color-muted)] mb-6" aria-label="Breadcrumb">
+  <div class="gr-band">
+    <div class="site-container py-11 md:py-14">
+      <nav class="text-sm text-[var(--color-frame-muted)] mb-6" aria-label="Breadcrumb">
       <a href="/" class="no-underline hover:underline">Home</a> <span aria-hidden="true">›</span> <span>Areas</span>
     </nav>
-    <header class="max-w-2xl mb-12">
-      <h1 class="text-3xl">Investment areas</h1>
-      <p class="text-lg text-[var(--color-muted)] mt-3">
+      <header class="max-w-2xl mb-12">
+      <h1>Investment areas</h1>
+      <p class="text-lg text-[var(--color-frame-muted)] mt-3">
         Micro-market research for foreign buyers, {areas.length} area guides with photos and yield data.
       </p>
     </header>
-    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+    </div>
+  </div>
+
+  <section class="site-container py-14 md:py-20">
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-7 gap-y-10">
       {areas.map((area) => (
         <ContentCard
           href={`/areas/${area.id}/`}

@@ -1,6 +1,6 @@
 ---
 import ContentCard from './ContentCard.astro';
-import { formatAreaLabel, formatUsd } from '../lib/cardImage';
+import { formatAreaLabel } from '../lib/cardImage';
 
 interface Props {
   href: string;
@@ -11,7 +11,6 @@ interface Props {
   developer?: string;
   propertyType?: string;
   status?: string;
-  priceFromUsd?: number;
 }
 
 const {
@@ -23,7 +22,6 @@ const {
   developer,
   propertyType,
   status,
-  priceFromUsd,
 } = Astro.props;
 
 const badges = [
@@ -32,8 +30,7 @@ const badges = [
   formatAreaLabel(area),
 ].filter(Boolean);
 
-const price = formatUsd(priceFromUsd);
-const meta = [price && `From ${price}`, developer].filter(Boolean).join(' · ');
+const meta = developer ?? '';
 ---
 
 <ContentCard
@@ -43,6 +40,4 @@ const meta = [price && `From ${price}`, developer].filter(Boolean).join(' · ');
   image={image}
   badges={badges}
   meta={meta}
-  metaAccent={!!price}
-  placeholder="🏢"
 />

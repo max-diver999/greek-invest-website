@@ -23,8 +23,7 @@ const isActive = (href: string) => (href === '/' ? path === '/' : path.startsWit
 <header class="site-header">
   <div class="site-container site-header__bar">
     <a href="/" class="site-header__brand" aria-label={`${SITE.name} home`}>
-      <img src="/favicon.svg?v=3" alt="" width="32" height="32" class="rounded-lg" />
-      <span>{SITE.name}</span>
+      <span class="gr-wordmark"><span class="gr-wordmark__accent">Greek</span> Invest</span>
     </a>
 
     <nav class="site-header__nav" aria-label="Primary">
@@ -60,13 +59,15 @@ const isActive = (href: string) => (href === '/' ? path === '/' : path.startsWit
 </header>
 
 <style>
+  /* Тёмная рама: шапка держит тот же чернильный тон, что герой и подвал —
+     светлая витрина начинается сразу под ней. */
   .site-header {
     position: sticky;
     top: 0;
     z-index: 50;
-    border-bottom: 1px solid var(--color-border);
-    background: rgba(255, 255, 255, 0.9);
-    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--color-frame-line);
+    background: color-mix(in srgb, var(--color-frame) 94%, transparent);
+    backdrop-filter: blur(14px);
   }
   .site-header__bar {
     display: flex;
@@ -78,32 +79,60 @@ const isActive = (href: string) => (href === '/' ? path === '/' : path.startsWit
   .site-header__brand {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
     text-decoration: none;
-    font-size: 1.125rem;
-    font-weight: 600;
-    color: var(--color-ink);
     flex-shrink: 0;
   }
+  .gr-wordmark {
+    font-family: var(--font-serif);
+    font-size: 1.35rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--color-frame-text);
+    white-space: nowrap;
+  }
+  .gr-wordmark__accent { color: var(--color-marble-deep); }
   .site-header__nav {
     display: none;
     align-items: center;
-    gap: 1.25rem;
+    gap: 1.4rem;
+    margin-left: 2.5rem;
+    margin-right: auto;
     font-size: 0.875rem;
     font-weight: 500;
   }
   .site-header__nav a {
-    color: var(--color-muted);
+    color: var(--color-frame-muted);
     text-decoration: none;
     white-space: nowrap;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    font-size: 0.72rem;
+    font-weight: 500;
+    transition: color 0.2s ease;
   }
-  .site-header__nav a:hover,
+  .site-header__nav a:hover { color: var(--color-marble); }
   .site-header__drawer a:hover { color: var(--color-ink); }
   .site-header__nav a[aria-current='page'] {
-    color: var(--color-ink);
+    color: var(--color-marble);
     font-weight: 600;
   }
-  .site-header__cta { display: none; font-size: 0.875rem; padding: 0.5rem 1rem; flex-shrink: 0; }
+  .site-header__cta {
+    display: none;
+    font-size: 0.72rem;
+    padding: 0.55rem 1.15rem;
+    flex-shrink: 0;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    background: transparent;
+    color: var(--color-marble) !important;
+    border: 1px solid var(--color-marble-deep);
+    border-radius: 2px;
+    box-shadow: none;
+  }
+  .site-header__cta:hover {
+    background: var(--color-marble);
+    color: var(--color-frame) !important;
+  }
 
   /* --- mobile disclosure --- */
   .site-header__menu { position: static; }
@@ -123,7 +152,7 @@ const isActive = (href: string) => (href === '/' ? path === '/' : path.startsWit
   .site-header__menu > summary::-webkit-details-marker { display: none; }
   .site-header__menu > summary:focus-visible { outline: 2px solid var(--color-teal); outline-offset: 2px; }
   .site-header__burger { display: grid; gap: 5px; width: 22px; }
-  .site-header__burger i { display: block; height: 2px; background: var(--color-ink); border-radius: 2px; }
+  .site-header__burger i { display: block; height: 2px; background: var(--color-marble); border-radius: 2px; }
   .site-header__menu[open] > summary .site-header__burger i:nth-child(1) { transform: translateY(7px) rotate(45deg); }
   .site-header__menu[open] > summary .site-header__burger i:nth-child(2) { opacity: 0; }
   .site-header__menu[open] > summary .site-header__burger i:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }

@@ -38,5 +38,16 @@ const { variant = 'header' } = Astro.props;
     margin-bottom: 0.75rem;
     font-size: 0.9rem;
   }
+  .site-fx-toggle--header {
+    background: transparent;
+    border-color: var(--color-frame-line);
+    color: var(--color-frame-muted);
+  }
+  .site-fx-toggle--header:hover { color: var(--color-marble); border-color: var(--color-marble-deep); }
+  .site-fx-toggle--header[aria-pressed='true'] {
+    background: color-mix(in srgb, var(--color-marble) 16%, transparent);
+    border-color: var(--color-marble-deep);
+    color: var(--color-marble);
+  }
   @media (max-width: 1100px) { .site-fx-toggle--header { display: none; } }
 </style>

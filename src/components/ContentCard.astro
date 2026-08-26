@@ -10,7 +10,6 @@ interface Props {
   badges?: string[];
   meta?: string;
   metaAccent?: boolean;
-  placeholder?: string;
 }
 
 const {
@@ -22,41 +21,30 @@ const {
   badges = [],
   meta,
   metaAccent = false,
-  placeholder = '🏝️',
 } = Astro.props;
 
 const photo = getCardImageUrl(image);
 ---
 
-<a href={href} class="content-card surface-card is-link block no-underline overflow-hidden h-full">
+<a href={href} class="gr-card is-link block no-underline h-full">
   {photo ? (
-    <div class="content-card__media">
+    <div class="gr-card__media">
       <img
         src={photo}
         alt={imageAlt || title}
         loading="lazy"
         decoding="async"
         width="640"
-        height="360"
+        height="427"
       />
     </div>
   ) : (
-    <div class="content-card__media content-card__media--placeholder" aria-hidden="true">
-      <span>{placeholder}</span>
-    </div>
+    <div class="gr-card__media gr-card__media--placeholder" aria-hidden="true"></div>
   )}
-  <div class="content-card__body">
-    {badges.length > 0 && (
-      <div class="content-card__badges">
-        {badges.slice(0, 3).map((badge) => (
-          <span class="badge-pill">{badge}</span>
-        ))}
-      </div>
-    )}
-    <h3 class="content-card__title">{title}</h3>
-    {description && <p class="content-card__desc">{description}</p>}
-    {meta && (
-      <p class:list={['content-card__meta', metaAccent && 'content-card__meta--accent']}>{meta}</p>
-    )}
+  <div class="gr-card__body">
+    {badges.length > 0 && <p class="gr-card__meta">{badges.slice(0, 2).join(' · ')}</p>}
+    <h3 class="gr-card__title">{title}</h3>
+    {description && <p class="gr-card__excerpt">{description}</p>}
+    {meta && <p class="gr-card__meta gr-card__rule pt-3">{meta}</p>}
   </div>
 </a>

@@ -46,17 +46,22 @@ const schemas = [
   title="Greece Property Investment Guides"
   description="Independent guides on Greece property investment, Golden Visa tiers, foreign ownership, net yields, ENFIA, and due diligence."
 >
-  <section class="site-container py-14 md:py-20">
-    <nav class="text-sm text-[var(--color-muted)] mb-6" aria-label="Breadcrumb">
+  <div class="gr-band">
+    <div class="site-container py-11 md:py-14">
+      <nav class="text-sm text-[var(--color-frame-muted)] mb-6" aria-label="Breadcrumb">
       <a href="/" class="no-underline hover:underline">Home</a> <span aria-hidden="true">›</span> <span>Guides</span>
     </nav>
-    <header class="max-w-2xl mb-12">
-      <h1 class="text-3xl">Investment guides</h1>
-      <p class="text-lg text-[var(--color-muted)] mt-3">
+      <header class="max-w-2xl mb-12">
+      <h1>Investment guides</h1>
+      <p class="text-lg text-[var(--color-frame-muted)] mt-3">
         Research-first articles for foreign buyers. Not developer brochures; verify all figures before you transact.
       </p>
-      <p class="text-sm text-[var(--color-muted)] mt-2">{guides.length} guides with photos and net-yield focus.</p>
+      <p class="text-sm text-[var(--color-frame-muted)] mt-2">{guides.length} guides with photos and net-yield focus.</p>
     </header>
+    </div>
+  </div>
+
+  <section class="site-container py-14 md:py-20">
 
     <div class="guide-search mb-10">
       <label for="guide-search">Find a guide</label>
@@ -67,7 +72,7 @@ const schemas = [
     {priority.length > 0 && (
       <section class="mb-14" id="guide-priority">
         <h2 class="text-xl mb-5">Start here</h2>
-        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-7 gap-y-10">
           {priority.map((guide) => (
             <ContentCard
               href={`/guides/${guide.id}/`}
@@ -82,7 +87,7 @@ const schemas = [
       </section>
     )}
 
-    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-7 gap-y-10">
       {guides.map((guide) => (
         <div class="guide-search-item" data-search={`${guide.data.title} ${guide.data.description} ${(guide.data.tags ?? []).join(' ')}`.toLowerCase()}>
           <ContentCard

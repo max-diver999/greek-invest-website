@@ -29,8 +29,13 @@ const personSchema = {
   description="Who writes Greek Invest, how the research desk works, what we cover, and the limits of what an editorial site can tell you about Greek property."
   schemas={[personSchema]}
 >
+  <div class="gr-band">
+    <div class="site-container py-11 md:py-14">
+      <h1 class="mb-0">About {SITE.name}</h1>
+    </div>
+  </div>
+
   <section class="site-container py-12 md:py-16 max-w-3xl">
-    <h1 class="mb-6">About {SITE.name}</h1>
     <div class="prose">
       <p>
         {SITE.name} publishes research-first guides for foreign buyers evaluating Athens, the Athens

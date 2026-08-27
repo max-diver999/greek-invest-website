@@ -1,0 +1,161 @@
+{
+  "_what": "Load-bearing figures: numbers this site relies on across many articles. A figure used once is a local worked example and needs nothing. A figure carried by five or more articles is a claim about the world and needs a source and a date.",
+  "_deliberately_absent": "Generic amounts that mean different things on different pages are NOT registered, even where one meaning is sourceable. The registry is keyed by the bare figure, so registering €2,000 as the Golden Visa state fee would hand provenance to every page using €2,000 as a price per square metre. The same applies to €500, €800, €3,000, 2%, 8% and 10%. Those are resolved editorially, by making each page say what its own number measures.",
+  "_scope": "25 entries against 177 load-bearing figures. Coverage is deliberately partial and honest: entries are added when somebody has actually done the sourcing. The registry gate arms only at 80% coverage, so a partial registry costs nothing structurally and an invented one would cost the corpus its provenance credit entirely.",
+  "facts": [
+    {
+      "figure": "€800,000",
+      "statement": "Minimum single-property investment for a Golden Visa in the prime zone: Attica, Thessaloniki, Mykonos, Santorini and islands with a registered population above 3,100.",
+      "source": "Law 5100/2024, Article 5 (Government Gazette A' 46/2024)",
+      "asOf": "2026-08-27"
+    },
+    {
+      "figure": "€400,000",
+      "statement": "Golden Visa threshold for the rest of Greece outside the prime zone, on a single property held under one title deed.",
+      "source": "Law 5100/2024, Article 5 (Government Gazette A' 46/2024)",
+      "asOf": "2026-08-27"
+    },
+    {
+      "figure": "€250,000",
+      "statement": "Reduced Golden Visa threshold available where a building is converted from another use to residential, or a listed building is restored.",
+      "source": "Law 5100/2024, Article 5 (Government Gazette A' 46/2024)",
+      "asOf": "2026-08-27"
+    },
+    {
+      "figure": "12 months",
+      "statement": "Shortest lease a Golden Visa property may be let on; short-term tourist letting of the qualifying asset is prohibited for the life of the permit.",
+      "source": "Law 5100/2024, Article 5 (Government Gazette A' 46/2024)",
+      "asOf": "2026-08-27"
+    },
+
+    {
+      "figure": "15%",
+      "statement": "Rate on the first band of annual rental income for individuals, applied to gross rent rather than to profit.",
+      "source": "Law 5246/2025, rental income scale effective 1 January 2026",
+      "asOf": "2026-08-27"
+    },
+    {
+      "figure": "25%",
+      "statement": "Band inserted from 1 January 2026 covering rental income between €12,001 and €24,000; this income was previously taxed at 35%.",
+      "source": "Law 5246/2025, rental income scale effective 1 January 2026",
+      "asOf": "2026-08-27"
+    },
+    {
+      "figure": "35%",
+      "statement": "Applies to rental income from €24,001 to €35,000 under the scale in force from 2026, having previously started at €12,001.",
+      "source": "Law 5246/2025, rental income scale effective 1 January 2026",
+      "asOf": "2026-08-27"
+    },
+    {
+      "figure": "45%",
+      "statement": "Top rate on rental income, charged on everything above €35,000 a year for an individual landlord.",
+      "source": "Law 5246/2025, rental income scale effective 1 January 2026",
+      "asOf": "2026-08-27"
+    },
+    {
+      "figure": "€12,000",
+      "statement": "Upper limit of the 15% rental income band; income above it enters the 25% band from 2026.",
+      "source": "Law 5246/2025, rental income scale effective 1 January 2026",
+      "asOf": "2026-08-27"
+    },
+    {
+      "figure": "€24,000",
+      "statement": "Boundary between the 25% and 35% rental income bands under the 2026 scale.",
+      "source": "Law 5246/2025, rental income scale effective 1 January 2026",
+      "asOf": "2026-08-27"
+    },
+    {
+      "figure": "€35,000",
+      "statement": "Threshold above which rental income is taxed at the top rate of 45% for an individual.",
+      "source": "Law 5246/2025, rental income scale effective 1 January 2026",
+      "asOf": "2026-08-27"
+    },
+
+    {
+      "figure": "3.09%",
+      "statement": "Effective property transfer tax (ΦΜΑ) on a resale: 3% of the taxable value plus a municipal surcharge of 3% levied on the tax itself.",
+      "source": "Law 1587/1950 as amended, with the municipal surcharge under Law 1080/1980",
+      "asOf": "2026-08-27"
+    },
+    {
+      "figure": "€12,360",
+      "statement": "Transfer tax due on a €400,000 taxable value, being the statutory 3.09% applied to the regional Golden Visa threshold.",
+      "source": "Derived: 3.09% ΦΜΑ applied to the Law 5100/2024 regional threshold",
+      "asOf": "2026-08-27"
+    },
+    {
+      "figure": "€24,720",
+      "statement": "Transfer tax due on an €800,000 taxable value, being the statutory 3.09% applied to the prime-zone Golden Visa threshold.",
+      "source": "Derived: 3.09% ΦΜΑ applied to the Law 5100/2024 prime threshold",
+      "asOf": "2026-08-27"
+    },
+    {
+      "figure": "24%",
+      "statement": "Standard Greek VAT rate, which applies to a first sale of a new build by a developer instead of transfer tax; the charge has been suspended on qualifying new residential deliveries.",
+      "source": "Greek VAT Code (Law 2859/2000) and the new-build VAT suspension",
+      "asOf": "2026-08-27"
+    },
+
+    {
+      "figure": "€100,000",
+      "statement": "Annual flat tax on foreign-source income under the non-domiciled regime for a main applicant, paid regardless of the size of that income.",
+      "source": "Law 4172/2013 Article 5A, non-domiciled tax residents",
+      "asOf": "2026-08-27"
+    },
+    {
+      "figure": "€500,000",
+      "statement": "Investment in Greek real estate, business or securities required to enter the Article 5A non-domiciled regime, to be completed within three years.",
+      "source": "Law 4172/2013 Article 5A, non-domiciled tax residents",
+      "asOf": "2026-08-27"
+    },
+    {
+      "figure": "7%",
+      "statement": "Flat rate on worldwide income for a foreign pensioner transferring tax residence to Greece, available for fifteen years.",
+      "source": "Law 4172/2013 Article 5B, foreign pensioners regime",
+      "asOf": "2026-08-27"
+    },
+    {
+      "figure": "5%",
+      "statement": "Flat deduction for repairs and maintenance set against gross rent; it is the only deduction an individual landlord may take under the standard regime.",
+      "source": "Law 4172/2013 Article 39, income from immovable property",
+      "asOf": "2026-08-27"
+    },
+
+    {
+      "figure": "90 days",
+      "statement": "Maximum stay in the Schengen area in any rolling 180-day period for a third-country national without a residence permit.",
+      "source": "Regulation (EU) 2016/399, Schengen Borders Code Article 6",
+      "asOf": "2026-08-27"
+    },
+    {
+      "figure": "95%",
+      "statement": "Year-on-year increase in new Greek Golden Visa permits approved in 2025, against a backlog still in process.",
+      "source": "Ministry of Migration and Asylum, residence permit statistics 2025",
+      "asOf": "2026-08-27"
+    },
+    {
+      "figure": "25.3%",
+      "statement": "Fall in foreign direct investment into Greek real estate in 2025 against the prior period, as buyers absorbed the higher Golden Visa thresholds.",
+      "source": "Bank of Greece, direct investment in real estate by non-residents",
+      "asOf": "2026-08-27"
+    },
+    {
+      "figure": "78%",
+      "statement": "Share of international buyers in Greece targeting resale rather than new-build stock.",
+      "source": "RE/MAX Greece, 2025 international buyer data",
+      "asOf": "2026-08-27"
+    },
+    {
+      "figure": "5.43%",
+      "statement": "Athens city-wide average gross rental yield, used on this site as a comparison baseline rather than as an achievable net return.",
+      "source": "Global Property Guide, Greece rental yields, November 2025",
+      "asOf": "2026-08-27"
+    },
+    {
+      "figure": "4.40%",
+      "statement": "National average gross rental yield for Greece, against which regional and city figures on this site are set.",
+      "source": "Global Property Guide, Greece rental yields, November 2025",
+      "asOf": "2026-08-27"
+    }
+  ]
+}

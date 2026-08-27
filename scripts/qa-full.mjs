@@ -75,6 +75,28 @@ const steps = [
         },
       ]
     : []),
+  ...(existsSync(join(ROOT, 'scripts/facts-review.mjs'))
+    ? [
+        {
+          name: 'External claims review calendar',
+          cmd: 'node',
+          args: ['scripts/facts-review.mjs'],
+        },
+      ]
+    : []),
+  // Calibration is the rubric's own test: it rebuilds the labelled sets from git
+  // history and fails if the scorer stops separating machine text from
+  // hand-written text. It runs in the full pass only, because rebuilding the
+  // sets shells out to git for 131 files.
+  ...(!QUICK && existsSync(join(ROOT, 'scripts/geo-calibrate.mjs'))
+    ? [
+        {
+          name: 'GEO calibration (does the rubric still separate?)',
+          cmd: 'node',
+          args: ['scripts/geo-calibrate.mjs'],
+        },
+      ]
+    : []),
   ...(existsSync(join(ROOT, 'scripts/audit-all-images.mjs'))
     ? [
         {

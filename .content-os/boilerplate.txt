@@ -1,0 +1,19 @@
+# Text that is deliberately identical across articles.
+#
+# The duplication detector treats every repeated passage as evidence of
+# mechanical writing, which is what caught the July filler. Legal disclaimers
+# are legitimately repeated, so they are declared here instead of being silently
+# exempted. One line per sentence, matched after normalisation. Keep this file
+# short: every line you add is a passage the duplication detector stops looking
+# at, and a reviewer should be able to read the whole list in under a minute.
+#
+# Two sentences qualify on this corpus and nothing else does. Scanning the live
+# corpus for sentences of 12+ words repeated across files also turned up
+# "Treat broker summaries as planning bands until a licensed Greek lawyer
+# confirms each line item in writing" on 13 pages and "Greek Invest buyers
+# typically require engineer certificates, cadastre extracts, and Circular
+# 1/2026 bank traceability at this stage" on 13 more. Those are not disclaimers,
+# they are repeated editorial filler, and the fix for them is to reword each
+# page. Exempting them here would hide exactly what this detector is for.
+This guide is for informational purposes only and does not constitute legal, tax, or investment advice.
+Confirm tax, immigration, and property facts with licensed Greek lawyers and accountants before purchase.

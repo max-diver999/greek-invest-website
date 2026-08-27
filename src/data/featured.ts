@@ -16,7 +16,7 @@ export const HOMEPAGE_HERO_PROJECT_SLUG = '' as const;
 export const FEATURED_GUIDE_SLUGS = [
   'greece-golden-visa-property-guide-2026',
   'greece-golden-visa-property-tiers-2026',
-  'crete-golden-visa-400000-property',
+  'crete-property-investment-guide',
   'cost-of-buying-property-greece',
   'greece-rental-yield-guide',
   'buy-property-greece-foreigner',

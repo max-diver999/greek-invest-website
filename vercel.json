@@ -3,24 +3,76 @@
   "redirects": [
     {
       "source": "/(.*)",
-      "has": [{ "type": "host", "value": "www.greek-invest.com" }],
+      "has": [
+        {
+          "type": "host",
+          "value": "www.greek-invest.com"
+        }
+      ],
       "destination": "https://greek-invest.com/$1",
       "statusCode": 308
+    },
+    {
+      "source": "/guides/rhodes-golden-visa-400000-property-guide/",
+      "destination": "/areas/rhodes-property-investment/",
+      "statusCode": 301
+    },
+    {
+      "source": "/guides/peloponnese-golden-visa-400000-property/",
+      "destination": "/guides/peloponnese-property-investment-guide/",
+      "statusCode": 301
+    },
+    {
+      "source": "/guides/crete-golden-visa-400000-property/",
+      "destination": "/guides/crete-property-investment-guide/",
+      "statusCode": 301
+    },
+    {
+      "source": "/guides/gross-vs-net-yield-greece/",
+      "destination": "/guides/greece-rental-yield-guide/",
+      "statusCode": 301
+    },
+    {
+      "source": "/guides/highest-rental-yield-areas-greece/",
+      "destination": "/guides/greece-rental-yield-guide/",
+      "statusCode": 301
+    },
+    {
+      "source": "/projects/the-regal/",
+      "destination": "/projects/the-grandline/",
+      "statusCode": 301
     }
   ],
   "headers": [
     {
       "source": "/(.*)",
       "headers": [
-        { "key": "X-Content-Type-Options", "value": "nosniff" },
-        { "key": "X-Frame-Options", "value": "SAMEORIGIN" },
-        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
-        { "key": "Permissions-Policy", "value": "camera=(), microphone=(), geolocation=()" }
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "SAMEORIGIN"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        },
+        {
+          "key": "Permissions-Policy",
+          "value": "camera=(), microphone=(), geolocation=()"
+        }
       ]
     },
     {
       "source": "/api/(.*)",
-      "headers": [{ "key": "X-Robots-Tag", "value": "noindex, nofollow" }]
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow"
+        }
+      ]
     }
   ]
 }

@@ -1,12 +1,12 @@
 # Greek Invest — full page index
 
-139 research pages on Greece property investment and the Golden Visa, for foreign buyers.
+133 research pages on Greece property investment and the Golden Visa, for foreign buyers.
 Generated from the live corpus. Site: https://greek-invest.com
 
 Every figure on this site carries a date and a source. Golden Visa thresholds, taxes and
 transfer rules change; readers are told to verify with licensed Greek counsel before transacting.
 
-## Guides (99)
+## Guides (94)
 
 ### Athens Golden Visa €800K: Which Areas Qualify in 2026
 URL: https://greek-invest.com/guides/athens-golden-visa-800000-areas/
@@ -82,11 +82,6 @@ Corfu qualifies at the €400K Golden Visa tier. Ionian prices, 120m² rule, bor
 URL: https://greek-invest.com/guides/cost-of-buying-property-greece/
 Updated: 2026-08-21
 Full cost of buying property in Greece: FMA 3.09%, notary, lawyer, registry, agent, ENFIA. Worked examples at €250K, €400K and €800K.
-
-### Crete Golden Visa €400K 2026: What You Can Buy at 120 m²
-URL: https://greek-invest.com/guides/crete-golden-visa-400000-property/
-Updated: 2026-08-21
-Crete uses the €400K tier, not €800K Athens. One deed, 120 m² minimum, no STR on the GV home. Chania and Heraklion examples, yields, and Elounda budget traps.
 
 ### Crete Property Investment Guide 2026: Island Markets
 URL: https://greek-invest.com/guides/crete-property-investment-guide/
@@ -378,11 +373,6 @@ URL: https://greek-invest.com/guides/greek-property-glossary-foreign-buyers/
 Updated: 2026-08-21
 A to Z glossary for buying property in Greece: AFM, ENFIA, FMA, objective value, symvolaio, cadastre, AMA/STR, Golden Visa tiers, and the 120 m² rule.
 
-### Gross vs Net Yield Greece: How to Calculate Real Return
-URL: https://greek-invest.com/guides/gross-vs-net-yield-greece/
-Updated: 2026-08-21
-Gross vs net rental yield in Greece explained: national 4.40%, Athens 5.43% gross, but tax, ENFIA and fees cut net returns by 40 to 50%.
-
 ### Halkidiki Property Investment Guide 2026: Coast & ROI
 URL: https://greek-invest.com/guides/halkidiki-property-investment-guide/
 Updated: 2026-08-21
@@ -392,11 +382,6 @@ Halkidiki property investment 2026: €400K Golden Visa tier, Kassandra & Sithon
 URL: https://greek-invest.com/guides/hidden-costs-buying-property-greece/
 Updated: 2026-08-21
 The real total for a Greek purchase: transfer tax 3.09%, notary, lawyer and agent fees plus 12 costs buyers miss, with a worked example on a €400K purchase.
-
-### Highest Rental Yields in Greece by City: 2026 Guide
-URL: https://greek-invest.com/guides/highest-rental-yield-areas-greece/
-Updated: 2026-08-21
-Highest rental yield areas Greece 2026: Kipseli 6 to 7.5%, Thessaloniki 5 to 6.5%, Crete STR 8 to 11%. Gross yields, STR vs LTR split, GV rules.
 
 ### How Long Can You Stay in Greece on the Golden Visa?
 URL: https://greek-invest.com/guides/how-long-can-you-stay-greece-golden-visa/
@@ -453,11 +438,6 @@ URL: https://greek-invest.com/guides/paros-antiparos-property-investment/
 Updated: 2026-08-21
 Paros & Antiparos property 2026: Paros municipality €800K GV tier, Antiparos may qualify at €400K, 120m² rule, STR ban, Cyclades prices and yields compared.
 
-### Peloponnese Golden Visa €400K Property: 2026 Guide
-URL: https://greek-invest.com/guides/peloponnese-golden-visa-400000-property/
-Updated: 2026-08-21
-Buy property in the Peloponnese from €400,000 and qualify for Greek residency. Nafplio, Kalamata, Messinia markets, 120m² rule and yields explained.
-
 ### Peloponnese Property Investment Guide 2026: Markets
 URL: https://greek-invest.com/guides/peloponnese-property-investment-guide/
 Updated: 2026-08-21
@@ -472,11 +452,6 @@ When buying Greek property remotely, a Power of Attorney lets your lawyer act in
 URL: https://greek-invest.com/guides/resale-property-greece-checklist-foreigner/
 Updated: 2026-08-21
 Resale property Greece checklist: title search, ENFIA clearance, engineer survey, notary prep, 3.09% transfer tax. Step-by-step for foreign buyers.
-
-### Rhodes Golden Visa: €400,000 Property Options 2026
-URL: https://greek-invest.com/guides/rhodes-golden-visa-400000-property-guide/
-Updated: 2026-08-21
-Rhodes qualifies at €400K, not €800K. Rhodes Town, Lindos, Faliraki prices, 120m² rule, STR ban and what €400K buys on the island in 2026.
 
 ### Short-Term Rental Greece Rules: 2026 Complete Guide
 URL: https://greek-invest.com/guides/short-term-rental-greece-rules/
@@ -632,7 +607,7 @@ URL: https://greek-invest.com/compare/greece-vs-spain-golden-visa-ended/
 Updated: 2026-08-21
 Spain ended its property Golden Visa in April 2025. Greece remains the only major EU Mediterranean country with a property-backed residency route in 2026.
 
-## Project reviews (10)
+## Project reviews (9)
 
 ### 3S Athens Review: Greca Central Off-Plan Due Diligence
 URL: https://greek-invest.com/projects/3s-athens/
@@ -678,11 +653,6 @@ Independent Lotus Project Voula review: Adonis off-plan on the Athens Riviera, �
 URL: https://greek-invest.com/projects/the-grandline/
 Updated: 2026-08-21
 The Grandline Marousi off-plan review: SECLAND from €300K list price vs €800K Attica GV floor. Unit sizes 48 to 224m², Q4 2026, eligibility gaps explained.
-
-### The Regal Review: SECLAND Attica Off-Plan Due Diligence
-URL: https://greek-invest.com/projects/the-regal/
-Updated: 2026-08-21
-The Regal SECLAND review: from €250K marketing vs Attica €800K GV floor, 120m² rule, off-plan risks. Independent buyer DD, not a sales pitch.
 
 ## Developer profiles (4)
 

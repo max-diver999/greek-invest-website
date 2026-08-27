@@ -1,6 +1,216 @@
 {
   "_what": "Claims about jurisdictions nobody on this project monitors. Keyed by the claim, not by the number, because a figure like 5% means an agent's commission on twenty Greek pages and something else entirely abroad. Every entry needs claim, jurisdiction, source, asOf, reviewBy and the files that carry it. `npm run facts:review` fails once a reviewBy date passes and reports claims whose files have disappeared.",
-  "_why": "The Greek figures on this site have a watcher: the Government Gazette, AADE circulars and the Ministry of Migration are all checkable on demand. The Portuguese, Spanish, Italian, Maltese, Cypriot, Hungarian, Croatian and UAE figures on the ten comparison pages have none, so a stale one would sit here indefinitely under an asOf date quietly asserting it was current.",
-  "_todo": "Empty on purpose. Ten comparison pages carry foreign-jurisdiction figures and none is registered yet: greece-vs-portugal-golden-visa-property, greece-vs-spain-golden-visa-ended, greece-vs-italy-vs-spain-property-investment, greece-vs-malta-permanent-residence-property, greece-vs-cyprus-golden-visa-property, golden-visa-greece-vs-hungary-guest-investor, greece-vs-croatia-property-residency, golden-visa-greece-vs-dubai-property-residency, greece-vs-cape-town-property-investment, athens-vs-thessaloniki-golden-visa-investment. Populating this needs each claim re-read against its primary source, which is wave work, not a scripted fill. An empty registry asserts nothing false; an invented one would.",
-  "claims": []
+  "_why": "The Greek figures on this site have a watcher: the Government Gazette, AADE circulars and the Ministry of Migration are all checkable on demand. Foreign tax rules have none, so a stale one would sit here indefinitely under an asOf date quietly asserting it was current. The R3 nationality guides rest almost entirely on foreign tax law, which is why they are registered here before anything else.",
+  "_still_unregistered": "The ten comparison pages in compare/ carry Portuguese, Spanish, Italian, Maltese, Cypriot, Hungarian, Croatian and UAE figures that are not yet registered. They are next.",
+  "claims": [
+    {
+      "id": "us-citizenship-based-taxation",
+      "jurisdiction": "US",
+      "claim": "The United States taxes citizens and green card holders on worldwide income regardless of residence, so a Greek purchase creates US filing consequences whether or not the owner spends any time in the property, and relocating to Greece does not end them.",
+      "source": "Internal Revenue Code; IRS guidance for US citizens and resident aliens abroad",
+      "asOf": "2026-08-27",
+      "reviewBy": "2027-08-27",
+      "files": [
+        "guides/greece-golden-visa-us-citizens.mdx"
+      ]
+    },
+    {
+      "id": "us-greece-treaty-credit-method",
+      "jurisdiction": "US",
+      "claim": "The US-Greece income tax convention signed in 1950 operates on the credit method rather than the exemption method, so Greek tax on rental income is claimed as a foreign tax credit on Form 1116 and the taxpayer effectively pays the higher of the two rates.",
+      "source": "Convention between the United States and Greece for the avoidance of double taxation, signed 1950",
+      "asOf": "2026-08-27",
+      "reviewBy": "2027-08-27",
+      "files": [
+        "guides/greece-golden-visa-us-citizens.mdx"
+      ]
+    },
+    {
+      "id": "us-fbar-10000-threshold",
+      "jurisdiction": "US",
+      "claim": "FinCEN Form 114 is due once aggregate foreign financial accounts exceed USD 10,000 at any point in the calendar year, measured at the highest balance rather than at year end, and it is filed separately from the income tax return.",
+      "source": "31 CFR 1010.350; FinCEN BSA e-filing requirements for FBAR",
+      "asOf": "2026-08-27",
+      "reviewBy": "2027-08-27",
+      "files": [
+        "guides/greece-golden-visa-us-citizens.mdx"
+      ]
+    },
+    {
+      "id": "us-eb5-minimums-moved",
+      "jurisdiction": "US",
+      "claim": "EB-5 minimum investment amounts were raised and made subject to periodic adjustment by the EB-5 Reform and Integrity Act of 2022, so comparisons quoting pre-2022 figures are stale and current USCIS minimums must be checked directly.",
+      "source": "EB-5 Reform and Integrity Act of 2022; USCIS EB-5 programme pages",
+      "asOf": "2026-08-27",
+      "reviewBy": "2027-02-27",
+      "files": [
+        "guides/greece-golden-visa-us-citizens.mdx"
+      ]
+    },
+    {
+      "id": "ca-t1135-cost-amount-100k",
+      "jurisdiction": "CA",
+      "claim": "Form T1135 must be filed where the total cost amount of specified foreign property exceeds CAD 100,000 at any point in the year. Reporting is on cost amount rather than market value, and the penalty regime attaches to the missing form rather than to unpaid tax.",
+      "source": "Income Tax Act (Canada) s.233.3; CRA Form T1135 guidance",
+      "asOf": "2026-08-27",
+      "reviewBy": "2027-08-27",
+      "files": [
+        "guides/greece-golden-visa-canadian-buyers.mdx"
+      ]
+    },
+    {
+      "id": "ca-quebec-tp10798be",
+      "jurisdiction": "CA",
+      "claim": "Quebec residents holding more than CAD 100,000 of foreign property file Revenu Quebec form TP-1079.8.BE in addition to the federal T1135; Quebec is the only province with a separate provincial foreign-property disclosure.",
+      "source": "Revenu Quebec, form TP-1079.8.BE and accompanying guide",
+      "asOf": "2026-08-27",
+      "reviewBy": "2027-08-27",
+      "files": [
+        "guides/greece-golden-visa-canadian-buyers.mdx"
+      ]
+    },
+    {
+      "id": "ca-departure-deemed-disposition",
+      "jurisdiction": "CA",
+      "claim": "Ceasing Canadian tax residence triggers a deemed disposition of most property at fair market value on the departure date, and severing residence is a facts-and-circumstances test rather than an election.",
+      "source": "Income Tax Act (Canada) s.128.1; CRA guidance on leaving Canada",
+      "asOf": "2026-08-27",
+      "reviewBy": "2027-08-27",
+      "files": [
+        "guides/greece-golden-visa-canadian-buyers.mdx"
+      ]
+    },
+    {
+      "id": "ca-principal-residence-not-geographic",
+      "jurisdiction": "CA",
+      "claim": "The Canadian principal residence exemption is not limited by geography and a property outside Canada may in principle be designated, subject to the ordinarily-inhabited test and the one-property-per-family-unit-per-year limit.",
+      "source": "Income Tax Act (Canada) s.40(2)(b) and s.54; CRA folio on the principal residence exemption",
+      "asOf": "2026-08-27",
+      "reviewBy": "2027-08-27",
+      "files": [
+        "guides/greece-golden-visa-canadian-buyers.mdx"
+      ]
+    },
+    {
+      "id": "au-no-comprehensive-dta-with-greece",
+      "jurisdiction": "AU",
+      "claim": "Australia and Greece have no comprehensive double taxation agreement. An Airline Profits Agreement covers the taxation of airline operations only, so there is no treaty relief, no treaty rates, no residence tie-breaker article and no mutual agreement procedure for property income.",
+      "source": "Australian Treasury register of tax treaties; Australia-Greece Airline Profits Agreement",
+      "asOf": "2026-08-27",
+      "reviewBy": "2027-02-27",
+      "files": [
+        "guides/greece-golden-visa-australian-buyers.mdx"
+      ]
+    },
+    {
+      "id": "au-fito-capped-no-carry-forward",
+      "jurisdiction": "AU",
+      "claim": "Relief for foreign tax paid runs through the Foreign Income Tax Offset, which is capped and whose excess is not carried forward, so where the foreign charge exceeds the Australian tax on the same income the excess is lost.",
+      "source": "Income Tax Assessment Act 1997 (Cth) Division 770; ATO guidance on the foreign income tax offset",
+      "asOf": "2026-08-27",
+      "reviewBy": "2027-08-27",
+      "files": [
+        "guides/greece-golden-visa-australian-buyers.mdx"
+      ]
+    },
+    {
+      "id": "au-residency-multiple-tests",
+      "jurisdiction": "AU",
+      "claim": "An individual is an Australian tax resident if they satisfy any of the ordinary residence, domicile, 183-day or Commonwealth superannuation tests, so spending under 183 days in Australia does not by itself end residency.",
+      "source": "Income Tax Assessment Act 1936 (Cth) s.6(1); ATO residency guidance",
+      "asOf": "2026-08-27",
+      "reviewBy": "2027-08-27",
+      "files": [
+        "guides/greece-golden-visa-australian-buyers.mdx"
+      ]
+    },
+    {
+      "id": "au-smsf-sole-purpose-blocks-personal-use",
+      "jurisdiction": "AU",
+      "claim": "A self-managed superannuation fund is bound by the sole purpose test and the related-party and in-house asset rules, so a property the members or their relatives intend to use personally is not a compliant fund investment.",
+      "source": "Superannuation Industry (Supervision) Act 1993 (Cth) s.62 and Part 8; ATO SMSF guidance",
+      "asOf": "2026-08-27",
+      "reviewBy": "2027-08-27",
+      "files": [
+        "guides/greece-golden-visa-australian-buyers.mdx"
+      ]
+    },
+    {
+      "id": "in-lrs-250000-per-financial-year",
+      "jurisdiction": "IN",
+      "claim": "Under the Reserve Bank of India's Liberalised Remittance Scheme a resident individual may remit up to USD 250,000 per financial year, the Indian financial year runs 1 April to 31 March, and unused headroom does not carry forward.",
+      "source": "Reserve Bank of India, Liberalised Remittance Scheme master direction",
+      "asOf": "2026-08-27",
+      "reviewBy": "2027-02-27",
+      "files": [
+        "guides/greece-golden-visa-indian-buyers.mdx"
+      ]
+    },
+    {
+      "id": "in-tcs-20-percent-above-10-lakh",
+      "jurisdiction": "IN",
+      "claim": "Tax Collected at Source applies to LRS remittances above Rs 10 lakh in a financial year at 20% for purposes other than education and medical treatment. It is creditable against Indian income tax liability and recoverable through the return, but is withheld at the point of remittance.",
+      "source": "Income-tax Act 1961 (India) s.206C(1G); CBDT circulars on TCS under LRS",
+      "asOf": "2026-08-27",
+      "reviewBy": "2027-02-27",
+      "files": [
+        "guides/greece-golden-visa-indian-buyers.mdx"
+      ]
+    },
+    {
+      "id": "in-fema-purpose-code-discipline",
+      "jurisdiction": "IN",
+      "claim": "Exceeding the LRS limit or structuring around it exposes the remitter to penalties under the Foreign Exchange Management Act, and remittances declared under one purpose code and applied to another attract scrutiny.",
+      "source": "Foreign Exchange Management Act 1999 (India); RBI A2 form and purpose code schedule",
+      "asOf": "2026-08-27",
+      "reviewBy": "2027-08-27",
+      "files": [
+        "guides/greece-golden-visa-indian-buyers.mdx"
+      ]
+    },
+    {
+      "id": "ae-no-personal-income-tax",
+      "jurisdiction": "AE",
+      "claim": "The United Arab Emirates levies no personal income tax on individuals and does not tax individual capital gains, so Greek tax on rental income is a final cost with no home-country credit available against it.",
+      "source": "UAE federal tax legislation; UAE Ministry of Finance guidance on personal taxation",
+      "asOf": "2026-08-27",
+      "reviewBy": "2027-02-27",
+      "files": [
+        "guides/greece-golden-visa-uae-buyers.mdx"
+      ]
+    },
+    {
+      "id": "ae-residency-is-conditional",
+      "jurisdiction": "AE",
+      "claim": "UAE residency for most expatriates is conditional and renewable rather than permanent, tied to an employer, an investor visa or a qualifying property holding, and it ends when the underlying condition ends.",
+      "source": "UAE Federal Authority for Identity and Citizenship residence visa categories",
+      "asOf": "2026-08-27",
+      "reviewBy": "2027-08-27",
+      "files": [
+        "guides/greece-golden-visa-uae-buyers.mdx"
+      ]
+    },
+    {
+      "id": "il-treaty-exclusive-immovable-property",
+      "jurisdiction": "IL",
+      "claim": "Under the Israel-Greece double taxation treaty, income from immovable property and gains on its disposal are allocated to the state where the property is situated, so an Israeli resident's Greek rental income and disposal gains carry no second Israeli charge.",
+      "source": "Convention between Israel and Greece for the avoidance of double taxation, Articles 6 and 13",
+      "asOf": "2026-08-27",
+      "reviewBy": "2027-02-27",
+      "files": [
+        "guides/israeli-buyers-greece-property.mdx"
+      ]
+    },
+    {
+      "id": "il-disclosure-survives-exclusive-rights",
+      "jurisdiction": "IL",
+      "claim": "Israeli disclosure obligations attaching to foreign assets and foreign accounts are independent of whether tax is payable, so exclusive taxing rights in Greece remove the Israeli charge without removing the Israeli filing requirement.",
+      "source": "Israel Income Tax Ordinance reporting provisions; Israel Tax Authority guidance on foreign assets",
+      "asOf": "2026-08-27",
+      "reviewBy": "2027-08-27",
+      "files": [
+        "guides/israeli-buyers-greece-property.mdx"
+      ]
+    }
+  ]
 }

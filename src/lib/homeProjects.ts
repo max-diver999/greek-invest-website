@@ -1,5 +1,5 @@
 import type { CollectionEntry } from 'astro:content';
-import { formatAreaLabel, formatUsd } from './cardImage';
+import { formatAreaLabel } from './cardImage';
 
 type ProjectEntry = CollectionEntry<'projects'>;
 
@@ -42,7 +42,7 @@ export function pickHomepageProjects(
     }
   }
 
-  for (const p of pool.sort((a, b) => (a.data.priceFromUsd ?? 0) - (b.data.priceFromUsd ?? 0))) {
+  for (const p of pool.sort((a, b) => a.data.title.localeCompare(b.data.title))) {
     if (picked.length >= limit) break;
     if (!used.has(p.id)) {
       picked.push(p);
@@ -63,7 +63,7 @@ export function projectStatusLabel(status?: string): string {
 }
 
 export function projectHeroLine(project: ProjectEntry): string {
-  const price = project.data.priceFromUsd ? `from ${formatUsd(project.data.priceFromUsd)}` : '';
+  const price = '';
   const status = projectStatusLabel(project.data.status);
   const area = formatAreaLabel(project.data.area);
   return [price, status, area].filter(Boolean).join(' · ');

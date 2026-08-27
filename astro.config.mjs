@@ -3,6 +3,23 @@ import tailwindcss from '@tailwindcss/vite';
 import sitemap from '@astrojs/sitemap';
 import mdx from '@astrojs/mdx';
 import vercel from '@astrojs/vercel';
+import referenceInfraConfig from './reference-infra.config.json' with { type: 'json' };
+import { collectContentLastmod } from './scripts/reference-infra/content-lastmod.mjs';
+import { rehypeResponsiveCloudinary } from './scripts/rehype-responsive-cloudinary.mjs';
+import { rehypeTableScroll } from './scripts/lib/rehype-table-scroll.mjs';
+
+const CONTENT_LASTMOD = new Map(
+  (await collectContentLastmod(referenceInfraConfig, { root: process.cwd() })).map(
+    ({ url, lastmod }) => [url, lastmod],
+  ),
+);
+
+function withContentLastmod(item) {
+  const contentDate = CONTENT_LASTMOD.get(item.url);
+  return contentDate
+    ? { ...item, lastmod: new Date(`${contentDate}T00:00:00Z`) }
+    : item;
+}
 
 export default defineConfig({
   site: 'https://greek-invest.com',
@@ -22,6 +39,7 @@ export default defineConfig({
         return !excluded.some((path) => page.includes(path));
       },
       serialize(item) {
+        item = withContentLastmod(item);
         if (item.url === 'https://greek-invest.com/') {
           return { ...item, priority: 1.0, changefreq: 'weekly' };
         }
@@ -43,6 +61,8 @@ export default defineConfig({
         return { ...item, priority: 0.7, changefreq: 'monthly' };
       },
     }),
-    mdx(),
+    mdx({
+      rehypePlugins: [rehypeResponsiveCloudinary, rehypeTableScroll],
+    }),
   ],
 });

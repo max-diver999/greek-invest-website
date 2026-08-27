@@ -98,7 +98,7 @@ const schemas = [
 
     <header class="max-w-2xl mb-10">
       <span class="badge-pill mb-4">Free · No sign-up</span>
-      <h1 class="text-3xl">Greece property calculators</h1>
+      <h1>Greece property calculators</h1>
       <p class="text-lg text-[var(--color-muted)] mt-3">
         Run the numbers before the call. Each tool uses the same 2026 figures as our guides:
         3.09% transfer tax, ENFIA bands of €2 to €16.20/m², and the €400,000 / €800,000 Golden Visa tiers
@@ -106,7 +106,7 @@ const schemas = [
       </p>
     </header>
 
-    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-16">
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-7 gap-y-10 mb-16">
       {tools.map((t) => (
         <a href={t.href} class="surface-card p-6 no-underline block hover:shadow-lg transition-shadow">
           <h2 class="text-lg text-[var(--color-ink)] mb-2">{t.name}</h2>

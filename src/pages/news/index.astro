@@ -42,24 +42,33 @@ const schemas = [
   title="Greece Real Estate News"
   description="Market updates for foreign buyers: Golden Visa rule changes, Athens and Crete prices, ENFIA, and rental regulation."
 >
-  <section class="site-container py-14 md:py-20">
-    <nav class="text-sm text-[var(--color-muted)] mb-6" aria-label="Breadcrumb">
+  <div class="gr-band">
+    <div class="site-container py-11 md:py-14">
+      <nav class="text-sm text-[var(--color-frame-muted)] mb-6" aria-label="Breadcrumb">
       <a href="/" class="no-underline hover:underline">Home</a> <span aria-hidden="true">›</span> <span>News</span>
     </nav>
-    <header class="max-w-2xl mb-12">
-      <h1 class="text-3xl">Market news</h1>
-      <p class="text-lg text-[var(--color-muted)] mt-3">
+      <header class="max-w-2xl mb-12">
+      <h1>Market news</h1>
+      <p class="text-lg text-[var(--color-frame-muted)] mt-3">
         Data-driven updates on Greece property markets; verify figures with counsel before investment decisions.
       </p>
     </header>
-    <div class="grid gap-5 max-w-3xl">
+    </div>
+  </div>
+
+  <section class="site-container py-14 md:py-20">
+    <div class="grid gap-8 max-w-3xl">
       {articles.map((article) => (
-        <a href={`/news/${article.id}/`} class="surface-card p-6 block no-underline hover:border-[var(--color-teal)] transition-colors">
-          <time class="text-xs text-[var(--color-muted)]" datetime={article.data.pubDate.toISOString()}>
-            {article.data.pubDate.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
-          </time>
-          <h2 class="text-lg font-semibold mt-2 mb-2 text-[var(--color-ink)]">{article.data.title}</h2>
-          <p class="text-sm text-[var(--color-muted)]">{article.data.description}</p>
+        <a href={`/news/${article.id}/`} class="gr-card is-link block no-underline">
+          <div class="gr-card__body pt-0">
+            <p class="gr-card__meta">
+              <time datetime={article.data.pubDate.toISOString()}>
+                {article.data.pubDate.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+              </time>
+            </p>
+            <h2 class="gr-card__title">{article.data.title}</h2>
+            <p class="gr-card__excerpt">{article.data.description}</p>
+          </div>
         </a>
       ))}
     </div>

@@ -29,4 +29,4 @@ export const FEATURED_AREA_SLUGS = [
 ] as const;
 
 export const HOMEPAGE_HERO_IMAGE =
-  'https://res.cloudinary.com/dlrrtf6bq/image/upload/w_1200,q_85,f_webp/more-group/greece/wikimedia-hero/acropolis-of-athens-01361-7fec93a1';
+  'https://res.cloudinary.com/dlrrtf6bq/image/upload/w_1800,q_88,f_webp/more-group/greece/developer-assets/solenagreece-com-antiparos-01-2defeb2c';

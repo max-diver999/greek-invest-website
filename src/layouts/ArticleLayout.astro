@@ -3,6 +3,7 @@ import BaseLayout from './BaseLayout.astro';
 import LeadForm from '../components/LeadForm.astro';
 import FaqBlock from '../components/FaqBlock.astro';
 import { SITE } from '../data/site';
+import { responsiveCloudinary } from '../lib/cloudinary';
 
 interface Props {
   title: string;
@@ -42,6 +43,7 @@ const dateStr = (updatedDate || pubDate).toLocaleDateString('en-US', {
   day: 'numeric',
 });
 const pageUrl = canonical || Astro.url.href;
+const responsiveHero = heroImage ? responsiveCloudinary(heroImage) : null;
 
 const articleSchema = {
   '@context': 'https://schema.org',
@@ -117,18 +119,33 @@ const schemas = [articleSchema, breadcrumbSchema, ...(faqSchema && !hasInlineFaq
   {noindex}
   {schemas}
 >
+  <div class="gr-band">
+    <div class="site-container py-10 md:py-14">
+      <header class="max-w-3xl">
+        <span class="gr-band__badge mb-5 inline-block">Research guide</span>
+        <h1 class="mb-4">{title}</h1>
+        <p class="text-lg text-[var(--color-frame-muted)] mb-4">{description}</p>
+        <p class="text-sm text-[var(--color-frame-muted)]">
+          By <a href="/about/" class="underline decoration-dotted underline-offset-2">{author}</a>, {SITE.authorRole} · Updated {dateStr} · {readingTime} min read
+        </p>
+      </header>
+    </div>
+  </div>
+
   <article class="site-container py-10 md:py-14">
-    <header class="max-w-3xl mb-8">
-      <span class="badge-pill mb-4">Research guide</span>
-      <h1 class="mb-4 text-3xl md:text-4xl">{title}</h1>
-      <p class="text-lg text-[var(--color-muted)] mb-4">{description}</p>
-      <p class="text-sm text-[var(--color-muted)]">
-        By <a href="/about/" class="text-[var(--color-muted)] underline decoration-dotted underline-offset-2">{author}</a>, {SITE.authorRole} · Updated {dateStr} · {readingTime} min read
-      </p>
-    </header>
 
     {heroImage && (
-      <img src={heroImage} alt={heroAlt || `${title} — Greek Invest research illustration`} class="w-full max-h-[420px] object-cover rounded-2xl mb-10 border border-[var(--color-border)]" width="1200" height="420" loading="eager" fetchpriority="high" />
+      <img
+        src={responsiveHero?.src || heroImage}
+        srcset={responsiveHero?.srcset}
+        sizes={responsiveHero?.sizes}
+        alt={heroAlt || `${title} — Greek Invest research illustration`}
+        class="w-full max-h-[440px] object-cover rounded-[16px] mb-10"
+        width={responsiveHero?.width || 1200}
+        height={responsiveHero?.height || 675}
+        loading="eager"
+        fetchpriority="high"
+      />
     )}
 
     <div class="prose mx-auto">

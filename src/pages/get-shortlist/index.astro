@@ -62,16 +62,21 @@ const schemas = [
   canonical={url}
   {schemas}
 >
-  <section class="site-container py-12 md:py-16 max-w-2xl">
-    <nav class="text-sm text-[var(--color-muted)] mb-6" aria-label="Breadcrumb">
+  <div class="gr-band">
+    <div class="site-container py-11 md:py-14">
+      <nav class="text-sm text-[var(--color-frame-muted)] mb-6" aria-label="Breadcrumb">
       <a href="/" class="no-underline hover:underline">Home</a> <span aria-hidden="true">›</span> <span>Free shortlist</span>
     </nav>
-    <header class="mb-8">
+      <header class="mb-8">
       <h1 class="mb-3">Get your Greece property shortlist</h1>
-      <p class="text-lg text-[var(--color-muted)]">
+      <p class="text-lg text-[var(--color-frame-muted)]">
         Share budget, region, and Golden Visa goal. We match vetted resale and new-build options that meet the 120 m² and tier rules, no spam, no developer pressure.
       </p>
     </header>
+    </div>
+  </div>
+
+  <section class="site-container py-12 md:py-16 max-w-2xl">
     <LeadForm
       title="Request your shortlist"
       subtitle="Independent advisory · Crete €400K · Athens €800K · Peloponnese · Cyclades"

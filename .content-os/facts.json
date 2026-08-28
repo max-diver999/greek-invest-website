@@ -201,7 +201,150 @@
         "closing cost",
         "purchase costs",
         "above the purchase price",
-        "transaction cost"
+        "transaction cost",
+        "total costs",
+        "total transaction costs",
+        "transaction costs",
+        "% of the purchase price",
+        "on top of price",
+        "total buying costs"
+      ]
+    },
+    {
+      "figure": "10%",
+      "statement": "Top marginal rate of Greek inheritance tax for Category A heirs (spouse, children, grandchildren, parents), applied above the €150,000 tax-free amount and the intervening 1% and 5% bands.",
+      "source": "Law 2961/2001 on the taxation of inheritances, gifts and parental provisions; AADE inheritance tax schedule",
+      "asOf": "2026-08-28",
+      "context": [
+        "inheritance",
+        "heir",
+        "heirs",
+        "category a",
+        "category b",
+        "category c",
+        "succession",
+        "estate",
+        "deceased",
+        "bequest"
+      ]
+    },
+    {
+      "figure": "1%",
+      "statement": "Lowest marginal rate of Greek inheritance tax for Category A heirs, charged on the €150,000 of an heir's share immediately above the €150,000 tax-free amount.",
+      "source": "Law 2961/2001 on the taxation of inheritances, gifts and parental provisions; AADE inheritance tax schedule",
+      "asOf": "2026-08-28",
+      "context": [
+        "inheritance",
+        "heir",
+        "heirs",
+        "category a",
+        "category b",
+        "category c",
+        "succession",
+        "estate",
+        "deceased",
+        "bequest"
+      ]
+    },
+    {
+      "figure": "20%",
+      "statement": "Entry rate of Greek inheritance tax for Category C beneficiaries (unrelated persons and distant kin) above their €6,000 tax-free amount, and the top marginal rate for Category B heirs.",
+      "source": "Law 2961/2001 on the taxation of inheritances, gifts and parental provisions; AADE inheritance tax schedule",
+      "asOf": "2026-08-28",
+      "context": [
+        "inheritance",
+        "heir",
+        "heirs",
+        "category a",
+        "category b",
+        "category c",
+        "succession",
+        "estate",
+        "deceased",
+        "bequest"
+      ]
+    },
+    {
+      "figure": "40%",
+      "statement": "Top marginal rate of Greek inheritance tax, applied to Category C beneficiaries on the largest shares.",
+      "source": "Law 2961/2001 on the taxation of inheritances, gifts and parental provisions; AADE inheritance tax schedule",
+      "asOf": "2026-08-28",
+      "context": [
+        "inheritance",
+        "heir",
+        "heirs",
+        "category a",
+        "category b",
+        "category c",
+        "succession",
+        "estate",
+        "deceased",
+        "bequest"
+      ]
+    },
+    {
+      "figure": "€150,000",
+      "statement": "Greek inheritance tax free amount per Category A heir: spouse, children, grandchildren and parents of the deceased.",
+      "source": "Law 2961/2001 on the taxation of inheritances, gifts and parental provisions; AADE inheritance tax schedule",
+      "asOf": "2026-08-28",
+      "context": [
+        "inheritance",
+        "heir",
+        "heirs",
+        "category a",
+        "category b",
+        "category c",
+        "succession",
+        "estate",
+        "deceased",
+        "bequest"
+      ]
+    },
+    {
+      "figure": "€30,000",
+      "statement": "Greek inheritance tax free amount per Category B heir: siblings, grandparents, great-grandchildren, step-parents, stepchildren and parents-in-law.",
+      "source": "Law 2961/2001 on the taxation of inheritances, gifts and parental provisions; AADE inheritance tax schedule",
+      "asOf": "2026-08-28",
+      "context": [
+        "inheritance",
+        "heir",
+        "heirs",
+        "category a",
+        "category b",
+        "category c",
+        "succession",
+        "estate",
+        "deceased",
+        "bequest"
+      ]
+    },
+    {
+      "figure": "€6,000",
+      "statement": "Greek inheritance tax free amount per Category C beneficiary: unrelated persons and distant kin.",
+      "source": "Law 2961/2001 on the taxation of inheritances, gifts and parental provisions; AADE inheritance tax schedule",
+      "asOf": "2026-08-28",
+      "context": [
+        "inheritance",
+        "heir",
+        "heirs",
+        "category a",
+        "category b",
+        "category c",
+        "succession",
+        "estate",
+        "deceased",
+        "bequest"
+      ]
+    },
+    {
+      "figure": "3.47%",
+      "statement": "Average gross rental yield in Kavala, the weakest of the major Greek cities in the reference dataset this site uses for city-level yields.",
+      "source": "Greek Property Group Q3 2025 city-level gross yield reference data",
+      "asOf": "2026-08-28",
+      "context": [
+        "kavala",
+        "gross yield",
+        "yield"
       ]
     }
   ]

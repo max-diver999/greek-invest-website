@@ -351,7 +351,6 @@ updatedDate: 2026-06-15
 author: "Invest Spain Property Editorial"
 category: "projects"
 tags: ${JSON.stringify(p.tags)}
-readingTime: 14
 heroImage: "${p.hero}"
 priceFromEUR: ${p.price}
 area: "${p.areaLabel.toLowerCase().replace(/\s+/g, '-')}"

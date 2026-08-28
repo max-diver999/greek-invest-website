@@ -13,7 +13,7 @@
 2. Phase 0 artifacts only — no mass MDX
 3. Open PR to `main` when audit complete; **do not merge**
 
-## Cursor (after Maxim «ок» + fix batches)
+## Cursor (after Maksim «ок» + fix batches)
 
 1. Review PR / merge with git identity `max-diver999 <maks.shchegolev@gmail.com>`
 2. `npm run validate:content -- --changed` → build → `qa:full:quick`

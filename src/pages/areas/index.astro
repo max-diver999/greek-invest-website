@@ -1,6 +1,7 @@
 ---
 export const prerender = true;
 import { getCollection } from 'astro:content';
+import { readingMinutes } from '../../lib/readingTime';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { SITE } from '../../data/site';
 import ContentCard from '../../components/ContentCard.astro';
@@ -67,7 +68,7 @@ const schemas = [
           description={area.data.description}
           image={area.data.heroImage}
           badges={['Area', formatAreaLabel(area.id)]}
-          meta={`${area.data.readingTime ?? 10} min read`}
+          meta={`${readingMinutes(area.body ?? "")} min read`}
         />
       ))}
       {areas.length === 0 && (

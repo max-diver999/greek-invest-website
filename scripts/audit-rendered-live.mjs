@@ -49,6 +49,34 @@ const CHECKS = [
   // --- Added after the 2026-08-21 audit. Each of these was true across the whole
   // --- corpus while this script reported "0 errors, 0 pages with issues".
   {
+    // Every article shipped a hand-set readingTime from the day it was written.
+    // On 88 of 133 it was out by more than two minutes, and the US guide told
+    // readers 19 minutes for a 14-minute page, while this audit reported no
+    // issues. A number displayed to a reader has to be checkable against the
+    // thing it describes, so it is now checked against the rendered article.
+    id: 'reading-time-mismatch',
+    severity: 'P1',
+    test: (html) => {
+      const shown = html.match(/(\d+)\s*min read/);
+      if (!shown) return null;
+      const article = html.match(/<article[\s\S]*?<\/article>/);
+      if (!article) return null;
+      const text = article[0]
+        .replace(/<script[\s\S]*?<\/script>/g, ' ')
+        .replace(/<style[\s\S]*?<\/style>/g, ' ')
+        .replace(/<form[\s\S]*?<\/form>/g, ' ')
+        .replace(/<[^>]+>/g, ' ');
+      const words = text.split(/\s+/).filter((w) => /[A-Za-z0-9]/.test(w)).length;
+      const real = Math.max(1, Math.round(words / 200));
+      const claimed = Number(shown[1]);
+      // Two minutes of slack: the article element carries a little chrome that
+      // a reader does not read, and rounding moves the boundary either way.
+      return Math.abs(claimed - real) > 2
+        ? `page says ${claimed} min read, rendered article is ~${words} words (~${real} min)`
+        : null;
+    },
+  },
+  {
     id: 'duplicate-jsonld-type',
     severity: 'P0',
     test: (html) => {

@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { readingMinutes } from '../lib/readingTime';
 import LeadForm from '../components/LeadForm.astro';
 import { getCollection } from 'astro:content';
 import { SITE } from '../data/site';
@@ -167,7 +168,7 @@ const schemas = [
             description={g.data.description}
             image={g.data.heroImage}
             imageAlt={g.data.heroAlt}
-            meta={`${g.data.readingTime ?? 8} min read`}
+            meta={`${readingMinutes(g.body ?? "")} min read`}
           />
         ))}
       </div>
@@ -188,7 +189,7 @@ const schemas = [
             description={a.data.description}
             image={a.data.heroImage}
             imageAlt={a.data.heroAlt}
-            meta={`${a.data.readingTime ?? 8} min read`}
+            meta={`${readingMinutes(a.body ?? "")} min read`}
           />
         ))}
       </div>
@@ -212,7 +213,7 @@ const schemas = [
             description={pr.data.description}
             image={pr.data.heroImage}
             imageAlt={pr.data.heroAlt}
-            meta={`${pr.data.readingTime ?? 8} min read`}
+            meta={`${readingMinutes(pr.body ?? "")} min read`}
           />
         ))}
       </div>

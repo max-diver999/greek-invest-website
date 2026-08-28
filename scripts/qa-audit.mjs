@@ -146,7 +146,10 @@ function auditFile(c, slug) {
   }
   if (!fm.updatedDate) prob.push('missing:updatedDate');
   if (!fm.author) prob.push('missing:author');
-  if (!fm.readingTime) prob.push('missing:readingTime');
+  // readingTime is no longer a frontmatter field: it was a hand-set number that
+  // drifted from the article and is now computed in src/lib/readingTime.ts.
+  // Requiring it here would require the wrong thing back.
+  if (fm.readingTime) prob.push('stale:readingTime (computed at render, remove the field)');
 
   const desc = (fm.description || '').replace(/^["']|["']$/g, '');
   if (desc && desc.length > 160) prob.push(`descLen:${desc.length}>160`);

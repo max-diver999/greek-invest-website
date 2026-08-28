@@ -2,7 +2,7 @@ import { readdirSync, readFileSync } from 'node:fs';
 import { join } from 'node:path';
 
 const ROOT = decodeURIComponent(new URL('../src/content/', import.meta.url).pathname);
-const ALLOWED_KEYS = new Set(['title','description','pubDate','updatedDate','author','category','tags','heroImage','readingTime','relatedSlugs','noindex','faq','featured','segment']);
+const ALLOWED_KEYS = new Set(['title','description','pubDate','updatedDate','author','category','tags','heroImage','heroAlt','relatedSlugs','noindex','faq','featured','segment']);
 const bad = [];
 for (const c of ['guides', 'compare']) {
   const dir = join(ROOT, c);

@@ -1,6 +1,6 @@
 # Content roadmap — 50 articles for greek-invest.com
 
-**Date:** 2026-08-21 · **Status:** proposal. **No MDX written.** Awaiting «ок» from Maxim.
+**Date:** 2026-08-21 · **Status:** proposal. **No MDX written.** Awaiting «ок» from Maksim.
 **Objective:** top-3 positions on high-commercial-intent Greece property and Golden Visa queries, converting to
 qualified buyer leads.
 

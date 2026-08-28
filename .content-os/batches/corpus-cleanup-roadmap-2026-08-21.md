@@ -1,7 +1,7 @@
 # Corpus cleanup roadmap — greek-invest.com
 
 **Date:** 2026-08-21 · **Source:** `AUDIT-REPORT-2026-08-21.md` · **Batch size:** ~25 files
-**Status:** proposal. Nothing executed. Awaiting «ок» from Maxim.
+**Status:** proposal. Nothing executed. Awaiting «ок» from Maksim.
 
 **Goal:** move GEO `unique` from 78 toward 90+ by removing duplication and repairing broken prose, without
 touching the facts — which are sound.
@@ -155,7 +155,7 @@ region pillars that link down to `areas/`.
 Resolve the Rhodes duplication: `areas/rhodes-property-investment` vs
 `guides/rhodes-golden-visa-400000-property-guide`.
 
-**Every move needs a 301.** Slug changes are forbidden until Maxim approves this section specifically.
+**Every move needs a 301.** Slug changes are forbidden until Maksim approves this section specifically.
 
 ---
 

@@ -4,7 +4,7 @@ Content OS pilot. Submodule: `more-group-content-os`.
 
 **Start:** read `CLAUDE-CODE-START.md` and paste the audit prompt into chat.
 
-**Never without Maxim ok:** mass new MDX, Astro/layout refactors, push to main, Google Indexing API,
+**Never without Maksim ok:** mass new MDX, Astro/layout refactors, push to main, Google Indexing API,
 deleting a page or adding a 301.
 
 **Indexing:** only `greek-invest-indexing` key — see `more-group-content-os/policies/cursor-rules/greek-invest-indexing-isolation.mdc`.

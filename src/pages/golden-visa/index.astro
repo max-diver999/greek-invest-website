@@ -1,6 +1,7 @@
 ---
 export const prerender = true;
 import { getCollection } from 'astro:content';
+import { readingMinutes } from '../../lib/readingTime';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ContentCard from '../../components/ContentCard.astro';
 import LeadForm from '../../components/LeadForm.astro';
@@ -228,7 +229,7 @@ const schemas = [
               description={g.data.description}
               image={g.data.heroImage}
               imageAlt={g.data.heroAlt}
-              meta={`${g.data.readingTime ?? 8} min read`}
+              meta={`${readingMinutes(g.body ?? "")} min read`}
             />
           ))}
         </div>

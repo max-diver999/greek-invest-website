@@ -12,7 +12,12 @@ const articleSchema = z.object({
   heroImage: z.string().optional(),
   /** Descriptive alt for the hero. Never duplicate the H1 — describe the image. */
   heroAlt: z.string().optional(),
-  readingTime: z.number().optional(),
+  /**
+   * No readingTime here on purpose. It was a hand-set number that drifted from
+   * the content the moment either changed, and was out by more than two minutes
+   * on 88 of 133 articles. It is computed from the body in src/lib/readingTime.ts
+   * so it cannot be wrong.
+   */
   relatedSlugs: z.array(z.string()).default([]),
   noindex: z.boolean().default(false),
   faq: z

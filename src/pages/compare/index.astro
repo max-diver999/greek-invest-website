@@ -1,6 +1,7 @@
 ---
 export const prerender = true;
 import { getCollection } from 'astro:content';
+import { readingMinutes } from '../../lib/readingTime';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { SITE } from '../../data/site';
 import ContentCard from '../../components/ContentCard.astro';
@@ -66,7 +67,7 @@ const schemas = [
           description={item.data.description}
           image={item.data.heroImage}
           badges={['Comparison', ...(item.data.tags?.slice(0, 1) ?? [])]}
-          meta={`${item.data.readingTime ?? 8} min read`}
+          meta={`${readingMinutes(item.body ?? "")} min read`}
         />
       ))}
     </div>

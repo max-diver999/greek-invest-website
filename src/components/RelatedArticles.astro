@@ -1,0 +1,28 @@
+---
+import ContentCard from './ContentCard.astro';
+import type { RelatedItem } from '../lib/related';
+
+interface Props {
+  items: RelatedItem[];
+  heading?: string;
+}
+
+const { items, heading = 'Read next' } = Astro.props;
+---
+{items.length > 0 && (
+  <section class="max-w-5xl mx-auto mt-14" aria-labelledby="related-heading">
+    <h2 id="related-heading" class="text-xl mb-5">{heading}</h2>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-7 gap-y-10">
+      {items.map((item) => (
+        <ContentCard
+          href={item.href}
+          title={item.title}
+          description={item.description}
+          image={item.image}
+          badges={item.badges}
+          meta={item.meta}
+        />
+      ))}
+    </div>
+  </section>
+)}

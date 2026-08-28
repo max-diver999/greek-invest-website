@@ -43,7 +43,8 @@
     "gen:llms": "node scripts/generate-llms-txt.mjs",
     "prebuild": "node scripts/generate-llms-txt.mjs",
     "speed:dims": "node scripts/build-cloudinary-dims.mjs",
-    "speed:verify": "node scripts/verify-responsive-images.mjs"
+    "speed:verify": "node scripts/verify-responsive-images.mjs",
+    "check:related": "node scripts/check-related.mjs"
   },
   "dependencies": {
     "@astrojs/mdx": "5.0.2",

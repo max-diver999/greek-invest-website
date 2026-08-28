@@ -2,6 +2,7 @@
 import { getCollection, render } from 'astro:content';
 import ArticleLayout from '../../layouts/ArticleLayout.astro';
 import { SITE } from '../../data/site';
+import { resolveRelated } from '../../lib/related';
 
 export const prerender = true;
 
@@ -15,6 +16,7 @@ export async function getStaticPaths() {
 
 const { entry } = Astro.props;
 const { Content } = await render(entry);
+const related = await resolveRelated(entry.data.relatedSlugs, entry.id);
 const hasInlineFaqBlock = entry.body?.includes('<FaqBlock') ?? false;
 
 const {
@@ -43,6 +45,7 @@ const {
   {noindex}
   {hasInlineFaqBlock}
   contextLabel={title}
+  {related}
   canonical={`${SITE.url}/guides/${entry.id}/`}
 >
   <Content />

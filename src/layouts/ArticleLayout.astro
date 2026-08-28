@@ -2,6 +2,8 @@
 import BaseLayout from './BaseLayout.astro';
 import LeadForm from '../components/LeadForm.astro';
 import FaqBlock from '../components/FaqBlock.astro';
+import RelatedArticles from '../components/RelatedArticles.astro';
+import type { RelatedItem } from '../lib/related';
 import { SITE } from '../data/site';
 import { responsiveCloudinary } from '../lib/cloudinary';
 
@@ -19,6 +21,7 @@ interface Props {
   noindex?: boolean;
   hasInlineFaqBlock?: boolean;
   contextLabel?: string;
+  related?: RelatedItem[];
 }
 
 const {
@@ -35,6 +38,7 @@ const {
   noindex = false,
   hasInlineFaqBlock = false,
   contextLabel = title,
+  related = [],
 } = Astro.props;
 
 const dateStr = (updatedDate || pubDate).toLocaleDateString('en-US', {
@@ -157,6 +161,8 @@ const schemas = [articleSchema, breadcrumbSchema, ...(faqSchema && !hasInlineFaq
         <FaqBlock items={faq} />
       </div>
     )}
+
+    <RelatedArticles items={related} />
 
     <div class="max-w-3xl mx-auto mt-12">
       <LeadForm

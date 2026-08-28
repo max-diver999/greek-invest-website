@@ -75,6 +75,15 @@ const steps = [
         },
       ]
     : []),
+  ...(existsSync(join(ROOT, 'scripts/check-related.mjs'))
+    ? [
+        {
+          name: 'Related slugs resolve',
+          cmd: 'node',
+          args: ['scripts/check-related.mjs'],
+        },
+      ]
+    : []),
   ...(existsSync(join(ROOT, 'scripts/facts-review.mjs'))
     ? [
         {

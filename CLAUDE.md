@@ -14,6 +14,7 @@ deleting a page or adding a 301.
 ```bash
 npm run validate:content -- --all
 npm run check:jurisdiction
+npm run check:related
 npm run facts:review
 npm run geo:calibrate
 npm run build && npm run audit:rendered:fail

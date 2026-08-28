@@ -4,7 +4,7 @@ Content OS pilot. Submodule: `more-group-content-os`.
 
 **Start:** read `CLAUDE-CODE-START.md` and paste the audit prompt into chat.
 
-**Never without Maxim ok:** mass new MDX, Astro/layout refactors, push to main, Google Indexing API,
+**Never without Maksim ok:** mass new MDX, Astro/layout refactors, push to main, Google Indexing API,
 deleting a page or adding a 301.
 
 **Indexing:** only `greek-invest-indexing` key — see `more-group-content-os/policies/cursor-rules/greek-invest-indexing-isolation.mdc`.
@@ -21,7 +21,9 @@ npm run build && npm run audit:rendered:fail
 npm run qa:full:quick
 ```
 
-**GEO scoring.** `npm run geo:audit` is the OLD rubric and is not a quality gate: measured on this
+**GEO scoring.** `npm run geo:audit` is the OLD rubric and is not a quality gate. It runs inside
+`qa:full` as a **report** — it prints its numbers under NOTES and cannot fail the run. The blocking
+quality gate is `geo:calibrate`. Reason: measured on this
 repository's own labelled sets it separates machine-injected text from hand-written text by 3.0
 points, and 17 of 114 known-garbage files clear its 90 threshold. Use the honest scorer instead:
 

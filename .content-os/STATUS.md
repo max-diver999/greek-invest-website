@@ -101,19 +101,21 @@ Things the audit could not see until the boilerplate was gone and every section 
   83 — and `/about/` is the target of every article byline while saying nothing about who writes
   the site. Expanded to 464 / 602 / 425 rendered words, with a Person schema on `/about/`.
 
-## Decisions taken (from Maxim's five answers)
+## Decisions taken (from Maksim's five answers)
 
 1. **`/invest-athens-property/` and `/invest-crete-property/`** — rebuilt rather than redirected,
    at 2,402 and 2,374 words with Service + BreadcrumbList + FAQPage schema.
 2. **Phone** — removed from the site's contact surfaces; retained behind the WhatsApp click.
    `SITE.whatsapp` still carries the Thai number: **the correct number is still needed.**
-3. **Author** — set to `Maxim`, a Person, across the corpus and the Article schema.
+3. **Author** — a Person byline across the corpus and the Article schema. Spelled **Maksim**: it was
+   shipped as `Maxim` on all 133 pages and in `SITE.editorial` and corrected on 2026-08-28. Maksim
+   confirmed on 2026-08-28 that the byline keeps his name. Settled.
 4. **The thin openers** — all 349 written by hand, none templated.
 5. **Nationality cluster** — differentiated on real country specifics (LRS caps for Indian buyers,
    T1135 for Canadians, the Israel treaty text conflict, Brexit Schengen limits for UK buyers).
    Worst pair fell from 65.5% to 44.7% containment.
 
-## Still open for Maxim
+## Still open for Maksim
 
 1. **The correct phone number** for `SITE.whatsapp`.
 2. **Whether "MORE Group" should appear on this site at all.** The 103 fabricated-data sentences
@@ -124,7 +126,7 @@ Things the audit could not see until the boilerplate was gone and every section 
    HTTP status codes. The egress proxy here returns 403 for greek-invest.com, so these must be
    run from Cursor.
 
-## Content roadmap execution (approved by Maxim 2026-08-22)
+## Content roadmap execution (approved by Maksim 2026-08-22)
 
 Wave 1 of Tier 1 delivered: 5 articles, hand-written, GEO 90 to 93 each,
 all gates green. Corpus now 134 pages.
@@ -164,7 +166,7 @@ is reachable.
 1. ~~**Claude** — Phase 0 full audit~~ ✅ delivered
 2. ~~**Claude** — remediation: QA gate, SEO/AEO/GEO, UX, corpus cleanup~~ ✅ delivered
 3. ~~**Claude** — the manual writing pass across all 129 pages~~ ✅ delivered
-4. **Maxim** — the four open items above; «ок» on the 50-article content roadmap
+4. **Maksim** — the four open items above; «ок» on the 50-article content roadmap
 5. **Cursor** — merge, build, qa, deploy, indexing only on «отправляй»
 
 ## Artifacts (delivered 2026-08-21)
@@ -178,4 +180,4 @@ is reachable.
 
 ## Lock
 
-`pilot-lock.json` — Claude owns Phase 0 audit until Maxim says «ок» on roadmaps.
+`pilot-lock.json` — Claude owns Phase 0 audit until Maksim says «ок» on roadmaps.

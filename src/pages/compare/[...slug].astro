@@ -3,6 +3,7 @@ import { getCollection, render } from 'astro:content';
 import ArticleLayout from '../../layouts/ArticleLayout.astro';
 import { SITE } from '../../data/site';
 import { resolveRelated } from '../../lib/related';
+import { readingMinutes } from '../../lib/readingTime';
 
 export const prerender = true;
 
@@ -25,7 +26,6 @@ const {
   pubDate,
   updatedDate,
   author,
-  readingTime,
   heroImage,
   heroAlt,
   faq,
@@ -38,7 +38,7 @@ const {
   {pubDate}
   {updatedDate}
   {author}
-  readingTime={readingTime ?? 10}
+  readingTime={readingMinutes(entry.body ?? "")}
   {heroImage}
   {heroAlt}
   {faq}

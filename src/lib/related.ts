@@ -1,4 +1,5 @@
 import { getCollection, type CollectionEntry } from 'astro:content';
+import { readingMinutes } from './readingTime';
 
 /**
  * relatedSlugs has been declared on every article since the schema was written
@@ -75,7 +76,7 @@ export async function resolveRelated(
       description: hit.entry.data.description,
       image: hit.entry.data.heroImage,
       badges: [LABEL[hit.collection] ?? 'Article'],
-      meta: `${hit.entry.data.readingTime ?? 8} min read`,
+      meta: `${readingMinutes(hit.entry.body ?? '')} min read`,
     });
   }
   return out;

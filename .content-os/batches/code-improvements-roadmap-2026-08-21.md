@@ -1,7 +1,7 @@
 # Code improvements roadmap — greek-invest.com
 
 **Date:** 2026-08-21 · **Source:** `CODE-AUDIT-2026-08-21.md`
-**Status:** proposal. No code changed. Awaiting «ок» from Maxim.
+**Status:** proposal. No code changed. Awaiting «ок» from Maksim.
 
 **Constraint:** `CLAUDE.md` forbids Astro/layout refactors without explicit approval. Every item below that
 touches `src/layouts/` or `src/components/` is flagged **[needs layout ok]**.

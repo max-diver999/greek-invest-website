@@ -8,7 +8,7 @@ export const SITE = {
   /** Click-through only. The number is deliberately not displayed on the site. */
   whatsapp: 'https://wa.me/66651195327',
   /** Named byline. A person carries more E-E-A-T than a masthead on YMYL tax and legal content. */
-  editorial: 'Maxim',
+  editorial: 'Maksim',
   authorRole: 'Founder, Greek Invest',
   /** Wikidata entity — https://www.wikidata.org/wiki/Q140604600 */
   wikidataId: 'Q140604600' as string | null,

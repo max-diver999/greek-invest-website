@@ -1,4 +1,4 @@
-# Rewrite waves R0–R5 — proposal, awaiting Maxim's go-ahead
+# Rewrite waves R0–R5 — proposal, awaiting Maksim's go-ahead
 
 Baseline: `.content-os/reports/GEO-DIAGNOSTIC-2026-08-27.md`. Corpus 139 files, mean **25.0/75**,
 21 pages at zero, 29 pages capped by a gate.
@@ -85,7 +85,7 @@ nine-word sequences.
 | `ela-tinos` | 31 | to be assessed in wave |
 | `the-regal` | — | **no topic exists.** No municipality, no unit count, no sizes, no delivery date |
 
-**Merge proposed (needs Maxim's yes):** `the-regal` → `the-grandline`. Same developer, same
+**Merge proposed (needs Maksim's yes):** `the-regal` → `the-grandline`. Same developer, same
 price-versus-threshold argument, and Grandline has the unit data Regal lacks. Do not sequence this
 until Grandline's own 224 m² contradiction is resolved.
 
@@ -151,7 +151,7 @@ unwatched.
 
 This wave is different: the main finding is that several of these pages should not exist separately.
 
-**Merges proposed (each needs Maxim's yes, with a 301):**
+**Merges proposed (each needs Maksim's yes, with a 301):**
 
 | merge | why |
 |---|---|
@@ -191,7 +191,7 @@ including closing paragraphs and source lines; score plus content validation aft
 re-check the wave against **itself** for duplication before committing; one commit per wave with
 before → after per file; push to the working branch.
 
-## What needs a decision from Maxim
+## What needs a decision from Maksim
 
 1. **Go / no-go on R0.**
 2. **The five merges** — four in R4, one in R1. Each removes a URL and needs a 301.

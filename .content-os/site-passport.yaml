@@ -36,7 +36,7 @@ full_audit:
   forbid:
     - mass regex delete across corpus
     - Astro/layout changes without code roadmap ok
-    - new slugs until Maxim ok on audit roadmaps
+    - new slugs until Maksim ok on audit roadmaps
 
 topic_discovery:
   mode: after_audit_ok
@@ -68,7 +68,7 @@ indexing:
   policy: more-group-content-os/policies/cursor-rules/greek-invest-indexing-isolation.mdc
   gcp_project: greek-invest-indexing
   key_preflight: scripts/google-indexing-key.json
-  cursor_only_after: Maxim says отправляй or выложи with indexing
+  cursor_only_after: Maksim says отправляй or выложи with indexing
 
 lead_funnels:
   - /greece-golden-visa-consultation/

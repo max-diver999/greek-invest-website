@@ -1,6 +1,6 @@
 {
   "_what": "Load-bearing figures: numbers this site relies on across many articles. A figure used once is a local worked example and needs nothing. A figure carried by five or more articles is a claim about the world and needs a source and a date.",
-  "_deliberately_absent": "Generic amounts that mean different things on different pages are NOT registered, even where one meaning is sourceable. The registry is keyed by the bare figure, so registering €2,000 as the Golden Visa state fee would hand provenance to every page using €2,000 as a price per square metre. The same applies to €500, €800, €3,000, 2%, 8% and 10%. Those are resolved editorially, by making each page say what its own number measures.",
+  "_deliberately_absent": "Generic amounts that mean different things on different pages are registered only WITH a `context` list, never bare. The registry is keyed by the figure, so a bare entry for €2,000 as the Golden Visa state fee would hand provenance to every page using €2,000 as a price per square metre. That used to be a reason to leave such figures out entirely, which penalised sixty articles for using 10% correctly. Since the scorer gained context matching (`registeredHere` in scripts/lib/geo/score.mjs), an entry applies only where one of its context words appears within 140 characters of the figure, so the fee and the price-per-m2 are told apart. Bare entries still cover every use of their figure, which is correct for €800,000 and the other figures that mean exactly one thing here. Still absent and still editorial: €500, €800, €3,000, 2% and 8%, which carry no single sourceable meaning on this site.",
   "_scope": "25 entries against 177 load-bearing figures. Coverage is deliberately partial and honest: entries are added when somebody has actually done the sourcing. The registry gate arms only at 80% coverage, so a partial registry costs nothing structurally and an invented one would cost the corpus its provenance credit entirely.",
   "facts": [
     {
@@ -27,7 +27,6 @@
       "source": "Law 5100/2024, Article 5 (Government Gazette A' 46/2024)",
       "asOf": "2026-08-27"
     },
-
     {
       "figure": "15%",
       "statement": "Rate on the first band of annual rental income for individuals, applied to gross rent rather than to profit.",
@@ -70,7 +69,6 @@
       "source": "Law 5246/2025, rental income scale effective 1 January 2026",
       "asOf": "2026-08-27"
     },
-
     {
       "figure": "3.09%",
       "statement": "Effective property transfer tax (ΦΜΑ) on a resale: 3% of the taxable value plus a municipal surcharge of 3% levied on the tax itself.",
@@ -95,7 +93,6 @@
       "source": "Greek VAT Code (Law 2859/2000) and the new-build VAT suspension",
       "asOf": "2026-08-27"
     },
-
     {
       "figure": "€100,000",
       "statement": "Annual flat tax on foreign-source income under the non-domiciled regime for a main applicant, paid regardless of the size of that income.",
@@ -120,7 +117,6 @@
       "source": "Law 4172/2013 Article 39, income from immovable property",
       "asOf": "2026-08-27"
     },
-
     {
       "figure": "90 days",
       "statement": "Maximum stay in the Schengen area in any rolling 180-day period for a third-country national without a residence permit.",
@@ -156,6 +152,57 @@
       "statement": "National average gross rental yield for Greece, against which regional and city figures on this site are set.",
       "source": "Global Property Guide, Greece rental yields, November 2025",
       "asOf": "2026-08-27"
+    },
+    {
+      "figure": "€2,000",
+      "statement": "Golden Visa application fee payable to the Greek authorities by the main applicant. Adult family members pay €150 each and every residence card costs €16; minors are exempt from the application fee.",
+      "source": "Greek Ministry of Migration and Asylum residence permit fee schedule; Law 4251/2014 as amended",
+      "asOf": "2026-08-28",
+      "context": [
+        "state fee",
+        "state fees",
+        "application fee",
+        "government fee",
+        "government fees",
+        "main applicant",
+        "programme's own fee",
+        "golden visa fee",
+        "golden visa's own"
+      ]
+    },
+    {
+      "figure": "€150",
+      "statement": "Golden Visa application fee per adult family member joining the main applicant's file. Separate from the €16 issued for each residence card.",
+      "source": "Greek Ministry of Migration and Asylum residence permit fee schedule; Law 4251/2014 as amended",
+      "asOf": "2026-08-28",
+      "context": [
+        "family member",
+        "per dependent",
+        "dependent",
+        "government charge",
+        "government fee",
+        "state fee",
+        "biometric"
+      ]
+    },
+    {
+      "figure": "10%",
+      "statement": "Top of the all-in acquisition cost band on a Greek residential purchase, expressed as a percentage of the deed price. The band runs from about 7% and is composed of FMA transfer tax at 3.09%, notary at roughly 1.2% plus VAT, lawyer at about 1% plus VAT, land registry at 0.475% plus VAT, the engineer's certificate, and agent commission where one acts.",
+      "source": "Composite of Law 4646/2019 FMA transfer tax rate and the published Greek notarial, land registry and bar association fee scales",
+      "asOf": "2026-08-28",
+      "context": [
+        "acquisition",
+        "acquisition cost",
+        "transaction stack",
+        "on top of the deed",
+        "all in",
+        "all-in",
+        "buying cost",
+        "closing cost",
+        "purchase costs",
+        "above the purchase price",
+        "transaction cost"
+      ]
     }
   ]
 }

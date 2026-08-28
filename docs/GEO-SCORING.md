@@ -86,6 +86,38 @@ Passages that are meant to be identical everywhere (legal disclaimers, the stand
 yields) are declared in `.content-os/boilerplate.txt`. Declaring an exemption is a visible act; the
 detector does not guess.
 
+### A figure is not a claim until you know what it measures
+
+The registry was keyed on the bare figure, and that quietly cost the scorer in both directions.
+
+`€2,000` is the Golden Visa application fee for the main applicant. It is also the low end of the Kipseli
+price-per-square-metre band. `10%` is the top of the acquisition-cost stack, and a deposit, and a yield,
+and a price move. Keyed on the digits alone the registry had two options and both were wrong: leave the
+fee out, and penalise sixty articles four points each for using `10%` correctly; or register it, and hand
+provenance to every page that happened to type the same digits about something else. `facts.json` had
+documented the dilemma and chosen the first horn, which is why the file carried a `_deliberately_absent`
+list of figures nobody could register.
+
+A registry entry may now carry `context`: words that must appear within 140 characters of the figure for
+that entry to apply. `registeredHere(figure, text)` in `scripts/lib/geo/score.mjs` replaces `registry.has`
+in all three consumers — the provenance component, the stamped-figure penalty and the unregistered-figure
+report — so a page gets credit for `€2,000` when it is talking about state fees and not when it is talking
+about €/m².
+
+Two properties make this safe to add rather than a widened exemption. An entry with no `context` behaves
+exactly as before, so nothing already in the file changed meaning. And for an entry that has one, the test
+is strictly narrower than `registry.has` ever was: context matching can only ever withhold provenance that
+the old code would have granted, never manufacture it. That is the reason it was allowed to raise scores
+at all — the mechanism cannot be used to make a page pass, only to stop punishing a page that was already
+right.
+
+Measured: separation rose from 64.8 to 72.0 and the hand-written minimum from 63 to 71, with the garbage
+set unmoved at 0. Corpus mean rose 52.4 to 54.3.
+
+The figures that are still deliberately unregistered — `€500`, `€800`, `€3,000`, `2%`, `8%` — are out
+because they carry no single sourceable meaning on this site, not because the registry cannot express
+them. That is an editorial gap, and the fix is for each page to say what its own number measures.
+
 ### Claims we cannot watch
 
 The registry is keyed by the bare figure, which is right for its job and wrong for another one. `7.5%` is the
@@ -273,9 +305,13 @@ rewrote ("second GEO pass — commercial corpus 114/114 at 90+", +22,918 lines),
 articles written by hand in the August 2026 waves, `mid` is seven pages that were garbage at that
 commit, were stripped, and then had hand-written openers inserted by script.
 
-Current state: garbage mean **0.0** (max 0), hand-written mean **64.8** (min 63), middle **54.9**,
-separation **64.8 points**, and **0 of 114** garbage files reach the worst hand-written article.
+Current state: garbage mean **0.0** (max 0), hand-written mean **72.0** (min 71), middle **54.9**,
+separation **72.0 points**, and **0 of 114** garbage files reach the worst hand-written article.
 Ordering is correct: hand-written > semi-automatic > machine-injected.
+
+Separation was 64.8 until the registry learned about context (below). Hand-written articles gained
+seven points because figures they were using correctly finally counted as sourced; the garbage set
+gained nothing, because context matching is strictly narrower than the test it replaced.
 
 Any change to the rubric must keep calibration passing. A rule that cannot separate the two sets is a
 rule with no evidence behind it.

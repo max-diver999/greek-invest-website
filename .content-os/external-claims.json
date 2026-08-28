@@ -1,7 +1,7 @@
 {
   "_what": "Claims about jurisdictions nobody on this project monitors. Keyed by the claim, not by the number, because a figure like 5% means an agent's commission on twenty Greek pages and something else entirely abroad. Every entry needs claim, jurisdiction, source, asOf, reviewBy and the files that carry it. `npm run facts:review` fails once a reviewBy date passes and reports claims whose files have disappeared.",
   "_why": "The Greek figures on this site have a watcher: the Government Gazette, AADE circulars and the Ministry of Migration are all checkable on demand. Foreign tax rules have none, so a stale one would sit here indefinitely under an asOf date quietly asserting it was current. The R3 nationality guides rest almost entirely on foreign tax law, which is why they are registered here before anything else.",
-  "_still_unregistered": "The ten comparison pages in compare/ carry Portuguese, Spanish, Italian, Maltese, Cypriot, Hungarian, Croatian and UAE figures that are not yet registered. They are next.",
+  "_still_unregistered": "Cleared for compare/. The remaining unregistered foreign material on this site is descriptive rather than load-bearing: market colour on foreign yields and prices, which is labelled as modelled or directional in the text and is not a legal claim anybody should act on. If any of it becomes a decision input, register it here first.",
   "claims": [
     {
       "id": "us-citizenship-based-taxation",
@@ -176,7 +176,8 @@
       "asOf": "2026-08-27",
       "reviewBy": "2027-02-27",
       "files": [
-        "guides/greece-golden-visa-uae-buyers.mdx"
+        "guides/greece-golden-visa-uae-buyers.mdx",
+        "compare/golden-visa-greece-vs-dubai-property-residency.mdx"
       ]
     },
     {
@@ -210,6 +211,191 @@
       "reviewBy": "2027-08-27",
       "files": [
         "guides/israeli-buyers-greece-property.mdx"
+      ]
+    },
+    {
+      "id": "pt-mais-habitacao-removed-real-estate",
+      "jurisdiction": "PT",
+      "claim": "Portugal's Mais Habitacao housing package, in force from October 2023, removed direct real estate purchase as a qualifying route for the Autorizacao de Residencia para Investimento. The programme continues on non-property routes; property alone no longer qualifies a new applicant.",
+      "source": "Portugal, Lei 56/2023 (Mais Habitacao); AIMA guidance on ARI qualifying investment categories",
+      "asOf": "2026-08-28",
+      "reviewBy": "2027-02-27",
+      "files": [
+        "compare/greece-vs-portugal-golden-visa-property.mdx",
+        "compare/greece-vs-spain-golden-visa-ended.mdx",
+        "compare/greece-vs-italy-vs-spain-property-investment.mdx",
+        "compare/greece-vs-malta-permanent-residence-property.mdx",
+        "compare/greece-vs-cyprus-golden-visa-property.mdx"
+      ]
+    },
+    {
+      "id": "pt-fund-route-500000-conditions",
+      "jurisdiction": "PT",
+      "claim": "The Portuguese collective investment route requires a subscription of at least EUR 500,000 into a fund that is incorporated and headquartered in Portugal, has a maturity of at least five years, and invests at least 60 percent of its portfolio in companies headquartered in Portugal.",
+      "source": "Portugal, Lei 23/2007 as amended, ARI qualifying investment categories; AIMA fund route guidance",
+      "asOf": "2026-08-28",
+      "reviewBy": "2027-02-27",
+      "files": [
+        "compare/greece-vs-portugal-golden-visa-property.mdx"
+      ]
+    },
+    {
+      "id": "pt-sef-to-aima-backlog",
+      "jurisdiction": "PT",
+      "claim": "Portugal replaced SEF with AIMA as the immigration authority, and the transition produced multi-year processing backlogs on ARI files between 2022 and 2024. Quoted Portuguese processing times from that period do not describe the current position and must be re-checked.",
+      "source": "Portugal, Decreto-Lei 41/2023 establishing AIMA; AIMA public statements on the ARI backlog",
+      "asOf": "2026-08-28",
+      "reviewBy": "2027-02-27",
+      "files": [
+        "compare/greece-vs-portugal-golden-visa-property.mdx"
+      ]
+    },
+    {
+      "id": "es-organic-law-1-2025-closed-property-route",
+      "jurisdiction": "ES",
+      "claim": "Spain closed its property-backed Golden Visa to new applications on 3 April 2025 under Organic Law 1/2025. The route had operated since 2013 with a EUR 500,000 real estate minimum. Permits granted before that date continue and renew under their original terms.",
+      "source": "Spain, Ley Organica 1/2025, final provisions repealing the real estate investor residence route of Ley 14/2013",
+      "asOf": "2026-08-28",
+      "reviewBy": "2027-02-27",
+      "files": [
+        "compare/greece-vs-spain-golden-visa-ended.mdx",
+        "compare/greece-vs-portugal-golden-visa-property.mdx",
+        "compare/greece-vs-italy-vs-spain-property-investment.mdx",
+        "compare/greece-vs-cyprus-golden-visa-property.mdx",
+        "compare/greece-vs-malta-permanent-residence-property.mdx"
+      ]
+    },
+    {
+      "id": "es-remaining-routes-after-closure",
+      "jurisdiction": "ES",
+      "claim": "After the 2025 closure Spain retains non-property routes for third-country nationals: a capital investment residence requiring EUR 1,000,000 or more in Spanish company shares or public debt, the Non-Lucrative Visa evidencing passive income with no right to work, and the Digital Nomad Visa for remote workers earning from outside Spain.",
+      "source": "Spain, Ley 14/2013 as amended by Ley Organica 1/2025; Ministerio de Inclusion guidance on residence visa categories",
+      "asOf": "2026-08-28",
+      "reviewBy": "2027-02-27",
+      "files": [
+        "compare/greece-vs-spain-golden-visa-ended.mdx",
+        "compare/greece-vs-italy-vs-spain-property-investment.mdx"
+      ]
+    },
+    {
+      "id": "it-investor-visa-excludes-real-estate",
+      "jurisdiction": "IT",
+      "claim": "Italy's Investor Visa under Article 26-bis of Legislative Decree 286/1998 excludes direct real estate purchase. Qualifying investments are EUR 250,000 in an innovative startup, EUR 500,000 in an Italian limited company, EUR 1,000,000 in a philanthropic donation, or EUR 2,000,000 in Italian government bonds. Buying Italian property confers no residence status.",
+      "source": "Italy, Decreto Legislativo 286/1998 art. 26-bis; Ministero delle Imprese e del Made in Italy, Investor Visa for Italy programme guidance",
+      "asOf": "2026-08-28",
+      "reviewBy": "2027-02-27",
+      "files": [
+        "compare/greece-vs-italy-vs-spain-property-investment.mdx"
+      ]
+    },
+    {
+      "id": "it-es-acquisition-costs-9-to-13",
+      "jurisdiction": "IT",
+      "claim": "All-in acquisition costs on an Italian or Spanish residential purchase commonly fall between 9 and 13 percent of price, driven by regional registration or transfer tax rates, the cadastral rather than market basis of the charge in Italy, and whether a reduced first-home rate applies.",
+      "source": "Agenzia delle Entrate guidance on imposta di registro and prima casa relief; Spanish autonomous community ITP schedules",
+      "asOf": "2026-08-28",
+      "reviewBy": "2027-02-27",
+      "files": [
+        "compare/greece-vs-italy-vs-spain-property-investment.mdx"
+      ]
+    },
+    {
+      "id": "mt-mprp-contribution-plus-property",
+      "jurisdiction": "MT",
+      "claim": "The Malta Permanent Residence Programme requires a non-refundable government contribution alongside either the purchase or the lease of qualifying property, plus an administrative fee and separate per-dependent fees. The contribution is a cost rather than an investment and is not recovered on exit, which is the structural difference from a Greek deed.",
+      "source": "Malta, Residency Malta Agency, Malta Permanent Residence Programme regulations and fee schedule",
+      "asOf": "2026-08-28",
+      "reviewBy": "2027-02-27",
+      "files": [
+        "compare/greece-vs-malta-permanent-residence-property.mdx"
+      ]
+    },
+    {
+      "id": "cy-pr-300000-new-build-from-developer",
+      "jurisdiction": "CY",
+      "claim": "Cyprus fast-track permanent residency through property requires the purchase of a new residential unit from a developer at a stated minimum around EUR 300,000 excluding VAT, on first sale rather than resale stock, with income and deposit conditions attached separately.",
+      "source": "Cyprus, Regulation 6(2) of the Aliens and Immigration Regulations; Civil Registry and Migration Department criteria for the accelerated PR procedure",
+      "asOf": "2026-08-28",
+      "reviewBy": "2027-02-27",
+      "files": [
+        "compare/greece-vs-cyprus-golden-visa-property.mdx"
+      ]
+    },
+    {
+      "id": "ae-property-residency-thresholds-by-emirate",
+      "jurisdiction": "AE",
+      "claim": "UAE property-linked residence permits are granted against eligible real estate at thresholds set federally and applied per emirate, with off-plan and mortgaged units treated differently from completed freehold. Thresholds and eligible-project rules change without notice and must be confirmed for the specific emirate and route.",
+      "source": "UAE Federal Authority for Identity and Citizenship; Dubai Land Department guidance on property investor residence",
+      "asOf": "2026-08-28",
+      "reviewBy": "2027-02-27",
+      "files": [
+        "compare/golden-visa-greece-vs-dubai-property-residency.mdx"
+      ]
+    },
+    {
+      "id": "hu-guest-investor-fund-subscription",
+      "jurisdiction": "HU",
+      "claim": "Hungary's Guest Investor Programme grants a long-term residence permit against a subscription to units in a regulated real-estate fund at a threshold marketed near EUR 250,000, rather than against direct property ownership. The investor holds fund units; the fund holds the buildings. Hungary previously ran and then closed a residency bond scheme, and reopened investment migration under separate later legislation.",
+      "source": "Hungary, Act XC of 2023 on the general rules for the entry and residence of third-country nationals; Hungarian government guest investor programme guidance",
+      "asOf": "2026-08-28",
+      "reviewBy": "2027-02-27",
+      "files": [
+        "compare/golden-visa-greece-vs-hungary-guest-investor.mdx"
+      ]
+    },
+    {
+      "id": "hr-no-investment-migration-programme",
+      "jurisdiction": "HR",
+      "claim": "Croatia operates no residence-by-investment programme. Property ownership confers no immigration status on a third-country national, who must instead qualify for temporary stay on work, family, study or self-employment grounds judged on their own merits.",
+      "source": "Croatia, Zakon o strancima (Aliens Act) temporary stay categories; Ministry of the Interior residence guidance",
+      "asOf": "2026-08-28",
+      "reviewBy": "2027-02-27",
+      "files": [
+        "compare/greece-vs-croatia-property-residency.mdx"
+      ]
+    },
+    {
+      "id": "hr-third-country-acquisition-reciprocity",
+      "jurisdiction": "HR",
+      "claim": "Third-country nationals acquire Croatian real estate only where a reciprocity arrangement exists between Croatia and their own state, and the acquisition then requires the consent of the Croatian Ministry of Justice before title transfers. EU and EEA nationals buy on broadly the same footing as Croatian nationals, with agricultural and forest land treated separately. A Croatian d.o.o. is a domestic legal person and acquires without the consent step.",
+      "source": "Croatia, Zakon o vlasnistvu i drugim stvarnim pravima (Ownership and Other Real Rights Act) arts. 354-358; Ministry of Justice reciprocity list",
+      "asOf": "2026-08-28",
+      "reviewBy": "2027-02-27",
+      "files": [
+        "compare/greece-vs-croatia-property-residency.mdx"
+      ]
+    },
+    {
+      "id": "hr-transfer-tax-vat-and-annual-property-tax",
+      "jurisdiction": "HR",
+      "claim": "Croatia charges real estate transfer tax on resale purchases, while a new build sold by a VAT-registered developer carries VAT instead of the transfer tax. Croatia also replaced its holiday-home charge with an annual real estate tax set within a statutory range by each municipality, so comparable properties in different opcine can be charged materially different amounts.",
+      "source": "Croatia, Zakon o porezu na promet nekretnina; Zakon o lokalnim porezima as amended for the annual real estate tax",
+      "asOf": "2026-08-28",
+      "reviewBy": "2027-02-27",
+      "files": [
+        "compare/greece-vs-croatia-property-residency.mdx"
+      ]
+    },
+    {
+      "id": "za-no-residency-via-property",
+      "jurisdiction": "ZA",
+      "claim": "South Africa grants no residence right through property purchase. Foreign buyers acquire freehold on the same footing as residents and pay the same transfer duty scale with no foreign-buyer surcharge, the scale running from a nil-rated lower band up to a top marginal band in the low teens of percent.",
+      "source": "South African Revenue Service transfer duty rate tables; Deeds Registries Act ownership provisions",
+      "asOf": "2026-08-28",
+      "reviewBy": "2027-02-27",
+      "files": [
+        "compare/greece-vs-cape-town-property-investment.mdx"
+      ]
+    },
+    {
+      "id": "za-remote-work-visa-income-threshold",
+      "jurisdiction": "ZA",
+      "claim": "South Africa gazetted a remote work visitor visa in 2024 with a gross annual income threshold of ZAR 650,796. It is a work-authorisation route unrelated to property ownership and confers no Schengen rights.",
+      "source": "South Africa, Immigration Regulations amendment gazetted 2024 introducing the remote working visa",
+      "asOf": "2026-08-28",
+      "reviewBy": "2027-02-27",
+      "files": [
+        "compare/greece-vs-cape-town-property-investment.mdx"
       ]
     }
   ]

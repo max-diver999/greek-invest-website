@@ -99,6 +99,52 @@ export function factRegistryReport() {
   return registryReport;
 }
 
+/**
+ * Does this document use the figure in a sense the registry actually sourced?
+ *
+ * The registry keys on the bare figure, and that was costing the scorer in both
+ * directions. "€2,000" is the Golden Visa state fee per adult applicant, and it
+ * is also the low end of the Kipseli price-per-square-metre band; "10%" is the
+ * top of the acquisition-cost range, and it is also a deposit, a yield and a
+ * price move. Keyed on the figure alone the file had two bad options: leave the
+ * fee unregistered, and penalise sixty articles for a figure that is genuinely
+ * sourced, or register it, and hand provenance to every page that happened to
+ * type the same digits about something else. The registry documented the second
+ * risk and chose the first, which is why "10%" was a four-point stamped-figure
+ * penalty on pages using it correctly.
+ *
+ * An entry may now carry `context`: words that must appear near the figure for
+ * that entry to apply. An entry without `context` behaves exactly as before, so
+ * nothing already in the file changes meaning. A figure is registered FOR THIS
+ * DOCUMENT when some entry for it matches here — which is strictly narrower
+ * than the old test, so this cannot manufacture provenance a page did not have.
+ */
+const CONTEXT_WINDOW = 140;
+
+function occurrenceWindows(text, figure) {
+  const out = [];
+  FIGURE_RE.lastIndex = 0;
+  let m;
+  while ((m = FIGURE_RE.exec(text)) !== null) {
+    if (canonicalFigure(m[0]) !== figure) continue;
+    out.push(text.slice(Math.max(0, m.index - CONTEXT_WINDOW), m.index + m[0].length + CONTEXT_WINDOW).toLowerCase());
+  }
+  return out;
+}
+
+export function registeredHere(figure, text) {
+  const entries = factRegistry().get(figure);
+  if (!entries) return false;
+  const contextual = entries.filter((e) => Array.isArray(e.context) && e.context.length);
+  if (contextual.length < entries.length) return true; // an unqualified entry covers every use
+  const windows = occurrenceWindows(text, figure);
+  if (!windows.length) return false;
+  return contextual.some((e) => e.context.some((k) => {
+    const needle = String(k).toLowerCase();
+    return windows.some((w) => w.includes(needle));
+  }));
+}
+
 const QUESTION_H2 = /^(what|how|why|when|where|who|which|can|do|does|is|are|should|will)\b/i;
 
 /* ---------------------------------------------------------------- base ---- */
@@ -197,7 +243,7 @@ function scoreProvenance(docId, index) {
   const mine = new Set((doc.text.match(FIGURE_RE) || []).map(canonicalFigure));
   const loadBearing = [...mine].filter((f) => (index.figureCounts.get(f) || 0) >= LOAD_BEARING_MIN_FILES);
   if (!loadBearing.length) return 10;
-  const known = loadBearing.filter((f) => registry.has(f)).length;
+  const known = loadBearing.filter((f) => registeredHere(f, doc.text)).length;
   return (known / loadBearing.length) * 10;
 }
 
@@ -218,7 +264,7 @@ export function unregisteredSharedFigures(docId, index) {
   const out = [];
   for (const f of mine) {
     const sharedWith = index.figureCounts.get(f) || 0;
-    if (sharedWith >= 2 && !registry.has(f)) out.push({ figure: f, files: sharedWith });
+    if (sharedWith >= 2 && !registeredHere(f, doc.text)) out.push({ figure: f, files: sharedWith });
   }
   return out.sort((a, b) => b.files - a.files);
 }
@@ -292,8 +338,8 @@ export function scoreDocument(docId, index, { requireRegistry = true } = {}) {
   // A figure repeated across the corpus is only suspicious when nothing stands
   // behind it. The section 35A rate belongs in sixty articles; "14 business days"
   // in four hundred and forty-two, sourced nowhere, is the July signature.
-  const registry = factRegistry();
-  for (const f of corpus.saturatedFigures.filter((x) => !registry.has(x.figure)).slice(0, 6)) {
+  const docText = index.prepared.find((d) => d.id === docId)?.text || '';
+  for (const f of corpus.saturatedFigures.filter((x) => !registeredHere(x.figure, docText)).slice(0, 6)) {
     add(4, 'stamped-figure', `"${f.figure}" appears in ${f.files} articles and is in no source registry: stamped, not researched`);
   }
   for (const e of signals.headingEchoes) {

@@ -21,7 +21,9 @@ npm run build && npm run audit:rendered:fail
 npm run qa:full:quick
 ```
 
-**GEO scoring.** `npm run geo:audit` is the OLD rubric and is not a quality gate: measured on this
+**GEO scoring.** `npm run geo:audit` is the OLD rubric and is not a quality gate. It runs inside
+`qa:full` as a **report** — it prints its numbers under NOTES and cannot fail the run. The blocking
+quality gate is `geo:calibrate`. Reason: measured on this
 repository's own labelled sets it separates machine-injected text from hand-written text by 3.0
 points, and 17 of 114 known-garbage files clear its 90 threshold. Use the honest scorer instead:
 

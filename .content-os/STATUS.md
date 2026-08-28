@@ -108,8 +108,8 @@ Things the audit could not see until the boilerplate was gone and every section 
 2. **Phone** — removed from the site's contact surfaces; retained behind the WhatsApp click.
    `SITE.whatsapp` still carries the Thai number: **the correct number is still needed.**
 3. **Author** — a Person byline across the corpus and the Article schema. Spelled **Maksim**: it was
-   shipped as `Maxim` on all 133 pages and in `SITE.editorial` and corrected on 2026-08-28. Maksim has
-   since questioned whether the byline should be his name at all; it stands until he decides.
+   shipped as `Maxim` on all 133 pages and in `SITE.editorial` and corrected on 2026-08-28. Maksim
+   confirmed on 2026-08-28 that the byline keeps his name. Settled.
 4. **The thin openers** — all 349 written by hand, none templated.
 5. **Nationality cluster** — differentiated on real country specifics (LRS caps for Indian buyers,
    T1135 for Canadians, the Israel treaty text conflict, Brexit Schengen limits for UK buyers).

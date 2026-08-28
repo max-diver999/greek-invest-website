@@ -118,9 +118,28 @@ const steps = [
   ...(existsSync(join(ROOT, 'scripts/geo-citability-audit.mjs'))
     ? [
         {
-          name: QUICK ? 'GEO citability (--changed MDX)' : 'GEO citability (full corpus, min 90)',
+          // Report, not a gate — the one step in this file deliberately not
+          // allowed to block.
+          //
+          // geo-citability-audit is the July rubric. On this repository's own
+          // labelled sets it scores machine-injected text 86.2 and hand-written
+          // text 91.3 — 3.0 points apart — and 17 of 114 known-garbage files
+          // clear its threshold. CLAUDE.md has said since the replacement
+          // landed that it is not a quality gate, while this file went on
+          // running it as one, so the checklist contradicted the instructions.
+          //
+          // What it fails on is largely THIN_H2_OPEN: section openers under 35
+          // words. That appears in 90.5% of machine sections and 90.3% of
+          // hand-written ones, so it separates nothing and penalises a short
+          // opening sentence, which is good writing.
+          //
+          // It stays in the run because its citability-block count is worth
+          // watching. The blocking quality gate is geo-calibrate, which is
+          // calibrated and does separate the two sets.
+          name: QUICK ? 'GEO citability (report, --changed)' : 'GEO citability (report, full corpus)',
           cmd: 'node',
           args: geoArgs,
+          report: true,
         },
       ]
     : []),
@@ -160,15 +179,24 @@ const results = [];
 for (const step of steps) {
   process.stdout.write(`▶ ${step.name}… `);
   const r = runStep(step.name, step.cmd, step.args);
-  results.push(r);
-  console.log(r.ok ? `PASS (${(r.ms / 1000).toFixed(1)}s)` : `FAIL (${(r.ms / 1000).toFixed(1)}s)`);
+  results.push({ ...r, report: Boolean(step.report) });
+  console.log(`${r.ok ? 'PASS' : step.report ? 'NOTE' : 'FAIL'} (${(r.ms / 1000).toFixed(1)}s)`);
 }
 
-const passed = results.filter((r) => r.ok);
-const failed = results.filter((r) => !r.ok);
+const gates = results.filter((r) => !r.report);
+const passed = gates.filter((r) => r.ok);
+const failed = gates.filter((r) => !r.ok);
+const notes = results.filter((r) => r.report && !r.ok);
 
 console.log('\n───────────────────────────────────────────');
-console.log(`  RESULT: ${passed.length}/${results.length} PASS`);
+console.log(`  RESULT: ${passed.length}/${gates.length} PASS`);
+if (notes.length) {
+  console.log('\n  NOTES (report only, does not block):');
+  for (const n of notes) {
+    console.log(`\n  \u00b7 ${n.name}`);
+    console.log(n.tail.split('\n').map((l) => `    ${l}`).join('\n'));
+  }
+}
 if (failed.length) {
   console.log('\n  FAILURES:');
   for (const f of failed) {

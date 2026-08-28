@@ -120,12 +120,12 @@ function auditFile(c, slug) {
   const { fm, body, fmRaw } = parseFrontmatter(raw);
   const words = body.split(/\s+/).filter(Boolean).length;
   // `words` counts the raw body, which includes the inline FaqBlock. On this
-  // corpus that block runs 400 to 700 words, so a guide reported at 2,081w can
-  // be 1,439 words of article plus its FAQ, and the minWords contract was being
-  // met by the FAQ rather than by the guide. scripts/fix-batch-queue.mjs has
-  // always counted prose instead, which is why the two gates disagree on ten
-  // files. Both numbers are reported until it is decided which one binds;
-  // enforcement still runs on `words`, so this changes no pass/fail today.
+  // corpus that block runs 400 to 700 words, so a guide reported at 2,081w was
+  // 1,439 words of article plus its FAQ, and the minWords contract was being met
+  // by the FAQ rather than by the guide. scripts/fix-batch-queue.mjs had always
+  // counted prose, which is why the two gates disagreed on ten files.
+  // Enforcement now runs on `prose`. The raw figure is still reported alongside
+  // it, because the gap between the two is the thing worth seeing.
   const prose = body
     .replace(/^import\s.+$/gm, ' ')
     .replace(/<FaqBlock[\s\S]*?\/>/g, ' ')
@@ -167,7 +167,7 @@ function auditFile(c, slug) {
     developers: 1200,
     news: 600,
   }[c] ?? 1800;
-  if (words < minW) prob.push(`words:${words}<${minW}`);
+  if (prose < minW) prob.push(`words:${prose}<${minW}` + (words !== prose ? ` (raw ${words}w incl. FAQ)` : ''));
 
   if (c !== 'news' && !/quick answer|tl;dr|\*\*quick answer|\*\*tl;dr/i.test(body)) {
     prob.push('no-quick-answer');
@@ -366,19 +366,6 @@ if (duplicationAdvisories.length) {
 }
 
 const failCount = reportRows.filter((r) => r.prob.length).length;
-// Standing report of the gap between the two counts, so it cannot be forgotten
-// again. Not a failure: enforcement runs on the raw count until Maxim decides.
-const MINW = { guides: 2000, areas: 1800, compare: 1800, projects: 1200, developers: 1200, news: 500 };
-const shortOnProse = reportRows.filter((r) => r.prose < (MINW[r.coll] ?? 1800));
-if (shortOnProse.length) {
-  console.log(`\nProse-only word count (FaqBlock and components stripped): ${shortOnProse.length} article(s) below their minimum.`);
-  console.log('These PASS the gate on the raw count and FAIL the same contract on prose. Not enforced yet.');
-  for (const r of shortOnProse.sort((a, b) => a.prose - b.prose).slice(0, 12)) {
-    console.log(`  ${r.coll}/${r.slug}: prose ${r.prose}w vs raw ${r.words}w, min ${MINW[r.coll] ?? 1800}`);
-  }
-  if (shortOnProse.length > 12) console.log(`  ... and ${shortOnProse.length - 12} more`);
-}
-
 console.log(`\nArticles with issues: ${failCount}/${stats.total}`);
 
 if (failCount > 0 || duplicationProblems.length > 0) {

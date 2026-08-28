@@ -397,6 +397,127 @@
       "files": [
         "compare/greece-vs-cape-town-property-investment.mdx"
       ]
+    },
+    {
+      "id": "us-cfc-pfic-on-foreign-holding-entity",
+      "jurisdiction": "US",
+      "claim": "A US person holding foreign property through a non-US company can fall within the controlled foreign corporation or passive foreign investment company regimes, which carry separate annual information returns with substantial penalties and can attribute income to the shareholder whether or not it is distributed. Direct personal ownership avoids both.",
+      "source": "Internal Revenue Code subpart F (ss.951-965) and ss.1291-1298; IRS instructions to Forms 5471 and 8621",
+      "asOf": "2026-08-28",
+      "reviewBy": "2027-02-27",
+      "files": [
+        "guides/greece-golden-visa-us-citizens.mdx"
+      ]
+    },
+    {
+      "id": "us-fatca-institution-reporting",
+      "jurisdiction": "US",
+      "claim": "FATCA obliges foreign financial institutions to identify and report accounts held by US persons, and the resulting compliance burden makes some non-US banks slower to onboard American customers. Form 8938 reporting by the individual is separate from the FBAR and applies different thresholds.",
+      "source": "Internal Revenue Code ch.4 (ss.1471-1474); IRS Form 8938 instructions",
+      "asOf": "2026-08-28",
+      "reviewBy": "2027-02-27",
+      "files": [
+        "guides/greece-golden-visa-us-citizens.mdx"
+      ]
+    },
+    {
+      "id": "us-state-tax-does-not-follow-treaty",
+      "jurisdiction": "US",
+      "claim": "US states are not parties to federal income tax treaties and do not necessarily follow their allocation of taxing rights, so a resident of a state taxing worldwide income can face a state charge that the federal foreign tax credit does not relieve.",
+      "source": "US state income tax statutes; federal treaty practice on subnational taxes",
+      "asOf": "2026-08-28",
+      "reviewBy": "2027-02-27",
+      "files": [
+        "guides/greece-golden-visa-us-citizens.mdx"
+      ]
+    },
+    {
+      "id": "ca-deemed-disposition-at-death",
+      "jurisdiction": "CA",
+      "claim": "Canada levies no inheritance tax. On death the deceased is treated as having disposed of capital property at fair market value immediately before death, so the accrued gain is taxed on the final return of the deceased rather than charged to the heirs. Greek inheritance tax falls on each heir and is computed on the value of their share, so the two charges have different taxpayers and different bases and generally do not relieve one another.",
+      "source": "Income Tax Act (Canada) s.70(5); CRA guidance on the final return of a deceased person",
+      "asOf": "2026-08-28",
+      "reviewBy": "2027-02-27",
+      "files": [
+        "guides/greece-golden-visa-canadian-buyers.mdx"
+      ]
+    },
+    {
+      "id": "ca-foreign-real-property-not-registered-plan-eligible",
+      "jurisdiction": "CA",
+      "claim": "Foreign real property is not a qualified investment for an RRSP, TFSA or RRIF, so a Canadian buying property abroad does so with after-tax money outside every registered plan.",
+      "source": "Income Tax Act (Canada) s.207.01 and Regulation 4900; CRA folio on qualified investments",
+      "asOf": "2026-08-28",
+      "reviewBy": "2027-02-27",
+      "files": [
+        "guides/greece-golden-visa-canadian-buyers.mdx"
+      ]
+    },
+    {
+      "id": "au-income-year-misaligned-with-calendar-year",
+      "jurisdiction": "AU",
+      "claim": "The Australian income year runs 1 July to 30 June while Greece taxes on the calendar year, so a single Australian year draws on two Greek tax years and the Australian return frequently falls due before the overlapping Greek assessment is final. The Foreign Income Tax Offset is claimed on foreign tax finally assessed rather than on amounts withheld.",
+      "source": "Income Tax Assessment Act 1997 (Cth) Division 770 and s.4-10; ATO guidance on the foreign income tax offset and on foreign currency translation",
+      "asOf": "2026-08-28",
+      "reviewBy": "2027-02-27",
+      "files": [
+        "guides/greece-golden-visa-australian-buyers.mdx"
+      ]
+    },
+    {
+      "id": "in-foreign-asset-schedule-independent-of-tax",
+      "jurisdiction": "IN",
+      "claim": "A resident individual must disclose foreign assets in the foreign assets schedule of the Indian income tax return every year, whether or not the asset produces income and whether or not tax is payable. A resident is also taxed in India on worldwide capital gains, so a gain on foreign property is reportable in India even where the source country charges nothing.",
+      "source": "Income-tax Act 1961 (India) s.5 and s.139; Schedule FA of the Indian income tax return; Black Money (Undisclosed Foreign Income and Assets) Act 2015",
+      "asOf": "2026-08-28",
+      "reviewBy": "2027-02-27",
+      "files": [
+        "guides/greece-golden-visa-indian-buyers.mdx"
+      ]
+    },
+    {
+      "id": "il-new-and-returning-resident-relief",
+      "jurisdiction": "IL",
+      "claim": "Israel grants new immigrants and returning residents a multi-year exemption from Israeli tax on foreign-source income and gains on foreign assets, running from the date Israeli residence begins or resumes, and its scope has extended to reporting as well as to tax. The relief ends on a fixed date, its reporting scope has been subject to legislative change, and eligibility is determined on the facts of when residence began.",
+      "source": "Israel Income Tax Ordinance, relief for new immigrants and returning residents introduced by Amendment 168 (2008); Israel Tax Authority guidance",
+      "asOf": "2026-08-28",
+      "reviewBy": "2027-02-27",
+      "files": [
+        "guides/israeli-buyers-greece-property.mdx"
+      ]
+    },
+    {
+      "id": "ae-corporate-tax-scope-for-individuals",
+      "jurisdiction": "AE",
+      "claim": "The UAE federal corporate tax applies to businesses and to natural persons carrying on business activity above a turnover threshold, while personal investment income and personal real estate investment held by an individual fall outside its scope. Holding foreign property through a UAE company or free-zone entity therefore places the holder inside a regime an individual owner is not in.",
+      "source": "UAE Federal Decree-Law No. 47 of 2022 on the Taxation of Corporations and Businesses; UAE Ministry of Finance guidance on natural persons",
+      "asOf": "2026-08-28",
+      "reviewBy": "2027-02-27",
+      "files": [
+        "guides/greece-golden-visa-uae-buyers.mdx"
+      ]
+    },
+    {
+      "id": "hu-outside-the-eurozone",
+      "jurisdiction": "HU",
+      "claim": "Hungary is a member of the European Union and is not in the eurozone, so a Hungarian real-estate fund's assets and unit price sit in the Hungarian economy. The subscription currency, the currency in which net asset value is calculated and any hedging policy are matters for the fund documentation rather than for the programme's rules.",
+      "source": "EU member state currency arrangements; Hungarian collective investment fund disclosure requirements",
+      "asOf": "2026-08-28",
+      "reviewBy": "2027-02-27",
+      "files": [
+        "compare/golden-visa-greece-vs-hungary-guest-investor.mdx"
+      ]
+    },
+    {
+      "id": "hr-digital-nomad-and-ordinary-stay-routes",
+      "jurisdiction": "HR",
+      "claim": "Croatia grants a temporary stay permit to third-country nationals working remotely for employers outside Croatia, alongside the ordinary work, family reunification, study and self-employment categories. Each is granted and maintained on its own conditions and none is supported by owning Croatian property. Croatia is in Schengen, so a visitor's days there and in Greece draw on the same 90-in-180 allowance.",
+      "source": "Croatia, Zakon o strancima (Aliens Act) temporary stay categories including digital nomads; Schengen Borders Code short-stay rules",
+      "asOf": "2026-08-28",
+      "reviewBy": "2027-02-27",
+      "files": [
+        "compare/greece-vs-croatia-property-residency.mdx"
+      ]
     }
   ]
 }

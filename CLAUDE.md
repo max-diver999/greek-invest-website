@@ -44,5 +44,7 @@ Method, rejected signals and red-team results: `docs/GEO-SCORING.md`. Current st
 - Claims about jurisdictions nobody here watches go in `.content-os/external-claims.json` with a
   `reviewBy` date, not in `facts.json`.
 - If a rule penalises correct writing, fix the rule and prove the fix on the labelled sets.
+- Word minimums are counted on prose. The inline `<FaqBlock>` is 400-700 words and does not count
+  toward an article's length: `validate:content` reports both figures so the gap stays visible.
 
 **Branch:** `cc/greece-audit-*` or `cc/greece-fix-*`

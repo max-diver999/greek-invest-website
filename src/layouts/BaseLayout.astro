@@ -22,7 +22,7 @@ const {
   title,
   description = SITE.description,
   canonical = Astro.url.href,
-  ogImage = `${SITE.url}/favicon.svg`,
+  ogImage = `${SITE.url}/og-default.png`,
   type = 'website',
   noindex = false,
   schemas = [],
@@ -81,6 +81,10 @@ const allSchemas = [orgSchema, ...schemas];
   <meta property="og:description" content={description} />
   <meta property="og:url" content={canonical} />
   <meta property="og:image" content={ogImage} />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content={fullTitle} />
+  <meta name="twitter:image" content={ogImage} />
   <meta property="og:site_name" content={SITE.name} />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content={fullTitle} />
@@ -92,7 +96,7 @@ const allSchemas = [orgSchema, ...schemas];
   <link rel="manifest" href="/site.webmanifest" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet" />
   {allSchemas.map((s) => (
     <script type="application/ld+json" set:html={JSON.stringify(s)} />
   ))}

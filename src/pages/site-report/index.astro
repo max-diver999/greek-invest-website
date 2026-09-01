@@ -1,25 +1,25 @@
 ---
 export const prerender = true;
 
-const reportDate = '23 August 2026';
-const reportVersion = 'v1.3';
+const reportDate = '1 September 2026';
+const reportVersion = 'v1.4';
 const launchDate = '17 June 2026';
-const dataThrough = '20 August 2026';
+const dataThrough = '31 August 2026';
 
 const monthlyGsc = [
   { month: 'Jun 2026', label: 'Jun', clicks: 4, impressions: 840, position: 9.6, note: 'Launch · first GSC 19 Jun · impression spike 27 to 28 Jun' },
   { month: 'Jul 2026', label: 'Jul', clicks: 22, impressions: 2974, position: 11.9, note: 'Peak week 30 Jun to 6 Jul (1,286 imp) · lawyer/solicitor cluster page 2–3' },
-  { month: 'Aug 2026', label: 'Aug', clicks: 6, impressions: 996, position: 16.3, note: 'Partial month to 15 Aug · post CTR/CRO sprint · lower daily imp vs Jul peak' },
+  { month: 'Aug 2026', label: 'Aug', clicks: 8, impressions: 1359, position: 15.8, note: 'Full month · post CTR/CRO sprint · Aug GA4 peak 822 sessions' },
 ];
 
 const monthlyGa4 = [
   { month: 'Jun', sessions: 53 },
   { month: 'Jul', sessions: 205 },
-  { month: 'Aug', sessions: 229 },
+  { month: 'Aug', sessions: 822 },
 ];
 
 const contentBreakdown = [
-  { type: 'Guides', count: 90, words: 433335, color: '#2d7a5e' },
+  { type: 'Guides', count: 94, words: 433335, color: '#2d7a5e' },
   { type: 'Areas', count: 12, words: 47640, color: '#8b5cf6' },
   { type: 'Compare', count: 12, words: 48754, color: '#d97706' },
   { type: 'Projects', count: 10, words: 29499, color: '#4e9e7e' },
@@ -475,12 +475,12 @@ const maxImp = Math.max(...monthlyGsc.map(m => m.impressions));
     <div class="stat-card">
       <div class="num">~567k</div>
       <div class="label">SEO words</div>
-      <div class="sublabel">129 MDX files · ~4,397 avg · 58 git commits</div>
+      <div class="sublabel">133 MDX files · ~4,263 avg · 58 git commits</div>
     </div>
     <div class="stat-card">
       <div class="num teal">25+</div>
       <div class="label">GSC ranking URLs</div>
-      <div class="sublabel">17 Jun to 15 Aug · ENFIA 770 imp · Crete €400K 8 clicks</div>
+      <div class="sublabel">17 Jun to 31 Aug · ENFIA cluster · Crete €400K guide</div>
     </div>
     <div class="stat-card">
       <div class="num">6</div>
@@ -493,9 +493,9 @@ const maxImp = Math.max(...monthlyGsc.map(m => m.impressions));
       <div class="sublabel">4810 imp · 32 clicks · avg pos 12.4 · CTR 0.67%</div>
     </div>
     <div class="stat-card">
-      <div class="num teal">487</div>
+      <div class="num teal">1,080</div>
       <div class="label">GA4 sessions</div>
-      <div class="sublabel">530 pageviews · 17 Jun to 15 Aug · Telegram-only leads</div>
+      <div class="sublabel">Jun 53 · Jul 205 · Aug 822 · Telegram-only leads</div>
     </div>
   </div>
 
@@ -507,20 +507,20 @@ const maxImp = Math.max(...monthlyGsc.map(m => m.impressions));
     <div class="kpi-card">
       <div class="kpi-label">GSC Clicks</div>
       <div class="kpi-value">{totalClicks}</div>
-      <span class="kpi-delta up">↑ 32 total</span>
-      <div class="kpi-sub">17 Jun to 15 Aug · Google Search Console</div>
+      <span class="kpi-delta up">↑ Aug 8</span>
+      <div class="kpi-sub">Since launch · through {dataThrough}</div>
     </div>
     <div class="kpi-card">
       <div class="kpi-label">Impressions</div>
-      <div class="kpi-value">4810</div>
+      <div class="kpi-value">{totalImp.toLocaleString('en-US')}</div>
       <span class="kpi-delta up">↑ Peak 270/d</span>
-      <div class="kpi-sub">4810 total · peak 270 imp on 5 Jul · Aug avg ~66/d</div>
+      <div class="kpi-sub">5,173 total · Aug 1,359 imp · peak Jul week 30 Jun to 6 Jul</div>
     </div>
     <div class="kpi-card">
       <div class="kpi-label">GA4 Sessions</div>
-      <div class="kpi-value">487</div>
-      <span class="kpi-delta up">↑ Aug 229</span>
-      <div class="kpi-sub">487 since launch · Jun 53 · Jul 205 · Aug 229 (to 15 Aug)</div>
+      <div class="kpi-value">1,080</div>
+      <span class="kpi-delta up">↑ Aug 822</span>
+      <div class="kpi-sub">1,080 since launch · Jun 53 · Jul 205 · Aug 822</div>
     </div>
     <div class="kpi-card">
       <div class="kpi-label">Content corpus</div>
@@ -547,7 +547,7 @@ const maxImp = Math.max(...monthlyGsc.map(m => m.impressions));
         <div class="card-title">GA4 sessions by month</div>
         <div class="chart-wrap"><canvas id="chartGa4"></canvas></div>
         <div class="insight" style="margin-top:16px;">
-          <strong>Traffic mix:</strong> 487 GA4 sessions since launch (Jun 53, Jul 205, Aug 229 to 15 Aug). GSC: 32 clicks on 4,810 impressions (0.67% CTR). Peak GSC week 30 Jun to 6 Jul (1,286 imp). Bing overtook Google clicks in Aug (37 vs 32 cumulative to 15 Aug).
+          <strong>Traffic mix:</strong> 1,080 GA4 sessions since launch (Jun 53, Jul 205, Aug 822). GSC: 34 clicks on 5,173 impressions (0.66% CTR). Aug GSC: 8 clicks / 1,359 imp. Peak GSC week 30 Jun to 6 Jul (1,286 imp).
         </div>
       </div>
     </div>
@@ -694,7 +694,7 @@ const maxImp = Math.max(...monthlyGsc.map(m => m.impressions));
     <div class="pulse-header">
       <div>
         <h2>Search Performance</h2>
-        <p style="font-size:12px;color:#9ca3af;margin-top:2px;">greek-invest.com · 17 Jun to 15 Aug 2026 · Web search · Updated {reportDate} via GSC API</p>
+        <p style="font-size:12px;color:#9ca3af;margin-top:2px;">greek-invest.com · {launchDate} → {dataThrough} · Web search · Updated {reportDate} via GSC API</p>
       </div>
       <div class="pulse-updated">
         <span class="pulse-updated-dot"></span>
@@ -722,16 +722,16 @@ const maxImp = Math.max(...monthlyGsc.map(m => m.impressions));
 
     <div class="pulse-kpi-row">
       <div class="pulse-kpi kpi-green">
-        <div class="kpi-trend trend-up">↑ 32</div>
+        <div class="kpi-trend trend-up">↑ 34</div>
         <div class="kpi-label">Total Clicks</div>
-        <div class="kpi-val">32</div>
-        <div class="kpi-sub">17 Jun to 15 Aug · first click 26 Jun</div>
+        <div class="kpi-val">{totalClicks}</div>
+        <div class="kpi-sub">{launchDate} → {dataThrough} · Aug 8 clk</div>
       </div>
       <div class="pulse-kpi kpi-blue">
         <div class="kpi-trend trend-up">↑ Growing</div>
         <div class="kpi-label">Impressions</div>
-        <div class="kpi-val">4810</div>
-        <div class="kpi-sub">peak 270 on 5 Jul · Aug daily avg ~66</div>
+        <div class="kpi-val">{totalImp.toLocaleString('en-US')}</div>
+        <div class="kpi-sub">Aug 1,359 · peak 270 on 5 Jul</div>
       </div>
       <div class="pulse-kpi kpi-amber">
         <div class="kpi-trend" style="background:#fef3c7;color:#92400e;">watch</div>
@@ -1008,13 +1008,13 @@ const maxImp = Math.max(...monthlyGsc.map(m => m.impressions));
     <div class="pulse-card" style="margin-top:16px;">
       <div class="pulse-card-title">
         <span style="width:8px;height:8px;border-radius:50%;display:inline-block;background:#fbbf24;"></span>
-        Google Analytics 4 — 17 Jun to 15 Aug 2026
+        Google Analytics 4 — {launchDate} → {dataThrough}
       </div>
       <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px;">
         <div style="text-align:center;padding:16px;background:#fef3c7;border-radius:10px;border:1px solid #fde68a;">
-          <div style="font-size:28px;font-weight:900;color:#b45309;">487</div>
+          <div style="font-size:28px;font-weight:900;color:#b45309;">1,080</div>
           <div style="font-size:11px;color:#7a7a6e;margin-top:4px;font-weight:700;">Sessions</div>
-          <div style="font-size:10px;color:#aaa;margin-top:2px;">Peak week 4–10 Aug (106 sessions)</div>
+          <div style="font-size:10px;color:#aaa;margin-top:2px;">Aug 822 · peak month</div>
         </div>
         <div style="text-align:center;padding:16px;background:#dbeafe;border-radius:10px;border:1px solid #93c5fd;">
           <div style="font-size:28px;font-weight:900;color:#2563eb;">530</div>
@@ -1043,9 +1043,9 @@ const maxImp = Math.max(...monthlyGsc.map(m => m.impressions));
         <div class="pulse-insight" style="margin-top:0;background:#f0fdf4;border-color:#bbf7d0;"><div class="pulse-insight-icon">1</div><div class="pulse-insight-text"><strong>Technical SEO: 9/10.</strong> sitemap 200, lead API 200, www→apex fixed. 150 live URLs. validate:content 129/129 PASS.</div></div>
         <div class="pulse-insight" style="margin-top:0;background:#f0fdf4;border-color:#bbf7d0;"><div class="pulse-insight-icon">2</div><div class="pulse-insight-text"><strong>Indexation: 10/10.</strong> 150/150 Google + Bing submitted. Gap 0. Dedicated indexing GCP project.</div></div>
         <div class="pulse-insight" style="margin-top:0;background:#fff7ed;border-color:#fed7aa;"><div class="pulse-insight-icon">3</div><div class="pulse-insight-text"><strong>On-page / CTR: 8/10.</strong> CTR/CRO sprint deployed. Crete €400K at 8% CTR. ENFIA still main impression leak (770 imp).</div></div>
-        <div class="pulse-insight" style="margin-top:0;background:#f0faf5;border-color:#c6e8da;"><div class="pulse-insight-icon">4</div><div class="pulse-insight-text"><strong>Content: 8.5/10.</strong> 129 MDX, ~567k words. Silo E complete. GEO citability 92 avg.</div></div>
+        <div class="pulse-insight" style="margin-top:0;background:#f0faf5;border-color:#c6e8da;"><div class="pulse-insight-icon">4</div><div class="pulse-insight-text"><strong>Content: 8.5/10.</strong> 133 MDX, ~567k words. Silo E complete. GEO citability 92 avg.</div></div>
         <div class="pulse-insight" style="margin-top:0;background:#eef2ff;border-color:#c7d2fe;"><div class="pulse-insight-icon">5</div><div class="pulse-insight-text"><strong>Multi-engine: 8/10.</strong> Bing 37 clicks / 5,351 imp. Google 32 clicks / 4,810 imp. Dual-engine traction at 8 weeks.</div></div>
-        <div class="pulse-insight" style="margin-top:0;background:#fef2f2;border-color:#fecaca;"><div class="pulse-insight-icon">!</div><div class="pulse-insight-text"><strong>Conversion phase:</strong> GA4 487 sessions but leads still sparse. Monitor click_cta + form submissions weekly. Target: first consistent organic leads weeks 9–12.</div></div>
+        <div class="pulse-insight" style="margin-top:0;background:#fef2f2;border-color:#fecaca;"><div class="pulse-insight-icon">!</div><div class="pulse-insight-text"><strong>Conversion phase:</strong> GA4 1,080 sessions (Aug 822) but leads still sparse. Monitor click_cta + form submissions weekly.</div></div>
       </div>
     </div>
 
@@ -1180,6 +1180,15 @@ const maxImp = Math.max(...monthlyGsc.map(m => m.impressions));
   <div class="section-title">Change history</div>
   <div class="changelog">
         <div class="changelog-item">
+      <div class="changelog-date">1 Sep 2026 (v1.4)</div>
+      <div class="changelog-content">
+        <div class="changelog-title">Site-report v1.4 · August MCP refresh</div>
+        <div class="changelog-desc">GSC Aug full month: 8 clicks / 1,359 imp. GA4 Aug: 822 sessions (1,080 cumulative). 133 MDX. Data through 31 Aug 2026.</div>
+        <div class="changelog-tags"><span class="tag green">Report v1.4</span><span class="tag blue">GSC</span><span class="tag amber">GA4</span></div>
+      </div>
+    </div>
+
+        <div class="changelog-item">
       <div class="changelog-date">23 Aug 2026 (v1.3)</div>
       <div class="changelog-content">
         <div class="changelog-title">Site-report v1.3 · Waves 1–2 Golden Visa + mobile</div>
@@ -1307,12 +1316,12 @@ const maxImp = Math.max(...monthlyGsc.map(m => m.impressions));
 </div>
 
 <div class="footer">
-  <strong>Greek Invest</strong> · greek-invest.com · Report updated 18 Aug 2026 v1.2 · 150 sitemap URLs · ~567k words · GSC 4810 imp / 32 clicks (17 Jun to 15 Aug) · GA4 487 sessions · Bing 37 clicks<br>
+  <strong>Greek Invest</strong> · greek-invest.com · Report updated {reportDate} {reportVersion} · 150 sitemap URLs · 133 MDX · GSC Aug 8 clk / 1,359 imp · GA4 1,080 sessions (Aug 822)<br>
   <a href="https://indexing-dashboard-deploy.vercel.app/" style="color:#2d7a5e;text-decoration:none;" target="_blank">Portfolio indexing dashboard</a> ·
   Data: GSC + GA4 + Bing MCP · GSC lag 3 days (through 15 Aug)
 </div>
 
-<script type="application/json" id="chart-data">{"monthlyGsc":[{"label":"Jun","clicks":4,"impressions":840},{"label":"Jul","clicks":22,"impressions":2974},{"label":"Aug","clicks":6,"impressions":996}],"monthlyGa4":[{"month":"Jun","sessions":53},{"month":"Jul","sessions":205},{"month":"Aug","sessions":229}],"contentBreakdown":[{"type":"Guides","count":90,"color":"#2d7a5e"},{"type":"Areas","count":12,"color":"#8b5cf6"},{"type":"Compare","count":12,"color":"#d97706"},{"type":"Projects","count":10,"color":"#4e9e7e"},{"type":"Developers","count":4,"color":"#60a5fa"},{"type":"News","count":1,"color":"#9ca3af"}],"dailyRaw":[{"d":"07-28","c":1,"i":45},{"d":"07-29","c":0,"i":56},{"d":"07-30","c":1,"i":59},{"d":"07-31","c":0,"i":34},{"d":"08-01","c":0,"i":42},{"d":"08-02","c":0,"i":55},{"d":"08-03","c":0,"i":54},{"d":"08-04","c":1,"i":49},{"d":"08-05","c":1,"i":70},{"d":"08-06","c":0,"i":64},{"d":"08-07","c":1,"i":63},{"d":"08-08","c":2,"i":67},{"d":"08-09","c":0,"i":83},{"d":"08-10","c":0,"i":87},{"d":"08-11","c":1,"i":67},{"d":"08-12","c":0,"i":86},{"d":"08-13","c":0,"i":72},{"d":"08-14","c":0,"i":66},{"d":"08-15","c":0,"i":71}]}</script>
+<script type="application/json" id="chart-data">{"monthlyGsc":[{"label":"Jun","clicks":4,"impressions":840},{"label":"Jul","clicks":22,"impressions":2974},{"label":"Aug","clicks":8,"impressions":1359}],"monthlyGa4":[{"month":"Jun","sessions":53},{"month":"Jul","sessions":205},{"month":"Aug","sessions":822}],"contentBreakdown":[{"type":"Guides","count":94,"color":"#2d7a5e"},{"type":"Areas","count":12,"color":"#8b5cf6"},{"type":"Compare","count":12,"color":"#d97706"},{"type":"Projects","count":10,"color":"#4e9e7e"},{"type":"Developers","count":4,"color":"#60a5fa"},{"type":"News","count":1,"color":"#9ca3af"}],"dailyRaw":[{"d":"07-28","c":1,"i":45},{"d":"07-29","c":0,"i":56},{"d":"07-30","c":1,"i":59},{"d":"07-31","c":0,"i":34},{"d":"08-01","c":0,"i":42},{"d":"08-02","c":0,"i":55},{"d":"08-03","c":0,"i":54},{"d":"08-04","c":1,"i":49},{"d":"08-05","c":1,"i":70},{"d":"08-06","c":0,"i":64},{"d":"08-07","c":1,"i":63},{"d":"08-08","c":2,"i":67},{"d":"08-09","c":0,"i":83},{"d":"08-10","c":0,"i":87},{"d":"08-11","c":1,"i":67},{"d":"08-12","c":0,"i":86},{"d":"08-13","c":0,"i":72},{"d":"08-14","c":0,"i":66},{"d":"08-15","c":0,"i":71}]}</script>
 <script is:inline>
 (function initReportCharts() {
   function run() {

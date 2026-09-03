@@ -1,21 +1,21 @@
 ---
 export const prerender = true;
 
-const reportDate = '1 September 2026';
-const reportVersion = 'v1.5';
+const reportDate = '3 September 2026';
+const reportVersion = 'v1.6';
 const launchDate = '17 June 2026';
 const dataThrough = '31 August 2026';
 
 const monthlyGsc = [
   { month: 'Jun 2026', label: 'Jun', clicks: 4, impressions: 840, position: 9.6, note: 'Launch · first GSC 19 Jun · impression spike 27 to 28 Jun' },
   { month: 'Jul 2026', label: 'Jul', clicks: 22, impressions: 2974, position: 11.9, note: 'Peak week 30 Jun to 6 Jul (1,286 imp) · lawyer/solicitor cluster page 2–3' },
-  { month: 'Aug 2026', label: 'Aug', clicks: 8, impressions: 1359, position: 15.8, note: 'Full month · post CTR/CRO sprint · Aug GA4 peak 822 sessions' },
+  { month: 'Aug 2026', label: 'Aug', clicks: 8, impressions: 1529, position: 19.2, note: 'Full month · post CTR/CRO sprint · GA4 Aug 845 sessions' },
 ];
 
 const monthlyGa4 = [
   { month: 'Jun', sessions: 53 },
   { month: 'Jul', sessions: 205 },
-  { month: 'Aug', sessions: 822 },
+  { month: 'Aug', sessions: 845 },
 ];
 
 const contentBreakdown = [
@@ -26,6 +26,8 @@ const contentBreakdown = [
   { type: 'Developers', count: 4, words: 6857, color: '#60a5fa' },
   { type: 'News', count: 1, words: 1192, color: '#9ca3af' },
 ];
+
+const gsc28d = { clicks: 8, impressions: 1378, ctr: 0.58, position: 19.3 };
 
 const totalClicks = monthlyGsc.reduce((s, m) => s + m.clicks, 0);
 const totalImp = monthlyGsc.reduce((s, m) => s + m.impressions, 0);
@@ -482,7 +484,7 @@ const chartPayload = JSON.stringify({
   <div class="header-meta">
     <div class="label">Last updated</div>
     <div class="value">{reportDate} · {reportVersion} (live)</div>
-    <div class="live-badge"><span class="live-dot"></span> Site is live</div>
+    <div class="live-badge"><span class="live-dot"></span> 133 MDX · GSC refresh 3 Sep</div>
     <div style="margin-top:10px;font-size:12px;"><a href="https://indexing-dashboard-deploy.vercel.app/" style="color:#9dbfb3;text-decoration:none;" target="_blank">← Portfolio indexing dashboard</a></div>
   </div>
 </div>
@@ -517,14 +519,14 @@ const chartPayload = JSON.stringify({
       <div class="sublabel">guides · areas · compare · projects · developers · news</div>
     </div>
     <div class="stat-card">
-      <div class="num amber">4810</div>
-      <div class="label">GSC impressions</div>
-      <div class="sublabel">4810 imp · 32 clicks · avg pos 12.4 · CTR 0.67%</div>
+      <div class="num amber">{gsc28d.clicks}</div>
+      <div class="label">GSC clicks (28d)</div>
+      <div class="sublabel">{gsc28d.impressions.toLocaleString('en-US')} imp · CTR {gsc28d.ctr}% · avg pos {gsc28d.position}</div>
     </div>
     <div class="stat-card">
-      <div class="num teal">1,080</div>
+      <div class="num teal">1,103</div>
       <div class="label">GA4 sessions</div>
-      <div class="sublabel">Jun 53 · Jul 205 · Aug 822 · Telegram-only leads</div>
+      <div class="sublabel">Jun 53 · Jul 205 · Aug 845 · Telegram-only leads</div>
     </div>
   </div>
 
@@ -543,13 +545,13 @@ const chartPayload = JSON.stringify({
       <div class="kpi-label">Impressions</div>
       <div class="kpi-value">{totalImp.toLocaleString('en-US')}</div>
       <span class="kpi-delta up">↑ Peak 270/d</span>
-      <div class="kpi-sub">5,173 total · Aug 1,359 imp · peak Jul week 30 Jun to 6 Jul</div>
+      <div class="kpi-sub">{totalImp.toLocaleString('en-US')} total · Aug 1,529 imp · peak Jul week 30 Jun to 6 Jul</div>
     </div>
     <div class="kpi-card">
       <div class="kpi-label">GA4 Sessions</div>
-      <div class="kpi-value">1,080</div>
-      <span class="kpi-delta up">↑ Aug 822</span>
-      <div class="kpi-sub">1,080 since launch · Jun 53 · Jul 205 · Aug 822</div>
+      <div class="kpi-value">1,103</div>
+      <span class="kpi-delta up">↑ Aug 845</span>
+      <div class="kpi-sub">1,103 since launch · Jun 53 · Jul 205 · Aug 845</div>
     </div>
     <div class="kpi-card">
       <div class="kpi-label">Content corpus</div>
@@ -576,7 +578,7 @@ const chartPayload = JSON.stringify({
         <div class="card-title">GA4 sessions by month</div>
         <div class="chart-wrap"><canvas id="chartGa4"></canvas></div>
         <div class="insight" style="margin-top:16px;">
-          <strong>Traffic mix:</strong> 1,080 GA4 sessions since launch (Jun 53, Jul 205, Aug 822). GSC: 34 clicks on 5,173 impressions (0.66% CTR). Aug GSC: 8 clicks / 1,359 imp. Peak GSC week 30 Jun to 6 Jul (1,286 imp).
+          <strong>Traffic mix:</strong> 1,103 GA4 sessions since launch (Jun 53, Jul 205, Aug 845). GSC: {totalClicks} clicks on {totalImp.toLocaleString('en-US')} impressions. Aug GSC: 8 clicks / 1,529 imp. 28d: {gsc28d.clicks} clk / {gsc28d.impressions.toLocaleString('en-US')} imp.
         </div>
       </div>
     </div>
@@ -1206,6 +1208,15 @@ const chartPayload = JSON.stringify({
   <div class="changelog">
         <div class="changelog-item">
               <div class="changelog-item">
+      <div class="changelog-date">3 Sep 2026 (v1.6)</div>
+      <div class="changelog-content">
+        <div class="changelog-title">Site-report v1.6 · MCP analytics refresh through 31 Aug</div>
+        <div class="changelog-desc">GSC 28d: {gsc28d.clicks} clk / {gsc28d.impressions.toLocaleString('en-US')} imp · Aug full month: 8 clk / 1,529 imp. GA4 Aug: 845 sessions (1,103 cumulative). Updated via GSC + GA4 MCP.</div>
+        <div class="changelog-tags"><span class="tag green">Report v1.6</span><span class="tag blue">GSC MCP</span><span class="tag amber">GA4 MCP</span></div>
+      </div>
+    </div>
+
+        <div class="changelog-item">
       <div class="changelog-date">1 Sep 2026 (v1.5)</div>
       <div class="changelog-content">
         <div class="changelog-title">Site-report v1.5 · MoM table + chartPayload sync</div>

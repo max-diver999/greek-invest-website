@@ -11,7 +11,7 @@ import {
   FEATURED_AREA_SLUGS,
   FEATURED_PROJECT_SLUGS,
 } from '../data/featured';
-import { getCardImageUrl } from '../lib/cardImage';
+import { getHeroResponsive } from '../lib/cardImage';
 
 const [guides, projects, areas] = await Promise.all([
   getCollection('guides'),
@@ -23,7 +23,7 @@ const publishedGuides = guides.filter((g) => !g.data.noindex);
 const publishedProjects = projects.filter((p) => !p.data.noindex);
 const publishedAreas = areas.filter((a) => !a.data.noindex);
 
-const heroImage = getCardImageUrl(HOMEPAGE_HERO_IMAGE, 'hero');
+const heroImg = getHeroResponsive(HOMEPAGE_HERO_IMAGE);
 
 const pick = (list: readonly string[], from: { id: string }[]) =>
   list.map((slug) => from.find((e) => e.id === slug)).filter(Boolean) as typeof from;
@@ -79,6 +79,9 @@ const schemas = [
   title="Greece Property Investment & Golden Visa Research"
   description="Independent Greece property research: 2026 Golden Visa tiers, foreign ownership rules, real acquisition costs, net yields and neutral project reviews."
   canonical={`${SITE.url}/`}
+  preloadImage={heroImg.preloadHref}
+  preloadImageSrcset={heroImg.srcset}
+  preloadImageSizes={heroImg.sizes}
   {schemas}
 >
   <!-- Первый экран: тёмная рама, крупное фото, светлая витрина начинается ниже.
@@ -108,7 +111,17 @@ const schemas = [
       </div>
 
       <figure class="gr-hero__figure">
-        <img src={heroImage} alt="Cycladic villa with a sea-facing pool on Antiparos" loading="eager" fetchpriority="high" width="1800" height="1200" />
+        <img
+          src={heroImg.src}
+          srcset={heroImg.srcset}
+          sizes={heroImg.sizes}
+          alt="Cycladic villa with a sea-facing pool on Antiparos"
+          loading="eager"
+          fetchpriority="high"
+          decoding="async"
+          width="1200"
+          height="900"
+        />
         <figcaption>ELA Antiparos &middot; Cyclades</figcaption>
       </figure>
     </div>

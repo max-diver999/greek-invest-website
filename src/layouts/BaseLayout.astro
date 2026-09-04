@@ -1,5 +1,7 @@
 ---
-import '../styles/global.css';
+import globalStyles from '../styles/global.css?url';
+import manrope400 from '@fontsource/manrope/files/manrope-latin-400-normal.woff2?url';
+import marcellus400 from '@fontsource/marcellus/files/marcellus-latin-400-normal.woff2?url';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import GoogleAnalytics from '../components/GoogleAnalytics.astro';
@@ -16,6 +18,9 @@ interface Props {
   type?: 'website' | 'article';
   noindex?: boolean;
   schemas?: object[];
+  preloadImage?: string;
+  preloadImageSrcset?: string;
+  preloadImageSizes?: string;
 }
 
 const {
@@ -26,14 +31,11 @@ const {
   type = 'website',
   noindex = false,
   schemas = [],
+  preloadImage,
+  preloadImageSrcset,
+  preloadImageSizes,
 } = Astro.props;
 
-/**
- * Google truncates the SERP title around 60 characters. The brand suffix costs 15,
- * which previously pushed 126 of 152 pages past the limit and cut the payoff out of
- * the snippet. Append the suffix only when the whole title still fits; otherwise the
- * page's own words win, since the brand is already shown on the result's URL line.
- */
 const TITLE_BUDGET = 60;
 const SUFFIX = ' | Greek Invest';
 const fullTitle = title.includes('Greek Invest')
@@ -70,6 +72,7 @@ const allSchemas = [orgSchema, ...schemas];
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0e2a33" />
   <title>{fullTitle}</title>
   <meta name="description" content={description} />
   {noindex
@@ -95,13 +98,90 @@ const allSchemas = [orgSchema, ...schemas];
   <link rel="icon" href="/favicon-16.png?v=3" type="image/png" sizes="16x16" />
   <link rel="apple-touch-icon" href="/apple-touch-icon.png?v=3" sizes="180x180" />
   <link rel="manifest" href="/site.webmanifest" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet" />
+
+  <link rel="preload" href={manrope400} as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href={marcellus400} as="font" type="font/woff2" crossorigin />
+
+  <link rel="preconnect" href="https://res.cloudinary.com" crossorigin />
+  <link rel="dns-prefetch" href="https://res.cloudinary.com" />
+
+  {preloadImage && (
+    <link
+      rel="preload"
+      as="image"
+      href={preloadImage}
+      fetchpriority="high"
+      {...(preloadImageSrcset ? { imagesrcset: preloadImageSrcset, imagesizes: preloadImageSizes } : {})}
+    />
+  )}
+
+  <style is:inline>
+    :root {
+      --color-frame: #0e2a33;
+      --color-frame-line: rgba(232, 226, 212, 0.18);
+      --color-frame-text: #f0f4f2;
+      --color-frame-muted: #9fb7bb;
+      --color-marble: #e8e2d4;
+      --color-marble-deep: #c8bda6;
+      --color-page: #f8f5ee;
+      --color-ink: #15242b;
+      --color-muted: #59696f;
+      --color-teal: #1d6f86;
+      --font-sans: 'Manrope', system-ui, sans-serif;
+      --font-serif: 'Marcellus', Georgia, serif;
+    }
+    html { -webkit-font-smoothing: antialiased; }
+    body {
+      margin: 0;
+      background: var(--color-page);
+      color: var(--color-muted);
+      font-family: var(--font-sans);
+      line-height: 1.65;
+      font-size: 1rem;
+      min-height: 100dvh;
+      display: flex;
+      flex-direction: column;
+    }
+    body > main { flex: 1 0 auto; }
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: var(--color-frame);
+      border-bottom: 1px solid var(--color-frame-line);
+    }
+    .gr-wordmark { font-family: var(--font-serif); color: var(--color-frame-text); }
+    .gr-hero {
+      background: var(--color-frame);
+      color: var(--color-frame-text);
+    }
+    .gr-hero__title {
+      font-family: var(--font-serif);
+      color: var(--color-frame-text);
+      line-height: 1.12;
+    }
+    .gr-hero__figure img {
+      display: block;
+      width: 100%;
+      object-fit: cover;
+    }
+    .gr-hero__cta {
+      display: inline-block;
+      background: var(--color-marble);
+      color: var(--color-frame);
+      font-weight: 600;
+      text-decoration: none;
+      border-radius: 999px;
+    }
+  </style>
+
+  <link rel="preload" href={globalStyles} as="style" />
+  <link rel="stylesheet" href={globalStyles} media="print" onload="this.media='all'" />
+  <noscript><link rel="stylesheet" href={globalStyles} /></noscript>
+
   {allSchemas.map((s) => (
     <script type="application/ld+json" set:html={JSON.stringify(s)} />
   ))}
-  <GoogleAnalytics />
 </head>
 <body>
   <Header />
@@ -112,5 +192,6 @@ const allSchemas = [orgSchema, ...schemas];
   <WhatsAppFloat />
   <CurrencyEngine />
   <WhatsAppIntentTracker />
+  <GoogleAnalytics />
 </body>
 </html>

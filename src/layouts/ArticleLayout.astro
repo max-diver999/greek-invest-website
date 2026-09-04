@@ -5,7 +5,7 @@ import FaqBlock from '../components/FaqBlock.astro';
 import RelatedArticles from '../components/RelatedArticles.astro';
 import type { RelatedItem } from '../lib/related';
 import { SITE } from '../data/site';
-import { responsiveCloudinary } from '../lib/cloudinary';
+import { responsiveCloudinary, heroPreloadFromResponsive } from '../lib/cloudinary';
 
 interface Props {
   title: string;
@@ -113,6 +113,7 @@ const breadcrumbSchema = {
 // layout must not emit a second one — 132 pages previously shipped duplicates and
 // 7 shipped conflicting question sets.
 const schemas = [articleSchema, breadcrumbSchema, ...(faqSchema && !hasInlineFaqBlock ? [faqSchema] : [])];
+const heroPreload = heroImage ? heroPreloadFromResponsive(heroImage) : null;
 ---
 <BaseLayout
   title={title}
@@ -120,6 +121,9 @@ const schemas = [articleSchema, breadcrumbSchema, ...(faqSchema && !hasInlineFaq
   canonical={pageUrl}
   ogImage={heroImage}
   type="article"
+  preloadImage={heroPreload?.href}
+  preloadImageSrcset={heroPreload?.srcset}
+  preloadImageSizes={heroPreload?.sizes}
   {noindex}
   {schemas}
 >

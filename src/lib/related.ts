@@ -9,7 +9,23 @@ import { readingMinutes } from './readingTime';
  * collections rather than assuming the neighbour is in the same folder, and
  * roughly a third of the references do cross collections.
  */
-const COLLECTIONS = ['guides', 'compare', 'areas', 'projects', 'developers', 'news'] as const;
+// The three collections added in September 2026 must be listed here too. They
+// were not, so a relatedSlugs reference to any of their pages resolved to
+// nothing and rendered no card, while `check:related` still passed because that
+// script reads the content directories rather than this list. The result was the
+// bug this file's header describes, in a second form: 24 new pages that no
+// existing article could point at.
+const COLLECTIONS = [
+  'guides',
+  'compare',
+  'areas',
+  'projects',
+  'developers',
+  'news',
+  'golden-visa',
+  'property-for-sale',
+  'living-in-greece',
+] as const;
 
 type AnyEntry = CollectionEntry<(typeof COLLECTIONS)[number]>;
 
@@ -40,6 +56,9 @@ async function index() {
 }
 
 const LABEL: Record<string, string> = {
+  'golden-visa': 'Golden Visa',
+  'property-for-sale': 'Market',
+  'living-in-greece': 'Living',
   guides: 'Guide',
   compare: 'Comparison',
   areas: 'Area',
@@ -71,7 +90,9 @@ export async function resolveRelated(
     if (!hit || hit.entry.data.noindex) continue;
     seen.add(slug);
     out.push({
-      href: `/${hit.collection}/${hit.entry.id}/`,
+      // `overview` is the hub's own body, rendered at the collection root, so it
+      // must link to /<collection>/ rather than to /<collection>/overview/.
+      href: hit.entry.id === 'overview' ? `/${hit.collection}/` : `/${hit.collection}/${hit.entry.id}/`,
       title: hit.entry.data.title,
       description: hit.entry.data.description,
       image: hit.entry.data.heroImage,

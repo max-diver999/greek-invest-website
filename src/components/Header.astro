@@ -9,6 +9,12 @@ import CurrencyToggle from './CurrencyToggle.astro';
  */
 const nav = [
   { label: 'Golden Visa', href: '/golden-visa/' },
+  // Added September 2026 with the two hubs themselves. They shipped as routes
+  // with no nav entry, which is the same defect this comment already describes
+  // for Golden Visa and Tools: /property-for-sale/ carries the largest measured
+  // demand cluster on the site and had no sitewide path in.
+  { label: 'Property for Sale', href: '/property-for-sale/' },
+  { label: 'Living in Greece', href: '/living-in-greece/' },
   { label: 'Guides', href: '/guides/' },
   { label: 'Areas', href: '/areas/' },
   { label: 'Projects', href: '/projects/' },

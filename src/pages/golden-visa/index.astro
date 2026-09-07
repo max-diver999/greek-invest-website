@@ -114,7 +114,7 @@ const schemas = [
     description: 'Independent research on the Greece Golden Visa property route: 2026 tiers, the 120 m² rule, timelines, costs and renewal.',
     url: `${SITE.url}/golden-visa/`,
     hasPart: resolved.flatMap((s) =>
-      s.items.map((g) => ({ '@type': 'Article', name: g.data.title, url: `${SITE.url}/guides/${g.id}/` })),
+      s.items.map((g) => ({ '@type': 'WebPage', name: g.data.title, url: `${SITE.url}/guides/${g.id}/` })),
     ),
   },
   {

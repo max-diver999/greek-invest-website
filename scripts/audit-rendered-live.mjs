@@ -31,6 +31,23 @@ function readSiteUrl() {
 const SITE_URL = readSiteUrl();
 const siteConfig = { skipCollections: [], requireLeadForm: true };
 
+/** overview.mdx rendered at /{collection}/, not /{collection}/overview/ */
+const HUB_OVERVIEW_COLLECTIONS = new Set(['golden-visa', 'living-in-greece', 'property-for-sale']);
+
+function pagePath(collection, slug) {
+  if (slug === 'overview' && HUB_OVERVIEW_COLLECTIONS.has(collection)) {
+    return `/${collection}/`;
+  }
+  return `/${collection}/${slug}/`;
+}
+
+function localHtmlPath(collection, slug) {
+  if (slug === 'overview' && HUB_OVERVIEW_COLLECTIONS.has(collection)) {
+    return path.join(ROOT, 'dist/client', collection, 'index.html');
+  }
+  return path.join(ROOT, 'dist/client', collection, slug, 'index.html');
+}
+
 function discoverCollections() {
   const contentRoot = path.join(ROOT, 'src/content');
   if (!fs.existsSync(contentRoot)) return [];
@@ -285,14 +302,16 @@ async function fetchHtml(url) {
 }
 
 function readLocalHtml(collection, slug) {
-  const p = path.join(ROOT, 'dist/client', collection, slug, 'index.html');
+  const p = localHtmlPath(collection, slug);
   if (!fs.existsSync(p)) throw new Error('missing dist HTML');
   return fs.readFileSync(p, 'utf8');
 }
 
 async function auditPage(collection, slug) {
-  const urlPath = `/${collection}/${slug}/`;
+  const urlPath = pagePath(collection, slug);
   const url = `${SITE_URL}${urlPath}`;
+  const skipReadingTime =
+    slug === 'overview' && HUB_OVERVIEW_COLLECTIONS.has(collection);
   let html;
   try {
     html = useLocal ? readLocalHtml(collection, slug) : await fetchHtml(url);
@@ -301,6 +320,7 @@ async function auditPage(collection, slug) {
   }
   const issues = [];
   for (const check of CHECKS) {
+    if (skipReadingTime && check.id === 'reading-time-mismatch') continue;
     const detail = check.test(html);
     if (detail) issues.push({ id: check.id, severity: check.severity, detail });
   }

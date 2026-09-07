@@ -352,6 +352,84 @@
       "statement": "Presence in Greece beyond this in a calendar year generally establishes Greek tax residence, bringing worldwide income into the Greek net unless a preferential regime or a double tax treaty provides otherwise.",
       "source": "Law 4172/2013 Article 4, tax residence of individuals",
       "asOf": "2026-09-07"
+    },
+    {
+      "figure": "86.0",
+      "statement": "Greek price level index for household final consumption expenditure (COICOP E011) against an EU27 average of 100, meaning Greek consumer prices sit 14 percent below the EU average overall.",
+      "source": "Eurostat, dataset prc_ppp_ind, price level index PLI_EU27_2020, Greece, reference year 2024; Eurostat update 10 July 2025",
+      "asOf": "2026-09-07"
+    },
+    {
+      "figure": "70.5",
+      "statement": "Greek price level index for housing, water, electricity, gas and other fuels (COICOP A0104) against an EU27 average of 100: the largest single saving in the Greek cost of living.",
+      "source": "Eurostat, dataset prc_ppp_ind, price level index PLI_EU27_2020, Greece, reference year 2024; Eurostat update 10 July 2025",
+      "asOf": "2026-09-07"
+    },
+    {
+      "figure": "105.8",
+      "statement": "Greek price level index for food and non-alcoholic beverages (COICOP A0101) against an EU27 average of 100, meaning groceries in Greece cost more than the EU average despite the low overall price level.",
+      "source": "Eurostat, dataset prc_ppp_ind, price level index PLI_EU27_2020, Greece, reference year 2024; Eurostat update 10 July 2025",
+      "asOf": "2026-09-07"
+    },
+    {
+      "figure": "144.1",
+      "statement": "Greek price level index for communication (COICOP A0108) against an EU27 average of 100: the most expensive consumption category in Greece relative to the EU.",
+      "source": "Eurostat, dataset prc_ppp_ind, price level index PLI_EU27_2020, Greece, reference year 2024; Eurostat update 10 July 2025",
+      "asOf": "2026-09-07"
+    },
+    {
+      "figure": "86.4",
+      "statement": "Greek price level index for restaurants and hotels (COICOP A0111) against an EU27 average of 100.",
+      "source": "Eurostat, dataset prc_ppp_ind, price level index PLI_EU27_2020, Greece, reference year 2024; Eurostat update 10 July 2025",
+      "asOf": "2026-09-07"
+    },
+    {
+      "figure": "59.0",
+      "statement": "Greek price level index for education (COICOP A0110) against an EU27 average of 100.",
+      "source": "Eurostat, dataset prc_ppp_ind, price level index PLI_EU27_2020, Greece, reference year 2024; Eurostat update 10 July 2025",
+      "asOf": "2026-09-07"
+    },
+    {
+      "figure": "81.8",
+      "statement": "Greek price level index for health (COICOP A0106) against an EU27 average of 100.",
+      "source": "Eurostat, dataset prc_ppp_ind, price level index PLI_EU27_2020, Greece, reference year 2024; Eurostat update 10 July 2025",
+      "asOf": "2026-09-07"
+    },
+    {
+      "figure": "90.1",
+      "statement": "Greek price level index for transport (COICOP A0107) against an EU27 average of 100.",
+      "source": "Eurostat, dataset prc_ppp_ind, price level index PLI_EU27_2020, Greece, reference year 2024; Eurostat update 10 July 2025",
+      "asOf": "2026-09-07"
+    },
+    {
+      "figure": "87.0",
+      "statement": "Portuguese price level index for household final consumption against an EU27 average of 100, marginally above Greece at 86.0.",
+      "source": "Eurostat, dataset prc_ppp_ind, price level index PLI_EU27_2020, COICOP E011 household final consumption, reference year 2024",
+      "asOf": "2026-09-07"
+    },
+    {
+      "figure": "90.9",
+      "statement": "Spanish price level index for household final consumption against an EU27 average of 100.",
+      "source": "Eurostat, dataset prc_ppp_ind, price level index PLI_EU27_2020, COICOP E011 household final consumption, reference year 2024",
+      "asOf": "2026-09-07"
+    },
+    {
+      "figure": "92.8",
+      "statement": "Cypriot price level index for household final consumption against an EU27 average of 100.",
+      "source": "Eurostat, dataset prc_ppp_ind, price level index PLI_EU27_2020, COICOP E011 household final consumption, reference year 2024",
+      "asOf": "2026-09-07"
+    },
+    {
+      "figure": "97.5",
+      "statement": "Italian price level index for household final consumption against an EU27 average of 100.",
+      "source": "Eurostat, dataset prc_ppp_ind, price level index PLI_EU27_2020, COICOP E011 household final consumption, reference year 2024",
+      "asOf": "2026-09-07"
+    },
+    {
+      "figure": "76.3",
+      "statement": "Croatian price level index for household final consumption against an EU27 average of 100: the only mainstream Mediterranean destination measurably cheaper than Greece.",
+      "source": "Eurostat, dataset prc_ppp_ind, price level index PLI_EU27_2020, COICOP E011 household final consumption, reference year 2024",
+      "asOf": "2026-09-07"
     }
   ]
 }

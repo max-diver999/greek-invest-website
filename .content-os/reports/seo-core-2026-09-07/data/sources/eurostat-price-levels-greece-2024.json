@@ -1,0 +1,312 @@
+{
+ "updated": "2025-07-10T11:00:00+0200",
+ "year": "2024",
+ "unit": "PLI, EU27_2020 = 100",
+ "rows": [
+  {
+   "value": 154.0,
+   "code": "A010201",
+   "label": "Alcoholic beverages"
+  },
+  {
+   "value": 144.1,
+   "code": "A0108",
+   "label": "Communication"
+  },
+  {
+   "value": 130.5,
+   "code": "A01010104",
+   "label": "Milk, cheese and eggs"
+  },
+  {
+   "value": 128.6,
+   "code": "A01010199",
+   "label": "Other food"
+  },
+  {
+   "value": 118.0,
+   "code": "A01010105",
+   "label": "Oils and fats"
+  },
+  {
+   "value": 114.4,
+   "code": "A010102",
+   "label": "Non-alcoholic beverages"
+  },
+  {
+   "value": 112.7,
+   "code": "A010901",
+   "label": "Audio-visual, photographic and information processing equipment"
+  },
+  {
+   "value": 112.4,
+   "code": "A01010103",
+   "label": "Fish"
+  },
+  {
+   "value": 108.8,
+   "code": "A0503",
+   "label": "Software"
+  },
+  {
+   "value": 105.8,
+   "code": "A0101",
+   "label": "Food and non-alcoholic beverages"
+  },
+  {
+   "value": 105.1,
+   "code": "A01010101",
+   "label": "Bread and cereals"
+  },
+  {
+   "value": 105.1,
+   "code": "A010101",
+   "label": "Food"
+  },
+  {
+   "value": 102.0,
+   "code": "A010503",
+   "label": "Households appliances"
+  },
+  {
+   "value": 101.3,
+   "code": "A050102",
+   "label": "Electrical and optical equipment"
+  },
+  {
+   "value": 100.2,
+   "code": "A010501",
+   "label": "Furniture and furnishings, carpets and other floor coverings"
+  },
+  {
+   "value": 98.4,
+   "code": "P010103",
+   "label": "Durable goods"
+  },
+  {
+   "value": 97.6,
+   "code": "A0501",
+   "label": "Machinery and equipment"
+  },
+  {
+   "value": 97.1,
+   "code": "A050101",
+   "label": "Fabricated metal products and equipment (except electrical and optical equipment)"
+  },
+  {
+   "value": 96.7,
+   "code": "P010101",
+   "label": "Non-durable goods"
+  },
+  {
+   "value": 96.5,
+   "code": "A0102",
+   "label": "Alcoholic beverages, tobacco and narcotics"
+  },
+  {
+   "value": 95.9,
+   "code": "P0101",
+   "label": "Consumer goods"
+  },
+  {
+   "value": 95.2,
+   "code": "A01010102",
+   "label": "Meat"
+  },
+  {
+   "value": 94.7,
+   "code": "A050103",
+   "label": "Transport equipment"
+  },
+  {
+   "value": 93.0,
+   "code": "A010701",
+   "label": "Personal transport equipment"
+  },
+  {
+   "value": 91.7,
+   "code": "P010102",
+   "label": "Semi-durable goods"
+  },
+  {
+   "value": 91.6,
+   "code": "A0105",
+   "label": "Household furnishings, equipment and maintenance"
+  },
+  {
+   "value": 91.2,
+   "code": "A010302",
+   "label": "Footwear"
+  },
+  {
+   "value": 91.1,
+   "code": "A010301",
+   "label": "Clothing"
+  },
+  {
+   "value": 90.1,
+   "code": "A0107",
+   "label": "Transport"
+  },
+  {
+   "value": 90.1,
+   "code": "A0103",
+   "label": "Clothing and footwear"
+  },
+  {
+   "value": 89.5,
+   "code": "A010703",
+   "label": "Transport services"
+  },
+  {
+   "value": 89.3,
+   "code": "P01",
+   "label": "Total goods"
+  },
+  {
+   "value": 89.2,
+   "code": "A01010106",
+   "label": "Fruits, vegetables, potatoes"
+  },
+  {
+   "value": 88.3,
+   "code": "A010405",
+   "label": "Electricity, gas and other fuels"
+  },
+  {
+   "value": 86.8,
+   "code": "A010603",
+   "label": "Hospital services"
+  },
+  {
+   "value": 86.4,
+   "code": "A0111",
+   "label": "Restaurants and hotels"
+  },
+  {
+   "value": 86.2,
+   "code": "A0109",
+   "label": "Recreation and culture"
+  },
+  {
+   "value": 86.0,
+   "code": "E011",
+   "label": "Household final consumption expenditure"
+  },
+  {
+   "value": 83.0,
+   "code": "A01",
+   "label": "Actual individual consumption"
+  },
+  {
+   "value": 82.7,
+   "code": "A0112",
+   "label": "Miscellaneous goods and services"
+  },
+  {
+   "value": 81.8,
+   "code": "A0106",
+   "label": "Health"
+  },
+  {
+   "value": 81.5,
+   "code": "E01",
+   "label": "Final consumption expenditure"
+  },
+  {
+   "value": 81.3,
+   "code": "GDP",
+   "label": "Gross domestic product"
+  },
+  {
+   "value": 81.1,
+   "code": "P0102",
+   "label": "Capital goods"
+  },
+  {
+   "value": 81.1,
+   "code": "A05",
+   "label": "Gross fixed capital formation"
+  },
+  {
+   "value": 78.9,
+   "code": "P0201",
+   "label": "Consumer services"
+  },
+  {
+   "value": 75.5,
+   "code": "P02",
+   "label": "Total services"
+  },
+  {
+   "value": 75.5,
+   "code": "A050203",
+   "label": "Civil engineering works"
+  },
+  {
+   "value": 72.9,
+   "code": "A050202",
+   "label": "Non-residential buildings"
+  },
+  {
+   "value": 72.0,
+   "code": "P020201",
+   "label": "Collective services"
+  },
+  {
+   "value": 72.0,
+   "code": "E0121",
+   "label": "Collective consumption expenditure"
+  },
+  {
+   "value": 72.0,
+   "code": "A04",
+   "label": "Actual collective consumption"
+  },
+  {
+   "value": 71.0,
+   "code": "P0202",
+   "label": "Government services"
+  },
+  {
+   "value": 71.0,
+   "code": "E012",
+   "label": "Government final consumption expenditure"
+  },
+  {
+   "value": 70.5,
+   "code": "A0104",
+   "label": "Housing, water, electricity, gas and other fuels"
+  },
+  {
+   "value": 70.1,
+   "code": "P020202",
+   "label": "Individual services"
+  },
+  {
+   "value": 70.1,
+   "code": "E0122",
+   "label": "Individual consumption expenditure"
+  },
+  {
+   "value": 69.3,
+   "code": "A010202",
+   "label": "Tobacco"
+  },
+  {
+   "value": 69.2,
+   "code": "A0502",
+   "label": "Construction"
+  },
+  {
+   "value": 64.6,
+   "code": "A050201",
+   "label": "Residential buildings"
+  },
+  {
+   "value": 59.0,
+   "code": "A0110",
+   "label": "Education"
+  }
+ ]
+}

@@ -85,7 +85,14 @@ export function plainText(raw) {
     .replace(/<[^>]+>/g, ' ')
     .replace(/!\[[^\]]*]\([^)]+\)/g, ' ')
     .replace(/\[([^\]]+)]\([^)]+\)/g, '$1')
-    .replace(/`[^`]+`/g, ' ')
+    // Keep the span's content, the same way link text is kept two lines above.
+    // Deleting it left dangling punctuation: a sentence citing "dataset
+    // `prc_ppp_ind`, indicator `PLI_EU27_2020`, geography Greece" became
+    // "dataset , indicator , geography Greece", and the malformed-token rule
+    // then charged that gap as broken output and capped the article at 40.
+    // A code span in this corpus is an identifier the sentence depends on, so
+    // any page citing a dataset, slug or script name was penalised for it.
+    .replace(/`([^`]+)`/g, '$1')
     .replace(/^\|.*$/gm, ' ')
     .replace(/^#{1,6}.*$/gm, ' ')
     .replace(/\s+/g, ' ')

@@ -1,0 +1,57 @@
+{
+ "source": "Eurostat prc_ppp_ind, na_item=PLI_EU27_2020, geo=EL, time=2024",
+ "updated": "2025-07-10T11:00:00+0200",
+ "unit": "EU27_2020 = 100",
+ "rows": [
+  {
+   "value": 86.0,
+   "code": "E011",
+   "label": "Household final consumption expenditure"
+  },
+  {
+   "value": 70.5,
+   "code": "A0104",
+   "label": "Housing, water, electricity, gas and other fuels"
+  },
+  {
+   "value": 105.8,
+   "code": "A0101",
+   "label": "Food and non-alcoholic beverages"
+  },
+  {
+   "value": 86.4,
+   "code": "A0111",
+   "label": "Restaurants and hotels"
+  },
+  {
+   "value": 90.1,
+   "code": "A0107",
+   "label": "Transport"
+  },
+  {
+   "value": 81.8,
+   "code": "A0106",
+   "label": "Health"
+  },
+  {
+   "value": 90.1,
+   "code": "A0103",
+   "label": "Clothing and footwear"
+  },
+  {
+   "value": 86.2,
+   "code": "A0109",
+   "label": "Recreation and culture"
+  },
+  {
+   "value": 144.1,
+   "code": "A0108",
+   "label": "Communication"
+  },
+  {
+   "value": 59.0,
+   "code": "A0110",
+   "label": "Education"
+  }
+ ]
+}

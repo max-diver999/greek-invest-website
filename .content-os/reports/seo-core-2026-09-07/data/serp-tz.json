@@ -1,0 +1,960 @@
+[
+ {
+  "query": "houses for sale in greece",
+  "country": "uk",
+  "ai_overview": false,
+  "top": []
+ },
+ {
+  "query": "houses for sale in greece",
+  "country": "us",
+  "ai_overview": true,
+  "top": [
+   {
+    "url": "https://www.grekodom.com/",
+    "title": "Grekodom Development: Greece Real Estate | Houses for ...",
+    "type": "other"
+   },
+   {
+    "url": "https://www.realestate.com.au/international/gr/",
+    "title": "Property for Sale in Greece - realestate.com.au",
+    "type": "portal"
+   },
+   {
+    "url": "https://search.savills.com/com/en/list/property-for-sale/greece",
+    "title": "Property for sale in Greece | Savills",
+    "type": "other"
+   },
+   {
+    "url": "https://realting.com/greece/houses/cheap",
+    "title": "Cheap houses for sale in Greece",
+    "type": "other"
+   },
+   {
+    "url": "https://www.sothebysrealty.com/eng/sales/grc",
+    "title": "Greece Luxury Real Estate - Homes for Sale",
+    "type": "portal"
+   },
+   {
+    "url": "https://www.green-acres.gr/en",
+    "title": "Buy property in Greece : 13,878 Greek houses and ...",
+    "type": "other"
+   },
+   {
+    "url": "https://www.rightmove.co.uk/overseas-property/in-Greece.html",
+    "title": "Find properties for sale in Greece",
+    "type": "portal"
+   },
+   {
+    "url": "https://www.spitogatos.gr/en",
+    "title": "Spitogatos: Greek Real Estate - Property in Greece",
+    "type": "portal"
+   },
+   {
+    "url": "https://www.aplaceinthesun.com/property/greece",
+    "title": "Property for sale in Greece",
+    "type": "portal"
+   }
+  ]
+ },
+ {
+  "query": "homes for sale in greece",
+  "country": "uk",
+  "ai_overview": true,
+  "top": [
+   {
+    "url": "https://www.rightmove.co.uk/overseas-property/in-Greece.html",
+    "title": "Find properties for sale in Greece",
+    "type": "portal"
+   },
+   {
+    "url": "https://www.aplaceinthesun.com/greece",
+    "title": "Property for Sale in Greece - Search Houses, Villas &amp;amp; ...",
+    "type": "portal"
+   },
+   {
+    "url": "https://www.zoopla.co.uk/overseas/property/greece/",
+    "title": "Property for sale in Greece",
+    "type": "portal"
+   },
+   {
+    "url": "https://www.grekodom.com/",
+    "title": "Grekodom Development: Greece Real Estate | Houses for ...",
+    "type": "other"
+   },
+   {
+    "url": "https://search.savills.com/com/en/list/property-for-sale/greece",
+    "title": "Property for sale in Greece | Savills",
+    "type": "other"
+   },
+   {
+    "url": "https://www.green-acres.gr/en",
+    "title": "Buy property in Greece : 13,878 Greek houses and ...",
+    "type": "other"
+   },
+   {
+    "url": "https://realting.com/greece/houses/cheap",
+    "title": "Cheap houses for sale in Greece",
+    "type": "other"
+   },
+   {
+    "url": "https://www.greekexclusiveproperties.com/property-city/more-islands/",
+    "title": "Houses in Greece for Sale | Greek Islands Property Listings",
+    "type": "other"
+   },
+   {
+    "url": "https://www.jamesedition.com/real_estate/greece",
+    "title": "Luxury homes for sale in Greece",
+    "type": "portal"
+   }
+  ]
+ },
+ {
+  "query": "homes for sale in greece",
+  "country": "us",
+  "ai_overview": true,
+  "top": [
+   {
+    "url": "https://search.savills.com/com/en/list/property-for-sale/greece",
+    "title": "Property for sale in Greece | Savills",
+    "type": "other"
+   },
+   {
+    "url": "https://www.grekodom.com/",
+    "title": "Grekodom Development: Greece Real Estate | Houses for ...",
+    "type": "other"
+   },
+   {
+    "url": "https://www.sothebysrealty.com/eng/sales/grc",
+    "title": "Greece Luxury Real Estate - Homes for Sale",
+    "type": "portal"
+   },
+   {
+    "url": "https://www.green-acres.gr/en",
+    "title": "Buy property in Greece : 13,878 Greek houses and ...",
+    "type": "other"
+   },
+   {
+    "url": "https://www.rightmove.co.uk/overseas-property/in-Greece.html",
+    "title": "Find properties for sale in Greece",
+    "type": "portal"
+   },
+   {
+    "url": "https://www.greekexclusiveproperties.com/property-city/more-islands/",
+    "title": "Houses in Greece for Sale | Greek Islands Property Listings",
+    "type": "other"
+   },
+   {
+    "url": "https://realting.com/greece/houses/cheap",
+    "title": "Cheap houses for sale in Greece",
+    "type": "other"
+   },
+   {
+    "url": "https://www.realestate.com.au/international/gr/",
+    "title": "Property for Sale in Greece - realestate.com.au",
+    "type": "portal"
+   },
+   {
+    "url": "https://www.spitogatos.gr/en",
+    "title": "Spitogatos: Greek Real Estate - Property in Greece",
+    "type": "portal"
+   }
+  ]
+ },
+ {
+  "query": "greece real estate",
+  "country": "uk",
+  "ai_overview": true,
+  "top": [
+   {
+    "url": "https://www.spitogatos.gr/en",
+    "title": "Spitogatos: Greek Real Estate - Property in Greece",
+    "type": "portal"
+   },
+   {
+    "url": "https://www.green-acres.gr/en",
+    "title": "Buy property in Greece : 13,878 Greek houses and ...",
+    "type": "other"
+   },
+   {
+    "url": "https://www.rightmove.co.uk/overseas-property/in-Greece.html",
+    "title": "Find properties for sale in Greece",
+    "type": "portal"
+   },
+   {
+    "url": "https://www.grekodom.com/",
+    "title": "Grekodom Development: Greece Real Estate | Houses for ...",
+    "type": "other"
+   },
+   {
+    "url": "https://tranio.com/greece/",
+    "title": "Real Estate in Greece for Sale, Buy Property from 100000 €",
+    "type": "portal"
+   },
+   {
+    "url": "https://www.greekexclusiveproperties.com/property-city/more-islands/",
+    "title": "Houses in Greece for Sale | Greek Islands Property Listings",
+    "type": "other"
+   },
+   {
+    "url": "https://ktimatoemporiki.gr/",
+    "title": "Ktimatoemporiki: 21000+ Properties for Sale in Greece",
+    "type": "other"
+   },
+   {
+    "url": "https://www.barnes-international.com/en/for-sale/greece.html",
+    "title": "Prestigious real estate for sale in Greece - Barnes international",
+    "type": "other"
+   },
+   {
+    "url": "https://www.sothebysrealty.com/eng/sales/grc",
+    "title": "Greece Luxury Real Estate - Homes for Sale",
+    "type": "portal"
+   }
+  ]
+ },
+ {
+  "query": "greece real estate",
+  "country": "us",
+  "ai_overview": true,
+  "top": [
+   {
+    "url": "https://www.spitogatos.gr/en",
+    "title": "Spitogatos: Greek Real Estate - Property in Greece",
+    "type": "portal"
+   },
+   {
+    "url": "https://www.grekodom.com/",
+    "title": "Grekodom Development: Greece Real Estate | Houses for ...",
+    "type": "other"
+   },
+   {
+    "url": "https://www.green-acres.gr/en",
+    "title": "Buy property in Greece : 13,878 Greek houses and ...",
+    "type": "other"
+   },
+   {
+    "url": "https://www.sothebysrealty.com/eng/sales/grc",
+    "title": "Greece Luxury Real Estate - Homes for Sale",
+    "type": "portal"
+   },
+   {
+    "url": "https://properties.lefigaro.com/announces/luxury-real estate-properties for sale-greece/",
+    "title": "Luxury real estate for sale in Greece - Le Figaro Properties",
+    "type": "other"
+   },
+   {
+    "url": "https://realting.com/greece/houses/cheap",
+    "title": "Cheap houses for sale in Greece",
+    "type": "other"
+   },
+   {
+    "url": "https://www.youtube.com/watch?v=FXxvqvOd3qE",
+    "title": "Finding a Home in Greece, it is TOUGH for a Foreigner",
+    "type": "forum"
+   },
+   {
+    "url": "https://tranio.com/greece/",
+    "title": "Real Estate in Greece for Sale, Buy Property from 100000 €",
+    "type": "portal"
+   },
+   {
+    "url": "https://search.savills.com/com/en/list/property-for-sale/greece",
+    "title": "Property for sale in Greece | Savills",
+    "type": "other"
+   }
+  ]
+ },
+ {
+  "query": "property for sale in zante greece",
+  "country": "uk",
+  "ai_overview": false,
+  "top": []
+ },
+ {
+  "query": "property for sale in zante greece",
+  "country": "us",
+  "ai_overview": true,
+  "top": [
+   {
+    "url": "https://www.rightmove.co.uk/overseas-property-for-sale/Zante.html",
+    "title": "Properties For Sale in Zante, Greece",
+    "type": "portal"
+   },
+   {
+    "url": "https://www.greekexclusiveproperties.com/properties-in-zakynthos/",
+    "title": "Properties in Zakynthos, Real Estate in Zakynthos",
+    "type": "other"
+   },
+   {
+    "url": "https://www.spitogatos.gr/en/for_sale-homes/zante",
+    "title": "Homes for sale: Zante",
+    "type": "portal"
+   },
+   {
+    "url": "https://www.sothebysrealty.com/eng/sales/zakynthos-io-grc",
+    "title": "Zakynthos, IO Luxury Real Estate - Homes for Sale",
+    "type": "portal"
+   },
+   {
+    "url": "https://www.aplaceinthesun.com/property/greece/ionian-islands/zante",
+    "title": "Property for sale in Zante, Greece",
+    "type": "portal"
+   },
+   {
+    "url": "https://ioniansunproperties.com/",
+    "title": "Ionian Sun Properties: Zakynthos Real Estate",
+    "type": "other"
+   },
+   {
+    "url": "https://www.green-acres.gr/property-for-sale/zakynthos",
+    "title": "Real estate Zakynthos: 556 properties and houses for sale",
+    "type": "other"
+   },
+   {
+    "url": "https://jmrealestatezante.com/",
+    "title": "JM Real Estate - Real Estate in Zakynthos",
+    "type": "other"
+   },
+   {
+    "url": "https://www.holprop.com/sale/pt/property/scr/greece/srg/ionian_islands/sct/zakynthos_prefecture/price/50000/",
+    "title": "Under €50k Property for sale in Zakynthos Prefecture Greece",
+    "type": "other"
+   }
+  ]
+ },
+ {
+  "query": "property for sale in greece under 50k",
+  "country": "uk",
+  "ai_overview": true,
+  "top": [
+   {
+    "url": "https://www.holprop.com/sale/pt/property/scr/greece/price/50000/",
+    "title": "Under €50k Property for sale in Greece, (13286) Greek ...",
+    "type": "other"
+   },
+   {
+    "url": "https://www.rightmove.co.uk/overseas-property/in-Greece.html",
+    "title": "Find properties for sale in Greece",
+    "type": "portal"
+   },
+   {
+    "url": "https://www.makoo.com/en/houses-for-sale-under-50000-in-greece",
+    "title": "Houses for sale in Greece under 50000 Euros",
+    "type": "other"
+   },
+   {
+    "url": "https://www.aplaceinthesun.com/property/greece",
+    "title": "Property for sale in Greece",
+    "type": "portal"
+   },
+   {
+    "url": "https://www.propertyunder50k.com/properties-by-country/greece/house",
+    "title": "Cheap Houses for Sale &amp;amp; Rent in Greece",
+    "type": "other"
+   },
+   {
+    "url": "https://www.facebook.com/groups/greekislandtravel/posts/10162243960155854/",
+    "title": "What Greek island to buy property on with $50k?",
+    "type": "forum"
+   },
+   {
+    "url": "https://www.realgreece.net/Reduced-Price-Properties-in-Greece-1",
+    "title": "Reduced price - Real Greece Real Estate Network",
+    "type": "other"
+   },
+   {
+    "url": "https://www.youtube.com/watch?v=qCBYxJt-CAA",
+    "title": "Buy a Cheap House in Greece: Bargain Properties",
+    "type": "forum"
+   },
+   {
+    "url": "https://realting.com/greece/houses/cheap",
+    "title": "Cheap houses for sale in Greece",
+    "type": "other"
+   }
+  ]
+ },
+ {
+  "query": "property for sale in greece under 50k",
+  "country": "us",
+  "ai_overview": true,
+  "top": [
+   {
+    "url": "https://www.holprop.com/sale/pt/property/scr/greece/price/50000/",
+    "title": "Under €50k Property for sale in Greece, (13286) Greek ...",
+    "type": "other"
+   },
+   {
+    "url": "https://www.makoo.com/en/houses-for-sale-under-50000-in-greece",
+    "title": "Houses for sale in Greece under 50000 Euros",
+    "type": "other"
+   },
+   {
+    "url": "https://www.propertyunder50k.com/properties-by-country/greece/house",
+    "title": "Cheap Houses for Sale &amp;amp; Rent in Greece",
+    "type": "other"
+   },
+   {
+    "url": "https://www.facebook.com/groups/greekislandtravel/posts/10162243960155854/",
+    "title": "What Greek island to buy property on with $50k?",
+    "type": "forum"
+   },
+   {
+    "url": "https://www.rightmove.co.uk/overseas-property/in-Greece.html",
+    "title": "Find properties for sale in Greece",
+    "type": "portal"
+   },
+   {
+    "url": "https://www.youtube.com/watch?v=qCBYxJt-CAA",
+    "title": "Buy a Cheap House in Greece: Bargain Properties",
+    "type": "forum"
+   },
+   {
+    "url": "https://www.aplaceinthesun.com/property/greece",
+    "title": "Property for sale in Greece",
+    "type": "portal"
+   },
+   {
+    "url": "https://www.properstar.com/greece/buy/house/price-low-to-high",
+    "title": "6,037 Cheap Homes for Sale in Greece - Properstar",
+    "type": "portal"
+   },
+   {
+    "url": "https://www.spitogatos.gr/en/for_sale-homes/cyclades/maxprice-50000",
+    "title": "Homes for sale: Cyclades",
+    "type": "portal"
+   }
+  ]
+ },
+ {
+  "query": "cheap property in greece",
+  "country": "uk",
+  "ai_overview": true,
+  "top": [
+   {
+    "url": "https://www.aplaceinthesun.com/property/greece/cheap-properties",
+    "title": "Cheap properties for sale in Greece",
+    "type": "portal"
+   },
+   {
+    "url": "https://www.holprop.com/sale/pt/property/scr/greece/price/50000/",
+    "title": "Under €50k Property for sale in Greece, (13286) Greek ...",
+    "type": "other"
+   },
+   {
+    "url": "https://www.rightmove.co.uk/overseas-property/in-Greece.html",
+    "title": "Find properties for sale in Greece",
+    "type": "portal"
+   },
+   {
+    "url": "https://www.instagram.com/cheappropertygreece/?hl=en-gb",
+    "title": "Cheap Property Greece (@cheappropertygreece)",
+    "type": "forum"
+   },
+   {
+    "url": "https://realting.com/greece/houses/cheap",
+    "title": "Cheap houses for sale in Greece",
+    "type": "other"
+   },
+   {
+    "url": "https://www.properstar.co.uk/greece/buy/house/price-low-to-high",
+    "title": "6,027 Cheap Houses for Sale in Greece - Properstar",
+    "type": "portal"
+   },
+   {
+    "url": "https://www.youroverseashome.com/greece/articles/greek-islands-with-cheaper-property-prices/",
+    "title": "Affordable Greek islands to buy property",
+    "type": "other"
+   },
+   {
+    "url": "https://www.youtube.com/watch?v=7-Nr20u8mvU",
+    "title": "7 Affordable Homes for Sale in Greece – From €45000 to €60000!",
+    "type": "forum"
+   },
+   {
+    "url": "https://www.briansgreekproperty.co.uk/Low Price Properties.html",
+    "title": "Low Priced Properties",
+    "type": "other"
+   }
+  ]
+ },
+ {
+  "query": "cheap property in greece",
+  "country": "us",
+  "ai_overview": true,
+  "top": [
+   {
+    "url": "https://www.holprop.com/sale/pt/property/scr/greece/price/50000/",
+    "title": "Under €50k Property for sale in Greece, (13286) Greek ...",
+    "type": "other"
+   },
+   {
+    "url": "https://realting.com/greece/houses/cheap",
+    "title": "Cheap houses for sale in Greece",
+    "type": "other"
+   },
+   {
+    "url": "https://www.instagram.com/cheappropertygreece/?hl=en",
+    "title": "Cheap Property Greece (@cheappropertygreece)",
+    "type": "forum"
+   },
+   {
+    "url": "https://www.properstar.com/greece/buy/house/price-low-to-high",
+    "title": "6,037 Cheap Homes for Sale in Greece - Properstar",
+    "type": "portal"
+   },
+   {
+    "url": "https://www.youtube.com/watch?v=EuRzM6nrqPo",
+    "title": "Affordable GREEK island Properties from $68K! 2026",
+    "type": "forum"
+   },
+   {
+    "url": "https://www.aplaceinthesun.com/property/greece",
+    "title": "Property for sale in Greece",
+    "type": "portal"
+   },
+   {
+    "url": "https://www.youroverseashome.com/greece/advice/greece-find-affordable-home/",
+    "title": "How to find an affordable home in Greece",
+    "type": "other"
+   },
+   {
+    "url": "https://www.greekexclusiveproperties.com/property-feature/reduced/",
+    "title": "Reduced Price Properties in Greece!",
+    "type": "other"
+   },
+   {
+    "url": "https://www.instagram.com/affordable_greek_island_homes/?hl=en",
+    "title": "Affordable Greek Island Homes (@ ...",
+    "type": "forum"
+   }
+  ]
+ },
+ {
+  "query": "buy property crete greece",
+  "country": "uk",
+  "ai_overview": true,
+  "top": [
+   {
+    "url": "https://www.rightmove.co.uk/overseas-property-for-sale/Crete.html",
+    "title": "Properties For Sale in Crete, Greece",
+    "type": "portal"
+   },
+   {
+    "url": "https://www.aplaceinthesun.com/property/greece/crete",
+    "title": "Property for sale in Crete, Greece",
+    "type": "portal"
+   },
+   {
+    "url": "https://www.zoopla.co.uk/overseas/property/greece/crete/",
+    "title": "Property for sale in Crete, Greece",
+    "type": "portal"
+   },
+   {
+    "url": "https://aplaceincrete.co.uk/for-sale/",
+    "title": "For Sale",
+    "type": "other"
+   },
+   {
+    "url": "https://www.spitogatos.gr/en/for_sale-homes/crete",
+    "title": "Homes for sale: Crete",
+    "type": "portal"
+   },
+   {
+    "url": "https://www.crete-homes.com/",
+    "title": "Crete Homes | Property in Crete | Buy | Sell | Build",
+    "type": "other"
+   },
+   {
+    "url": "https://www.elizabethestateagency.com/en/akinita/",
+    "title": "Houses for Sale in Chania, Crete",
+    "type": "other"
+   },
+   {
+    "url": "https://search.savills.com/list/property-for-sale/greece/crete",
+    "title": "Property for sale in Crete, Greece | Savills",
+    "type": "other"
+   },
+   {
+    "url": "https://buyandsell.gr/",
+    "title": "Buy and Sell Real Estate Crete – Buy or sell your property in ...",
+    "type": "other"
+   }
+  ]
+ },
+ {
+  "query": "buy property crete greece",
+  "country": "us",
+  "ai_overview": true,
+  "top": [
+   {
+    "url": "https://www.greekexclusiveproperties.com/villas-and-homes-in-crete/",
+    "title": "Properties for Sale in Crete",
+    "type": "other"
+   },
+   {
+    "url": "https://www.crete-homes.com/",
+    "title": "Crete Homes | Property in Crete | Buy | Sell | Build",
+    "type": "other"
+   },
+   {
+    "url": "https://www.aplaceinthesun.com/property/greece/crete",
+    "title": "Property for sale in Crete, Greece",
+    "type": "portal"
+   },
+   {
+    "url": "https://www.realestate.com.au/international/gr/crete-crete/",
+    "title": "Property for Sale in Crete Region, Crete",
+    "type": "portal"
+   },
+   {
+    "url": "https://www.green-acres.gr/property-for-sale/crete",
+    "title": "Real estate Crete: 2041 properties and houses for sale",
+    "type": "other"
+   },
+   {
+    "url": "https://www.zoopla.co.uk/overseas/property/greece/crete/",
+    "title": "Property for sale in Crete, Greece",
+    "type": "portal"
+   },
+   {
+    "url": "https://properties.lefigaro.com/announces/luxury-real estate-crete-greece/",
+    "title": "luxury real estate for sale Crete, Greece - Le Figaro Properties",
+    "type": "other"
+   },
+   {
+    "url": "https://www.grekodom.com/area/6",
+    "title": "Real Estate - Crete (Greece) - for sale - villas, apartments ...",
+    "type": "other"
+   },
+   {
+    "url": "https://www.properstar.com/greece/crete-region/buy/house/price-low-to-high",
+    "title": "1,161 Cheap Homes for Sale in Crete Island | Properstar",
+    "type": "portal"
+   }
+  ]
+ },
+ {
+  "query": "property for sale in paxos greece",
+  "country": "uk",
+  "ai_overview": false,
+  "top": [
+   {
+    "url": "https://www.rightmove.co.uk/overseas-property-for-sale/Paxos-234664.html",
+    "title": "Properties For Sale in Paxos, Greece",
+    "type": "portal"
+   },
+   {
+    "url": "https://paxosproperties.com/",
+    "title": "Paxos Properties Greece - Real Estate and Constructions ...",
+    "type": "other"
+   },
+   {
+    "url": "https://www.ioniancollection.com/all-properties-for-sale/in/paxos",
+    "title": "All Properties For Sale In Paxos",
+    "type": "other"
+   },
+   {
+    "url": "https://www.paxos-constructions.com/houses-for-sale-in-Paxos-Island-Greece",
+    "title": "FOR SALE HOUSES - Paxos real estate office P.L.C. ...",
+    "type": "other"
+   },
+   {
+    "url": "https://www.spitogatos.gr/en/for_sale-homes/paxoi",
+    "title": "Homes for sale: Paxoi (Corfu Prefecture)",
+    "type": "portal"
+   },
+   {
+    "url": "https://sothebysrealty.gr/areas/paxos/",
+    "title": "Paxos Luxury Villas for sale",
+    "type": "portal"
+   },
+   {
+    "url": "https://www.jmproperty.com/",
+    "title": "Paxos Properties for Sale &amp;amp; Constructions Project Management",
+    "type": "other"
+   },
+   {
+    "url": "https://www.meretdemeures.com/en/property/europe/greece/ionian-islands/seaside-property-for sale-nisos paxoi/",
+    "title": "Houses and apartments for sale in Paxos",
+    "type": "other"
+   },
+   {
+    "url": "https://www.realgreece.net/search?sortby=EditedAt_Asc&amp;map=yes&amp;purpose=1&amp;area=879294668&amp;lng=en&amp;p=1",
+    "title": "Sales - Paxos - Real Greece Real Estate Network",
+    "type": "other"
+   },
+   {
+    "url": "https://www.lithosrealestate.com/",
+    "title": "Properties For Sale in Paxos, Greece - Lithos Real Estate ...",
+    "type": "portal"
+   }
+  ]
+ },
+ {
+  "query": "property for sale in paxos greece",
+  "country": "us",
+  "ai_overview": false,
+  "top": [
+   {
+    "url": "https://paxosproperties.com/",
+    "title": "Paxos Properties Greece - Real Estate and Constructions ...",
+    "type": "other"
+   },
+   {
+    "url": "https://www.rightmove.co.uk/overseas-property-for-sale/Paxos-234664.html",
+    "title": "Properties For Sale in Paxos, Greece",
+    "type": "portal"
+   },
+   {
+    "url": "https://sothebysrealty.gr/areas/paxos/",
+    "title": "Paxos Luxury Villas for sale",
+    "type": "portal"
+   },
+   {
+    "url": "https://properties.lefigaro.com/announces/house-real estate-ionian islands-greece/?ville=paxos&amp;option=vue sur mer",
+    "title": "luxury houses with sea view for sale Paxos, Greece",
+    "type": "other"
+   },
+   {
+    "url": "https://www.paxos-constructions.com/houses-for-sale-in-Paxos-Island-Greece",
+    "title": "FOR SALE HOUSES - Paxos real estate office P.L.C. ...",
+    "type": "other"
+   },
+   {
+    "url": "https://www.spitogatos.gr/en/for_sale-homes/paxoi",
+    "title": "Homes for sale: Paxoi (Corfu Prefecture)",
+    "type": "portal"
+   },
+   {
+    "url": "https://www.meretdemeures.com/en/property/europe/greece/ionian-islands/seaside-property-for sale-nisos paxoi/",
+    "title": "Houses and apartments for sale in Paxos",
+    "type": "other"
+   },
+   {
+    "url": "https://www.jamesedition.com/real_estate/mountain-view--municipality-of-paxos-greece",
+    "title": "Luxury mountain view homes for sale in Paxos ...",
+    "type": "portal"
+   },
+   {
+    "url": "https://www.ioniancollection.com/all-properties-for-sale/in/paxos",
+    "title": "All Properties For Sale In Paxos",
+    "type": "other"
+   },
+   {
+    "url": "https://realting.com/greece/demos-paxon/houses/seaview",
+    "title": "Beach houses for sale in Municipality of Paxos, Greece",
+    "type": "other"
+   }
+  ]
+ },
+ {
+  "query": "property for sale in lefkada greece",
+  "country": "uk",
+  "ai_overview": true,
+  "top": [
+   {
+    "url": "https://www.rightmove.co.uk/overseas-property-for-sale/Lefkada.html",
+    "title": "Properties For Sale in Lefkada, Greece",
+    "type": "portal"
+   },
+   {
+    "url": "https://www.spitogatos.gr/en/for_sale-homes/prefecture-lefkada",
+    "title": "Homes for sale: Lefkada Prefecture",
+    "type": "portal"
+   },
+   {
+    "url": "https://www.aplaceinthesun.com/property/greece/ionian-islands/lefkas",
+    "title": "Property for sale in Lefkas, Greece",
+    "type": "portal"
+   },
+   {
+    "url": "https://www.zoopla.co.uk/overseas/property/greece/ionian-islands/lefkada/",
+    "title": "Property for sale in Lefkada, Ionian Islands, Greece",
+    "type": "portal"
+   },
+   {
+    "url": "https://lefkasrealestate.gr/",
+    "title": "Lefkas Real Estate - Properties in Lefkada island",
+    "type": "other"
+   },
+   {
+    "url": "https://www.green-acres.gr/property-for-sale/lefkada",
+    "title": "Real estate Lefkada: 190 properties and houses for sale",
+    "type": "other"
+   },
+   {
+    "url": "https://search.savills.com/list/property-for-sale/greece/ionian-islands/lefkada",
+    "title": "Property for sale in Lefkada, Ionian Islands, Greece | Savills",
+    "type": "other"
+   },
+   {
+    "url": "https://www.meretdemeures.com/en/property/europe/greece/ionian-islands/seaside-property-for sale-lefkada/",
+    "title": "Houses and apartments for sale in Lefkada",
+    "type": "other"
+   },
+   {
+    "url": "https://pandev.net/archives/property_status/for-sale/page/2",
+    "title": "Properties listed in For Sale - Lefkada",
+    "type": "other"
+   }
+  ]
+ },
+ {
+  "query": "property for sale in lefkada greece",
+  "country": "us",
+  "ai_overview": true,
+  "top": [
+   {
+    "url": "https://www.green-acres.gr/property-for-sale/lefkada",
+    "title": "Real estate Lefkada: 190 properties and houses for sale",
+    "type": "other"
+   },
+   {
+    "url": "https://www.spitogatos.gr/en/for_sale-homes/prefecture-lefkada",
+    "title": "Homes for sale: Lefkada Prefecture",
+    "type": "portal"
+   },
+   {
+    "url": "https://lefkasrealestate.gr/",
+    "title": "Lefkas Real Estate - Properties in Lefkada island",
+    "type": "other"
+   },
+   {
+    "url": "https://www.realestate.com.au/international/gr/lefkada/house/p24//",
+    "title": "Houses for Sale in Lefkada, Peloponnese, Western Greece ...",
+    "type": "portal"
+   },
+   {
+    "url": "https://www.zoopla.co.uk/overseas/property/greece/ionian-islands/lefkada/",
+    "title": "Property for sale in Lefkada, Ionian Islands, Greece",
+    "type": "portal"
+   },
+   {
+    "url": "https://www.greekexclusiveproperties.com/property-city/lefkada/",
+    "title": "Luxury Villas &amp;amp; Houses for Sale in Lefkada | Prices &amp;amp; Guide",
+    "type": "other"
+   },
+   {
+    "url": "https://properties.lefigaro.com/announces/luxury-real estate-ionian islands-greece/?ville=leucade",
+    "title": "luxury real estate for sale Lefkada, Greece - Le Figaro Properties",
+    "type": "other"
+   },
+   {
+    "url": "https://www.meretdemeures.com/en/property/europe/greece/ionian-islands/seaside-property-for sale-lefkada/",
+    "title": "Houses and apartments for sale in Lefkada",
+    "type": "other"
+   },
+   {
+    "url": "https://www.greekpropertyfinder.gr/sales?location=703",
+    "title": "Property Sales, Lefkada",
+    "type": "other"
+   }
+  ]
+ },
+ {
+  "query": "property for sale rhodes island greece",
+  "country": "uk",
+  "ai_overview": true,
+  "top": [
+   {
+    "url": "https://www.rightmove.co.uk/overseas-property-for-sale/Rhodes.html",
+    "title": "Properties For Sale in Rhodes, Greece",
+    "type": "portal"
+   },
+   {
+    "url": "https://www.spitogatos.gr/en/for_sale-homes/rhodes",
+    "title": "Homes for sale: Rhodes (Dodecanese)",
+    "type": "portal"
+   },
+   {
+    "url": "https://www.facebook.com/groups/224418607516/?locale=en_GB",
+    "title": "Homes and Property for Sale in Rhodes Greece.",
+    "type": "forum"
+   },
+   {
+    "url": "https://www.aplaceinthesun.com/property/greece/aegean-islands/rhodes",
+    "title": "Property for sale in Rhodes, Greece",
+    "type": "portal"
+   },
+   {
+    "url": "https://www.greekexclusiveproperties.com/property-city/rhodes/",
+    "title": "Luxury Villas for Sale in Rhodes, Greece",
+    "type": "other"
+   },
+   {
+    "url": "https://www.realgreece.net/search?purpose=1&amp;subarea=&amp;area=1135532971&amp;subcategory=1399895070&amp;price=0;1000000&amp;lng=en&amp;p=2",
+    "title": "Detached houses for Sale - Rhodes Page 2",
+    "type": "other"
+   },
+   {
+    "url": "https://sothebysrealty.gr/guides/rhodes/",
+    "title": "Rhodes",
+    "type": "portal"
+   },
+   {
+    "url": "https://www.zoopla.co.uk/overseas/property/greece/south-aegean/rhodes-islands/",
+    "title": "Property for sale in Rhodes Islands, South Aegean, Greece",
+    "type": "portal"
+   },
+   {
+    "url": "https://www.engelvoelkers.com/gr/en/buy/rhodes",
+    "title": "Properties for sale in Dodecanese",
+    "type": "portal"
+   }
+  ]
+ },
+ {
+  "query": "property for sale rhodes island greece",
+  "country": "us",
+  "ai_overview": true,
+  "top": [
+   {
+    "url": "https://www.greekexclusiveproperties.com/property-city/rhodes/",
+    "title": "Luxury Villas for Sale in Rhodes, Greece",
+    "type": "other"
+   },
+   {
+    "url": "https://www.properstar.com/greece/rhodes/buy",
+    "title": "Rhodes Properties for Sale - 76 Listings - Properstar",
+    "type": "portal"
+   },
+   {
+    "url": "https://www.spitogatos.gr/en/for_sale-homes/rhodes",
+    "title": "Homes for sale: Rhodes (Dodecanese)",
+    "type": "portal"
+   },
+   {
+    "url": "https://www.realestate.com.au/international/gr/rhodes-aegean/",
+    "title": "Property for Sale in Rhodes, Aegean",
+    "type": "portal"
+   },
+   {
+    "url": "https://www.facebook.com/groups/224418607516/",
+    "title": "Homes and Property for Sale in Rhodes Greece.",
+    "type": "forum"
+   },
+   {
+    "url": "https://www.engelvoelkers.com/gr/en/buy/rhodes",
+    "title": "Properties for sale in Dodecanese",
+    "type": "portal"
+   },
+   {
+    "url": "https://sothebysrealty.gr/guides/rhodes/",
+    "title": "Rhodes",
+    "type": "portal"
+   },
+   {
+    "url": "https://properties.lefigaro.com/announces/luxury-real estate-southern aegean-greece/?ville=rhodes",
+    "title": "luxury real estate for sale Rhodes, Greece - Le Figaro Properties",
+    "type": "other"
+   },
+   {
+    "url": "https://www.realgreece.net/search?sortby=m2_Asc&amp;purpose=1&amp;subarea=&amp;area=1135532971&amp;subcategory=1399895070&amp;price=0;1000000&amp;lng=en&amp;p=1",
+    "title": "Detached houses for Sale - Rhodes",
+    "type": "other"
+   }
+  ]
+ }
+]

@@ -63,4 +63,35 @@ export const collections = {
     loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/news' }),
     schema: articleSchema,
   }),
+  /**
+   * Relocation branch. The audit of 7 September 2026 measured 7,990 impressions a
+   * month in the "life" cluster (cost of living, moving, retiring) and the site had
+   * no page for any of it. The collection keeps one `overview` entry that the hub
+   * index renders, so the hub is a real answer page rather than a list of links.
+   */
+  /**
+   * The Golden Visa hub's body. It lives here rather than inline in
+   * src/pages/golden-visa/index.astro because prose written into an .astro file is
+   * invisible to every quality gate on this site: qa-audit, geo-score and the
+   * cannibalisation checker all read src/content. The hub had a quick answer, a
+   * tier table and six curated card sections, and no body at all between them.
+   */
+  'golden-visa': defineCollection({
+    loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/golden-visa' }),
+    schema: articleSchema,
+  }),
+  /**
+   * Commercial branch. The audit measured 75,700 impressions a month in the
+   * property cluster, 74% of the whole English-language market, and the site had
+   * no page for any of it: /areas/{city}-property-investment/ targets a phrasing
+   * that returned zero volume on all 70 geographies checked.
+   */
+  'property-for-sale': defineCollection({
+    loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/property-for-sale' }),
+    schema: articleSchema,
+  }),
+  'living-in-greece': defineCollection({
+    loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/living-in-greece' }),
+    schema: articleSchema,
+  }),
 };

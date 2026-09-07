@@ -1,0 +1,67 @@
+---
+export const prerender = true;
+import { getCollection, render } from 'astro:content';
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+import ContentCard from '../../components/ContentCard.astro';
+import { SITE } from '../../data/site';
+import { readingMinutes } from '../../lib/readingTime';
+
+/**
+ * Hub for the living-in-greece cluster.
+ *
+ * This is a page first and a directory second. The audit of 7 September 2026
+ * found the site's existing hub, /golden-visa/, was a list of links to 20+ guides
+ * and ranked for nothing, while a competitor took three first places in the US
+ * with a single deep document. So the hub renders its own `overview` entry as the
+ * answer, and only then offers the children as further reading.
+ */
+const entries = await getCollection('living-in-greece');
+const overview = entries.find((e) => e.id === 'overview');
+if (!overview) {
+  throw new Error(
+    "src/content/living-in-greece/overview.mdx is missing: the hub has no body to render."
+  );
+}
+const { Content } = await render(overview);
+const children = entries
+  .filter((e) => e.id !== 'overview' && !e.data.noindex)
+  .sort((a, b) => a.data.title.localeCompare(b.data.title));
+
+const hubUrl = `${SITE.url}/living-in-greece/`;
+const d = overview.data;
+---
+<ArticleLayout
+  title={d.title}
+  description={d.description}
+  pubDate={d.pubDate}
+  updatedDate={d.updatedDate}
+  author={d.author}
+  readingTime={readingMinutes(overview.body ?? "")}
+  heroImage={d.heroImage}
+  heroAlt={d.heroAlt}
+  faq={d.faq}
+  noindex={d.noindex}
+  hasInlineFaqBlock={overview.body?.includes('<FaqBlock') ?? false}
+  contextLabel={d.title}
+  related={[]}
+  canonical={hubUrl}
+>
+  <Content />
+
+  {children.length > 0 && (
+    <section class="not-prose mt-14">
+      <h2 class="text-2xl font-semibold mb-6">Practical guides</h2>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-7 gap-y-10">
+        {children.map((c) => (
+          <ContentCard
+            href={`/living-in-greece/${c.id}/`}
+            title={c.data.title}
+            description={c.data.description}
+            image={c.data.heroImage}
+            meta={`${readingMinutes(c.body ?? "")} min read`}
+          />
+        ))}
+      </div>
+    </section>
+  )}
+</ArticleLayout>

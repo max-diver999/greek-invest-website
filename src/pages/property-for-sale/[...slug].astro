@@ -11,7 +11,7 @@ export async function getStaticPaths() {
   // `overview` is rendered by the hub index at the collection root, so it must
   // not also get its own /<collection>/overview/ URL, which would be two pages
   // on one cluster, the exact cannibalisation this branch exists to remove.
-  const items = (await getCollection('living-in-greece')).filter((e) => e.id !== 'overview');
+  const items = (await getCollection('property-for-sale')).filter((e) => e.id !== 'overview');
   return items.map((entry) => ({
     params: { slug: entry.id },
     props: { entry },
@@ -49,7 +49,7 @@ const {
   {hasInlineFaqBlock}
   contextLabel={title}
   {related}
-  canonical={`${SITE.url}/living-in-greece/${entry.id}/`}
+  canonical={`${SITE.url}/property-for-sale/${entry.id}/`}
 >
   <Content />
 </ArticleLayout>

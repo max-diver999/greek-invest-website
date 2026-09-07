@@ -7,7 +7,7 @@ import { SITE } from '../../data/site';
 import { readingMinutes } from '../../lib/readingTime';
 
 /**
- * Hub for the living-in-greece cluster.
+ * Hub for the property-for-sale cluster.
  *
  * This is a page first and a directory second. The audit of 7 September 2026
  * found the site's existing hub, /golden-visa/, was a list of links to 20+ guides
@@ -15,11 +15,11 @@ import { readingMinutes } from '../../lib/readingTime';
  * with a single deep document. So the hub renders its own `overview` entry as the
  * answer, and only then offers the children as further reading.
  */
-const entries = await getCollection('living-in-greece');
+const entries = await getCollection('property-for-sale');
 const overview = entries.find((e) => e.id === 'overview');
 if (!overview) {
   throw new Error(
-    "src/content/living-in-greece/overview.mdx is missing: the hub has no body to render."
+    "src/content/property-for-sale/overview.mdx is missing: the hub has no body."
   );
 }
 const { Content } = await render(overview);
@@ -27,7 +27,7 @@ const children = entries
   .filter((e) => e.id !== 'overview' && !e.data.noindex)
   .sort((a, b) => a.data.title.localeCompare(b.data.title));
 
-const hubUrl = `${SITE.url}/living-in-greece/`;
+const hubUrl = `${SITE.url}/property-for-sale/`;
 const d = overview.data;
 ---
 <ArticleLayout
@@ -50,11 +50,11 @@ const d = overview.data;
 
   {children.length > 0 && (
     <section class="not-prose mt-14">
-      <h2 class="text-2xl font-semibold mb-6">Practical guides</h2>
+      <h2 class="text-2xl font-semibold mb-6">Island and city markets in detail</h2>
       <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-7 gap-y-10">
         {children.map((c) => (
           <ContentCard
-            href={`/living-in-greece/${c.id}/`}
+            href={`/property-for-sale/${c.id}/`}
             title={c.data.title}
             description={c.data.description}
             image={c.data.heroImage}

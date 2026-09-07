@@ -718,6 +718,78 @@
       "statement": "Gross long-let yield for Chania Prefecture, Crete, derived on this site by dividing annualised asking rent of EUR 9.79 per square metre per month by the asking price of EUR 2,935 per square metre for the same prefecture and the same reference month. An asking-on-asking figure, gross of tax, assuming year-round letting. It is the only Crete yield this site quotes, because Chania is the only prefecture where both sides of the calculation are published for the same period.",
       "source": "DERIVED ON THIS SITE from two Indomio.gr asking figures (COMMERCIAL SOURCE, NOT OFFICIAL STATISTICS), Chania Prefecture, reference August 2025, retrieved 7 September 2026. Method shown in full at /property-for-sale/crete/",
       "asOf": "2026-09-07"
+    },
+    {
+      "figure": "4.8%",
+      "statement": "Gross rental yield in Patras, the second-highest of the six major Greek cities in the Global Property Guide series.",
+      "source": "Global Property Guide, Greece rental yields, six-city survey, November 2025",
+      "asOf": "2026-09-07"
+    },
+    {
+      "figure": "4.4%",
+      "statement": "Gross rental yield in Thessaloniki, level with the national average and well below the 5% to 6.5% widely quoted in property marketing.",
+      "source": "Global Property Guide, Greece rental yields, six-city survey, November 2025",
+      "asOf": "2026-09-07"
+    },
+    {
+      "figure": "4.2%",
+      "statement": "Gross rental yield in Heraklion, Crete, and also in Volos. It is the only published city-level yield for Crete, and it corroborates the 4.0% derived independently for Chania Prefecture from asking data.",
+      "source": "Global Property Guide, Greece rental yields, six-city survey, November 2025",
+      "asOf": "2026-09-07"
+    },
+    {
+      "figure": "6%",
+      "statement": "Approximate gross rental yield in central Athens, above the 5.4% Athens city-wide average.",
+      "source": "SECONDARY SOURCE, COMMERCIAL. Athens sub-market yields compiled from Spitogatos Index Q4 2025 and Indomio November 2025, reported via avlarealestate.com, retrieved 7 September 2026. Sub-market figures are less reliable than the six-city Global Property Guide series.",
+      "asOf": "2026-09-07"
+    },
+    {
+      "figure": "4.9%",
+      "statement": "Approximate gross rental yield in Piraeus.",
+      "source": "SECONDARY SOURCE, COMMERCIAL. Athens sub-market yields compiled from Spitogatos Index Q4 2025 and Indomio November 2025, reported via avlarealestate.com, retrieved 7 September 2026. Sub-market figures are less reliable than the six-city Global Property Guide series.",
+      "asOf": "2026-09-07"
+    },
+    {
+      "figure": "5.0%",
+      "statement": "Approximate gross rental yield in west Athens, Peristeri and comparable districts.",
+      "source": "SECONDARY SOURCE, COMMERCIAL. Athens sub-market yields compiled from Spitogatos Index Q4 2025 and Indomio November 2025, reported via avlarealestate.com, retrieved 7 September 2026. Sub-market figures are less reliable than the six-city Global Property Guide series.",
+      "asOf": "2026-09-07"
+    },
+    {
+      "figure": "3.8% to 4.5%",
+      "statement": "Approximate gross rental yield range in south Athens, the Glyfada to Vouliagmeni coastal strip. Below the Athens city-wide average, because coastal prices are set by the sea rather than by rents.",
+      "source": "SECONDARY SOURCE, COMMERCIAL. Athens sub-market yields compiled from Spitogatos Index Q4 2025 and Indomio November 2025, reported via avlarealestate.com, retrieved 7 September 2026. Sub-market figures are less reliable than the six-city Global Property Guide series.",
+      "asOf": "2026-09-07"
+    },
+    {
+      "figure": "8%",
+      "statement": "Gross rental yield on a one-bedroom apartment in Patisia, Athens, the highest neighbourhood figure in the series. A one-bedroom figure: it cannot be earned on a 120 square metre Golden Visa property.",
+      "source": "Global Property Guide, Greece rental yields, neighbourhood series, November 2025",
+      "asOf": "2026-09-07"
+    },
+    {
+      "figure": "7.3%",
+      "statement": "Gross rental yield on a one-bedroom apartment in Kipseli, Athens. A one-bedroom figure, not achievable on a Golden Visa qualifying property.",
+      "source": "Global Property Guide, Greece rental yields, neighbourhood series, November 2025",
+      "asOf": "2026-09-07"
+    },
+    {
+      "figure": "3.8%",
+      "statement": "Gross rental yield on a three-bedroom apartment in Kolonaki-Lykavittos, Athens. The relevant size class for a 120 square metre Golden Visa property.",
+      "source": "Global Property Guide, Greece rental yields, neighbourhood series, November 2025",
+      "asOf": "2026-09-07"
+    },
+    {
+      "figure": "6.0%",
+      "statement": "Gross rental yield on a one-bedroom apartment in the Voulgari, Ntepo and Martiou corridor of Thessaloniki.",
+      "source": "Global Property Guide, Greece rental yields, neighbourhood series, November 2025",
+      "asOf": "2026-09-07"
+    },
+    {
+      "figure": "3.2%",
+      "statement": "Gross rental yield on a three-bedroom apartment in Toumpa, Thessaloniki. Roughly half the one-bedroom yield in the same city, which is the size effect that Golden Visa underwriting must account for.",
+      "source": "Global Property Guide, Greece rental yields, neighbourhood series, November 2025",
+      "asOf": "2026-09-07"
     }
   ]
 }

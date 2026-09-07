@@ -63,4 +63,14 @@ export const collections = {
     loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/news' }),
     schema: articleSchema,
   }),
+  /**
+   * Relocation branch. The audit of 7 September 2026 measured 7,990 impressions a
+   * month in the "life" cluster (cost of living, moving, retiring) and the site had
+   * no page for any of it. The collection keeps one `overview` entry that the hub
+   * index renders, so the hub is a real answer page rather than a list of links.
+   */
+  'living-in-greece': defineCollection({
+    loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/living-in-greece' }),
+    schema: articleSchema,
+  }),
 };

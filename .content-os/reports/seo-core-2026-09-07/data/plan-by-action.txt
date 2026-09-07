@@ -1,0 +1,141 @@
+
+===== REWRITE (12) =====
+/areas/costa-navarino-property-investment/                     imp= 207 clicks= 3 topic=islands    слаг {city}-property-investment = 0 запросов, перенацелить на "property for sale in X greece"
+/areas/mykonos-property-investment/                            imp=  62 clicks= 0 topic=islands    слаг {city}-property-investment = 0 запросов, перенацелить на "property for sale in X greece"
+/areas/voula-property-investment/                              imp=  38 clicks= 1 topic=athens     слаг {city}-property-investment = 0 запросов, перенацелить на "property for sale in X greece"
+/areas/elounda-property-investment/                            imp=  30 clicks= 1 topic=crete      слаг {city}-property-investment = 0 запросов, перенацелить на "property for sale in X greece"
+/areas/chania-property-investment/                             imp=  27 clicks= 1 topic=crete      слаг {city}-property-investment = 0 запросов, перенацелить на "property for sale in X greece"
+/areas/santorini-property-investment/                          imp=  16 clicks= 0 topic=islands    слаг {city}-property-investment = 0 запросов, перенацелить на "property for sale in X greece"
+/areas/glyfada-property-investment/                            imp=   0 clicks= 0 topic=athens     слаг {city}-property-investment = 0 запросов, перенацелить на "property for sale in X greece"
+/areas/heraklion-property-investment/                          imp=   0 clicks= 0 topic=crete      слаг {city}-property-investment = 0 запросов, перенацелить на "property for sale in X greece"
+/areas/kalamata-property-investment/                           imp=   0 clicks= 0 topic=islands    слаг {city}-property-investment = 0 запросов, перенацелить на "property for sale in X greece"
+/areas/kallithea-property-investment/                          imp=   0 clicks= 0 topic=athens     слаг {city}-property-investment = 0 запросов, перенацелить на "property for sale in X greece"
+/areas/piraeus-property-investment/                            imp=   0 clicks= 0 topic=athens     слаг {city}-property-investment = 0 запросов, перенацелить на "property for sale in X greece"
+/areas/rhodes-property-investment/                             imp=   0 clicks= 0 topic=islands    слаг {city}-property-investment = 0 запросов, перенацелить на "property for sale in X greece"
+
+===== MERGE (52) =====
+/guides/brexit-uk-buyers-greece-property/                      imp=  34 clicks= 0 topic=gv-buyers  /golden-visa/who-can-apply/
+/guides/golden-visa-property-due-diligence-checklist/          imp=  32 clicks= 0 topic=diligence  /guides/buying-property-in-greece/
+/guides/making-offer-greek-property-step-by-step/              imp=  15 clicks= 0 topic=howto      /guides/buying-property-in-greece/
+/guides/paros-antiparos-property-investment/                   imp=   5 clicks= 0 topic=islands    /property-for-sale/
+/guides/greece-golden-visa-australian-buyers/                  imp=   4 clicks= 0 topic=gv-buyers  /golden-visa/who-can-apply/
+/guides/greece-golden-visa-canadian-buyers/                    imp=   4 clicks= 0 topic=gv-buyers  /golden-visa/who-can-apply/
+/guides/nafplio-property-investment-golden-visa/               imp=   4 clicks= 0 topic=islands    /property-for-sale/
+/guides/greece-golden-visa-french-buyers/                      imp=   3 clicks= 0 topic=gv-buyers  /golden-visa/who-can-apply/
+/guides/greece-golden-visa-uae-buyers/                         imp=   2 clicks= 0 topic=gv-buyers  /golden-visa/who-can-apply/
+/guides/greece-golden-visa-us-citizens/                        imp=   2 clicks= 0 topic=gv-buyers  /golden-visa/who-can-apply/
+/guides/greece-golden-visa-indian-buyers/                      imp=   1 clicks= 0 topic=gv-buyers  /golden-visa/who-can-apply/
+/compare/athens-riviera-vs-athens-center-investment/           imp=   0 clicks= 0 topic=athens     /compare/golden-visa-country-comparison/
+/compare/athens-riviera-vs-crete-golden-visa/                  imp=   0 clicks= 0 topic=crete      /compare/golden-visa-country-comparison/
+/compare/athens-vs-thessaloniki-golden-visa-investment/        imp=   0 clicks= 0 topic=athens     /compare/golden-visa-country-comparison/
+/compare/crete-vs-cyclades-property-investment/                imp=   0 clicks= 0 topic=crete      /compare/golden-visa-country-comparison/
+/compare/golden-visa-greece-vs-hungary-guest-investor/         imp=   0 clicks= 0 topic=other      /compare/golden-visa-country-comparison/
+/compare/greece-vs-cape-town-property-investment/              imp=   0 clicks= 0 topic=other      /compare/golden-visa-country-comparison/
+/compare/greece-vs-croatia-property-residency/                 imp=   0 clicks= 0 topic=other      /compare/golden-visa-country-comparison/
+/compare/greece-vs-italy-vs-spain-property-investment/         imp=   0 clicks= 0 topic=other      /compare/golden-visa-country-comparison/
+/compare/greece-vs-malta-permanent-residence-property/         imp=   0 clicks= 0 topic=other      /compare/golden-visa-country-comparison/
+/guides/buy-property-greece-foreigner/                         imp=   0 clicks= 0 topic=howto      /guides/buying-property-in-greece/
+/guides/buy-to-let-greece-guide/                               imp=   0 clicks= 0 topic=yield      /guides/greece-rental-yield-guide/
+/guides/can-foreigners-buy-property-greece/                    imp=   0 clicks= 0 topic=howto      /guides/buying-property-in-greece/
+/guides/cost-of-buying-property-greece/                        imp=   0 clicks= 0 topic=cost       /guides/cost-of-buying-property-in-greece/
+/guides/crete-property-investment-guide/                       imp=   0 clicks= 0 topic=crete      /property-for-sale/crete/
+/guides/cyclades-property-investment-guide/                    imp=   0 clicks= 0 topic=islands    /property-for-sale/
+/guides/greece-7-percent-pension-tax-retirees/                 imp=   0 clicks= 0 topic=tax        /guides/greece-property-taxes/
+/guides/greece-capital-gains-tax-property/                     imp=   0 clicks= 0 topic=tax        /guides/greece-property-taxes/
+/guides/greece-golden-visa-german-buyers/                      imp=   0 clicks= 0 topic=gv-buyers  /golden-visa/who-can-apply/
+/guides/greece-golden-visa-no-short-term-rental/               imp=   0 clicks= 0 topic=yield      /guides/greece-rental-yield-guide/
+/guides/greece-golden-visa-plus-non-dom-strategy/              imp=   0 clicks= 0 topic=tax        /guides/greece-property-taxes/
+/guides/greece-inheritance-tax-foreign-property-owners/        imp=   0 clicks= 0 topic=tax        /guides/greece-property-taxes/
+/guides/greece-new-build-vat-suspension-2026/                  imp=   0 clicks= 0 topic=tax        /guides/greece-property-taxes/
+/guides/greece-non-dom-tax-regime-5a-guide/                    imp=   0 clicks= 0 topic=tax        /guides/greece-property-taxes/
+/guides/greece-objective-value-property-tax/                   imp=   0 clicks= 0 topic=tax        /guides/greece-property-taxes/
+/guides/greece-property-cadastre-check/                        imp=   0 clicks= 0 topic=diligence  /guides/buying-property-in-greece/
+/guides/greece-property-engineer-certificate/                  imp=   0 clicks= 0 topic=diligence  /guides/buying-property-in-greece/
+/guides/greece-property-market-forecast-2026-2027/             imp=   0 clicks= 0 topic=yield      /guides/greece-rental-yield-guide/
+/guides/greece-property-notary-process/                        imp=   0 clicks= 0 topic=diligence  /guides/buying-property-in-greece/
+/guides/greece-property-price-index-by-region-2026/            imp=   0 clicks= 0 topic=cost       /guides/cost-of-buying-property-in-greece/
+/guides/greece-property-scams-avoid/                           imp=   0 clicks= 0 topic=diligence  /guides/buying-property-in-greece/
+/guides/greece-rental-income-tax-non-resident/                 imp=   0 clicks= 0 topic=tax        /guides/greece-property-taxes/
+/guides/greece-tax-changes-2026-law-5246/                      imp=   0 clicks= 0 topic=tax        /guides/greece-property-taxes/
+/guides/how-to-buy-greece-property-remotely/                   imp=   0 clicks= 0 topic=howto      /guides/buying-property-in-greece/
+/guides/off-plan-property-greece-guide/                        imp=   0 clicks= 0 topic=howto      /guides/buying-property-in-greece/
+/guides/off-plan-vs-resale-greece/                             imp=   0 clicks= 0 topic=howto      /guides/buying-property-in-greece/
+/guides/peloponnese-property-investment-guide/                 imp=   0 clicks= 0 topic=islands    /property-for-sale/
+/guides/resale-property-greece-checklist-foreigner/            imp=   0 clicks= 0 topic=howto      /guides/buying-property-in-greece/
+/guides/short-term-rental-greece-rules/                        imp=   0 clicks= 0 topic=yield      /guides/greece-rental-yield-guide/
+/guides/snagging-inspection-greece-new-build/                  imp=   0 clicks= 0 topic=diligence  /guides/buying-property-in-greece/
+/guides/thessaloniki-property-investment-guide/                imp=   0 clicks= 0 topic=islands    /property-for-sale/
+/guides/turkish-buyers-greece-property/                        imp=   0 clicks= 0 topic=gv-buyers  /golden-visa/who-can-apply/
+
+===== DEMOTE (43) =====
+/guides/best-regions-invest-greece-property-2026/              imp=  25 clicks= 0 topic=other      0 кликов и <50 показов за 90 дней; оставить для AI-ретрива, вывести из основного графа ссылок
+/guides/can-you-sell-property-after-golden-visa-greece/        imp=  22 clicks= 0 topic=other      0 кликов и <50 показов за 90 дней; оставить для AI-ретрива, вывести из основного графа ссылок
+/guides/greece-property-pink-slip-foreign-buyers/              imp=  11 clicks= 0 topic=other      0 кликов и <50 показов за 90 дней; оставить для AI-ретрива, вывести из основного графа ссылок
+/guides/thessaloniki-golden-visa-800000-property/              imp=   8 clicks= 0 topic=gv-tiers   0 кликов и <50 показов за 90 дней; оставить для AI-ретрива, вывести из основного графа ссылок
+/guides/greece-property-insurance-foreign-buyers/              imp=   4 clicks= 0 topic=other      0 кликов и <50 показов за 90 дней; оставить для AI-ретрива, вывести из основного графа ссылок
+/guides/golden-visa-greece-bank-transfer-proof-funds/          imp=   3 clicks= 0 topic=other      0 кликов и <50 показов за 90 дней; оставить для AI-ретрива, вывести из основного графа ссылок
+/developers/adonis-group/                                      imp=   0 clicks= 0 topic=other      навигационный слой, спрос по именам проектов 10-20/мес
+/developers/greca-developments/                                imp=   0 clicks= 0 topic=other      навигационный слой, спрос по именам проектов 10-20/мес
+/developers/secland-development/                               imp=   0 clicks= 0 topic=other      навигационный слой, спрос по именам проектов 10-20/мес
+/developers/solena-greece/                                     imp=   0 clicks= 0 topic=other      навигационный слой, спрос по именам проектов 10-20/мес
+/guides/athens-golden-visa-800000-areas/                       imp=   0 clicks= 0 topic=athens     0 кликов и <50 показов за 90 дней; оставить для AI-ретрива, вывести из основного графа ссылок
+/guides/athens-property-investment-guide/                      imp=   0 clicks= 0 topic=athens     0 кликов и <50 показов за 90 дней; оставить для AI-ретрива, вывести из основного графа ссылок
+/guides/athens-short-term-rental-moratorium-2026/              imp=   0 clicks= 0 topic=athens     0 кликов и <50 показов за 90 дней; оставить для AI-ретрива, вывести из основного графа ссылок
+/guides/athens-suburbs-golden-visa-800000-guide/               imp=   0 clicks= 0 topic=athens     0 кликов и <50 показов за 90 дней; оставить для AI-ретрива, вывести из основного графа ссылок
+/guides/budget-golden-visa-property-under-450000-greece/       imp=   0 clicks= 0 topic=gv-tiers   0 кликов и <50 показов за 90 дней; оставить для AI-ретрива, вывести из основного графа ссылок
+/guides/cheapest-golden-visa-property-greece-2026/             imp=   0 clicks= 0 topic=other      0 кликов и <50 показов за 90 дней; оставить для AI-ретрива, вывести из основного графа ссылок
+/guides/ellinikon-athens-property-investment/                  imp=   0 clicks= 0 topic=athens     0 кликов и <50 показов за 90 дней; оставить для AI-ретрива, вывести из основного графа ссылок
+/guides/golden-visa-greece-timeline-2026-realistic/            imp=   0 clicks= 0 topic=gv-process 0 кликов и <50 показов за 90 дней; оставить для AI-ретрива, вывести из основного графа ссылок
+/guides/golden-visa-lawyer-greece-complete-guide/              imp=   0 clicks= 0 topic=other      0 кликов и <50 показов за 90 дней; оставить для AI-ретрива, вывести из основного графа ссылок
+/guides/golden-visa-parents-dependents-included/               imp=   0 clicks= 0 topic=gv-family  0 кликов и <50 показов за 90 дней; оставить для AI-ретрива, вывести из основного графа ссылок
+/guides/greece-afm-tax-number-property/                        imp=   0 clicks= 0 topic=other      0 кликов и <50 показов за 90 дней; оставить для AI-ретрива, вывести из основного графа ссылок
+/guides/greece-golden-visa-250000-conversion-route/            imp=   0 clicks= 0 topic=gv-tiers   0 кликов и <50 показов за 90 дней; оставить для AI-ретрива, вывести из основного графа ссылок
+/guides/greece-golden-visa-250k-heritage-restoration/          imp=   0 clicks= 0 topic=gv-tiers   0 кликов и <50 показов за 90 дней; оставить для AI-ретрива, вывести из основного графа ссылок
+/guides/greece-golden-visa-350k-fund-route/                    imp=   0 clicks= 0 topic=gv-tiers   0 кликов и <50 показов за 90 дней; оставить для AI-ретрива, вывести из основного графа ссылок
+/guides/greece-golden-visa-circular-2026-explained/            imp=   0 clicks= 0 topic=gv-process 0 кликов и <50 показов за 90 дней; оставить для AI-ретрива, вывести из основного графа ссылок
+/guides/greece-golden-visa-mistakes-avoid/                     imp=   0 clicks= 0 topic=gv-process 0 кликов и <50 показов за 90 дней; оставить для AI-ретрива, вывести из основного графа ссылок
+/guides/greece-golden-visa-property-guide-2026/                imp=   0 clicks= 0 topic=other      0 кликов и <50 показов за 90 дней; оставить для AI-ретрива, вывести из основного графа ссылок
+/guides/greece-golden-visa-property-tiers-2026/                imp=   0 clicks= 0 topic=gv-tiers   0 кликов и <50 показов за 90 дней; оставить для AI-ретрива, вывести из основного графа ссылок
+/guides/greece-golden-visa-renewal-requirements/               imp=   0 clicks= 0 topic=gv-process 0 кликов и <50 показов за 90 дней; оставить для AI-ретрива, вывести из основного графа ссылок
+/guides/greece-golden-visa-statistics-2026/                    imp=   0 clicks= 0 topic=other      0 кликов и <50 показов за 90 дней; оставить для AI-ретрива, вывести из основного графа ссылок
+/guides/greece-golden-visa-timeline-application-2026/          imp=   0 clicks= 0 topic=gv-process 0 кликов и <50 показов за 90 дней; оставить для AI-ретрива, вывести из основного графа ссылок
+/guides/greece-golden-visa-without-property/                   imp=   0 clicks= 0 topic=other      0 кликов и <50 показов за 90 дней; оставить для AI-ретрива, вывести из основного графа ссылок
+/guides/greece-property-investment-guide/                      imp=   0 clicks= 0 topic=other      0 кликов и <50 показов за 90 дней; оставить для AI-ретрива, вывести из основного графа ссылок
+/guides/non-resident-mortgage-greece/                          imp=   0 clicks= 0 topic=other      0 кликов и <50 показов за 90 дней; оставить для AI-ретрива, вывести из основного графа ссылок
+/projects/3s-athens/                                           imp=   0 clicks= 0 topic=athens     навигационный слой, спрос по именам проектов 10-20/мес
+/projects/argyroupoli/                                         imp=   0 clicks= 0 topic=athens     навигационный слой, спрос по именам проектов 10-20/мес
+/projects/artis-9-living/                                      imp=   0 clicks= 0 topic=life       навигационный слой, спрос по именам проектов 10-20/мес
+/projects/ela-antiparos/                                       imp=   0 clicks= 0 topic=islands    навигационный слой, спрос по именам проектов 10-20/мес
+/projects/ela-suites-kastella/                                 imp=   0 clicks= 0 topic=other      навигационный слой, спрос по именам проектов 10-20/мес
+/projects/ela-tinos/                                           imp=   0 clicks= 0 topic=other      навигационный слой, спрос по именам проектов 10-20/мес
+/projects/evripidou-piraeus/                                   imp=   0 clicks= 0 topic=athens     навигационный слой, спрос по именам проектов 10-20/мес
+/projects/lotus-voula/                                         imp=   0 clicks= 0 topic=athens     навигационный слой, спрос по именам проектов 10-20/мес
+/projects/the-grandline/                                       imp=   0 clicks= 0 topic=other      навигационный слой, спрос по именам проектов 10-20/мес
+
+===== KEEP (26) =====
+/guides/greece-rental-yield-guide/                             imp= 988 clicks= 0 topic=yield      есть клики или живые показы
+/guides/enfia-property-tax-greece/                             imp= 790 clicks= 3 topic=tax        есть клики или живые показы
+/guides/hidden-costs-buying-property-greece/                   imp= 640 clicks= 0 topic=cost       есть клики или живые показы
+/guides/greece-golden-visa-lawyer-cost/                        imp= 289 clicks= 1 topic=cost       есть клики или живые показы
+/guides/greece-golden-visa-120-square-meter-rule/              imp= 265 clicks= 2 topic=other      есть клики или живые показы
+/guides/due-diligence-greece-property/                         imp= 264 clicks= 0 topic=diligence  есть клики или живые показы
+/guides/greece-golden-visa-family-members-rules/               imp= 229 clicks= 0 topic=gv-family  есть клики или живые показы
+/guides/how-to-buy-property-greece-step-by-step/               imp= 148 clicks= 0 topic=howto      есть клики или живые показы
+/guides/power-of-attorney-property-greece/                     imp= 112 clicks= 1 topic=diligence  есть клики или живые показы
+/guides/greek-property-glossary-foreign-buyers/                imp= 108 clicks= 0 topic=other      есть клики или живые показы
+/guides/greece-property-transfer-tax-fma/                      imp=  89 clicks= 0 topic=tax        есть клики или живые показы
+/guides/greece-golden-visa-bank-account-afm/                   imp=  87 clicks= 0 topic=other      есть клики или живые показы
+/news/greece-golden-visa-approvals-2025/                       imp=  87 clicks= 0 topic=other      свежесть для AI-ретрива
+/guides/is-greece-property-good-investment-2026/               imp=  83 clicks= 0 topic=yield      есть клики или живые показы
+/guides/greece-property-market-transactions-2025/              imp=  79 clicks= 1 topic=yield      есть клики или живые показы
+/guides/border-zones-greece-foreign-buyers/                    imp=  73 clicks= 1 topic=diligence  есть клики или живые показы
+/guides/greece-citizenship-after-golden-visa/                  imp=  68 clicks= 0 topic=other      есть клики или живые показы
+/guides/how-long-can-you-stay-greece-golden-visa/              imp=  66 clicks= 0 topic=other      есть клики или живые показы
+/guides/golden-visa-eligible-projects-directory/               imp=  58 clicks= 6 topic=other      есть клики или живые показы
+/guides/halkidiki-property-investment-guide/                   imp=  49 clicks= 1 topic=islands    есть клики или живые показы
+/guides/israeli-buyers-greece-property/                        imp=  23 clicks= 1 topic=gv-buyers  есть клики или живые показы
+/guides/corfu-property-investment-golden-visa/                 imp=  16 clicks= 1 topic=islands    есть клики или живые показы
+/compare/golden-visa-greece-vs-dubai-property-residency/       imp=   0 clicks= 0 topic=other      сравнение внутри visa-кластера, спрос подтверждён
+/compare/greece-vs-cyprus-golden-visa-property/                imp=   0 clicks= 0 topic=other      сравнение внутри visa-кластера, спрос подтверждён
+/compare/greece-vs-portugal-golden-visa-property/              imp=   0 clicks= 0 topic=other      сравнение внутри visa-кластера, спрос подтверждён
+/compare/greece-vs-spain-golden-visa-ended/                    imp=   0 clicks= 0 topic=other      сравнение внутри visa-кластера, спрос подтверждён

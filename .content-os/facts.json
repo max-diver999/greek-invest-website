@@ -790,6 +790,36 @@
       "statement": "Gross rental yield on a three-bedroom apartment in Toumpa, Thessaloniki. Roughly half the one-bedroom yield in the same city, which is the size effect that Golden Visa underwriting must account for.",
       "source": "Global Property Guide, Greece rental yields, neighbourhood series, November 2025",
       "asOf": "2026-09-07"
+    },
+    {
+      "figure": "2,551",
+      "statement": "New investor residence permit applications filed in the first half of 2026, against 4,553 in the same period of 2025, a fall of about 44%.",
+      "source": "Greek Ministry of Migration and Asylum, Legal Migration monthly report, May 2026",
+      "asOf": "2026-09-07"
+    },
+    {
+      "figure": "4,919",
+      "statement": "Investor residence permits granted in the first half of 2026, against 4,057 in the same period of 2025, a rise of about 21%. Approvals rose while applications fell.",
+      "source": "Greek Ministry of Migration and Asylum, Legal Migration monthly report, May 2026",
+      "asOf": "2026-09-07"
+    },
+    {
+      "figure": "33,051",
+      "statement": "Total Golden Visa files pending in May 2026: 9,210 permanent-investor files and 23,841 family-member files. Down from 35,669 in March 2026.",
+      "source": "Greek Ministry of Migration and Asylum, Legal Migration monthly report, May 2026",
+      "asOf": "2026-09-07"
+    },
+    {
+      "figure": "7,025",
+      "statement": "Initial permanent-investor applications filed in 2025, against 9,382 in 2024, a fall of 25.1%.",
+      "source": "Greek Ministry of Migration and Asylum, Legal Migration monthly report, May 2026",
+      "asOf": "2026-09-07"
+    },
+    {
+      "figure": "Law 5275/2026",
+      "statement": "Greek immigration law published in Government Gazette FEK A' 17 on 6 February 2026. It rewrites residence permit categories for employment, studies, family reunification and the EU Blue Card. It does NOT govern the investor residence permit: the Golden Visa continues to run under Law 5100/2024. Widely misreported as a Golden Visa reform.",
+      "source": "Verified against two independent Greek law firm summaries, EY Greece tax alert and Bernitsas Law overview, both dated February 2026, neither of which lists investment or real-estate permits among the categories the law covers. Retrieved 7 September 2026",
+      "asOf": "2026-09-07"
     }
   ]
 }

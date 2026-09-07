@@ -80,6 +80,16 @@ export const collections = {
     loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/golden-visa' }),
     schema: articleSchema,
   }),
+  /**
+   * Commercial branch. The audit measured 75,700 impressions a month in the
+   * property cluster, 74% of the whole English-language market, and the site had
+   * no page for any of it: /areas/{city}-property-investment/ targets a phrasing
+   * that returned zero volume on all 70 geographies checked.
+   */
+  'property-for-sale': defineCollection({
+    loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/property-for-sale' }),
+    schema: articleSchema,
+  }),
   'living-in-greece': defineCollection({
     loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/living-in-greece' }),
     schema: articleSchema,

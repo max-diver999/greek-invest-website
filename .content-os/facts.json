@@ -430,6 +430,66 @@
       "statement": "Croatian price level index for household final consumption against an EU27 average of 100: the only mainstream Mediterranean destination measurably cheaper than Greece.",
       "source": "Eurostat, dataset prc_ppp_ind, price level index PLI_EU27_2020, COICOP E011 household final consumption, reference year 2024",
       "asOf": "2026-09-07"
+    },
+    {
+      "figure": "€2,400",
+      "statement": "Average asking price per square metre for residential property on Kefalonia. Asking price from listings, not a transaction price.",
+      "source": "COMMERCIAL SOURCE, NOT OFFICIAL STATISTICS. Indomio.gr, Greek property portal, asking prices from live listings (not transaction prices), reference month June 2026, retrieved 7 September 2026",
+      "asOf": "2026-09-07"
+    },
+    {
+      "figure": "€2,987",
+      "statement": "Highest area asking price per square metre on Kefalonia, in Leivatho.",
+      "source": "COMMERCIAL SOURCE, NOT OFFICIAL STATISTICS. Indomio.gr, Greek property portal, asking prices from live listings (not transaction prices), reference month June 2026, retrieved 7 September 2026",
+      "asOf": "2026-09-07"
+    },
+    {
+      "figure": "€1,334",
+      "statement": "Lowest area asking price per square metre on Kefalonia, in Omala.",
+      "source": "COMMERCIAL SOURCE, NOT OFFICIAL STATISTICS. Indomio.gr, Greek property portal, asking prices from live listings (not transaction prices), reference month June 2026, retrieved 7 September 2026",
+      "asOf": "2026-09-07"
+    },
+    {
+      "figure": "€4,698",
+      "statement": "Highest area asking price per square metre on Corfu, in Kassiopi, July 2026 reference month.",
+      "source": "COMMERCIAL SOURCE, NOT OFFICIAL STATISTICS. Indomio.gr, Greek property portal, asking prices from live listings (not transaction prices), reference month June 2026, retrieved 7 September 2026",
+      "asOf": "2026-09-07"
+    },
+    {
+      "figure": "€2,932",
+      "statement": "Lowest municipality asking price per square metre in the Corfu Prefecture, the municipality of Corfu itself.",
+      "source": "COMMERCIAL SOURCE, NOT OFFICIAL STATISTICS. Indomio.gr, Greek property portal, asking prices from live listings (not transaction prices), reference month June 2026, retrieved 7 September 2026",
+      "asOf": "2026-09-07"
+    },
+    {
+      "figure": "€3,626",
+      "statement": "Highest regional asking price per square metre in Greece, the Aegean Islands region.",
+      "source": "COMMERCIAL SOURCE, NOT OFFICIAL STATISTICS. Indomio.gr, Greek property portal, asking prices from live listings (not transaction prices), reference month June 2026, retrieved 7 September 2026",
+      "asOf": "2026-09-07"
+    },
+    {
+      "figure": "5.7%",
+      "statement": "Year-on-year increase in Greek apartment prices in Q1 2026, provisional, nominal terms.",
+      "source": "Bank of Greece, indices of residential property prices, Q1 2026 release, provisional data. Accessed 7 September 2026 via the published summary of the release; bankofgreece.gr refuses automated requests, so the primary page was not read directly",
+      "asOf": "2026-09-07"
+    },
+    {
+      "figure": "6.9%",
+      "statement": "Year-on-year increase in apartment prices in Q1 2026 in areas of Greece outside Athens, Thessaloniki and the other cities: the fastest-rising segment.",
+      "source": "Bank of Greece, indices of residential property prices, Q1 2026 release, provisional data. Accessed 7 September 2026 via the published summary of the release; bankofgreece.gr refuses automated requests, so the primary page was not read directly",
+      "asOf": "2026-09-07"
+    },
+    {
+      "figure": "5.2%",
+      "statement": "Year-on-year increase in Athens apartment prices in Q1 2026.",
+      "source": "Bank of Greece, indices of residential property prices, Q1 2026 release, provisional data. Accessed 7 September 2026 via the published summary of the release; bankofgreece.gr refuses automated requests, so the primary page was not read directly",
+      "asOf": "2026-09-07"
+    },
+    {
+      "figure": "6.4%",
+      "statement": "Year-on-year increase in Thessaloniki apartment prices in Q1 2026.",
+      "source": "Bank of Greece, indices of residential property prices, Q1 2026 release, provisional data. Accessed 7 September 2026 via the published summary of the release; bankofgreece.gr refuses automated requests, so the primary page was not read directly",
+      "asOf": "2026-09-07"
     }
   ]
 }

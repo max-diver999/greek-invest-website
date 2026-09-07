@@ -712,6 +712,12 @@
       "statement": "Highest municipality asking price per square metre in the Corfu Prefecture, the municipality of Paxoi.",
       "source": "COMMERCIAL SOURCE, NOT OFFICIAL STATISTICS. Indomio.gr, Greek property portal, asking prices from live listings (not transaction prices), Corfu Prefecture, reference June 2026, retrieved 7 September 2026",
       "asOf": "2026-09-07"
+    },
+    {
+      "figure": "4.0%",
+      "statement": "Gross long-let yield for Chania Prefecture, Crete, derived on this site by dividing annualised asking rent of EUR 9.79 per square metre per month by the asking price of EUR 2,935 per square metre for the same prefecture and the same reference month. An asking-on-asking figure, gross of tax, assuming year-round letting. It is the only Crete yield this site quotes, because Chania is the only prefecture where both sides of the calculation are published for the same period.",
+      "source": "DERIVED ON THIS SITE from two Indomio.gr asking figures (COMMERCIAL SOURCE, NOT OFFICIAL STATISTICS), Chania Prefecture, reference August 2025, retrieved 7 September 2026. Method shown in full at /property-for-sale/crete/",
+      "asOf": "2026-09-07"
     }
   ]
 }

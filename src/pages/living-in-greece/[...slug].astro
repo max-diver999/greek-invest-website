@@ -1,0 +1,55 @@
+---
+import { getCollection, render } from 'astro:content';
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+import { SITE } from '../../data/site';
+import { resolveRelated } from '../../lib/related';
+import { readingMinutes } from '../../lib/readingTime';
+
+export const prerender = true;
+
+export async function getStaticPaths() {
+  // `overview` is rendered by the hub index at the collection root, so it must
+  // not also get its own /<collection>/overview/ URL — that would be two pages
+  // on one cluster, the exact cannibalisation this branch exists to remove.
+  const items = (await getCollection('living-in-greece')).filter((e) => e.id !== 'overview');
+  return items.map((entry) => ({
+    params: { slug: entry.id },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+const related = await resolveRelated(entry.data.relatedSlugs, entry.id);
+const hasInlineFaqBlock = entry.body?.includes('<FaqBlock') ?? false;
+
+const {
+  title,
+  description,
+  pubDate,
+  updatedDate,
+  author,
+  heroImage,
+  heroAlt,
+  faq,
+  noindex,
+} = entry.data;
+---
+<ArticleLayout
+  {title}
+  {description}
+  {pubDate}
+  {updatedDate}
+  {author}
+  readingTime={readingMinutes(entry.body ?? "")}
+  {heroImage}
+  {heroAlt}
+  {faq}
+  {noindex}
+  {hasInlineFaqBlock}
+  contextLabel={title}
+  {related}
+  canonical={`${SITE.url}/living-in-greece/${entry.id}/`}
+>
+  <Content />
+</ArticleLayout>

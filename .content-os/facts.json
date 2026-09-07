@@ -346,6 +346,12 @@
         "gross yield",
         "yield"
       ]
+    },
+    {
+      "figure": "183 days",
+      "statement": "Presence in Greece beyond this in a calendar year generally establishes Greek tax residence, bringing worldwide income into the Greek net unless a preferential regime or a double tax treaty provides otherwise.",
+      "source": "Law 4172/2013 Article 4, tax residence of individuals",
+      "asOf": "2026-09-07"
     }
   ]
 }

@@ -574,6 +574,96 @@
       "statement": "Average asking price per square metre in Zakynthos main town. Asking price from listings, not a transaction price.",
       "source": "COMMERCIAL SOURCE, NOT OFFICIAL STATISTICS. Indomio.gr, Greek property portal, Zakynthos main town, reference month May 2025, retrieved 7 September 2026",
       "asOf": "2026-09-07"
+    },
+    {
+      "figure": "€7,623",
+      "statement": "Average asking price per square metre on Mykonos, the most expensive Greek island market.",
+      "source": "COMMERCIAL SOURCE, NOT OFFICIAL STATISTICS. Indomio.gr, Greek property portal, asking prices from live listings (not transaction prices), Mykonos, reference September 2025, retrieved 7 September 2026",
+      "asOf": "2026-09-07"
+    },
+    {
+      "figure": "€5,742",
+      "statement": "Average asking price per square metre in Oia, Santorini.",
+      "source": "COMMERCIAL SOURCE, NOT OFFICIAL STATISTICS. Indomio.gr, Greek property portal, asking prices from live listings (not transaction prices), Santorini, Oia, reference July 2026, retrieved 7 September 2026",
+      "asOf": "2026-09-07"
+    },
+    {
+      "figure": "€4,363",
+      "statement": "Average asking price per square metre in Thira, Santorini.",
+      "source": "COMMERCIAL SOURCE, NOT OFFICIAL STATISTICS. Indomio.gr, Greek property portal, asking prices from live listings (not transaction prices), Santorini, Thira, reference July 2026, retrieved 7 September 2026",
+      "asOf": "2026-09-07"
+    },
+    {
+      "figure": "€5,409",
+      "statement": "Highest municipal asking price per square metre in central Athens, in Kolonaki and Lykavittos.",
+      "source": "COMMERCIAL SOURCE, NOT OFFICIAL STATISTICS. Indomio.gr, Greek property portal, asking prices from live listings (not transaction prices), province of Athens Center, reference June 2026, retrieved 7 September 2026",
+      "asOf": "2026-09-07"
+    },
+    {
+      "figure": "€1,731",
+      "statement": "Lowest municipal asking price per square metre in central Athens, in Patisia.",
+      "source": "COMMERCIAL SOURCE, NOT OFFICIAL STATISTICS. Indomio.gr, Greek property portal, asking prices from live listings (not transaction prices), province of Athens Center, reference June 2026, retrieved 7 September 2026",
+      "asOf": "2026-09-07"
+    },
+    {
+      "figure": "€2,421",
+      "statement": "Average asking price per square metre on Rhodes, up 22.40% year on year.",
+      "source": "COMMERCIAL SOURCE, NOT OFFICIAL STATISTICS. Indomio.gr, Greek property portal, asking prices from live listings (not transaction prices), Rhodes, reference January 2026, retrieved 7 September 2026",
+      "asOf": "2026-09-07"
+    },
+    {
+      "figure": "22.40%",
+      "statement": "Year-on-year increase in average asking prices on Rhodes to January 2026.",
+      "source": "COMMERCIAL SOURCE, NOT OFFICIAL STATISTICS. Indomio.gr, Greek property portal, asking prices from live listings (not transaction prices), Rhodes, reference January 2026, retrieved 7 September 2026",
+      "asOf": "2026-09-07"
+    },
+    {
+      "figure": "€3,339",
+      "statement": "Highest area asking price per square metre on Rhodes, in Lindos.",
+      "source": "COMMERCIAL SOURCE, NOT OFFICIAL STATISTICS. Indomio.gr, Greek property portal, asking prices from live listings (not transaction prices), Rhodes, Lindos, reference January 2026, retrieved 7 September 2026",
+      "asOf": "2026-09-07"
+    },
+    {
+      "figure": "€1,453",
+      "statement": "Lowest area asking price per square metre on Rhodes, in Archaggelos.",
+      "source": "COMMERCIAL SOURCE, NOT OFFICIAL STATISTICS. Indomio.gr, Greek property portal, asking prices from live listings (not transaction prices), Rhodes, Archaggelos, reference January 2026, retrieved 7 September 2026",
+      "asOf": "2026-09-07"
+    },
+    {
+      "figure": "€2,438",
+      "statement": "Average asking price per square metre across the Dodecanese, up 20.87% year on year.",
+      "source": "COMMERCIAL SOURCE, NOT OFFICIAL STATISTICS. Indomio.gr, Greek property portal, asking prices from live listings (not transaction prices), province of Dodecanese, reference November 2025, retrieved 7 September 2026",
+      "asOf": "2026-09-07"
+    },
+    {
+      "figure": "€4,910",
+      "statement": "Highest area asking price per square metre on Lefkada, in Apollonio.",
+      "source": "COMMERCIAL SOURCE, NOT OFFICIAL STATISTICS. Indomio.gr, Greek property portal, asking prices from live listings (not transaction prices), Lefkada, reference June 2026, retrieved 7 September 2026",
+      "asOf": "2026-09-07"
+    },
+    {
+      "figure": "€1,970",
+      "statement": "Lowest area asking price per square metre on Lefkada, in Karias.",
+      "source": "COMMERCIAL SOURCE, NOT OFFICIAL STATISTICS. Indomio.gr, Greek property portal, asking prices from live listings (not transaction prices), Lefkada, reference June 2026, retrieved 7 September 2026",
+      "asOf": "2026-09-07"
+    },
+    {
+      "figure": "€1,778",
+      "statement": "Average asking price per square metre across the Peloponnese, up 7.63% year on year: the cheapest mainland region with a coastline in the reference data.",
+      "source": "COMMERCIAL SOURCE, NOT OFFICIAL STATISTICS. Indomio.gr, Greek property portal, asking prices from live listings (not transaction prices), Peloponnese, reference March 2026, retrieved 7 September 2026",
+      "asOf": "2026-09-07"
+    },
+    {
+      "figure": "7.63%",
+      "statement": "Year-on-year increase in average asking prices across the Peloponnese to March 2026.",
+      "source": "COMMERCIAL SOURCE, NOT OFFICIAL STATISTICS. Indomio.gr, Greek property portal, asking prices from live listings (not transaction prices), Peloponnese, reference March 2026, retrieved 7 September 2026",
+      "asOf": "2026-09-07"
+    },
+    {
+      "figure": "€2,667",
+      "statement": "Upper end of the asking price per square metre band reported for Halkidiki.",
+      "source": "SECONDARY SOURCE. Published by property market summaries and agency reports (Engel & Voelkers, Investropa, Athens News) as at 7 September 2026; not a primary index and not transaction prices",
+      "asOf": "2026-09-07"
     }
   ]
 }

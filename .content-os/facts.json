@@ -520,6 +520,60 @@
       "statement": "Income tax exemption available for up to seven years to a qualifying digital nomad who transfers tax residence to Greece, subject to registration and approval.",
       "source": "SECONDARY SOURCE. Figure published consistently across independent immigration advisories (Get Golden Visa, Global Citizen Solutions, Expats Greece, Lincoln Global Partners) as at 7 September 2026. Not read from a Ministry or consular primary document; consular requirements vary by post and should be confirmed before applying",
       "asOf": "2026-09-07"
+    },
+    {
+      "figure": "€2,889",
+      "statement": "Average asking price per square metre in the province of Zante (Zakynthos), up 10.39% year on year. Asking price from listings, not a transaction price.",
+      "source": "COMMERCIAL SOURCE, NOT OFFICIAL STATISTICS. Indomio.gr, Greek property portal, asking prices from live listings (not transaction prices), province of Zante, reference month October 2025, retrieved 7 September 2026",
+      "asOf": "2026-09-07"
+    },
+    {
+      "figure": "€3,507",
+      "statement": "Highest municipality asking price per square metre on Zakynthos, in Elatio.",
+      "source": "COMMERCIAL SOURCE, NOT OFFICIAL STATISTICS. Indomio.gr, Greek property portal, asking prices from live listings (not transaction prices), province of Zante, reference month October 2025, retrieved 7 September 2026",
+      "asOf": "2026-09-07"
+    },
+    {
+      "figure": "€1,997",
+      "statement": "Lowest municipality asking price per square metre on Zakynthos, in Artemisio.",
+      "source": "COMMERCIAL SOURCE, NOT OFFICIAL STATISTICS. Indomio.gr, Greek property portal, asking prices from live listings (not transaction prices), province of Zante, reference month October 2025, retrieved 7 September 2026",
+      "asOf": "2026-09-07"
+    },
+    {
+      "figure": "10.39%",
+      "statement": "Year-on-year increase in average asking prices in the province of Zante to October 2025.",
+      "source": "COMMERCIAL SOURCE, NOT OFFICIAL STATISTICS. Indomio.gr, Greek property portal, asking prices from live listings (not transaction prices), province of Zante, reference month October 2025, retrieved 7 September 2026",
+      "asOf": "2026-09-07"
+    },
+    {
+      "figure": "€530",
+      "statement": "Approximate asking price per square metre in Kastoria, among the cheapest urban markets in Greece.",
+      "source": "SECONDARY SOURCE. Regional asking prices published by property aggregators and market summaries (International Property Alerts, Buy Greece) as at 7 September 2026; not read from a primary index and not transaction prices",
+      "asOf": "2026-09-07"
+    },
+    {
+      "figure": "€640",
+      "statement": "Approximate asking price per square metre in Kozani, northern Greece.",
+      "source": "SECONDARY SOURCE. Regional asking prices published by property aggregators and market summaries (International Property Alerts, Buy Greece) as at 7 September 2026; not read from a primary index and not transaction prices",
+      "asOf": "2026-09-07"
+    },
+    {
+      "figure": "€680",
+      "statement": "Approximate asking price per square metre in Kilkis, northern Greece.",
+      "source": "SECONDARY SOURCE. Regional asking prices published by property aggregators and market summaries (International Property Alerts, Buy Greece) as at 7 September 2026; not read from a primary index and not transaction prices",
+      "asOf": "2026-09-07"
+    },
+    {
+      "figure": "€820",
+      "statement": "Approximate asking price per square metre in Grevena, northern Greece.",
+      "source": "SECONDARY SOURCE. Regional asking prices published by property aggregators and market summaries (International Property Alerts, Buy Greece) as at 7 September 2026; not read from a primary index and not transaction prices",
+      "asOf": "2026-09-07"
+    },
+    {
+      "figure": "€2,982",
+      "statement": "Average asking price per square metre in Zakynthos main town. Asking price from listings, not a transaction price.",
+      "source": "COMMERCIAL SOURCE, NOT OFFICIAL STATISTICS. Indomio.gr, Greek property portal, Zakynthos main town, reference month May 2025, retrieved 7 September 2026",
+      "asOf": "2026-09-07"
     }
   ]
 }

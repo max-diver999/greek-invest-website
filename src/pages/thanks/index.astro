@@ -19,13 +19,16 @@ const isLead = Astro.url.searchParams.get('lead') === '1';
     </p>
     <a href="/guides/" class="btn-primary px-6 py-3">Browse guides</a>
   </section>
-  {isLead && (
-    <script is:inline>
-      if (typeof window.investGulfTrack === 'function') {
-        window.investGulfTrack('generate_lead', { lead_type: 'shortlist_form', value: 1, currency: 'USD' });
-      } else if (typeof window.gtag === 'function') {
-        window.gtag('event', 'generate_lead', { lead_type: 'shortlist_form', value: 1, currency: 'USD' });
-      }
-    </script>
-  )}
+  {/* The conversion used to be an is:inline script inside `{isLead && …}`. It ran
+      at parse time, three seconds before GoogleAnalytics.astro defines either
+      gtag or the tracker, so every conversion was dropped. `track` queues until
+      one exists. The script is unconditional because Astro hoists bundled
+      scripts out of conditionals anyway, so the `?lead=1` check belongs here. */}
+  <script>
+    import { track } from '../../lib/track';
+
+    if (new URLSearchParams(window.location.search).get('lead') === '1') {
+      track('generate_lead', { lead_type: 'shortlist_form', value: 1, currency: 'USD' });
+    }
+  </script>
 </BaseLayout>

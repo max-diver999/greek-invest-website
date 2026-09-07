@@ -490,6 +490,18 @@
       "statement": "Year-on-year increase in Thessaloniki apartment prices in Q1 2026.",
       "source": "Bank of Greece, indices of residential property prices, Q1 2026 release, provisional data. Accessed 7 September 2026 via the published summary of the release; bankofgreece.gr refuses automated requests, so the primary page was not read directly",
       "asOf": "2026-09-07"
+    },
+    {
+      "figure": "€12,001",
+      "statement": "Lower bound of the 25 percent rental income band introduced for 2026; the 15 percent band ends at €12,000.",
+      "source": "Law 5246/2025, rental income scale effective 1 January 2026",
+      "asOf": "2026-09-07"
+    },
+    {
+      "figure": "€24,001",
+      "statement": "Lower bound of the 35 percent rental income band under the 2026 scale; the 25 percent band ends at €24,000.",
+      "source": "Law 5246/2025, rental income scale effective 1 January 2026",
+      "asOf": "2026-09-07"
     }
   ]
 }

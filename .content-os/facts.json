@@ -664,6 +664,54 @@
       "statement": "Upper end of the asking price per square metre band reported for Halkidiki.",
       "source": "SECONDARY SOURCE. Published by property market summaries and agency reports (Engel & Voelkers, Investropa, Athens News) as at 7 September 2026; not a primary index and not transaction prices",
       "asOf": "2026-09-07"
+    },
+    {
+      "figure": "€2,329",
+      "statement": "Average asking price per square metre across Crete, up 12.5% year on year.",
+      "source": "COMMERCIAL SOURCE, NOT OFFICIAL STATISTICS. Indomio.gr, Greek property portal, asking prices from live listings (not transaction prices), Crete, reference April 2025, retrieved 7 September 2026",
+      "asOf": "2026-09-07"
+    },
+    {
+      "figure": "12.5%",
+      "statement": "Year-on-year increase in average asking prices across Crete to April 2025.",
+      "source": "COMMERCIAL SOURCE, NOT OFFICIAL STATISTICS. Indomio.gr, Greek property portal, asking prices from live listings (not transaction prices), Crete, reference April 2025, retrieved 7 September 2026",
+      "asOf": "2026-09-07"
+    },
+    {
+      "figure": "€2,935",
+      "statement": "Highest prefecture asking price per square metre in Crete, in Chania Prefecture.",
+      "source": "COMMERCIAL SOURCE, NOT OFFICIAL STATISTICS. Indomio.gr, Greek property portal, asking prices from live listings (not transaction prices), Crete, Chania Prefecture, reference August 2025, retrieved 7 September 2026",
+      "asOf": "2026-09-07"
+    },
+    {
+      "figure": "€1,999",
+      "statement": "Lowest prefecture asking price per square metre in Crete, in Heraklion Prefecture.",
+      "source": "COMMERCIAL SOURCE, NOT OFFICIAL STATISTICS. Indomio.gr, Greek property portal, asking prices from live listings (not transaction prices), Crete, Heraklion Prefecture, reference August 2025, retrieved 7 September 2026",
+      "asOf": "2026-09-07"
+    },
+    {
+      "figure": "€3,690",
+      "statement": "Asking price per square metre in the town of Chania, Crete.",
+      "source": "COMMERCIAL SOURCE, NOT OFFICIAL STATISTICS. Indomio.gr, Greek property portal, asking prices from live listings (not transaction prices), Chania, reference August 2026, retrieved 7 September 2026",
+      "asOf": "2026-09-07"
+    },
+    {
+      "figure": "€9.79",
+      "statement": "Highest monthly asking rent per square metre in Crete, in Chania Prefecture. An asking rent, not a contracted rent.",
+      "source": "COMMERCIAL SOURCE, NOT OFFICIAL STATISTICS. Indomio.gr, Greek property portal, asking prices from live listings (not transaction prices), Crete, Chania Prefecture, reference August 2025, retrieved 7 September 2026",
+      "asOf": "2026-09-07"
+    },
+    {
+      "figure": "€6.93",
+      "statement": "Lowest monthly asking rent per square metre in Crete, in Lasithi Prefecture. An asking rent, not a contracted rent.",
+      "source": "COMMERCIAL SOURCE, NOT OFFICIAL STATISTICS. Indomio.gr, Greek property portal, asking prices from live listings (not transaction prices), Crete, Lasithi Prefecture, reference August 2025, retrieved 7 September 2026",
+      "asOf": "2026-09-07"
+    },
+    {
+      "figure": "€5,628",
+      "statement": "Highest municipality asking price per square metre in the Corfu Prefecture, the municipality of Paxoi.",
+      "source": "COMMERCIAL SOURCE, NOT OFFICIAL STATISTICS. Indomio.gr, Greek property portal, asking prices from live listings (not transaction prices), Corfu Prefecture, reference June 2026, retrieved 7 September 2026",
+      "asOf": "2026-09-07"
     }
   ]
 }

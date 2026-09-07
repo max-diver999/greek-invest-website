@@ -664,6 +664,210 @@
       "statement": "Upper end of the asking price per square metre band reported for Halkidiki.",
       "source": "SECONDARY SOURCE. Published by property market summaries and agency reports (Engel & Voelkers, Investropa, Athens News) as at 7 September 2026; not a primary index and not transaction prices",
       "asOf": "2026-09-07"
+    },
+    {
+      "figure": "€2,329",
+      "statement": "Average asking price per square metre across Crete, up 12.5% year on year.",
+      "source": "COMMERCIAL SOURCE, NOT OFFICIAL STATISTICS. Indomio.gr, Greek property portal, asking prices from live listings (not transaction prices), Crete, reference April 2025, retrieved 7 September 2026",
+      "asOf": "2026-09-07"
+    },
+    {
+      "figure": "12.5%",
+      "statement": "Year-on-year increase in average asking prices across Crete to April 2025.",
+      "source": "COMMERCIAL SOURCE, NOT OFFICIAL STATISTICS. Indomio.gr, Greek property portal, asking prices from live listings (not transaction prices), Crete, reference April 2025, retrieved 7 September 2026",
+      "asOf": "2026-09-07"
+    },
+    {
+      "figure": "€2,935",
+      "statement": "Highest prefecture asking price per square metre in Crete, in Chania Prefecture.",
+      "source": "COMMERCIAL SOURCE, NOT OFFICIAL STATISTICS. Indomio.gr, Greek property portal, asking prices from live listings (not transaction prices), Crete, Chania Prefecture, reference August 2025, retrieved 7 September 2026",
+      "asOf": "2026-09-07"
+    },
+    {
+      "figure": "€1,999",
+      "statement": "Lowest prefecture asking price per square metre in Crete, in Heraklion Prefecture.",
+      "source": "COMMERCIAL SOURCE, NOT OFFICIAL STATISTICS. Indomio.gr, Greek property portal, asking prices from live listings (not transaction prices), Crete, Heraklion Prefecture, reference August 2025, retrieved 7 September 2026",
+      "asOf": "2026-09-07"
+    },
+    {
+      "figure": "€3,690",
+      "statement": "Asking price per square metre in the town of Chania, Crete.",
+      "source": "COMMERCIAL SOURCE, NOT OFFICIAL STATISTICS. Indomio.gr, Greek property portal, asking prices from live listings (not transaction prices), Chania, reference August 2026, retrieved 7 September 2026",
+      "asOf": "2026-09-07"
+    },
+    {
+      "figure": "€9.79",
+      "statement": "Highest monthly asking rent per square metre in Crete, in Chania Prefecture. An asking rent, not a contracted rent.",
+      "source": "COMMERCIAL SOURCE, NOT OFFICIAL STATISTICS. Indomio.gr, Greek property portal, asking prices from live listings (not transaction prices), Crete, Chania Prefecture, reference August 2025, retrieved 7 September 2026",
+      "asOf": "2026-09-07"
+    },
+    {
+      "figure": "€6.93",
+      "statement": "Lowest monthly asking rent per square metre in Crete, in Lasithi Prefecture. An asking rent, not a contracted rent.",
+      "source": "COMMERCIAL SOURCE, NOT OFFICIAL STATISTICS. Indomio.gr, Greek property portal, asking prices from live listings (not transaction prices), Crete, Lasithi Prefecture, reference August 2025, retrieved 7 September 2026",
+      "asOf": "2026-09-07"
+    },
+    {
+      "figure": "€5,628",
+      "statement": "Highest municipality asking price per square metre in the Corfu Prefecture, the municipality of Paxoi.",
+      "source": "COMMERCIAL SOURCE, NOT OFFICIAL STATISTICS. Indomio.gr, Greek property portal, asking prices from live listings (not transaction prices), Corfu Prefecture, reference June 2026, retrieved 7 September 2026",
+      "asOf": "2026-09-07"
+    },
+    {
+      "figure": "4.0%",
+      "statement": "Gross long-let yield for Chania Prefecture, Crete, derived on this site by dividing annualised asking rent of EUR 9.79 per square metre per month by the asking price of EUR 2,935 per square metre for the same prefecture and the same reference month. An asking-on-asking figure, gross of tax, assuming year-round letting. It is the only Crete yield this site quotes, because Chania is the only prefecture where both sides of the calculation are published for the same period.",
+      "source": "DERIVED ON THIS SITE from two Indomio.gr asking figures (COMMERCIAL SOURCE, NOT OFFICIAL STATISTICS), Chania Prefecture, reference August 2025, retrieved 7 September 2026. Method shown in full at /property-for-sale/crete/",
+      "asOf": "2026-09-07"
+    },
+    {
+      "figure": "4.8%",
+      "statement": "Gross rental yield in Patras, the second-highest of the six major Greek cities in the Global Property Guide series.",
+      "source": "Global Property Guide, Greece rental yields, six-city survey, November 2025",
+      "asOf": "2026-09-07"
+    },
+    {
+      "figure": "4.4%",
+      "statement": "Gross rental yield in Thessaloniki, level with the national average and well below the 5% to 6.5% widely quoted in property marketing.",
+      "source": "Global Property Guide, Greece rental yields, six-city survey, November 2025",
+      "asOf": "2026-09-07"
+    },
+    {
+      "figure": "4.2%",
+      "statement": "Gross rental yield in Heraklion, Crete, and also in Volos. It is the only published city-level yield for Crete, and it corroborates the 4.0% derived independently for Chania Prefecture from asking data.",
+      "source": "Global Property Guide, Greece rental yields, six-city survey, November 2025",
+      "asOf": "2026-09-07"
+    },
+    {
+      "figure": "6%",
+      "statement": "Approximate gross rental yield in central Athens, above the 5.4% Athens city-wide average.",
+      "source": "SECONDARY SOURCE, COMMERCIAL. Athens sub-market yields compiled from Spitogatos Index Q4 2025 and Indomio November 2025, reported via avlarealestate.com, retrieved 7 September 2026. Sub-market figures are less reliable than the six-city Global Property Guide series.",
+      "asOf": "2026-09-07"
+    },
+    {
+      "figure": "4.9%",
+      "statement": "Approximate gross rental yield in Piraeus.",
+      "source": "SECONDARY SOURCE, COMMERCIAL. Athens sub-market yields compiled from Spitogatos Index Q4 2025 and Indomio November 2025, reported via avlarealestate.com, retrieved 7 September 2026. Sub-market figures are less reliable than the six-city Global Property Guide series.",
+      "asOf": "2026-09-07"
+    },
+    {
+      "figure": "5.0%",
+      "statement": "Approximate gross rental yield in west Athens, Peristeri and comparable districts.",
+      "source": "SECONDARY SOURCE, COMMERCIAL. Athens sub-market yields compiled from Spitogatos Index Q4 2025 and Indomio November 2025, reported via avlarealestate.com, retrieved 7 September 2026. Sub-market figures are less reliable than the six-city Global Property Guide series.",
+      "asOf": "2026-09-07"
+    },
+    {
+      "figure": "3.8% to 4.5%",
+      "statement": "Approximate gross rental yield range in south Athens, the Glyfada to Vouliagmeni coastal strip. Below the Athens city-wide average, because coastal prices are set by the sea rather than by rents.",
+      "source": "SECONDARY SOURCE, COMMERCIAL. Athens sub-market yields compiled from Spitogatos Index Q4 2025 and Indomio November 2025, reported via avlarealestate.com, retrieved 7 September 2026. Sub-market figures are less reliable than the six-city Global Property Guide series.",
+      "asOf": "2026-09-07"
+    },
+    {
+      "figure": "8%",
+      "statement": "Gross rental yield on a one-bedroom apartment in Patisia, Athens, the highest neighbourhood figure in the series. A one-bedroom figure: it cannot be earned on a 120 square metre Golden Visa property.",
+      "source": "Global Property Guide, Greece rental yields, neighbourhood series, November 2025",
+      "asOf": "2026-09-07"
+    },
+    {
+      "figure": "7.3%",
+      "statement": "Gross rental yield on a one-bedroom apartment in Kipseli, Athens. A one-bedroom figure, not achievable on a Golden Visa qualifying property.",
+      "source": "Global Property Guide, Greece rental yields, neighbourhood series, November 2025",
+      "asOf": "2026-09-07"
+    },
+    {
+      "figure": "3.8%",
+      "statement": "Gross rental yield on a three-bedroom apartment in Kolonaki-Lykavittos, Athens. The relevant size class for a 120 square metre Golden Visa property.",
+      "source": "Global Property Guide, Greece rental yields, neighbourhood series, November 2025",
+      "asOf": "2026-09-07"
+    },
+    {
+      "figure": "6.0%",
+      "statement": "Gross rental yield on a one-bedroom apartment in the Voulgari, Ntepo and Martiou corridor of Thessaloniki.",
+      "source": "Global Property Guide, Greece rental yields, neighbourhood series, November 2025",
+      "asOf": "2026-09-07"
+    },
+    {
+      "figure": "3.2%",
+      "statement": "Gross rental yield on a three-bedroom apartment in Toumpa, Thessaloniki. Roughly half the one-bedroom yield in the same city, which is the size effect that Golden Visa underwriting must account for.",
+      "source": "Global Property Guide, Greece rental yields, neighbourhood series, November 2025",
+      "asOf": "2026-09-07"
+    },
+    {
+      "figure": "2,551",
+      "statement": "New investor residence permit applications filed in the first half of 2026, against 4,553 in the same period of 2025, a fall of about 44%.",
+      "source": "Greek Ministry of Migration and Asylum, Legal Migration monthly report, May 2026",
+      "asOf": "2026-09-07"
+    },
+    {
+      "figure": "4,919",
+      "statement": "Investor residence permits granted in the first half of 2026, against 4,057 in the same period of 2025, a rise of about 21%. Approvals rose while applications fell.",
+      "source": "Greek Ministry of Migration and Asylum, Legal Migration monthly report, May 2026",
+      "asOf": "2026-09-07"
+    },
+    {
+      "figure": "33,051",
+      "statement": "Total Golden Visa files pending in May 2026: 9,210 permanent-investor files and 23,841 family-member files. Down from 35,669 in March 2026.",
+      "source": "Greek Ministry of Migration and Asylum, Legal Migration monthly report, May 2026",
+      "asOf": "2026-09-07"
+    },
+    {
+      "figure": "7,025",
+      "statement": "Initial permanent-investor applications filed in 2025, against 9,382 in 2024, a fall of 25.1%.",
+      "source": "Greek Ministry of Migration and Asylum, Legal Migration monthly report, May 2026",
+      "asOf": "2026-09-07"
+    },
+    {
+      "figure": "Law 5275/2026",
+      "statement": "Greek immigration law published in Government Gazette FEK A' 17 on 6 February 2026. It rewrites residence permit categories for employment, studies, family reunification and the EU Blue Card. It does NOT govern the investor residence permit: the Golden Visa continues to run under Law 5100/2024. Widely misreported as a Golden Visa reform.",
+      "source": "Verified against two independent Greek law firm summaries, EY Greece tax alert and Bernitsas Law overview, both dated February 2026, neither of which lists investment or real-estate permits among the categories the law covers. Retrieved 7 September 2026",
+      "asOf": "2026-09-07"
+    },
+    {
+      "figure": "31 December 2024",
+      "statement": "Cut-off date in the Greek short-term rental registry. A property already carrying an AMA registration number on that date may be issued a new AMA after a sale, provided it still meets the requirements. A property first registered after it generally cannot: the AMA is cancelled on transfer of ownership. Inheritance is exempt.",
+      "source": "SECONDARY SOURCES, NOT THE GAZETTE. Compiled from Greek short-term-rental compliance guides (elxis.com, hostaway.com, rentalscaleup.com) published 2026 and retrieved 7 September 2026. A buyer must have this confirmed by a Greek lawyer against the current AADE registry rules before paying any premium for a licensed property.",
+      "asOf": "2026-09-07"
+    },
+    {
+      "figure": "AMA on transfer",
+      "statement": "A Greek short-term rental registration number does not automatically pass to a buyer. Selling, gifting or making a parental transfer generally removes the property from the registry, and in a zone where new registrations are frozen the buyer cannot obtain a replacement while the freeze holds.",
+      "source": "SECONDARY SOURCES, NOT THE GAZETTE. Compiled from Greek short-term-rental compliance guides (elxis.com, hostaway.com, rentalscaleup.com) published 2026 and retrieved 7 September 2026. A buyer must have this confirmed by a Greek lawyer against the current AADE registry rules before paying any premium for a licensed property.",
+      "asOf": "2026-09-07"
+    },
+    {
+      "figure": "March 2026",
+      "statement": "Date from which the Thessaloniki short-term rental registration freeze applies, covering the historic centre: Aristotelous Square, the Egnatia and Tsimiski axes, Ladadika, the port area, Rotonda and Kamara, Ano Poli and the seafront to the White Tower. Set initially for one year with possible extension. Athens remains frozen in its 1st, 2nd and 3rd municipal communities through 31 December 2026. Santorini, Chania, Paros and Halkidiki are under monitoring, not under a freeze.",
+      "source": "SECONDARY SOURCES, NOT THE GAZETTE. Compiled from Greek short-term-rental compliance guides (elxis.com, hostaway.com, rentalscaleup.com) published 2026 and retrieved 7 September 2026. A buyer must have this confirmed by a Greek lawyer against the current AADE registry rules before paying any premium for a licensed property.",
+      "asOf": "2026-09-07"
+    },
+    {
+      "figure": "$17,100",
+      "statement": "Average annual short-term rental revenue per listing in Athens, at 60% occupancy and an average daily rate of $116, across 19,055 active listings.",
+      "source": "SECONDARY SOURCE. AirDNA market data for Greece as reported July 2026, retrieved 7 September 2026. Average annual revenue is per listing across all unit sizes, and is gross booking revenue before platform commission, management, cleaning, utilities and tax.",
+      "asOf": "2026-09-07"
+    },
+    {
+      "figure": "$16,100",
+      "statement": "Average annual short-term rental revenue per listing in Crete, at 62% occupancy and an average daily rate of $237, across 33,148 active listings.",
+      "source": "SECONDARY SOURCE. AirDNA market data for Greece as reported July 2026, retrieved 7 September 2026. Average annual revenue is per listing across all unit sizes, and is gross booking revenue before platform commission, management, cleaning, utilities and tax.",
+      "asOf": "2026-09-07"
+    },
+    {
+      "figure": "$26,380",
+      "statement": "Average annual short-term rental revenue per listing in Mykonos, at 38.7% occupancy and an average daily rate of $379.",
+      "source": "SECONDARY SOURCE. AirDNA market data for Greece as reported July 2026, retrieved 7 September 2026. Average annual revenue is per listing across all unit sizes, and is gross booking revenue before platform commission, management, cleaning, utilities and tax.",
+      "asOf": "2026-09-07"
+    },
+    {
+      "figure": "€41,000",
+      "statement": "Average annual short-term rental revenue per listing in Santorini, at a median occupancy of 69% and an average daily rate of €161.",
+      "source": "SECONDARY SOURCE. AirDNA market data for Greece as reported July 2026, retrieved 7 September 2026. Average annual revenue is per listing across all unit sizes, and is gross booking revenue before platform commission, management, cleaning, utilities and tax.",
+      "asOf": "2026-09-07"
+    },
+    {
+      "figure": "€115.4",
+      "statement": "Revenue per available short-term rental across Greece, up 11% year on year, with the national average daily rate at €178.8, while active listings fell about 2.5%.",
+      "source": "SECONDARY SOURCE. AirDNA market data for Greece as reported July 2026, retrieved 7 September 2026. Average annual revenue is per listing across all unit sizes, and is gross booking revenue before platform commission, management, cleaning, utilities and tax.",
+      "asOf": "2026-09-07"
     }
   ]
 }

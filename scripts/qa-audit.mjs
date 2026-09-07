@@ -13,7 +13,22 @@ import { runExtendedChecks, runStructuralChecks } from './lib/more-content-gate.
 const dedupe = (arr) => [...new Set(arr)];
 
 const ROOT = decodeURIComponent(new URL('../src/content/', import.meta.url).pathname);
-const COLLECTIONS = ['guides', 'compare', 'areas', 'projects', 'developers', 'news'];
+// The three collections added in September 2026 belong here too. While they were
+// missing, every slug in them was absent from `allSlugs`, so a relatedSlugs
+// reference or a body link pointing at one of those pages was reported as broken
+// even though the page exists, and src/lib/related.ts had the mirror-image bug of
+// silently refusing to render such a reference at all.
+const COLLECTIONS = [
+  'guides',
+  'compare',
+  'areas',
+  'projects',
+  'developers',
+  'news',
+  'golden-visa',
+  'property-for-sale',
+  'living-in-greece',
+];
 
 const BANNED_PHRASES = [
   'Regional diversification',

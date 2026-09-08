@@ -4,6 +4,8 @@ import { getCollection, render } from 'astro:content';
 import { readingMinutes } from '../../lib/readingTime';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ContentCard from '../../components/ContentCard.astro';
+import RelatedArticles from '../../components/RelatedArticles.astro';
+import { resolveRelated } from '../../lib/related';
 import LeadForm from '../../components/LeadForm.astro';
 import { SITE } from '../../data/site';
 
@@ -23,6 +25,8 @@ if (!overview) {
   throw new Error('src/content/golden-visa/overview.mdx is missing: the hub has no body.');
 }
 const { Content } = await render(overview);
+// The hub curates relatedSlugs in overview.mdx; this route rendered none.
+const related = await resolveRelated(overview.data.relatedSlugs, overview.id);
 
 const guides = await getCollection('guides');
 const byId = Object.fromEntries(guides.map((g) => [g.id, g]));
@@ -210,4 +214,5 @@ const schemas = [
       />
     </div>
   </section>
+  <RelatedArticles items={related} />
 </BaseLayout>

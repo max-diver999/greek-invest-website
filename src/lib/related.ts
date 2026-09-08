@@ -73,10 +73,22 @@ const LABEL: Record<string, string> = {
  * slug is deliberate: a merged or renamed page should not render a dead card,
  * and `npm run check:related` is what reports the dangling reference.
  */
+/**
+ * The default was 3 while the corpus curated up to 10, so 361 hand-picked links
+ * on 130 pages were assigned and never rendered: the caller passed the whole
+ * list, this function returned the first three, and nothing reported the rest.
+ * Verified on the live site before the change: /areas/glyfada-property-investment/
+ * curated 7, of the 4 that its body does not mention, 1 reached the page;
+ * /areas/kalamata-property-investment/ rendered 0 of 4.
+ *
+ * 12 covers every list in the corpus and keeps the three-column grid's rows
+ * full at 3, 6, 9 and 12. Raise it if lists grow; do not let the overflow
+ * vanish again.
+ */
 export async function resolveRelated(
   slugs: string[] | undefined,
   currentId: string,
-  limit = 3,
+  limit = 12,
 ): Promise<RelatedItem[]> {
   if (!slugs?.length) return [];
   const map = await index();

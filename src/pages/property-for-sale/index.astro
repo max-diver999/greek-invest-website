@@ -2,6 +2,7 @@
 export const prerender = true;
 import { getCollection, render } from 'astro:content';
 import ArticleLayout from '../../layouts/ArticleLayout.astro';
+import { resolveRelated } from '../../lib/related';
 import ContentCard from '../../components/ContentCard.astro';
 import { SITE } from '../../data/site';
 import { readingMinutes } from '../../lib/readingTime';
@@ -23,6 +24,9 @@ if (!overview) {
   );
 }
 const { Content } = await render(overview);
+// The hub curates its own relatedSlugs like any other page; this route used to
+// pass an empty array and drop them.
+const related = await resolveRelated(overview.data.relatedSlugs, overview.id);
 const children = entries
   .filter((e) => e.id !== 'overview' && !e.data.noindex)
   .sort((a, b) => a.data.title.localeCompare(b.data.title));
@@ -43,7 +47,7 @@ const d = overview.data;
   noindex={d.noindex}
   hasInlineFaqBlock={overview.body?.includes('<FaqBlock') ?? false}
   contextLabel={d.title}
-  related={[]}
+  {related}
   canonical={hubUrl}
 >
   <Content />

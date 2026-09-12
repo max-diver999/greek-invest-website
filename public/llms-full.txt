@@ -1,12 +1,17 @@
 # Greek Invest — full page index
 
-133 research pages on Greece property investment and the Golden Visa, for foreign buyers.
+138 research pages on Greece property investment and the Golden Visa, for foreign buyers.
 Generated from the live corpus. Site: https://greek-invest.com
 
 Every figure on this site carries a date and a source. Golden Visa thresholds, taxes and
 transfer rules change; readers are told to verify with licensed Greek counsel before transacting.
 
-## Guides (94)
+## Guides (98)
+
+### Amanda and Alan's Greek Job: Real Corfu Renovation Costs
+URL: https://greek-invest.com/guides/amanda-and-alan-greek-job-real-costs/
+Updated: 2026-09-07
+The BBC pair started from a €1 Corfu house and listed it at €530,000. What the same project costs a normal buyer, and what a renovation series leaves out.
 
 ### Athens Golden Visa €800K: Which Areas Qualify in 2026
 URL: https://greek-invest.com/guides/athens-golden-visa-800000-areas/
@@ -58,6 +63,11 @@ URL: https://greek-invest.com/guides/buy-to-let-greece-guide/
 Updated: 2026-08-21
 Buy to let Greece 2026: gross yields 4.40 to 11%, LTR vs STR compared, Golden Visa rental ban, due diligence checklist and acquisition costs.
 
+### Buying Property in Greece as a Foreigner: The 2026 Process
+URL: https://greek-invest.com/guides/buying-property-in-greece/
+Updated: 2026-09-07
+The full sequence from AFM number to registered deed, with the statutory rates, the certificates that catch problems, and what changed on 1 January 2026.
+
 ### Can Foreigners Buy Property in Greece? Full 2026 Rules
 URL: https://greek-invest.com/guides/can-foreigners-buy-property-greece/
 Updated: 2026-08-21
@@ -86,7 +96,7 @@ Full cost of buying property in Greece: FMA 3.09%, notary, lawyer, registry, age
 ### Crete Property Investment Guide 2026: Island Markets
 URL: https://greek-invest.com/guides/crete-property-investment-guide/
 Updated: 2026-08-21
-Crete property investment 2026: €400K Golden Visa tier, ~€2,105/m² average, Chania and Heraklion yields, north coast markets, GV vs Attica arbitrage.
+Crete property investment 2026: €400K Golden Visa tier, ~€2,329/m² average, what the yield data supports, north coast markets, GV vs Attica arbitrage.
 
 ### Cyclades Property Investment Guide 2026: Island Map
 URL: https://greek-invest.com/guides/cyclades-property-investment-guide/
@@ -158,6 +168,11 @@ URL: https://greek-invest.com/guides/greece-citizenship-after-golden-visa/
 Updated: 2026-08-21
 Can a Greece Golden Visa lead to citizenship? The 7-year naturalisation path, physical presence rules, language requirement, and the EU passport outcome.
 
+### Greece Digital Nomad Visa 2026: Income, Tax and Applying
+URL: https://greek-invest.com/guides/greece-digital-nomad-visa/
+Updated: 2026-09-07
+€3,500 a month, a 50% tax exemption for up to seven years, and from February 2026 consulate-only applications. What qualifies and where the tax trap sits.
+
 ### Golden Visa 120 m² Rule Greece 2026: Single Deed Only
 URL: https://greek-invest.com/guides/greece-golden-visa-120-square-meter-rule/
 Updated: 2026-08-21
@@ -206,7 +221,7 @@ One investment covers spouse, children under 21 and all four parents. Documents,
 ### French Buyers Greece Property Investment: 2026 Guide
 URL: https://greek-invest.com/guides/greece-golden-visa-french-buyers/
 Updated: 2026-08-21
-French buyers Greece property: Crete vs Côte d'Azur prices, retraite, non-resident tax, 5 to 6% LTR yields. EU buyers, no GV needed for Schengen.
+French buyers Greece property: Crete vs Côte d'Azur prices, retraite, non-resident tax, what the yield data supports. EU buyers, no GV needed for Schengen.
 
 ### German Buyers Greece Golden Visa: Complete 2026 Guide
 URL: https://greek-invest.com/guides/greece-golden-visa-german-buyers/
@@ -361,7 +376,12 @@ Progressive 15 to 45% Greek rental income tax for non-residents: brackets, filin
 ### Greece Rental Yields 2026: Real Net Numbers by City
 URL: https://greek-invest.com/guides/greece-rental-yield-guide/
 Updated: 2026-08-21
-Athens 5 to 7.5% gross, Crete STR 8 to 11%: what is left after tax, management and vacancy. Net yield tables by city and the traps gross figures hide.
+Measured Greek yields by city and unit size, what short lets really earn, and what survives tax, management and vacancy.
+
+### Greece Retirement Visa 2026: FIP Route, Income and 7% Tax
+URL: https://greek-invest.com/guides/greece-retirement-visa/
+Updated: 2026-09-07
+The Financially Independent Person route asks €3,500 a month in passive income. What counts as passive, what the file needs, and why tax planning comes first.
 
 ### Greece Tax Changes 2026: Law 5246/2025 Buyer's Guide
 URL: https://greek-invest.com/guides/greece-tax-changes-2026-law-5246/
@@ -456,7 +476,7 @@ Resale property Greece checklist: title search, ENFIA clearance, engineer survey
 ### Short-Term Rental Greece Rules: 2026 Complete Guide
 URL: https://greek-invest.com/guides/short-term-rental-greece-rules/
 Updated: 2026-08-21
-Athens STR moratorium through end-2026, Golden Visa STR ban, municipality licensing steps, and Crete 8 to 11% yields for licensed operators explained.
+Athens and Thessaloniki registration freezes, the Golden Visa STR ban, licensing steps, and what Cretan short lets actually earn.
 
 ### Snagging Inspection Greece: New Build Complete Guide
 URL: https://greek-invest.com/guides/snagging-inspection-greece-new-build/
@@ -483,7 +503,7 @@ Turkish buyers in Greece: 3,291 GV permits in 2025 (+160%). Thessaloniki, Athens
 ### Chania Property Investment Guide 2026: West Markets
 URL: https://greek-invest.com/areas/chania-property-investment/
 Updated: 2026-08-21
-Chania property investment 2026: €400K Golden Visa tier, €2,200 to 2,400/m², 5 to 6% LTR yields, old town vs Akrotiri, pros, cons and buyer scenarios.
+Chania property investment 2026: €400K Golden Visa tier, what the asking data implies for yield, old town vs Akrotiri, pros, cons and buyer scenarios.
 
 ### Costa Navarino Property Investment & Golden Visa 2026
 URL: https://greek-invest.com/areas/costa-navarino-property-investment/
@@ -503,7 +523,7 @@ Glyfada property investment 2026: €800K Golden Visa zone, tram to Athens, mari
 ### Heraklion Property Investment Guide 2026: East Data
 URL: https://greek-invest.com/areas/heraklion-property-investment/
 Updated: 2026-08-21
-Heraklion property investment 2026: €400K Golden Visa, €1,800 to 2,200/m², 5 to 6% LTR yields, university demand, pros, cons and buyer scenarios.
+Heraklion property investment 2026: €400K Golden Visa, the cheapest prefecture on the island, university demand, pros, cons and buyer scenarios.
 
 ### Kalamata Property Investment Guide 2026: Peloponnese Port
 URL: https://greek-invest.com/areas/kalamata-property-investment/
@@ -550,7 +570,7 @@ Athens Riviera vs center 2026: Glyfada/Voula vs Kipseli/center at €800K GV tie
 ### Athens Riviera vs Crete Golden Visa: €800K or €400K?
 URL: https://greek-invest.com/compare/athens-riviera-vs-crete-golden-visa/
 Updated: 2026-08-22
-€800,000 on the Athens Riviera buys 135 m² and liquidity; €400,000 on Crete buys 190 m² and yield. Full comparison: prices, net income, exit, family costs.
+€800,000 on the Athens Riviera buys 135 m² and liquidity; €400,000 on Crete buys 172 m². Same permit, and the yield case is thinner than sold.
 
 ### Athens vs Thessaloniki Golden Visa Investment Compared 2026
 URL: https://greek-invest.com/compare/athens-vs-thessaloniki-golden-visa-investment/
@@ -676,9 +696,14 @@ URL: https://greek-invest.com/developers/solena-greece/
 Updated: 2026-08-21
 Independent Solena Greece review: ΕΛΑ brand, Piraeus/Kallithea/Papagos pipeline, €800K Attica GV rules, off-plan risks. Verify with lawyer.
 
-## News (1)
+## News (2)
 
 ### Greece Golden Visa: Record 8,879 Approvals in 2025
 URL: https://greek-invest.com/news/greece-golden-visa-approvals-2025/
 Updated: 2026-08-21
 Greece approved 8,879 Golden Visas in 2025, up 95%, while new applications fell 24.8%. Law 5100/2024 tiers reshape demand amid €2.06B foreign RE inflows.
+
+### Greek Property in 2026: Every Change That Affects a Buyer
+URL: https://greek-invest.com/news/greece-property-market-news-2026/
+Updated: 2026-09-07
+A dated log of what changed for foreign buyers and owners in Greece this year, from the rental income scale to the Golden Visa circular, each with its source.

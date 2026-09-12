@@ -1,0 +1,105 @@
+{
+  "siteUrl": "https://greek-invest.com",
+  "host": "greek-invest.com",
+  "brand": "Greek Invest",
+  "language": "en",
+  "title": "Greek Invest",
+  "tagline": "independent research on Greek property",
+  "summary": "Independent research on Greek property for foreign buyers: the Golden Visa thresholds and what changed, purchase process and notary costs, short-term rental registration, rental yields by area, residency and tax, and named developments. Not an agency, not a listings portal.",
+  "entity": "Greek Invest is an independent research publisher on Greek property for foreign buyers, part of the MORE Group network. It sells no listings and represents no developer. Wikidata: https://www.wikidata.org/wiki/Q140604600",
+  "contact": {
+    "email": "info@greek-invest.com",
+    "page": "/contact/"
+  },
+  "collections": [
+    {
+      "dir": "guides",
+      "urlPrefix": "/guides",
+      "label": "Guides"
+    },
+    {
+      "dir": "areas",
+      "urlPrefix": "/areas",
+      "label": "Areas and markets"
+    },
+    {
+      "dir": "property-for-sale",
+      "urlPrefix": "/property-for-sale",
+      "label": "Property for sale by area"
+    },
+    {
+      "dir": "projects",
+      "urlPrefix": "/projects",
+      "label": "Project reviews"
+    },
+    {
+      "dir": "compare",
+      "urlPrefix": "/compare",
+      "label": "Comparisons"
+    },
+    {
+      "dir": "developers",
+      "urlPrefix": "/developers",
+      "label": "Developers"
+    },
+    {
+      "dir": "golden-visa",
+      "urlPrefix": "/golden-visa",
+      "label": "Golden Visa"
+    },
+    {
+      "dir": "living-in-greece",
+      "urlPrefix": "/living-in-greece",
+      "label": "Living in Greece"
+    },
+    {
+      "dir": "news",
+      "urlPrefix": "/news",
+      "label": "Market notes"
+    }
+  ],
+  "keyPages": [
+    {
+      "url": "/guides/",
+      "label": "Guides: legal, tax, residency, due diligence"
+    },
+    {
+      "url": "/golden-visa/",
+      "label": "Golden Visa: thresholds and what changed"
+    },
+    {
+      "url": "/areas/",
+      "label": "Areas and markets"
+    },
+    {
+      "url": "/property-for-sale/",
+      "label": "Property for sale by area"
+    },
+    {
+      "url": "/living-in-greece/",
+      "label": "Living in Greece"
+    },
+    {
+      "url": "/methodology/",
+      "label": "How the numbers are produced"
+    },
+    {
+      "url": "/about/",
+      "label": "About"
+    },
+    {
+      "url": "/contact/",
+      "label": "Contact"
+    }
+  ],
+  "contentPolicy": {
+    "search": "yes",
+    "aiInput": "yes",
+    "aiTrain": "no"
+  },
+  "writeLlmsFull": false,
+  "llms": {
+    "generated": true,
+    "note": "llms.txt is built by the generator this repo already has and is left alone."
+  }
+}

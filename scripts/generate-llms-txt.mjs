@@ -3,7 +3,7 @@
  * Generate public/llms.txt and public/llms-full.txt from the content collections.
  *
  * Both files were hand-maintained and had gone stale: llms.txt listed 5 of 129
- * guides and still said "batch 1 — publishing", and llms-full.txt was a 379-byte
+ * guides and still said "batch 1: publishing", and llms-full.txt was a 379-byte
  * stub rather than the corpus. For a site whose whole argument is AI citability,
  * the file answer engines fetch for full context was effectively empty.
  *
@@ -101,12 +101,12 @@ const short = [
   '',
   '## Start here',
   '',
-  `- ${SITE}/golden-visa/ — Golden Visa hub: tiers, rules, timeline`,
-  `- ${SITE}/guides/greece-golden-visa-property-tiers-2026/ — which tier applies where`,
-  `- ${SITE}/guides/greece-golden-visa-120-square-meter-rule/ — the area test in detail`,
-  `- ${SITE}/guides/cost-of-buying-property-greece/ — full fee schedule`,
-  `- ${SITE}/guides/greece-rental-yield-guide/ — net yield by city`,
-  `- ${SITE}/tools/ — rental yield, purchase cost and Golden Visa zone calculators`,
+  `- ${SITE}/golden-visa/, Golden Visa hub: tiers, rules, timeline`,
+  `- ${SITE}/guides/greece-golden-visa-property-tiers-2026/: which tier applies where`,
+  `- ${SITE}/guides/greece-golden-visa-120-square-meter-rule/: the area test in detail`,
+  `- ${SITE}/guides/cost-of-buying-property-greece/: full fee schedule`,
+  `- ${SITE}/guides/greece-rental-yield-guide/: net yield by city`,
+  `- ${SITE}/tools/: rental yield, purchase cost and Golden Visa zone calculators`,
   '',
   '## Sections',
   '',
@@ -122,7 +122,7 @@ const short = [
 
 /* ---------------- llms-full.txt: the corpus ---------------- */
 const full = [
-  '# Greek Invest — full page index',
+  '# Greek Invest: full page index',
   '',
   `${total} research pages on Greece property investment and the Golden Visa, for foreign buyers.`,
   `Generated from the live corpus. Site: ${SITE}`,
@@ -155,7 +155,7 @@ if (CHECK) {
     }
   };
   const stale = cur('llms.txt') !== shortTxt || cur('llms-full.txt') !== fullTxt;
-  console.log(stale ? 'llms.txt / llms-full.txt are STALE — run npm run gen:llms' : 'llms files up to date');
+  console.log(stale ? 'llms.txt / llms-full.txt are STALE, run npm run gen:llms' : 'llms files up to date');
   process.exit(stale ? 1 : 0);
 }
 

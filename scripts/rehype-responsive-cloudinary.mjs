@@ -10,6 +10,48 @@ const dimensions = fs.existsSync(dimsPath)
   ? JSON.parse(fs.readFileSync(dimsPath, 'utf8'))
   : {};
 
+/**
+ * Картинки внутри текста статей. До 21.09.2026 этот плагин умел только адреса Cloudinary: на
+ * адресе R2 responsiveAttributes возвращал null, и тег оставался как есть, без выбора размера и
+ * без размеров кадра. Внешне страница выглядела целой, а телефон качал файл для компьютера и
+ * страница прыгала при загрузке.
+ *
+ * Какие ширины реально залиты, знает манифест: его пишет scripts/r2-add-widths.mjs. Гадать здесь
+ * нельзя, иначе браузер попросит несуществующий файл и получит 404 вместо картинки.
+ *
+ * Ширина слота своя, не из performance-images.config.json: колонка .prose померена на живом сайте
+ * и упирается в 702.72px, а поля контейнера съедают 48 точек при экране уже 600.
+ */
+const R2_HOST = 'pub-2855c73eea384110b510f25966292c37.r2.dev';
+const R2_SIZES = '(max-width: 599px) calc(100vw - 48px), (max-width: 763px) 92vw, 703px';
+const r2WidthsPath = path.join(ROOT, 'src', 'data', 'r2-image-widths.json');
+const r2Widths = fs.existsSync(r2WidthsPath)
+  ? JSON.parse(fs.readFileSync(r2WidthsPath, 'utf8'))
+  : {};
+
+function r2Attributes(src) {
+  const trimmed = String(src || '').trim();
+  const i = trimmed.indexOf(R2_HOST);
+  if (i < 0) return null;
+  const key = trimmed.slice(i + R2_HOST.length).replace(/^\//, '').split('?')[0];
+  const entry = r2Widths[key];
+  if (!entry) return null;
+
+  const variants = (entry.variants || []).filter((w) => w < entry.w).sort((a, b) => a - b);
+  const base = `https://${R2_HOST}/${key}`;
+  const srcset = variants.length
+    ? [...variants.map((w) => `${base.replace(/\.webp$/i, `-w${w}.webp`)} ${w}w`), `${base} ${entry.w}w`].join(', ')
+    : null;
+
+  return {
+    src: trimmed,
+    srcset,
+    sizes: R2_SIZES,
+    width: String(entry.w),
+    height: String(entry.h),
+  };
+}
+
 const cloudinaryPattern =
   /^https:\/\/res\.cloudinary\.com\/([a-z0-9]+)\/image\/upload\/(.+)$/;
 
@@ -32,6 +74,9 @@ function parseCloudinaryUrl(src) {
 }
 
 function responsiveAttributes(src) {
+  const fromR2 = r2Attributes(src);
+  if (fromR2) return fromR2;
+
   const parsed = parseCloudinaryUrl(src);
   if (!parsed) return null;
   const preserveOptimizedOriginal = /\.(webp|avif)$/i.test(parsed.publicId);

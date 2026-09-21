@@ -1,5 +1,5 @@
 ---
-import { getCardImageUrl } from '../lib/cardImage';
+import { getCardImage } from '../lib/cardImage';
 
 interface Props {
   href: string;
@@ -23,14 +23,16 @@ const {
   metaAccent = false,
 } = Astro.props;
 
-const photo = getCardImageUrl(image);
+const photo = getCardImage(image, 'card');
 ---
 
 <a href={href} class="gr-card is-link block no-underline h-full">
   {photo ? (
     <div class="gr-card__media">
       <img
-        src={photo}
+        src={photo.src}
+        srcset={photo.srcset}
+        sizes={photo.sizes}
         alt={imageAlt || title}
         loading="lazy"
         decoding="async"

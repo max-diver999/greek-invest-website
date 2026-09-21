@@ -8,7 +8,7 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
-    "postbuild": "node scripts/patch-vercel-output.mjs && node scripts/audit-rendered-live.mjs --local --fail && node scripts/test-image-transforms.mjs --offline && node scripts/test-css-layers.mjs",
+    "postbuild": "node scripts/patch-vercel-output.mjs && node scripts/audit-rendered-live.mjs --local --fail && node scripts/test-image-transforms.mjs --offline && node scripts/test-css-layers.mjs && node scripts/check-images.mjs --dir .vercel/output/static",
     "test:images": "node scripts/test-image-transforms.mjs",
     "test:css-layers": "node scripts/test-css-layers.mjs",
     "preview": "astro preview",
@@ -51,7 +51,8 @@
     "ai:card": "node scripts/ai-visibility/generate-agent-card.mjs",
     "ai:lastmod": "node scripts/ai-visibility/page-lastmod.mjs",
     "ai:check": "node scripts/ai-visibility/check-agent-index.mjs",
-    "ai:verify": "node scripts/ai-visibility/verify-live.mjs"
+    "ai:verify": "node scripts/ai-visibility/verify-live.mjs",
+    "check:images": "node scripts/check-images.mjs --dir .vercel/output/static"
   },
   "dependencies": {
     "@astrojs/mdx": "5.0.2",

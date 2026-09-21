@@ -124,8 +124,11 @@ const allSchemas = [orgSchema, ...schemas, ...(webPageSchema ? [webPageSchema] :
   <link rel="preload" href={manrope400} as="font" type="font/woff2" crossorigin />
   <link rel="preload" href={marcellus400} as="font" type="font/woff2" crossorigin />
 
-  <link rel="preconnect" href="https://res.cloudinary.com" crossorigin />
-  <link rel="dns-prefetch" href="https://res.cloudinary.com" />
+  {/* Картинки живут на R2. Адресов Cloudinary в разметке сайта не осталось ни одного, поэтому
+      заранее открывать соединение с ним значит тратить время на чужой домен. Проверено поиском по
+      src/ и public/ 21.09.2026: 140 картинок, все на R2. */}
+  <link rel="preconnect" href="https://pub-2855c73eea384110b510f25966292c37.r2.dev" crossorigin />
+  <link rel="dns-prefetch" href="https://pub-2855c73eea384110b510f25966292c37.r2.dev" />
 
   {preloadImage && (
     <link

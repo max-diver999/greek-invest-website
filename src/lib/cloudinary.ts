@@ -1,4 +1,5 @@
 import dimensions from '../../scripts/data/cloudinary-image-dims.json';
+import { r2Responsive } from './r2Image';
 
 const cloudinaryPattern =
   /^https:\/\/res\.cloudinary\.com\/([a-z0-9]+)\/image\/upload\/(.+)$/;
@@ -24,7 +25,24 @@ function parseCloudinaryUrl(src: string) {
   };
 }
 
-export function responsiveCloudinary(src: string) {
+type ResponsiveAttrs = {
+  src: string;
+  srcset?: string;
+  sizes?: string;
+  width?: number;
+  height?: number;
+};
+
+export function responsiveCloudinary(src: string): ResponsiveAttrs {
+  /**
+   * Обложка статьи. До 21.09.2026 эта функция начиналась с вопроса «это Cloudinary?» и на адресе
+   * R2 молча возвращала { src }: без srcset, без sizes и без размеров кадра. Телефон качал файл
+   * для компьютера, а страница прыгала при загрузке, потому что в разметке стояли подставные
+   * 1200 на 675, а настоящий кадр был другой.
+   */
+  const fromR2 = r2Responsive(src, 'hero');
+  if (fromR2) return fromR2;
+
   const parsed = parseCloudinaryUrl(src);
   if (!parsed) return { src };
 

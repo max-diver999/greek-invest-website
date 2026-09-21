@@ -29,4 +29,4 @@ export const FEATURED_AREA_SLUGS = [
 ] as const;
 
 export const HOMEPAGE_HERO_IMAGE =
-  'https://res.cloudinary.com/dlrrtf6bq/image/upload/w_1800,q_88,f_webp/more-group/greece/developer-assets/solenagreece-com-antiparos-01-2defeb2c';
+  'https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/greece/developer-assets/solenagreece-com-antiparos-01-2defeb2c.webp';

@@ -1,0 +1,330 @@
+{
+  "site": "greek-invest-website",
+  "source_cloud": "dlrrtf6bq",
+  "r2_public_base": "https://pub-2855c73eea384110b510f25966292c37.r2.dev",
+  "changed": 64,
+  "errors": 0,
+  "items": [
+    {
+      "file": "greek-invest-website/src/data/featured.ts",
+      "old": "https://res.cloudinary.com/dlrrtf6bq/image/upload/w_1800,q_88,f_webp/more-group/greece/developer-assets/solenagreece-com-antiparos-01-2defeb2c",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/greece/developer-assets/solenagreece-com-antiparos-01-2defeb2c.webp"
+    },
+    {
+      "file": "greek-invest-website/src/data/image-credits.json",
+      "old": "https://res.cloudinary.com/dlrrtf6bq/image/upload/w_1200,q_85,f_webp/more-group/greece/curated/1000-three-domes-of-oia-in-santorini-photo-by-gi-f2ec9094",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/greece/curated/1000-three-domes-of-oia-in-santorini-photo-by-gi-f2ec9094.webp"
+    },
+    {
+      "file": "greek-invest-website/src/data/image-credits.json",
+      "old": "https://res.cloudinary.com/dlrrtf6bq/image/upload/w_1200,q_85,f_webp/more-group/greece/curated/07-17-2012-oia-santorini-greece-44-088c7e00",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/greece/curated/07-17-2012-oia-santorini-greece-44-088c7e00.webp"
+    },
+    {
+      "file": "greek-invest-website/src/data/image-credits.json",
+      "old": "https://res.cloudinary.com/dlrrtf6bq/image/upload/w_1200,q_85,f_webp/more-group/greece/curated/santorini-panoramic-from-the-crater-rim-above-at-eaf0eeb8",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/greece/curated/santorini-panoramic-from-the-crater-rim-above-at-eaf0eeb8.webp"
+    },
+    {
+      "file": "greek-invest-website/src/data/image-credits.json",
+      "old": "https://res.cloudinary.com/dlrrtf6bq/image/upload/w_1200,q_85,f_webp/more-group/greece/curated/little-venice-mykonos-2024-d32a2ef9",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/greece/curated/little-venice-mykonos-2024-d32a2ef9.webp"
+    },
+    {
+      "file": "greek-invest-website/src/data/image-credits.json",
+      "old": "https://res.cloudinary.com/dlrrtf6bq/image/upload/w_1200,q_85,f_webp/more-group/greece/curated/little-venice-with-a-view-of-the-ferry-terminal--60e39a93",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/greece/curated/little-venice-with-a-view-of-the-ferry-terminal--60e39a93.webp"
+    },
+    {
+      "file": "greek-invest-website/src/data/image-credits.json",
+      "old": "https://res.cloudinary.com/dlrrtf6bq/image/upload/w_1200,q_85,f_webp/more-group/greece/curated/sunset-of-mykonos-ef5f1c50",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/greece/curated/sunset-of-mykonos-ef5f1c50.webp"
+    },
+    {
+      "file": "greek-invest-website/src/data/image-credits.json",
+      "old": "https://res.cloudinary.com/dlrrtf6bq/image/upload/w_1200,q_85,f_webp/more-group/greece/curated/navagio-beach-zakynthos-6b162dee",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/greece/curated/navagio-beach-zakynthos-6b162dee.webp"
+    },
+    {
+      "file": "greek-invest-website/src/data/image-credits.json",
+      "old": "https://res.cloudinary.com/dlrrtf6bq/image/upload/w_1200,q_85,f_webp/more-group/greece/curated/sarakiniko-beach-on-milos-island-greece-with-a-v-e1755de4",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/greece/curated/sarakiniko-beach-on-milos-island-greece-with-a-v-e1755de4.webp"
+    },
+    {
+      "file": "greek-invest-website/src/data/image-credits.json",
+      "old": "https://res.cloudinary.com/dlrrtf6bq/image/upload/w_1200,q_85,f_webp/more-group/greece/curated/naxos-chora-2020-08-20-34-portara-blues-star-fer-71ebcf15",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/greece/curated/naxos-chora-2020-08-20-34-portara-blues-star-fer-71ebcf15.webp"
+    },
+    {
+      "file": "greek-invest-website/src/data/image-credits.json",
+      "old": "https://res.cloudinary.com/dlrrtf6bq/image/upload/w_1200,q_85,f_webp/more-group/greece/curated/venetian-castle-naoussa-paros-greece-dce63077",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/greece/curated/venetian-castle-naoussa-paros-greece-dce63077.webp"
+    },
+    {
+      "file": "greek-invest-website/src/data/image-credits.json",
+      "old": "https://res.cloudinary.com/dlrrtf6bq/image/upload/w_1200,q_85,f_webp/more-group/greece/curated/ela-pink-sand-beach-at-elafonisi-crete-greece-20-88dacd8b",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/greece/curated/ela-pink-sand-beach-at-elafonisi-crete-greece-20-88dacd8b.webp"
+    },
+    {
+      "file": "greek-invest-website/src/data/image-credits.json",
+      "old": "https://res.cloudinary.com/dlrrtf6bq/image/upload/w_1200,q_85,f_webp/more-group/greece/curated/rethymno-venetian-port-02-b96fb583",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/greece/curated/rethymno-venetian-port-02-b96fb583.webp"
+    },
+    {
+      "file": "greek-invest-website/src/data/image-credits.json",
+      "old": "https://res.cloudinary.com/dlrrtf6bq/image/upload/w_1200,q_85,f_webp/more-group/greece/curated/korfu-gr-korfu-altstadt-2018-1156-66b6277c",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/greece/curated/korfu-gr-korfu-altstadt-2018-1156-66b6277c.webp"
+    },
+    {
+      "file": "greek-invest-website/src/data/image-credits.json",
+      "old": "https://res.cloudinary.com/dlrrtf6bq/image/upload/w_1200,q_85,f_webp/more-group/greece/curated/the-old-fortress-and-the-old-town-of-corfu-septe-88e8fad7",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/greece/curated/the-old-fortress-and-the-old-town-of-corfu-septe-88e8fad7.webp"
+    },
+    {
+      "file": "greek-invest-website/src/data/image-credits.json",
+      "old": "https://res.cloudinary.com/dlrrtf6bq/image/upload/w_1200,q_85,f_webp/more-group/greece/curated/porto-katsiki-sf-0001-e455511e",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/greece/curated/porto-katsiki-sf-0001-e455511e.webp"
+    },
+    {
+      "file": "greek-invest-website/src/data/image-credits.json",
+      "old": "https://res.cloudinary.com/dlrrtf6bq/image/upload/w_1200,q_85,f_webp/more-group/greece/curated/porto-katsiki-beach-lefkada-ionian-islands-greec-b316b303",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/greece/curated/porto-katsiki-beach-lefkada-ionian-islands-greec-b316b303.webp"
+    },
+    {
+      "file": "greek-invest-website/src/data/image-credits.json",
+      "old": "https://res.cloudinary.com/dlrrtf6bq/image/upload/w_1200,q_85,f_webp/more-group/greece/curated/lefkada-kosta-99265b74",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/greece/curated/lefkada-kosta-99265b74.webp"
+    },
+    {
+      "file": "greek-invest-website/src/data/image-credits.json",
+      "old": "https://res.cloudinary.com/dlrrtf6bq/image/upload/w_1200,q_85,f_webp/more-group/greece/curated/porto-katsiki-unsplash-d9e2d2f6",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/greece/curated/porto-katsiki-unsplash-d9e2d2f6.webp"
+    },
+    {
+      "file": "greek-invest-website/src/data/image-credits.json",
+      "old": "https://res.cloudinary.com/dlrrtf6bq/image/upload/w_1200,q_85,f_webp/more-group/greece/curated/meteora-monastery-rousanou-b2e9b4fe",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/greece/curated/meteora-monastery-rousanou-b2e9b4fe.webp"
+    },
+    {
+      "file": "greek-invest-website/src/data/image-credits.json",
+      "old": "https://res.cloudinary.com/dlrrtf6bq/image/upload/w_1200,q_85,f_webp/more-group/greece/curated/by-night-129f9d37",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/greece/curated/by-night-129f9d37.webp"
+    },
+    {
+      "file": "greek-invest-website/src/data/image-credits.json",
+      "old": "https://res.cloudinary.com/dlrrtf6bq/image/upload/w_1200,q_85,f_webp/more-group/greece/curated/bourtzi-castle-harbour-karystos-euboea-greece-9eb4c1ef",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/greece/curated/bourtzi-castle-harbour-karystos-euboea-greece-9eb4c1ef.webp"
+    },
+    {
+      "file": "greek-invest-website/src/data/image-credits.json",
+      "old": "https://res.cloudinary.com/dlrrtf6bq/image/upload/w_1200,q_85,f_webp/more-group/greece/curated/yachts-and-chora-astypalaia-greece-3141889e",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/greece/curated/yachts-and-chora-astypalaia-greece-3141889e.webp"
+    },
+    {
+      "file": "greek-invest-website/src/data/image-credits.json",
+      "old": "https://res.cloudinary.com/dlrrtf6bq/image/upload/w_1200,q_85,f_webp/more-group/greece/curated/to-the-open-sea-astypalaia-greece-6d83f7cc",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/greece/curated/to-the-open-sea-astypalaia-greece-6d83f7cc.webp"
+    },
+    {
+      "file": "greek-invest-website/src/data/image-credits.json",
+      "old": "https://res.cloudinary.com/dlrrtf6bq/image/upload/w_1200,q_85,f_webp/more-group/greece/curated/chora-folegandros-greece-f2e5906b",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/greece/curated/chora-folegandros-greece-f2e5906b.webp"
+    },
+    {
+      "file": "greek-invest-website/src/data/image-credits.json",
+      "old": "https://res.cloudinary.com/dlrrtf6bq/image/upload/w_1200,q_85,f_webp/more-group/greece/curated/folegandros-greece-956cd26a",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/greece/curated/folegandros-greece-956cd26a.webp"
+    },
+    {
+      "file": "greek-invest-website/src/data/image-credits.json",
+      "old": "https://res.cloudinary.com/dlrrtf6bq/image/upload/w_1200,q_85,f_webp/more-group/greece/curated/oia-santorini-greece-13-87428458",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/greece/curated/oia-santorini-greece-13-87428458.webp"
+    },
+    {
+      "file": "greek-invest-website/src/data/image-credits.json",
+      "old": "https://res.cloudinary.com/dlrrtf6bq/image/upload/w_1200,q_85,f_webp/more-group/greece/curated/navagio-beach-aerial-zakynthos-greece-4647056428-fd93f589",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/greece/curated/navagio-beach-aerial-zakynthos-greece-4647056428-fd93f589.webp"
+    },
+    {
+      "file": "greek-invest-website/src/data/image-credits.json",
+      "old": "https://res.cloudinary.com/dlrrtf6bq/image/upload/w_1200,q_85,f_webp/more-group/greece/curated/kastro-folegandros-greece-e067328f",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/greece/curated/kastro-folegandros-greece-e067328f.webp"
+    },
+    {
+      "file": "greek-invest-website/src/data/image-credits.json",
+      "old": "https://res.cloudinary.com/dlrrtf6bq/image/upload/w_1200,q_85,f_webp/more-group/greece/curated/chora-at-night-folegandros-greece-425ec495",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/greece/curated/chora-at-night-folegandros-greece-425ec495.webp"
+    },
+    {
+      "file": "greek-invest-website/src/data/image-credits.json",
+      "old": "https://res.cloudinary.com/dlrrtf6bq/image/upload/w_1200,q_85,f_webp/more-group/greece/curated/church-of-transfiguration-ermoupoli-syros-18m137-9de209a9",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/greece/curated/church-of-transfiguration-ermoupoli-syros-18m137-9de209a9.webp"
+    },
+    {
+      "file": "greek-invest-website/src/data/image-credits.json",
+      "old": "https://res.cloudinary.com/dlrrtf6bq/image/upload/w_1200,q_85,f_webp/more-group/greece/curated/view-of-ermoupoli-syros-island-from-a-ferry-boat-45cb3976",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/greece/curated/view-of-ermoupoli-syros-island-from-a-ferry-boat-45cb3976.webp"
+    },
+    {
+      "file": "greek-invest-website/src/data/image-credits.json",
+      "old": "https://res.cloudinary.com/dlrrtf6bq/image/upload/w_1200,q_85,f_webp/more-group/greece/curated/view-of-ermoupoli-syros-island-from-a-ferry-boat-43462edc",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/greece/curated/view-of-ermoupoli-syros-island-from-a-ferry-boat-43462edc.webp"
+    },
+    {
+      "file": "greek-invest-website/src/data/image-credits.json",
+      "old": "https://res.cloudinary.com/dlrrtf6bq/image/upload/w_1200,q_85,f_webp/more-group/greece/curated/poros-greece-30997579628-2f63ed16",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/greece/curated/poros-greece-30997579628-2f63ed16.webp"
+    },
+    {
+      "file": "greek-invest-website/src/data/image-credits.json",
+      "old": "https://res.cloudinary.com/dlrrtf6bq/image/upload/w_1200,q_85,f_webp/more-group/greece/curated/poros-evlahos-78b988e6",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/greece/curated/poros-evlahos-78b988e6.webp"
+    },
+    {
+      "file": "greek-invest-website/src/data/image-credits.json",
+      "old": "https://res.cloudinary.com/dlrrtf6bq/image/upload/w_1200,q_85,f_webp/more-group/greece/curated/kleftiko-milos-152805-f8d52ff0",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/greece/curated/kleftiko-milos-152805-f8d52ff0.webp"
+    },
+    {
+      "file": "greek-invest-website/src/data/image-credits.json",
+      "old": "https://res.cloudinary.com/dlrrtf6bq/image/upload/w_1200,q_85,f_webp/more-group/greece/curated/sailing-yachts-near-the-caves-at-kleftiko-on-mil-48e917b0",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/greece/curated/sailing-yachts-near-the-caves-at-kleftiko-on-mil-48e917b0.webp"
+    },
+    {
+      "file": "greek-invest-website/src/data/image-credits.json",
+      "old": "https://res.cloudinary.com/dlrrtf6bq/image/upload/w_1200,q_85,f_webp/more-group/greece/curated/aerial-view-of-balos-beach-and-lagoon-on-crete-g-6a3e0b72",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/greece/curated/aerial-view-of-balos-beach-and-lagoon-on-crete-g-6a3e0b72.webp"
+    },
+    {
+      "file": "greek-invest-website/src/data/image-credits.json",
+      "old": "https://res.cloudinary.com/dlrrtf6bq/image/upload/w_1200,q_85,f_webp/more-group/greece/curated/baloslagooncreta-38a063bb",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/greece/curated/baloslagooncreta-38a063bb.webp"
+    },
+    {
+      "file": "greek-invest-website/src/data/image-credits.json",
+      "old": "https://res.cloudinary.com/dlrrtf6bq/image/upload/w_1200,q_85,f_webp/more-group/greece/curated/balos-chania-crete-greece-ac82aa7b",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/greece/curated/balos-chania-crete-greece-ac82aa7b.webp"
+    },
+    {
+      "file": "greek-invest-website/src/data/image-credits.json",
+      "old": "https://res.cloudinary.com/dlrrtf6bq/image/upload/w_1200,q_85,f_webp/more-group/greece/curated/thessaloniki-waterfront-803fd767",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/greece/curated/thessaloniki-waterfront-803fd767.webp"
+    },
+    {
+      "file": "greek-invest-website/src/data/image-credits.json",
+      "old": "https://res.cloudinary.com/dlrrtf6bq/image/upload/w_1200,q_85,f_webp/more-group/greece/curated/voidokilia-beach-gmichalagas8-2d546f54",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/greece/curated/voidokilia-beach-gmichalagas8-2d546f54.webp"
+    },
+    {
+      "file": "greek-invest-website/src/data/image-credits.json",
+      "old": "https://res.cloudinary.com/dlrrtf6bq/image/upload/w_1200,q_85,f_webp/more-group/greece/curated/voidokilia-beach-gmichalagas4-68c4ad4f",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/greece/curated/voidokilia-beach-gmichalagas4-68c4ad4f.webp"
+    },
+    {
+      "file": "greek-invest-website/src/data/image-credits.json",
+      "old": "https://res.cloudinary.com/dlrrtf6bq/image/upload/w_1200,q_85,f_webp/more-group/greece/curated/voidokilia-beach-110b27d9",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/greece/curated/voidokilia-beach-110b27d9.webp"
+    },
+    {
+      "file": "greek-invest-website/src/data/image-credits.json",
+      "old": "https://res.cloudinary.com/dlrrtf6bq/image/upload/w_1200,q_85,f_webp/more-group/greece/curated/a-view-over-the-hotel-villa-renos-santorini-2601-9fb3eaf1",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/greece/curated/a-view-over-the-hotel-villa-renos-santorini-2601-9fb3eaf1.webp"
+    },
+    {
+      "file": "greek-invest-website/src/data/image-credits.json",
+      "old": "https://res.cloudinary.com/dlrrtf6bq/image/upload/w_1200,q_85,f_webp/more-group/greece/curated/thira-santorini-ia-01-148b78b4",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/greece/curated/thira-santorini-ia-01-148b78b4.webp"
+    },
+    {
+      "file": "greek-invest-website/src/data/image-credits.json",
+      "old": "https://res.cloudinary.com/dlrrtf6bq/image/upload/w_1200,q_85,f_webp/more-group/greece/curated/santorin-gr-akrotiri-caldera-2017-3006-fc3bff43",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/greece/curated/santorin-gr-akrotiri-caldera-2017-3006-fc3bff43.webp"
+    },
+    {
+      "file": "greek-invest-website/src/data/image-credits.json",
+      "old": "https://res.cloudinary.com/dlrrtf6bq/image/upload/w_1200,q_85,f_webp/more-group/greece/curated/santorin-gr-akrotiri-caldera-2017-3007-739257b5",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/greece/curated/santorin-gr-akrotiri-caldera-2017-3007-739257b5.webp"
+    },
+    {
+      "file": "greek-invest-website/src/data/image-credits.json",
+      "old": "https://res.cloudinary.com/dlrrtf6bq/image/upload/w_1200,q_85,f_webp/more-group/greece/curated/kastro-in-chora-of-mykonos-247691-6ce93e4b",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/greece/curated/kastro-in-chora-of-mykonos-247691-6ce93e4b.webp"
+    },
+    {
+      "file": "greek-invest-website/src/data/image-credits.json",
+      "old": "https://res.cloudinary.com/dlrrtf6bq/image/upload/w_1200,q_85,f_webp/more-group/greece/curated/sarakiniko-from-boat-milos-152762-d1473392",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/greece/curated/sarakiniko-from-boat-milos-152762-d1473392.webp"
+    },
+    {
+      "file": "greek-invest-website/src/data/image-credits.json",
+      "old": "https://res.cloudinary.com/dlrrtf6bq/image/upload/w_1200,q_85,f_webp/more-group/greece/curated/sarakiniko-beach-milos-15m6408-5d2430d3",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/greece/curated/sarakiniko-beach-milos-15m6408-5d2430d3.webp"
+    },
+    {
+      "file": "greek-invest-website/src/data/image-credits.json",
+      "old": "https://res.cloudinary.com/dlrrtf6bq/image/upload/w_1200,q_85,f_webp/more-group/greece/curated/sarakiniko-beach-milos-15m6413-e212f53f",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/greece/curated/sarakiniko-beach-milos-15m6413-e212f53f.webp"
+    },
+    {
+      "file": "greek-invest-website/src/data/image-credits.json",
+      "old": "https://res.cloudinary.com/dlrrtf6bq/image/upload/w_1200,q_85,f_webp/more-group/greece/curated/sarakiniko-beach-milos-15m6418-6738ce66",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/greece/curated/sarakiniko-beach-milos-15m6418-6738ce66.webp"
+    },
+    {
+      "file": "greek-invest-website/src/data/image-credits.json",
+      "old": "https://res.cloudinary.com/dlrrtf6bq/image/upload/w_1200,q_85,f_webp/more-group/greece/curated/naxos-chora-2020-08-20-28-portara-dfc73d5a",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/greece/curated/naxos-chora-2020-08-20-28-portara-dfc73d5a.webp"
+    },
+    {
+      "file": "greek-invest-website/src/data/image-credits.json",
+      "old": "https://res.cloudinary.com/dlrrtf6bq/image/upload/w_1200,q_85,f_webp/more-group/greece/curated/portara-naxos-31-4e12800b",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/greece/curated/portara-naxos-31-4e12800b.webp"
+    },
+    {
+      "file": "greek-invest-website/src/data/image-credits.json",
+      "old": "https://res.cloudinary.com/dlrrtf6bq/image/upload/w_1200,q_85,f_webp/more-group/greece/curated/venetian-castle-from-the-side-of-the-port-c2cb4aff",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/greece/curated/venetian-castle-from-the-side-of-the-port-c2cb4aff.webp"
+    },
+    {
+      "file": "greek-invest-website/src/data/image-credits.json",
+      "old": "https://res.cloudinary.com/dlrrtf6bq/image/upload/w_1200,q_85,f_webp/more-group/greece/curated/cyclades-paros-agios-ioanis-panoramio-2e20e647",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/greece/curated/cyclades-paros-agios-ioanis-panoramio-2e20e647.webp"
+    },
+    {
+      "file": "greek-invest-website/src/data/image-credits.json",
+      "old": "https://res.cloudinary.com/dlrrtf6bq/image/upload/w_1200,q_85,f_webp/more-group/greece/curated/porto-katsiki-beach-pic2-5a820ca8",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/greece/curated/porto-katsiki-beach-pic2-5a820ca8.webp"
+    },
+    {
+      "file": "greek-invest-website/src/data/image-credits.json",
+      "old": "https://res.cloudinary.com/dlrrtf6bq/image/upload/w_1200,q_85,f_webp/more-group/greece/curated/white-trader-crude-oil-tanker-bosphorus-strait-i-c3b7ece0",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/greece/curated/white-trader-crude-oil-tanker-bosphorus-strait-i-c3b7ece0.webp"
+    },
+    {
+      "file": "greek-invest-website/src/data/image-credits.json",
+      "old": "https://res.cloudinary.com/dlrrtf6bq/image/upload/w_1200,q_85,f_webp/more-group/greece/curated/milk-beach-b2674846",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/greece/curated/milk-beach-b2674846.webp"
+    },
+    {
+      "file": "greek-invest-website/src/data/image-credits.json",
+      "old": "https://res.cloudinary.com/dlrrtf6bq/image/upload/w_1200,q_85,f_webp/more-group/greece/curated/06-athens-metropolitan-area-greece-athen-athene-9a424ddf",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/greece/curated/06-athens-metropolitan-area-greece-athen-athene-9a424ddf.webp"
+    },
+    {
+      "file": "greek-invest-website/src/data/image-credits.json",
+      "old": "https://res.cloudinary.com/dlrrtf6bq/image/upload/w_1200,q_85,f_webp/more-group/greece/curated/athens-glyfada-3578ea71",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/greece/curated/athens-glyfada-3578ea71.webp"
+    },
+    {
+      "file": "greek-invest-website/src/data/image-credits.json",
+      "old": "https://res.cloudinary.com/dlrrtf6bq/image/upload/w_1200,q_85,f_webp/more-group/greece/curated/houses-and-agricultural-terraces-near-the-coastl-4d1280bb",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/greece/curated/houses-and-agricultural-terraces-near-the-coastl-4d1280bb.webp"
+    },
+    {
+      "file": "greek-invest-website/src/data/image-credits.json",
+      "old": "https://res.cloudinary.com/dlrrtf6bq/image/upload/w_1200,q_85,f_webp/more-group/greece/curated/athens-kifissias-avenue-20080728a-6bd5edf4",
+      "new": "https://pub-2855c73eea384110b510f25966292c37.r2.dev/more-group/greece/curated/athens-kifissias-avenue-20080728a-6bd5edf4.webp"
+    }
+  ],
+  "failed": []
+}

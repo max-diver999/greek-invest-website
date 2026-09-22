@@ -6,6 +6,8 @@
     "node": ">=22.12.0"
   },
   "scripts": {
+    "cadence:gate": "node scripts/cadence-gate-new.mjs",
+    "validate:batch": "node scripts/cadence-gate-new.mjs",
     "dev": "astro dev",
     "build": "astro build",
     "postbuild": "node scripts/patch-vercel-output.mjs && node scripts/audit-rendered-live.mjs --local --fail && node scripts/test-image-transforms.mjs --offline && node scripts/test-css-layers.mjs && node scripts/check-images.mjs --dir .vercel/output/static",

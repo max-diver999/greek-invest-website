@@ -43,7 +43,7 @@
     "validate:strict": "node scripts/qa-audit.mjs",
     "audit:images": "node scripts/audit-all-images.mjs --fail",
     "gen:llms": "node scripts/generate-llms-txt.mjs",
-    "prebuild": "node scripts/generate-llms-txt.mjs && node scripts/ai-visibility/page-lastmod.mjs && node scripts/ai-visibility/generate-agent-markdown.mjs && node scripts/ai-visibility/generate-agent-card.mjs && node scripts/ai-visibility/check-agent-index.mjs",
+    "prebuild": "node scripts/cadence-check.mjs --changed --fail-hard && node scripts/generate-llms-txt.mjs && node scripts/ai-visibility/page-lastmod.mjs && node scripts/ai-visibility/generate-agent-markdown.mjs && node scripts/ai-visibility/generate-agent-card.mjs && node scripts/ai-visibility/check-agent-index.mjs",
     "speed:dims": "node scripts/build-cloudinary-dims.mjs",
     "speed:verify": "node scripts/verify-responsive-images.mjs",
     "check:related": "node scripts/check-related.mjs",
@@ -52,7 +52,11 @@
     "ai:lastmod": "node scripts/ai-visibility/page-lastmod.mjs",
     "ai:check": "node scripts/ai-visibility/check-agent-index.mjs",
     "ai:verify": "node scripts/ai-visibility/verify-live.mjs",
-    "check:images": "node scripts/check-images.mjs --dir .vercel/output/static"
+    "check:images": "node scripts/check-images.mjs --dir .vercel/output/static",
+    "cadence": "node scripts/cadence-check.mjs --changed",
+    "cadence:all": "node scripts/cadence-check.mjs --all",
+    "cadence:calibrate": "node scripts/cadence-check.mjs --calibrate",
+    "cadence:parity": "node scripts/cadence-parity.mjs"
   },
   "dependencies": {
     "@astrojs/mdx": "5.0.2",

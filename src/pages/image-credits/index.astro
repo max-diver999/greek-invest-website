@@ -5,10 +5,15 @@ import { SITE } from '../../data/site';
 import credits from '../../data/image-credits.json';
 
 /**
- * Фотографии сайта взяты с Wikimedia Commons под свободными лицензиями.
+ * Часть фотографий сайта взята с Wikimedia Commons под свободными лицензиями.
  * CC BY и CC BY-SA требуют называть автора и лицензию — эта страница и есть
  * то место, где это выполняется, а манифест `src/data/image-credits.json`
  * хранит для каждого кадра его исходный файл и правовой статус.
+ *
+ * Показываются только кадры, которые сейчас стоят на сайте. 23.09.2026 семьдесят
+ * обложек заменили снимками туристических сайтов и застройщиков, а записи о
+ * снятых кадрах остались в манифесте: без этого фильтра страница называла бы
+ * авторов фотографий, которых на сайте уже нет.
  */
 type Credit = {
   file: string;
@@ -19,7 +24,23 @@ type Credit = {
   url: string;
 };
 
+const sources = import.meta.glob(
+  [
+    '../../content/**/*.{md,mdx}',
+    '../../pages/**/*.astro',
+    '../../components/**/*.astro',
+    '../../data/**/*.{ts,json}',
+    '../../lib/**/*.ts',
+  ],
+  { query: '?raw', import: 'default', eager: true },
+) as Record<string, string>;
+const siteText = Object.entries(sources)
+  .filter(([file]) => !/(image-credits|r2-image-widths|image-fingerprints)\.json$/.test(file))
+  .map(([, text]) => text)
+  .join('\n');
+
 const entries = Object.entries(credits as Record<string, Credit>)
+  .filter(([id]) => siteText.includes(id))
   .map(([id, meta]) => ({ id, ...meta }))
   .sort((a, b) => a.file.localeCompare(b.file));
 
@@ -39,7 +60,7 @@ const clean = (s: string) => (s || '').replace(/\s+/g, ' ').trim();
         <span class="gr-band__badge mb-5 inline-block">Attribution</span>
         <h1 class="mb-4">Image credits</h1>
         <p class="text-lg text-[var(--color-frame-muted)]">
-          Photography on this site comes from Wikimedia Commons under free licences. Each entry below names the
+          Some of the photography on this site comes from Wikimedia Commons under free licences. Each entry below names the
           source file, the photographer as credited on Commons, and the licence the photograph is published under.
         </p>
       </header>

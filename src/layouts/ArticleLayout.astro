@@ -6,7 +6,7 @@ import FaqBlock from '../components/FaqBlock.astro';
 import RelatedArticles from '../components/RelatedArticles.astro';
 import type { RelatedItem } from '../lib/related';
 import { SITE } from '../data/site';
-import { responsiveCloudinary, heroPreloadFromResponsive } from '../lib/cloudinary';
+import { r2Responsive } from '../lib/r2Image';
 
 interface Props {
   title: string;
@@ -48,7 +48,9 @@ const dateStr = (updatedDate || pubDate).toLocaleDateString('en-US', {
   day: 'numeric',
 });
 const pageUrl = canonical || Astro.url.href;
-const responsiveHero = heroImage ? responsiveCloudinary(heroImage) : null;
+// Covers live on R2 with pre-rendered widths (src/data/r2-image-widths.json). A cover outside R2
+// fails the build in scripts/check-images.mjs --r2-only and scripts/check-photo-uniqueness.mjs.
+const responsiveHero = heroImage ? r2Responsive(heroImage, 'hero') : null;
 
 const articleSchema = {
   '@context': 'https://schema.org',
@@ -114,7 +116,13 @@ const breadcrumbSchema = {
 // layout must not emit a second one — 132 pages previously shipped duplicates and
 // 7 shipped conflicting question sets.
 const schemas = [articleSchema, breadcrumbSchema, ...(faqSchema && !hasInlineFaqBlock ? [faqSchema] : [])];
-const heroPreload = heroImage ? heroPreloadFromResponsive(heroImage) : null;
+const heroPreload = responsiveHero?.srcset
+  ? {
+      href: responsiveHero.srcset.split(/,\s+/)[0].replace(/\s+\d+w$/, ''),
+      srcset: responsiveHero.srcset,
+      sizes: responsiveHero.sizes,
+    }
+  : null;
 ---
 <BaseLayout
   title={title}

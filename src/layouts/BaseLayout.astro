@@ -127,8 +127,8 @@ const allSchemas = [orgSchema, ...schemas, ...(webPageSchema ? [webPageSchema] :
   {/* Картинки живут на R2. Адресов Cloudinary в разметке сайта не осталось ни одного, поэтому
       заранее открывать соединение с ним значит тратить время на чужой домен. Проверено поиском по
       src/ и public/ 21.09.2026: 140 картинок, все на R2. */}
-  <link rel="preconnect" href="https://pub-2855c73eea384110b510f25966292c37.r2.dev" crossorigin />
-  <link rel="dns-prefetch" href="https://pub-2855c73eea384110b510f25966292c37.r2.dev" />
+  <link rel="preconnect" href="https://media.oper-stack.com" crossorigin />
+  <link rel="dns-prefetch" href="https://media.oper-stack.com" />
 
   {preloadImage && (
     <link

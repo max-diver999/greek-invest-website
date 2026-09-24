@@ -99,8 +99,8 @@ const isActive = (href: string) => (href === '/' ? path === '/' : path.startsWit
   .site-header__nav {
     display: none;
     align-items: center;
-    gap: 1.4rem;
-    margin-left: 2.5rem;
+    gap: 0.85rem;
+    margin-left: 1.25rem;
     margin-right: auto;
     font-size: 0.875rem;
     font-weight: 500;
@@ -110,7 +110,7 @@ const isActive = (href: string) => (href === '/' ? path === '/' : path.startsWit
     text-decoration: none;
     white-space: nowrap;
     text-transform: uppercase;
-    letter-spacing: 0.14em;
+    letter-spacing: 0.07em;
     font-size: 0.72rem;
     font-weight: 500;
     transition: color 0.2s ease;
@@ -124,10 +124,10 @@ const isActive = (href: string) => (href === '/' ? path === '/' : path.startsWit
   .site-header__cta {
     display: none;
     font-size: 0.72rem;
-    padding: 0.55rem 1.15rem;
+    padding: 0.55rem 0.9rem;
     flex-shrink: 0;
     text-transform: uppercase;
-    letter-spacing: 0.14em;
+    letter-spacing: 0.08em;
     background: transparent;
     color: var(--color-marble) !important;
     border: 1px solid var(--color-marble-deep);
@@ -191,10 +191,26 @@ const isActive = (href: string) => (href === '/' ? path === '/' : path.startsWit
     text-align: center;
   }
 
-  @media (min-width: 900px) {
-    .site-header__nav { display: flex; }
+  /* Девять пунктов меню, переключатель валюты и кнопка заявки требовали около 1500 px, а меню
+     включалось уже с 900: на ноутбуках 1280-1680 шапка была шире экрана и кнопка «Free shortlist»
+     уезжала за правый край (замер 24.09.2026). Теперь меню в строку только с 1280, где оно
+     влезает в сжатом виде, а уже экраны получают бургер и видимую кнопку заявки. */
+  /* Пока меню спрятано, логотип отжимает остальное вправо: валюта, заявка и бургер стоят группой. */
+  .site-header__brand { margin-right: auto; }
+  @media (min-width: 640px) {
     .site-header__cta { display: inline-flex; }
+  }
+  @media (min-width: 1280px) {
+    /* Строка меню шире колонки текста (68rem), поэтому шапке своя ширина, иначе она вылезала
+       за колонку вправо и стояла несимметрично. */
+    .site-header__bar { max-width: 92rem; padding-inline: 2rem; }
+    .site-header__brand { margin-right: 0; }
+    .site-header__nav { display: flex; }
     .site-header__menu { display: none; }
+  }
+  /* До 1440 у переключателя валюты остаётся только знак $, подпись не влезает. */
+  @media (min-width: 1280px) and (max-width: 1439px) {
+    .site-header :global(.site-fx-toggle--header .site-fx-toggle__label) { display: none; }
   }
 </style>
 
@@ -215,7 +231,7 @@ const isActive = (href: string) => (href === '/' ? path === '/' : path.startsWit
       if (e.key === 'Escape' && menu.open) menu.open = false;
     });
     window.addEventListener('resize', () => {
-      if (window.innerWidth >= 900) menu.open = false;
+      if (window.innerWidth >= 1280) menu.open = false;
     });
   }
 </script>

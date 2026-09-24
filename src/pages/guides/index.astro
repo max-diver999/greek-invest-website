@@ -80,7 +80,7 @@ const schemas = [
               title={guide.data.title}
               description={guide.data.description}
               image={guide.data.heroImage}
-              badges={['Pillar', ...(guide.data.tags?.slice(0, 1) ?? [])]}
+              badges={[]}
               meta={`${readingMinutes(guide.body ?? "")} min read`}
             />
           ))}
@@ -96,7 +96,7 @@ const schemas = [
             title={guide.data.title}
             description={guide.data.description}
             image={guide.data.heroImage}
-            badges={guide.data.tags?.slice(0, 2) ?? []}
+            badges={[]}
             meta={`${readingMinutes(guide.body ?? "")} min read`}
           />
         </div>

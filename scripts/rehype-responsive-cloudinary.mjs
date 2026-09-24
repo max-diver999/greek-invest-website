@@ -22,7 +22,14 @@ const dimensions = fs.existsSync(dimsPath)
  * Ширина слота своя, не из performance-images.config.json: колонка .prose померена на живом сайте
  * и упирается в 702.72px, а поля контейнера съедают 48 точек при экране уже 600.
  */
-const R2_HOST = 'pub-2855c73eea384110b510f25966292c37.r2.dev';
+/**
+ * Адрес хранилища картинок. С 24.09.2026 картинки отдаёт свой домен media.oper-stack.com: у старого
+ * адреса r2.dev лимит частоты запросов и нет кэша. Файлы те же, другое только начало адреса.
+ * Старый адрес код понимает, пока все статьи и загрузчик не переехали; размеры в srcset
+ * всегда строятся с нового.
+ */
+const R2_HOST = 'media.oper-stack.com';
+const R2_HOSTS = [R2_HOST, 'pub-2855c73eea384110b510f25966292c37.r2.dev'];
 const R2_SIZES = '(max-width: 599px) calc(100vw - 48px), (max-width: 763px) 92vw, 703px';
 const r2WidthsPath = path.join(ROOT, 'src', 'data', 'r2-image-widths.json');
 const r2Widths = fs.existsSync(r2WidthsPath)
@@ -31,9 +38,9 @@ const r2Widths = fs.existsSync(r2WidthsPath)
 
 function r2Attributes(src) {
   const trimmed = String(src || '').trim();
-  const i = trimmed.indexOf(R2_HOST);
-  if (i < 0) return null;
-  const key = trimmed.slice(i + R2_HOST.length).replace(/^\//, '').split('?')[0];
+  const host = R2_HOSTS.find((h) => trimmed.includes(h));
+  if (!host) return null;
+  const key = trimmed.slice(trimmed.indexOf(host) + host.length).replace(/^\//, '').split('?')[0];
   const entry = r2Widths[key];
   if (!entry) return null;
 
